@@ -60,7 +60,10 @@
 # Then select "Request Training"
 # 
 # <figure align="center">
-# <img src="http://54.243.252.9/ce-5319-webroot/ce5319jb/lessons/lesson6/neuralnetworkschematic.png" width="800"> <figcaption>Figure 6.3. Neural Network Encode/Decode Diagram </figcaption>
+# <img src="http://54.243.252.9/ce-3105-webroot/ce3105notes/lessons/safetytrainingOne.png" width="800"> 
+#     <figcaption>
+#         Safety Training Web Page (Annotated)
+#     </figcaption>
 # </figure>
 # 
 
