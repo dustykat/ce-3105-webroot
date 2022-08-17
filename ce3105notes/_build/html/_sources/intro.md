@@ -1,16 +1,8 @@
-# Welcome to your Jupyter Book
+# CE 3105 Mechanics of Fluids Laboratory 
 
-This is a small sample book to give you a feel for how book content is
-structured.
+## Catalog Entry
 
-:::{note}
-Here is a note!
-:::
+3105—Mechanics of Fluids Laboratory (1). Prerequisite: CE 3305. Experimental studies of fluid behavior.
 
-And here is a code block:
-
-```
-e = mc^2
-```
-
-Check out the content pages bundled with this sample book to see more.
+##  Course Description
+CE3105 is the laboratory course in fluids and flow phenomena and is closely linked to the lecture course. It is intended to draw to student's attention the behavior of real fluids and to expose students to experimental methods. The class will also improve technical writing skills and prepare students for the fluid mechanics section of the FE Exam. This course emphasizes collaboration through group work, and as such, a portion of the course grade will be based upon peer assessment.
