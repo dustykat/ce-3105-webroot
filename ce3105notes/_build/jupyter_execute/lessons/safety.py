@@ -66,11 +66,13 @@
 #     </figcaption>
 # </figure>
 # 
-
+# Then complete the form on the web browser with your information as shown below.  Select <font color="magenta">**Texas Tech-Lab Safety**</font> and submit the form.  You will receive an email shortly afterwards with the required link for taking the training.
 # 
-
-# In[ ]:
-
-
-
-
+# <figure align="center">
+# <img src="http://54.243.252.9/ce-3105-webroot/ce3105notes/lessons/safetytrainingTwo.png" width="800"> 
+#     <figcaption>
+#         Training Request Web Page (Annotated)
+#     </figcaption>
+# </figure>
+# 
+# Upon completion the training site will issue a completion certificate. Upload that certificate to Blackboard by the due date announced on the syllabus or by the instructor/teaching assistant.  Failure to complete training will result in removal from the course.
