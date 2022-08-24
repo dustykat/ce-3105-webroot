@@ -5,24 +5,12 @@ format: jb-book
 root: intro
 chapters:
 - file: lessons/safety
-
 - file: lessons/labreport
-
 - file: lessons/laboratory1
-
 - file: lessons/laboratory2
-
 - file: lessons/laboratory3
-
 - file: lessons/laboratory4
-
 - file: lessons/laboratory5
-
 - file: lessons/laboratory6
-
 - file: lessons/laboratory7
-
 - file: lessons/laboratory8
-
-
-
