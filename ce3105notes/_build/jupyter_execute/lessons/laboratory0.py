@@ -67,6 +67,7 @@
 # Contains graphs and tables of interpreted results. Results will involve a comparison between measured
 # (from experiment) and predicted (from theory) results. Briefly explain your results. Label graphs and
 # tables per ASCE format. Do not show a graph or a table without an explanation.
+# 
 # >Page 6. - Discussion page/s (20 points)
 # Contains a discussion of the results and should comprise;
 # >1. A comment on whether the purpose of the experiment was meet, and if not, why not.
