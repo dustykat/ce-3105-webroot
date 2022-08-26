@@ -13211,56 +13211,9 @@ The phenomenon is called Stokes law (or Stokes flow).</p>
 <img src="http://54.243.252.9/ce-3105-webroot/2-Exercises/laboratory1/sphereforces.png" width="300" >
 <figcaption>Figure 2: Force balance on a sphere falling at constant velocity </figcaption>
 </figure><p>Stokes flow occurs at pretty low Reynolds numbers so the laminar correlation for the drag coefficient is appropriate</p>
-$$ c_d = \frac{24}{Re}+\frac{4}{\sqrt{Re}}+0.4 $$<p>If the Reynolds number is less than $\frac{1}{2}$ the drag coefficient is $c_d = \frac{24}{Re}$, using this representation of drag the force balance for the sphere allows us to solve for velocity, $u$,</p>
-$$ u = \frac{g \cdot d^2}{18 \nu}(\frac{\sigma}{\rho} -1)$$<p>where, <em>g</em> is the acceleration due to gravity, <em>d</em> is the diameter of the sphere,
+$$ c_d = \frac{24}{Re}+\frac{4}{\sqrt{Re}}+0.4 $$<p>If the Reynolds number is less than $\frac{1}{2}$ the drag coefficient is $c_d = \frac{24}{Re}$, using this representation of drag the force balance for the sphere allows us to solve for velocity, $V$,</p>
+$$ V = \frac{g \cdot d^2}{18 \nu}(\frac{\sigma}{\rho} -1)$$<p>where, <em>g</em> is the acceleration due to gravity, <em>d</em> is the diameter of the sphere,
 $\nu$ is the kinematic viscosity, $\rho$ is the density of the sphere, $\rho$ is the density of the fluid.</p>
-<p>We can apply the formula to get an idea of how fast to expect a sphere to fall if Stokes flow holds.  In the experiment we willuse Glycerine as the liquid phase, and small steel spheres the largest is about 2.5 millimeters.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># </span>
-<span class="n">gravity</span> <span class="o">=</span> <span class="mf">9.81</span> <span class="c1">#m/s^2</span>
-<span class="n">viscosity</span> <span class="o">=</span> <span class="mf">1.41</span> <span class="c1"># Ns/m^2</span>
-<span class="n">density_liquid</span> <span class="o">=</span> <span class="mi">1260</span> <span class="c1">#kg/m^3</span>
-<span class="n">density_sphere</span> <span class="o">=</span> <span class="mi">7700</span> <span class="c1">#kg/m^3</span>
-<span class="n">diameter</span> <span class="o">=</span> <span class="mf">0.025</span> <span class="c1">#meters - nominal 2.5mm</span>
-<span class="n">upper_support_terminal_speed</span> <span class="o">=</span> <span class="p">(</span><span class="n">gravity</span><span class="o">*</span><span class="n">diameter</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">density_sphere</span><span class="o">/</span><span class="n">density_liquid</span> <span class="o">-</span> <span class="mf">1.0</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mf">18.0</span><span class="o">*</span><span class="n">viscosity</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Stokes flow speed limit = &quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="mf">1000.0</span><span class="o">*</span><span class="n">upper_support_terminal_speed</span><span class="p">,</span><span class="mi">6</span><span class="p">),</span><span class="s2">&quot; millimeters per second&quot;</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Stokes flow speed limit =  1.234732  millimeters per second
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>So using the above script we conclude that we should be able to make measurements for spheres as large as 25 mm, using a stopwatch and visual observation.</p>
 
 </div>
 </div>
@@ -13332,6 +13285,7 @@ $\nu$ is the kinematic viscosity, $\rho$ is the density of the sphere, $\rho$ is
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Discussion/Interpretation-Questions-(for-the-Lab-Report)">Discussion/Interpretation Questions (for the Lab Report)<a class="anchor-link" href="#Discussion/Interpretation-Questions-(for-the-Lab-Report)">&#182;</a></h2><ol>
+<li><em>Derive</em> the fall velocity equation, starting from the force balance on the sphere and assuming that $C_d=\frac{24}{Re_D}$</li>
 <li>Why is it important to measure temperature when measuring density and viscosity?</li>
 <li>How do you think the density and viscosity of water would change with temperature.</li>
 <li>How do salts alter the density of groundwater? Why is measurement of brackish water density important for civil and environmental engineers.</li>
@@ -13698,10 +13652,25 @@ $\nu$ is the kinematic viscosity, $\rho$ is the density of the sphere, $\rho$ is
 <li><a href="http://54.243.252.9/engr-1330-webroot/engr1330notes/_build/html/examples/7graphing/example05.html">Plotting Data</a></li>
 <li><a href="http://54.243.252.9/engr-1330-webroot/engr1330notes/_build/html/examples/10datamodels/datamodels.html">Fitting Data Models</a></li>
 <li><a href="http://54.243.252.9/ce-3105-webroot/2-Exercises/laboratory1/laboratory1.ipynb">This page as Jupyter ipynb file</a></li>
+<li><a href="https://mech.at.ua/HolmanICS.pdf">Holman, J.P., (2012) Experimental Methods for Engineers, 8th Ed. (Chapters 1-3)</a></li>
+<li><a href="https://mech.at.ua/HolmanICS.pdf">Holman, J.P., (2012) Experimental Methods for Engineers, 8th Ed. (Chapter 15 Report Writing)</a></li>
 </ol>
 
 </div>
 </div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
 </div>
     </div>
   </div>

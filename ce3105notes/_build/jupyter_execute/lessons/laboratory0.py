@@ -88,12 +88,12 @@
 # 
 # ## CE 3105 Effort Sheet
 # 
-# A completed effort sheet below is to be submitted with your laboratory report.  **All** team members will submit an effort report.  
+# A completed effort sheet below is to be submitted with your laboratory report.  
 # 
 # ![](effortsheet.png)
 # 
 # :::{note}
-# All team members should submit a laboratory report to the server; the duplicates are a useful back-up for the team.
+# All team members should submit a laboratory report, and the effort sheet to the server; the duplicates are a useful back-up for the team.
 # :::
 
 # ## References
@@ -101,6 +101,7 @@
 # 1. Markel, Michael (1998) Technical Communication, Situations and Strategies, 5th addition, St. Martins Press, New York
 # 2. Purdue University Online Writing Laboratory (Google)
 # 3. Young, Trevor M. (2005). Technical Writing from A-Z: A common sense guide to engineering reports and theses. ASME Press, New York
+# 4. [Holman, J.P., (2012) Experimental Methods for Engineers, 8th Ed. (Chapters 15 Report Writing)](https://mech.at.ua/HolmanICS.pdf)
 
 # In[ ]:
 
