@@ -102,6 +102,8 @@
 # 2. Purdue University Online Writing Laboratory (Google)
 # 3. Young, Trevor M. (2005). Technical Writing from A-Z: A common sense guide to engineering reports and theses. ASME Press, New York
 # 4. [Holman, J.P., (2012) Experimental Methods for Engineers, 8th Ed. (Chapters 15 Report Writing)](https://mech.at.ua/HolmanICS.pdf)
+# 5. [Analysis and Propagation of Experimental Error - I](http://54.243.252.9/ce-3105-webroot/ce3105notes/lessons/ce_5333_1.1_error_analysis.pdf)
+# 6. [Analysis and Propagation of Experimental Error - II](http://54.243.252.9/ce-3105-webroot/ce3105notes/lessons/ce_5333_1.2_error_analysis.pdf)
 
 # In[ ]:
 
