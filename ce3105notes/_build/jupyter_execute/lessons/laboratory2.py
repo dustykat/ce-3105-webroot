@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Hydrostatic Forces and Bouyancy
+# # 2. Hydrostatic Forces and Bouyancy
 # 
 
 # ## Archimedes principle to measure buoyant forces

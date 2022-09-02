@@ -76,3 +76,15 @@
 # </figure>
 # 
 # Upon completion the training site will issue a completion certificate. Upload that certificate to Blackboard by the due date announced on the syllabus or by the instructor/teaching assistant.  Failure to complete training will result in removal from the course.
+
+# ## References
+# 
+# 
+# ## Videos
+# 1. [Laboratory Safety Video by Dr. Uddameri](https://www.youtube.com/watch?v=pUG-buqVgGo)
+
+# In[ ]:
+
+
+
+
