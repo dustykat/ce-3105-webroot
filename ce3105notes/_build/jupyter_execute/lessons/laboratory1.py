@@ -144,7 +144,8 @@ print("Stokes flow speed limit = ",round(1000.0*upper_support_terminal_speed,6),
 
 # ## Link to Laboratory Document
 # 
-# 1. [Laboratory 1 ](http://54.243.252.9/ce-3105-webroot/2-Exercises/laboratory1/laboratory1.html)
+# 1. [Laboratory 1 Tasklist](http://54.243.252.9/ce-3105-webroot/2-Exercises/laboratory1/laboratory1.html)
+# 2. [Laboratory 1 Instructional Video by Dr. Uddameri](https://www.youtube.com/watch?v=WwV-azCJWis)
 
 # In[ ]:
 

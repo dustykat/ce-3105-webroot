@@ -86,11 +86,17 @@
 # Contains a sample of your calculations, but not all repetitive calculations. Every equation used in a
 # calculation needs to have a sample shown
 # 
+# :::{note}
+# Here is an [example redacted (actually Red-dacted) report](http://54.243.252.9/ce-3105-webroot/ce3105notes/lessons/ExampleLaboratoryReport.pdf) from a previous semester that serves as a guide
+# :::
+# 
 # ## CE 3105 Effort Sheet
 # 
 # A completed effort sheet below is to be submitted with your laboratory report.  
 # 
 # ![](effortsheet.png)
+# 
+# You can download a copy of the [effort sheet here](http://54.243.252.9/ce-3105-webroot/ce3105notes/lessons/effortsheet.png)
 # 
 # :::{note}
 # All team members should submit a laboratory report, and the effort sheet to the server; the duplicates are a useful back-up for the team.
@@ -104,6 +110,7 @@
 # 4. [Holman, J.P., (2012) Experimental Methods for Engineers, 8th Ed. (Chapters 15 Report Writing)](https://mech.at.ua/HolmanICS.pdf)
 # 5. [Analysis and Propagation of Experimental Error - I](http://54.243.252.9/ce-3105-webroot/ce3105notes/lessons/ce_5333_1.1_error_analysis.pdf)
 # 6. [Analysis and Propagation of Experimental Error - II](http://54.243.252.9/ce-3105-webroot/ce3105notes/lessons/ce_5333_1.2_error_analysis.pdf)
+# 7. [Example Report](http://54.243.252.9/ce-3105-webroot/ce3105notes/lessons/ExampleLaboratoryReport.pdf) 
 
 # In[ ]:
 
