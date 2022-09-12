@@ -126,8 +126,6 @@
 # $$M = \frac{\gamma_w W sec^2(\theta)h^3}{6} + \frac{\gamma_w W cos(\theta) R_2^3}{3} - \frac{\gamma_w W R_2^2 h}{2}$$
 # 
 # A plot of $M + \frac{\gamma_w W R_2^2 h}{2}$ versus $h^3$ will result in a straight line plot.
-# 2h
-# 2 versus h3 will result in a straight line plot
 
 # 
 
@@ -138,11 +136,15 @@
 
 # ## References
 # 
-# 1. [Fluid Statics *in Engineering Fluid Mechanics*](http://54.243.252.9ce-3105-webroot/2-Exercises/laboratory1/EFM-3.pdf)
+# 1. [Fluid Statics *in Engineering Fluid Mechanics*](http://54.243.252.9ce-3105-webroot/2-Exercises/laboratory2/EFM-3.pdf)
 # 
 # 2. [Holman, J.P., (2012) Experimental Methods for Engineers, 8th Ed. (Chapters 5,6, and 10)](https://mech.at.ua/HolmanICS.pdf)
 # 
 # 3. [Forces on Planes, Archimedes Principle (Laboratory 2 circa 2020](http://54.243.252.9/ce-3105-webroot/pdf-source/Experiment2Archimedes.pdf)
+# 
+# 4. [Laboratory 2 Example Report](http://54.243.252.9/ce-3105-webroot/2-Exercises/laboratory2/Goby2.pdf)
+
+# 
 
 # In[ ]:
 
