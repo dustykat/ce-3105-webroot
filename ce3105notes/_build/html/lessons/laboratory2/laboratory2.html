@@ -1,0 +1,475 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2. Hydrostatic Forces and Bouyancy &#8212; CE 3105 Notebook</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="3. Flow Measurement" href="../laboratory3.html" />
+    <link rel="prev" title="1. Fluid Properties" href="../laboratory1.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/waterjet.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">CE 3105 Notebook</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   CE 3105 Mechanics of Fluids Laboratory
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../safety.html">
+   Laboratory Safety
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../laboratory0.html">
+   Laboratory Reports
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../laboratory1.html">
+   1. Fluid Properties
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   2. Hydrostatic Forces and Bouyancy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../laboratory3.html">
+   3. Flow Measurement
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../laboratory4.html">
+   4. Pipe Friction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../laboratory5.html">
+   5. Fitting (Minor) Losses in Pipe Systems
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../laboratory6.html">
+   6. Momentum Transfer
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../laboratory7.html">
+   7. Pump Performance
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../laboratory8.html">
+   8. Open Channel Flow
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/lessons/laboratory2/laboratory2.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Flessons/laboratory2/laboratory2.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/lessons/laboratory2/laboratory2.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#archimedes-principle-to-measure-buoyant-forces">
+   Archimedes principle to measure buoyant forces
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#forces-on-partially-submerged-plane-surfaces">
+   Forces on partially submerged plane surfaces
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#link-to-laboratory-document">
+   Link to Laboratory Document
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="hydrostatic-forces-and-bouyancy">
+<h1>2. Hydrostatic Forces and Bouyancy<a class="headerlink" href="#hydrostatic-forces-and-bouyancy" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="archimedes-principle-to-measure-buoyant-forces">
+<h2>Archimedes principle to measure buoyant forces<a class="headerlink" href="#archimedes-principle-to-measure-buoyant-forces" title="Permalink to this headline">¶</a></h2>
+<p>The Archimedes’ principle states <em>when a solid object is com-
+pletely immersed into a fluid (say water), the volume of the fluid displaced is
+equal to the volume of the object.</em> When an object is partially displaced then
+the volume of the water displaced is equal to the volume of the portion of the object that
+is immersed.</p>
+<p>Archimedes principle is useful to find the volume of irregularly shaped objects - Simply submerge them into a liquid and measure the volume displaced.</p>
+<p>A more detailed representation is</p>
+<ul class="simple">
+<li><p>when a solid object is fully or partially submerged into a liquid then the upward buoyant force exerted by the liquid on the object is equal to the weight of the liquid displaced by the object. Mathematically, this can be stated as:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[B = W_f = \rho  V_f g \]</div>
+<p>where, <span class="math notranslate nohighlight">\(V_f\)</span> is the volume of the liquid displaced m3, <span class="math notranslate nohighlight">\(\rho\)</span> is the density of the liquid (<span class="math notranslate nohighlight">\(\frac{\)</span>kg}{m^3}<span class="math notranslate nohighlight">\(), \)</span>g<span class="math notranslate nohighlight">\( is the gravitational acceleration and \)</span>B<span class="math notranslate nohighlight">\( is the buoyant force (\)</span>N<span class="math notranslate nohighlight">\() and \)</span>W_f<span class="math notranslate nohighlight">\( is the weight of the displaced liquid (\)</span>N$).</p>
+<p>Consider a submerged object shown in the Figure below.</p>
+<p><img alt="" src="../../_images/bouyancysketch.png" /></p>
+<p>The weight of the object causes the body to sink into the liquid, while the upward buoyant force tries
+to push it up. If the object does not sink further (or raise) then these forces are balanced.</p>
+<p>For a submerged object, the volume of the object equals the volume of the liquid displaced.</p>
+<p>Therefore, the resultant force can be written as:
+$<span class="math notranslate nohighlight">\(B - w_o = (\rho_{f} - \rho_{o}) V_{o} g\)</span>$</p>
+<p>Where, <span class="math notranslate nohighlight">\(B\)</span> is the buoyant force (<span class="math notranslate nohighlight">\(N\)</span>), <span class="math notranslate nohighlight">\(w_o\)</span> is the weight of the object (<span class="math notranslate nohighlight">\(N\)</span>), <span class="math notranslate nohighlight">\(\rho_f\)</span>
+is the density of the liquid,<span class="math notranslate nohighlight">\(\rho_o\)</span> is the density of the object, <span class="math notranslate nohighlight">\(g\)</span> is
+the gravitational acceleration and <span class="math notranslate nohighlight">\(V_o\)</span> is the volume of the object.</p>
+<p>From, Archimedes Principle, the Buoyant force (B) is equal to the weight of
+the liquid displaced. From the equation above, we can say an object will be pushed
+upward if <span class="math notranslate nohighlight">\(\rho_f\)</span> is greater <span class="math notranslate nohighlight">\(\rho_o\)</span> or sink (pushed downward) when <span class="math notranslate nohighlight">\(\rho_f\)</span> is smaller than <span class="math notranslate nohighlight">\(\rho_o\)</span>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It is important to remember that when an object sinks to the bottom of the
+liquid in a container, there is still a buoyant force acting on it. This buoyant
+force is still equal to the weight of the liquid that is displaced. However,
+the upward buoyant force exerted on the object is insufficient to overcome
+the downward gravitational force which causes the object to sink. In this
+situation, as the object is fully submerged, the volume of the object is equal
+to the volume of the liquid displaced. The object will feel lighter than in air
+due to buoyancy.</p>
+</div>
+<p>When an object is floating on a surface (neither raising or sinking) then the
+volume of the liquid displaced by the object is not equal to the volume of the
+object. It is only equal to the volume of the object that is submerged in the
+liquid. However, the upward buoyant force of the liquid exactly balances the
+weight of the object. Also, from Archimedes principle, the buoyant force is
+equal to the weight of the liquid that is displaced. Mathematically,</p>
+<ol class="simple">
+<li><p><span class="math notranslate nohighlight">\(B-w_0 = 0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\( \rho_f V_f g = \rho_o V_o g\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\frac{V_o}{V_f} = \frac{\rho_f}{=rho_o}\)</span></p></li>
+</ol>
+</div>
+<div class="section" id="forces-on-partially-submerged-plane-surfaces">
+<h2>Forces on partially submerged plane surfaces<a class="headerlink" href="#forces-on-partially-submerged-plane-surfaces" title="Permalink to this headline">¶</a></h2>
+<p><img alt="" src="../../_images/center-o-pressure.png" /></p>
+<p>The force exerted by liquids on surfaces they come to contact with is im-
+portant when determining engineering structures to hold uids (e.g., tanks,
+reservoirs). If water is our liquid of interest, then the hydrostatic pressure
+exerted by the liquid varies linearly with depth. It is equal to zero gage pres-
+sure when the water is open to atmosphere and increases downward (see
+the Figure below).</p>
+<p>For engineering design, we replace the pressure distribution with a resultant hydrostatic pressure acting at the centroid. This resultant force is obtained by multiplying the hydrostatic pressure with the cross-sectional area over which the liquid exerts the pressure. The pressure is assumed to act
+normal to this planar area. The point where the resultant pressure (force) is assumed to act is also referred to the center of pressure (see Figure above).
+The center of the pressure is defined as “the point in a plane at which the
+total liquid thrust is be acting normal on that plane”.</p>
+<p>The sketch below show the apparatus which permits the moment caused by the total liquid thrust on a wholly or partially submerged plane surface to be measured directly and compared with theoretical analysis.</p>
+<p><img alt="" src="../../_images/moment-sketch.png" /></p>
+<p>The photograph below illustrates the apparatus set up in the laboratory</p>
+<p><img alt="" src="../../_images/moment-setup.png" /></p>
+<p>The following analysis is applied to the general condition of plane surface at
+various angles when it is wholly or partially submerged in a liquid.
+Consider an element at an inclined depth <span class="math notranslate nohighlight">\(y\)</span> and height <span class="math notranslate nohighlight">\(\delta y\)</span>.</p>
+<p>The force on this infinitesimal (itty-bitty) element can be written as:</p>
+<div class="math notranslate nohighlight">
+\[\delta F = \gamma_w W(y~cos(\theta) - h) \delta y \]</div>
+<p>Where, <span class="math notranslate nohighlight">\(\gamma_w\)</span> is the weight per unit volume of the liquid , <span class="math notranslate nohighlight">\(W\)</span> is the width
+of the plane normal to the direction of the force and <span class="math notranslate nohighlight">\(h\)</span> is the height to the water surface measured from the pivot point O (see the apparatus sketch).</p>
+<p>The moment of force on element about the point O, <span class="math notranslate nohighlight">\(\delta M\)</span> can be written as</p>
+<div class="math notranslate nohighlight">
+\[\delta M_O = \gamma_w W(y~cos(\theta) - h)y \delta y \]</div>
+<p>The total moment (M) over the entire submerged surface can be obtained by
+integrating:</p>
+<div class="math notranslate nohighlight">
+\[M = \int_{ll}^{ul}{\delta M_O} = \int_{ll}^{ul}{\gamma_w W(y^2~cos(\theta) - hy) \delta y} \]</div>
+<p>The limits of integration in 8 depends upon whether the plane is fully sub-
+merged or partially submerged. For the fully submerged case, the limits are
+from R1 to R2 and the equation for the moment around point O can be
+written as:</p>
+<div class="math notranslate nohighlight">
+\[M = \int_{R_1}^{R_2}{\gamma_w W(y^2~cos(\theta) - hy) \delta y}= \frac{\gamma_w W~cos(\theta)}{3}(R_2^3-R_1^3) - \frac{\gamma_w W}{2}(R_2^2-R_1^2)h\]</div>
+<p>This equation is of the form of y = mx + b,therefore, a plot of M against h will yield a straight line of gradient</p>
+<div class="math notranslate nohighlight">
+\[- \frac{\gamma_w W}{2}(R_2^2-R_1^2)\]</div>
+<p>This slope can be used to calculate the unknown specific weight <span class="math notranslate nohighlight">\(\gamma_w\)</span>.</p>
+<p>For a partially submerged plane, the limits of the integration are from <span class="math notranslate nohighlight">\(R_2\)</span> to <span class="math notranslate nohighlight">\(hsec(\theta)\)</span>. The moment in this case is given as:</p>
+<div class="math notranslate nohighlight">
+\[M = \frac{\gamma_w W sec^2(\theta)h^3}{6} + \frac{\gamma_w W cos(\theta) R_2^3}{3} - \frac{\gamma_w W R_2^2 h}{2}\]</div>
+<p>A plot of <span class="math notranslate nohighlight">\(M + \frac{\gamma_w W R_2^2 h}{2}\)</span> versus <span class="math notranslate nohighlight">\(h^3\)</span> will result in a straight line plot.
+2h
+2 versus h3 will result in a straight line plot</p>
+</div>
+<div class="section" id="link-to-laboratory-document">
+<h2>Link to Laboratory Document<a class="headerlink" href="#link-to-laboratory-document" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p><a class="reference external" href="http://54.243.252.9/ce-3105-webroot/2-Exercises/laboratory2/laboratory2.html">Laboratory 2 Tasklist</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=_0zJg4kfYwY">Laboratory 2 Instructional Video by Dr. Uddameri</a></p></li>
+</ol>
+</div>
+<div class="section" id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p><a class="reference external" href="http://54.243.252.9ce-3105-webroot/2-Exercises/laboratory1/EFM-3.pdf">Fluid Statics <em>in Engineering Fluid Mechanics</em></a></p></li>
+<li><p><a class="reference external" href="https://mech.at.ua/HolmanICS.pdf">Holman, J.P., (2012) Experimental Methods for Engineers, 8th Ed. (Chapters 5,6, and 10)</a></p></li>
+<li><p><a class="reference external" href="http://54.243.252.9/ce-3105-webroot/pdf-source/Experiment2Archimedes.pdf">Forces on Planes, Archimedes Principle (Laboratory 2 circa 2020</a></p></li>
+</ol>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./lessons/laboratory2"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="../laboratory1.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">1. Fluid Properties</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="../laboratory3.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">3. Flow Measurement</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Theodore G. Cleveland (just the JupyterBook parts)<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
