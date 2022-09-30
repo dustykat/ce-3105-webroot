@@ -11,7 +11,20 @@
 
 # ## Venturi Meter
 # 
-# ![](venturimeter1.png)
+# The venturi meter is a combination of a converging tube, a throat and a diverging tube. 
+# The discharge of liquid is calculated by measuring the pressure differential between the inlet and the
+# throat which is caused by the differences in diameters.  The shape of the venturi is designed to minimize energy loss in the device.
+# 
+# ![](venturimeter1.png) ![](venturidrawing.png)
+# 
+# Using continunity
+# 
+# $$ \rho V_1 A_1 = \rho V_2 A_2 $$
+# 
+# Defninition of discharge and modified Bernoulli equation is:
+# 
+# 
+# $$Q = A_2~V_2 = A_2~(\frac{2g}{1-\frac{A_2}{A_1}})~\sqrt{\frac{P_1}{\rho g}-\frac{P_2}{\rho g}}$$
 # 
 
 # ## Orifice Plate Meter
