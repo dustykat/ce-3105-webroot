@@ -72,7 +72,7 @@
 # The necessary physical water properties corresponding to water temperature
 # should be used. They can be found in tables such as [http://54.243.252.9/toolbox/fluidmechanics/WaterPropertiesUS/WaterPropertiesUS.html](http://54.243.252.9/toolbox/fluidmechanics/WaterPropertiesUS/WaterPropertiesUS.html), or from any fluid mechanics textbook.
 # 
-# Figure 1 shows the experimental setup
+# {numref}`labsetup` is a photograph of the experimental setup
 # 
 # ```{figure} labsetup.png
 # ---
