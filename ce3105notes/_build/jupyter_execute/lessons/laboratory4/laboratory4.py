@@ -41,7 +41,9 @@
 # vortices. The flow is turbulent in this case. Reynolds number classifies
 # whether the flow is laminar or turbulent. For a circular pipe, it can be ex-
 # pressed as
+# 
 # $$Re = \frac{\rho vD}{\mu} = \frac{vD}{\nu}$$
+# 
 # It is nearly impossible for turbulent flow to occur at Reynolds number less
 # than 2000 as the turbulence will be restrained by the viscous resistance.
 # However, there is a stage when laminar flow is becoming turbulent or turbulent is becoming laminar. This is transitional flow. 
@@ -63,12 +65,15 @@
 # 
 # The flow velocity, $u$ can be found from the continuity equation when the
 # cross-sectional area of the pipe is known:
+# 
 # $$u = \frac{Q}{A}$$
 
 # ## Friction Factors
 # 
 # The friction factor, $f$ can be found using Darcy-Weisbach equation:
+# 
 # $$f = \frac{2 \Delta h~g D}{L v^2} $$
+# 
 # The necessary physical water properties corresponding to water temperature
 # should be used. They can be found in tables such as [http://54.243.252.9/toolbox/fluidmechanics/WaterPropertiesUS/WaterPropertiesUS.html](http://54.243.252.9/toolbox/fluidmechanics/WaterPropertiesUS/WaterPropertiesUS.html), or from any fluid mechanics textbook.
 # 
