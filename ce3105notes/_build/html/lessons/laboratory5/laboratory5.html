@@ -266,6 +266,11 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bend">
+     Bend
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#expansion">
      Expansion
     </a>
@@ -325,10 +330,9 @@ due to vortices and eddies. Figure 1 illustrates loss at a pipe fitting:</p>
 <div class="math notranslate nohighlight">
 \[ K = \frac{\Delta H~2g}{V_u^2} \]</div>
 <p>Usually the velocity associated with the smaller diameter part of the fitting is used.</p>
-<p>In this experiment, the mitre and elbow have constant pipe diameters. There-
-fore, <span class="math notranslate nohighlight">\(V_u\)</span> and <span class="math notranslate nohighlight">\(V_d\)</span> are the same. For the sudden enlargement, the upstream
-velocity represents the velocity head. For the sudden contraction, the down-
-stream velocity characterizes the velocity head.</p>
+<p>In this experiment, the mitre and elbow have constant pipe diameters. Therefore, <span class="math notranslate nohighlight">\(V_u\)</span> and <span class="math notranslate nohighlight">\(V_d\)</span> are the same.</p>
+<p>For the sudden enlargement, the upstream velocity is used to express the velocity head.
+For the sudden contraction, the downstream velocity characterizes the velocity head.</p>
 </div>
 <div class="section" id="bends">
 <h2>Bends<a class="headerlink" href="#bends" title="Permalink to this headline">¶</a></h2>
@@ -341,7 +345,14 @@ value is. Following table summarizes the typical K values for different bends</p
 <h2>Loss Model Structure<a class="headerlink" href="#loss-model-structure" title="Permalink to this headline">¶</a></h2>
 <p>The loss model(s) are usually of the structure</p>
 <div class="math notranslate nohighlight">
-\[ \begin{align}\begin{aligned} \Delta H = K~\frac{V^2}{2g} $$ where the velocity is taken as the larger value  in the case of a diameter change.\\The $K$ values are determined from\\### Bend\\$$ K = \frac{\Delta H}{\frac{V^2}{2g}} \end{aligned}\end{align} \]</div>
+\[ \Delta H = K~\frac{V^2}{2g} \]</div>
+<p>where the velocity is taken as the larger value  in the case of a diameter change.</p>
+<p>The <span class="math notranslate nohighlight">\(K\)</span> values are determined from</p>
+<div class="section" id="bend">
+<h3>Bend<a class="headerlink" href="#bend" title="Permalink to this headline">¶</a></h3>
+<div class="math notranslate nohighlight">
+\[ K = \frac{\Delta H}{\frac{V^2}{2g}} \]</div>
+</div>
 <div class="section" id="expansion">
 <h3>Expansion<a class="headerlink" href="#expansion" title="Permalink to this headline">¶</a></h3>
 <div class="math notranslate nohighlight">

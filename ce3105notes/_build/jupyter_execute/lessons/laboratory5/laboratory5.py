@@ -32,10 +32,10 @@
 # 
 # Usually the velocity associated with the smaller diameter part of the fitting is used.
 # 
-# In this experiment, the mitre and elbow have constant pipe diameters. There-
-# fore, $V_u$ and $V_d$ are the same. For the sudden enlargement, the upstream
-# velocity represents the velocity head. For the sudden contraction, the down-
-# stream velocity characterizes the velocity head.
+# In this experiment, the mitre and elbow have constant pipe diameters. Therefore, $V_u$ and $V_d$ are the same. 
+# 
+# For the sudden enlargement, the upstream velocity is used to express the velocity head. 
+# For the sudden contraction, the downstream velocity characterizes the velocity head.
 # 
 # ## Bends
 # 
@@ -50,7 +50,9 @@
 # 
 # The loss model(s) are usually of the structure 
 # 
-# $$ \Delta H = K~\frac{V^2}{2g} $$ where the velocity is taken as the larger value  in the case of a diameter change.
+# $$ \Delta H = K~\frac{V^2}{2g} $$ 
+# 
+# where the velocity is taken as the larger value  in the case of a diameter change.
 # 
 # The $K$ values are determined from
 # 
