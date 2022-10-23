@@ -72,7 +72,7 @@
 #   - Record the flow rate using the hydraulic bench
 # 5. Change the hydraulic bench flow rate in relatively equal increments for 4 additional readings
 #   - Record distance, y, from the zero position for each trial
-#    Record the flow rate using the hydraulic bench for each trial
+#   - Record the flow rate using the hydraulic bench for each trial
 # 
 # Repeat steps 2-5 for the Hemispherical Cup Vane
 
@@ -83,6 +83,7 @@
 
 # ## References
 # 
+# 1. [Example Laboratory Report](http://54.243.252.9/ce-3105-webroot/2-Exercises/laboratory6/GobyLabReport6.pdf)
 
 # In[ ]:
 
