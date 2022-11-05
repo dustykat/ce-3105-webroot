@@ -99,6 +99,7 @@
 # The motor drive display calculates the power automatically.
 # 
 # The hydraulic power or the horsepower of the pump is
+# 
 # $$W_2 = (\rho g H)Q~~~ (3)$$
 # 
 # The overall efficiency of the pump is
