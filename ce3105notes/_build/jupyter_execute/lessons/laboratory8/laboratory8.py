@@ -39,15 +39,15 @@
 # 
 # 
 # Natural and man-made open channels are of interest to engineers. The Manning's equation is a fundamental equation governing open channel flow and is given by
-# Kn
-# Q= AR S (1)
-# n
-# Where Kn is the conversion factor (1 for SI and 1.49 for English units);
-# n is the Manning's roughness coe􏰆cient, A is the cross-sectional area and R is the hydraulic radius which is given as:
-# A
-# R= (2)
-# Wp
-# Where Wp is the wetted perimeter.
+# 
+# $$ Q= \frac{K_n}{n}AR^{2/3}S^{1/2} $$
+# 
+# Where $K_n$ is the conversion factor (1 for SI and 1.49 for English units);
+# $n$ is the Manning's roughness coefficient, $A$ is the cross-sectional area and $R$ is the hydraulic radius which is given as:
+# 
+# $$ R=\frac{A}{P_W}$$
+# 
+# where $P_W$ is the wetted perimeter.
 
 # ## Steady-Uniform Flow
 # 
