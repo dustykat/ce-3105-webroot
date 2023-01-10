@@ -98,8 +98,8 @@
 # 
 # You can download a copy of the [effort sheet here](http://54.243.252.9/ce-3105-webroot/ce3105notes/lessons/effortsheet.png)
 # 
-# :::{note}
-# All team members should submit a laboratory report, and the effort sheet to the server; the duplicates are a useful back-up for the team.
+# :::{warning}
+# All team members must submit a copy of the team's laboratory report, and the effort sheet to the server.
 # :::
 
 # ## References
