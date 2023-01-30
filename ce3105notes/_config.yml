@@ -3,7 +3,7 @@
 
 title: CE 3105 Notebook
 author: Theodore G. Cleveland (just the JupyterBook parts)
-copyright: "2022"  # Copyright year to be placed in the footer
+copyright: "2023"  # Copyright year to be placed in the footer
 logo: waterjet.png
 
 # Force re-execution of notebooks on each build.
