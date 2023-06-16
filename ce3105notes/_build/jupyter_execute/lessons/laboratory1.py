@@ -12,6 +12,7 @@
 # volume of the material of interest. 
 # 
 # As an equation in words:
+# 
 # $$\text{Density} = \frac{\text{Mass of the Fluid}}{\text{Volume occupied by the fluid}}$$
 # 
 # or more conventionally

@@ -4,6 +4,7 @@
 format: jb-book
 root: intro
 chapters:
+- file: lessons/instruments
 - file: lessons/safety
 - file: lessons/laboratory0
 - file: lessons/laboratory1
