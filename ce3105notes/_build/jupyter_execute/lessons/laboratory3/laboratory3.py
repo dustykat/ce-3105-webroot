@@ -24,7 +24,7 @@
 # Defninition of discharge and modified Bernoulli equation is:
 # 
 # 
-# $$Q = A_2~V_2 = A_2~(\frac{2g}{1-\frac{A_2}{A_1}})~\sqrt{\frac{P_1}{\rho g}-\frac{P_2}{\rho g}}$$
+# $$Q = A_2~V_2 = A_2~(\frac{2g}{1-\frac{A_2^2}{A_1^2}})~\sqrt{\frac{P_1}{\rho g}-\frac{P_2}{\rho g}}$$
 # 
 
 # ## Orifice Plate Meter
@@ -48,7 +48,7 @@
 # 
 # Then continunity to arrive at a structure to estimate discharge
 # 
-# $$Q = A_u~V_u = KA_u~(\frac{2g}{1-\frac{A_d}{A_u}})~\sqrt{\frac{P_u}{\rho g}-\frac{P_d}{\rho g}}$$
+# $$Q = A_u~V_u = KA_u~(\frac{2g}{1-\frac{A_d^2}{A_u^2}})~\sqrt{\frac{P_u}{\rho g}-\frac{P_d}{\rho g}}$$
 # 
 
 # ## Rotameter
