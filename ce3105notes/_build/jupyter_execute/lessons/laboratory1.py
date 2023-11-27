@@ -113,24 +113,24 @@
 # 
 # If the Reynolds number is less than $\frac{1}{2}$ the drag coefficient is $c_d = \frac{24}{Re}$, using this representation of drag the force balance for the sphere allows us to solve for velocity, $u$,
 # 
-# $$ u = \frac{g \cdot d^2}{18 \nu}(\frac{\sigma}{\rho} -1)$$
+# $$ u = \frac{g \cdot d^2}{18 \nu}(\sigma-\rho)$$
 # 
 # where, *g* is the acceleration due to gravity, *d* is the diameter of the sphere,
-# $\nu$ is the kinematic viscosity, $\rho$ is the density of the sphere, $\rho$ is the density of the fluid.
+# $\nu$ is the kinematic viscosity, $\sigma$ is the density of the sphere, $\rho$ is the density of the fluid.
 # 
-# We can apply the formula to get an idea of how fast to expect a sphere to fall if Stokes flow holds.  In the experiment we willuse Glycerine as the liquid phase, and small steel spheres the largest is about 2.5 millimeters
+# We can apply the formula to get an idea of how fast to expect a sphere to fall if Stokes flow holds.  In the experiment we will use Glycerine as the liquid phase, and small steel spheres the largest is about 2.5 millimeters
 
 # In[1]:
 
 
 # Estimate Sphere Falling Speed assuming laminar flow
 gravity = 9.81 #m/s^2
-viscosity = 1.41 # Ns/m^2
-density_liquid = 1260 #kg/m^3
-density_sphere = 7700 #kg/m^3
-diameter = 0.025 #meters - nominal 2.5mm
-upper_support_terminal_speed = (gravity*diameter**2)*(density_sphere/density_liquid - 1.0)/(18.0*viscosity)
-print("Stokes flow speed limit = ",round(1000.0*upper_support_terminal_speed,6)," millimeters per second")
+viscosity = 1.0 # Ns/m^2
+density_liquid = (55/50)*1000*1000 #kg/m^3
+density_sphere = (7.6)*1000*1000 #kg/m^3
+diameter = 0.0025 #meters - nominal 2.5mm
+upper_support_terminal_speed = (gravity*diameter**2)*(density_sphere-density_liquid)/(18.0*viscosity)
+print("Stokes flow speed limit = ",round(upper_support_terminal_speed,6)," millimeters per second")
 
 
 # So using the above script we conclude that we should be able to make measurements for spheres as large as 25 mm, using a stopwatch and visual observation, our spheres are quite a bit smaller, so we should have no issues.

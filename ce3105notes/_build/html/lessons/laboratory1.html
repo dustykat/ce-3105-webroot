@@ -382,25 +382,25 @@ The phenomenon is called Stokes law (or Stokes flow).</p>
 \[ c_d = \frac{24}{Re}+\frac{4}{\sqrt{Re}}+0.4 \]</div>
 <p>If the Reynolds number is less than <span class="math notranslate nohighlight">\(\frac{1}{2}\)</span> the drag coefficient is <span class="math notranslate nohighlight">\(c_d = \frac{24}{Re}\)</span>, using this representation of drag the force balance for the sphere allows us to solve for velocity, <span class="math notranslate nohighlight">\(u\)</span>,</p>
 <div class="math notranslate nohighlight">
-\[ u = \frac{g \cdot d^2}{18 \nu}(\frac{\sigma}{\rho} -1)\]</div>
+\[ u = \frac{g \cdot d^2}{18 \nu}(\sigma-\rho)\]</div>
 <p>where, <em>g</em> is the acceleration due to gravity, <em>d</em> is the diameter of the sphere,
-<span class="math notranslate nohighlight">\(\nu\)</span> is the kinematic viscosity, <span class="math notranslate nohighlight">\(\rho\)</span> is the density of the sphere, <span class="math notranslate nohighlight">\(\rho\)</span> is the density of the fluid.</p>
-<p>We can apply the formula to get an idea of how fast to expect a sphere to fall if Stokes flow holds.  In the experiment we willuse Glycerine as the liquid phase, and small steel spheres the largest is about 2.5 millimeters</p>
+<span class="math notranslate nohighlight">\(\nu\)</span> is the kinematic viscosity, <span class="math notranslate nohighlight">\(\sigma\)</span> is the density of the sphere, <span class="math notranslate nohighlight">\(\rho\)</span> is the density of the fluid.</p>
+<p>We can apply the formula to get an idea of how fast to expect a sphere to fall if Stokes flow holds.  In the experiment we will use Glycerine as the liquid phase, and small steel spheres the largest is about 2.5 millimeters</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Estimate Sphere Falling Speed assuming laminar flow</span>
 <span class="n">gravity</span> <span class="o">=</span> <span class="mf">9.81</span> <span class="c1">#m/s^2</span>
-<span class="n">viscosity</span> <span class="o">=</span> <span class="mf">1.41</span> <span class="c1"># Ns/m^2</span>
-<span class="n">density_liquid</span> <span class="o">=</span> <span class="mi">1260</span> <span class="c1">#kg/m^3</span>
-<span class="n">density_sphere</span> <span class="o">=</span> <span class="mi">7700</span> <span class="c1">#kg/m^3</span>
-<span class="n">diameter</span> <span class="o">=</span> <span class="mf">0.025</span> <span class="c1">#meters - nominal 2.5mm</span>
-<span class="n">upper_support_terminal_speed</span> <span class="o">=</span> <span class="p">(</span><span class="n">gravity</span><span class="o">*</span><span class="n">diameter</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">density_sphere</span><span class="o">/</span><span class="n">density_liquid</span> <span class="o">-</span> <span class="mf">1.0</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mf">18.0</span><span class="o">*</span><span class="n">viscosity</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Stokes flow speed limit = &quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="mf">1000.0</span><span class="o">*</span><span class="n">upper_support_terminal_speed</span><span class="p">,</span><span class="mi">6</span><span class="p">),</span><span class="s2">&quot; millimeters per second&quot;</span><span class="p">)</span>
+<span class="n">viscosity</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="c1"># Ns/m^2</span>
+<span class="n">density_liquid</span> <span class="o">=</span> <span class="p">(</span><span class="mi">55</span><span class="o">/</span><span class="mi">50</span><span class="p">)</span><span class="o">*</span><span class="mi">1000</span><span class="o">*</span><span class="mi">1000</span> <span class="c1">#kg/m^3</span>
+<span class="n">density_sphere</span> <span class="o">=</span> <span class="p">(</span><span class="mf">7.6</span><span class="p">)</span><span class="o">*</span><span class="mi">1000</span><span class="o">*</span><span class="mi">1000</span> <span class="c1">#kg/m^3</span>
+<span class="n">diameter</span> <span class="o">=</span> <span class="mf">0.0025</span> <span class="c1">#meters - nominal 2.5mm</span>
+<span class="n">upper_support_terminal_speed</span> <span class="o">=</span> <span class="p">(</span><span class="n">gravity</span><span class="o">*</span><span class="n">diameter</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">density_sphere</span><span class="o">-</span><span class="n">density_liquid</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mf">18.0</span><span class="o">*</span><span class="n">viscosity</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Stokes flow speed limit = &quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">upper_support_terminal_speed</span><span class="p">,</span><span class="mi">6</span><span class="p">),</span><span class="s2">&quot; millimeters per second&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Stokes flow speed limit =  1.234732  millimeters per second
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Stokes flow speed limit =  22.140625  millimeters per second
 </pre></div>
 </div>
 </div>
