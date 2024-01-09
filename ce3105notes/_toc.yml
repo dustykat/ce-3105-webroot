@@ -6,7 +6,7 @@ root: intro
 chapters:
 - file: lessons/syllabus_copy/ce-3105-syllabus-2024-1
 - file: lessons/instruments/instruments
-- file: lessons/safety/safety
+- file: lessons/safety/safety_training
 - file: lessons/laboratory0/laboratory0
 - file: lessons/laboratory1/laboratory1
 - file: lessons/laboratory2/laboratory2
