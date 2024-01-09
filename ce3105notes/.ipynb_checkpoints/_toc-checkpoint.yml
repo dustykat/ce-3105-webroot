@@ -4,10 +4,11 @@
 format: jb-book
 root: intro
 chapters:
-- file: lessons/instruments
-- file: lessons/safety
-- file: lessons/laboratory0
-- file: lessons/laboratory1
+- file: lessons/syllabus_copy/ce-3105-syllabus-2024-1
+- file: lessons/instruments/instruments
+- file: lessons/safety/safety
+- file: lessons/laboratory0/laboratory0
+- file: lessons/laboratory1/laboratory1
 - file: lessons/laboratory2/laboratory2
 - file: lessons/laboratory3/laboratory3
 - file: lessons/laboratory4/laboratory4
