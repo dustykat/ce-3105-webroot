@@ -60,7 +60,8 @@
 # Then select "Request Training"
 # 
 # <figure align="center">
-# <img src="http://54.243.252.9/ce-3105-webroot/2-Exercises/safety/safetytrainingOne.png" width="800"> 
+#     <!--<img src="./Hydropower.png" width="300" >-->
+# <img src="./safetytrainingOne.png" width="800"> 
 #     <figcaption>
 #         Safety Training Web Page (Annotated)
 #     </figcaption>
@@ -69,7 +70,7 @@
 # Then complete the form on the web browser with your information as shown below.  Select <font color="magenta">**Texas Tech-Lab Safety**</font> and submit the form.  You will receive an email shortly afterwards with the required link for taking the training.
 # 
 # <figure align="center">
-# <img src="http://54.243.252.9/ce-3105-webroot/2-Exercises/safety/safetytrainingTwo.png" width="800"> 
+# <img src="./safetytrainingTwo.png" width="800"> 
 #     <figcaption>
 #         Training Request Web Page (Annotated)
 #     </figcaption>
