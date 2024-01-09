@@ -1,11 +1,10 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Sillybus 
+# # Syllabus 
 # 
 # ## Course Catalog Description: 
 # (1) Mechanics of Fluids Laboratory. Prerequisite: CE 3305. Experimental studies of fluid behavior.
-# 
 # 
 # ## Prerequisites: 
 # CE 3305 or equivalent
