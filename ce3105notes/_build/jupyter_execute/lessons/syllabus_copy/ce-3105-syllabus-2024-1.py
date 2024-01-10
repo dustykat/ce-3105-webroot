@@ -129,14 +129,14 @@ get_ipython().run_cell_magic('html', '', '<style> table {margin-left: 0 !importa
 # |08 - 12 Apr|[Week 14- Friction Losses in an Open Channel](http://54.243.252.9/ce-3105-webroot/ce3105notes/_build/html/lessons/laboratory8/laboratory8.html) <br> - Manning's Equation <br> - Weirs <br> - Momentum Conservation in a Hydraulic Jump |- [Laboratory 8](http://54.243.252.9/ce-3105-webroot/2-Exercises/laboratory8/laboratory8.html)|<font color="red">Submit Laboratory 7 Report and Effort Sheet on BB</font><br><font color="red">Quiz 7 on BB</font>|
 # |15 - 19 Apr|<font color="green">Week 15 - No Labs (Set up for Laboratory Exam) </font>||<font color="red">Quiz 8 on BB</font>|
 # |22 - 26 Apr|<font color="red">Week 16 - Lab Exam </font>||<font color="red">Submit Laboratory 8 Report and Effort Sheet on BB</font>|
-# |29 Apr - 03 May 2024|<font color="green">Week 17 - No Labs (Complete any outstanding reports)</font>||<font color="red">No Submissions after 10 Dec will be scored</font>|
+# |29 Apr - 03 May 2024|<font color="green">Week 17 - No Labs (Complete any outstanding reports)</font>||<font color="red">No Submissions after 1 May 2024 will be scored</font>|
 # 
 
 # ---
 # ## Course Assessment and Grading Criteria:
 # There will be 8-9 laboratory reports, 8-9 BB tests (quizzes), a comprehensive Lab exam, and 8-9 effort reports.  
 # 
-# **Late** assignments will incur a substantial penalty. Anything uploaded after 10 Dec 2023 is not graded.
+# **Late** assignments will incur a substantial penalty. Anything uploaded after 1 May 2024 is not graded.
 # 
 # Grades will be based on the following components; weighting is approximate:
 # 
