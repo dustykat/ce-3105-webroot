@@ -96,7 +96,7 @@
 # 
 # ![](effortsheet.png)
 # 
-# You can download a copy of the [effort sheet here](ce-3105-webroot/ce3105notes/lessons/laboratory0/effortsheet.png)
+# You can download a copy of the [effort sheet here](http://54.243.252.9/ce-3105-webroot/ce3105notes/lessons/laboratory0/effortsheet.png)
 # 
 # :::{warning}
 # All team members must submit a copy of the team's laboratory report, and the effort sheet to the server.
