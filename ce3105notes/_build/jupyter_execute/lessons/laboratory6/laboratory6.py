@@ -83,7 +83,7 @@
 
 # ## References
 # 
-# 1. [Example Laboratory Report](http://54.243.252.9/ce-3105-webroot/2-Exercises/laboratory6/GobyLabReport6.pdf)
+# <!-- 1. [Example Laboratory Report](http://54.243.252.9/ce-3105-webroot/2-Exercises/laboratory6/GobyLabReport6.pdf)-->
 
 # In[ ]:
 

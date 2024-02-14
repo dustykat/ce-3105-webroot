@@ -339,7 +339,7 @@
 
 # ## Link to Laboratory Document
 # 
-# 1. [Laboratory 8 Tasklist](http://54.243.252.9/ce-3105-webroot/2-Exercises/laboratory8/laboratory6.html)
+# 1. [Laboratory 8 Tasklist](http://54.243.252.9/ce-3105-webroot/2-Exercises/laboratory8/laboratory8.html)
 # 2. [Laboratory 8 Instructional Video by Dr. Uddameri](https://www.youtube.com/watch?v=_3ZBN_Ec9q4)
 
 # ## References
@@ -348,7 +348,7 @@
 # 2. [Hydraulic Jump Theory](https://en.wikipedia.org/wiki/Hydraulic_jump)
 # 3. [Hydraulic Jump Calculator](https://www.omnicalculator.com/physics/hydraulic-jump)
 # 4. [V-Notch Weir Calculator](http://ponce.sdsu.edu/onlineveenotchdescription.html)
-# 5. [Example Report](http://54.243.252.9/ce-3105-webroot/2-Exercises/laboratory8/GoBy8.pdf)
+# <!--5. [Example Report](http://54.243.252.9/ce-3105-webroot/2-Exercises/laboratory8/GoBy8.pdf)-->
 # 
 
 # In[ ]:

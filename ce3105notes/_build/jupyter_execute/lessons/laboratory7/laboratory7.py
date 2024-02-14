@@ -144,7 +144,7 @@
 # 6. [Pumps and Lift Stations (excerpt from Water Systems Design)](http://54.243.252.9/ce-3105-webroot/ce3105notes/lessons/laboratory7/Lecture06.pdf)
 # 7. [Submersible Lift Stations Design (City of Houston Manual)](http://54.243.252.9/ce-3105-webroot/ce3105notes/lessons/laboratory7/2011_coh_design_manual_submersible_lift_stations.pdf)
 # 8. [Holman, J.P., (2012) Experimental Methods for Engineers, 8th Ed. (Chapters 5,6, and 10)](https://mech.at.ua/HolmanICS.pdf)
-# 9. [Laboratory 7 Example Report](http://54.243.252.9/ce-3105-webroot/2-Exercises/laboratory7/Goby7.pdf)
+# <!--9. [Laboratory 7 Example Report](http://54.243.252.9/ce-3105-webroot/2-Exercises/laboratory7/Goby7.pdf)-->
 
 # In[ ]:
 
