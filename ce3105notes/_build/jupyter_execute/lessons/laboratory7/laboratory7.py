@@ -136,6 +136,9 @@
 # ## References
 # 
 
+# 1. [Centrifugal Pump Test Station (User Manual)](http://54.243.252.9/ce-3105-webroot/7-user-manuals/H83-Two-stageCentrifugalPumpTestSet.pdf)
+# 2. [Pressure Readout (User Manual)](http://54.243.252.9/ce-3105-webroot/7-user-manuals/DP1-DigitalPressureDisplay.pdf)
+# 3. [Data Acquisition System (User Manual)](http://54.243.252.9/ce-3105-webroot/7-user-manuals/VersatileDataAcquisitionSystem.pdf)
 # 1. [Laboratory 7 Circa (2019)](http://54.243.252.9/ce-3105-webroot/pdf-source/Experiment7Pumptest.pdf)
 # 2. [FHWA Lift Station Design](http://54.243.252.9/ce-3105-webroot/ce3105notes/lessons/laboratory7/FHWA-NHI-01-007-LiftStationDesign.pdf)
 # 3. [Pump Selection](http://54.243.252.9/ce-3105-webroot/ce3105notes/lessons/laboratory7/PumpSelection.pdf)

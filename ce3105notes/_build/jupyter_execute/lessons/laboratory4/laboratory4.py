@@ -95,6 +95,7 @@
 # ## References
 # 
 # 1. [Laboratory 4 (circa 2020)](http://54.243.252.9/ce-3105-webroot/pdf-source/Experiment4FrictionLossinaPipe.pdf)
+# 2. [H-7 Friction Loss in a Pipe (User Manual)](http://54.243.252.9/ce-3105-webroot/7-user-manuals/H7-FrictionLossInAPipe.pdf)
 
 # In[ ]:
 

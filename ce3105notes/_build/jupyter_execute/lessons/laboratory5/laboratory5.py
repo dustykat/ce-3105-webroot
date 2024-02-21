@@ -98,8 +98,8 @@
 # 
 
 # 1. [Fitting Loses in Pipes](https://www.ese.iitb.ac.in/sites/default/files/Losses%20Due%20To%20Pipe%20Fittings.pdf)
-# 
 # 2. [Fitting Loss Coefficients (Tabular)](https://neutrium.net/fluid-flow/pressure-loss-from-fittings-excess-head-k-method/)
+# 3. [H-34 Pipe Network Energy Losses (User Manual)](http://54.243.252.9/ce-3105-webroot/7-user-manuals/H34-PipeworkEnergyLosses.pdf)
 
 # In[ ]:
 

@@ -349,6 +349,7 @@
 # 3. [Hydraulic Jump Calculator](https://www.omnicalculator.com/physics/hydraulic-jump)
 # 4. [V-Notch Weir Calculator](http://ponce.sdsu.edu/onlineveenotchdescription.html)
 # <!--5. [Example Report](http://54.243.252.9/ce-3105-webroot/2-Exercises/laboratory8/GoBy8.pdf)-->
+# 5. [B-16 Hydraulic Demonstration Channel (User Manual)](http://54.243.252.9/ce-3105-webroot/7-user-manuals/ModelB-16-HydraulicDemonstrationChannel.pdf)
 # 
 
 # In[ ]:
