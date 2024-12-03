@@ -1,0 +1,90 @@
+#!/usr/bin/env python
+# coding: utf-8
+
+# # Why a Laboratory Experience?
+# 
+# put the ABET outcome here
+# 
+# 
+
+# :::{note}
+# The real value of a laboratory experience is summarized in a learning strategy called the Feynman Technique which is summarized below.  When I was a drill sergeant in the U.S. Army, we used a doctrine called "Method of Learning Concept", which is essentially the same thing - outcomes were easier to define (Mission Accomplishmet and Retention of Assets (aka not becoming unalive in the process of mission accomplishment).
+# :::
+# 
+# ## Feynman Learning Technique
+# 
+# The Feynman Technique is a learning strategy named after the famous physicist Richard Feynman, who was known for his ability to explain complex concepts in simple, easy-to-understand terms. This technique emphasizes understanding through simplification and self-explanation. It consists of four key steps designed to help you deeply understand a topic and identify any gaps in your knowledge. Here’s how it works:
+# 
+# 1. **Choose a Concept:** Start by selecting the topic or concept you want to learn. It could be anything from a scientific principle to a technical skill or a theory. The idea is to focus on something specific that you wish to master.
+# 
+# 2. **Teach it to the President (aka Child):** Pretend you're teaching the concept to someone who has no background knowledge, such as a child. The goal is to break the concept down into the simplest possible terms. Avoid jargon or overly technical language. By doing this, you force yourself to clarify your understanding. If you can explain a complex idea in simple language, it's a sign you truly understand it.
+# 
+# 3. **Identify Gaps and Go Back to the Source:** As you attempt to explain the concept, you may discover areas where your explanation feels incomplete or confusing. These are the gaps in your understanding. When you find them, return to the source material—books, notes, or any reference—and review the sections you don't fully grasp. The key is to refine your understanding by identifying and filling these gaps.
+# 
+# 4. **Simplify and Use Analogies:** Once you’ve filled the gaps, simplify your explanation again, but this time refine it by making it even clearer. Use analogies and comparisons to make the concept easier to understand. Analogies are powerful tools that help relate complex ideas to familiar concepts, making them more accessible.
+# 
+# ### Why the Feynman Technique seems to Work:
+# 
+# - Active Learning: This technique encourages active engagement with the material rather than passive consumption. You are not just reading or listening—you are breaking down, teaching, and critically analyzing the concept.
+# - Understanding vs. Memorization: The Feynman Technique forces you to truly understand a concept rather than memorize it. If you can’t explain it simply, it shows you haven’t fully grasped it yet.
+# - Identification of Weaknesses: By trying to explain the topic in simple terms, you quickly uncover any parts of the material that you don’t understand well.
+# - Effective Communication: The technique not only helps you learn but also improves your ability to communicate ideas clearly to others, a skill valuable in teaching, leadership, and many professional fields.
+# 
+# **Example:**
+# 
+# Suppose you’re trying to learn Newton's First Law of Motion. Using the Feynman Technique, you would start by writing out the law in your own words as if explaining it to a child: “Objects keep moving or stay still unless something pushes or pulls them.” If you struggle with this simplification, you would go back to the material to clarify your understanding, then return and explain it more clearly.
+# 
+# The Feynman Technique is a practical, powerful method for mastering difficult subjects and can be applied to almost any area of study. 
+# 
+# :::{note}
+# When I was a drill sergeant in the U.S. Army, we used a doctrine at the time called "Method of Learning Concept", which is essentially the same thing - outcomes were easier to define (Mission Accomplishmet and Retention of Assets (aka not becoming unalive in the process of mission accomplishment).
+# :::
+
+# ## U.S. Army’s Method of Learning Concept Overview
+# 
+# The U.S. Army’s Method of Learning Concept (also called Crawl-Walk-Run method) was designed to train soldiers for the practical application of skills and knowledge in real-world scenarios. The focus is on incremental learning through experience and repetition, combined with immediate feedback. It is a structured approach often used in the military and emphasizes action-based learning in phases:
+# 
+# - Crawl Phase (Basic Learning): Introduce the material, concept, or skill in a simplified form. Soldiers receive theoretical knowledge, often through briefings, instruction, or reading materials. Learning is foundational, focused on understanding the basics before moving on to more complex elements.
+# 
+# - Walk Phase (Hands-On Practice): Transition to practical application and drills. Soldiers practice skills or apply knowledge under controlled conditions. Mistakes are expected, and learning happens through hands-on experience with increasing difficulty. Instructors provide feedback and correct errors as they happen.
+# 
+# - Run Phase (Full Application): Apply the learned skills or knowledge in real-time, high-pressure environments (simulated combat or field exercises). Soldiers must demonstrate competence and adaptability. The goal is to prepare them for real-world scenarios where the learned concepts will be applied under stress.
+# 
+# ### Comparison
+# 
+# |Aspect|Feynman Technique|U.S. Army’s Method of Learning Concept|
+# |---|---|---|
+# |Focus|Conceptual clarity by simplifying and teaching complex ideas in a way that anyone can understand.|Practical skills and readiness, learning through phased progression and real-world application.|
+# |Learning Style|Self-directed, with an emphasis on self-explanation and refining understanding by teaching others or oneself.|Instructor-led, action-based with structured phases: basic learning, practical application, and real-world simulation.|
+# |Application|Best suited for mastering intellectual, academic, or technical knowledge by focusing on why and how something works.|Designed for learning skills and procedures in a stepwise fashion, with increasing complexity, leading to readiness for real-world execution (e.g., military or high-stakes environments).|
+# |Feedback Mechanism|Feedback occurs when learners identify gaps in their own understanding during the teaching process.|Immediate, instructor-provided feedback during hands-on practice. Mistakes are corrected as they occur.|
+# |Learning Pace|Flexible, with learners progressing at their own pace by revisiting material as needed.|Structured, with clear progression through phases (crawl-walk-run), often tied to a timeline or mission readiness.|
+# |Learning Outcome|Learners can explain concepts clearly and simply, which signifies true mastery of the topic.|Learners can apply skills effectively in stressful or practical situations, often preparing for real-world action.|
+# |Key Strength|Identifying gaps in knowledge through the act of teaching, leading to deep understanding.|Building practical competence by transitioning from theory to real-world application under pressure.|
+# 
+# Which is Better for Learning?
+# 
+# - The Feynman Technique is particularly useful for academic and intellectual fields where deep understanding and explanation of complex ideas are necessary. It’s excellent for self-learners or people studying theoretical or technical subjects.
+# 
+# - The Army’s Method is designed for learning practical, hands-on skills in high-stakes environments. It ensures that the learner can execute tasks effectively in real-world conditions, which is critical for fields requiring physical performance, such as military, engineering operations, or emergency response.
+# 
+# :::{admonition} Summary
+# 
+# The Feynman Technique is considered more suited for learning abstract or conceptual material, where explaining and teaching lead to deeper understanding. In contrast, the U.S. Army’s Method emphasizes skill acquisition and real-world application through incremental practice, feedback, and full-speed execution. Both methods are powerful, but their effectiveness depends on the type of learning goal—whether you're trying to understand a concept intellectually or master a skill through action.
+# 
+# :::
+
+# ## References
+# 
+# 1. [Reyes, Englevert & Blanco, Ron & Doroon, Defanee & Limana, Jay & Torcende, Ana. (2021). Feynman Technique as a Heutagogical Learning Strategy for Independent and Remote Learning. Recoletos Multidisciplinary Research Journal. 9. 1-13.](http://54.243.252.9/ce-4200-webroot/ce-4200-notes/lessons/lifelonglearning/958-ArticleText-5090-2-10-20220129.pdf)
+# 
+# 2. [Field Manual 7-0 "Training The Force" Headquarters Department of the Army Washington, DC, 22 October 2002](http://54.243.252.9/ce-4200-webroot/ce-4200-notes/lessons/lifelonglearning/FM7-0(02).pdf)
+# 
+# 3. [Training Fact Sheet "Leveraging training environments to maximize training value" Training Management Directorate: Combined Arms Center-Training February 23, 2023](https://www.army.mil/article/264228/training_fact_sheet_leveraging_training_environments_to_maximize_training_value)
+# 
+
+# In[ ]:
+
+
+
+

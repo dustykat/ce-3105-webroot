@@ -1,7 +1,7 @@
 # Book settings
 # Learn more at https://jupyterbook.org/customize/config.html
 
-title: CE 3105 Notebook
+title: Mechanics of Fluids Laboratory
 author: Theodore G. Cleveland (just the JupyterBook parts)
 copyright: "2024"  # Copyright year to be placed in the footer
 logo: waterjet.png
@@ -9,7 +9,9 @@ logo: waterjet.png
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
 execute:
-  execute_notebooks: force
+#  execute_notebooks: force
+  execute_notebooks: cache
+  timeout: -1
 
 # Define the name of the latex output file for PDF builds
 latex:

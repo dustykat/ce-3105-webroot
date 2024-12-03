@@ -1,7 +1,7 @@
 # Book settings
 # Learn more at https://jupyterbook.org/customize/config.html
 
-title: CE 3105 Notebook
+title: Mechanics of Fluids Laboratory
 author: Theodore G. Cleveland (just the JupyterBook parts)
 copyright: "2024"  # Copyright year to be placed in the footer
 logo: waterjet.png

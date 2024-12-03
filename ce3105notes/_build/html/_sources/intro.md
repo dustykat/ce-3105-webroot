@@ -18,7 +18,7 @@ Open Educational Resources (OERs) are any type of educational materials that are
 :::
 
 ## Course Syllabus
-The formal syllabus is located at [http://54.243.252.9/ce-3105-webroot/0-Syllabus/ce-3105-syllabus-2024-1.html](http://54.243.252.9/ce-3105-webroot/0-Syllabus/ce-3105-syllabus-2024-1.html).
+A formal syllabus is located at [http://54.243.252.9/ce-3105-webroot/0-Syllabus/ce-3105-syllabus-2025-1.html](http://54.243.252.9/ce-3105-webroot/0-Syllabus/ce-3105-syllabus-2025-1.html).
 
 :::{note}
 A working copy of the syllabus appears directly in the JupyterBook.

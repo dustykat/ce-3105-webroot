@@ -1,0 +1,71 @@
+Learning Methods in Fluid Mechanics Lab
+
+    What is the core principle of the Feynman Method for learning?
+    A. Memorization of facts.
+    B. Explaining concepts simply in your own words.
+    C. Repetition of experiments.
+    D. Writing detailed reports on experiments.
+        Answer: B. Explaining concepts simply in your own words.
+
+    How does the U.S. Army Method of Learning, also known as "Crawl-Walk-Run," typically progress?
+    A. Start with complex tasks and simplify them.
+    B. Perform tasks rapidly without explanation.
+    C. Begin with basic tasks, practice gradually, and increase difficulty as understanding improves.
+    D. Focus solely on theory before moving to practical applications.
+        Answer: C. Begin with basic tasks, practice gradually, and increase difficulty as understanding improves.
+
+    In the context of a fluid mechanics lab, which part of the experiment process aligns with the Feynman Method’s step of "teaching the concept"?
+    A. Conducting the experiment without supervision.
+    B. Explaining the underlying principles of the experiment in simple terms during the lab report or discussion.
+    C. Repeating the experiment until the results are consistent.
+    D. Completing the experiment faster each time.
+        Answer: B. Explaining the underlying principles of the experiment in simple terms during the lab report or discussion.
+
+    Which learning stage of the U.S. Army Method is represented when students first read the lab instructions and theoretical background?
+    A. Run
+    B. Walk
+    C. Crawl
+    D. Jump
+        Answer: C. Crawl
+
+    Why is the "Walk" phase in the U.S. Army Method important in a fluid mechanics lab course?
+    A. It involves independent application of concepts with no instructor guidance.
+    B. It ensures students apply theoretical knowledge to hands-on tasks with instructor support.
+    C. It focuses on redoing the experiment multiple times.
+    D. It introduces complex equations without practical tasks.
+        Answer: B. It ensures students apply theoretical knowledge to hands-on tasks with instructor support.
+
+    In the Feynman Method, what does it mean when students identify “gaps” in their understanding during a fluid mechanics experiment?
+    A. They find errors in the experiment setup.
+    B. They recognize areas where they cannot clearly explain the physics behind the experiment.
+    C. They are missing pieces of equipment.
+    D. They don’t have enough data to complete their report.
+        Answer: B. They recognize areas where they cannot clearly explain the physics behind the experiment.
+
+    Which of the following describes the "Run" phase in the U.S. Army Method of Learning within a fluid mechanics lab course?
+    A. Students perform complex experiments independently with minimal guidance.
+    B. Students begin the experiment without understanding the theory behind it.
+    C. Students replicate the same experiment without improving their approach.
+    D. Students focus entirely on theoretical questions without practical application.
+        Answer: A. Students perform complex experiments independently with minimal guidance.
+
+    How does repeating an experiment in a fluid mechanics lab reflect a principle of the Feynman Method?
+    A. It emphasizes memorization of steps.
+    B. It reinforces understanding by identifying and correcting mistakes during the repetition process.
+    C. It focuses on perfecting the experimental setup.
+    D. It is solely for creating identical results.
+        Answer: B. It reinforces understanding by identifying and correcting mistakes during the repetition process.
+
+    Which aspect of the U.S. Army "Crawl-Walk-Run" approach ensures students are fully prepared before attempting complex fluid mechanics experiments?
+    A. Immediate focus on difficult tasks.
+    B. Structured progression from simple to complex tasks, with guidance.
+    C. Encouraging students to perform without a written procedure.
+    D. Removing all instructor support early on.
+        Answer: B. Structured progression from simple to complex tasks, with guidance.
+
+    How does a well-written lab report in fluid mechanics serve as a tool for applying the Feynman Method?
+    A. It allows students to memorize formulas for future exams.
+    B. It helps students solidify their understanding by explaining their work clearly and simply.
+    C. It encourages students to repeat data collection multiple times.
+    D. It focuses on listing equipment used during the experiment.
+        Answer: B. It helps students solidify their understanding by explaining their work clearly and simply.

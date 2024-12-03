@@ -1,0 +1,36 @@
+Quiz: Laboratory Reports in Fluid Mechanics
+
+    What is the main purpose of writing a laboratory report in fluid mechanics?
+    A. To practice technical writing skills.
+    B. To summarize observations made during the experiment.
+    C. To communicate the objectives, methodology, results, and conclusions of an experiment.
+    D. To compare laboratory techniques with those used in industry.
+        Answer: C. To communicate the objectives, methodology, results, and conclusions of an experiment.
+
+    Which section of a fluid mechanics laboratory report should provide the detailed steps taken during the experiment?
+    A. Introduction
+    B. Results
+    C. Methodology (or Procedure)
+    D. Conclusion
+        Answer: C. Methodology (or Procedure)
+
+    What is the role of the “Discussion” section in a fluid mechanics laboratory report?
+    A. To summarize the data without interpretation.
+    B. To interpret the experimental results and compare them with theoretical expectations.
+    C. To introduce the objectives of the experiment.
+    D. To describe the equipment used.
+        Answer: B. To interpret the experimental results and compare them with theoretical expectations.
+
+    When plotting experimental data, what should be included to ensure clarity and proper interpretation of fluid mechanics results?
+    A. Labels for all axes, a descriptive title, and a legend (if applicable).
+    B. Only the experimental points without connecting lines.
+    C. Just the axes labels, since a title is not necessary.
+    D. A complex title with multiple variables.
+        Answer: A. Labels for all axes, a descriptive title, and a legend (if applicable).
+
+    What is an essential aspect of the “Conclusion” section in a fluid mechanics laboratory report?
+    A. Repeating the methodology.
+    B. Restating the objective word-for-word.
+    C. Summarizing the key findings, addressing whether the experiment’s objectives were met, and suggesting potential improvements.
+    D. Providing extensive background on fluid mechanics principles.
+        Answer: C. Summarizing the key findings, addressing whether the experiment’s objectives were met, and suggesting potential improvements.

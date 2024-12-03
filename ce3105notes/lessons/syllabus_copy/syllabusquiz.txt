@@ -1,0 +1,87 @@
+###
+Question 	
+
+The URL to examine the syllabus is
+Answer 	
+Question 1 - Correct Answer1
+
+http://54.243.252.9/ce-3105-webroot/0-Syllabus/ce-3105-syllabus-2023-1.html
+
+http://54.243.252.9/ce-3105-webroot/ce3105notes/_build/html/lessons/laboratory0.html
+
+https://us-east-1.console.aws.amazon.com/console/home?region=us-east-1#
+
+https://75.3.84.227:8000/user/sensei/lab?
+###
+According to the syllabus, the total number of laboratory experiments (days you are physically in the laboratory) is
+Answer 	
+Question 2 - Correct Answer1
+
+*8
+
+7
+
+6
+
+5
+###
+According to the syllabus, the number of weeks where no laboratory is scheduled is
+Answer 	
+Question 3 - Correct Answer1
+
+*8
+
+7
+
+6
+
+5
+###
+Is the assertion below true or false:
+
+There is a laboratory scheduled the week of April 10, 2023
+Answer 	
+	True
+Question 4 - Correct Answer - False 	False
+###
+Is the assertion below true or false:
+
+There is a laboratory scheduled the week of February 15, 2023
+Answer 	
+	True
+Question 5 - Correct Answer - False 	False
+###
+Is the assertion below true or false:
+
+There is no laboratory scheduled the week of March 13, 2023
+Answer 	
+Question 6 - Correct Answer - True 	True
+	False
+###
+Is the assertion below true or false:
+
+The first homework assignment is Laboratory 1 Report due week of February 6, 2023
+Answer 	
+	True
+Question 7 - Correct Answer - False 	False
+###
+Is the assertion below true or false:
+
+The last date to submit laboratory reports and effort sheets for any grade (with late penalty) is 2 May 2023.
+Answer 	
+Question 8 - Correct Answer - True 	True
+	False
+###
+Based on the syllabus, is the assertion below true or false?
+
+Late laboratory reports are accepted but incur a substantial penalty.
+Answer 	
+Question 9 - Correct Answer - True 	True
+	False
+###
+Based on the instructor notes (http://54.243.252.9/ce-3105-webroot/ce3105notes/_build/html/lessons/laboratory0.html), is the assertion below true?
+
+Laboratory reports must be submitted by each team member.
+Answer 	
+Question 10 - Correct Answer - True 	True
+	False

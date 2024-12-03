@@ -1,0 +1,92 @@
+Laboratory Procedure: Estimating Liquid Viscosity Using Stokes’ Law
+Objective
+
+To estimate the dynamic viscosity (μμ) of an unknown liquid using Stokes’ Law by observing the terminal velocity of small spheres dropped into a tall column of the liquid.
+Materials
+
+    Tall transparent column (e.g., graduated cylinder or custom tube with a minimum height of 50 cm)
+    Small spheres of known radius and density (e.g., steel, glass, or plastic beads)
+    Liquids for testing (labeled as A, B, C, D):
+        Water
+        Brine (saltwater)
+        Glycerine
+        Chilled corn syrup
+    Calipers or micrometer (to measure sphere diameter accurately)
+    Precision scale (to measure sphere mass, if density is unknown)
+    Thermometer (to measure liquid temperature)
+    Stopwatch (for time measurement)
+    Tongs or tweezers (for handling spheres)
+    Data recording sheet
+
+Theory
+
+Stokes' Law relates the terminal velocity (vtvt​) of a sphere moving through a viscous fluid to the fluid’s viscosity:
+vt=29⋅r2(ρs−ρl)gμ
+vt​=92​⋅μr2(ρs​−ρl​)g​
+
+Where:
+
+    vtvt​: Terminal velocity of the sphere (m/s)
+    rr: Radius of the sphere (m)
+    ρsρs​: Density of the sphere (kg/m³)
+    ρlρl​: Density of the liquid (kg/m³)
+    gg: Acceleration due to gravity (9.81 m/s29.81m/s2)
+    μμ: Dynamic viscosity of the liquid (Pa·s)
+
+Rearranging to solve for viscosity:
+μ=29⋅r2(ρs−ρl)gvt
+μ=92​⋅vt​r2(ρs​−ρl​)g​
+Procedure
+
+    Preparation
+        Label the liquids as A, B, C, and D.
+        Fill the tall column with one of the test liquids to a height of at least 50 cm.
+        Allow the liquid to settle, ensuring no bubbles or disturbances.
+
+    Sphere Selection and Measurement
+        Select small spheres of known density (ρsρs​) and measure their diameter using calipers or a micrometer. Record the radius (rr).
+        Measure the mass of each sphere, if needed, to verify density.
+
+    Liquid Temperature
+        Measure and record the temperature of the liquid using a thermometer, as viscosity varies with temperature.
+
+    Dropping the Sphere
+        Gently release a sphere into the center of the liquid column to minimize wall effects and turbulence.
+        Observe the sphere’s motion. Once it reaches terminal velocity (steady speed), start timing the descent over a measured vertical distance.
+
+    Timing and Distance
+        Mark the starting and ending points of the measurement zone on the column.
+        Use a stopwatch to measure the time (tt) taken for the sphere to traverse the distance (dd) between the marks.
+        Repeat the measurement three times for each sphere-liquid combination to ensure accuracy.
+
+    Repeat for All Liquids
+        Clean and dry the spheres between tests to prevent cross-contamination.
+        Repeat steps 4 and 5 for each liquid.
+
+    Data Recording
+        Record tt, dd, rr, and liquid temperature for each trial.
+        Use the known densities of the liquids (ρlρl​) and spheres (ρsρs​) for calculations.
+
+Data Analysis
+
+    Calculate Terminal Velocity (vtvt​):
+    vt=dt
+    vt​=td​
+
+    Estimate Liquid Viscosity (μμ): Substitute vtvt​, rr, ρsρs​, and ρlρl​ into the viscosity equation.
+
+    Compare Results: Match the calculated viscosities with reference values for water, brine, glycerine, and chilled corn syrup to identify the liquids.
+
+Safety Notes
+
+    Handle all liquids with care to avoid spills or contamination.
+    Use tongs or tweezers to handle spheres, especially when using chilled corn syrup.
+    Clean up spills immediately to prevent slips.
+
+Deliverables
+
+    A lab report including:
+        Raw data and calculated viscosities
+        Identification of the liquids based on viscosity
+        Discussion of sources of error (e.g., turbulence, temperature variation)
+        Comparison of experimental results with theoretical/reference values
