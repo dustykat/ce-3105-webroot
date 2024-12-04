@@ -1,0 +1,1054 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Fluid Flow and Vane Interaction &#8212; Mechanics of Fluids Laboratory</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'lessons/laboratory6/Lab 6 - solution';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/waterjet.png" class="logo__image only-light" alt="Mechanics of Fluids Laboratory - Home"/>
+    <script>document.write(`<img src="../../_static/waterjet.png" class="logo__image only-dark" alt="Mechanics of Fluids Laboratory - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    CE 3105 Mechanics of Fluids Laboratory
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../syllabus_copy/ce-3105-syllabus-2025-1.html">Syllabus CE 3105</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../instruments/instruments.html">Equipment Inventory</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../laboratory0/feynman/feynman.html">Laboratory 0 -  Background</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../laboratory0/reports/reports.html">Laboratory Reports</a></li>
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../laboratory0/safety/safety_training.html">Safety Considerations</a></li>
+
+
+
+
+
+
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../laboratory1/laboratory1.html">Laboratory 1 - Fluid Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../laboratory2/laboratory2.html">2. Hydrostatic Forces and Bouyancy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../laboratory3/laboratory3.html">3. Flow Measurement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../laboratory4/laboratory4.html">4. Pipe Friction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../laboratory5/laboratory5.html">5. Fitting (Minor) Losses in Pipe Systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="laboratory6.html">6. Momentum Transfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../laboratory7/laboratory7.html">7. Pump Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../laboratory8/laboratory8.html">8. Open Channel Flow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../laboratory9/laboratory9.html">Laboratory 9 - Pipeline Transients</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Flessons/laboratory6/Lab 6 - solution.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/lessons/laboratory6/Lab 6 - solution.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Fluid Flow and Vane Interaction</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Fluid Flow and Vane Interaction</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#comments">Comments</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="fluid-flow-and-vane-interaction">
+<h1>Fluid Flow and Vane Interaction<a class="headerlink" href="#fluid-flow-and-vane-interaction" title="Link to this heading">#</a></h1>
+<p>This section focuses on jet flows from a nozzle and interactions with a vane, which can be either flat (plate) or curved (hemispherical).</p>
+<p>The nozzle, with diameter <span class="math notranslate nohighlight">\(d\)</span>, directs the fluid flow onto the vane. The flow rate <span class="math notranslate nohighlight">\(Q\)</span> measures how much fluid passes through the nozzle in a given time. It is critical for determining the speed of the fluid when it hits the vane.</p>
+<ul class="simple">
+<li><p>We calculate the mean velocity <span class="math notranslate nohighlight">\(u\)</span> using the equation:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+u = \frac{4Q}{\pi d^2}
+\]</div>
+<ul class="simple">
+<li><p>As the fluid strikes the vane, its velocity changes, resulting in a deflected velocity <span class="math notranslate nohighlight">\(u_0\)</span>, calculated by:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+u_0 = \sqrt{u^2 - 2gs}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(g\)</span> is the gravitational acceleration and <span class="math notranslate nohighlight">\(s\)</span> is the distance from the nozzle to the vane.</p>
+<ul class="simple">
+<li><p>The momentum <span class="math notranslate nohighlight">\(J\)</span> of the fluid is found using:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+J = \dot{m} \cdot u_0
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\dot{m}\)</span> is the mass flow rate. This equation indicates the combined effect of the mass of the fluid and its velocity on the force exerted on the vane.</p>
+<ul class="simple">
+<li><p>Finally, the force <span class="math notranslate nohighlight">\(F\)</span> acting on the vane is described by:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+F = \frac{M \cdot g \cdot (a + y)}{a}
+\]</div>
+<p>This force is crucial for understanding how the vane will respond to the incoming fluid flow, as it depends on the mass of the vane <span class="math notranslate nohighlight">\(M\)</span>, gravitational acceleration <span class="math notranslate nohighlight">\(g\)</span>, the distance <span class="math notranslate nohighlight">\(a\)</span> from the pivot point to the vane, and <span class="math notranslate nohighlight">\(y\)</span>, the height of the fluid column.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LinearRegression</span>
+
+<span class="c1"># Constants</span>
+<span class="n">rho</span> <span class="o">=</span> <span class="mi">1000</span> <span class="o">*</span> <span class="mf">1e-09</span>  <span class="c1"># kg/mm^3</span>
+<span class="n">g</span> <span class="o">=</span> <span class="mf">9.81</span> <span class="o">*</span> <span class="mi">1000</span>     <span class="c1"># mm/s^2</span>
+<span class="n">diameter</span> <span class="o">=</span> <span class="mi">10</span>       <span class="c1"># mm  nozzle diameter</span>
+<span class="n">s</span> <span class="o">=</span> <span class="mi">35</span>              <span class="c1"># mm distance between nozzle-vane</span>
+<span class="n">Mass</span> <span class="o">=</span> <span class="mi">600</span><span class="o">/</span><span class="mi">1000</span>    <span class="c1"># (kg) the jockey mass</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">150</span>             <span class="c1"># mm vane-pivot distance</span>
+
+<span class="c1"># Data for the flat plate</span>
+<span class="c1"># Group 4</span>
+<span class="n">y1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">102</span><span class="p">,</span> <span class="mi">86</span><span class="p">,</span> <span class="mi">68</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="mi">19</span><span class="p">])</span>  <span class="c1"># mm</span>
+<span class="n">vol1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2000</span><span class="p">,</span> <span class="mi">2000</span><span class="p">,</span> <span class="mi">2000</span><span class="p">,</span> <span class="mi">2000</span><span class="p">,</span> <span class="mi">2000</span><span class="p">])</span>  <span class="c1"># mL</span>
+<span class="n">t1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">3.45</span><span class="p">,</span> <span class="mf">3.31</span><span class="p">,</span> <span class="mf">3.25</span><span class="p">],</span>
+                <span class="p">[</span><span class="mf">3.93</span><span class="p">,</span> <span class="mf">3.71</span><span class="p">,</span> <span class="mf">3.74</span><span class="p">],</span>
+                <span class="p">[</span><span class="mf">4.37</span><span class="p">,</span> <span class="mf">4.36</span><span class="p">,</span> <span class="mf">4.33</span><span class="p">],</span>
+                <span class="p">[</span><span class="mf">5.21</span><span class="p">,</span> <span class="mf">5.25</span><span class="p">,</span> <span class="mf">5.20</span><span class="p">],</span>
+                <span class="p">[</span><span class="mf">6.88</span><span class="p">,</span> <span class="mf">6.90</span><span class="p">,</span> <span class="mf">6.78</span><span class="p">]])</span>  <span class="c1"># seconds</span>
+
+<span class="c1"># Data for the hemispherical cup</span>
+<span class="n">y2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">188</span><span class="p">,</span> <span class="mi">140</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">20</span><span class="p">])</span>  
+<span class="n">vol2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2000</span><span class="p">,</span> <span class="mi">2000</span><span class="p">,</span> <span class="mi">2000</span><span class="p">,</span> <span class="mi">2000</span><span class="p">,</span> <span class="mi">2000</span><span class="p">])</span>
+<span class="n">t2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">3.53</span><span class="p">,</span> <span class="mf">3.55</span><span class="p">,</span> <span class="mf">3.66</span><span class="p">],</span>
+                <span class="p">[</span><span class="mf">3.78</span><span class="p">,</span> <span class="mf">3.98</span><span class="p">,</span> <span class="mf">4.18</span><span class="p">],</span>
+                <span class="p">[</span><span class="mf">4.98</span><span class="p">,</span> <span class="mf">4.75</span><span class="p">,</span> <span class="mf">4.93</span><span class="p">],</span>
+                <span class="p">[</span><span class="mf">6.68</span><span class="p">,</span> <span class="mf">6.25</span><span class="p">,</span> <span class="mf">6.58</span><span class="p">],</span>
+                <span class="p">[</span><span class="mf">9.49</span><span class="p">,</span> <span class="mf">9.36</span><span class="p">,</span> <span class="mf">9.54</span><span class="p">]])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">4</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="ne">----&gt; </span><span class="mi">4</span> <span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LinearRegression</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="c1"># Constants</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="n">rho</span> <span class="o">=</span> <span class="mi">1000</span> <span class="o">*</span> <span class="mf">1e-09</span>  <span class="c1"># kg/mm^3</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;sklearn&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">K_values</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">F_pred</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="c1"># Computation</span>
+<span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">vol</span><span class="p">,</span> <span class="n">time</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">plate</span><span class="o">=</span><span class="s2">&quot;plate&quot;</span><span class="p">):</span>
+    <span class="c1"># Compute mean flow rates</span>
+    <span class="n">t_mean</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># Mean time for each measurement</span>
+    <span class="n">vol_mm3</span> <span class="o">=</span> <span class="n">vol</span> <span class="o">*</span> <span class="mf">1e3</span>              <span class="c1"># Convert volume from mL to mm3</span>
+    <span class="n">q</span> <span class="o">=</span> <span class="n">vol_mm3</span> <span class="o">/</span> <span class="n">t_mean</span>               <span class="c1"># mm^3/s</span>
+
+    <span class="c1"># Mass flow rates</span>
+    <span class="n">m_dot</span> <span class="o">=</span> <span class="n">rho</span> <span class="o">*</span> <span class="n">q</span>                   <span class="c1"># kg/s</span>
+
+    <span class="c1"># Velocity</span>
+    <span class="n">u</span> <span class="o">=</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">q</span> <span class="o">/</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">diameter</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>   <span class="c1"># mm/s</span>
+
+    <span class="c1"># Deflected velocity</span>
+    <span class="n">u_0</span> <span class="o">=</span> <span class="p">[(</span><span class="n">i</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">g</span> <span class="o">*</span> <span class="n">s</span><span class="p">)</span><span class="o">**</span><span class="mf">0.5</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">u</span><span class="p">]</span>  <span class="c1"># mm/s</span>
+
+    <span class="c1"># velocity loss</span>
+    <span class="n">du</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">*</span> <span class="p">(</span><span class="n">u</span><span class="o">-</span><span class="n">u_0</span><span class="p">)</span> <span class="o">/</span> <span class="n">u</span>
+
+    <span class="c1"># The delivery momentum</span>
+    <span class="n">J</span> <span class="o">=</span> <span class="n">m_dot</span> <span class="o">*</span> <span class="n">u_0</span>
+
+    <span class="c1"># Force of the vane</span>
+    <span class="n">F</span> <span class="o">=</span> <span class="n">Mass</span> <span class="o">*</span> <span class="n">g</span> <span class="o">*</span> <span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="n">y</span><span class="p">)</span><span class="o">/</span><span class="n">a</span>
+
+    <span class="c1"># Fit a linear regression to F(J)</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">J</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">F</span><span class="p">)</span>  <span class="c1"># Reshape J for sklearn</span>
+    <span class="n">K</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">coef_</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># Get the slope (K)</span>
+    <span class="n">intercept</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">intercept_</span>  <span class="c1"># Get the intercept</span>
+
+    <span class="n">K_values</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">K</span><span class="p">)</span>  <span class="c1"># Store the slope</span>
+    <span class="n">F_pred</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">J</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)))</span>  <span class="c1"># Store predictions</span>
+
+    <span class="n">F_th</span> <span class="o">=</span> <span class="n">K</span> <span class="o">*</span> <span class="n">J</span> <span class="o">+</span> <span class="n">intercept</span>
+    
+    <span class="c1"># Let us plot F(J):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">J</span><span class="p">,</span> <span class="n">F</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;$F(J)$ for the </span><span class="si">{</span><span class="n">plate</span><span class="si">}</span><span class="s2"> vane&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">J</span><span class="p">,</span> <span class="n">F_pred</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;$</span><span class="se">\\</span><span class="s2">hat</span><span class="se">{{</span><span class="s2">F</span><span class="se">}}</span><span class="s2">(J)=</span><span class="si">{</span><span class="n">K</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">J+</span><span class="si">{</span><span class="n">intercept</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">$&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Momentum $J=</span><span class="se">\\</span><span class="s2">dot</span><span class="si">{m}</span><span class="se">\\</span><span class="s2">cdot u_0$ </span><span class="se">\n</span><span class="s2"> (kg·mm/s2)&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Force $F=</span><span class="se">\\</span><span class="s2">frac{M</span><span class="se">\\</span><span class="s2">cdot g </span><span class="se">\\</span><span class="s2">cdot (a+y)}</span><span class="si">{a}</span><span class="s2">$</span><span class="se">\n</span><span class="s2"> (kg.mm/s2)&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">plate</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span><span class="si">}</span><span class="s2"> Vane&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+    <span class="c1"># Print results with rounding</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2"> - Results for </span><span class="si">{</span><span class="n">plate</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span><span class="si">}</span><span class="s2"> vane:&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;---------------------------------------------&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  - The flow rates Q: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">q</span><span class="p">)</span><span class="si">}</span><span class="s2"> mm^3/s&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  - The mass flow rates Qm: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">m_dot</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span><span class="si">}</span><span class="s2"> kg/s&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  - Mean Velocity u: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">u</span><span class="p">)</span><span class="si">}</span><span class="s2"> mm/s&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  - Deflected Velocity u_0: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">u_0</span><span class="p">)</span><span class="si">}</span><span class="s2"> mm/s&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  - Momentum J: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">J</span><span class="p">)</span><span class="si">}</span><span class="s2"> kg·mm/s^2&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  - Force F: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">F</span><span class="p">)</span><span class="si">}</span><span class="s2"> kg.mm/s^2&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  - Theoretical Force F: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">F_th</span><span class="p">)</span><span class="si">}</span><span class="s2"> kg.mm/s^2&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;---------------------------------------------&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  - Linear Regression Slope (K): </span><span class="si">{</span><span class="n">K</span><span class="si">:</span><span class="s2">.2g</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  - Linear Regression Intercept: </span><span class="si">{</span><span class="n">intercept</span><span class="si">:</span><span class="s2">.2g</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;---------------------------------------------&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  - Velocity Loss in percentage: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">du</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;---------------------------------------------&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Execute the function for both configurations</span>
+<span class="n">solution</span><span class="p">(</span><span class="n">vol1</span><span class="p">,</span> <span class="n">t1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">plate</span><span class="o">=</span><span class="s2">&quot;plate&quot;</span><span class="p">)</span>
+<span class="n">solution</span><span class="p">(</span><span class="n">vol2</span><span class="p">,</span> <span class="n">t2</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="n">plate</span><span class="o">=</span><span class="s2">&quot;hemisphere&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/aa3ac73a55dac3bc7f6d9e2d9188d36d070029cecfb44f91b7cf0505d93f7a41.png" src="../../_images/aa3ac73a55dac3bc7f6d9e2d9188d36d070029cecfb44f91b7cf0505d93f7a41.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> - Results for Plate vane:
+---------------------------------------------
+  - The flow rates Q: [599401. 527241. 459418. 383142. 291829.] mm^3/s
+  - The mass flow rates Qm: [0.599 0.527 0.459 0.383 0.292] kg/s
+  - Mean Velocity u: [7632. 6713. 5849. 4878. 3716.] mm/s
+  - Deflected Velocity u_0: [7587. 6662. 5790. 4807. 3622.] mm/s
+  - Momentum J: [4547. 3512. 2660. 1842. 1057.] kg·mm/s^2
+  - Force F: [9888. 9261. 8554. 7534. 6632.] kg.mm/s^2
+  - Theoretical Force F: [10097.  9119.  8314.  7540.  6799.] kg.mm/s^2
+---------------------------------------------
+  - Linear Regression Slope (K): 0.95
+  - Linear Regression Intercept: 5.8e+03
+---------------------------------------------
+  - Velocity Loss in percentage: [0.59 0.76 1.01 1.45 2.52]
+---------------------------------------------
+</pre></div>
+</div>
+<img alt="../../_images/66c1d3581a3cbfd1a74de955f0a43d8c927a9302c3d601a1bb76b81b6e9a7e61.png" src="../../_images/66c1d3581a3cbfd1a74de955f0a43d8c927a9302c3d601a1bb76b81b6e9a7e61.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> - Results for Hemisphere vane:
+---------------------------------------------
+  - The flow rates Q: [558659. 502513. 409277. 307535. 211342.] mm^3/s
+  - The mass flow rates Qm: [0.559 0.503 0.409 0.308 0.211] kg/s
+  - Mean Velocity u: [7113. 6398. 5211. 3916. 2691.] mm/s
+  - Deflected Velocity u_0: [7065. 6344. 5145. 3827. 2560.] mm/s
+  - Momentum J: [3947. 3188. 2106. 1177.  541.] kg·mm/s^2
+  - Force F: [13263. 11380.  9418.  7848.  6671.] kg.mm/s^2
+  - Theoretical Force F: [13038. 11602.  9553.  7795.  6591.] kg.mm/s^2
+---------------------------------------------
+  - Linear Regression Slope (K): 1.9
+  - Linear Regression Intercept: 5.6e+03
+---------------------------------------------
+  - Velocity Loss in percentage: [0.68 0.84 1.27 2.27 4.86]
+---------------------------------------------
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">solution_us_customary</span><span class="p">(</span><span class="n">vol</span><span class="p">,</span> <span class="n">time</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">plate</span><span class="o">=</span><span class="s2">&quot;plate&quot;</span><span class="p">):</span>
+    <span class="c1"># Compute mean flow rates</span>
+    <span class="n">t_mean</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># Mean time for each measurement</span>
+    <span class="n">vol_mm3</span> <span class="o">=</span> <span class="n">vol</span> <span class="o">*</span> <span class="mf">1e3</span>              <span class="c1"># Convert volume from mL to mm3</span>
+    <span class="n">q</span> <span class="o">=</span> <span class="n">vol_mm3</span> <span class="o">/</span> <span class="n">t_mean</span>               <span class="c1"># mm^3/s</span>
+    <span class="n">q_cfs</span> <span class="o">=</span> <span class="n">q</span> <span class="o">*</span> <span class="mf">3.53147e-8</span>             <span class="c1"># Convert mm^3/s to cfs</span>
+
+    <span class="c1"># Mass flow rates in g/s</span>
+    <span class="n">m_dot_g</span> <span class="o">=</span> <span class="n">rho</span> <span class="o">*</span> <span class="n">q</span>                 <span class="c1"># g/s</span>
+    <span class="n">m_dot_lb</span> <span class="o">=</span> <span class="n">m_dot_g</span> <span class="o">*</span> <span class="mf">0.00220462</span>   <span class="c1"># Convert to lb/s</span>
+
+    <span class="c1"># Velocity in mm/s and ft/s</span>
+    <span class="n">u_mm_s</span> <span class="o">=</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">q</span> <span class="o">/</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">diameter</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>  <span class="c1"># mm/s</span>
+    <span class="n">u_ft_s</span> <span class="o">=</span> <span class="n">u_mm_s</span> <span class="o">*</span> <span class="mf">0.00328084</span>            <span class="c1"># ft/s</span>
+
+    <span class="c1"># Deflected velocity in mm/s and ft/s</span>
+    <span class="n">u_0_mm_s</span> <span class="o">=</span> <span class="p">[(</span><span class="n">i</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">g</span> <span class="o">*</span> <span class="n">s</span><span class="p">)</span><span class="o">**</span><span class="mf">0.5</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">u_mm_s</span><span class="p">]</span>  <span class="c1"># mm/s</span>
+    <span class="n">u_0_ft_s</span> <span class="o">=</span> <span class="p">[</span><span class="n">vel</span> <span class="o">*</span> <span class="mf">0.00328084</span> <span class="k">for</span> <span class="n">vel</span> <span class="ow">in</span> <span class="n">u_0_mm_s</span><span class="p">]</span>      <span class="c1"># ft/s</span>
+
+    <span class="c1"># Velocity loss</span>
+    <span class="n">du</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">*</span> <span class="p">(</span><span class="n">u_mm_s</span> <span class="o">-</span> <span class="n">u_0_mm_s</span><span class="p">)</span> <span class="o">/</span> <span class="n">u_mm_s</span>
+
+    <span class="c1"># Delivery momentum in kg·mm/s and lb·ft/s</span>
+    <span class="n">J_kg_mm_s</span> <span class="o">=</span> <span class="n">m_dot_g</span> <span class="o">*</span> <span class="n">u_0_mm_s</span>
+    <span class="n">J_lb_ft_s</span> <span class="o">=</span> <span class="p">[</span><span class="n">momentum</span> <span class="o">*</span> <span class="mf">0.00723301</span> <span class="k">for</span> <span class="n">momentum</span> <span class="ow">in</span> <span class="n">J_kg_mm_s</span><span class="p">]</span>  <span class="c1"># Convert to lb·ft/s</span>
+
+    <span class="c1"># Force of the vane in kg·mm/s² and lb·ft/s²</span>
+    <span class="n">F_kg_mm_s2</span> <span class="o">=</span> <span class="n">Mass</span> <span class="o">*</span> <span class="n">g</span> <span class="o">*</span> <span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">y</span><span class="p">)</span> <span class="o">/</span> <span class="n">a</span>
+    <span class="n">F_lb_ft_s2</span> <span class="o">=</span> <span class="n">F_kg_mm_s2</span> <span class="o">*</span> <span class="mf">0.00723301</span>  <span class="c1"># Convert to lb·ft/s²</span>
+
+    <span class="c1"># Fit a linear regression to F_th vs F</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">F_lb_ft_s2</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">J_lb_ft_s</span><span class="p">)</span>  <span class="c1"># Fit F_th vs. F</span>
+    <span class="n">K</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">coef_</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># Get the slope (K)</span>
+    <span class="n">intercept</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">intercept_</span>  <span class="c1"># Get the intercept</span>
+
+    <span class="n">K_values</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">K</span><span class="p">)</span>  <span class="c1"># Store the slope</span>
+    <span class="n">F_pred</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">F_lb_ft_s2</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)))</span>  <span class="c1"># Store predictions</span>
+
+    <span class="c1"># Plotting F vs F_th in U.S. customary units</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">F_lb_ft_s2</span><span class="p">,</span> <span class="n">J_lb_ft_s</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;$F(J)$ for the </span><span class="si">{</span><span class="n">plate</span><span class="si">}</span><span class="s2"> vane&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">F_lb_ft_s2</span><span class="p">,</span> <span class="n">F_pred</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;$</span><span class="se">\\</span><span class="s2">hat</span><span class="se">{{</span><span class="s2">F</span><span class="se">}}</span><span class="s2">(J)=</span><span class="si">{</span><span class="n">K</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">J+</span><span class="si">{</span><span class="n">intercept</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">$&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Momentum $J=</span><span class="se">\\</span><span class="s2">dot</span><span class="si">{m}</span><span class="se">\\</span><span class="s2">cdot u_0$ </span><span class="se">\n</span><span class="s2"> (lb·ft/s)&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Force $F=</span><span class="se">\\</span><span class="s2">frac{M</span><span class="se">\\</span><span class="s2">cdot g </span><span class="se">\\</span><span class="s2">cdot (a+y)}</span><span class="si">{a}</span><span class="s2">$</span><span class="se">\n</span><span class="s2"> (lb·ft/s²)&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">plate</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span><span class="si">}</span><span class="s2"> Vane in U.S. Customary Units&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+    <span class="c1"># Print results with rounding</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2"> - Results for </span><span class="si">{</span><span class="n">plate</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span><span class="si">}</span><span class="s2"> vane in U.S. Customary Units:&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;---------------------------------------------&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  - The flow rates Q: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">q_cfs</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">)</span><span class="si">}</span><span class="s2"> cfs&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  - The mass flow rates Qm: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">m_dot_lb</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">)</span><span class="si">}</span><span class="s2"> lb/s&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  - Mean Velocity u: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">u_ft_s</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="si">}</span><span class="s2"> ft/s&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  - Deflected Velocity u_0: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">u_0_ft_s</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="si">}</span><span class="s2"> ft/s&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  - Momentum J: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">J_lb_ft_s</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="si">}</span><span class="s2"> lb·ft/s&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  - Force F: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">F_lb_ft_s2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="si">}</span><span class="s2"> lb·ft/s²&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  - Theoretical Force F: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">F_pred</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="si">}</span><span class="s2"> lb·ft/s²&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;---------------------------------------------&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  - Linear Regression Slope (K): </span><span class="si">{</span><span class="n">K</span><span class="si">:</span><span class="s2">.2g</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  - Linear Regression Intercept: </span><span class="si">{</span><span class="n">intercept</span><span class="si">:</span><span class="s2">.2g</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;---------------------------------------------&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  - Velocity Loss in percentage: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">du</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;---------------------------------------------&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Execute the function for both configurations in US customary units</span>
+<span class="n">solution_us_customary</span><span class="p">(</span><span class="n">vol1</span><span class="p">,</span> <span class="n">t1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">plate</span><span class="o">=</span><span class="s2">&quot;plate&quot;</span><span class="p">)</span>
+<span class="n">solution_us_customary</span><span class="p">(</span><span class="n">vol2</span><span class="p">,</span> <span class="n">t2</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="n">plate</span><span class="o">=</span><span class="s2">&quot;hemisphere&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/181e41ec9271c7863db885a4d4d558f07631f4ff9dc84e92e8caa9f804e86986.png" src="../../_images/181e41ec9271c7863db885a4d4d558f07631f4ff9dc84e92e8caa9f804e86986.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> - Results for Plate vane in U.S. Customary Units:
+---------------------------------------------
+  - The flow rates Q: [0.0212 0.0186 0.0162 0.0135 0.0103] cfs
+  - The mass flow rates Qm: [0.00132 0.00116 0.00101 0.00084 0.00064] lb/s
+  - Mean Velocity u: [25.039 22.024 19.191 16.005 12.191] ft/s
+  - Deflected Velocity u_0: [24.891 21.856 18.998 15.772 11.884] ft/s
+  - Momentum J: [32.892 25.405 19.242 13.323  7.646] lb·ft/s
+  - Force F: [71.523 66.982 61.873 54.494 47.966] lb·ft/s²
+  - Theoretical Force F: [31.042 26.341 21.053 13.414  6.657] lb·ft/s²
+---------------------------------------------
+  - Linear Regression Slope (K): 1
+  - Linear Regression Intercept: -43
+---------------------------------------------
+  - Velocity Loss in percentage: [0.59 0.76 1.01 1.45 2.52]
+---------------------------------------------
+</pre></div>
+</div>
+<img alt="../../_images/1ce0eebbf5eda807dda012047fe557af360004e9b8c9cc85953a941b6d52a555.png" src="../../_images/1ce0eebbf5eda807dda012047fe557af360004e9b8c9cc85953a941b6d52a555.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> - Results for Hemisphere vane in U.S. Customary Units:
+---------------------------------------------
+  - The flow rates Q: [0.0197 0.0177 0.0145 0.0109 0.0075] cfs
+  - The mass flow rates Qm: [0.00123 0.00111 0.0009  0.00068 0.00047] lb/s
+  - Mean Velocity u: [23.337 20.991 17.097 12.847  8.828] ft/s
+  - Deflected Velocity u_0: [23.178 20.815 16.879 12.556  8.399] ft/s
+  - Momentum J: [28.547 23.059 15.23   8.513  3.913] lb·ft/s
+  - Force F: [95.932 82.309 68.118 56.765 48.25 ] lb·ft/s²
+  - Theoretical Force F: [29.345 22.181 14.718  8.748  4.27 ] lb·ft/s²
+---------------------------------------------
+  - Linear Regression Slope (K): 0.53
+  - Linear Regression Intercept: -21
+---------------------------------------------
+  - Velocity Loss in percentage: [0.68 0.84 1.27 2.27 4.86]
+---------------------------------------------
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Group 3</span>
+
+<span class="c1"># Data for the flat plate</span>
+<span class="n">y1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">95</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">15</span><span class="p">])</span>  <span class="c1"># mm</span>
+<span class="n">vol1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2000</span><span class="p">,</span> <span class="mi">2000</span><span class="p">,</span> <span class="mi">2000</span><span class="p">,</span> <span class="mi">2000</span><span class="p">,</span> <span class="mi">2000</span><span class="p">])</span>  <span class="c1"># mL</span>
+<span class="n">t1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">3.33</span><span class="p">,</span> <span class="mf">3.63</span><span class="p">,</span> <span class="mf">3.53</span><span class="p">],</span>
+                <span class="p">[</span><span class="mf">3.76</span><span class="p">,</span> <span class="mf">3.73</span><span class="p">,</span> <span class="mf">3.81</span><span class="p">],</span>
+                <span class="p">[</span><span class="mf">4.36</span><span class="p">,</span> <span class="mf">4.58</span><span class="p">,</span> <span class="mf">4.53</span><span class="p">],</span>
+                <span class="p">[</span><span class="mf">4.94</span><span class="p">,</span> <span class="mf">4.99</span><span class="p">,</span> <span class="mf">4.89</span><span class="p">],</span>
+                <span class="p">[</span><span class="mf">7.53</span><span class="p">,</span> <span class="mf">7.26</span><span class="p">,</span> <span class="mf">7.48</span><span class="p">]])</span>  <span class="c1"># seconds</span>
+
+<span class="c1"># Data for the hemispherical cup</span>
+<span class="n">y2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">188</span><span class="p">,</span> <span class="mi">140</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">20</span><span class="p">])</span>  
+<span class="n">vol2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2000</span><span class="p">,</span> <span class="mi">2000</span><span class="p">,</span> <span class="mi">2000</span><span class="p">,</span> <span class="mi">2000</span><span class="p">,</span> <span class="mi">2000</span><span class="p">])</span>
+<span class="n">t2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">2.99</span><span class="p">,</span> <span class="mf">3.08</span><span class="p">,</span> <span class="mf">3.34</span><span class="p">],</span>
+                <span class="p">[</span><span class="mf">3.94</span><span class="p">,</span> <span class="mf">4.16</span><span class="p">,</span> <span class="mf">3.58</span><span class="p">],</span>
+                <span class="p">[</span><span class="mf">4.58</span><span class="p">,</span> <span class="mf">4.68</span><span class="p">,</span> <span class="mf">4.66</span><span class="p">],</span>
+                <span class="p">[</span><span class="mf">6.01</span><span class="p">,</span> <span class="mf">5.91</span><span class="p">,</span> <span class="mf">5.88</span><span class="p">],</span>
+                <span class="p">[</span><span class="mf">8.91</span><span class="p">,</span> <span class="mf">8.66</span><span class="p">,</span> <span class="mf">8.63</span><span class="p">]])</span>
+
+<span class="c1"># Execute the function for both configurations</span>
+<span class="n">solution</span><span class="p">(</span><span class="n">vol1</span><span class="p">,</span> <span class="n">t1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">plate</span><span class="o">=</span><span class="s2">&quot;plate&quot;</span><span class="p">)</span>
+<span class="n">solution</span><span class="p">(</span><span class="n">vol2</span><span class="p">,</span> <span class="n">t2</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="n">plate</span><span class="o">=</span><span class="s2">&quot;hemisphere&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/17f54bbde9cd82b5156872171267646684dfc07e93a84a63fbc425a5d92553d9.png" src="../../_images/17f54bbde9cd82b5156872171267646684dfc07e93a84a63fbc425a5d92553d9.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> - Results for Plate vane:
+---------------------------------------------
+  - The flow rates Q: [571973. 530973. 445434. 404858. 269421.] mm^3/s
+  - The mass flow rates Qm: [0.572 0.531 0.445 0.405 0.269] kg/s
+  - Mean Velocity u: [7283. 6761. 5671. 5155. 3430.] mm/s
+  - Deflected Velocity u_0: [7235. 6710. 5611. 5088. 3329.] mm/s
+  - Momentum J: [4138. 3563. 2499. 2060.  897.] kg·mm/s^2
+  - Force F: [9614. 8829. 8044. 7259. 6475.] kg.mm/s^2
+  - Theoretical Force F: [9499. 8943. 7917. 7492. 6369.] kg.mm/s^2
+---------------------------------------------
+  - Linear Regression Slope (K): 0.97
+  - Linear Regression Intercept: 5.5e+03
+---------------------------------------------
+  - Velocity Loss in percentage: [0.65 0.75 1.07 1.3  2.96]
+---------------------------------------------
+</pre></div>
+</div>
+<img alt="../../_images/fefac766bd1d1606cd6b10767aaeaf735eed9fff47438c2ce4bfd5981ea2d376.png" src="../../_images/fefac766bd1d1606cd6b10767aaeaf735eed9fff47438c2ce4bfd5981ea2d376.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> - Results for Hemisphere vane:
+---------------------------------------------
+  - The flow rates Q: [637620. 513699. 431034. 337079. 229008.] mm^3/s
+  - The mass flow rates Qm: [0.638 0.514 0.431 0.337 0.229] kg/s
+  - Mean Velocity u: [8118. 6541. 5488. 4292. 2916.] mm/s
+  - Deflected Velocity u_0: [8076. 6488. 5425. 4211. 2796.] mm/s
+  - Momentum J: [5149. 3333. 2338. 1419.  640.] kg·mm/s^2
+  - Force F: [13263. 11380.  9418.  7848.  6671.] kg.mm/s^2
+  - Theoretical Force F: [13578. 10851.  9359.  7980.  6811.] kg.mm/s^2
+---------------------------------------------
+  - Linear Regression Slope (K): 1.5
+  - Linear Regression Intercept: 5.8e+03
+---------------------------------------------
+  - Velocity Loss in percentage: [0.52 0.81 1.15 1.88 4.12]
+---------------------------------------------
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Group 2</span>
+
+<span class="c1"># Data for the flat plate</span>
+<span class="n">y1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">97</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">20</span><span class="p">])</span>  <span class="c1"># mm</span>
+<span class="n">vol1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2000</span><span class="p">,</span> <span class="mi">2000</span><span class="p">,</span> <span class="mi">2000</span><span class="p">,</span> <span class="mi">2000</span><span class="p">,</span> <span class="mi">2000</span><span class="p">])</span>  <span class="c1"># mL</span>
+<span class="n">t1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">3.33</span><span class="p">,</span> <span class="mf">3.14</span><span class="p">,</span> <span class="mf">3.18</span><span class="p">],</span>
+                <span class="p">[</span><span class="mf">3.61</span><span class="p">,</span> <span class="mf">3.54</span><span class="p">,</span> <span class="mf">3.83</span><span class="p">],</span>
+                <span class="p">[</span><span class="mf">4.21</span><span class="p">,</span> <span class="mf">4.05</span><span class="p">,</span> <span class="mf">4.30</span><span class="p">],</span>
+                <span class="p">[</span><span class="mf">5.10</span><span class="p">,</span> <span class="mf">5.15</span><span class="p">,</span> <span class="mf">5.18</span><span class="p">],</span>
+                <span class="p">[</span><span class="mf">6.70</span><span class="p">,</span> <span class="mf">6.73</span><span class="p">,</span> <span class="mf">6.55</span><span class="p">]])</span>  <span class="c1"># seconds</span>
+
+<span class="c1"># Data for the hemispherical cup</span>
+<span class="n">y2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">187</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">110</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="mi">40</span><span class="p">])</span>  
+<span class="n">vol2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2000</span><span class="p">,</span> <span class="mi">2000</span><span class="p">,</span> <span class="mi">2000</span><span class="p">,</span> <span class="mi">2000</span><span class="p">,</span> <span class="mi">2000</span><span class="p">])</span>
+<span class="n">t2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">3.11</span><span class="p">,</span> <span class="mf">3.18</span><span class="p">,</span> <span class="mf">3.23</span><span class="p">],</span>
+                <span class="p">[</span><span class="mf">3.35</span><span class="p">,</span> <span class="mf">3.20</span><span class="p">,</span> <span class="mf">3.88</span><span class="p">],</span>
+                <span class="p">[</span><span class="mf">4.30</span><span class="p">,</span> <span class="mf">4.13</span><span class="p">,</span> <span class="mf">3.81</span><span class="p">],</span>
+                <span class="p">[</span><span class="mf">5.30</span><span class="p">,</span> <span class="mf">5.13</span><span class="p">,</span> <span class="mf">4.96</span><span class="p">],</span>
+                <span class="p">[</span><span class="mf">6.50</span><span class="p">,</span> <span class="mf">6.43</span><span class="p">,</span> <span class="mf">6.56</span><span class="p">]])</span>
+
+<span class="c1"># Execute the function for both configurations</span>
+<span class="n">solution</span><span class="p">(</span><span class="n">vol1</span><span class="p">,</span> <span class="n">t1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">plate</span><span class="o">=</span><span class="s2">&quot;plate&quot;</span><span class="p">)</span>
+<span class="n">solution</span><span class="p">(</span><span class="n">vol2</span><span class="p">,</span> <span class="n">t2</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="n">plate</span><span class="o">=</span><span class="s2">&quot;hemisphere&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/6b80799f6a0ea3e0d3c5e55e7cb1f82d7ecf92690405759a84d81a4c27db6cf6.png" src="../../_images/6b80799f6a0ea3e0d3c5e55e7cb1f82d7ecf92690405759a84d81a4c27db6cf6.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> - Results for Plate vane:
+---------------------------------------------
+  - The flow rates Q: [621762. 546448. 477707. 388853. 300300.] mm^3/s
+  - The mass flow rates Qm: [0.622 0.546 0.478 0.389 0.3  ] kg/s
+  - Mean Velocity u: [7917. 6958. 6082. 4951. 3824.] mm/s
+  - Deflected Velocity u_0: [7873. 6908. 6026. 4881. 3733.] mm/s
+  - Momentum J: [4895. 3775. 2878. 1898. 1121.] kg·mm/s^2
+  - Force F: [9692. 9025. 8240. 7456. 6671.] kg.mm/s^2
+  - Theoretical Force F: [9809. 8909. 8189. 7401. 6776.] kg.mm/s^2
+---------------------------------------------
+  - Linear Regression Slope (K): 0.8
+  - Linear Regression Intercept: 5.9e+03
+---------------------------------------------
+  - Velocity Loss in percentage: [0.55 0.71 0.93 1.41 2.38]
+---------------------------------------------
+</pre></div>
+</div>
+<img alt="../../_images/4270c6c803e9f8737c25215ae70f2c69dc4d92916e34f61fae236cffeae118e4.png" src="../../_images/4270c6c803e9f8737c25215ae70f2c69dc4d92916e34f61fae236cffeae118e4.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> - Results for Hemisphere vane:
+---------------------------------------------
+  - The flow rates Q: [630252. 575264. 490196. 389864. 307850.] mm^3/s
+  - The mass flow rates Qm: [0.63  0.575 0.49  0.39  0.308] kg/s
+  - Mean Velocity u: [8025. 7324. 6241. 4964. 3920.] mm/s
+  - Deflected Velocity u_0: [7982. 7277. 6186. 4894. 3831.] mm/s
+  - Momentum J: [5030. 4186. 3032. 1908. 1179.] kg·mm/s^2
+  - Force F: [13224. 11772. 10202.  8633.  7456.] kg.mm/s^2
+  - Theoretical Force F: [13137. 11899. 10206.  8557.  7488.] kg.mm/s^2
+---------------------------------------------
+  - Linear Regression Slope (K): 1.5
+  - Linear Regression Intercept: 5.8e+03
+---------------------------------------------
+  - Velocity Loss in percentage: [0.53 0.64 0.89 1.4  2.26]
+---------------------------------------------
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Group 1</span>
+
+<span class="c1"># Data for the flat plate</span>
+<span class="n">y1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">100</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">20</span><span class="p">])</span>  <span class="c1"># mm</span>
+<span class="n">vol1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2000</span><span class="p">,</span> <span class="mi">2000</span><span class="p">,</span> <span class="mi">2000</span><span class="p">,</span> <span class="mi">2000</span><span class="p">,</span> <span class="mi">2000</span><span class="p">])</span>  <span class="c1"># mL</span>
+<span class="n">t1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">3.53</span><span class="p">,</span> <span class="mf">3.53</span><span class="p">,</span> <span class="mf">3.53</span><span class="p">],</span>
+                <span class="p">[</span><span class="mf">3.90</span><span class="p">,</span> <span class="mf">3.90</span><span class="p">,</span> <span class="mf">3.90</span><span class="p">],</span>
+                <span class="p">[</span><span class="mf">4.49</span><span class="p">,</span> <span class="mf">4.49</span><span class="p">,</span> <span class="mf">4.49</span><span class="p">],</span>
+                <span class="p">[</span><span class="mf">5.13</span><span class="p">,</span> <span class="mf">5.13</span><span class="p">,</span> <span class="mf">5.13</span><span class="p">],</span>
+                <span class="p">[</span><span class="mf">6.90</span><span class="p">,</span> <span class="mf">6.90</span><span class="p">,</span> <span class="mf">6.90</span><span class="p">]])</span>  <span class="c1"># seconds</span>
+
+<span class="c1"># Data for the hemispherical cup</span>
+<span class="n">y2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">184</span><span class="p">,</span> <span class="mi">130</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">20</span><span class="p">])</span>  
+<span class="n">vol2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1966.7</span><span class="p">,</span> <span class="mf">2033.3</span><span class="p">,</span> <span class="mf">2016.7</span><span class="p">,</span> <span class="mi">2000</span><span class="p">,</span> <span class="mf">1966.7</span><span class="p">])</span>
+<span class="n">t2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">3.14</span><span class="p">,</span> <span class="mf">3.14</span><span class="p">,</span> <span class="mf">3.14</span><span class="p">],</span>
+                <span class="p">[</span><span class="mf">4.03</span><span class="p">,</span> <span class="mf">4.03</span><span class="p">,</span> <span class="mf">4.03</span><span class="p">],</span>
+                <span class="p">[</span><span class="mf">4.57</span><span class="p">,</span> <span class="mf">4.57</span><span class="p">,</span> <span class="mf">3.57</span><span class="p">],</span>
+                <span class="p">[</span><span class="mf">6.36</span><span class="p">,</span> <span class="mf">6.36</span><span class="p">,</span> <span class="mf">6.36</span><span class="p">],</span>
+                <span class="p">[</span><span class="mf">9.27</span><span class="p">,</span> <span class="mf">9.27</span><span class="p">,</span> <span class="mf">9.27</span><span class="p">]])</span>
+
+<span class="c1"># Execute the function for both configurations</span>
+<span class="n">solution</span><span class="p">(</span><span class="n">vol1</span><span class="p">,</span> <span class="n">t1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">plate</span><span class="o">=</span><span class="s2">&quot;plate&quot;</span><span class="p">)</span>
+<span class="n">solution</span><span class="p">(</span><span class="n">vol2</span><span class="p">,</span> <span class="n">t2</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="n">plate</span><span class="o">=</span><span class="s2">&quot;hemisphere&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/4cd8eda16b88a7c2710a5e54568caa934620d569769dfd93e32cd336e48abad7.png" src="../../_images/4cd8eda16b88a7c2710a5e54568caa934620d569769dfd93e32cd336e48abad7.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> - Results for Plate vane:
+---------------------------------------------
+  - The flow rates Q: [566572. 512821. 445434. 389864. 289855.] mm^3/s
+  - The mass flow rates Qm: [0.567 0.513 0.445 0.39  0.29 ] kg/s
+  - Mean Velocity u: [7214. 6529. 5671. 4964. 3691.] mm/s
+  - Deflected Velocity u_0: [7166. 6477. 5611. 4894. 3596.] mm/s
+  - Momentum J: [4060. 3321. 2499. 1908. 1042.] kg·mm/s^2
+  - Force F: [9810. 9025. 8240. 7456. 6671.] kg.mm/s^2
+  - Theoretical Force F: [9811. 9034. 8170. 7549. 6639.] kg.mm/s^2
+---------------------------------------------
+  - Linear Regression Slope (K): 1.1
+  - Linear Regression Intercept: 5.5e+03
+---------------------------------------------
+  - Velocity Loss in percentage: [0.66 0.81 1.07 1.4  2.55]
+---------------------------------------------
+</pre></div>
+</div>
+<img alt="../../_images/b6cd490f8840bb70ea7451e6e1f06a6eaea7a48a6ffb824db7d7421359f4c35f.png" src="../../_images/b6cd490f8840bb70ea7451e6e1f06a6eaea7a48a6ffb824db7d7421359f4c35f.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> - Results for Hemisphere vane:
+---------------------------------------------
+  - The flow rates Q: [626338. 504541. 476011. 314465. 212157.] mm^3/s
+  - The mass flow rates Qm: [0.626 0.505 0.476 0.314 0.212] kg/s
+  - Mean Velocity u: [7975. 6424. 6061. 4004. 2701.] mm/s
+  - Deflected Velocity u_0: [7932. 6370. 6004. 3917. 2571.] mm/s
+  - Momentum J: [4968. 3214. 2858. 1232.  545.] kg·mm/s^2
+  - Force F: [13106. 10987.  9418.  7848.  6671.] kg.mm/s^2
+  - Theoretical Force F: [13078. 10545. 10031.  7683.  6692.] kg.mm/s^2
+---------------------------------------------
+  - Linear Regression Slope (K): 1.4
+  - Linear Regression Intercept: 5.9e+03
+---------------------------------------------
+  - Velocity Loss in percentage: [0.54 0.84 0.94 2.17 4.82]
+---------------------------------------------
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="comments">
+<h1>Comments<a class="headerlink" href="#comments" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p>Group 1: Missing results for the hemispherical vane. Momentum and forces are incorrect. (82)</p></li>
+<li><p>Group 2: Almost everything was correct except the forces, which misled the plot (linear regression fitting)  (95)</p></li>
+<li><p>Group 3: Made mistakes in the computation of forces, which misled the plot. Also, the fit was incorrect. Was supposed to fit a linear curve on the observation (F(J)). (92)</p></li>
+<li><p>Group 4: The forces are incorrect. The plot needed to be split up (one for the plate and another for the hemispherical vane). Font size for the table and significant digits is not the best. (90)</p></li>
+</ul>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./lessons/laboratory6"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Fluid Flow and Vane Interaction</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#comments">Comments</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Theodore G. Cleveland (just the JupyterBook parts)
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
