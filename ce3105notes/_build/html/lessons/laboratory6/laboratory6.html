@@ -1,316 +1,418 @@
 
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" data-content_root="../../" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <title>6. Momentum Transfer &#8212; Mechanics of Fluids Laboratory</title>
-    
-  <link href="../../_static/css/theme.css" rel="stylesheet" />
-  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    
-      
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
-    
-  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
-
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'lessons/laboratory6/laboratory6';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="7. Pump Performance" href="../laboratory7/laboratory7.html" />
     <link rel="prev" title="5. Fitting (Minor) Losses in Pipe Systems" href="../laboratory5/laboratory5.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
-    <div class="container-xl">
-      <div class="row">
-          
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../../index.html">
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="../../_static/waterjet.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">Mechanics of Fluids Laboratory</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../intro.html">
-   CE 3105 Mechanics of Fluids Laboratory
-  </a>
- </li>
+    
+    
+    <img src="../../_static/waterjet.png" class="logo__image only-light" alt="Mechanics of Fluids Laboratory - Home"/>
+    <script>document.write(`<img src="../../_static/waterjet.png" class="logo__image only-dark" alt="Mechanics of Fluids Laboratory - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    CE 3105 Mechanics of Fluids Laboratory
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../instruments/instruments.html">Equipment Inventory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../laboratory1/laboratory1.html">Laboratory 1 - Fluid Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../laboratory2/laboratory2.html">2. Hydrostatic Forces and Bouyancy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../laboratory3/laboratory3.html">3. Flow Measurement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../laboratory4/laboratory4.html">4. Pipe Friction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../laboratory5/laboratory5.html">5. Fitting (Minor) Losses in Pipe Systems</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">6. Momentum Transfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../laboratory7/laboratory7.html">7. Pump Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../laboratory8/laboratory8.html">8. Open Channel Flow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../laboratory9/laboratory9.html">Laboratory 9 - Pipeline Transients</a></li>
 </ul>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../syllabus_copy/ce-3105-syllabus-2025-1.html">
-   Syllabus CE 3105
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../instruments/instruments.html">
-   Laboratory Equipment Inventory/Description
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../laboratory0/feynman/feynman.html">
-   Why a Laboratory Experience?
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../laboratory0/reports/reports.html">
-   Laboratory Reports
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../laboratory0/safety/safety_training.html">
-   Evaluation of Safety Considerations
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../laboratory1/laboratory1.html">
-   1. Fluid Properties
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../laboratory2/laboratory2.html">
-   2. Hydrostatic Forces and Bouyancy
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../laboratory3/laboratory3.html">
-   3. Flow Measurement
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../laboratory4/laboratory4.html">
-   4. Pipe Friction
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../laboratory5/laboratory5.html">
-   5. Fitting (Minor) Losses in Pipe Systems
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   6. Momentum Transfer
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../laboratory7/laboratory7.html">
-   7. Pump Performance
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../laboratory8/laboratory8.html">
-   8. Open Channel Flow
-  </a>
- </li>
-</ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/lessons/laboratory6/laboratory6.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+</nav></div>
     </div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
-            <!-- Source interaction buttons -->
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Flessons/laboratory6/laboratory6.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
         
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
     </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Flessons/laboratory6/laboratory6.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
 </div>
 
-            <!-- Full screen (wrap in <a> to have style consistency -->
 
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
 
-            <!-- Launch buttons -->
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/lessons/laboratory6/laboratory6.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/lessons/laboratory6/laboratory6.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
     </div>
+  
 </div>
+</div>
+              
+              
 
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>6. Momentum Transfer</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div>
+                <h2> Contents </h2>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
+            <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#water-jets">
-   Water Jets
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#conservation-of-linear-momentum">
-   Conservation of Linear Momentum
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#experimental-set-up">
-   Experimental Set-Up
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#link-to-laboratory-document">
-   Link to Laboratory Document
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#references">
-   References
-  </a>
- </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#water-jets">Water Jets</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conservation-of-linear-momentum">Conservation of Linear Momentum</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experimental-set-up">Experimental Set-Up</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#link-to-laboratory-document">Link to Laboratory Document</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
 </ul>
-
             </nav>
         </div>
     </div>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
-              <div>
+
+              
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="momentum-transfer">
-<h1>6. Momentum Transfer<a class="headerlink" href="#momentum-transfer" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="water-jets">
-<h2>Water Jets<a class="headerlink" href="#water-jets" title="Permalink to this headline">¶</a></h2>
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="momentum-transfer">
+<h1>6. Momentum Transfer<a class="headerlink" href="#momentum-transfer" title="Link to this heading">#</a></h1>
+<section id="water-jets">
+<h2>Water Jets<a class="headerlink" href="#water-jets" title="Link to this heading">#</a></h2>
 <p>Moving fluid, in natural or artificial systems, may exert forces on objects in contact with it. To analyze fluid motion, a finite region of the fluid (control volume) is usually selected, and the gross effects of the flow, such as its force or torque on an object, is determined by calculating the net mass rate that flows into and out of the control volume. These forces can be determined, as in solid mechanics, by the use of Newton’s second law, or by the momentum equation. The force exerted by a jet of fluid on a flat or curve surface can be resolved by applying the momentum equation. The study of these forces is essential to the study of fluid mechanics and hydraulic machinery.</p>
 <p>Engineers and designers use the momentum equation to accurately calculate the force that moving fluid may exert on a solid body. For example, in hydropower plants, turbines are utilized to generate electricity. Turbines rotate due to force exerted by one or more water jets that are directed tangentially onto the turbine’s vanes or buckets. The impact of the water on the vanes generates a torque on the wheel, causing it to rotate and to generate electricity.</p>
 <p>The objective of this experiment is to investigate the reaction forces produced by the change in momentum of a fluid flow when a jet of water strikes a flat plate or a curved surface, and to compare the results from this experiment with the computed forces by applying the momentum equation.</p>
-</div>
-<div class="section" id="conservation-of-linear-momentum">
-<h2>Conservation of Linear Momentum<a class="headerlink" href="#conservation-of-linear-momentum" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="conservation-of-linear-momentum">
+<h2>Conservation of Linear Momentum<a class="headerlink" href="#conservation-of-linear-momentum" title="Link to this heading">#</a></h2>
 <p>To explain the magnitude and direction of liquid stream change after it hits a vane, Newton’s second law can be used to derive impulse momentum principle. For the horizontal vane below</p>
 <p><img alt="" src="../../_images/sketch.png" /></p>
 <p>A vertical jet of liquid is coming out of the nozzle with a velocity <span class="math notranslate nohighlight">\(u\)</span>, hitting the vane with velocity <span class="math notranslate nohighlight">\(u_0\)</span> and deflects at an angle <span class="math notranslate nohighlight">\(\beta\)</span> with the vertical axis with a velocity <span class="math notranslate nohighlight">\(u_1\)</span>. If the rate of flow is <span class="math notranslate nohighlight">\(\dot m\)</span> along the vertical axis, the rate of linear momentum entering the system is <span class="math notranslate nohighlight">\(\dot m~u_0\)</span>. The linear momentum leaving in the same direction is <span class="math notranslate nohighlight">\(\dot m~u_1cos(\beta)\)</span>.The force on the vane along the vertical axis on the vane is the rate of change of linear momentum:
@@ -322,24 +424,25 @@ $<span class="math notranslate nohighlight">\( F = \dot m (u_0-u_1 cos(\beta) )\
 <div class="math notranslate nohighlight">
 \[F \approx \dot m u_0(1-cos(\beta))\]</div>
 <p>Depending on the type of vane, theoretical force can be calculated using the above equation. The values are shown in the following table</p>
-<table class="colwidths-auto table">
+<div class="pst-scrollable-table-container"><table class="table">
 <thead>
-<tr class="row-odd"><th class="text-align:left head"><p>Vane Type</p></th>
-<th class="text-align:left head"><p>Angle (<span class="math notranslate nohighlight">\(\beta\)</span>)</p></th>
-<th class="text-align:left head"><p>Force</p></th>
+<tr class="row-odd"><th class="head text-left"><p>Vane Type</p></th>
+<th class="head text-left"><p>Angle (<span class="math notranslate nohighlight">\(\beta\)</span>)</p></th>
+<th class="head text-left"><p>Force</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-align:left"><p>Flat Plate</p></td>
-<td class="text-align:left"><p><span class="math notranslate nohighlight">\(\frac{\pi}{2}\)</span></p></td>
-<td class="text-align:left"><p><span class="math notranslate nohighlight">\(\dot m u_0\)</span></p></td>
+<tr class="row-even"><td class="text-left"><p>Flat Plate</p></td>
+<td class="text-left"><p><span class="math notranslate nohighlight">\(\frac{\pi}{2}\)</span></p></td>
+<td class="text-left"><p><span class="math notranslate nohighlight">\(\dot m u_0\)</span></p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:left"><p>Hemisphere</p></td>
-<td class="text-align:left"><p><span class="math notranslate nohighlight">\(\frac{\pi}{1}\)</span></p></td>
-<td class="text-align:left"><p><span class="math notranslate nohighlight">\(2\dot m u_0\)</span></p></td>
+<tr class="row-odd"><td class="text-left"><p>Hemisphere</p></td>
+<td class="text-left"><p><span class="math notranslate nohighlight">\(\frac{\pi}{1}\)</span></p></td>
+<td class="text-left"><p><span class="math notranslate nohighlight">\(2\dot m u_0\)</span></p></td>
 </tr>
 </tbody>
 </table>
+</div>
 <p>The momentum in the jet (at the nozzle) is</p>
 <div class="math notranslate nohighlight">
 \[J = \dot m u_0 = \rho Q u_0\]</div>
@@ -352,13 +455,13 @@ $<span class="math notranslate nohighlight">\( F = \dot m (u_0-u_1 cos(\beta) )\
 <div class="math notranslate nohighlight">
 \[F = \frac{M g (\alpha + y)}{\alpha} \]</div>
 <p><span class="math notranslate nohighlight">\(F\)</span> is determined by knowing the values of <span class="math notranslate nohighlight">\(M\)</span>, <span class="math notranslate nohighlight">\(a\)</span>, and <span class="math notranslate nohighlight">\(g\)</span>, amd measuring <span class="math notranslate nohighlight">\(y\)</span> for different flow rates.</p>
-</div>
-<div class="section" id="experimental-set-up">
-<h2>Experimental Set-Up<a class="headerlink" href="#experimental-set-up" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="experimental-set-up">
+<h2>Experimental Set-Up<a class="headerlink" href="#experimental-set-up" title="Link to this heading">#</a></h2>
 <p>The arrangement of the systems are shown below for the flat plate and hemispherical cup, respectively</p>
 <p><img alt="" src="../../_images/flatplate.png" /> <img alt="" src="../../_images/cupplate.png" /></p>
 <p>The experimental procedure is</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>Install the Flat Plate Vane</p></li>
 <li><p>Ensure the weight beam is balanced at the zero position</p></li>
 <li><p>Start the hydraulic bench and adjust flow (work from high flow to low flow)</p></li>
@@ -368,7 +471,7 @@ $<span class="math notranslate nohighlight">\( F = \dot m (u_0-u_1 cos(\beta) )\
 <li><p>Record distance, y, from the zero position</p></li>
 <li><p>Record the flow rate using the hydraulic bench</p></li>
 </ul>
-<ol class="simple">
+<ol class="arabic simple" start="5">
 <li><p>Change the hydraulic bench flow rate in relatively equal increments for 4 additional readings</p></li>
 </ol>
 <ul class="simple">
@@ -376,23 +479,23 @@ $<span class="math notranslate nohighlight">\( F = \dot m (u_0-u_1 cos(\beta) )\
 <li><p>Record the flow rate using the hydraulic bench for each trial</p></li>
 </ul>
 <p>Repeat steps 2-5 for the Hemispherical Cup Vane</p>
-</div>
-<div class="section" id="link-to-laboratory-document">
-<h2>Link to Laboratory Document<a class="headerlink" href="#link-to-laboratory-document" title="Permalink to this headline">¶</a></h2>
-<ol class="simple">
+</section>
+<section id="link-to-laboratory-document">
+<h2>Link to Laboratory Document<a class="headerlink" href="#link-to-laboratory-document" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
 <li><p><a class="reference external" href="http://54.243.252.9/ce-3105-webroot/2-Exercises/laboratory6/laboratory6.html">Laboratory 6 Tasklist</a></p></li>
 <li><p><a class="reference external" href="https://www.youtube.com/watch?v=ObcsCdlnIVM">Laboratory 6 Instructional Video by Dr. Uddameri</a></p></li>
 </ol>
-</div>
-<div class="section" id="references">
-<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h2>
 <!-- 1. [Example Laboratory Report](http://54.243.252.9/ce-3105-webroot/2-Exercises/laboratory6/GobyLabReport6.pdf)-->
-<ol class="simple">
+<ol class="arabic simple">
 <li><p><a class="reference external" href="http://54.243.252.9/ce-3105-webroot/7-user-manuals/H8-ImpactOfJet.pdf">H8-Impact of a Jet (user manual)</a></p></li>
 <li><p><a class="reference external" href="http://54.243.252.9/ce-3305-webroot/3-Readings/EFM-9.pdf">DF Elger, BC Williams, Crowe, CT and JA Roberson, Engineering Fluid Mechanics 10th edition, John Wiley &amp; Sons, Inc., 2013. <em>(Momentum Equation pp. 208-238)</em></a></p></li>
 </ol>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -406,7 +509,7 @@ $<span class="math notranslate nohighlight">\( F = \dot m (u_0-u_1 cos(\beta) )\
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./lessons/laboratory6"
         },
         predefinedOutput: true
@@ -414,56 +517,107 @@ $<span class="math notranslate nohighlight">\( F = \dot m (u_0-u_1 cos(\beta) )\
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-        
-            
 
-
-
-<div class='prev-next-bottom'>
-    
-    <div id="prev">
-        <a class="left-prev" href="../laboratory5/laboratory5.html" title="previous page">
-            <i class="prevnext-label fas fa-angle-left"></i>
-            <div class="prevnext-info">
-                <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">5. Fitting (Minor) Losses in Pipe Systems</p>
-            </div>
-        </a>
-    </div>
-     <div id="next">
-        <a class="right-next" href="../laboratory7/laboratory7.html" title="next page">
-            <div class="prevnext-info">
-                <p class="prevnext-label">next</p>
-                <p class="prevnext-title">7. Pump Performance</p>
-            </div>
-            <i class="prevnext-label fas fa-angle-right"></i>
-        </a>
-     </div>
-
-</div>
-        
-        </div>
-    </div>
-    <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By Theodore G. Cleveland (just the JupyterBook parts)<br/>
-        
-            &copy; Copyright 2024.<br/>
-      </p>
-    </div>
-  </footer>
-</main>
-
-
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../laboratory5/laboratory5.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">5. Fitting (Minor) Losses in Pipe Systems</p>
       </div>
-    </div>
-  
-  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+    </a>
+    <a class="right-next"
+       href="../laboratory7/laboratory7.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">7. Pump Performance</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#water-jets">Water Jets</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conservation-of-linear-momentum">Conservation of Linear Momentum</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experimental-set-up">Experimental Set-Up</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#link-to-laboratory-document">Link to Laboratory Document</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
   
+  <div class="footer-item">
+    
+<p class="component-author">
+By Theodore G. Cleveland (just the JupyterBook parts)
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

@@ -7,8 +7,9 @@ chapters:
 - file: lessons/syllabus_copy/ce-3105-syllabus-2025-1
 - file: lessons/instruments/instruments
 - file: lessons/laboratory0/feynman/feynman
-- file: lessons/laboratory0/reports/reports
-- file: lessons/laboratory0/safety/safety_training
+  sections:
+  - file: lessons/laboratory0/reports/reports
+  - file: lessons/laboratory0/safety/safety_training
 #- file: lessons/laboratory0/laboratory0
 
 - file: lessons/laboratory1/laboratory1

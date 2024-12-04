@@ -1,0 +1,834 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Laboratory 1 - Fluid Properties &#8212; Mechanics of Fluids Laboratory</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'lessons/laboratory1/laboratory1-Copy1';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/waterjet.png" class="logo__image only-light" alt="Mechanics of Fluids Laboratory - Home"/>
+    <script>document.write(`<img src="../../_static/waterjet.png" class="logo__image only-dark" alt="Mechanics of Fluids Laboratory - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    CE 3105 Mechanics of Fluids Laboratory
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../instruments/instruments.html">Equipment Inventory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="laboratory1.html">Laboratory 1 - Fluid Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../laboratory2/laboratory2.html">2. Hydrostatic Forces and Bouyancy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../laboratory3/laboratory3.html">3. Flow Measurement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../laboratory4/laboratory4.html">4. Pipe Friction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../laboratory5/laboratory5.html">5. Fitting (Minor) Losses in Pipe Systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../laboratory6/laboratory6.html">6. Momentum Transfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../laboratory7/laboratory7.html">7. Pump Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../laboratory8/laboratory8.html">8. Open Channel Flow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../laboratory9/laboratory9.html">Laboratory 9 - Pipeline Transients</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Flessons/laboratory1/laboratory1-Copy1.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/lessons/laboratory1/laboratory1-Copy1.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Laboratory 1 - Fluid Properties</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Laboratory 1 - Fluid Properties</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#readings">Readings</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#videos">Videos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#outline">Outline</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#fluid-properties">1. Fluid Properties</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#density">Density</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#measuring-density-of-fluids">Measuring Density of Fluids</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#importance-of-density-in-fluid-mechanics">Importance of Density in Fluid Mechanics</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Density</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#specific-weight">Specific Weight</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#specific-gravity">Specific Gravity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#viscosity">Viscosity</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dynamic-viscosity-mu">Dynamic Viscosity (<span class="math notranslate nohighlight">\(\mu\)</span>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kinematic-viscosity-nu">Kinematic Viscosity (<span class="math notranslate nohighlight">\(\nu\)</span>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#measuring-viscosity">Measuring Viscosity</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#importance-of-viscosity-in-fluid-mechanics">Importance of Viscosity in Fluid Mechanics</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Viscosity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#link-to-laboratory-document">Link to Laboratory Document</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="laboratory-1-fluid-properties">
+<h1>Laboratory 1 - Fluid Properties<a class="headerlink" href="#laboratory-1-fluid-properties" title="Link to this heading">#</a></h1>
+<div class="admonition-course-website admonition">
+<p class="admonition-title">Course Website</p>
+<p><a class="reference external" href="http://54.243.252.9/ce-3105-webroot/">http://54.243.252.9/ce-3105-webroot/</a></p>
+</div>
+<section id="readings">
+<h2>Readings<a class="headerlink" href="#readings" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="http://54.243.252.9/ce-3105-webroot/2-Exercises/laboratory1/EFM-2.pdf">Engineering Fluid Mechanics - Chapter 2</a></p></li>
+<li><p><a class="reference external" href="http://54.243.252.9/ce-3105-webroot/2-Exercises/laboratory1/EFM-22.pdf">Engineering Fluid Mechanics - Chapter 11 (Cd for spheres, p.414)</a></p></li>
+<li><p><a class="reference external" href="https://mech.at.ua/HolmanICS.pdf">Holman, J.P. (2012) <em>Experimental Methods for Engineers</em>, 8th Ed.</a></p></li>
+</ol>
+</section>
+<section id="videos">
+<h2>Videos<a class="headerlink" href="#videos" title="Link to this heading">#</a></h2>
+</section>
+<section id="outline">
+<h2>Outline<a class="headerlink" href="#outline" title="Link to this heading">#</a></h2>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="fluid-properties">
+<h1>1. Fluid Properties<a class="headerlink" href="#fluid-properties" title="Link to this heading">#</a></h1>
+<section id="density">
+<h2>Density<a class="headerlink" href="#density" title="Link to this heading">#</a></h2>
+<p>Density, denoted by the symbol <span class="math notranslate nohighlight">\(\rho\)</span>, is a fundamental property of all substances, including fluids.</p>
+<p>It is defined as the mass per unit volume of a material and can be expressed mathematically as:</p>
+<div class="math notranslate nohighlight">
+\[\rho = \frac{M}{V}\]</div>
+<p>Units: <span class="math notranslate nohighlight">\(\mathrm{kg/m^3}\)</span> (SI), <span class="math notranslate nohighlight">\(\mathrm{lbm/ft^3}\)</span> (FPS).</p>
+<p>In the context of fluids, density provides critical insight into how fluids behave under various conditions, such as flow through pipes, buoyancy, and pressure variations with depth.</p>
+<p>For instance, the density of water at standard temperature and pressure (STP) is approximately <span class="math notranslate nohighlight">\(1000~kg/m^3\)</span>, while air has a much lower density of about <span class="math notranslate nohighlight">\(1.2~kg/m^3\)</span>.</p>
+<section id="measuring-density-of-fluids">
+<h3>Measuring Density of Fluids<a class="headerlink" href="#measuring-density-of-fluids" title="Link to this heading">#</a></h3>
+<p>Practical methods to measure the density of a liquid include:</p>
+<p><strong>Gravimetric Method</strong></p>
+<p>This method involves directly measuring the mass and volume of a liquid sample and using the formula <span class="math notranslate nohighlight">\(\rho = \frac{M}{V}\)</span>.</p>
+<p>Steps:</p>
+<ul class="simple">
+<li><p>Weigh an empty container on a precision scale and record its mass.</p></li>
+<li><p>Fill the container with the fluid and weigh it again to determine the mass of the fluid (<span class="math notranslate nohighlight">\(M\)</span>).</p></li>
+<li><p>Measure the volume (<span class="math notranslate nohighlight">\(V\)</span>) of the fluid using a graduated cylinder or volumetric flask.</p></li>
+<li><p>Calculate the density.</p></li>
+</ul>
+<p><em>Example:</em></p>
+<p>If <span class="math notranslate nohighlight">\(M=0.25 kg\)</span> and <span class="math notranslate nohighlight">\(V=0.00025 m^3\)</span>, the density is:</p>
+<p><span class="math notranslate nohighlight">\(\rho=\frac{0.250~kg}{0.00025~m^3}=1000 kg/m3\)</span></p>
+<p><strong>Hydrometer Method</strong></p>
+<p>A hydrometer is a floating instrument calibrated to measure fluid density directly.</p>
+<p>Steps:</p>
+<ul class="simple">
+<li><p>Submerge the hydrometer in the fluid.</p></li>
+<li><p>Read the density from the scale where the hydrometer’s surface level aligns with the fluid.</p></li>
+</ul>
+<p>This method is especially useful for liquids like alcohol, brines, and oils.</p>
+<p><strong>Pycnometer Method</strong></p>
+<p>A pycnometer is a specialized container with a known volume used for highly precise density measurements.</p>
+<p>Steps:</p>
+<ul class="simple">
+<li><p>Weigh the empty, dry pycnometer.</p></li>
+<li><p>Fill it with the fluid and weigh it again to determine the mass of the fluid.</p></li>
+<li><p>Calculate the density using the known volume of the pycnometer.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The pycnometer is clearly a gravimetric technique, but eliminates the need to measure the volume, as the device itself performs this measurement directly</p>
+</div>
+</section>
+<section id="importance-of-density-in-fluid-mechanics">
+<h3>Importance of Density in Fluid Mechanics<a class="headerlink" href="#importance-of-density-in-fluid-mechanics" title="Link to this heading">#</a></h3>
+<p>Understanding density is critical for:</p>
+<ul class="simple">
+<li><p>Buoyancy Analysis: The density difference between a fluid and a submerged object determines whether it floats or sinks.</p></li>
+<li><p>Hydrostatics: Density directly influences the pressure variation in a fluid column, P=ρghP=ρgh.</p></li>
+<li><p>Flow Dynamics: Density is a key parameter in determining the Reynolds number, which predicts flow behavior (laminar or turbulent).</p></li>
+</ul>
+<div class="admonition-temperature-matters admonition">
+<p class="admonition-title">Temperature Matters</p>
+<p>At a given temperature and pressure the density of a given liquid is constant. Let us say we keep pouring some liquid into a beaker, as the mass increases so does the volume whereas density, which is the ratio of mass to volume, stays constant.</p>
+<p>As such all experimental determinations of density require that the temperature of the liquid be measured.</p>
+</div>
+<p>Accurately measuring and understanding fluid density, informs engineers so they can design systems involving fluid transport, storage, and control.</p>
+</section>
+</section>
+<section id="id1">
+<h2>Density<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p><strong>Density</strong> is a fundamental property of all materials including fluids. Density
+is typically denoted using symbol <span class="math notranslate nohighlight">\(\rho\)</span> and is defined as the ratio of mass to
+volume of the material of interest.</p>
+<p>As an equation in words:</p>
+<div class="math notranslate nohighlight">
+\[\text{Density} = \frac{\text{Mass of the Fluid}}{\text{Volume occupied by the fluid}}\]</div>
+<p>or more conventionally</p>
+<div class="math notranslate nohighlight">
+\[\rho = \frac{M}{V}\]</div>
+<p>At a given temperature and pressure the density of a given fluid is constant.
+Let us say we keep pouring some liquid into a beaker, as the mass increases
+so does the volume and density which is the ratio of mass to volume stays
+constant.</p>
+<p>In SI, the units of density are <span class="math notranslate nohighlight">\(\frac{kg}{m^3}\)</span>.</p>
+<p>In FPS system density is reported either as <span class="math notranslate nohighlight">\(\frac{\text{slugs}}{ft^3}\)</span> or  <span class="math notranslate nohighlight">\(\frac{\text{lbm}}{ft^3}\)</span> where <a class="reference external" href="https://en.wikipedia.org/wiki/Pound_(mass)"><em>lbm</em></a> is pound mass.</p>
+</section>
+<section id="specific-weight">
+<h2>Specific Weight<a class="headerlink" href="#specific-weight" title="Link to this heading">#</a></h2>
+<p><strong>Specific Weight</strong> is the <strong>weight</strong> per unit volume of the material.
+Remember that weight is a force obtained by multiplying mass and gravitational acceleration (g).</p>
+<p>As an equation in words:</p>
+<div class="math notranslate nohighlight">
+\[\text{Specific Weight} = \frac{\text{weight}}{\text{volume}}\]</div>
+<p>or more conventionally</p>
+<div class="math notranslate nohighlight">
+\[\gamma = \frac{W}{V} = \frac{m \cdot g}{V}\]</div>
+<p>At a given temperature, pressure and location, the specific weight of a fluid
+is constant. However, the acceleration due to gravity varies slightly with
+location. The specific weight of a fluid is slightly lower at the poles than at the equator even when the temperature and pressure of the fluid are the same at both
+locations.</p>
+</section>
+<section id="specific-gravity">
+<h2>Specific Gravity<a class="headerlink" href="#specific-gravity" title="Link to this heading">#</a></h2>
+<p><strong>Specific Gravity</strong> is another important fluid property which is defined as the
+ratio of the density of a fluid to the density of water at the same temperature.
+Clearly, the specific gravity is equal to 1.0 for water. Fluids denser than
+water have a specific gravity greater than 1 while those lighter than water
+have specific gravity less than 1.</p>
+<div class="math notranslate nohighlight">
+\[SG = \frac{\rho_s}{\rho_{H2O}} \]</div>
+<p>Being a ratio of two densities, specific gravity is a dimensionless quantity.
+Specific gravity can tell us whether an object will float or sink in water. Specific
+Gravity also provides consistency to compare fluids across different units.</p>
+</section>
+<section id="viscosity">
+<h2>Viscosity<a class="headerlink" href="#viscosity" title="Link to this heading">#</a></h2>
+<p>Viscosity is a measure of a fluid’s resistance to deformation or flow under an applied shear force. It quantifies the internal friction between adjacent layers of fluid that are moving at different velocities. Viscosity plays a central role in fluid mechanics as it affects flow characteristics, energy losses, and the behavior of fluids in engineering systems.</p>
+<p>There are two primary types of viscosity:</p>
+<section id="dynamic-viscosity-mu">
+<h3>Dynamic Viscosity (<span class="math notranslate nohighlight">\(\mu\)</span>)<a class="headerlink" href="#dynamic-viscosity-mu" title="Link to this heading">#</a></h3>
+<p>Dynamic viscosity measures the tangential force per unit area (ττ) required to move one fluid layer relative to another at a unit velocity while maintaining a unit distance separation. It follows Newton’s law of viscosity:</p>
+<p><span class="math notranslate nohighlight">\(\tau = \mu \frac{\partial y}{\partial u}\)</span></p>
+<p>Where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\tau\)</span>: is the applied shear stress (<span class="math notranslate nohighlight">\(Pa\)</span>)</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mu\)</span>: is the dynamic viscosity (<span class="math notranslate nohighlight">\(Pa \cdot s\)</span>)</p></li>
+<li><p><span class="math notranslate nohighlight">\(\frac{\partial y}{\partial u}\)</span>: is the velocity gradient perpendicular to the flow.</p></li>
+</ul>
+</section>
+<section id="kinematic-viscosity-nu">
+<h3>Kinematic Viscosity (<span class="math notranslate nohighlight">\(\nu\)</span>)<a class="headerlink" href="#kinematic-viscosity-nu" title="Link to this heading">#</a></h3>
+<p>Kinematic viscosity is the ratio of dynamic viscosity to fluid density:</p>
+<p><span class="math notranslate nohighlight">\(\nu = \frac{\mu}{\rho}\)</span></p>
+<p>Units: <span class="math notranslate nohighlight">\(m^2/s\)</span> in SI.</p>
+</section>
+<section id="measuring-viscosity">
+<h3>Measuring Viscosity<a class="headerlink" href="#measuring-viscosity" title="Link to this heading">#</a></h3>
+<p>Several methods can be used to measure viscosity. In this laboratory, we will use on Stoke’s law due to its feasibility, but additional methods are included for context.</p>
+<p><strong>Stoke’s Law (Falling Sphere Method)</strong></p>
+<p>Principle: A small sphere is dropped into a fluid, and its terminal velocity (<span class="math notranslate nohighlight">\(u\)</span>) is recorded. Under terminal velocity conditions, the drag force equals the sum of buoyant and gravitational forces. From Stoke’s law, the dynamic viscosity is calculated as:</p>
+<p><span class="math notranslate nohighlight">\(\mu=\frac{2r^2(\rho_s−\rho_f)g}{9u}\)</span></p>
+<p>Where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(r\)</span>: Sphere radius (mm)</p></li>
+<li><p><span class="math notranslate nohighlight">\(\rho_s,\rho_f\)</span>: Densities of the sphere and fluid (<span class="math notranslate nohighlight">\(kg/m^3\)</span>)</p></li>
+<li><p><span class="math notranslate nohighlight">\(g\)</span>: Gravitational acceleration (<span class="math notranslate nohighlight">\(m/s^2\)</span>)</p></li>
+<li><p><span class="math notranslate nohighlight">\(u\)</span>: Terminal velocity (<span class="math notranslate nohighlight">\(m/s\)</span>)</p></li>
+</ul>
+<p>Setup: Use a tall column of fluid, small spheres, and a stopwatch to measure the sphere’s falling time over a known distance.</p>
+<p><strong>Capillary Tube Viscometer</strong></p>
+<p>Principle: Measures the time (<span class="math notranslate nohighlight">\(t\)</span>) it takes for a fluid to flow through a capillary under gravity or applied pressure. Viscosity is calculated as:</p>
+<p><span class="math notranslate nohighlight">\(\mu=K \cdot t\)</span></p>
+<p>Where <span class="math notranslate nohighlight">\(K\)</span> is a calibration constant based on the tube’s geometry and fluid properties.</p>
+<p>Use: Common for low-viscosity fluids like water and oils.</p>
+<p><strong>Rotational Viscometer</strong></p>
+<ul class="simple">
+<li><p>Principle: Measures the torque required to rotate an object (e.g., spindle or cylinder) in a fluid at a constant speed. The torque is proportional to the fluid’s viscosity.</p></li>
+<li><p>Use: Suitable for measuring a wide range of viscosities, including non-Newtonian fluids.</p></li>
+</ul>
+<p><strong>Inclined Plane Method</strong></p>
+<ul class="simple">
+<li><p>Principle: A known volume of liquid is released on an inclined plane, and the time it takes to travel a set distance is recorded. The viscosity is inferred from the relationship between time, fluid properties, and inclination angle.</p></li>
+<li><p>Use: While less precise, this method is a feasible alternative for determining relative viscosities in a laboratory.</p></li>
+</ul>
+</section>
+<section id="importance-of-viscosity-in-fluid-mechanics">
+<h3>Importance of Viscosity in Fluid Mechanics<a class="headerlink" href="#importance-of-viscosity-in-fluid-mechanics" title="Link to this heading">#</a></h3>
+<p>Viscosity influences several critical aspects of fluid behavior, including:</p>
+<ul class="simple">
+<li><p>Energy Losses: Higher viscosity increases resistance to flow, leading to greater energy dissipation.</p></li>
+<li><p>Laminar and Turbulent Flow: The Reynolds number, which predicts flow regimes, depends on viscosity.</p></li>
+<li><p>Practical Applications: From lubrication in machinery to fluid transport in pipelines, viscosity is a key parameter.</p></li>
+</ul>
+<div class="admonition-temperature-matters admonition">
+<p class="admonition-title">Temperature Matters</p>
+<p>Viscosity is strongly temperature-dependent. Consider how honey flows more easily when warmed compared to when it’s at room temperature or chilled. Similarly, engine oil thickens in cold weather, making it harder for car engines to start.</p>
+<p>As such, all experimental determinations of viscosity require that the temperature of the liquid be measured.</p>
+</div>
+<p>By accurately measuring viscosity, engineers can design efficient systems that minimize losses and optimize performance. In this lab, we will use Stoke’s law to measure the viscosity of different fluids, but the insights extend to various industrial and natural applications.</p>
+</section>
+</section>
+<section id="id2">
+<h2>Viscosity<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<p><strong>Viscosity</strong> quantifies the ability of the fluid to resist shear stress (i.e.,
+internal resistance). One can also conceptualize viscosity as the frictional
+forces that exist between two layers of fluid that are in relative motion.</p>
+<p><strong>Dynamic Viscosity</strong> measures the tangential force per unit area required to move one horizonal plane relative to another at a unit velocity when maintaining unit distance separation. The shear stress applied causes the fluid to flow (or flow causes stress).</p>
+<p>Newton’s law of viscosity states that the shear stress, <span class="math notranslate nohighlight">\(\tau\)</span>, is proportional to the velocity gradient (across the flow flow), <span class="math notranslate nohighlight">\(\frac{du}{dy}\)</span> (see Figure 1).
+Dynamic viscosity ,<span class="math notranslate nohighlight">\(\mu\)</span>, is the constant of proportionality.</p>
+<figure align="center">
+<!--<img src="./Hydropower.png" width="300" >-->
+<img src="http://54.243.252.9/ce-3105-webroot/2-Exercises/laboratory1/shearstress.png" width="300" >
+<figcaption>Figure 1: Shear stress conceptual diagram </figcaption>
+</figure>
+<p>Newton’s law expressed as an equation is:
+$<span class="math notranslate nohighlight">\(\tau = \mu \cdot \frac{du}{dy} \)</span>$</p>
+<p>thus dynamic viscosity is the ratio of shear force to the velocity gradient. It has units of <span class="math notranslate nohighlight">\( Pa \cdot s = \frac{kg \cdot m}{s^2} \cdot \frac{s}{m^2}\)</span>.</p>
+<p>In cgs system the units of dynamic viscosity is Poise (or more commonly centipoise, cP).</p>
+<p>In US Customary units we express viscosity as <span class="math notranslate nohighlight">\(\frac{lbf}{ft \cdot s}\)</span>.</p>
+<p>In practical fluid mechanics, we often encounter the ratio of dynamic viscosity to density. This term is the <strong>kinematic viscosity</strong>.</p>
+<p>Expressed as an equation in commonly used notation:</p>
+<div class="math notranslate nohighlight">
+\[ \nu = \frac{\mu}{\rho}\]</div>
+<p>The kinematic viscosity has SI units of $<span class="math notranslate nohighlight">\(\frac{m^2}{s}\)</span>$.</p>
+<p>A useful method to determine viscosity of liquids is to record the rate at which a
+sphere will fall through a liquid of interest.
+Under equilibrium conditions, the frictional forces experienced by the sphere will be equal to its weight. The sphere will fall at a constant speed known as the terminal velocity.
+The phenomenon is called Stokes law (or Stokes flow).</p>
+<p>A simple force balance is depicted in Figure 2, where the bouyant force and drag force are equal to the weight of the sphere.</p>
+<figure align="center">
+<!--<img src="./Hydropower.png" width="300" >-->
+<img src="http://54.243.252.9/ce-3105-webroot/2-Exercises/laboratory1/sphereforces.png" width="300" >
+<figcaption>Figure 2: Force balance on a sphere falling at constant velocity </figcaption>
+</figure>
+<p>Stokes flow occurs at pretty low Reynolds numbers so the laminar correlation for the drag coefficient is appropriate</p>
+<div class="math notranslate nohighlight">
+\[ c_d = \frac{24}{Re}+\frac{4}{\sqrt{Re}}+0.4 \]</div>
+<p>If the Reynolds number is less than <span class="math notranslate nohighlight">\(\frac{1}{2}\)</span> the drag coefficient is <span class="math notranslate nohighlight">\(c_d = \frac{24}{Re}\)</span>, using this representation of drag the force balance for the sphere allows us to solve for velocity, <span class="math notranslate nohighlight">\(u\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[ u = \frac{g \cdot d^2}{18 \nu}(\sigma-\rho)\]</div>
+<p>where, <em>g</em> is the acceleration due to gravity, <em>d</em> is the diameter of the sphere,
+<span class="math notranslate nohighlight">\(\nu\)</span> is the kinematic viscosity, <span class="math notranslate nohighlight">\(\sigma\)</span> is the density of the sphere, <span class="math notranslate nohighlight">\(\rho\)</span> is the density of the fluid.</p>
+<p>We can apply the formula to get an idea of how fast to expect a sphere to fall if Stokes flow holds.  In the experiment we will use Glycerine as the liquid phase, and small steel spheres the largest is about 2.5 millimeters</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Estimate Sphere Falling Speed assuming laminar flow</span>
+<span class="n">gravity</span> <span class="o">=</span> <span class="mf">9.81</span> <span class="c1">#m/s^2</span>
+<span class="n">viscosity</span> <span class="o">=</span> <span class="mf">15.103</span> <span class="c1"># Ns/m^2</span>
+<span class="n">density_liquid</span> <span class="o">=</span> <span class="p">(</span><span class="mf">69.5</span><span class="o">/</span><span class="mi">50</span><span class="p">)</span><span class="o">*</span><span class="mi">1000</span><span class="o">*</span><span class="mi">1000</span> <span class="c1">#kg/m^3</span>
+<span class="n">density_sphere</span> <span class="o">=</span> <span class="p">(</span><span class="mf">11.350</span><span class="p">)</span><span class="o">*</span><span class="mi">1000</span><span class="o">*</span><span class="mi">1000</span> <span class="c1">#kg/m^3</span>
+<span class="n">diameter</span> <span class="o">=</span> <span class="mf">0.0125</span> <span class="c1">#meters - nominal 2.5mm</span>
+<span class="n">upper_support_terminal_speed</span> <span class="o">=</span> <span class="p">(</span><span class="n">gravity</span><span class="o">*</span><span class="n">diameter</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">density_sphere</span><span class="o">-</span><span class="n">density_liquid</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mf">18.0</span><span class="o">*</span><span class="n">viscosity</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Stokes flow speed limit = &quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">upper_support_terminal_speed</span><span class="p">,</span><span class="mi">6</span><span class="p">),</span><span class="s2">&quot; millimeters per second&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Stokes flow speed limit =  56.158131  millimeters per second
+</pre></div>
+</div>
+</div>
+</div>
+<p>So using the above script we conclude that we should be able to make measurements for spheres as large as 25 mm, using a stopwatch and visual observation, our spheres are quite a bit smaller, so we should have no issues.</p>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="http://54.243.252.9/ce-3105-webroot/2-Exercises/laboratory1/EFM-2.pdf">Engineering Fluid Mechanics</a></p></li>
+<li><p><a class="reference external" href="http://54.243.252.9/ce-3105-webroot/2-Exercises/laboratory1/EFM-22.pdf">Engineering Fluid Mechanics (Cd for spheres) go to p.414</a></p></li>
+<li><p><a class="reference external" href="https://mech.at.ua/HolmanICS.pdf">Holman, J.P., (2012) Experimental Methods for Engineers, 8th Ed. (Chapters 1-3)</a></p></li>
+</ol>
+</section>
+<section id="link-to-laboratory-document">
+<h2>Link to Laboratory Document<a class="headerlink" href="#link-to-laboratory-document" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="http://54.243.252.9/ce-3105-webroot/2-Exercises/laboratory1/laboratory1.html">Laboratory 1 Tasklist</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=WwV-azCJWis">Laboratory 1 Instructional Video by Dr. Uddameri</a></p></li>
+</ol>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./lessons/laboratory1"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Laboratory 1 - Fluid Properties</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#readings">Readings</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#videos">Videos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#outline">Outline</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#fluid-properties">1. Fluid Properties</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#density">Density</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#measuring-density-of-fluids">Measuring Density of Fluids</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#importance-of-density-in-fluid-mechanics">Importance of Density in Fluid Mechanics</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Density</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#specific-weight">Specific Weight</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#specific-gravity">Specific Gravity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#viscosity">Viscosity</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dynamic-viscosity-mu">Dynamic Viscosity (<span class="math notranslate nohighlight">\(\mu\)</span>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kinematic-viscosity-nu">Kinematic Viscosity (<span class="math notranslate nohighlight">\(\nu\)</span>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#measuring-viscosity">Measuring Viscosity</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#importance-of-viscosity-in-fluid-mechanics">Importance of Viscosity in Fluid Mechanics</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Viscosity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#link-to-laboratory-document">Link to Laboratory Document</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Theodore G. Cleveland (just the JupyterBook parts)
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
