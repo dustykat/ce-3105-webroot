@@ -4,7 +4,7 @@
 title: Mechanics of Fluids Laboratory
 author: Theodore G. Cleveland (just the JupyterBook parts)
 copyright: "2024"  # Copyright year to be placed in the footer
-logo: waterjet.png
+logo: logo2.png
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html

@@ -1,0 +1,938 @@
+\documentclass[11pt]{article}
+
+    \usepackage[breakable]{tcolorbox}
+    \usepackage{parskip} % Stop auto-indenting (to mimic markdown behaviour)
+    
+
+    % Basic figure setup, for now with no caption control since it's done
+    % automatically by Pandoc (which extracts ![](path) syntax from Markdown).
+    \usepackage{graphicx}
+    % Keep aspect ratio if custom image width or height is specified
+    \setkeys{Gin}{keepaspectratio}
+    % Maintain compatibility with old templates. Remove in nbconvert 6.0
+    \let\Oldincludegraphics\includegraphics
+    % Ensure that by default, figures have no caption (until we provide a
+    % proper Figure object with a Caption API and a way to capture that
+    % in the conversion process - todo).
+    \usepackage{caption}
+    \DeclareCaptionFormat{nocaption}{}
+    \captionsetup{format=nocaption,aboveskip=0pt,belowskip=0pt}
+
+    \usepackage{float}
+    \floatplacement{figure}{H} % forces figures to be placed at the correct location
+    \usepackage{xcolor} % Allow colors to be defined
+    \usepackage{enumerate} % Needed for markdown enumerations to work
+    \usepackage{geometry} % Used to adjust the document margins
+    \usepackage{amsmath} % Equations
+    \usepackage{amssymb} % Equations
+    \usepackage{textcomp} % defines textquotesingle
+    % Hack from http://tex.stackexchange.com/a/47451/13684:
+    \AtBeginDocument{%
+        \def\PYZsq{\textquotesingle}% Upright quotes in Pygmentized code
+    }
+    \usepackage{upquote} % Upright quotes for verbatim code
+    \usepackage{eurosym} % defines \euro
+
+    \usepackage{iftex}
+    \ifPDFTeX
+        \usepackage[T1]{fontenc}
+        \IfFileExists{alphabeta.sty}{
+              \usepackage{alphabeta}
+          }{
+              \usepackage[mathletters]{ucs}
+              \usepackage[utf8x]{inputenc}
+          }
+    \else
+        \usepackage{fontspec}
+        \usepackage{unicode-math}
+    \fi
+
+    \usepackage{fancyvrb} % verbatim replacement that allows latex
+    \usepackage{grffile} % extends the file name processing of package graphics
+                         % to support a larger range
+    \makeatletter % fix for old versions of grffile with XeLaTeX
+    \@ifpackagelater{grffile}{2019/11/01}
+    {
+      % Do nothing on new versions
+    }
+    {
+      \def\Gread@@xetex#1{%
+        \IfFileExists{"\Gin@base".bb}%
+        {\Gread@eps{\Gin@base.bb}}%
+        {\Gread@@xetex@aux#1}%
+      }
+    }
+    \makeatother
+    \usepackage[Export]{adjustbox} % Used to constrain images to a maximum size
+    \adjustboxset{max size={0.9\linewidth}{0.9\paperheight}}
+
+    % The hyperref package gives us a pdf with properly built
+    % internal navigation ('pdf bookmarks' for the table of contents,
+    % internal cross-reference links, web links for URLs, etc.)
+    \usepackage{hyperref}
+    % The default LaTeX title has an obnoxious amount of whitespace. By default,
+    % titling removes some of it. It also provides customization options.
+    \usepackage{titling}
+    \usepackage{longtable} % longtable support required by pandoc >1.10
+    \usepackage{booktabs}  % table support for pandoc > 1.12.2
+    \usepackage{array}     % table support for pandoc >= 2.11.3
+    \usepackage{calc}      % table minipage width calculation for pandoc >= 2.11.1
+    \usepackage[inline]{enumitem} % IRkernel/repr support (it uses the enumerate* environment)
+    \usepackage[normalem]{ulem} % ulem is needed to support strikethroughs (\sout)
+                                % normalem makes italics be italics, not underlines
+    \usepackage{soul}      % strikethrough (\st) support for pandoc >= 3.0.0
+    \usepackage{mathrsfs}
+    
+
+    
+    % Colors for the hyperref package
+    \definecolor{urlcolor}{rgb}{0,.145,.698}
+    \definecolor{linkcolor}{rgb}{.71,0.21,0.01}
+    \definecolor{citecolor}{rgb}{.12,.54,.11}
+
+    % ANSI colors
+    \definecolor{ansi-black}{HTML}{3E424D}
+    \definecolor{ansi-black-intense}{HTML}{282C36}
+    \definecolor{ansi-red}{HTML}{E75C58}
+    \definecolor{ansi-red-intense}{HTML}{B22B31}
+    \definecolor{ansi-green}{HTML}{00A250}
+    \definecolor{ansi-green-intense}{HTML}{007427}
+    \definecolor{ansi-yellow}{HTML}{DDB62B}
+    \definecolor{ansi-yellow-intense}{HTML}{B27D12}
+    \definecolor{ansi-blue}{HTML}{208FFB}
+    \definecolor{ansi-blue-intense}{HTML}{0065CA}
+    \definecolor{ansi-magenta}{HTML}{D160C4}
+    \definecolor{ansi-magenta-intense}{HTML}{A03196}
+    \definecolor{ansi-cyan}{HTML}{60C6C8}
+    \definecolor{ansi-cyan-intense}{HTML}{258F8F}
+    \definecolor{ansi-white}{HTML}{C5C1B4}
+    \definecolor{ansi-white-intense}{HTML}{A1A6B2}
+    \definecolor{ansi-default-inverse-fg}{HTML}{FFFFFF}
+    \definecolor{ansi-default-inverse-bg}{HTML}{000000}
+
+    % common color for the border for error outputs.
+    \definecolor{outerrorbackground}{HTML}{FFDFDF}
+
+    % commands and environments needed by pandoc snippets
+    % extracted from the output of `pandoc -s`
+    \providecommand{\tightlist}{%
+      \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+    \DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+    % Add ',fontsize=\small' for more characters per line
+    \newenvironment{Shaded}{}{}
+    \newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+    \newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{{#1}}}
+    \newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{{#1}}}}
+    \newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{{#1}}}
+    \newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{{#1}}}
+    \newcommand{\RegionMarkerTok}[1]{{#1}}
+    \newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\NormalTok}[1]{{#1}}
+
+    % Additional commands for more recent versions of Pandoc
+    \newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.53,0.00,0.00}{{#1}}}
+    \newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.73,0.40,0.53}{{#1}}}
+    \newcommand{\ImportTok}[1]{{#1}}
+    \newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.73,0.13,0.13}{\textit{{#1}}}}
+    \newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\VariableTok}[1]{\textcolor[rgb]{0.10,0.09,0.49}{{#1}}}
+    \newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+    \newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.40,0.40,0.40}{{#1}}}
+    \newcommand{\BuiltInTok}[1]{{#1}}
+    \newcommand{\ExtensionTok}[1]{{#1}}
+    \newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.74,0.48,0.00}{{#1}}}
+    \newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.49,0.56,0.16}{{#1}}}
+    \newcommand{\InformationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\WarningTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+
+
+    % Define a nice break command that doesn't care if a line doesn't already
+    % exist.
+    \def\br{\hspace*{\fill} \\* }
+    % Math Jax compatibility definitions
+    \def\gt{>}
+    \def\lt{<}
+    \let\Oldtex\TeX
+    \let\Oldlatex\LaTeX
+    \renewcommand{\TeX}{\textrm{\Oldtex}}
+    \renewcommand{\LaTeX}{\textrm{\Oldlatex}}
+    % Document parameters
+    % Document title
+    \title{laboratory1}
+    
+    
+    
+    
+    
+    
+    
+% Pygments definitions
+\makeatletter
+\def\PY@reset{\let\PY@it=\relax \let\PY@bf=\relax%
+    \let\PY@ul=\relax \let\PY@tc=\relax%
+    \let\PY@bc=\relax \let\PY@ff=\relax}
+\def\PY@tok#1{\csname PY@tok@#1\endcsname}
+\def\PY@toks#1+{\ifx\relax#1\empty\else%
+    \PY@tok{#1}\expandafter\PY@toks\fi}
+\def\PY@do#1{\PY@bc{\PY@tc{\PY@ul{%
+    \PY@it{\PY@bf{\PY@ff{#1}}}}}}}
+\def\PY#1#2{\PY@reset\PY@toks#1+\relax+\PY@do{#2}}
+
+\@namedef{PY@tok@w}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.73,0.73}{##1}}}
+\@namedef{PY@tok@c}{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.24,0.48,0.48}{##1}}}
+\@namedef{PY@tok@cp}{\def\PY@tc##1{\textcolor[rgb]{0.61,0.40,0.00}{##1}}}
+\@namedef{PY@tok@k}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PY@tok@kp}{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PY@tok@kt}{\def\PY@tc##1{\textcolor[rgb]{0.69,0.00,0.25}{##1}}}
+\@namedef{PY@tok@o}{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\@namedef{PY@tok@ow}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\@namedef{PY@tok@nb}{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PY@tok@nf}{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\@namedef{PY@tok@nc}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\@namedef{PY@tok@nn}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\@namedef{PY@tok@ne}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.80,0.25,0.22}{##1}}}
+\@namedef{PY@tok@nv}{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\@namedef{PY@tok@no}{\def\PY@tc##1{\textcolor[rgb]{0.53,0.00,0.00}{##1}}}
+\@namedef{PY@tok@nl}{\def\PY@tc##1{\textcolor[rgb]{0.46,0.46,0.00}{##1}}}
+\@namedef{PY@tok@ni}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.44,0.44,0.44}{##1}}}
+\@namedef{PY@tok@na}{\def\PY@tc##1{\textcolor[rgb]{0.41,0.47,0.13}{##1}}}
+\@namedef{PY@tok@nt}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PY@tok@nd}{\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\@namedef{PY@tok@s}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PY@tok@sd}{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PY@tok@si}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.64,0.35,0.47}{##1}}}
+\@namedef{PY@tok@se}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.67,0.36,0.12}{##1}}}
+\@namedef{PY@tok@sr}{\def\PY@tc##1{\textcolor[rgb]{0.64,0.35,0.47}{##1}}}
+\@namedef{PY@tok@ss}{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\@namedef{PY@tok@sx}{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PY@tok@m}{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\@namedef{PY@tok@gh}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\@namedef{PY@tok@gu}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.50,0.00,0.50}{##1}}}
+\@namedef{PY@tok@gd}{\def\PY@tc##1{\textcolor[rgb]{0.63,0.00,0.00}{##1}}}
+\@namedef{PY@tok@gi}{\def\PY@tc##1{\textcolor[rgb]{0.00,0.52,0.00}{##1}}}
+\@namedef{PY@tok@gr}{\def\PY@tc##1{\textcolor[rgb]{0.89,0.00,0.00}{##1}}}
+\@namedef{PY@tok@ge}{\let\PY@it=\textit}
+\@namedef{PY@tok@gs}{\let\PY@bf=\textbf}
+\@namedef{PY@tok@ges}{\let\PY@bf=\textbf\let\PY@it=\textit}
+\@namedef{PY@tok@gp}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\@namedef{PY@tok@go}{\def\PY@tc##1{\textcolor[rgb]{0.44,0.44,0.44}{##1}}}
+\@namedef{PY@tok@gt}{\def\PY@tc##1{\textcolor[rgb]{0.00,0.27,0.87}{##1}}}
+\@namedef{PY@tok@err}{\def\PY@bc##1{{\setlength{\fboxsep}{\string -\fboxrule}\fcolorbox[rgb]{1.00,0.00,0.00}{1,1,1}{\strut ##1}}}}
+\@namedef{PY@tok@kc}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PY@tok@kd}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PY@tok@kn}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PY@tok@kr}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PY@tok@bp}{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PY@tok@fm}{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\@namedef{PY@tok@vc}{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\@namedef{PY@tok@vg}{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\@namedef{PY@tok@vi}{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\@namedef{PY@tok@vm}{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\@namedef{PY@tok@sa}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PY@tok@sb}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PY@tok@sc}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PY@tok@dl}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PY@tok@s2}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PY@tok@sh}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PY@tok@s1}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PY@tok@mb}{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\@namedef{PY@tok@mf}{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\@namedef{PY@tok@mh}{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\@namedef{PY@tok@mi}{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\@namedef{PY@tok@il}{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\@namedef{PY@tok@mo}{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\@namedef{PY@tok@ch}{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.24,0.48,0.48}{##1}}}
+\@namedef{PY@tok@cm}{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.24,0.48,0.48}{##1}}}
+\@namedef{PY@tok@cpf}{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.24,0.48,0.48}{##1}}}
+\@namedef{PY@tok@c1}{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.24,0.48,0.48}{##1}}}
+\@namedef{PY@tok@cs}{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.24,0.48,0.48}{##1}}}
+
+\def\PYZbs{\char`\\}
+\def\PYZus{\char`\_}
+\def\PYZob{\char`\{}
+\def\PYZcb{\char`\}}
+\def\PYZca{\char`\^}
+\def\PYZam{\char`\&}
+\def\PYZlt{\char`\<}
+\def\PYZgt{\char`\>}
+\def\PYZsh{\char`\#}
+\def\PYZpc{\char`\%}
+\def\PYZdl{\char`\$}
+\def\PYZhy{\char`\-}
+\def\PYZsq{\char`\'}
+\def\PYZdq{\char`\"}
+\def\PYZti{\char`\~}
+% for compatibility with earlier versions
+\def\PYZat{@}
+\def\PYZlb{[}
+\def\PYZrb{]}
+\makeatother
+
+
+    % For linebreaks inside Verbatim environment from package fancyvrb.
+    \makeatletter
+        \newbox\Wrappedcontinuationbox
+        \newbox\Wrappedvisiblespacebox
+        \newcommand*\Wrappedvisiblespace {\textcolor{red}{\textvisiblespace}}
+        \newcommand*\Wrappedcontinuationsymbol {\textcolor{red}{\llap{\tiny$\m@th\hookrightarrow$}}}
+        \newcommand*\Wrappedcontinuationindent {3ex }
+        \newcommand*\Wrappedafterbreak {\kern\Wrappedcontinuationindent\copy\Wrappedcontinuationbox}
+        % Take advantage of the already applied Pygments mark-up to insert
+        % potential linebreaks for TeX processing.
+        %        {, <, #, %, $, ' and ": go to next line.
+        %        _, }, ^, &, >, - and ~: stay at end of broken line.
+        % Use of \textquotesingle for straight quote.
+        \newcommand*\Wrappedbreaksatspecials {%
+            \def\PYGZus{\discretionary{\char`\_}{\Wrappedafterbreak}{\char`\_}}%
+            \def\PYGZob{\discretionary{}{\Wrappedafterbreak\char`\{}{\char`\{}}%
+            \def\PYGZcb{\discretionary{\char`\}}{\Wrappedafterbreak}{\char`\}}}%
+            \def\PYGZca{\discretionary{\char`\^}{\Wrappedafterbreak}{\char`\^}}%
+            \def\PYGZam{\discretionary{\char`\&}{\Wrappedafterbreak}{\char`\&}}%
+            \def\PYGZlt{\discretionary{}{\Wrappedafterbreak\char`\<}{\char`\<}}%
+            \def\PYGZgt{\discretionary{\char`\>}{\Wrappedafterbreak}{\char`\>}}%
+            \def\PYGZsh{\discretionary{}{\Wrappedafterbreak\char`\#}{\char`\#}}%
+            \def\PYGZpc{\discretionary{}{\Wrappedafterbreak\char`\%}{\char`\%}}%
+            \def\PYGZdl{\discretionary{}{\Wrappedafterbreak\char`\$}{\char`\$}}%
+            \def\PYGZhy{\discretionary{\char`\-}{\Wrappedafterbreak}{\char`\-}}%
+            \def\PYGZsq{\discretionary{}{\Wrappedafterbreak\textquotesingle}{\textquotesingle}}%
+            \def\PYGZdq{\discretionary{}{\Wrappedafterbreak\char`\"}{\char`\"}}%
+            \def\PYGZti{\discretionary{\char`\~}{\Wrappedafterbreak}{\char`\~}}%
+        }
+        % Some characters . , ; ? ! / are not pygmentized.
+        % This macro makes them "active" and they will insert potential linebreaks
+        \newcommand*\Wrappedbreaksatpunct {%
+            \lccode`\~`\.\lowercase{\def~}{\discretionary{\hbox{\char`\.}}{\Wrappedafterbreak}{\hbox{\char`\.}}}%
+            \lccode`\~`\,\lowercase{\def~}{\discretionary{\hbox{\char`\,}}{\Wrappedafterbreak}{\hbox{\char`\,}}}%
+            \lccode`\~`\;\lowercase{\def~}{\discretionary{\hbox{\char`\;}}{\Wrappedafterbreak}{\hbox{\char`\;}}}%
+            \lccode`\~`\:\lowercase{\def~}{\discretionary{\hbox{\char`\:}}{\Wrappedafterbreak}{\hbox{\char`\:}}}%
+            \lccode`\~`\?\lowercase{\def~}{\discretionary{\hbox{\char`\?}}{\Wrappedafterbreak}{\hbox{\char`\?}}}%
+            \lccode`\~`\!\lowercase{\def~}{\discretionary{\hbox{\char`\!}}{\Wrappedafterbreak}{\hbox{\char`\!}}}%
+            \lccode`\~`\/\lowercase{\def~}{\discretionary{\hbox{\char`\/}}{\Wrappedafterbreak}{\hbox{\char`\/}}}%
+            \catcode`\.\active
+            \catcode`\,\active
+            \catcode`\;\active
+            \catcode`\:\active
+            \catcode`\?\active
+            \catcode`\!\active
+            \catcode`\/\active
+            \lccode`\~`\~
+        }
+    \makeatother
+
+    \let\OriginalVerbatim=\Verbatim
+    \makeatletter
+    \renewcommand{\Verbatim}[1][1]{%
+        %\parskip\z@skip
+        \sbox\Wrappedcontinuationbox {\Wrappedcontinuationsymbol}%
+        \sbox\Wrappedvisiblespacebox {\FV@SetupFont\Wrappedvisiblespace}%
+        \def\FancyVerbFormatLine ##1{\hsize\linewidth
+            \vtop{\raggedright\hyphenpenalty\z@\exhyphenpenalty\z@
+                \doublehyphendemerits\z@\finalhyphendemerits\z@
+                \strut ##1\strut}%
+        }%
+        % If the linebreak is at a space, the latter will be displayed as visible
+        % space at end of first line, and a continuation symbol starts next line.
+        % Stretch/shrink are however usually zero for typewriter font.
+        \def\FV@Space {%
+            \nobreak\hskip\z@ plus\fontdimen3\font minus\fontdimen4\font
+            \discretionary{\copy\Wrappedvisiblespacebox}{\Wrappedafterbreak}
+            {\kern\fontdimen2\font}%
+        }%
+
+        % Allow breaks at special characters using \PYG... macros.
+        \Wrappedbreaksatspecials
+        % Breaks at punctuation characters . , ; ? ! and / need catcode=\active
+        \OriginalVerbatim[#1,codes*=\Wrappedbreaksatpunct]%
+    }
+    \makeatother
+
+    % Exact colors from NB
+    \definecolor{incolor}{HTML}{303F9F}
+    \definecolor{outcolor}{HTML}{D84315}
+    \definecolor{cellborder}{HTML}{CFCFCF}
+    \definecolor{cellbackground}{HTML}{F7F7F7}
+
+    % prompt
+    \makeatletter
+    \newcommand{\boxspacing}{\kern\kvtcb@left@rule\kern\kvtcb@boxsep}
+    \makeatother
+    \newcommand{\prompt}[4]{
+        {\ttfamily\llap{{\color{#2}[#3]:\hspace{3pt}#4}}\vspace{-\baselineskip}}
+    }
+    
+
+    
+    % Prevent overflowing lines due to hard-to-break entities
+    \sloppy
+    % Setup hyperref package
+    \hypersetup{
+      breaklinks=true,  % so long urls are correctly broken across lines
+      colorlinks=true,
+      urlcolor=urlcolor,
+      linkcolor=linkcolor,
+      citecolor=citecolor,
+      }
+    % Slightly bigger margins than the latex defaults
+    
+    \geometry{verbose,tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in}
+    
+    
+
+\begin{document}
+    
+    \maketitle
+    
+    
+
+    
+    \hypertarget{laboratory-1---fluid-properties}{%
+\section{Laboratory 1 - Fluid
+Properties}\label{laboratory-1---fluid-properties}}
+
+:::\{admonition\} Course Website
+\url{http://54.243.252.9/ce-3105-webroot/} :::
+
+    \hypertarget{readings}{%
+\subsection{Readings}\label{readings}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \href{http://54.243.252.9/ce-3105-webroot/2-Exercises/laboratory1/EFM-2.pdf}{Engineering
+  Fluid Mechanics - Chapter 2}
+\item
+  \href{http://54.243.252.9/ce-3105-webroot/2-Exercises/laboratory1/EFM-22.pdf}{Engineering
+  Fluid Mechanics - Chapter 11 (Cd for spheres, p.414)}
+\item
+  \href{https://mech.at.ua/HolmanICS.pdf}{Holman, J.P. (2012)
+  \emph{Experimental Methods for Engineers}, 8th Ed. (Chapters 1-3)}
+\end{enumerate}
+
+    \hypertarget{videos}{%
+\subsection{Videos}\label{videos}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \href{https://www.youtube.com/watch?v=WwV-azCJWis}{Laboratory 1
+  Instructional Video by Dr.~Uddameri}
+\item
+  \href{https://www.youtube.com/watch?v=NJhxwlVKong}{Measuring Liquid
+  Density (YouTube)}
+\item
+  \href{https://www.youtube.com/shorts/DsYuumidARg}{Measuring Viscosity
+  Falling Sphere (YouTube)}
+\end{enumerate}
+
+    \hypertarget{outline}{%
+\subsection{Outline}\label{outline}}
+
+    
+
+    \hypertarget{background}{%
+\subsection{Background}\label{background}}
+
+A fluid has certain characteristics by which its physical condition may
+be described. These characteristics are called properties of the fluid.
+
+Properties help describe the ``state'' of the system under study. A
+system is whatever is being studied or analyzed, anything not part of
+the system is part of the surroundings. The boundary is the imagined
+surface that separates the system from its surroundings.
+
+Systems are described by specifying values that characterize the system;
+these values are called properties. A \textbf{property} is a measurable
+characteristic of a system that depends only on the present conditions
+within the system (called the \textbf{state} of the system). The state
+of a system means the conditions of the system as defined by specifying
+its properties.
+
+Properties can be organized into categories, one of which is
+\textbf{material properties}; the properties explored in this laboratory
+are selected material properties of some liquids
+
+    \hypertarget{mass-density}{%
+\subsection{Mass Density}\label{mass-density}}
+
+Mass density, or just plain density, denoted by the symbol \(\rho\), is
+a fundamental property of all substances, including fluids.
+
+It is defined as the mass per unit volume of a material and can be
+expressed as an equation in words:
+
+\[\text{Density} = \frac{\text{Mass of the Fluid}}{\text{Volume occupied by the fluid}}\]
+
+Or using Greek letters, mathematically as:
+
+\[\rho = \frac{M}{V}\]
+
+Units: \(\mathrm{kg/m^3}\) (SI), \(\mathrm{lbm/ft^3}\) (FPS).
+
+In the context of fluids, density provides critical insight into how
+fluids behave under various conditions, such as flow through pipes,
+buoyancy, and pressure variations with depth.
+
+For instance, the density of water at standard temperature and pressure
+(STP) is approximately \(1000~kg/m^3\), while air has a much lower
+density of about \(1.2~kg/m^3\).
+
+\hypertarget{measuring-density-of-fluids}{%
+\subsubsection{Measuring Density of
+Fluids}\label{measuring-density-of-fluids}}
+
+Practical methods to measure the density of a liquid include:
+
+\textbf{Gravimetric Method}
+
+This method involves directly measuring the mass and volume of a liquid
+sample and using the formula \(\rho = \frac{M}{V}\).
+
+Steps: - Weigh an empty container on a precision scale and record its
+mass. - Fill the container with the fluid and weigh it again to
+determine the mass of the fluid (\(M\)). - Measure the volume (\(V\)) of
+the fluid using a graduated cylinder or volumetric flask. - Calculate
+the density.
+
+\emph{Example:}
+
+If \(M=0.25 kg\) and \(V=0.00025 m^3\), the density is:
+
+\(\rho=\frac{0.250~kg}{0.00025~m^3}=1000 kg/m3\)
+
+\textbf{Hydrometer Method}
+
+A hydrometer is a floating instrument calibrated to measure fluid
+density directly.
+
+Steps: - Submerge the hydrometer in the fluid. - Read the density from
+the scale where the hydrometer's surface level aligns with the fluid.
+
+This method is especially useful for liquids like alcohol, brines, and
+oils.
+
+\textbf{Pycnometer Method}
+
+A pycnometer is a specialized container with a known volume used for
+highly precise density measurements.
+
+Steps: - Weigh the empty, dry pycnometer. - Fill it with the fluid and
+weigh it again to determine the mass of the fluid. - Calculate the
+density using the known volume of the pycnometer.
+
+The pycnometer is clearly a gravimetric technique, but eliminates the
+need to measure the volume, as the device itself performs this
+measurement directly
+
+\hypertarget{importance-of-density-in-fluid-mechanics}{%
+\subsubsection{Importance of Density in Fluid
+Mechanics}\label{importance-of-density-in-fluid-mechanics}}
+
+Understanding density is critical for:
+
+\begin{itemize}
+\tightlist
+\item
+  Buoyancy Analysis: The density difference between a fluid and a
+  submerged object determines whether it floats or sinks.
+\item
+  Hydrostatics: Density directly influences the pressure variation in a
+  fluid column, P=ρghP=ρgh.
+\item
+  Flow Dynamics: Density is a key parameter in determining the Reynolds
+  number, which predicts flow behavior (laminar or turbulent).
+\end{itemize}
+
+:::\{admonition\} Temperature Matters At a given temperature and
+pressure the density of a given liquid is constant. Let us say we keep
+pouring some liquid into a beaker, as the mass increases so does the
+volume whereas density, which is the ratio of mass to volume, stays
+constant.
+
+As such all experimental determinations of density require that the
+temperature of the liquid be measured. :::
+
+Accurately measuring and understanding fluid density, informs engineers
+so they can design systems involving fluid transport, storage, and
+control.
+
+    \hypertarget{specific-weight}{%
+\subsection{Specific Weight}\label{specific-weight}}
+
+\textbf{Specific Weight} is the \textbf{weight} per unit volume of the
+material. Remember that weight is a force obtained by multiplying mass
+and gravitational acceleration (g).
+
+As an equation in words:
+
+\[\text{Specific Weight} = \frac{\text{weight}}{\text{volume}}\]
+
+or more conventionally
+
+\[\gamma = \frac{W}{V} = \frac{m \cdot g}{V}\]
+
+At a given temperature, pressure and location, the specific weight of a
+fluid is constant. However, the acceleration due to gravity varies
+slightly with location. The specific weight of a fluid is slightly lower
+at the poles than at the equator even when the temperature and pressure
+of the fluid are the same at both locations.
+
+    \hypertarget{specific-gravity}{%
+\subsection{Specific Gravity}\label{specific-gravity}}
+
+\textbf{Specific Gravity} is another important fluid property that is
+defined as the ratio of the density of a fluid to the density of water
+at the same temperature.
+
+Clearly, the specific gravity is equal to 1.0 for water. Fluids denser
+than water have a specific gravity greater than 1 while those lighter
+than water have specific gravity less than 1.
+
+\[SG = \frac{\rho_s}{\rho_{H2O}} \]
+
+Being a ratio of two densities, specific gravity is a dimensionless
+quantity. Specific gravity can tell us whether an object will float or
+sink in water. Specific Gravity also provides consistency to compare
+fluids across different units.
+
+    \hypertarget{viscosity}{%
+\subsection{Viscosity}\label{viscosity}}
+
+Viscosity is a measure of a fluid's resistance to deformation or flow
+under an applied shear force. It quantifies the internal friction
+between adjacent layers of fluid that are moving at different
+velocities. Viscosity plays a central role in fluid mechanics as it
+affects flow characteristics, energy losses, and the behavior of fluids
+in engineering systems.
+
+There are two primary types of viscosity:
+
+\hypertarget{dynamic-viscosity-mu}{%
+\subsubsection{\texorpdfstring{Dynamic Viscosity
+(\(\mu\))}{Dynamic Viscosity (\textbackslash mu)}}\label{dynamic-viscosity-mu}}
+
+Dynamic viscosity measures the tangential force per unit area (ττ)
+required to move one fluid layer relative to another at a unit velocity
+while maintaining a unit distance separation. It follows Newton's law of
+viscosity:
+
+\(\tau = \mu \frac{\partial y}{\partial u}\)
+
+Where:
+
+\begin{itemize}
+\tightlist
+\item
+  \(\tau\): is the applied shear stress (\(Pa\))
+\item
+  \(\mu\): is the dynamic viscosity (\(Pa \cdot s\))
+\item
+  \(\frac{\partial y}{\partial u}\): is the velocity gradient
+  perpendicular to the flow.
+\end{itemize}
+
+\hypertarget{kinematic-viscosity-nu}{%
+\subsubsection{\texorpdfstring{Kinematic Viscosity
+(\(\nu\))}{Kinematic Viscosity (\textbackslash nu)}}\label{kinematic-viscosity-nu}}
+
+Kinematic viscosity is the ratio of dynamic viscosity to fluid density:
+
+\(\nu = \frac{\mu}{\rho}\)
+
+Units: \(m^2/s\) in SI.
+
+\hypertarget{measuring-viscosity}{%
+\subsubsection{Measuring Viscosity}\label{measuring-viscosity}}
+
+Several methods can be used to measure viscosity. In this laboratory, we
+will use on Stoke's law due to its feasibility, but additional methods
+are included for context.
+
+\textbf{Stoke's Law (Falling Sphere Method)}
+
+Principle: A small sphere is dropped into a fluid, and its terminal
+velocity (\(u\)) is recorded. Under terminal velocity conditions, the
+drag force equals the sum of buoyant and gravitational forces. From
+Stoke's law, the dynamic viscosity is calculated as:
+
+\(\mu=\frac{2r^2(\rho_s−\rho_f)g}{9u}\)
+
+Where: - \(r\): Sphere radius (mm) - \(\rho_s,\rho_f\): Densities of the
+sphere and fluid (\(kg/m^3\)) - \(g\): Gravitational acceleration
+(\(m/s^2\)) - \(u\): Terminal velocity (\(m/s\))
+
+Setup: Use a tall column of fluid, small spheres, and a stopwatch to
+measure the sphere's falling time over a known distance.
+
+\textbf{Capillary Tube Viscometer}
+
+Principle: Measures the time (\(t\)) it takes for a fluid to flow
+through a capillary under gravity or applied pressure. Viscosity is
+calculated as:
+
+\(\mu=K \cdot t\)
+
+Where \(K\) is a calibration constant based on the tube's geometry and
+fluid properties.
+
+Use: Common for low-viscosity fluids like water and oils.
+
+\textbf{Rotational Viscometer}
+
+\begin{itemize}
+\tightlist
+\item
+  Principle: Measures the torque required to rotate an object (e.g.,
+  spindle or cylinder) in a fluid at a constant speed. The torque is
+  proportional to the fluid's viscosity.
+\item
+  Use: Suitable for measuring a wide range of viscosities, including
+  non-Newtonian fluids.
+\end{itemize}
+
+\textbf{Inclined Plane Method}
+
+\begin{itemize}
+\tightlist
+\item
+  Principle: A known volume of liquid is released on an inclined plane,
+  and the time it takes to travel a set distance is recorded. The
+  viscosity is inferred from the relationship between time, fluid
+  properties, and inclination angle.
+\item
+  Use: While less precise, this method is a feasible alternative for
+  determining relative viscosities in a laboratory.
+\end{itemize}
+
+\hypertarget{importance-of-viscosity-in-fluid-mechanics}{%
+\subsubsection{Importance of Viscosity in Fluid
+Mechanics}\label{importance-of-viscosity-in-fluid-mechanics}}
+
+Viscosity influences several critical aspects of fluid behavior,
+including:
+
+\begin{itemize}
+\tightlist
+\item
+  Energy Losses: Higher viscosity increases resistance to flow, leading
+  to greater energy dissipation.
+\item
+  Laminar and Turbulent Flow: The Reynolds number, which predicts flow
+  regimes, depends on viscosity.
+\item
+  Practical Applications: From lubrication in machinery to fluid
+  transport in pipelines, viscosity is a key parameter.
+\end{itemize}
+
+:::\{admonition\} Temperature Matters Viscosity is strongly
+temperature-dependent. Consider how honey flows more easily when warmed
+compared to when it's at room temperature or chilled. Similarly, engine
+oil thickens in cold weather, making it harder for car engines to start.
+
+As such, all experimental determinations of viscosity require that the
+temperature of the liquid be measured. :::
+
+By accurately measuring viscosity, engineers can design efficient
+systems that minimize losses and optimize performance. In this lab, we
+will use Stoke's law to measure the viscosity of different fluids, but
+the insights extend to various industrial and natural applications.
+
+    \hypertarget{viscosity}{%
+\subsection{Viscosity}\label{viscosity}}
+
+\textbf{Viscosity} quantifies the ability of the fluid to resist shear
+stress (i.e., internal resistance). One can also conceptualize viscosity
+as the frictional forces that exist between two layers of fluid that are
+in relative motion.
+
+\textbf{Dynamic Viscosity} measures the tangential force per unit area
+required to move one horizonal plane relative to another at a unit
+velocity when maintaining unit distance separation. The shear stress
+applied causes the fluid to flow (or flow causes stress).
+
+Newton's law of viscosity states that the shear stress, \(\tau\), is
+proportional to the velocity gradient (across the flow flow),
+\(\frac{du}{dy}\) (see Figure 1). Dynamic viscosity ,\(\mu\), is the
+constant of proportionality.
+
+Figure 1: Shear stress conceptual diagram
+
+Newton's law expressed as an equation is:
+\[\tau = \mu \cdot \frac{du}{dy} \]
+
+thus dynamic viscosity is the ratio of shear force to the velocity
+gradient. It has units of \$ Pa \cdot s = \frac{kg \cdot m}{s^2}
+\cdot \frac{s}{m^2}\$.
+
+In cgs system the units of dynamic viscosity is Poise (or more commonly
+centipoise, cP).
+
+In US Customary units we express viscosity as
+\(\frac{lbf}{ft \cdot s}\).
+
+In practical fluid mechanics, we often encounter the ratio of dynamic
+viscosity to density. This term is the \textbf{kinematic viscosity}.
+
+Expressed as an equation in commonly used notation:
+
+\[ \nu = \frac{\mu}{\rho}\]
+
+The kinematic viscosity has SI units of \[\frac{m^2}{s}\].
+
+A useful method to determine viscosity of liquids is to record the rate
+at which a sphere will fall through a liquid of interest. Under
+equilibrium conditions, the frictional forces experienced by the sphere
+will be equal to its weight. The sphere will fall at a constant speed
+known as the terminal velocity. The phenomenon is called Stokes law (or
+Stokes flow).
+
+A simple force balance is depicted in Figure 2, where the bouyant force
+and drag force are equal to the weight of the sphere.
+
+Figure 2: Force balance on a sphere falling at constant velocity
+
+Stokes flow occurs at pretty low Reynolds numbers so the laminar
+correlation for the drag coefficient is appropriate
+
+\[ c_d = \frac{24}{Re}+\frac{4}{\sqrt{Re}}+0.4 \]
+
+If the Reynolds number is less than \(\frac{1}{2}\) the drag coefficient
+is \(c_d = \frac{24}{Re}\), using this representation of drag the force
+balance for the sphere allows us to solve for velocity, \(u\),
+
+\[ u = \frac{g \cdot d^2}{18 \nu}(\sigma-\rho)\]
+
+where, \emph{g} is the acceleration due to gravity, \emph{d} is the
+diameter of the sphere, \(\nu\) is the kinematic viscosity, \(\sigma\)
+is the density of the sphere, \(\rho\) is the density of the fluid.
+
+We can apply the formula to get an idea of how fast to expect a sphere
+to fall if Stokes flow holds. In the experiment we will use Glycerine as
+the liquid phase, and small steel spheres the largest is about 2.5
+millimeters
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{25}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+c1}{\PYZsh{} Estimate Sphere Falling Speed assuming laminar flow}
+\PY{n}{gravity} \PY{o}{=} \PY{l+m+mf}{9.81} \PY{c+c1}{\PYZsh{}m/s\PYZca{}2}
+\PY{n}{viscosity} \PY{o}{=} \PY{l+m+mf}{15.103} \PY{c+c1}{\PYZsh{} Ns/m\PYZca{}2}
+\PY{n}{density\PYZus{}liquid} \PY{o}{=} \PY{p}{(}\PY{l+m+mf}{69.5}\PY{o}{/}\PY{l+m+mi}{50}\PY{p}{)}\PY{o}{*}\PY{l+m+mi}{1000}\PY{o}{*}\PY{l+m+mi}{1000} \PY{c+c1}{\PYZsh{}kg/m\PYZca{}3}
+\PY{n}{density\PYZus{}sphere} \PY{o}{=} \PY{p}{(}\PY{l+m+mf}{11.350}\PY{p}{)}\PY{o}{*}\PY{l+m+mi}{1000}\PY{o}{*}\PY{l+m+mi}{1000} \PY{c+c1}{\PYZsh{}kg/m\PYZca{}3}
+\PY{n}{diameter} \PY{o}{=} \PY{l+m+mf}{0.0125} \PY{c+c1}{\PYZsh{}meters \PYZhy{} nominal 2.5mm}
+\PY{n}{upper\PYZus{}support\PYZus{}terminal\PYZus{}speed} \PY{o}{=} \PY{p}{(}\PY{n}{gravity}\PY{o}{*}\PY{n}{diameter}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{p}{)}\PY{o}{*}\PY{p}{(}\PY{n}{density\PYZus{}sphere}\PY{o}{\PYZhy{}}\PY{n}{density\PYZus{}liquid}\PY{p}{)}\PY{o}{/}\PY{p}{(}\PY{l+m+mf}{18.0}\PY{o}{*}\PY{n}{viscosity}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Stokes flow speed limit = }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{n+nb}{round}\PY{p}{(}\PY{n}{upper\PYZus{}support\PYZus{}terminal\PYZus{}speed}\PY{p}{,}\PY{l+m+mi}{6}\PY{p}{)}\PY{p}{,}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ millimeters per second}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Stokes flow speed limit =  56.158131  millimeters per second
+    \end{Verbatim}
+
+    So using the above script we conclude that we should be able to make
+measurements for spheres as large as 25 mm, using a stopwatch and visual
+observation, our spheres are quite a bit smaller, so we should have no
+issues.
+
+    
+
+    \hypertarget{laboratory-objectives}{%
+\subsection{Laboratory Objectives}\label{laboratory-objectives}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Measure density, specific gravity, and viscosity of various liquids.
+\item
+  Develop an experimental protocol (step-by-step instructions) to
+  measure density, specific gravity, and viscosity of three different
+  liquids.
+\item
+  Upon approval of the protocol, conduct a set of experiments in
+  triplicate to measure the density, specific gravity, and viscosity of
+  three different liquids.
+\item
+  Document the experiment(s) into a laboratory report and address the
+  following in the report:
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  Derive the fall velocity equation, starting from the force balance on
+  the sphere and assuming that \(C_D=\frac{24}{Re_D}\)
+\item
+  Compare your results with tabulated values for density and viscosity
+  for the three fluids.
+\item
+  Experiments are conducted in triplicate, so you can compute mean
+  values and standard deviations; what does this information tell us
+  about the accuracy of the measurements?, What does it tell us about
+  the repeatability of the measurements?
+\item
+  What are some potential sources of errors in your lab experiments.
+  Discuss in the context of measuring density, specific gravity and
+  viscosity.
+\end{itemize}
+
+The protocol is evaluated to ensure that the envisioned procedures can
+be safely conducted under appropriate supervision. The experiments may
+produce incomplete results if steps are ommitted.
+
+    \hypertarget{deliverables}{%
+\subsection{Deliverables}\label{deliverables}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Develop an \textbf{experimental protocol} (step-by-step instructions)
+  to measure density, specific gravity, and viscosity of three different
+  liquids. Submitted in advance for instructor approval - the protocol
+  will become part of your laboratory report.
+\item
+  \textbf{Laboratory Report} documenting the actual experiments, and
+  other required content including comparison to tabulated values.
+\end{enumerate}
+
+    \hypertarget{link-to-laboratory-document}{%
+\subsection{Link to Laboratory
+Document}\label{link-to-laboratory-document}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \href{http://54.243.252.9/ce-3105-webroot/2-Exercises/laboratory1/laboratory1.html}{Laboratory
+  1 Tasklist}
+\item
+\end{enumerate}
+
+    
+
+    
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{ }{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+
+\end{Verbatim}
+\end{tcolorbox}
+
+
+    % Add a bibliography block to the postdoc
+    
+    
+    
+\end{document}

@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -62,7 +62,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'lessons/laboratory1/laboratory1';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="2. Hydrostatic Forces and Bouyancy" href="../laboratory2/laboratory2.html" />
+    <link rel="next" title="Laboratory 1 Sample Protocol Document" href="laboratory1_sample_protocol.html" />
     <link rel="prev" title="Safety Considerations" href="../laboratory0/safety/safety_training.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -155,8 +155,8 @@
       
     
     
-    <img src="../../_static/waterjet.png" class="logo__image only-light" alt="Mechanics of Fluids Laboratory - Home"/>
-    <script>document.write(`<img src="../../_static/waterjet.png" class="logo__image only-dark" alt="Mechanics of Fluids Laboratory - Home"/>`);</script>
+    <img src="../../_static/logo2.png" class="logo__image only-light" alt="Mechanics of Fluids Laboratory - Home"/>
+    <script>document.write(`<img src="../../_static/logo2.png" class="logo__image only-dark" alt="Mechanics of Fluids Laboratory - Home"/>`);</script>
   
   
 </a></div>
@@ -182,7 +182,7 @@
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../syllabus_copy/ce-3105-syllabus-2025-1.html">Syllabus CE 3105</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../syllabus_copy/ce-3105-syllabus-2025-1.html">CE 3105 Mechanics of Fluids Laboratory</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../instruments/instruments.html">Equipment Inventory</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../laboratory0/feynman/feynman.html">Laboratory 0 -  Background</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../laboratory0/reports/reports.html">Laboratory Reports</a></li>
@@ -199,7 +199,11 @@
 
 </ul>
 </details></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Laboratory 1 - Fluid Properties</a></li>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Laboratory 1 - Fluid Properties</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="laboratory1_sample_protocol.html">Laboratory 1 Sample Protocol Document</a></li>
+<li class="toctree-l2"><a class="reference internal" href="laboratory1_sample_report.html">Laboratory 1 Sample Report</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1"><a class="reference internal" href="../laboratory2/laboratory2.html">2. Hydrostatic Forces and Bouyancy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../laboratory3/laboratory3.html">3. Flow Measurement</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../laboratory4/laboratory4.html">4. Pipe Friction</a></li>
@@ -664,25 +668,15 @@ The phenomenon is called Stokes law (or Stokes flow).</p>
 <p>where, <em>g</em> is the acceleration due to gravity, <em>d</em> is the diameter of the sphere,
 <span class="math notranslate nohighlight">\(\nu\)</span> is the kinematic viscosity, <span class="math notranslate nohighlight">\(\sigma\)</span> is the density of the sphere, <span class="math notranslate nohighlight">\(\rho\)</span> is the density of the fluid.</p>
 <p>We can apply the formula to get an idea of how fast to expect a sphere to fall if Stokes flow holds.  In the experiment we will use Glycerine as the liquid phase, and small steel spheres the largest is about 2.5 millimeters</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Estimate Sphere Falling Speed assuming laminar flow</span>
-<span class="n">gravity</span> <span class="o">=</span> <span class="mf">9.81</span> <span class="c1">#m/s^2</span>
-<span class="n">viscosity</span> <span class="o">=</span> <span class="mf">15.103</span> <span class="c1"># Ns/m^2</span>
-<span class="n">density_liquid</span> <span class="o">=</span> <span class="p">(</span><span class="mf">69.5</span><span class="o">/</span><span class="mi">50</span><span class="p">)</span><span class="o">*</span><span class="mi">1000</span><span class="o">*</span><span class="mi">1000</span> <span class="c1">#kg/m^3</span>
-<span class="n">density_sphere</span> <span class="o">=</span> <span class="p">(</span><span class="mf">11.350</span><span class="p">)</span><span class="o">*</span><span class="mi">1000</span><span class="o">*</span><span class="mi">1000</span> <span class="c1">#kg/m^3</span>
-<span class="n">diameter</span> <span class="o">=</span> <span class="mf">0.0125</span> <span class="c1">#meters - nominal 2.5mm</span>
-<span class="n">upper_support_terminal_speed</span> <span class="o">=</span> <span class="p">(</span><span class="n">gravity</span><span class="o">*</span><span class="n">diameter</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">density_sphere</span><span class="o">-</span><span class="n">density_liquid</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mf">18.0</span><span class="o">*</span><span class="n">viscosity</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Stokes flow speed limit = &quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">upper_support_terminal_speed</span><span class="p">,</span><span class="mi">6</span><span class="p">),</span><span class="s2">&quot; millimeters per second&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Stokes flow speed limit =  56.158131  millimeters per second
-</pre></div>
-</div>
-</div>
-</div>
+<p>‘’’ # Estimate Sphere Falling Speed assuming laminar flow
+gravity = 9.81 #m/s^2
+viscosity = 15.103 # Ns/m^2
+density_liquid = (69.5/50)<em>1000</em>1000 #kg/m^3
+density_sphere = (11.350)<em>1000</em>1000 #kg/m^3
+diameter = 0.0125 #meters - nominal 2.5mm
+upper_support_terminal_speed = (gravity<em>diameter**2)</em>(density_sphere-density_liquid)/(18.0*viscosity)
+print(“Stokes flow speed limit = “,round(upper_support_terminal_speed,6),” millimeters per second”)
+‘’’</p>
 <p>So using the above script we conclude that we should be able to make measurements for spheres as large as 25 mm, using a stopwatch and visual observation, our spheres are quite a bit smaller, so we should have no issues.</p>
 </section>
 <section id="laboratory-objectives">
@@ -744,6 +738,8 @@ constant.
 In SI, the units of density are $\frac{kg}{m^3}$. 
 
 In FPS system density is reported either as $\frac{\text{slugs}}{ft^3}$ or  $\frac{\text{lbm}}{ft^3}$ where [*lbm*](https://en.wikipedia.org/wiki/Pound_(mass)) is pound mass.--></section>
+<div class="toctree-wrapper compound">
+</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -786,11 +782,11 @@ In FPS system density is reported either as $\frac{\text{slugs}}{ft^3}$ or  $\fr
       </div>
     </a>
     <a class="right-next"
-       href="../laboratory2/laboratory2.html"
+       href="laboratory1_sample_protocol.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">2. Hydrostatic Forces and Bouyancy</p>
+        <p class="prev-next-title">Laboratory 1 Sample Protocol Document</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

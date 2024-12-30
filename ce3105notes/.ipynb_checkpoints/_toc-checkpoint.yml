@@ -13,6 +13,10 @@ chapters:
 #- file: lessons/laboratory0/laboratory0
 
 - file: lessons/laboratory1/laboratory1
+  sections:
+  - file: lessons/laboratory1/laboratory1_sample_protocol
+  - file: lessons/laboratory1/laboratory1_sample_report
+  
 - file: lessons/laboratory2/laboratory2
 - file: lessons/laboratory3/laboratory3
 - file: lessons/laboratory4/laboratory4
