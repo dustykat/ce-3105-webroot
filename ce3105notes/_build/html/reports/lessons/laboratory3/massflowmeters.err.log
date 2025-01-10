@@ -1,0 +1,134 @@
+Traceback (most recent call last):
+  File "/opt/jupyterhub/lib/python3.10/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+  File "/opt/jupyterhub/lib/python3.10/site-packages/nbclient/client.py", line 1314, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/opt/jupyterhub/lib/python3.10/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 649, in run_until_complete
+    return future.result()
+  File "/opt/jupyterhub/lib/python3.10/site-packages/nbclient/client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "/opt/jupyterhub/lib/python3.10/site-packages/nbclient/client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/opt/jupyterhub/lib/python3.10/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+# Discussion: Mass Flow Meters
+
+## General Technology
+
+Mass flow meters are widely used instruments in fluid mechanics and engineering applications to measure the mass or volume flow rate of a fluid. The fundamental working principle involves a **low-inertia turbine** placed in the fluid flow path. As the fluid passes through the turbine, it rotates at a speed proportional to the flow rate. 
+
+### Key Components and Operation
+1. **Turbine with Magnetic Ring**: The turbine has a magnetic ring attached to it, with one or more interruptions (gaps) in the magnetic field.
+2. **Hall Effect Sensor**: A sensor positioned near the turbine detects the changes in the magnetic field as the turbine rotates.
+3. **Pulse Counting**: The sensor generates a series of electrical pulses, where the frequency of the pulses corresponds to the rotational speed of the turbine.
+4. **Meter Constant (K-Factor)**: The turbine and sensor assembly has a meter constant (K-factor), defined as the number of pulses generated per unit of flow. This constant is used to convert the pulse frequency into a mass or volume flow rate.
+
+The output is then processed by a microcontroller or data acquisition system to display the flow rate in appropriate units.
+
+### Advantages
+- **Accuracy**: Low-inertia turbines minimize lag, allowing precise measurement even at low flow rates.
+- **Compact and Scalable**: Mass flow meters are available in a wide range of sizes and capacities, suitable for different applications.
+- **Digital Output**: The pulse-based output is easy to integrate with modern control systems and data loggers.
+
+## Common Engineering Applications
+
+Mass flow meters are versatile and widely used across industries. Some common applications include:
+
+### 1. **Water and Wastewater Treatment**
+   - Monitoring the flow of water, effluent, and chemicals in treatment plants.
+   - Ensuring compliance with regulatory discharge limits.
+
+### 2. **Oil and Gas Industry**
+   - Measuring fuel flow rates in pipelines.
+   - Monitoring the consumption of lubricants and other fluids in mechanical systems.
+
+### 3. **HVAC Systems**
+   - Ensuring accurate flow rates of chilled water, refrigerants, and steam in heating and cooling systems.
+   - Optimizing energy efficiency by monitoring flow conditions.
+
+### 4. **Food and Beverage Industry**
+   - Measuring the flow of liquids like milk, juice, and syrup in processing plants.
+   - Monitoring the flow of cleaning agents during sterilization processes.
+
+### 5. **Automotive and Aerospace Engineering**
+   - Fuel consumption testing for engines and turbines.
+   - Flow monitoring in hydraulic and pneumatic systems.
+
+### 6. **Pharmaceutical and Chemical Manufacturing**
+   - Precise dosing of chemicals in production lines.
+   - Monitoring the flow of solvents and active ingredients in formulation processes.
+
+## Lab Setup: Raspberry Pi Zero W as Datalogger and Controller
+
+In this lab, we will use a **Raspberry Pi Zero W** as the datalogger and controller, paired with an **inexpensive turbine-type mass flow meter**. The Raspberry Pi Zero W is preconfigured as a WiFi host to simplify connectivity and data acquisition.
+
+### Steps to Access the Datalogger
+1. **Connect to the Raspberry Pi's WiFi**:
+   - Locate the SSID provided in class and connect your device to it.
+   - No internet access is required, as this connection is solely for interfacing with the Raspberry Pi.
+
+2. **Access the Raspberry Pi**:
+   - Use an SSH client to connect to the Raspberry Pi's IP address (provided in class).
+   - Once connected via SSH, start the VNC server using the command:
+     ```bash
+     vncserver
+     ```
+
+3. **Open the VNC Desktop**:
+   - Use a VNC client to connect to the Raspberry Pi's desktop environment.
+   - This provides full access to the Raspberry Pi's graphical interface.
+
+4. **Run the Mass Flow Meter Program**:
+   - Locate the program file (`/path/filename`, as provided in class) on the Raspberry Pi.
+   - Start the program using a terminal command:
+     ```bash
+     python3 /path/filename
+     ```
+   - When prompted, supply:
+     - **Meter Constant (K-Factor)**: Provided with the mass flow meter.
+     - **Desired Time Interval**: The time in seconds for each reading.
+
+### Input Validation
+The program is designed with robust input validation using Python's `try-except` blocks to handle invalid or pathological entries, ensuring smooth operation and accurate data logging.
+
+With this setup, the Raspberry Pi Zero W enables efficient and flexible data acquisition from the turbine-type mass flow meter, offering a hands-on experience with both modern IoT technology and traditional fluid mechanics instrumentation.
+
+## Python Scripts for Flow Measurement Lab
+
+### Overview
+Below are Python scripts provided to document the workflow and enhance the understanding of the lab. These scripts are designed for data logging, processing, and visualization.
+
+---
+
+### Script 1: Datalogger Initialization
+**Purpose**:  
+This script establishes communication between the Raspberry Pi and the turbine flow meter. It allows users to input key parameters, such as:
+- **Meter Constant (K-Factor)**: Provided with the flow meter.
+- **Sampling Interval**: The time between successive measurements.
+
+Once configured, the script logs flow rate data into a CSV file for further analysis.
+
+---
+
+### Script 2: Data Processing and Visualization
+**Purpose**:  
+This script processes the logged data and generates useful insights, including:
+- Summary statistics (e.g., average, max, and min flow rates).
+- Calibration curves for the flow meter.
+- Time-series plots of flow rate data.
+
+The script also demonstrates how to handle and visualize data effectively using Python libraries like `pandas` and `matplotlib`.
+
+------------------
+
+
+[0;36m  Cell [0;32mIn[1], line 53[0;36m[0m
+[0;31m    1. **Connect to the Raspberry Pi's WiFi**:[0m
+[0m                                    ^[0m
+[0;31mSyntaxError[0m[0;31m:[0m unterminated string literal (detected at line 53)
+
+

@@ -18,7 +18,16 @@ chapters:
   - file: lessons/laboratory1/laboratory1_sample_report
   
 - file: lessons/laboratory2/laboratory2
+  sections:
+  - file: lessons/laboratory2/laboratory2_sample_protocol
+  - file: lessons/laboratory2/laboratory2_sample_report
+  
 - file: lessons/laboratory3/laboratory3
+  sections:
+  - file: lessons/laboratory3/massflowmeters
+  - file: lessons/laboratory3/laboratory3_sample_protocol
+  - file: lessons/laboratory3/laboratory3_sample_report
+  
 - file: lessons/laboratory4/laboratory4
 - file: lessons/laboratory5/laboratory5
 - file: lessons/laboratory6/laboratory6
