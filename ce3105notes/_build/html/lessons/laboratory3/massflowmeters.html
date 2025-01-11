@@ -184,16 +184,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../instruments/instruments.html">Equipment Inventory</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../laboratory0/feynman/feynman.html">Laboratory 0 -  Introduction</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../laboratory0/reports/reports.html">Laboratory Reports</a></li>
-
-
-
-
 <li class="toctree-l2"><a class="reference internal" href="../laboratory0/safety/safety_training.html">Safety Considerations</a></li>
-
-
-
-
-
 
 </ul>
 </details></li>
@@ -437,7 +428,6 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-scripts-for-flow-measurement-lab">Python Scripts for Flow Measurement Lab</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#script-1-datalogger-initialization">Script 1: Datalogger Initialization</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#script-2-alert-type-flow-monitoring">Script 2: Alert-Type Flow Monitoring</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#end-of-section">End of Section</a></li>
@@ -575,7 +565,10 @@ document.write(`
 <section id="input-validation">
 <h3>Input Validation<a class="headerlink" href="#input-validation" title="Link to this heading">#</a></h3>
 <p>The program is designed with robust input validation using Python’s <code class="docutils literal notranslate"><span class="pre">try-except</span></code> blocks to handle invalid or pathological entries, ensuring smooth operation and accurate data logging.</p>
-<p>With this setup, the Raspberry Pi Zero W enables efficient and flexible data acquisition from the turbine-type mass flow meter, offering a hands-on experience with both modern IoT technology and traditional fluid mechanics instrumentation.</p>
+<p>With this setup, the Raspberry Pi Zero W enables efficient and flexible data acquisition from the turbine-type mass flow meter, offering a hands-on experience with both modern <strong>IoT</strong> technology and traditional fluid mechanics instrumentation.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://youtu.be/dp-LujkiMRQ">CE-3105-FlowMeter-Datalogger Connection (Component of Laboratory 3)</a> Video showing how to connect to the datalogger.</p></li>
+</ul>
 </section>
 </section>
 <section id="python-scripts-for-flow-measurement-lab">
@@ -592,217 +585,198 @@ This script establishes communication between the Raspberry Pi and the turbine f
 <li><p><strong>Meter Constant (K-Factor)</strong>: Provided with the flow meter.</p></li>
 <li><p><strong>Sampling Interval</strong>: The time between successive measurements.</p></li>
 </ul>
-<p>Once running, the script writes flow rate data to the console, you can use redirection to write to a file if you wish.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>The script needs modification to prompt for the meter constant and time interval.  Use Try-Except structure to reduce pathalogical inputs</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The 2019 script was refactored and reviewed with guidance from OpenAI’s ChatGPT. Enhancements included modularization, input validation, time-setting functionality, and general improvements for maintainability and usability. Date of assistance: January 2025.</p>
 </div>
+<p>Once running, the script writes flow rate data to the console.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
-<span class="c1"># Code to record Hall Detector events and convert into flow rate</span>
-<span class="c1"># by T.G. Cleveland 6 FEB 2019</span>
-<span class="c1"># Base Code from : https://raspberrypi.stackexchange.com/questions/34480</span>
-<span class="c1"># This code will operate two different flow meters, modify if only using a single meter</span>
-<span class="c1">#</span>
-<span class="c1"># Tested (no sensor) 6 FEB 2019 - exit keyboard OK</span>
-<span class="c1">#                               - syntax check OK</span>
-<span class="c1">#</span>
-<span class="c1">#                    5 JUN 2019 - modify for fixed run length</span>
-<span class="c1">#                               - fixed run length OK</span>
-<span class="c1">#                               - modify for multiple sensors</span>
-<span class="c1">#</span>
-<span class="c1">#                   11 MAR 2022 - refactor to append to an output file for</span>
-<span class="c1">#                               - near real-time reporting</span>
+<span class="c1"># Flow Meter Recorder</span>
+<span class="c1"># T.G. Cleveland 2019. Script refactored and reviewed with guidance from OpenAI&#39;s ChatGPT. Enhancements included modularization, input validation, time-setting functionality, and general improvements for maintainability and usability. Date of assistance: January 2025.</span>
 <span class="kn">import</span> <span class="nn">RPi.GPIO</span> <span class="k">as</span> <span class="nn">GPIO</span>
-<span class="kn">import</span> <span class="nn">time</span><span class="o">,</span><span class="nn">sys</span>
-<span class="c1"># set sensor pin</span>
-<span class="n">flow_sensor_one</span> <span class="o">=</span> <span class="mi">23</span>
-<span class="n">flow_sensor_two</span> <span class="o">=</span> <span class="mi">24</span>
-<span class="c1">#</span>
-<span class="c1"># configure GPIO </span>
-<span class="n">GPIO</span><span class="o">.</span><span class="n">setmode</span><span class="p">(</span><span class="n">GPIO</span><span class="o">.</span><span class="n">BCM</span><span class="p">)</span>
-<span class="n">GPIO</span><span class="o">.</span><span class="n">setup</span><span class="p">(</span><span class="n">flow_sensor_one</span><span class="p">,</span> <span class="n">GPIO</span><span class="o">.</span><span class="n">IN</span><span class="p">,</span> <span class="n">pull_up_down</span> <span class="o">=</span> <span class="n">GPIO</span><span class="o">.</span><span class="n">PUD_UP</span><span class="p">)</span>
-<span class="n">GPIO</span><span class="o">.</span><span class="n">setup</span><span class="p">(</span><span class="n">flow_sensor_two</span><span class="p">,</span> <span class="n">GPIO</span><span class="o">.</span><span class="n">IN</span><span class="p">,</span> <span class="n">pull_up_down</span> <span class="o">=</span> <span class="n">GPIO</span><span class="o">.</span><span class="n">PUD_UP</span><span class="p">)</span>
-<span class="c1">#</span>
-<span class="c1"># initialize counter(s)</span>
-<span class="c1">#</span>
-<span class="k">global</span> <span class="n">count</span>
-<span class="k">global</span> <span class="n">count2</span>
-<span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">count2</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="c1">#</span>
-<span class="c1"># define a counter method</span>
-<span class="c1">#</span>
-<span class="k">def</span> <span class="nf">countPulse</span><span class="p">(</span><span class="n">channel</span><span class="p">):</span>
-   <span class="k">global</span> <span class="n">count</span>
-   <span class="k">if</span> <span class="n">start_counter</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-      <span class="n">count</span> <span class="o">=</span> <span class="n">count</span> <span class="o">+</span> <span class="mi">1</span>
-<span class="k">def</span> <span class="nf">countPulse2</span><span class="p">(</span><span class="n">channel</span><span class="p">):</span>
-   <span class="k">global</span> <span class="n">count2</span>
-   <span class="k">if</span> <span class="n">start_counter2</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-      <span class="n">count2</span> <span class="o">=</span> <span class="n">count2</span> <span class="o">+</span> <span class="mi">1</span>
-<span class="c1">#   now = time.strftime(&quot;%c&quot;) # capture actual time as center of sampling interval</span>
-<span class="c1">#   print count</span>
-<span class="c1">#   flow = count / (60.0 * 7.5) # force to float </span>
-<span class="c1">#   print(now + &#39; &#39; + str(count) + &#39; &#39; + str(flow))</span>
-<span class="c1">#   print(now)</span>
-<span class="c1">#</span>
-<span class="c1"># </span>
-<span class="n">GPIO</span><span class="o">.</span><span class="n">add_event_detect</span><span class="p">(</span><span class="n">flow_sensor_one</span><span class="p">,</span> <span class="n">GPIO</span><span class="o">.</span><span class="n">FALLING</span><span class="p">,</span> <span class="n">callback</span><span class="o">=</span><span class="n">countPulse</span><span class="p">)</span>
-<span class="n">GPIO</span><span class="o">.</span><span class="n">add_event_detect</span><span class="p">(</span><span class="n">flow_sensor_two</span><span class="p">,</span> <span class="n">GPIO</span><span class="o">.</span><span class="n">FALLING</span><span class="p">,</span> <span class="n">callback</span><span class="o">=</span><span class="n">countPulse2</span><span class="p">)</span>
-<span class="c1"># Read meter specifications file</span>
+<span class="kn">import</span> <span class="nn">time</span><span class="o">,</span> <span class="nn">sys</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+<span class="kn">import</span> <span class="nn">subprocess</span>
 
-<span class="n">Afile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;meterspecs.txt&quot;</span><span class="p">,</span><span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="c1"># open meterspecs.txt connection</span>
-<span class="n">stationID</span> <span class="o">=</span> <span class="n">Afile</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
-<span class="n">sensorID</span> <span class="o">=</span> <span class="n">Afile</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
-<span class="n">howmany2wait</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">Afile</span><span class="o">.</span><span class="n">readline</span><span class="p">())</span>
-<span class="n">howmany2read</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">Afile</span><span class="o">.</span><span class="n">readline</span><span class="p">())</span>
-<span class="n">meterconstant</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">Afile</span><span class="o">.</span><span class="n">readline</span><span class="p">())</span>
-<span class="n">meterconstant2</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">Afile</span><span class="o">.</span><span class="n">readline</span><span class="p">())</span>
-<span class="n">filename</span> <span class="o">=</span> <span class="n">Afile</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">rstrip</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="n">Afile</span><span class="o">.</span><span class="n">close</span><span class="p">()</span> <span class="c1"># disconnect the specifications file</span>
-<span class="n">accCount</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">accCount2</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">howmanyRread</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="c1"># set up header for the output</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;filenme&#39;</span><span class="p">,</span><span class="n">filename</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;# Flowmeter Recording System &#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;# &#39;</span> <span class="o">+</span> <span class="n">stationID</span><span class="p">),</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;# &#39;</span> <span class="o">+</span> <span class="n">sensorID</span><span class="p">),</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;# Sampling Interval Duration (seconds) &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">howmany2wait</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;# Sampling Interval Count (Count * Duration = Elaped Time) &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">howmany2read</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;# Events is number of counted pulses for a sampling interval&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;# Volume is computed volume in liters for a sampling interval&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;# 1 and 2 are the two sampling channels; Pin 16 &amp; 18 (GPIO 23 &amp; 24)&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;DateTime&#39;</span> <span class="o">+</span> <span class="s1">&#39;, Events1&#39;</span> <span class="o">+</span> <span class="s1">&#39;, Events2 &#39;</span> <span class="o">+</span> <span class="s1">&#39;, Volume1 &#39;</span> <span class="o">+</span> <span class="s1">&#39;, Volume2 &#39;</span><span class="p">)</span>
-<span class="c1">#externalfile=open(filename,&#39;a&#39;) # output file to append to</span>
-<span class="c1"># run the datalogger for howmany2read minutes</span>
-<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-   <span class="k">try</span><span class="p">:</span>
-      <span class="k">if</span> <span class="n">howmanyRread</span> <span class="o">&gt;=</span> <span class="n">howmany2read</span> <span class="p">:</span>
-         <span class="nb">print</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">time to die!&#39;</span>
-         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39; Total Events1 = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">accCount</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39; Total Events2 = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">accCount2</span><span class="p">))</span>
-         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39; Total Volume1 = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">meterconstant</span><span class="o">*</span><span class="n">accCount</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39; Total Volume2 = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">meterconstant2</span><span class="o">*</span><span class="n">accCount2</span><span class="p">))</span>
-         <span class="n">enow</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%a</span><span class="s2"> %b </span><span class="si">%d</span><span class="s2"> %Y&quot;</span><span class="p">)</span> <span class="c1"># capture system time</span>
-         <span class="n">externalfile</span><span class="o">=</span><span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span><span class="s1">&#39;a&#39;</span><span class="p">)</span> <span class="c1"># output file to append to</span>
-         <span class="n">externalfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;#Totals &#39;</span> <span class="o">+</span> <span class="n">enow</span> <span class="o">+</span> <span class="s1">&#39; Events1 = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">accCount</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39; Events2 = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">accCount2</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
-         <span class="n">externalfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;#Totals &#39;</span> <span class="o">+</span> <span class="n">enow</span> <span class="o">+</span> <span class="s1">&#39; Volume1 = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">meterconstant</span><span class="o">*</span><span class="n">accCount</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39; Volume2 = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">meterconstant2</span><span class="o">*</span><span class="n">accCount2</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
-         <span class="n">externalfile</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-	 <span class="n">GPIO</span><span class="o">.</span><span class="n">cleanup</span><span class="p">()</span>
-         <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>
-      <span class="n">howmanyRread</span> <span class="o">=</span> <span class="n">howmanyRread</span> <span class="o">+</span> <span class="mi">1</span>
-      <span class="n">start_counter</span> <span class="o">=</span> <span class="mi">1</span>
-      <span class="n">start_counter2</span> <span class="o">=</span> <span class="mi">1</span>
-      <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">howmany2wait</span><span class="p">)</span>
-      <span class="n">start_counter</span> <span class="o">=</span> <span class="mi">0</span>
-      <span class="n">start_counter2</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="c1">#flow = (count * 60 * 2.25 / 1000)</span>
-      <span class="n">flow</span>  <span class="o">=</span> <span class="p">(</span><span class="n">count</span> <span class="o">*</span>  <span class="n">meterconstant</span>  <span class="p">)</span>
-      <span class="n">flow2</span> <span class="o">=</span> <span class="p">(</span><span class="n">count2</span> <span class="o">*</span> <span class="n">meterconstant2</span> <span class="p">)</span>
-      <span class="n">now</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%c</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># capture system time</span>
-      <span class="nb">print</span><span class="p">(</span><span class="n">now</span> <span class="o">+</span> <span class="s1">&#39; , &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">count</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39; , &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">count2</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39; , &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">flow</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39; , &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">flow2</span><span class="p">))</span>
-      <span class="n">externalfile</span><span class="o">=</span><span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span><span class="s1">&#39;a&#39;</span><span class="p">)</span> <span class="c1"># output file to append to</span>
-      <span class="n">externalfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">now</span> <span class="o">+</span> <span class="s1">&#39; , &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">count</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39; , &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">count2</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39; , &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">flow</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39; , &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">flow2</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
-      <span class="n">externalfile</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>      
-      <span class="n">accCount</span> <span class="o">=</span> <span class="n">accCount</span> <span class="o">+</span> <span class="n">count</span>
-      <span class="n">accCount2</span> <span class="o">=</span> <span class="n">accCount2</span> <span class="o">+</span> <span class="n">count2</span>
-      <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
-      <span class="n">count2</span> <span class="o">=</span> <span class="mi">0</span>
-      <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-   <span class="k">except</span> <span class="ne">KeyboardInterrupt</span><span class="p">:</span>
-      <span class="nb">print</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">caught keyboard interrupt!, bye&#39;</span>
-      <span class="nb">print</span><span class="p">(</span><span class="s1">&#39; Total Events1 = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">accCount</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39; Total Events2 = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">accCount2</span><span class="p">))</span>
-      <span class="nb">print</span><span class="p">(</span><span class="s1">&#39; Total Volume1 = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">meterconstant</span><span class="o">*</span><span class="n">accCount</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39; Total Volume2 = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">meterconstant2</span><span class="o">*</span><span class="n">accCount2</span><span class="p">))</span>
-      <span class="n">externalfile</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>     
-      <span class="n">GPIO</span><span class="o">.</span><span class="n">cleanup</span><span class="p">()</span>
-      <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>
+<span class="c1"># Initialize GPIO</span>
+<span class="k">def</span> <span class="nf">setup_gpio</span><span class="p">(</span><span class="n">pin</span><span class="p">):</span>
+    <span class="n">GPIO</span><span class="o">.</span><span class="n">setmode</span><span class="p">(</span><span class="n">GPIO</span><span class="o">.</span><span class="n">BCM</span><span class="p">)</span>
+    <span class="n">GPIO</span><span class="o">.</span><span class="n">setup</span><span class="p">(</span><span class="n">pin</span><span class="p">,</span> <span class="n">GPIO</span><span class="o">.</span><span class="n">IN</span><span class="p">,</span> <span class="n">pull_up_down</span><span class="o">=</span><span class="n">GPIO</span><span class="o">.</span><span class="n">PUD_UP</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">pin</span>
 
- 
+<span class="c1"># Count pulses</span>
+<span class="k">def</span> <span class="nf">count_pulse</span><span class="p">(</span><span class="n">channel</span><span class="p">):</span>
+    <span class="k">global</span> <span class="n">count</span>
+    <span class="k">if</span> <span class="n">start_counter</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
 
+<span class="c1"># Get validated user input</span>
+<span class="k">def</span> <span class="nf">get_user_input</span><span class="p">(</span><span class="n">prompt</span><span class="p">,</span> <span class="n">default</span><span class="p">,</span> <span class="n">value_type</span><span class="p">,</span> <span class="n">validation</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">user_input</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">prompt</span><span class="si">}</span><span class="s2"> (default: </span><span class="si">{</span><span class="n">default</span><span class="si">}</span><span class="s2">): &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">user_input</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">default</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="n">value_type</span><span class="p">(</span><span class="n">user_input</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">validation</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">validation</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input does not meet validation criteria.&quot;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">value</span>
+        <span class="k">except</span> <span class="p">(</span><span class="ne">ValueError</span><span class="p">,</span> <span class="ne">TypeError</span><span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Invalid input. Using default value of </span><span class="si">{</span><span class="n">default</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">default</span>
+
+<span class="c1"># Set system time</span>
+<span class="k">def</span> <span class="nf">set_system_time</span><span class="p">():</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">new_time</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter new system time (YYYY-MM-DD HH:MM:SS) or press Enter to skip: &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">new_time</span><span class="p">:</span>
+            <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">([</span><span class="s2">&quot;sudo&quot;</span><span class="p">,</span> <span class="s2">&quot;date&quot;</span><span class="p">,</span> <span class="s2">&quot;-s&quot;</span><span class="p">,</span> <span class="n">new_time</span><span class="p">],</span> <span class="n">check</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;System time updated to: </span><span class="si">{</span><span class="n">new_time</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;System time unchanged.&quot;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">CalledProcessError</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Failed to update system time. Ensure the script runs with sufficient privileges.&quot;</span><span class="p">)</span>
+
+<span class="c1"># Main Program</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;FlowMeterRecord running&quot;</span><span class="p">)</span>
+
+<span class="c1"># User Inputs</span>
+<span class="n">stationID</span> <span class="o">=</span> <span class="n">get_user_input</span><span class="p">(</span><span class="s2">&quot;Enter Comment Line 1&quot;</span><span class="p">,</span> <span class="s2">&quot;Line 001&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+<span class="n">sensorID</span> <span class="o">=</span> <span class="n">get_user_input</span><span class="p">(</span><span class="s2">&quot;Enter Comment Line 2&quot;</span><span class="p">,</span> <span class="s2">&quot;Line 002&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+<span class="n">howmany2wait</span> <span class="o">=</span> <span class="n">get_user_input</span><span class="p">(</span><span class="s2">&quot;Enter dwell time&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">howmany2read</span> <span class="o">=</span> <span class="n">get_user_input</span><span class="p">(</span><span class="s2">&quot;How many intervals&quot;</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">meterconstant</span> <span class="o">=</span> <span class="n">get_user_input</span><span class="p">(</span><span class="s2">&quot;Enter the meter constant&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># Optional: Set system time</span>
+<span class="n">set_system_time</span><span class="p">()</span>
+
+<span class="c1"># GPIO Setup</span>
+<span class="n">flow_sensor_one</span> <span class="o">=</span> <span class="n">setup_gpio</span><span class="p">(</span><span class="mi">23</span><span class="p">)</span>
+<span class="n">GPIO</span><span class="o">.</span><span class="n">add_event_detect</span><span class="p">(</span><span class="n">flow_sensor_one</span><span class="p">,</span> <span class="n">GPIO</span><span class="o">.</span><span class="n">FALLING</span><span class="p">,</span> <span class="n">callback</span><span class="o">=</span><span class="n">count_pulse</span><span class="p">)</span>
+
+<span class="c1"># Initialize counters</span>
+<span class="n">count</span> <span class="o">=</span> <span class="n">accCount</span> <span class="o">=</span> <span class="n">howmanyRread</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="c1"># Print headers</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;# Flowmeter Recording System&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;# </span><span class="si">{</span><span class="n">stationID</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;# </span><span class="si">{</span><span class="n">sensorID</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;# Sampling Interval Duration (seconds): </span><span class="si">{</span><span class="n">howmany2wait</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;# Sampling Interval Count: </span><span class="si">{</span><span class="n">howmany2read</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;# DateTime, Events, Volume&quot;</span><span class="p">)</span>
+
+<span class="c1"># Main loop</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="k">while</span> <span class="n">howmanyRread</span> <span class="o">&lt;</span> <span class="n">howmany2read</span><span class="p">:</span>
+        <span class="n">howmanyRread</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">start_counter</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">howmany2wait</span><span class="p">)</span>
+        <span class="n">start_counter</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="n">flow</span> <span class="o">=</span> <span class="n">count</span> <span class="o">*</span> <span class="n">meterconstant</span>
+        <span class="n">now</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2"> %H:%M:%S.</span><span class="si">%f</span><span class="s2">&quot;</span><span class="p">)</span> <span class="k">if</span> <span class="n">howmany2wait</span> <span class="o">&lt;</span> <span class="mf">1.0</span> <span class="k">else</span> <span class="n">time</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%c</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">now</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">count</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">flow</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">accCount</span> <span class="o">+=</span> <span class="n">count</span>
+        <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Normal Loop Exit, exiting...&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Total Events: </span><span class="si">{</span><span class="n">accCount</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Total Volume: </span><span class="si">{</span><span class="n">accCount</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">meterconstant</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="k">except</span> <span class="ne">KeyboardInterrupt</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Caught keyboard interrupt, exiting...&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Total Events: </span><span class="si">{</span><span class="n">accCount</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Total Volume: </span><span class="si">{</span><span class="n">accCount</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">meterconstant</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">GPIO</span><span class="o">.</span><span class="n">cleanup</span><span class="p">()</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>
+<span class="k">finally</span><span class="p">:</span>
+    <span class="n">GPIO</span><span class="o">.</span><span class="n">cleanup</span><span class="p">()</span>
 </pre></div>
 </div>
-</section>
-<section id="script-2-alert-type-flow-monitoring">
-<h3>Script 2: Alert-Type Flow Monitoring<a class="headerlink" href="#script-2-alert-type-flow-monitoring" title="Link to this heading">#</a></h3>
-<p>This script establishes communication between the Raspberry Pi and the turbine flow meter. The script counts pulses over an interval and then checks if the count exceeds a limit. If it does, it sends an email. This script uses some of the <code class="docutils literal notranslate"><span class="pre">pigpio</span></code> code for doing the counts.</p>
-<p>The script listed below is verbatim from <a class="github reference external" href="https://github.com/ravra/waterFlowMeter">ravra/waterFlowMeter</a></p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>The script needs to be able to send the email to the recipiet, so some testing and modification is needed - don’t use as is.  It is stored here for a future semester.</p>
-</div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>### Script 2: Alert-Type Flow Monitoring
+This script establishes communication between the Raspberry Pi and the turbine flow meter. The script counts pulses over an interval and then checks if the count exceeds a limit. If it does, it sends an email. This script uses some of the `pigpio` code for doing the counts.
 
-<span class="c1"># Simple script to monitor a cheap water flow sensor attached to gpio 4. The script counts pulses over an interval and then</span>
-<span class="c1"># checks if the count exceeds a limit. If it does, it sends an email.</span>
-<span class="c1"># This script uses some of the pigpio code for doing the counts.</span>
-<span class="c1"># ravraid 1/31/19</span>
+The script listed below is verbatim from [https://github.com/ravra/waterFlowMeter](https://github.com/ravra/waterFlowMeter)
 
-<span class="kn">import</span> <span class="nn">time</span><span class="o">,</span> <span class="nn">datetime</span>
-<span class="kn">from</span> <span class="nn">smtplib</span> <span class="kn">import</span> <span class="n">SMTP_SSL</span> <span class="k">as</span> <span class="n">SMTP</span>
-<span class="kn">from</span> <span class="nn">email.MIMEText</span> <span class="kn">import</span> <span class="n">MIMEText</span>
-<span class="kn">import</span> <span class="nn">pigpio</span>
+:::{warning}
+The script needs to be able to send the email to the recipiet, so some testing and modification is needed - don&#39;t use as is.  It is stored here for a future semester.
+:::
 
-<span class="n">intervalTime</span>  <span class="o">=</span> <span class="mi">15</span>  <span class="c1"># in seconds</span>
-<span class="n">triggerMin</span>    <span class="o">=</span> <span class="mi">50</span>  <span class="c1"># limit in pulse counts - adjust to detect small leaks</span>
+```python
+#!/usr/bin/env python
 
-<span class="n">SMTPserver</span>    <span class="o">=</span> <span class="s1">&#39;smtp.gmail.com&#39;</span>
+# Simple script to monitor a cheap water flow sensor attached to gpio 4. The script counts pulses over an interval and then
+# checks if the count exceeds a limit. If it does, it sends an email.
+# This script uses some of the pigpio code for doing the counts.
+# ravraid 1/31/19
 
-<span class="n">sender</span>        <span class="o">=</span> <span class="s1">&#39;FOO@BLAH.COM&#39;</span>
-<span class="n">destination</span>   <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;FOO@BLAH.COM&#39;</span><span class="p">]</span>
-<span class="n">USERNAME</span>      <span class="o">=</span> <span class="s2">&quot;FOO@BLAH.COM&quot;</span>
-<span class="n">PASSWORD</span>      <span class="o">=</span> <span class="s2">&quot;MYPASSWORD&quot;</span>
+import time, datetime
+from smtplib import SMTP_SSL as SMTP
+from email.MIMEText import MIMEText
+import pigpio
 
-<span class="n">subject</span>       <span class="o">=</span> <span class="s2">&quot;&quot;</span>
-<span class="n">waterFlow</span>     <span class="o">=</span> <span class="mi">0</span>
-<span class="n">flowGpio</span>      <span class="o">=</span> <span class="mi">4</span>
+intervalTime  = 15  # in seconds
+triggerMin    = 50  # limit in pulse counts - adjust to detect small leaks
 
-<span class="n">text_subtype</span> <span class="o">=</span> <span class="s1">&#39;plain&#39;</span>
+SMTPserver    = &#39;smtp.gmail.com&#39;
 
-<span class="k">def</span> <span class="nf">sendMail</span><span class="p">(</span><span class="n">content</span><span class="p">):</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">msg</span> <span class="o">=</span> <span class="n">MIMEText</span><span class="p">(</span><span class="n">content</span><span class="p">,</span> <span class="n">text_subtype</span><span class="p">)</span>
-        <span class="n">msg</span><span class="p">[</span><span class="s1">&#39;Subject&#39;</span><span class="p">]</span><span class="o">=</span>       <span class="n">subject</span>
-        <span class="n">msg</span><span class="p">[</span><span class="s1">&#39;From&#39;</span><span class="p">]</span>   <span class="o">=</span> <span class="n">sender</span> <span class="c1"># some SMTP servers will do this automatically, not all</span>
+sender        = &#39;FOO@BLAH.COM&#39;
+destination   = [&#39;FOO@BLAH.COM&#39;]
+USERNAME      = &quot;FOO@BLAH.COM&quot;
+PASSWORD      = &quot;MYPASSWORD&quot;
 
-        <span class="n">conn</span> <span class="o">=</span> <span class="n">SMTP</span><span class="p">(</span><span class="n">SMTPserver</span><span class="p">)</span>
-        <span class="n">conn</span><span class="o">.</span><span class="n">set_debuglevel</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
-        <span class="n">conn</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="n">USERNAME</span><span class="p">,</span> <span class="n">PASSWORD</span><span class="p">)</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">conn</span><span class="o">.</span><span class="n">sendmail</span><span class="p">(</span><span class="n">sender</span><span class="p">,</span> <span class="n">destination</span><span class="p">,</span> <span class="n">msg</span><span class="o">.</span><span class="n">as_string</span><span class="p">())</span>
-        <span class="k">finally</span><span class="p">:</span>
-            <span class="n">conn</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+subject       = &quot;&quot;
+waterFlow     = 0
+flowGpio      = 4
 
-    <span class="k">except</span> <span class="ne">Exception</span><span class="p">,</span> <span class="n">exc</span><span class="p">:</span>
-        <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span> <span class="s2">&quot;mail failed; </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="nb">str</span><span class="p">(</span><span class="n">exc</span><span class="p">)</span> <span class="p">)</span> <span class="c1"># give a error message</span>
+text_subtype = &#39;plain&#39;
 
-<span class="n">pi</span> <span class="o">=</span> <span class="n">pigpio</span><span class="o">.</span><span class="n">pi</span><span class="p">()</span>
+def sendMail(content):
+    try:
+        msg = MIMEText(content, text_subtype)
+        msg[&#39;Subject&#39;]=       subject
+        msg[&#39;From&#39;]   = sender # some SMTP servers will do this automatically, not all
 
-<span class="n">pi</span><span class="o">.</span><span class="n">set_mode</span><span class="p">(</span><span class="n">flowGpio</span><span class="p">,</span> <span class="n">pigpio</span><span class="o">.</span><span class="n">INPUT</span><span class="p">)</span>
-<span class="n">pi</span><span class="o">.</span><span class="n">set_pull_up_down</span><span class="p">(</span><span class="n">flowGpio</span><span class="p">,</span> <span class="n">pigpio</span><span class="o">.</span><span class="n">PUD_DOWN</span><span class="p">)</span>
+        conn = SMTP(SMTPserver)
+        conn.set_debuglevel(False)
+        conn.login(USERNAME, PASSWORD)
+        try:
+            conn.sendmail(sender, destination, msg.as_string())
+        finally:
+            conn.close()
 
-<span class="n">flowCallback</span> <span class="o">=</span> <span class="n">pi</span><span class="o">.</span><span class="n">callback</span><span class="p">(</span><span class="n">flowGpio</span><span class="p">,</span> <span class="n">pigpio</span><span class="o">.</span><span class="n">FALLING_EDGE</span><span class="p">)</span>
+    except Exception, exc:
+        sys.exit( &quot;mail failed; %s&quot; % str(exc) ) # give a error message
 
-<span class="n">old_count</span>   <span class="o">=</span> <span class="mi">0</span>
-<span class="n">triggerTime</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">today</span><span class="p">()</span> <span class="o">-</span> <span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">weeks</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># Initialize it to more than a day ago</span>
+pi = pigpio.pi()
 
-<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+pi.set_mode(flowGpio, pigpio.INPUT)
+pi.set_pull_up_down(flowGpio, pigpio.PUD_DOWN)
 
-   <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">intervalTime</span><span class="p">)</span>
+flowCallback = pi.callback(flowGpio, pigpio.FALLING_EDGE)
 
-   <span class="n">count</span> <span class="o">=</span> <span class="n">flowCallback</span><span class="o">.</span><span class="n">tally</span><span class="p">()</span>
-   <span class="n">waterFlow</span> <span class="o">=</span> <span class="n">count</span> <span class="o">-</span> <span class="n">old_count</span>
-   <span class="c1">#print(&quot;counted {} pulses&quot;.format(waterFlow))</span>
-   <span class="n">yesterday</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">today</span><span class="p">()</span> <span class="o">-</span> <span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-   <span class="c1"># Only send at most one message per day so check if the last trigger was more than 24hours ago</span>
-   <span class="k">if</span> <span class="p">(</span> <span class="p">(</span><span class="n">waterFlow</span> <span class="o">&gt;</span> <span class="n">triggerMin</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">triggerTime</span> <span class="o">&lt;</span> <span class="n">yesterday</span><span class="p">)</span> <span class="p">):</span>
-       <span class="n">triggerTime</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">today</span><span class="p">()</span>
-       <span class="nb">print</span> <span class="s2">&quot;Note: Sending mail..&quot;</span>
-       <span class="n">subject</span><span class="o">=</span> <span class="s2">&quot;Waterflow over limit: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">waterFlow</span><span class="p">)</span>
-       <span class="n">message</span><span class="o">=</span> <span class="s2">&quot;Limit is: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">triggerMin</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; and water flow is: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">waterFlow</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span>
-       <span class="n">message</span> <span class="o">=</span> <span class="n">message</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n\n</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="s2">&quot;Sent from rpiZero1 waterFlowMeter.py&quot;</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span>
-       <span class="n">sendMail</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
-   <span class="n">old_count</span> <span class="o">=</span> <span class="n">count</span>
+old_count   = 0
+triggerTime = datetime.datetime.today() - datetime.timedelta(weeks=1)  # Initialize it to more than a day ago
 
-<span class="n">pi</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+while True:
+
+   time.sleep(intervalTime)
+
+   count = flowCallback.tally()
+   waterFlow = count - old_count
+   #print(&quot;counted {} pulses&quot;.format(waterFlow))
+   yesterday = datetime.datetime.today() - datetime.timedelta(days=1)
+   # Only send at most one message per day so check if the last trigger was more than 24hours ago
+   if ( (waterFlow &gt; triggerMin) &amp; (triggerTime &lt; yesterday) ):
+       triggerTime = datetime.datetime.today()
+       print &quot;Note: Sending mail..&quot;
+       subject= &quot;Waterflow over limit: &quot; + str(waterFlow)
+       message= &quot;Limit is: &quot; + str(triggerMin) + &quot; and water flow is: &quot; + str(waterFlow) + &#39;\n&#39;
+       message = message + &#39;\n\n&#39; + &quot;Sent from rpiZero1 waterFlowMeter.py&quot; + &#39;\n&#39;
+       sendMail(message)
+   old_count = count
+
+pi.stop()
 </pre></div>
 </div>
 <!--### Script 2: Data Processing and Visualization
@@ -812,8 +786,7 @@ This script processes the logged data and generates useful insights, including:
 - Calibration curves for the flow meter.
 - Time-series plots of flow rate data.
 
-The script also demonstrates how to handle and visualize data effectively using Python libraries like `pandas` and `matplotlib`.-->
-</section>
+The script also demonstrates how to handle and visualize data effectively using Python libraries like `pandas` and `matplotlib`.--></section>
 </section>
 <section id="end-of-section">
 <h2>End of Section<a class="headerlink" href="#end-of-section" title="Link to this heading">#</a></h2>
@@ -907,7 +880,6 @@ The script also demonstrates how to handle and visualize data effectively using 
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-scripts-for-flow-measurement-lab">Python Scripts for Flow Measurement Lab</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#script-1-datalogger-initialization">Script 1: Datalogger Initialization</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#script-2-alert-type-flow-monitoring">Script 2: Alert-Type Flow Monitoring</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#end-of-section">End of Section</a></li>
