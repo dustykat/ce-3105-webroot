@@ -29,6 +29,9 @@ chapters:
   - file: lessons/laboratory3/laboratory3_sample_report
   
 - file: lessons/laboratory4/laboratory4
+  sections:
+  - file: lessons/laboratory44/laboratory44
+
 - file: lessons/laboratory5/laboratory5
 - file: lessons/laboratory6/laboratory6
 - file: lessons/laboratory7/laboratory7
