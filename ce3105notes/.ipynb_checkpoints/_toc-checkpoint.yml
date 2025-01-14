@@ -47,5 +47,17 @@ chapters:
 #  - file: lessons/laboratory6/laboratory6_sample_report
 #########################################################
 - file: lessons/laboratory7/laboratory7
+  sections:
+  - file: lessons/laboratory7/laboratory7_sample_protocol
+#  - file: lessons/laboratory7/laboratory7_sample_report
+#########################################################
 - file: lessons/laboratory8/laboratory8
+#  sections:
+#  - file: lessons/laboratory8/laboratory8_sample_protocol
+#  - file: lessons/laboratory8/laboratory8_sample_report
+#########################################################
 - file: lessons/laboratory9/laboratory9
+#  sections:
+#  - file: lessons/laboratory9/laboratory9_sample_protocol
+#  - file: lessons/laboratory9/laboratory9_sample_report
+#########################################################
