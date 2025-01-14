@@ -1,0 +1,71 @@
+Multiple Choice Quiz: Mechanics of Fluids Laboratory
+
+1. Which of the following is a primary objective of the Mechanics of Fluids Laboratory course?
+A. Enhance skills in advanced mathematical fluid modeling
+B. Improve understanding of real fluid behavior through experimentation
+C. Develop programming skills for fluid mechanics applications
+D. Train students to install fluid simulation software
+Answer: B
+
+2. What must students complete before participating in any lab work?
+A. Submission of prior lab reports
+B. Team assignments
+C. Mandatory safety training
+D. Certification in advanced fluid dynamics
+Answer: C
+
+3. What is the purpose of peer assessment in the course?
+A. To delegate grading responsibilities to students
+B. To foster collaboration and group work skills
+C. To determine final grades for lab reports
+D. To improve the quality of the safety training module
+Answer: B
+
+4. Which of the following ABET student outcomes is a primary focus of this course?
+A. Ability to design sustainable engineering systems
+B. Ability to develop and conduct experiments, analyze data, and draw conclusions
+C. Ability to manage engineering teams effectively
+D. Ability to apply ethical principles in engineering design
+Answer: B
+
+5. What is one of the tools used for measuring values like head and discharge in the laboratory?
+A. Fluid simulation software
+B. DIY data loggers and sensors
+C. Pressure transducers only
+D. Laser Doppler Anemometers
+Answer: B
+
+6. Which statement about late submissions is true?
+A. Late submissions are not accepted under any circumstances.
+B. Late submissions are accepted but incur a significant penalty.
+C. Late submissions must be approved by the course instructor.
+D. Late submissions are given an automatic extension of one week.
+Answer: B
+
+7. In the context of this course, which principle is applied when solving manometer problems?
+A. Conservation of momentum
+B. Bernoulli's principle
+C. Conservation of mass
+D. Fundamental equations of fluid statics
+Answer: D
+
+8. What is a key difference between real and theoretical fluids observed in the lab?
+A. Real fluids follow Bernoulli's equation perfectly.
+B. Real fluids have constant viscosity across all conditions.
+C. Real fluids exhibit energy losses and other complex behaviors.
+D. Theoretical fluids are influenced by external environmental factors.
+Answer: C
+
+9. What percentage of the total grade is allocated to Blackboard quizzes?
+A. 10%
+B. 20%
+C. 30%
+D. 40%
+Answer: B
+
+10. Which of the following is a valid method for submitting evidence of safety training completion?
+A. Emailing the course TA directly
+B. Uploading certificates to Blackboard
+C. Submitting hard copies during class
+D. Registering completion with the lab manager
+Answer: B
