@@ -57,11 +57,13 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'lessons/laboratory2/laboratory2_sample_protocol';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Laboratory 2 Sample Report" href="laboratory2_sample_report.html" />
-    <link rel="prev" title="Laboratory 2 - Fluid Statics" href="laboratory2.html" />
+    <link rel="prev" title="Lab 2 - Fluid Statics" href="laboratory2.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -182,42 +184,46 @@
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../syllabus_copy/ce-3105-syllabus-2025-1.html">Syllabus:</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../instruments/instruments.html">Equipment Inventory</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../laboratory0/feynman/feynman.html">Laboratory 0 -  Introduction</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../laboratory0/feynman/feynman.html">Lab 0 -  Introduction</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../laboratory0/reports/reports.html">Laboratory Reports</a></li>
-
-
-
-
 <li class="toctree-l2"><a class="reference internal" href="../laboratory0/safety/safety_training.html">Safety Considerations</a></li>
-
-
-
-
-
 
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../laboratory1/laboratory1.html">Laboratory 1 - Fluid Properties</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../laboratory1/laboratory1_sample_protocol.html">Laboratory 1 Sample Protocol Document</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../laboratory1/laboratory1.html">Lab 1 - Fluid Properties</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../laboratory1/laboratory1_sample_protocol.html">Laboratory 1 Sample Protocol</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../laboratory1/laboratory1_sample_report.html">Laboratory 1 Sample Report</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="laboratory2.html">Laboratory 2 - Fluid Statics</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="laboratory2.html">Lab 2 - Fluid Statics</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Laboratory 2 Sample Protocol</a></li>
 <li class="toctree-l2"><a class="reference internal" href="laboratory2_sample_report.html">Laboratory 2 Sample Report</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../laboratory3/laboratory3.html">Laboratory 3. Flow Measurement</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../laboratory3/laboratory3.html">Lab 3 - Flow Measurement</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../laboratory3/massflowmeters.html">Mass Flow Meter &amp; Datalogger Scripts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../laboratory3/laboratory3_sample_protocol.html">Laboratory 3 Sample Protocol</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../laboratory3/laboratory3_sample_report.html">Laboratory Report Template</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../laboratory3/laboratory3_sample_report.html">Laboratory 3 Sample Report</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1"><a class="reference internal" href="../laboratory4/laboratory4.html">4. Pipe Friction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../laboratory5/laboratory5.html">5. Fitting (Minor) Losses in Pipe Systems</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../laboratory6/laboratory6.html">6. Momentum Transfer</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../laboratory7/laboratory7.html">7. Pump Performance</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../laboratory8/laboratory8.html">8. Open Channel Flow</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../laboratory9/laboratory9.html">Laboratory 9 - Pipeline Transients</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../laboratory4/laboratory4.html">Lab 4 - Pipe Friction</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../laboratory44/laboratory44.html">Pressure Transducers and Data Logging with Raspberry Pi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../laboratory4/laboratory4_sample_protocol.html">Laboratory 4 Sample Protocol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../laboratory4/laboratory4_sample_report.html">Laboratory 4 Sample Report</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../laboratory49/laboratory49.html">Lab 4.9 - Reynolds Experiment</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../laboratory5/laboratory5.html">Lab 5. - Fitting Losses</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../laboratory5/laboratory5_sample_protocol.html">Laboratory 5 Sample Protocol</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../laboratory6/laboratory6.html">Lab 6. - Momentum Transfer</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../laboratory6/laboratory6_sample_protocol.html">Laboratory 6 Sample Protocol</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../laboratory7/laboratory7.html">Lab 7. Pump Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../laboratory8/laboratory8.html">Lab 8. Open Channel Flow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../laboratory9/laboratory9.html">Lab 9 - Pipeline Transients</a></li>
 </ul>
 
     </div>
@@ -463,14 +469,14 @@ document.write(`
 <li><p><strong>Prepare the Setup:</strong></p>
 <ul class="simple">
 <li><p>Measure and record the temperature of the water.</p></li>
-<li><p>Fill the graduated cylinder with a sufficient amount of water. Record the initial volume level, ( V_{\text{initial}} ).</p></li>
+<li><p>Fill the graduated cylinder with a sufficient amount of water. Record the initial volume level, <span class="math notranslate nohighlight">\( V_{\text{initial}} \)</span>.</p></li>
 </ul>
 </li>
 <li><p><strong>Measure Object Data:</strong></p>
 <ul class="simple">
 <li><p>Weigh the first object (e.g., Rock-1) and record its mass.</p></li>
-<li><p>Gently submerge the object in the water and record the new volume level, ( V_{\text{final}} ).</p></li>
-<li><p>Calculate the displaced volume, ( \Delta V = V_{\text{final}} - V_{\text{initial}} ).</p></li>
+<li><p>Gently submerge the object in the water and record the new volume level, <span class="math notranslate nohighlight">\( V_{\text{final}} \)</span>.</p></li>
+<li><p>Calculate the displaced volume, <span class="math notranslate nohighlight">\( \Delta V = V_{\text{final}} - V_{\text{initial}} \)</span>.</p></li>
 <li><p>Repeat the procedure three times for each object (Rock-2, Composite-1, etc.).</p></li>
 </ul>
 </li>
@@ -495,14 +501,14 @@ document.write(`
 <li><p><strong>Partial Submersion:</strong></p>
 <ul class="simple">
 <li><p>Add water into the trim tank to bring the balance to the 0 position. Add weights as needed to stabilize the apparatus.</p></li>
-<li><p>Gradually add water to the quadrant tank until the apparatus is level again. Record the water depth (( h )) and the free surface width (( b )).</p></li>
+<li><p>Gradually add water to the quadrant tank until the apparatus is level again. Record the water depth (<span class="math notranslate nohighlight">\( h \)</span>) and the free surface width (<span class="math notranslate nohighlight">\( b \)</span>).</p></li>
 <li><p>Repeat the procedure for at least three trials with varying weights.</p></li>
 </ul>
 </li>
 <li><p><strong>Full Submersion:</strong></p>
 <ul class="simple">
 <li><p>Fully submerge the plane surface by incrementally increasing weights and adding water to balance the apparatus.</p></li>
-<li><p>Record ( h ), ( b ), and the applied masses for at least three trials.</p></li>
+<li><p>Record <span class="math notranslate nohighlight">\( h \)</span>, <span class="math notranslate nohighlight">\( b \)</span>, and the applied masses for at least three trials.</p></li>
 </ul>
 </li>
 </ol>
@@ -511,33 +517,33 @@ document.write(`
 <hr class="docutils" />
 <section id="data-analysis">
 <h2><strong>Data Analysis</strong><a class="headerlink" href="#data-analysis" title="Link to this heading">#</a></h2>
-<ol class="arabic simple">
+<ol class="arabic">
 <li><p><strong>Displacement Volumes and Buoyancy:</strong></p>
-<ul class="simple">
-<li><p>Calculate the buoyancy force for each object using:
-[
-F_B = \rho_{\text{water}} \cdot \Delta V \cdot g
-]</p></li>
+<ul>
+<li><p>Calculate the buoyancy force for each object using:</p>
+<div class="math notranslate nohighlight">
+\[ F_B = \rho_{\text{water}} \cdot \Delta V \cdot g \]</div>
+</li>
 <li><p>Compare calculated object volumes with measurements from the displacement method.</p></li>
 </ul>
 </li>
 <li><p><strong>Hydrostatic Forces:</strong></p>
-<ul class="simple">
-<li><p>Calculate moments, ( M ), using the formula:
-[
-M = W \cdot \left( \frac{3b}{8} \right) \cdot h
-]</p></li>
-<li><p>Plot ( M ) vs. ( h ) for fully submerged data. Fit a straight line and compute ( R^2 ).</p></li>
+<ul>
+<li><p>Calculate moments, <span class="math notranslate nohighlight">\( M \)</span>, using the formula:</p>
+<div class="math notranslate nohighlight">
+\[ M = W \cdot \left( \frac{3b}{8} \right) \cdot h \]</div>
+</li>
+<li><p>Plot <span class="math notranslate nohighlight">\( M \)</span> vs. <span class="math notranslate nohighlight">\( h \)</span> for fully submerged data. Fit a straight line and compute <span class="math notranslate nohighlight">\( R^2 \)</span>.</p></li>
 <li><p>Use the slope of the line to calculate the specific weight of water and compare it to literature values.</p></li>
 </ul>
 </li>
 <li><p><strong>Partially Submerged Data:</strong></p>
-<ul class="simple">
-<li><p>Plot:
-[
-M + \frac{\gamma_w W R_2^2 h}{2} \quad \text{vs.} \quad h^3
-]</p></li>
-<li><p>Evaluate the fit using ( R^2 ).</p></li>
+<ul>
+<li><p>Plot:</p>
+<div class="math notranslate nohighlight">
+\[ M + \frac{\gamma_w W R_2^2 h}{2} \quad \text{vs.} \quad h^3 \]</div>
+</li>
+<li><p>Evaluate the fit using <span class="math notranslate nohighlight">\( R^2 \)</span>.</p></li>
 </ul>
 </li>
 </ol>
@@ -596,7 +602,7 @@ M + \frac{\gamma_w W R_2^2 h}{2} \quad \text{vs.} \quad h^3
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Laboratory 2 - Fluid Statics</p>
+        <p class="prev-next-title">Lab 2 - Fluid Statics</p>
       </div>
     </a>
     <a class="right-next"
