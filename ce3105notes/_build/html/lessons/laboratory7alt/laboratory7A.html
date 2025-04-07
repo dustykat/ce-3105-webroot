@@ -1,0 +1,815 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Lab 7A. Bilge Pump Performance &#8212; Mechanics of Fluids Laboratory</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'lessons/laboratory7alt/laboratory7A';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Lab 8. - Open Channel Flow" href="../laboratory8/laboratory8.html" />
+    <link rel="prev" title="Laboratory 7 Sample Protocol" href="../laboratory7/laboratory7_sample_protocol.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo2.png" class="logo__image only-light" alt="Mechanics of Fluids Laboratory - Home"/>
+    <script>document.write(`<img src="../../_static/logo2.png" class="logo__image only-dark" alt="Mechanics of Fluids Laboratory - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    CE 3105 Mechanics of Fluids Laboratory
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../syllabus_copy/ce-3105-syllabus-2025-1.html">Syllabus:</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../instruments/instruments.html">Equipment Inventory</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../laboratory0/feynman/feynman.html">Lab 0 -  Introduction</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../laboratory0/reports/reports.html">Laboratory Reports</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../laboratory0/safety/safety_training.html">Safety Considerations</a></li>
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../laboratory1/laboratory1.html">Lab 1 - Fluid Properties</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../laboratory1/laboratory1_sample_protocol.html">Laboratory 1 Sample Protocol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../laboratory1/Lab1Report.html">Laboratory 1 Sample Report</a></li>
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../laboratory2/laboratory2.html">Lab 2 - Fluid Statics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../laboratory2/laboratory2_sample_protocol.html">Laboratory 2 Sample Protocol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../laboratory2/laboratory2_sample_report-Copy1.html">Laboratory 2 Sample Report</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../laboratory3/laboratory3.html">Lab 3 - Flow Measurement</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../laboratory3/massflowmeters.html">Mass Flow Meter &amp; Datalogger Scripts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../laboratory3/laboratory3_sample_protocol.html">Laboratory 3 Sample Protocol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../laboratory3/laboratory3_sample_report-Copy1.html">Laboratory 3 Sample Report</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../laboratory4/laboratory4.html">Lab 4 - Pipe Friction</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../laboratory44/laboratory44.html">Pressure Transducers and Data Logging with Raspberry Pi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../laboratory4/laboratory4_sample_protocol.html">Laboratory 4 Sample Protocol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../laboratory4/laboratory4_sample_report.html">Laboratory 4 Sample Report</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../laboratory49/laboratory49.html">Lab 4.9 - Reynolds Experiment</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../laboratory5/laboratory5.html">Lab 5. - Fitting Losses</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../laboratory5/laboratory5_sample_protocol.html">Laboratory 5 Sample Protocol</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../laboratory6/laboratory6.html">Lab 6. - Momentum Transfer</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../laboratory6/laboratory6_sample_protocol.html">Laboratory 6 Sample Protocol</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../laboratory7/laboratory7.html">Lab 7. - Pump Performance</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../laboratory7/laboratory7_sample_protocol.html">Laboratory 7 Sample Protocol</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Lab 7A. Bilge Pump Performance</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../laboratory8/laboratory8.html">Lab 8. - Open Channel Flow</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../laboratory8/laboratory8_sample_protocol.html">Laboratory 8 - Sample Protocol</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../laboratory9/laboratory9.html">Lab 9 - Pipeline Transients</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Flessons/laboratory7alt/laboratory7A.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/lessons/laboratory7alt/laboratory7A.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Lab 7A. Bilge Pump Performance</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#readings">Readings</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#objective">Objective</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#background-theory">Background Theory</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#apparatus">Apparatus</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#experimental-setup">Experimental Setup</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#procedure">Procedure</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion-questions">Discussion Questions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deliverables">Deliverables</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="lab-7a-bilge-pump-performance">
+<h1>Lab 7A. Bilge Pump Performance<a class="headerlink" href="#lab-7a-bilge-pump-performance" title="Link to this heading">#</a></h1>
+<div class="admonition-course-website admonition">
+<p class="admonition-title">Course Website</p>
+<p><a class="reference external" href="http://54.243.252.9/ce-3105-webroot/">http://54.243.252.9/ce-3105-webroot/</a></p>
+</div>
+<p>This laboratory determines performance characteristics of a small bilge pump in various flow configurations.</p>
+<section id="readings">
+<h2>Readings<a class="headerlink" href="#readings" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://mech.at.ua/HolmanICS.pdf">Holman, J.P., (2012) Experimental Methods for Engineers, 8th Ed. (Chapters 5,6, and 10)</a></p></li>
+</ol>
+<p><strong>General Readings about Pumps</strong></p>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="http://54.243.252.9/ce-3105-webroot/ce3105notes/lessons/laboratory7/PumpSelection.pdf">Pump Selection</a></p></li>
+<li><p><a class="reference external" href="http://54.243.252.9/ce-3105-webroot/ce3105notes/lessons/laboratory7/PumpSuctionConditions.pdf">Pump Suction Conditions</a></p></li>
+<li><p><a class="reference external" href="http://54.243.252.9/ce-3105-webroot/ce3105notes/lessons/laboratory7/NPSH-Explain.pdf">Net Positive Suction Head</a></p></li>
+<li><p><a class="reference external" href="http://54.243.252.9/ce-3105-webroot/ce3105notes/lessons/laboratory7/Lecture06.pdf">Pumps and Lift Stations (excerpt from Water Systems Design)</a></p></li>
+<li><p><a class="reference external" href="http://54.243.252.9/ce-3105-webroot/ce3105notes/lessons/laboratory7/2011_coh_design_manual_submersible_lift_stations.pdf">Submersible Lift Stations Design (City of Houston Manual)</a></p></li>
+<li><p><a class="reference external" href="http://54.243.252.9/ce-3105-webroot/ce3105notes/lessons/laboratory7/FHWA-NHI-01-007-LiftStationDesign.pdf">FHWA Lift Station Design</a></p></li>
+</ol>
+<!--9. [Laboratory 7 Example Report](http://54.243.252.9/ce-3105-webroot/2-Exercises/laboratory7/Goby7.pdf)--><section id="objective">
+<h3>Objective<a class="headerlink" href="#objective" title="Link to this heading">#</a></h3>
+<p>To empirically determine the relationship between discharge (Q), head (H), and power input (P) for a small DC pump operating at variable discharge elevations. Students will produce a pump curve (H vs Q) and evaluate power consumption.</p>
+</section>
+<section id="background-theory">
+<h3>Background Theory<a class="headerlink" href="#background-theory" title="Link to this heading">#</a></h3>
+<p>A pump curve is a graph showing how the head (H) produced by a pump varies with flow rate (Q).</p>
+<p><strong>Key Concepts:</strong></p>
+<ul>
+<li><p><strong>Total Dynamic Head (TDH)</strong> is approximated here by the vertical height from pump to discharge.</p></li>
+<li><p><strong>Flow Rate (Q)</strong> is measured in L/min from the flow meter.</p></li>
+<li><p><strong>Power Input (P)</strong> is computed using:
+$<span class="math notranslate nohighlight">\( P = V \times I \)</span>$
+where V is voltage and I is current.</p></li>
+<li><p>(Optional) <strong>Efficiency</strong> can be estimated by:</p>
+<div class="math notranslate nohighlight">
+\[ \eta = \frac{\rho g Q H}{P} \]</div>
+<p>where <span class="math notranslate nohighlight">\( \rho \)</span> is water density and <span class="math notranslate nohighlight">\( g \)</span> is gravity.</p>
+</li>
+</ul>
+</section>
+<section id="apparatus">
+<h3>Apparatus<a class="headerlink" href="#apparatus" title="Link to this heading">#</a></h3>
+<p>The experimental set-up is comprised of:</p>
+<ul class="simple">
+<li><p>12V DC pump</p></li>
+<li><p>Variable power supply</p></li>
+<li><p>Flow meter</p></li>
+<li><p>Flexible discharge pipe</p></li>
+<li><p>Ruler or measuring tape</p></li>
+<li><p>Water container</p></li>
+<li><p>Stopwatch (optional)</p></li>
+</ul>
+<p>An image of the system in operation is shown below</p>
+<p><img alt="" src="../../_images/IMG_2975.jpg" /></p>
+<p>The current-limited power supply is visible on the left as is the flowmeter data collector; flow can also be determined by bucket-and-stopwatch.  The discharge outlet can be moved to different locations above the supply tank to produce a pump curve.  There is considerable splash and overflow, so a hose (not pictured) is used to keep the orange tank always full, ensuring a constant head at the supply location.</p>
+</section>
+<section id="experimental-setup">
+<h3>Experimental Setup<a class="headerlink" href="#experimental-setup" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Connect pump to water reservoir.</p></li>
+<li><p>Attach flexible pipe and flow meter inline.</p></li>
+<li><p>Elevate discharge outlet to different known heights.</p></li>
+<li><p>Measure V, I, Q, and elevation H.</p></li>
+</ol>
+<p>The figure below is a close-up of the power supply. In the figure the voltage is read from the left display, and current from the right display.  The current can be limited by the experimenter - in current limited conditions a small red indicator appears in the display.</p>
+<p><img alt="" src="../../_images/IMG_2976.jpg" /></p>
+<p>Discharge is measured using the flowmeter as in prior laboratories; also you can use a bucket and stopwatch approach.</p>
+</section>
+<section id="procedure">
+<h3>Procedure<a class="headerlink" href="#procedure" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Fix power supply voltage (e.g., 12V).</p></li>
+<li><p>Begin with lowest discharge height.</p></li>
+<li><p>Record:</p>
+<ul class="simple">
+<li><p>Voltage (V)</p></li>
+<li><p>Current (I)</p></li>
+<li><p>Flow Rate (Q)</p></li>
+<li><p>Height (H)</p></li>
+</ul>
+</li>
+<li><p>Repeat for multiple heights.</p></li>
+<li><p>(Optional) Repeat at different voltage.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1"># Data table template</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s1">&#39;Trial&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span>
+    <span class="s1">&#39;Voltage (V)&#39;</span><span class="p">:</span> <span class="p">[</span><span class="kc">None</span><span class="p">]</span><span class="o">*</span><span class="mi">5</span><span class="p">,</span>
+    <span class="s1">&#39;Current (A)&#39;</span><span class="p">:</span> <span class="p">[</span><span class="kc">None</span><span class="p">]</span><span class="o">*</span><span class="mi">5</span><span class="p">,</span>
+    <span class="s1">&#39;Flow Rate Q (L/min)&#39;</span><span class="p">:</span> <span class="p">[</span><span class="kc">None</span><span class="p">]</span><span class="o">*</span><span class="mi">5</span><span class="p">,</span>
+    <span class="s1">&#39;Head H (m)&#39;</span><span class="p">:</span> <span class="p">[</span><span class="kc">None</span><span class="p">]</span><span class="o">*</span><span class="mi">5</span><span class="p">,</span>
+    <span class="s1">&#39;Power Input P (W)&#39;</span><span class="p">:</span> <span class="p">[</span><span class="kc">None</span><span class="p">]</span><span class="o">*</span><span class="mi">5</span>
+<span class="p">})</span>
+<span class="n">data</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Trial</th>
+      <th>Voltage (V)</th>
+      <th>Current (A)</th>
+      <th>Flow Rate Q (L/min)</th>
+      <th>Head H (m)</th>
+      <th>Power Input P (W)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">numpy.polynomial.polynomial</span> <span class="kn">import</span> <span class="n">Polynomial</span>
+
+<span class="c1"># Sample data entry (replace with your measurements)</span>
+<span class="n">Q</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>  <span class="c1"># L/min</span>
+<span class="n">H</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">])</span>  <span class="c1"># meters</span>
+
+<span class="c1"># Fit a 2nd-degree polynomial</span>
+<span class="n">coefs</span> <span class="o">=</span> <span class="n">Polynomial</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span> <span class="n">H</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">convert</span><span class="p">()</span><span class="o">.</span><span class="n">coef</span>
+<span class="c1">#print(f&quot;Fitted Pump Curve Equation: H(Q) = {coefs[0]:.3f} + {coefs[1]:.3f}Q + {coefs[2]:.3f}Q^2&quot;)</span>
+<span class="n">addtitle</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Fitted Pump Curve Equation: H(Q) = </span><span class="si">{</span><span class="n">coefs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> + </span><span class="si">{</span><span class="n">coefs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">Q + </span><span class="si">{</span><span class="n">coefs</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">Q^2&quot;</span>
+<span class="c1"># Plot</span>
+<span class="n">Q_fit</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">Q</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">Q</span><span class="p">),</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">H_fit</span> <span class="o">=</span> <span class="n">coefs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">coefs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">Q_fit</span> <span class="o">+</span> <span class="n">coefs</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">*</span><span class="n">Q_fit</span><span class="o">**</span><span class="mi">2</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span> <span class="n">H</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Measured&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Q_fit</span><span class="p">,</span> <span class="n">H_fit</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Fitted Curve&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Flow Rate Q (L/min)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Head H (m)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Pump Curve: Head vs Flow Rate</span><span class="se">\n</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="n">addtitle</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/3b7361d5a33870964028ca117209fbaefa0087d98c9689a8661693c213288c34.png" src="../../_images/3b7361d5a33870964028ca117209fbaefa0087d98c9689a8661693c213288c34.png" />
+</div>
+</div>
+</section>
+<section id="discussion-questions">
+<h3>Discussion Questions<a class="headerlink" href="#discussion-questions" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>How does head change as flow rate increases?</p></li>
+<li><p>How does power consumption relate to flow rate?</p></li>
+<li><p>Would this pump be suitable for a head requirement of 1.2 m?</p></li>
+<li><p>What measurement errors may affect your results?</p></li>
+</ol>
+<!-- 5. How would pipe friction affect the pump curve in real systems? --></section>
+</section>
+<section id="deliverables">
+<h2>Deliverables<a class="headerlink" href="#deliverables" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Completed data table</p></li>
+<li><p>Graphs (H vs Q and optionally P vs Q)</p></li>
+<li><p>Fitted pump curve equation</p></li>
+<li><p>Answers to discussion questions</p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python-my-env",
+            path: "./lessons/laboratory7alt"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python-my-env'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../laboratory7/laboratory7_sample_protocol.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Laboratory 7 Sample Protocol</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../laboratory8/laboratory8.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Lab 8. - Open Channel Flow</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#readings">Readings</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#objective">Objective</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#background-theory">Background Theory</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#apparatus">Apparatus</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#experimental-setup">Experimental Setup</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#procedure">Procedure</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion-questions">Discussion Questions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deliverables">Deliverables</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Theodore G. Cleveland (just the JupyterBook parts)
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -52,6 +52,8 @@ chapters:
   - file: lessons/laboratory7/laboratory7_sample_protocol
 #  - file: lessons/laboratory7/laboratory7_sample_report
 #########################################################
+- file: lessons/laboratory7alt/laboratory7A
+#########################################################
 - file: lessons/laboratory8/laboratory8
   sections:
   - file: lessons/laboratory8/laboratory8_sample_protocol
