@@ -61,6 +61,10 @@ chapters:
   - file: lessons/laboratory8/laboratory8_sample_protocol
 #  - file: lessons/laboratory8/laboratory8_sample_report
 #########################################################
+- file: lessons/laboratory81/laboratory81
+  sections:
+  - file: lessons/laboratory81/laboratory81_sample_report
+##########################################################
 - file: lessons/laboratory9/laboratory9
 #  sections:
 #  - file: lessons/laboratory9/laboratory9_sample_protocol
