@@ -237,7 +237,6 @@
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="laboratory81.html">Lab 81. - Final Exam (Practical)</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="laboratory81_sample_report.html">Laboratory 81. - Sample Report (Python Version)</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Laboratory 81. - Sample Report (Spreadsheet Version)</a></li>
-
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../laboratory9/laboratory9.html">Lab 9 - Pipeline Transients</a></li>
@@ -436,7 +435,6 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Laboratory 81. - Sample Report (Spreadsheet Version)</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#title">Title:</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#purpose">Purpose:</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methods">Methods:</a></li>
@@ -446,17 +444,11 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sharp-crested-weir-discharge-formula">2. Sharp Crested Weir Discharge Formula</a></li>
 </ul>
 </li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#weir-flow-calculator">Weir Flow Calculator</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#backwater-method-script-using-experiment-values">3. Backwater Method Script using Experiment Values</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-s-of-simulated-and-measured-water-surface-profiles">4. Plot(s) of Simulated and Measured Water Surface Profiles</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-and-conclusions">Summary and Conclusions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#end-of-section">End of Section</a></li>
 </ul>
-</li>
-</ul>
-
             </nav>
         </div>
     </div>
@@ -673,19 +665,6 @@ $<span class="math notranslate nohighlight">\( \bar S_o = 0.01695 ~~;~~ \sigma =
 <p><img alt="" src="../../_images/weirExcel.png" /></p>
 </section>
 </section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="weir-flow-calculator">
-<h1>Weir Flow Calculator<a class="headerlink" href="#weir-flow-calculator" title="Link to this heading">#</a></h1>
-<p>import math</p>
-<p>H = 0.03788   # Flow depth above weir crest (meters)
-P = 0.230     # Height of weir crest (meters)
-L = 0.3048    # Channel Width (meters)
-g = 9.81      # Gravity acceleration constant
-Cd = 0.622    # Discharge coefficient for Kindsvater-Carter (1959) formula
-Q = (2/3)<em>math.sqrt(2</em>g)<em>Cd</em>L<em>H**(3/2) # Kindsvater-Carter (1959) formula
-print(“Discharge by Kindsvater-Carter method: “, round(Q,4),” CMS “)
-Q8=1.84</em>L*(H**(3/2))
-print(“Discharge by Simplified method: “,round(Q8,4),” CMS ** Use this value in script “)</p>
 <section id="backwater-method-script-using-experiment-values">
 <h2>3. Backwater Method Script using Experiment Values<a class="headerlink" href="#backwater-method-script-using-experiment-values" title="Link to this heading">#</a></h2>
 <p>The variable-step backwater method is employed using an Excel spreadsheet.</p>
@@ -798,7 +777,6 @@ print(“Discharge by Simplified method: “,round(Q8,4),” CMS ** Use this val
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Laboratory 81. - Sample Report (Spreadsheet Version)</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#title">Title:</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#purpose">Purpose:</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methods">Methods:</a></li>
@@ -808,17 +786,11 @@ print(“Discharge by Simplified method: “,round(Q8,4),” CMS ** Use this val
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sharp-crested-weir-discharge-formula">2. Sharp Crested Weir Discharge Formula</a></li>
 </ul>
 </li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#weir-flow-calculator">Weir Flow Calculator</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#backwater-method-script-using-experiment-values">3. Backwater Method Script using Experiment Values</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-s-of-simulated-and-measured-water-surface-profiles">4. Plot(s) of Simulated and Measured Water Surface Profiles</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-and-conclusions">Summary and Conclusions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#end-of-section">End of Section</a></li>
 </ul>
-</li>
-</ul>
-
   </nav></div>
 
 </div></div>
