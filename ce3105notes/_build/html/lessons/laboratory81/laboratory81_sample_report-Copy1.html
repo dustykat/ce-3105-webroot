@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Laboratory 81. - Sample Report (Python Version) &#8212; Mechanics of Fluids Laboratory</title>
+    <title>Laboratory 81. - Sample Report (Spreadsheet Version) &#8212; Mechanics of Fluids Laboratory</title>
   
   
   
@@ -59,11 +59,9 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'lessons/laboratory81/laboratory81_sample_report';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'lessons/laboratory81/laboratory81_sample_report-Copy1';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Lab 9 - Pipeline Transients" href="../laboratory9/laboratory9.html" />
-    <link rel="prev" title="Lab 81. - Final Exam (Practical)" href="laboratory81.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -126,6 +124,8 @@
       
       
       
+        
+      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -181,7 +181,7 @@
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
+        <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../syllabus_copy/ce-3105-syllabus-2025-1.html">Syllabus:</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../instruments/instruments.html">Equipment Inventory</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../laboratory0/feynman/feynman.html">Lab 0 -  Introduction</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -234,8 +234,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../laboratory8/laboratory8_sample_protocol.html">Laboratory 8 - Sample Protocol</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="laboratory81.html">Lab 81. - Final Exam (Practical)</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Laboratory 81. - Sample Report (Python Version)</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="laboratory81.html">Lab 81. - Final Exam (Practical)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="laboratory81_sample_report.html">Laboratory 81. - Sample Report (Python Version)</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../laboratory9/laboratory9.html">Lab 9 - Pipeline Transients</a></li>
@@ -310,7 +310,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Flessons/laboratory81/laboratory81_sample_report.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Flessons/laboratory81/laboratory81_sample_report-Copy1.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -340,7 +340,7 @@
       
       
       
-      <li><a href="../../_sources/lessons/laboratory81/laboratory81_sample_report.ipynb" target="_blank"
+      <li><a href="../../_sources/lessons/laboratory81/laboratory81_sample_report-Copy1.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -424,7 +424,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Laboratory 81. - Sample Report (Python Version)</h1>
+    <h1>Laboratory 81. - Sample Report (Spreadsheet Version)</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -434,6 +434,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Laboratory 81. - Sample Report (Spreadsheet Version)</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#title">Title:</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#purpose">Purpose:</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methods">Methods:</a></li>
@@ -443,11 +444,17 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sharp-crested-weir-discharge-formula">2. Sharp Crested Weir Discharge Formula</a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#weir-flow-calculator">Weir Flow Calculator</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#backwater-method-script-using-experiment-values">3. Backwater Method Script using Experiment Values</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-s-of-simulated-and-measured-water-surface-profiles">4. Plot(s) of Simulated and Measured Water Surface Profiles</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-and-conclusions">Summary and Conclusions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#end-of-section">End of Section</a></li>
 </ul>
+</li>
+</ul>
+
             </nav>
         </div>
     </div>
@@ -458,8 +465,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="laboratory-81-sample-report-python-version">
-<h1>Laboratory 81. - Sample Report (Python Version)<a class="headerlink" href="#laboratory-81-sample-report-python-version" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="laboratory-81-sample-report-spreadsheet-version">
+<h1>Laboratory 81. - Sample Report (Spreadsheet Version)<a class="headerlink" href="#laboratory-81-sample-report-spreadsheet-version" title="Link to this heading">#</a></h1>
 <div class="admonition-course-website admonition">
 <p class="admonition-title">Course Website</p>
 <p><a class="reference external" href="http://54.243.252.9/ce-3105-webroot/">http://54.243.252.9/ce-3105-webroot/</a></p>
@@ -658,128 +665,37 @@ $<span class="math notranslate nohighlight">\( \bar S_o = 0.01695 ~~;~~ \sigma =
 <span class="math notranslate nohighlight">\(H\)</span> is the water surface height above the elevation of the weir crest in <span class="math notranslate nohighlight">\(m\)</span> <br></p>
 <p>In the experimental apparatus, and the flow depths used, the weir is indeed a suppressed weir. Consult <a class="reference external" href="https://www.usbr.gov/tsc/techreferences/mands/wmm/WMM_3rd_2001.pdf">USBR (United States Bureau of Reclamation) (2001). Water Measurement Manual, 3rd Edition Revised Reprinted. Technical report, Water Resources Research Laboratory, US Department of the Interior (p. 317). </a> to learn the conditions for a <em>suppressed</em> sharp crested weir formula to be applicable.</p>
 <p>The water surface height approaching the weir is made at a location just upstream of where “curvature” of the free surface appears - it is a bit subjective, but in the above experiment (photographs) this point is about 40 mm upstream of the weir crest.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Weir Flow Calculator</span>
-<span class="kn">import</span> <span class="nn">math</span>
-
-<span class="n">H</span> <span class="o">=</span> <span class="mf">0.03788</span>   <span class="c1"># Flow depth above weir crest (meters)</span>
-<span class="n">P</span> <span class="o">=</span> <span class="mf">0.230</span>     <span class="c1"># Height of weir crest (meters)</span>
-<span class="n">L</span> <span class="o">=</span> <span class="mf">0.3048</span>    <span class="c1"># Channel Width (meters)</span>
-<span class="n">g</span> <span class="o">=</span> <span class="mf">9.81</span>      <span class="c1"># Gravity acceleration constant</span>
-<span class="n">Cd</span> <span class="o">=</span> <span class="mf">0.622</span>    <span class="c1"># Discharge coefficient for Kindsvater-Carter (1959) formula</span>
-<span class="n">Q</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">g</span><span class="p">)</span><span class="o">*</span><span class="n">Cd</span><span class="o">*</span><span class="n">L</span><span class="o">*</span><span class="n">H</span><span class="o">**</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># Kindsvater-Carter (1959) formula</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Discharge by Kindsvater-Carter method: &quot;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span><span class="s2">&quot; CMS &quot;</span><span class="p">)</span>
-<span class="n">Q8</span><span class="o">=</span><span class="mf">1.84</span><span class="o">*</span><span class="n">L</span><span class="o">*</span><span class="p">(</span><span class="n">H</span><span class="o">**</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Discharge by Simplified method: &quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">Q8</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span><span class="s2">&quot; CMS ** Use this value in script &quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Discharge by Kindsvater-Carter method:  0.0041  CMS 
-Discharge by Simplified method:  0.0041  CMS ** Use this value in script 
-</pre></div>
-</div>
-</div>
-</div>
+<p>The image below shows the Weir Flow Formulas in Excel</p>
+<p><img alt="" src="../../_images/weirFormula.png" /></p>
+<p>The next image is the worksheet rendered in usual Excel format.</p>
+<p><img alt="" src="../../_images/weirExcel.png" /></p>
 </section>
 </section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="weir-flow-calculator">
+<h1>Weir Flow Calculator<a class="headerlink" href="#weir-flow-calculator" title="Link to this heading">#</a></h1>
+<p>import math</p>
+<p>H = 0.03788   # Flow depth above weir crest (meters)
+P = 0.230     # Height of weir crest (meters)
+L = 0.3048    # Channel Width (meters)
+g = 9.81      # Gravity acceleration constant
+Cd = 0.622    # Discharge coefficient for Kindsvater-Carter (1959) formula
+Q = (2/3)<em>math.sqrt(2</em>g)<em>Cd</em>L<em>H**(3/2) # Kindsvater-Carter (1959) formula
+print(“Discharge by Kindsvater-Carter method: “, round(Q,4),” CMS “)
+Q8=1.84</em>L*(H**(3/2))
+print(“Discharge by Simplified method: “,round(Q8,4),” CMS ** Use this value in script “)</p>
 <section id="backwater-method-script-using-experiment-values">
 <h2>3. Backwater Method Script using Experiment Values<a class="headerlink" href="#backwater-method-script-using-experiment-values" title="Link to this heading">#</a></h2>
-<p>Hamming’s method in the problem prompt is applied, some changes are made to achieve stability and convergence.  These are noted directly in the script below.</p>
+<p>The variable-step backwater method is employed using an Excel spreadsheet.</p>
+<p>The example spreadsheet is used, but with the experimental conditions.  Because the spacing is constant, the analyst must sucessively guess values of depth to obtain the known <span class="math notranslate nohighlight">\(\Delta~x\)</span> value in the experiment.  By far the easiest way is to use <code class="docutils literal notranslate"><span class="pre">Goal</span> <span class="pre">Seek</span></code> where the target value is <span class="math notranslate nohighlight">\(-0.30\)</span>, and the cell to change is the same-row <strong>Mod. Depth</strong></p>
 <p>The value for Manning’s <span class="math notranslate nohighlight">\(n\)</span> was obtained from an on-line database, a screen capture of the interaction is shown below</p>
 <p style="text-align: center;">
   <img src="http://54.243.252.9/ce-3105-webroot/ce3105notes/lessons/laboratory81/manningsN.png" alt="mannings" width="800"/>
-</p><div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hamming&#39;s Method for Backwater Curve - Laboratory 81 </span>
-<span class="c1"># 2025-0422 Experiment</span>
-<span class="c1"># Team: P. Olar Bear and P.N. Guinn</span>
-<span class="c1">############### SIMULATION CONTROL AND INPUTS ###################</span>
-<span class="n">verbose</span>   <span class="o">=</span> <span class="kc">False</span>          <span class="c1">#Control some oututs</span>
-<span class="n">imax</span>      <span class="o">=</span> <span class="mi">13</span>            <span class="c1">#number of computational stations</span>
-<span class="n">dx</span>        <span class="o">=</span> <span class="o">-</span><span class="mf">0.3</span>          <span class="c1">#spacing between stations (meters) MEASURED VALUE</span>
-<span class="n">manningsN</span> <span class="o">=</span> <span class="mf">0.009</span>         <span class="c1">#mannings n value (adjusted by trial-and-error to match measured profile)</span>
-<span class="n">slopeChan</span> <span class="o">=</span> <span class="mf">0.015</span>         <span class="c1">#channel slope MEASURED VALUE</span>
-<span class="n">normalD</span>   <span class="o">=</span> <span class="mf">0.21456</span>       <span class="c1">#upstream station normal depth USE MOST UPSTREAM VALUE </span>
-<span class="n">controlD</span>  <span class="o">=</span> <span class="mf">0.26788</span>       <span class="c1">#downstream station control depth USE WEIR CREST + HEIGHT ABOVE CREST</span>
-<span class="n">discharge</span> <span class="o">=</span> <span class="mf">0.00413</span>       <span class="c1">#steady discharge (compute from weir measurement) KEPT THIS SEPARATE; BUT COULD BUILD INTO THE SCRIPT</span>
-<span class="n">topwidth</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.3048</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">imax</span><span class="p">)]</span> <span class="c1"># MEASURED VALUE</span>
-<span class="n">topwidth</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">topwidth</span><span class="p">]</span> <span class="c1"># use of range() to set indices</span>
-<span class="c1">#### List of observed/measured values of flow depth ###</span>
-<span class="n">observeD</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.26788</span><span class="p">,</span><span class="mf">0.26706</span><span class="p">,</span><span class="mf">0.26214</span><span class="p">,</span><span class="mf">0.25849</span><span class="p">,</span><span class="mf">0.25392</span><span class="p">,</span><span class="mf">0.24910</span><span class="p">,</span><span class="mf">0.24456</span><span class="p">,</span><span class="mf">0.24018</span><span class="p">,</span><span class="mf">0.23511</span><span class="p">,</span><span class="mf">0.23018</span><span class="p">,</span><span class="mf">0.22574</span><span class="p">,</span><span class="mf">0.22017</span><span class="p">,</span><span class="mf">0.21456</span><span class="p">]</span> <span class="c1"># MEASURED DEPTHS</span>
-<span class="c1">############# BUILD LISTS TO STORE RESULTS #################</span>
-<span class="n">velo</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">imax</span> <span class="c1"># allocate a velocity vector, put zeroes everywhere</span>
-<span class="n">velo</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">discharge</span><span class="o">/</span><span class="n">topwidth</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="n">controlD</span> <span class="c1">#set velocity at control section</span>
-<span class="n">depth</span> <span class="o">=</span> <span class="p">[</span><span class="n">controlD</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">imax</span><span class="p">)]</span> <span class="c1"># allocate a depth vector, put zeroes everywhere</span>
-<span class="n">spDepth</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">imax</span><span class="p">)]</span> <span class="c1"># allocate a sp. depth vector, put zeroes everywhere</span>
-<span class="n">spDepthT</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">imax</span><span class="p">)]</span> <span class="c1"># allocate a sp. depth vector, put zeroes everywheredepth[0] = controlD # set control section depth</span>
-<span class="n">spDepth</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="p">((</span><span class="n">velo</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mf">2.0</span><span class="o">*</span><span class="mf">9.81</span><span class="p">))</span> <span class="o">+</span> <span class="n">depth</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="c1">## begin for loop 0 </span>
-<span class="c1">############# COMPUTATION LOOP(S) ##########################</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">imax</span><span class="p">):</span>
-    <span class="n">depth</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="c1"># modifed to get convergence - should be about order of magnitude of measurements</span>
-    <span class="n">difn</span> <span class="o">=</span> <span class="mf">1.0</span>
-    <span class="n">dh</span> <span class="o">=</span> <span class="mf">0.00001</span> <span class="c1"># modify as needed for convergence</span>
-<span class="c1">### begin do while loop 1</span>
-    <span class="k">while</span> <span class="p">(</span><span class="n">dh</span> <span class="o">&gt;</span> <span class="mf">0.00000001</span><span class="p">):</span> <span class="c1"># adjust to control shooting method</span>
-        <span class="n">dif</span> <span class="o">=</span> <span class="n">difn</span>
-        <span class="n">ntest</span> <span class="o">=</span> <span class="mi">0</span>
-        <span class="n">depth</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">depth</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-</span><span class="n">dh</span>
-<span class="c1">#### begin do while loop 2</span>
-        <span class="k">while</span> <span class="p">(</span><span class="n">dh</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">):</span>
-            <span class="n">velo</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span><span class="n">discharge</span><span class="o">/</span><span class="n">topwidth</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">/</span><span class="n">depth</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
-            <span class="n">avgDepth</span> <span class="o">=</span> <span class="mf">0.5</span><span class="o">*</span><span class="p">(</span><span class="n">depth</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">depth</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
-            <span class="n">avgTopW</span> <span class="o">=</span> <span class="mf">0.5</span><span class="o">*</span><span class="p">(</span><span class="n">topwidth</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">topwidth</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
-            <span class="n">avgV</span> <span class="o">=</span> <span class="n">discharge</span><span class="o">/</span><span class="n">avgTopW</span><span class="o">/</span><span class="n">avgDepth</span>
-            <span class="n">hydR</span> <span class="o">=</span> <span class="n">avgDepth</span><span class="o">*</span><span class="n">avgTopW</span><span class="o">/</span><span class="p">(</span><span class="n">avgTopW</span><span class="o">+</span><span class="mf">2.0</span><span class="o">*</span><span class="n">avgDepth</span><span class="p">)</span>
-            <span class="n">sFric</span> <span class="o">=</span> <span class="p">(</span><span class="n">avgV</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">manningsN</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">hydR</span><span class="o">**</span><span class="p">(</span><span class="mf">1.33</span><span class="p">))</span>
-            <span class="n">spDepth</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">spDepth</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="p">(</span><span class="n">slopeChan</span><span class="o">-</span><span class="n">sFric</span><span class="p">)</span><span class="o">*</span><span class="n">dx</span>
-            <span class="n">spDepthT</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">depth</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="p">(</span><span class="n">velo</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="mf">2.0</span><span class="o">*</span><span class="mf">9.81</span><span class="p">))</span>
-            <span class="n">difn</span> <span class="o">=</span> <span class="n">spDepthT</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-</span><span class="n">spDepth</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
-<span class="c1"># update    print(ntest)</span>
-            <span class="k">if</span><span class="p">(</span><span class="n">ntest</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">):</span>
-                <span class="n">dh</span> <span class="o">=</span> <span class="n">dh</span><span class="o">/</span><span class="mf">10.0</span>
-                <span class="k">break</span> <span class="c1">#break from do while loop 2</span>
-            <span class="k">if</span><span class="p">(</span><span class="n">dif</span><span class="o">*</span><span class="n">difn</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">):</span>
-                <span class="k">break</span> <span class="c1">#break from do while loop 2</span>
-            <span class="n">depth</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">depth</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">dh</span>
-            <span class="n">ntest</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="c1">#### end do while loop 2</span>
-<span class="c1">### end do while loop 1</span>
-<span class="c1">## end for loop 0</span>
-<span class="c1">############ PREPARE LISTS FOR PLOTTING ################</span>
-<span class="n">distance</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">imax</span>
-<span class="n">bottom</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">imax</span>
-<span class="n">watersurface</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">imax</span>
-<span class="n">observedsurface</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">imax</span> <span class="c1"># added for observations</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">imax</span><span class="p">):</span>
-    <span class="n">distance</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">distance</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">dx</span> 
-    <span class="n">bottom</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="n">distance</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">slopeChan</span>
-    <span class="n">watersurface</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">depth</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="n">bottom</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
-    <span class="n">observedsurface</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">observeD</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="n">bottom</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
-<span class="n">watersurface</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">depth</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="n">bottom</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># don&#39;t forget the control section!</span>
-<span class="n">observedsurface</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="n">observeD</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="n">bottom</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># added observations</span>
-<span class="c1"># Compute some error metrics</span>
-<span class="n">sse</span> <span class="o">=</span> <span class="mf">0.0</span>
-<span class="n">rpe</span> <span class="o">=</span> <span class="mf">0.0</span>
-<span class="n">mae</span> <span class="o">=</span> <span class="mf">0.0</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">imax</span><span class="p">):</span>
-    <span class="n">err</span><span class="o">=</span><span class="p">(</span><span class="n">watersurface</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-</span><span class="n">observedsurface</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
-    <span class="n">sse</span><span class="o">=</span><span class="n">sse</span><span class="o">+</span><span class="n">err</span><span class="o">**</span><span class="mi">2</span>
-    <span class="n">rpe</span><span class="o">=</span> <span class="n">rpe</span> <span class="o">+</span> <span class="p">(</span><span class="n">err</span><span class="p">)</span><span class="o">/</span><span class="n">observedsurface</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
-    
-<span class="n">mse</span> <span class="o">=</span> <span class="n">sse</span><span class="o">/</span><span class="nb">float</span><span class="p">(</span><span class="n">imax</span><span class="p">)</span>
-<span class="n">rms</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">mse</span><span class="p">)</span>
-<span class="n">mpe</span> <span class="o">=</span> <span class="n">rpe</span><span class="o">/</span><span class="nb">float</span><span class="p">(</span><span class="n">imax</span><span class="p">)</span>
-<span class="k">if</span> <span class="n">verbose</span><span class="p">:</span>
-<span class="c1"># list output</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">imax</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">distance</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="mi">3</span><span class="p">),</span><span class="nb">round</span><span class="p">(</span><span class="n">depth</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="mi">4</span><span class="p">),</span><span class="nb">round</span><span class="p">(</span><span class="n">observeD</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="mi">4</span><span class="p">))</span>
-<span class="c1">#</span>
-</pre></div>
-</div>
-</div>
-</div>
+</p>
+<p>The image below is the spreadsheet as formulas (the <strong>Goal Seek</strong> process is already completed)</p>
+<p><img alt="" src="../../_images/GVF-ExcelFormulas.png" /></p>
+<p>The next image is the spreadsheet rendered normally</p>
+<p><img alt="" src="../../_images/GVF-Excel1.png" /></p>
 </section>
 <section id="plot-s-of-simulated-and-measured-water-surface-profiles">
 <h2>4. Plot(s) of Simulated and Measured Water Surface Profiles<a class="headerlink" href="#plot-s-of-simulated-and-measured-water-surface-profiles" title="Link to this heading">#</a></h2>
@@ -793,35 +709,6 @@ Discharge by Simplified method:  0.0041  CMS ** Use this value in script
 <p>A negative value of MRPE means the model underpredicts the water surface profile, a positive value means it overpredicts the profile. The error scale is the same magnitude as the values, so the results can be interpreted as an average percent error.</p>
 <p>The RMSE provides an estimate of the typical magnitude of model prediction error — also in the same units as the measured data (e.g., meters). It reflects how far, on average, the simulated water surface elevations deviate from the observed values.</p>
 <p>Lower RMSE values indicate better model agreement with observations. For example, an RMSE of 0.001 m suggests that, on average, the model’s predicted water surface elevations differ from the measured profile by about 1 millimeter.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Now plot the water surface profile</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span>
-<span class="n">myfigure</span> <span class="o">=</span> <span class="n">matplotlib</span><span class="o">.</span><span class="n">pyplot</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span> <span class="c1"># generate a object from the figure class, set aspect ratio</span>
-<span class="c1"># Built the plot</span>
-<span class="n">matplotlib</span><span class="o">.</span><span class="n">pyplot</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">distance</span><span class="p">,</span> <span class="n">bottom</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Channel Bottom&quot;</span><span class="p">,</span>  <span class="n">color</span> <span class="o">=</span><span class="s1">&#39;brown&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
-<span class="n">matplotlib</span><span class="o">.</span><span class="n">pyplot</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">distance</span><span class="p">,</span> <span class="n">watersurface</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Computed Water Surface&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
-<span class="n">matplotlib</span><span class="o">.</span><span class="n">pyplot</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">distance</span><span class="p">,</span> <span class="n">observedsurface</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Observed Water Surface&quot;</span><span class="p">,</span>  <span class="n">color</span> <span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">markerfacecolor</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">)</span>
-<span class="n">matplotlib</span><span class="o">.</span><span class="n">pyplot</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Elevation (meters)&quot;</span><span class="p">)</span>
-<span class="n">matplotlib</span><span class="o">.</span><span class="n">pyplot</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Distance (meters)&quot;</span><span class="p">)</span>
-<span class="n">mytitle</span> <span class="o">=</span> <span class="s2">&quot;Water Surface Profile - Fixed Spatial Step Method&quot;</span> <span class="o">+</span> \
-<span class="s2">&quot;</span><span class="se">\n</span><span class="s2"> Q = &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">discharge</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span> <span class="o">+</span> \
-<span class="s2">&quot; So = &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">slopeChan</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span> <span class="o">+</span> \
-<span class="s2">&quot; n = &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">manningsN</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span> <span class="o">+</span> \
-<span class="s2">&quot;</span><span class="se">\n</span><span class="s2"> MSE = &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">mse</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span> <span class="o">+</span> \
-<span class="s2">&quot; MRPE = &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">mpe</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span> <span class="o">+</span> \
-<span class="s2">&quot; RMSE = &quot;</span>  <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">rms</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
-<span class="n">matplotlib</span><span class="o">.</span><span class="n">pyplot</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">mytitle</span><span class="p">)</span>
-<span class="n">matplotlib</span><span class="o">.</span><span class="n">pyplot</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-<span class="n">matplotlib</span><span class="o">.</span><span class="n">pyplot</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">matplotlib</span><span class="o">.</span><span class="n">pyplot</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/ed2534b79a7c73f61583c10675952e82d641c4827ec8a9c9e40678c46070d63f.png" src="../../_images/ed2534b79a7c73f61583c10675952e82d641c4827ec8a9c9e40678c46070d63f.png" />
-</div>
-</div>
 </section>
 <section id="summary-and-conclusions">
 <h2>Summary and Conclusions<a class="headerlink" href="#summary-and-conclusions" title="Link to this heading">#</a></h2>
@@ -875,24 +762,6 @@ Discharge by Simplified method:  0.0041  CMS ** Use this value in script
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="laboratory81.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Lab 81. - Final Exam (Practical)</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="../laboratory9/laboratory9.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Lab 9 - Pipeline Transients</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               
@@ -909,6 +778,7 @@ Discharge by Simplified method:  0.0041  CMS ** Use this value in script
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Laboratory 81. - Sample Report (Spreadsheet Version)</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#title">Title:</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#purpose">Purpose:</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methods">Methods:</a></li>
@@ -918,11 +788,17 @@ Discharge by Simplified method:  0.0041  CMS ** Use this value in script
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sharp-crested-weir-discharge-formula">2. Sharp Crested Weir Discharge Formula</a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#weir-flow-calculator">Weir Flow Calculator</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#backwater-method-script-using-experiment-values">3. Backwater Method Script using Experiment Values</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-s-of-simulated-and-measured-water-surface-profiles">4. Plot(s) of Simulated and Measured Water Surface Profiles</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-and-conclusions">Summary and Conclusions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#end-of-section">End of Section</a></li>
 </ul>
+</li>
+</ul>
+
   </nav></div>
 
 </div></div>
