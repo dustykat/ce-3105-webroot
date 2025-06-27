@@ -1,0 +1,9 @@
+- Fluid Statics: Density, Viscosity, Bouyancy, Forces
+- Flow Measurement (closed conduit): Venturi, Rotameter, Orifice, Time-to-fill
+- Reynolds Experiment:
+- Friction (closed conduit): Brass pipe; Fitting Losses
+- Impulse/Momentum: Jet Impact
+- Flow measurement (open conduit): ADCP, Weirs, Drift Tracers, Thermal Tracer
+- Water Surface Profiles: Backwater Curves, Hydraulic Jumps
+- Water Hammer:
+- Porous Media:

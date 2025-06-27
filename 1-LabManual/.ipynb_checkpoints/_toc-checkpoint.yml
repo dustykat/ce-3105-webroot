@@ -1,0 +1,14 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+chapters:
+- file: experiments/2purpose/purpose
+- file: experiments/0apparatus/apparatus
+- file: experiments/0syllabus/ce-3105-syllabus-2025-1
+- file: experiments/1safety/safety
+- file: experiments/experiment0/experiment0
+- file: markdown
+- file: notebooks
+- file: markdown-notebooks

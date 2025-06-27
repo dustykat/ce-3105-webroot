@@ -1,0 +1,28 @@
+## Part 2: Reinforcement Activities
+
+### Activity 1: Matching Models to Measurements
+
+Students are given:
+- 3 theoretical models:
+  - Flow through an orifice
+  - Pipe friction loss
+  - Jet impact momentum
+
+- 3 sets of plotted or tabulated measurements
+
+**Task:** Match each dataset to a model and identify likely causes of mismatch.
+
+---
+
+### Activity 2 (Optional): Quick Error Propagation Exercise
+
+**Given:**
+- Model: $Q = C_d A \sqrt{2gh} $
+- Variables with uncertainties:
+  - $h = 0.75 \pm 0.01 \ \text{m}$
+  - $A = 0.0025 \pm 0.0001 \ \text{m}^2$
+  - $ C_d = 0.62 \pm 0.02$
+
+**Task:** Compute $Q$ and its uncertainty via propagation, compare with observed spread in measurements.
+
+---
