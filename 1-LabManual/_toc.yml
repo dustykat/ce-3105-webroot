@@ -4,12 +4,61 @@
 format: jb-book
 root: intro
 chapters:
-- file: experiments/2purpose/purpose
-- file: experiments/0apparatus/apparatus
 - file: experiments/0syllabus/ce-3105-syllabus-2025-1
+#- file: experiments/0apparatus/apparatus # lab description for donors
+- file: experiments/2purpose/purpose
 - file: experiments/1safety/safety
-- file: experiments/experiment0/experiment0
-- file: experiments/experiment1/experiment1 # fluid statics
+- file: experiments/3experimentation/experimentation
+#######################################################
+- file: experiments/4ex1-statics/ex1 # fluid statics
+#  sections:
+#  - file: experiments/5ex2-pipeflow/ex2_sample_report
+#######################################################
+- file: experiments/5ex2-pipeflow/ex2 # flow measurement in conduits
+  sections:
+  - file: experiments/5ex2-pipeflow/ex2_sample_report
+#######################################################
+- file: experiments/6ex3-reynolds/ex3 # reynolds apparatus
+#  sections:
+#  - file: experiments/.../ex6A_samplereport
+#######################################################
+- file: experiments/7ex4-pipeloss/ex4 # pipe and fitting losses
+  sections:
+  - file: experiments/7ex4-pipeloss/ex4_sample_report
+#######################################################
+- file: experiments/8ex5-momentum/ex5 # momentum
+  sections:
+  - file: experiments/8ex5-momentum/ex5_sample_report
+  - file: experiments/8ex5-momentum/ex5_sample_calculations
+#######################################################
+- file: experiments/9ex6-pumps/ex6A # pumps
+  sections:
+  - file: experiments/9ex6-pumps/ex6A_samplereport
+#######################################################
+- file: experiments/10ex7-openflow/ex7 # flow measurement in open channels
+  sections:
+  - file: experiments/10ex7-openflow/ex7_sample_report
+#######################################################
+- file: experiments/11ex8-backwater/ex8 # water surface profile - backwater curves
+  sections:
+  - file: experiments/11ex8-backwater/ex8_sample_report-excel
+  - file: experiments/11ex8-backwater/ex8_sample_report-python
+#######################################################
+- file: experiments/12ex9-hydraulicjump/ex9 # water surface profile - hydraulic jump
+  sections:
+  - file: experiments/12ex9-hydraulicjump/ex9_sample_report
+  - file: experiments/12ex9-hydraulicjump/ex9_sample_calculations
+#######################################################
+- file: experiments/13ex10-waterhammer/ex10 # waterhammer
+#  sections:
+#  - file: experiments/.../ex6A_samplereport
+########################################################
+- file: experiments/14ex11-flownets/ex11 # porous media flow nets
+#  sections:
+#  - file: experiments/.../ex6A_samplereport
+#######################################################
+
+
 #- file: markdown
 #- file: notebooks
 #- file: markdown-notebooks
