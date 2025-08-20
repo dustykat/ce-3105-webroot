@@ -10,6 +10,7 @@ chapters:
 - file: experiments/1safety/safety
 - file: experiments/3experimentation/experimentation
 - file: experiments/3experimentation/lab-report-format
+- file: experiments/3experimentation/lab-report-rubric
 #######################################################
 - file: experiments/4ex1-statics/ex1 # fluid statics
 #  sections:
