@@ -60,7 +60,6 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'experiments/14ex11-flownets/ex11';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="prev" title="Lab 10 - Pipeline Transients" href="../13ex10-waterhammer/ex10.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -123,6 +122,8 @@
       
       
       
+        
+      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -178,12 +179,16 @@
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../0syllabus/ce-3105-syllabus-2025-3.html">Syllabus</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../2purpose/purpose.html">1. Course Purpose</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../0syllabus/ce-3105-syllabus-2025-1.html">Syllabus</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../1safety/safety.html">2. Safety Considerations</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="../3experimentation/experimentation.html">3. Role of Engineering Experimentation</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../4ex1-statics/ex1.html">4. Lab 1 - Fluid Statics: Density, Viscosity, Bouyancy, Forces</a></li>
 
 
 
@@ -191,8 +196,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../5ex2-pipeflow/ex2_sample_report.html">Lab 2. Sample Report</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1"><a class="reference internal" href="../6ex3-reynolds/ex3.html">6. Lab 3 - Reynolds Experiment</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../8ex5-momentum/ex5.html">8. Lab 5 - Momentum Transfer</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../7ex4-pipeloss/ex4.html">7. Lab 3 - Friction Losses in Pipes and Fittings</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../7ex4-pipeloss/ex4_sample_report.html">Laboratory 4 Sample Report</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../8ex5-momentum/ex5.html">8. Lab 4 - Momentum Transfer</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../8ex5-momentum/ex5_sample_report.html">Laboratory 5 Sample Report</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../8ex5-momentum/ex5_sample_calculations.html">Lab 5. Sample Calculations</a></li>
 
@@ -216,8 +224,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../12ex9-hydraulicjump/ex9_sample_calculations.html">Lab 9: Analysis Guidelines</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1"><a class="reference internal" href="../13ex10-waterhammer/ex10.html">Lab 10 - Pipeline Transients</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">14. Lab 11 - Porous Media : Flow Nets</a></li>
 </ul>
 
     </div>
@@ -415,9 +421,7 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#readings">Readings</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#videos">Videos</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lesson-outline">Lesson Outline</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background">Background</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculations">Calculations</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#laboratory-apparatus">Laboratory Apparatus</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#laboratory-objectives">Laboratory Objectives</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deliverables">Deliverables</a></li>
@@ -441,7 +445,7 @@ document.write(`
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Under development - The hardware is present at time of writing (14 Jan 2025), but the commercial ADC data acquision system is not installed (if incomplete by time of scheduled laboratory) can use Lab 4.9 for 2025-1 semester.</p>
+<p>Under development.</p>
 </div>
 <section id="readings">
 <h2>Readings<a class="headerlink" href="#readings" title="Link to this heading">#</a></h2>
@@ -460,24 +464,13 @@ document.write(`
 <li><p><a class="reference external" href="https://www.youtube.com/watch?v=9NYs3Y-IjGw">none</a></p></li>
 </ol>
 </section>
-<section id="lesson-outline">
-<h2>Lesson Outline<a class="headerlink" href="#lesson-outline" title="Link to this heading">#</a></h2>
-<ol class="arabic simple">
-<li><p>Background</p></li>
-<li><p>Calculations</p></li>
-</ol>
-</section>
 <section id="background">
 <h2>Background<a class="headerlink" href="#background" title="Link to this heading">#</a></h2>
-<p>Unsteady flow in closed conduits is important for estimating the forces involved from a sudden change in discharge from a pump failing (or starting), or the closing (or opening) of a valve. The flow variation will create a pressure wave traveling along the pipe.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>These waves will travel in alternating directions as they find boundaries as each end of the disturbed discharge conduit – in some sense the pipeline becomes a resonant chamber.  Over time the magnitude of the waves will decrease as friction dissipates the energy.  During these transients high and low pressures are applied to the pipe walls and fixtures and can concievably damage them.</p>
-</div>
-<p>The engineering/computational goal is to estimate the magnitude and timing of these extreme pressures to evaluate the safety of the conduit, or design a pump shutdown (or startup) or valve operation protocol to control these extreme pressures to some acceptable magnitude.</p>
-</section>
-<section id="calculations">
-<h2>Calculations<a class="headerlink" href="#calculations" title="Link to this heading">#</a></h2>
+<p>Items this subsection:</p>
+<ul class="simple">
+<li><p>Flow net (mathematics)</p></li>
+<li><p>Importance/uses</p></li>
+</ul>
 </section>
 <section id="laboratory-apparatus">
 <h2>Laboratory Apparatus<a class="headerlink" href="#laboratory-apparatus" title="Link to this heading">#</a></h2>
@@ -485,30 +478,27 @@ document.write(`
 <ul class="simple">
 <li><p><a class="reference internal" href="#"><span class="xref myst">Insert Photograph of Apparatus Here</span></a></p></li>
 <li><p>Description (from user manual here).</p></li>
-<li><p>Links to relevant documents regarding ADC hardware/software.</p></li>
-<li><p>Abbreviated protocol here or sample protocol section.</p></li>
+<li><p>Links to relevant documents .</p></li>
 </ul>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Under development - The hardware is present at time of writing (14 Jan 2025), but the commercial ADC data acquision system is not installed (if incomplete by time of scheduled laboratory) can use Lab 4.9 for 2025-1 semester.</p>
+<p>Under development - The hardware is present at time of writing. not completed.</p>
 </div>
 </section>
 <section id="laboratory-objectives">
 <h2>Laboratory Objectives<a class="headerlink" href="#laboratory-objectives" title="Link to this heading">#</a></h2>
-<ol class="arabic simple">
-<li><p>Configure the water hammer apparatus to measure heads at the pipeline midpoint.</p></li>
-<li><p>Develop an experimental protocol (step-by-step instructions) to measure heads at the midpoint in the pipeline for a rapid valve closure, and to estimate initial velocity in the pipeline before the closure.</p></li>
-<li><p>Upon approval of the protocol, conduct a set of experiments in triplicate to measure the head versus time at the pipeline midpoint.</p></li>
-<li><p>Modify the script(s) above to predict the head/pressure in the pipeline at the midpoint using the actual material properties, geometric properties, and the hydraulic settings of the water hammer experimental apparatus.</p></li>
-<li><p>Document the experiment(s) into a laboratory report and comment on the fidelity of the numerical model’s ability to replicate actual measurements.</p></li>
-</ol>
+<p>Items this sub-section</p>
+<ul class="simple">
+<li><p>Objectives/purpose</p></li>
+<li><p>Experimental protocol</p></li>
+</ul>
 </section>
 <section id="deliverables">
 <h2>Deliverables<a class="headerlink" href="#deliverables" title="Link to this heading">#</a></h2>
-<ol class="arabic simple">
-<li><p>Experimental Protocol (step-by-step instructions) to measure heads at the midpoint in the pipeline for a rapid valve closure, and to estimate initial velocity in the pipeline before the closure.  Submitted in advance for instructor approval - the protocol will become part of your laboratory report.</p></li>
+<p>Items this sub-section</p>
+<ul class="simple">
 <li><p>Laboratory Report documenting the actual experiments, and other required content including comparison to computer model(s).</p></li>
-</ol>
+</ul>
 </section>
 <section id="end-of-section">
 <h2>End of Section<a class="headerlink" href="#end-of-section" title="Link to this heading">#</a></h2>
@@ -545,15 +535,6 @@ document.write(`
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="../13ex10-waterhammer/ex10.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Lab 10 - Pipeline Transients</p>
-      </div>
-    </a>
 </div>
                 </footer>
               
@@ -572,9 +553,7 @@ document.write(`
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#readings">Readings</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#videos">Videos</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lesson-outline">Lesson Outline</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background">Background</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculations">Calculations</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#laboratory-apparatus">Laboratory Apparatus</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#laboratory-objectives">Laboratory Objectives</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deliverables">Deliverables</a></li>

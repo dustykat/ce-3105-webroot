@@ -4,11 +4,12 @@
 format: jb-book
 root: intro
 chapters:
-- file: experiments/0syllabus/ce-3105-syllabus-2025-1
+- file: experiments/0syllabus/ce-3105-syllabus-2025-3
 #- file: experiments/0apparatus/apparatus # lab description for donors
 - file: experiments/2purpose/purpose
 - file: experiments/1safety/safety
 - file: experiments/3experimentation/experimentation
+- file: experiments/3experimentation/lab-report-format
 #######################################################
 - file: experiments/4ex1-statics/ex1 # fluid statics
 #  sections:
@@ -18,7 +19,7 @@ chapters:
   sections:
   - file: experiments/5ex2-pipeflow/ex2_sample_report
 #######################################################
-- file: experiments/6ex3-reynolds/ex3 # reynolds apparatus
+#- file: experiments/6ex3-reynolds/ex3 # reynolds apparatus
 #  sections:
 #  - file: experiments/.../ex6A_samplereport
 #######################################################
@@ -49,15 +50,15 @@ chapters:
   - file: experiments/12ex9-hydraulicjump/ex9_sample_report
   - file: experiments/12ex9-hydraulicjump/ex9_sample_calculations
 #######################################################
-- file: experiments/13ex10-waterhammer/ex10 # waterhammer
+#- file: experiments/13ex10-waterhammer/ex10 # waterhammer
 #  sections:
 #  - file: experiments/.../ex6A_samplereport
 ########################################################
-- file: experiments/14ex11-flownets/ex11 # porous media flow nets
+#- file: experiments/14ex11-flownets/ex11 # porous media flow nets
 #  sections:
 #  - file: experiments/.../ex6A_samplereport
 #######################################################
-
+- file: experiments/abet_plan/abet_plan
 
 #- file: markdown
 #- file: notebooks
