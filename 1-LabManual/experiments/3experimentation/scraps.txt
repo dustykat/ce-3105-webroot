@@ -1,0 +1,310 @@
+## Mini-Model Statement (Pre-Lab)
+
+Before performing the experiment, complete the following:
+
+### 1. Governing Model or Principle
+
+Briefly describe the physical law or empirical relationship being tested.
+
+> *Example: "This experiment is based on the Bernoulli equation, which relates pressure, velocity, and elevation along a streamline for inviscid flow."*
+
+---
+
+### 2. Model Equation(s)
+
+State the key equation(s) to be used for prediction, including definitions of all variables.
+
+> *Example: $ p + \frac{1}{2} \rho V^2 + \rho g h = \text{constant}$*
+
+---
+
+### 3. Assumptions
+
+List the assumptions necessary for the model to apply.
+
+> *Examples:*
+> - Steady flow
+> - Incompressible fluid
+> - Negligible viscous losses
+
+---
+
+### 4. Prediction of Behavior
+
+Based on the model and inputs, describe the expected behavior or result.
+
+> *Example: "We expect that increasing the velocity will decrease the pressure at the nozzle exit due to energy conservation."*
+
+---
+
+### 5. Evaluation Criteria
+
+State how agreement between theory and experiment will be assessed.
+
+> *Example: "Agreement will be evaluated using percent error between the predicted and measured velocities. A deviation under 10% will be considered acceptable."*
+
+## Post-Lab Reflection Rubric
+
+Include a structured reflection as the final section of your lab report. Address each of the following categories. This reflection is worth **15 points** and should demonstrate your ability to connect theory with observation.
+
+---
+
+### 1. Agreement with the Model (5 points)
+
+- Clearly describe whether your measurements aligned with the model's predictions.
+- Use graphs, tables, or error metrics (e.g., % error, RMSE) to support your conclusion.
+
+> *Example: "The measured head loss was within 8% of the predicted value for all trials, suggesting good agreement with the Darcy-Weisbach model."*
+
+---
+
+### 2. Explanation of Discrepancies (5 points)
+
+- If results deviated from the model, identify possible reasons:
+  - Instrument error
+  - Violation of assumptions
+  - Model oversimplification
+- Distinguish between **random** and **systematic** error where appropriate.
+
+> *Example: "The persistent underestimation of force may be due to unaccounted friction in the pulley system, violating the ideal assumption of lossless transfer."*
+
+---
+
+### 3. Implications and Next Steps (5 points)
+
+- Reflect on the experiment’s value in validating, challenging, or refining the model.
+- Suggest follow-up measurements, improved procedures, or potential calibrations.
+
+> *Example: "This experiment suggests the need to include a correction factor for contraction losses when modeling short orifices under real-world conditions."*
+
+---
+
+### Reflection Format Tips
+
+- Use short paragraphs.
+- Refer to specific results or figures in your report.
+- Avoid vague conclusions like “It worked” or “It didn’t work.”
+
+---
+
+**Total: 15 points**  
+Scoring rubric will assess completeness, clarity, and thoughtfulness.
+
+
+# 🧪 Pre/Post-Lab Worksheet: Model-Based Experimentation
+
+Use this worksheet to frame your thinking before and after each experiment. Submit it with your lab report.
+
+---
+
+## 🔬 Part I — Mini-Model Statement (Pre-Lab)
+
+### 1. Governing Model or Principle
+
+Briefly describe the physical law or empirical relationship being tested.
+
+> *Example: "This experiment is based on the Bernoulli equation, which relates pressure, velocity, and elevation along a streamline for inviscid flow."*
+
+---
+
+### 2. Model Equation(s)
+
+State the key equation(s) to be used for prediction. Include definitions for all variables.
+
+> *Example: $ P + \frac{1}{2} \rho V^2 + \rho g h = \text{constant}$*
+
+---
+
+### 3. Assumptions
+
+List the assumptions necessary for the model to apply.
+
+> *Examples:*
+> - Steady flow
+> - Incompressible fluid
+> - Negligible energy loss
+
+---
+
+### 4. Prediction of Behavior
+
+Based on the model and known inputs, describe the expected behavior or outcome.
+
+> *Example: "We expect a linear relationship between head loss and velocity squared based on the Darcy-Weisbach equation."*
+
+---
+
+### 5. Evaluation Criteria
+
+Describe how you will determine whether the model and data agree.
+
+> *Example: "Agreement will be assessed using percent error between measured and predicted discharge rates. Agreement within 10% will be considered acceptable."*
+
+---
+
+## 📊 Part II — Post-Lab Reflection (Submit with Report)
+
+### 1. Agreement with the Model (5 pts)
+
+- Did your data match predictions? Use graphs, tables, and error metrics to support your answer.
+
+---
+
+### 2. Explanation of Discrepancies (5 pts)
+
+- Discuss possible sources of error or reasons for deviation.
+- Were assumptions violated?
+- Were errors random or systematic?
+
+---
+
+### 3. Implications and Next Steps (5 pts)
+
+- What does this say about the model’s accuracy or usefulness?
+- What changes would you make to improve the experiment or refine the model?
+
+---
+
+**Total: 15 points**  
+Rubric emphasizes clarity, analytical depth, and use of evidence.
+
+# Example 1: Flow Measurement with a Venturi
+
+## 🔬 Part I — Mini-Model Statement (Pre-Lab)
+
+### 1. Governing Model or Principle
+
+This experiment is based on the **Bernoulli equation**, which states that for an incompressible, steady, inviscid flow along a streamline, the total mechanical energy is conserved. The pressure drop between the wide and narrow sections of a Venturi meter can be related to the flow velocity.
+
+---
+
+### 2. Model Equation(s)
+
+$\Delta p = \frac{1}{2} \rho \left( V_2^2 - V_1^2 \right) $
+
+Where:  
+- $\Delta p$ = pressure difference between upstream and throat  
+- $\rho$ = fluid density  
+- $V_1, V_2$ = velocities at inlet and throat (related via continuity)
+
+From continuity: $Q = A_1 V_1 = A_2 V_2$
+
+---
+
+### 3. Assumptions
+
+- Steady flow
+- Incompressible fluid (water)
+- No energy loss due to friction or turbulence
+- Accurate pressure measurements via manometer
+
+---
+
+### 4. Prediction of Behavior
+
+We expect the pressure at the throat to be lower than at the inlet due to increased velocity. Using measured pressure drop and known cross-sectional areas, we can calculate discharge $Q$ and compare it to direct volumetric measurements.
+
+---
+
+### 5. Evaluation Criteria
+
+We will compare the discharge calculated from the Bernoulli-based model to the flow rate measured by time-to-fill a graduated tank. Agreement within ±5% will be considered acceptable.
+
+---
+
+## Part II — Post-Lab Reflection
+
+### 1. Agreement with the Model (5 pts)
+
+The model-based flow rate was within 4.2% of the directly measured volumetric flow rate for all trials. A comparison plot (Figure 3) shows a strong correlation (R² = 0.993) between predicted and measured values.
+
+---
+
+### 2. Explanation of Discrepancies (5 pts)
+
+Minor discrepancies likely arose from:
+- Inexact manometer readings due to parallax
+- Slight turbulence or energy loss not accounted for in the model
+- Assumption of ideal flow conditions may not be fully valid in the experimental apparatus
+
+---
+
+### 3. Implications and Next Steps (5 pts)
+
+This experiment confirms that the Bernoulli-based model provides a valid estimate of flow rate in a Venturi meter under controlled conditions. Future experiments could investigate how accuracy degrades with increasing turbulence or cavitation, or apply a discharge coefficient $ C_d$ to improve model fit.
+
+---
+
+**Total: 15/15**
+
+# 🧪 Pre/Post-Lab Worksheet: Model-Based Experimentation
+
+## 🔬 Part I — Mini-Model Statement (Pre-Lab)
+
+### 1. Governing Model or Principle
+
+This experiment tests the empirical model for **head loss due to local disturbances** in pipe systems (elbows, valves, contractions). The model is based on energy loss per unit weight using the minor loss coefficient $ K$.
+
+---
+
+### 2. Model Equation(s)
+
+$ h_L = K \cdot \frac{V^2}{2g} $
+
+Where:  
+- $ h_L$ = head loss across fitting  
+- $ K$ = loss coefficient (dimensionless, provided in literature)  
+- $ V$ = velocity through fitting  
+- $ g$ = gravitational acceleration
+
+---
+
+### 3. Assumptions
+
+- Steady, incompressible flow
+- Fully developed velocity profile
+- Fittings are ideal representations (sharp angles, no roughness)
+- Flow velocity is uniform and measured accurately
+
+---
+
+### 4. Prediction of Behavior
+
+Using literature $ K$ values and measured velocities, we will predict $ h_L$ and compare it to observed pressure drops measured with manometers. Agreement within ±10% is expected.
+
+---
+
+### 5. Evaluation Criteria
+
+We will calculate the theoretical $ h_L$ and compare it to measured values. Discrepancies will be assessed using percent error and qualitative examination of flow regimes (e.g., cavitation, swirl).
+
+---
+
+## 📊 Part II — Post-Lab Reflection
+
+### 1. Agreement with the Model (5 pts)
+
+Results varied significantly depending on the fitting. For a standard elbow, predicted and measured losses were within 7%, but for a sudden contraction, the measured loss was nearly 40% higher than predicted. The straight gate valve also showed large scatter.
+
+---
+
+### 2. Explanation of Discrepancies (5 pts)
+
+Discrepancies are likely due to:
+- Uncertainty in exact geometry and roughness of fittings vs. textbook assumptions
+- Unsteady flow and local turbulence not accounted for by static $ K$ values
+- Measurement error from manometers in low-head-loss scenarios
+- Flow separation or secondary flows in the contraction that violate assumed velocity profiles
+
+---
+
+### 3. Implications and Next Steps (5 pts)
+
+This experiment demonstrates that empirical $ K$ values may not generalize well without calibration. Real-world systems likely require field measurement or correction factors. Future work should include:
+- Repetition with digital pressure sensors
+- Calibration of system-specific $ K$ values using best-fit curves
+- CFD modeling of complex flow structures in contractions
+
+---
+
+**Total: 15/15**

@@ -185,9 +185,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../1safety/safety.html">Safety Considerations</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="../3experimentation/experimentation.html">Role of Engineering Experimentation</a></li>
-
-
-
+<li class="toctree-l1"><a class="reference internal" href="../3experimentation/lab-report-format.html">Laboratory Report Format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3experimentation/lab-report-rubric.html">Report Evaluation Rubric</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../4ex1-statics/ex1.html">Lab 1 - Fluid Statics: Density, Viscosity, Bouyancy, Forces</a></li>
 
 
@@ -224,6 +223,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../12ex9-hydraulicjump/ex9_sample_calculations.html">Lab 9: Analysis Guidelines</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1"><a class="reference internal" href="../abet_plan/abet_plan.html">Assessment Plan for ABET (6)</a></li>
 </ul>
 
     </div>
@@ -419,7 +419,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#course">Course:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ce-3105-mechanics-of-fluids-laboratory">CE 3105 Mechanics of Fluids Laboratory</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#course-catalog-description">Course Catalog Description:</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites:</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#course-sections">Course Sections</a></li>
@@ -461,9 +461,35 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="syllabus">
 <h1>Syllabus<a class="headerlink" href="#syllabus" title="Link to this heading">#</a></h1>
-<section id="course">
-<h2>Course:<a class="headerlink" href="#course" title="Link to this heading">#</a></h2>
-<p>CE 3105 Mechanics of Fluids Laboratory</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%html</span>
+<span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span><span class="w"> </span><span class="nt">table</span><span class="w"> </span><span class="p">{</span><span class="k">margin-left</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="cp">!important</span><span class="p">;}</span><span class="w"> </span><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style> table {margin-left: 0 !important;} </style>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span><span class="o">,</span> <span class="nn">subprocess</span><span class="p">;</span> <span class="n">hostname</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">check_output</span><span class="p">(</span><span class="s2">&quot;hostname&quot;</span><span class="p">,</span> <span class="n">shell</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">();</span> <span class="n">username</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">check_output</span><span class="p">(</span><span class="s2">&quot;whoami&quot;</span><span class="p">,</span> <span class="n">shell</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">();</span> <span class="n">python_executable</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">executable</span><span class="p">;</span> <span class="n">python_version</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">version</span><span class="p">;</span> <span class="n">python_version_info</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">version_info</span><span class="p">;</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Hostname: </span><span class="si">{</span><span class="n">hostname</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="sa">f</span><span class="s2">&quot;User: </span><span class="si">{</span><span class="n">username</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="sa">f</span><span class="s2">&quot;Python Executable: </span><span class="si">{</span><span class="n">python_executable</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="sa">f</span><span class="s2">&quot;Python Version: </span><span class="si">{</span><span class="n">python_version</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="sa">f</span><span class="s2">&quot;Python Version Info: </span><span class="si">{</span><span class="n">python_version_info</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hostname: ip-172-26-5-168
+User: sensei
+Python Executable: /opt/jupyterhub/bin/python3
+Python Version: 3.10.12 (main, Aug 15 2025, 14:32:43) [GCC 11.4.0]
+Python Version Info: sys.version_info(major=3, minor=10, micro=12, releaselevel=&#39;final&#39;, serial=0)
+</pre></div>
+</div>
+</div>
+</div>
+<section id="ce-3105-mechanics-of-fluids-laboratory">
+<h2>CE 3105 Mechanics of Fluids Laboratory<a class="headerlink" href="#ce-3105-mechanics-of-fluids-laboratory" title="Link to this heading">#</a></h2>
 </section>
 <section id="course-catalog-description">
 <h2>Course Catalog Description:<a class="headerlink" href="#course-catalog-description" title="Link to this heading">#</a></h2>
@@ -618,7 +644,7 @@ evaluating the extent to which the student outcomes are being attained. The resu
 </section>
 <section id="learning-management-system">
 <h3>Learning Management System<a class="headerlink" href="#learning-management-system" title="Link to this heading">#</a></h3>
-<p>Blackboard(BB) is used as the learning management system (LMS) for this class and all exercises are to be uploaded to BB.  <strong>Late submissions are accepted, but scores are automatically reduced by 50%</strong>.</p>
+<p>Canvass is used as the learning management system (LMS) for this class and all exercises are to be uploaded to the LMS.  <strong>Late submissions are accepted, but scores are automatically reduced by 50%</strong>.</p>
 </section>
 <section id="laboratory-notes">
 <h3>Laboratory Notes<a class="headerlink" href="#laboratory-notes" title="Link to this heading">#</a></h3>
@@ -644,57 +670,57 @@ evaluating the extent to which the student outcomes are being attained. The resu
 </tr>
 <tr class="row-odd"><td class="text-left"><p>01-05 Sep 2025</p></td>
 <td class="text-left"><p><font color="green">Week 2 - No Labs (Labor Day)</font></p></td>
-<td class="text-left"><p>- [Laboratory 1](<a class="reference external" href="http://54.243.252.9/LINK">http://54.243.252.9/LINK</a></p></td>
+<td class="text-left"><p>- <a class="reference external" href="http://54.243.252.9/ce-3105-webroot/1-LabManual/_build/html/experiments/4ex1-statics/ex1.html">Laboratory 1</a></p></td>
 <td class="text-left"><p>- <font color="red">Submit Safety Certificates on Canvas</font></p></td>
 </tr>
 <tr class="row-even"><td class="text-left"><p>08-12 Sep 2025</p></td>
-<td class="text-left"><p><a class="reference external" href="http://54.243.252.9/ce-3105-webroot/ce3105notes/_build/html/lessons/laboratory1.html">Week 3 - Fluid Statics </a> <br> - Density <br> - Viscosity <br> - Bouyancy <br> - Forces</p></td>
-<td class="text-left"><p>- [Laboratory 1](<a class="reference external" href="http://54.243.252.9/LINK">http://54.243.252.9/LINK</a></p></td>
+<td class="text-left"><p><a class="reference external" href="http://54.243.252.9/ce-3105-webroot/1-LabManual/_build/html/experiments/4ex1-statics/ex1.html">Week 3 - Fluid Statics </a> <br> - Density <br> - Viscosity <br> - Bouyancy <br> - Forces</p></td>
+<td class="text-left"><p>- <a class="reference external" href="http://54.243.252.9/ce-3105-webroot/1-LabManual/_build/html/experiments/4ex1-statics/ex1.html">Laboratory 1</a></p></td>
 <td class="text-left"><p></p></td>
 </tr>
 <tr class="row-odd"><td class="text-left"><p>15-19 Sep 2025</p></td>
-<td class="text-left"><p><font color="green">Week 4 - No Labs (Job Fairy)</font></p></td>
-<td class="text-left"><p>- [Laboratory 2](<a class="reference external" href="http://54.243.252.9/LINK">http://54.243.252.9/LINK</a></p></td>
+<td class="text-left"><p><font color="green">Week 4 - No Labs (Job Fair)</font></p></td>
+<td class="text-left"><p>- <a class="reference external" href="http://54.243.252.9/ce-3105-webroot/1-LabManual/_build/html/experiments/5ex2-pipeflow/ex2.html">Laboratory 2</a></p></td>
 <td class="text-left"><p></p></td>
 </tr>
 <tr class="row-even"><td class="text-left"><p>22-26 Nov 2025</p></td>
 <td class="text-left"><p><font color="green">Week 5 - No Labs (Medical Leave) </font></p></td>
-<td class="text-left"><p>- [Laboratory 2](<a class="reference external" href="http://54.243.252.9/LINK">http://54.243.252.9/LINK</a></p></td>
+<td class="text-left"><p>- <a class="reference external" href="http://54.243.252.9/ce-3105-webroot/1-LabManual/_build/html/experiments/5ex2-pipeflow/ex2.html">Laboratory 2</a></p></td>
 <td class="text-left"><p>- <font color="red"> Submit Laboratory 1 Report on Canvas </font></p></td>
 </tr>
 <tr class="row-odd"><td class="text-left"><p>29-03 Sep/Oct 2025</p></td>
-<td class="text-left"><p>[Week 5 - Flow Measurement in Conduits](<a class="reference external" href="http://54.243.252.9/LINK2">http://54.243.252.9/LINK2</a> <br> - Time-to-Fill <br> - Venturi <br> - Rotameter - Mass Flow Meter</p></td>
-<td class="text-left"><p>- [Laboratory 2](<a class="reference external" href="http://54.243.252.9/LINK">http://54.243.252.9/LINK</a></p></td>
+<td class="text-left"><p><a class="reference external" href="http://54.243.252.9/ce-3105-webroot/1-LabManual/_build/html/experiments/5ex2-pipeflow/ex2.html">Week 5 - Flow Measurement in Conduits</a> <br> - Time-to-Fill <br> - Venturi <br> - Rotameter - Mass Flow Meter</p></td>
+<td class="text-left"><p>- <a class="reference external" href="http://54.243.252.9/ce-3105-webroot/1-LabManual/_build/html/experiments/5ex2-pipeflow/ex2.html">Laboratory 2</a></p></td>
 <td class="text-left"><p></p></td>
 </tr>
 <tr class="row-even"><td class="text-left"><p>06-10 Oct 2025</p></td>
-<td class="text-left"><p>[Week 6 - Friction Loss in Pipes and Fittings](<a class="reference external" href="http://54.243.252.9/LINK4">http://54.243.252.9/LINK4</a> <br> - Modified Bernoulli <br> - Head Loss Model Structure <br> - Expansions/Contractions <br> - Bends</p></td>
-<td class="text-left"><p>- [Laboratory 4](<a class="reference external" href="http://54.243.252.9/LINK">http://54.243.252.9/LINK</a></p></td>
+<td class="text-left"><p><a class="reference external" href="http://54.243.252.9/ce-3105-webroot/1-LabManual/_build/html/experiments/7ex4-pipeloss/ex4.html">Week 6 - Friction Loss in Pipes and Fittings</a> <br> - Modified Bernoulli <br> - Head Loss Model Structure <br> - Expansions/Contractions <br> - Bends</p></td>
+<td class="text-left"><p>- <a class="reference external" href="http://54.243.252.9/ce-3105-webroot/1-LabManual/_build/html/experiments/7ex4-pipeloss/ex4.html">Laboratory 4</a></p></td>
 <td class="text-left"><p>- <font color="red"> Submit Laboratory 2 Report on Canvas </font></p></td>
 </tr>
 <tr class="row-odd"><td class="text-left"><p>13-17 Oct 2025</p></td>
-<td class="text-left"><p>[Week 7 - Momentum Transfer](<a class="reference external" href="http://54.243.252.9/LINK5">http://54.243.252.9/LINK5</a> <br> - Jet Impact on a Plate <br> - Team Assignments</p></td>
-<td class="text-left"><p>- <a class="reference external" href="http://54.243.252.9/ce-3105-webroot/2-Exercises/laboratory6/laboratory6.html">Laboratory 6</a></p></td>
+<td class="text-left"><p><a class="reference external" href="http://54.243.252.9/ce-3105-webroot/1-LabManual/_build/html/experiments/8ex5-momentum/ex5.html">Week 7 - Momentum Transfer</a> <br> - Jet Impact on a Plate <br> - Team Assignments</p></td>
+<td class="text-left"><p>- <a class="reference external" href="http://54.243.252.9/ce-3105-webroot/1-LabManual/_build/html/experiments/8ex5-momentum/ex5.html">Laboratory 5</a></p></td>
 <td class="text-left"><p>- <font color="red">Submit Laboratory 7 Procedure</font><br> - <font color="red"> Submit Laboratory 4 Report </font></p></td>
 </tr>
 <tr class="row-even"><td class="text-left"><p>20-24 Oct 2025</p></td>
-<td class="text-left"><p><a class="reference external" href="http://54.243.252.9/ce-3105-webroot/ce3105notes/_build/html/lessons/laboratory7/laboratory7.html">Week 8 - Pump Performance</a> <br> - Single Pump <br> - Pumps in Series <br> - Pumps in Parallel</p></td>
-<td class="text-left"><p>- <a class="reference external" href="http://54.243.252.9/ce-3105-webroot/2-Exercises/laboratory7/laboratory7.html">Laboratory 7</a></p></td>
+<td class="text-left"><p><a class="reference external" href="http://54.243.252.9/ce-3105-webroot/1-LabManual/_build/html/experiments/9ex6-pumps/ex6A.html">Week 8 - Pump Performance</a> <br> - Single Pump <br> - Pumps in Series <br> - Pumps in Parallel</p></td>
+<td class="text-left"><p>- <a class="reference external" href="http://54.243.252.9/ce-3105-webroot/1-LabManual/_build/html/experiments/9ex6-pumps/ex6A.html">Laboratory 6</a></p></td>
 <td class="text-left"><p>- <font color="red">Submit Laboratory 8 Procedure</font><br> - <font color="red"> Submit Laboratory 6 Report </font></p></td>
 </tr>
 <tr class="row-odd"><td class="text-left"><p>27-31 Oct 2025</p></td>
-<td class="text-left"><p>[Week 13 - Flow Measurements in Open Channels](<a class="reference external" href="http://54.243.252.9/LINK">http://54.243.252.9/LINK</a> <br> - Drift Tracers <br> - Weirs <br> - ADCP Methods</p></td>
-<td class="text-left"><p>- <a class="reference external" href="http://54.243.252.9/ce-3105-webroot/2-Exercises/laboratory8/laboratory8.html">Laboratory 8</a></p></td>
+<td class="text-left"><p><a class="reference external" href="http://54.243.252.9/ce-3105-webroot/1-LabManual/_build/html/experiments/10ex7-openflow/ex7.html">Week 13 - Flow Measurements in Open Channels</a> <br> - Drift Tracers <br> - Weirs <br> - ADCP Methods</p></td>
+<td class="text-left"><p>- <a class="reference external" href="http://54.243.252.9/ce-3105-webroot/1-LabManual/_build/html/experiments/10ex7-openflow/ex7.html">Laboratory 7</a></p></td>
 <td class="text-left"><p>- <font color="red">Submit Laboratory 9 Procedure</font><br> - <font color="red"> Submit Laboratory 7 Report </font></p></td>
 </tr>
 <tr class="row-even"><td class="text-left"><p>03-07 Nov 2025</p></td>
-<td class="text-left"><p>[Week 14 - Rapidly Varied Flow: Hydraulic Jump](<a class="reference external" href="http://54.243.252.9/LINK">http://54.243.252.9/LINK</a> <br> - Rigid Column Theory <br> - Rigid Column Theory <br> - Elastic Column Theory <br> - Numerical Modeling</p></td>
-<td class="text-left"><p>- <a class="reference external" href="http://54.243.252.9/ce-3105-webroot/2-Exercises/laboratory9/laboratory9.html">Laboratory 9</a></p></td>
+<td class="text-left"><p><a class="reference external" href="http://54.243.252.9/ce-3105-webroot/1-LabManual/_build/html/experiments/12ex9-hydraulicjump/ex9.html">Week 14 - Rapidly Varied Flow: Hydraulic Jump</a> <br> - topic <br> - topic <br> - topic <br></p></td>
+<td class="text-left"><p>- <a class="reference external" href="http://54.243.252.9/ce-3105-webroot/1-LabManual/_build/html/experiments/12ex9-hydraulicjump/ex9.html">Laboratory 8</a></p></td>
 <td class="text-left"><p><font color="red"> </font><br> - <font color="red"> Submit Laboratory 8 Report </font></p></td>
 </tr>
 <tr class="row-odd"><td class="text-left"><p>10-14 Nov 2025</p></td>
-<td class="text-left"><p>[Week 14 - Gradually Varied Flow: Backwater Curve](<a class="reference external" href="http://54.243.252.9/LINK">http://54.243.252.9/LINK</a> <br> - Rigid Column Theory <br> - Rigid Column Theory <br> - Elastic Column Theory <br> - Numerical Modeling</p></td>
-<td class="text-left"><p>- <a class="reference external" href="http://54.243.252.9/ce-3105-webroot/2-Exercises/laboratory9/laboratory9.html">Laboratory 9</a></p></td>
+<td class="text-left"><p><a class="reference external" href="http://54.243.252.9/ce-3105-webroot/1-LabManual/_build/html/experiments/11ex8-backwater/ex8.html">Week 14 - Gradually Varied Flow: Backwater Curve</a> <br> - Rigid Column Theory <br> - Rigid Column Theory <br> - Elastic Column Theory <br> - Numerical Modeling</p></td>
+<td class="text-left"><p>- <a class="reference external" href="http://54.243.252.9/ce-3105-webroot/1-LabManual/_build/html/experiments/11ex8-backwater/ex8.html">Laboratory 9</a></p></td>
 <td class="text-left"><p><font color="red"> </font><br> - <font color="red"> Submit Laboratory 8 Report </font></p></td>
 </tr>
 <tr class="row-even"><td class="text-left"><p>17-21 Nov 2025</p></td>
@@ -705,7 +731,7 @@ evaluating the extent to which the student outcomes are being attained. The resu
 <tr class="row-odd"><td class="text-left"><p>24-29 Nov 2025</p></td>
 <td class="text-left"><p><font color="green"> Week 17 - No Labs (Thanksgiving Holiday)</font></p></td>
 <td class="text-left"><p></p></td>
-<td class="text-left"><p><font color="red">No Submissions after 5 May 2025 will be scored</font></p></td>
+<td class="text-left"><p><font color="red">No Submissions after 5 December 2025 will be scored</font></p></td>
 </tr>
 </tbody>
 </table>
@@ -714,7 +740,7 @@ evaluating the extent to which the student outcomes are being attained. The resu
 <hr class="docutils" />
 <section id="course-assessment-and-grading-criteria">
 <h2>Course Assessment and Grading Criteria:<a class="headerlink" href="#course-assessment-and-grading-criteria" title="Link to this heading">#</a></h2>
-<p>There will be 8-9 laboratory reports, 8-9 BB tests (quizzes), a comprehensive Lab exam, and 8-9 effort reports.</p>
+<p>There will be 8-9 laboratory reports, 8-9 BB tests (quizzes), and practical Lab exam.</p>
 <p><strong>Late</strong> assignments will incur a substantial penalty.</p>
 <p>Grades will be based on the following components; weighting is approximate:</p>
 <div class="pst-scrollable-table-container"><table class="table">
@@ -952,7 +978,7 @@ office in 335 West Hall or call 806.742.2405.</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#course">Course:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ce-3105-mechanics-of-fluids-laboratory">CE 3105 Mechanics of Fluids Laboratory</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#course-catalog-description">Course Catalog Description:</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites:</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#course-sections">Course Sections</a></li>
