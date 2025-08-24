@@ -1,0 +1,749 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Lab 9: Analysis Guidelines &#8212; Mechanics of Fluids Laboratory</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'experiments/12ex9-hydraulicjump/ex9_sample_calculations';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="14. Lab 11 - Porous Media : Flow Nets" href="../14ex11-flownets/ex11.html" />
+    <link rel="prev" title="Laboratory 9 - Sample Report" href="ex9_sample_report.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo2.png" class="logo__image only-light" alt="Mechanics of Fluids Laboratory - Home"/>
+    <script>document.write(`<img src="../../_static/logo2.png" class="logo__image only-dark" alt="Mechanics of Fluids Laboratory - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    CE 3105 Mechanics of Fluids Laboratory
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../0syllabus/ce-3105-syllabus-2025-3.html">Syllabus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1safety/safety.html">0.0 Safety Considerations</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../3experimentation/experimentation.html">Lab 0 - Role of Engineering Experimentation</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../4ex1-statics/ex1.html">Lab 1 - Fluid Statics: Density, Viscosity, Bouyancy, Forces</a></li>
+
+
+
+<li class="toctree-l1 has-children"><a class="reference internal" href="../5ex2-pipeflow/ex2.html">Lab 2 - Flow Measurement in Conduits</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../5ex2-pipeflow/ex2_sample_report.html">Lab 2. Sample Report</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../7ex4-pipeloss/ex4.html">Lab 3 - Friction Losses in Pipes and Fittings</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../7ex4-pipeloss/ex4_sample_report.html">Laboratory 4 Sample Report</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../8ex5-momentum/ex5.html">Lab 4 - Momentum Transfer</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../8ex5-momentum/ex5_sample_report.html">Laboratory 5 Sample Report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../8ex5-momentum/ex5_sample_calculations.html">Lab 5. Sample Calculations</a></li>
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../9ex6-pumps/ex6A.html">Lab 5 - Bilge Pump Curve</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../9ex6-pumps/ex6A_samplereport.html">Lab 6A Sample Report</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../10ex7-openflow/ex7.html">Lab 6. - Open Channel Flow Measurement</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../11ex8-backwater/ex8.html">Lab 7. - Water Surface Profiles: Backwater Curves</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../11ex8-backwater/ex8_sample_report-excel.html">Lab 8. - Sample Report (Spreadsheet Version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../11ex8-backwater/ex8_sample_report-python.html">Lab 8. - Sample Report (Python Version)</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="ex9.html">Lab 8. - Water Surface Profiles: Hydraulic Jump</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ex9_sample_report.html">Laboratory 9 - Sample Report</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Lab 9: Analysis Guidelines</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../14ex11-flownets/ex11.html">14. Lab 11 - Porous Media : Flow Nets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../abet_plan/abet_plan.html">Assessment Plan for ABET (6)</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fexperiments/12ex9-hydraulicjump/ex9_sample_calculations.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/experiments/12ex9-hydraulicjump/ex9_sample_calculations.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Lab 9: Analysis Guidelines</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-i-flow-across-a-weir">Part I: Flow across a weir</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-2-channel-roughness">Part 2: Channel roughness</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-example">Practical Example</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="lab-9-analysis-guidelines">
+<h1>Lab 9: Analysis Guidelines<a class="headerlink" href="#lab-9-analysis-guidelines" title="Link to this heading">#</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>These guidelines were prepared by <strong>Moise Baraka</strong> (TA - Fluid Mechanics Lab), November 2024</p>
+</div>
+<hr class="docutils" />
+<div class="math notranslate nohighlight">
+\[
+\require{xcolor}
+\]</div>
+<section id="part-i-flow-across-a-weir">
+<h2>Part I: Flow across a weir<a class="headerlink" href="#part-i-flow-across-a-weir" title="Link to this heading">#</a></h2>
+<p>In the first part of the experiment, you will compare the flow rate measured across the weir with the flow rate obtained from the apparatus. Note that <strong>Manning’s equation is not required for this part</strong>.</p>
+<ul class="simple">
+<li><p><strong>How do you read the flow rate from the apparatus?</strong></p></li>
+</ul>
+<p>The flow rate from the manometer is calculated using the formula:
+$<span class="math notranslate nohighlight">\(
+\log_{10}(Q) = \frac{\log_{10}(\Delta H) -1.47}{2.096} \implies \boxed{\textcolor{blue}{Q_m = 10^{\frac{\log_{10}(\Delta H) -1.47}{2.096}} ,\quad (cfs)}}
+\)</span>$</p>
+<p>Where <span class="math notranslate nohighlight">\(\Delta H \, (ft)\)</span> is the difference between the readings of the two manometers: <span class="math notranslate nohighlight">\(\Delta H = H_1-H_2\)</span></p>
+<ul class="simple">
+<li><p><strong>Flow across the V-notch weir:</strong></p></li>
+</ul>
+<p>The flow rate across the V-notch weir is determined using the following equation:
+$<span class="math notranslate nohighlight">\(
+Q_{w} = \frac{8}{15} \sqrt{2g}\, C_e \tan\left(\frac{\theta}{2}\right) \, (h+k)^{5/2}
+\)</span>$</p>
+<p>Here, <span class="math notranslate nohighlight">\(C_e\)</span> is a coefficient based on the angle <span class="math notranslate nohighlight">\(\theta\)</span> of the weir in degrees. <span class="math notranslate nohighlight">\(k\)</span> is the head correction coefficient. The values for <span class="math notranslate nohighlight">\(C_e\)</span> and <span class="math notranslate nohighlight">\(k\)</span> are functions of the angle <span class="math notranslate nohighlight">\(\theta\)</span> of the V-notch weir:
+$<span class="math notranslate nohighlight">\(
+C_e = 0.6072 - 0.0008745\cdot \theta + 0.000006104 \cdot \theta^2
+\)</span>$</p>
+<div class="math notranslate nohighlight">
+\[
+k = \frac{0.002}{\sin\left(\frac{\theta}{2}\right)}, \quad (\text{for } \, 40^\circ \leq \theta \leq 90^\circ ), \quad (ft)
+\]</div>
+<p>Since the angle of our V-notch weir is <span class="math notranslate nohighlight">\(90^\circ\)</span>, we say:</p>
+<div class="math notranslate nohighlight">
+\[
+\boxed{\textcolor{blue}{Q_{w} = \frac{8}{15} \sqrt{2g}\, C_e \, (h+k)^{5/2},\quad C_e = 0.578, \quad \text{and } k = 0.862\,mm\,(0.00283\,ft)}}
+\]</div>
+<p><strong>Note:</strong> You will have to plot two curves on the same figure:</p>
+<p>(1) <span class="math notranslate nohighlight">\(\log(Q_m) (h)\)</span>: manometer flow rates vs weir water heights</p>
+<p>(2) <span class="math notranslate nohighlight">\(\log(Q_w) (h)\)</span>: weir flow rates vs weir water heights.</p>
+</section>
+<section id="part-2-channel-roughness">
+<h2>Part 2: Channel roughness<a class="headerlink" href="#part-2-channel-roughness" title="Link to this heading">#</a></h2>
+<p>In the second part of the experiment, you will estimate the channel roughness coefficient <span class="math notranslate nohighlight">\(n\)</span>. To do so,</p>
+<ul class="simple">
+<li><p>Calculate flow rates using the equation from Part I based on the manometer readings:</p></li>
+</ul>
+<p><span class="math notranslate nohighlight">\(\log_{10}(Q) = \frac{\log_{10}(\Delta H) -1.47}{2.096}\)</span></p>
+<ul class="simple">
+<li><p>Then, compute the wetted perimeter <span class="math notranslate nohighlight">\(P\)</span>, the area <span class="math notranslate nohighlight">\(A\)</span>, and the hydraulic radius <span class="math notranslate nohighlight">\(R=\frac{A}{P}\)</span> from the measured <span class="math notranslate nohighlight">\(h\)</span> and the channel width <span class="math notranslate nohighlight">\(B\)</span>.</p></li>
+</ul>
+<p>Knowing the flow rate <span class="math notranslate nohighlight">\(Q\)</span>, the bed slope <span class="math notranslate nohighlight">\(S_0\)</span>, and other calculated dimensions above, <strong>use Manning’s equation</strong> to solve for <span class="math notranslate nohighlight">\(n\)</span>.
+$<span class="math notranslate nohighlight">\(
+Q=\frac{K_n}{n} \cdot A \cdot R^{2/3} \cdot S_0 \implies \boxed{{n = \frac{K_n}{Q} \cdot A \cdot R^{2/3} \cdot S_0}}
+\)</span>$</p>
+<p>Here, <span class="math notranslate nohighlight">\(K_n\)</span> is a unit conversion quantity. Take <span class="math notranslate nohighlight">\(K_n=1.0\)</span> if using S.I units or <span class="math notranslate nohighlight">\(K_n=1.49\)</span> for US customary units.</p>
+<p><strong>Remark:</strong></p>
+<p>To verify your results, rewrite Manning’s equation as a linear relationship and then plot it. To do this, we pose <span class="math notranslate nohighlight">\(Y=Q\)</span> and <span class="math notranslate nohighlight">\(x=K_n \cdot A \cdot R^{2/3} \cdot S_0\)</span>, then Manning’s equation can be written as a linear equation of the form:</p>
+<div class="math notranslate nohighlight">
+\[
+\boxed{\textcolor{red}{Y = \frac{1}{n} x}}
+\]</div>
+<ul class="simple">
+<li><p>Use the data you gathered in part II, regardless of the slopes, and plot <span class="math notranslate nohighlight">\(Q\)</span> versus <span class="math notranslate nohighlight">\(x=K_n \cdot A \cdot R^{2/3} \cdot S_0\)</span>.</p></li>
+<li><p>Compare the slope of the plotted curve with the <span class="math notranslate nohighlight">\(\frac{1}{n}\)</span> to critique and validate your estimated mean roughness coefficient.</p></li>
+</ul>
+<section id="references">
+<h3>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h3>
+<p><a class="reference external" href="https://pubs.usgs.gov/wsp/1617b/report.pdf">(1) Discharge Characteristics of Triangular-notch Thin-plate Weirs</a></p>
+<p><a class="reference external" href="http://54.243.252.9/ce-3105-webroot/ce3105notes/_build/html/lessons/laboratory8/laboratory8.html">(2) Open Channel Flow: Instructor Notebook - Dr. Cleveland</a></p>
+</section>
+<section id="practical-example">
+<h3>Practical Example<a class="headerlink" href="#practical-example" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#-------------------------------------</span>
+<span class="c1">#             SCRIPTS</span>
+<span class="c1">#-------------------------------------</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">math</span>
+
+
+<span class="n">g</span> <span class="o">=</span> <span class="mf">32.2</span>    <span class="c1"># ft/s2</span>
+<span class="n">k</span> <span class="o">=</span> <span class="mf">0.00283</span> <span class="c1"># ft</span>
+<span class="n">Ce</span> <span class="o">=</span> <span class="mf">0.578</span>  <span class="c1"># discharge coefficient</span>
+
+<span class="n">h</span> <span class="o">=</span> <span class="p">[</span><span class="mf">64.32</span><span class="p">,</span> <span class="mf">76.10</span><span class="p">,</span> <span class="mf">81.38</span><span class="p">,</span> <span class="mf">85.28</span><span class="p">,</span> <span class="mf">95.25</span><span class="p">]</span>  <span class="c1"># mm (weir heights)</span>
+<span class="n">h</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="o">*</span><span class="mf">0.00328084</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">h</span><span class="p">]</span>            <span class="c1"># ft</span>
+<span class="c1">#print(h)</span>
+
+<span class="c1"># Manometer reading</span>
+<span class="n">H_1</span> <span class="o">=</span> <span class="p">[</span><span class="mf">2.3</span><span class="p">,</span> <span class="mf">2.43</span><span class="p">,</span> <span class="mf">2.47</span><span class="p">,</span> <span class="mf">2.53</span><span class="p">,</span> <span class="mf">2.75</span><span class="p">]</span> <span class="c1"># ft</span>
+<span class="n">H_2</span> <span class="o">=</span> <span class="p">[</span><span class="mf">2.1</span><span class="p">,</span> <span class="mf">1.93</span><span class="p">,</span> <span class="mf">1.84</span><span class="p">,</span> <span class="mf">1.75</span><span class="p">,</span> <span class="mf">1.37</span><span class="p">]</span>
+
+<span class="c1"># Denivelation from the manometer</span>
+<span class="n">delta_h</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="n">j</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">j</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">H_1</span><span class="p">,</span> <span class="n">H_2</span><span class="p">)]</span> <span class="c1">#H_1-H_2</span>
+
+<span class="c1"># Compute flow rates from the manometers</span>
+<span class="n">Qm</span> <span class="o">=</span> <span class="mi">10</span><span class="o">**</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">delta_h</span><span class="p">)</span> <span class="o">-</span><span class="mf">1.47</span><span class="p">)</span> <span class="o">/</span> <span class="mf">2.096</span><span class="p">)</span>
+
+<span class="c1"># Flow across the weir</span>
+<span class="n">Qw</span> <span class="o">=</span> <span class="p">[</span><span class="mi">8</span><span class="o">/</span><span class="mi">15</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">g</span><span class="p">)</span> <span class="o">*</span> <span class="n">Ce</span> <span class="o">*</span> <span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="n">k</span><span class="p">)</span><span class="o">**</span><span class="mf">2.5</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">h</span><span class="p">]</span>
+
+<span class="c1"># print Qm</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;- The flow across the manometers Qm=&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">Qm</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="s2">&quot;cfs&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;- The flow across the weir Qw=&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">Qw</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="s2">&quot;cfs&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>- The flow across the manometers Qm= [0.0923 0.1429 0.1596 0.1767 0.232 ] cfs
+- The flow across the weir Qw= [0.0523 0.0793 0.0936 0.105  0.1381] cfs
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># regression</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">h</span>
+<span class="n">ym</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">Qm</span><span class="p">)</span>
+<span class="n">yw</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">Qw</span><span class="p">)</span>
+
+<span class="n">mm</span><span class="p">,</span> <span class="n">bm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">ym</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># manometers</span>
+<span class="n">mw</span><span class="p">,</span> <span class="n">bw</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">yw</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># weir</span>
+
+<span class="c1"># Let us plot log(Qm)(h), log(Qw)(h)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">Qm</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Manometer data &quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">Qw</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Weir data &quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;green&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="p">[</span><span class="n">mm</span><span class="o">*</span><span class="n">i</span><span class="o">+</span><span class="n">bm</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">x</span><span class="p">],</span> <span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Fit:  $</span><span class="se">\\</span><span class="s1">log(Q_m)=</span><span class="si">{</span><span class="n">mm</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">h+(</span><span class="si">{</span><span class="n">bm</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">)$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="p">[</span><span class="n">mw</span><span class="o">*</span><span class="n">i</span><span class="o">+</span><span class="n">bw</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">x</span><span class="p">],</span> <span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Fit: $</span><span class="se">\\</span><span class="s1">log(Q_w)=</span><span class="si">{</span><span class="n">mw</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">h+(</span><span class="si">{</span><span class="n">bw</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">)$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Plot for Part I&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Weir heights $h$ (ft)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Flow rates $</span><span class="se">\\</span><span class="s2">log(Q)$ (cfs)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/d1c41883da19e782298827e3eb707d306b4abc232a667aa456cc176f0136fa3a.png" src="../../_images/d1c41883da19e782298827e3eb707d306b4abc232a667aa456cc176f0136fa3a.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Let us fit a linear regression that predicts Qw based on Qm</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">Qm</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">Qw</span>
+
+<span class="c1"># Regression of degree 1</span>
+<span class="n">m</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># manometers</span>
+
+<span class="c1"># plots</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">Qm</span><span class="p">,</span> <span class="n">Qw</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Observations&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="p">[</span><span class="n">m</span><span class="o">*</span><span class="n">i</span><span class="o">+</span><span class="n">b</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">x</span><span class="p">],</span> <span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Fit:  $Q_w=</span><span class="si">{</span><span class="n">m</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">Q_m+(</span><span class="si">{</span><span class="n">b</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">)$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Relation $Q_w$ and $Q_m$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;$Q_m$ (cfs)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;$Q_w$ (cfs)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/cf01eed0db6b6e25d87dbc7d44afa9de8ce107aa43370d02ac0f59144b6ece3b.png" src="../../_images/cf01eed0db6b6e25d87dbc7d44afa9de8ce107aa43370d02ac0f59144b6ece3b.png" />
+</div>
+</div>
+<p><strong>Note:</strong></p>
+<p>As established from the linear regression, the relationship between the flow rate over the weir <span class="math notranslate nohighlight">\(Q_w\)</span> and the upstream flow rate from the manometer readings <span class="math notranslate nohighlight">\((Q_m)\)</span> is given by:
+$<span class="math notranslate nohighlight">\(
+Q_w = 0.623 Q_m -0.01,
+\)</span>$</p>
+<p>This relationship allows us to estimate the flow reaching the rocky-bed region under experimental conditions where the weir is present. The estimated <span class="math notranslate nohighlight">\(Q_w\)</span> can then be used to calculate Manning’s coefficient <span class="math notranslate nohighlight">\(n\)</span> for the rocky-bed region.</p>
+<p>In the absence of the weir, the total upstream flow <span class="math notranslate nohighlight">\(Q_m\)</span> would directly enter the rocky-bed region, as there would be no division or obstruction caused by the weir. In this case, Manning’s coefficient will be estimated using this direct flow value.</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./experiments/12ex9-hydraulicjump"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="ex9_sample_report.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Laboratory 9 - Sample Report</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../14ex11-flownets/ex11.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">14. Lab 11 - Porous Media : Flow Nets</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-i-flow-across-a-weir">Part I: Flow across a weir</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-2-channel-roughness">Part 2: Channel roughness</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-example">Practical Example</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Theodore G. Cleveland
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

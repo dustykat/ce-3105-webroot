@@ -1,0 +1,1517 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Laboratory 1 Sample Report &#8212; Mechanics of Fluids Laboratory</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'experiments/4ex1-statics/ex1_sample_report';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo2.png" class="logo__image only-light" alt="Mechanics of Fluids Laboratory - Home"/>
+    <script>document.write(`<img src="../../_static/logo2.png" class="logo__image only-dark" alt="Mechanics of Fluids Laboratory - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    CE 3105 Mechanics of Fluids Laboratory
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../0syllabus/ce-3105-syllabus-2025-3.html">Syllabus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1safety/safety.html">0.0 Safety Considerations</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../3experimentation/experimentation.html">Lab 0 - Role of Engineering Experimentation</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="ex1.html">Lab 1 - Fluid Statics: Density, Viscosity, Bouyancy, Forces</a></li>
+
+
+
+<li class="toctree-l1 has-children"><a class="reference internal" href="../5ex2-pipeflow/ex2.html">Lab 2 - Flow Measurement in Conduits</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../5ex2-pipeflow/ex2_sample_report.html">Lab 2. Sample Report</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../7ex4-pipeloss/ex4.html">Lab 3 - Friction Losses in Pipes and Fittings</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../7ex4-pipeloss/ex4_sample_report.html">Laboratory 4 Sample Report</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../8ex5-momentum/ex5.html">Lab 4 - Momentum Transfer</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../8ex5-momentum/ex5_sample_report.html">Laboratory 5 Sample Report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../8ex5-momentum/ex5_sample_calculations.html">Lab 5. Sample Calculations</a></li>
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../9ex6-pumps/ex6A.html">Lab 5 - Bilge Pump Curve</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../9ex6-pumps/ex6A_samplereport.html">Lab 6A Sample Report</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../10ex7-openflow/ex7.html">Lab 6. - Open Channel Flow Measurement</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../11ex8-backwater/ex8.html">Lab 7. - Water Surface Profiles: Backwater Curves</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../11ex8-backwater/ex8_sample_report-excel.html">Lab 8. - Sample Report (Spreadsheet Version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../11ex8-backwater/ex8_sample_report-python.html">Lab 8. - Sample Report (Python Version)</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../12ex9-hydraulicjump/ex9.html">Lab 8. - Water Surface Profiles: Hydraulic Jump</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../12ex9-hydraulicjump/ex9_sample_report.html">Laboratory 9 - Sample Report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../12ex9-hydraulicjump/ex9_sample_calculations.html">Lab 9: Analysis Guidelines</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../14ex11-flownets/ex11.html">14. Lab 11 - Porous Media : Flow Nets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../abet_plan/abet_plan.html">Assessment Plan for ABET (6)</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fexperiments/4ex1-statics/ex1_sample_report.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/experiments/4ex1-statics/ex1_sample_report.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Laboratory 1 Sample Report</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fluid-statics-density-viscosity-bouyancy-forces"><strong>Fluid Statics: Density, Viscosity, Bouyancy, Forces</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#authors">Authors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#objective-s">Objective(s)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#materials-and-methods">Materials and Methods</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#materials"><strong>Materials</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#methods"><strong>Methods</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#part-1-fluid-properties">Part 1: Fluid Properties</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#part-2-buoyancy-experiments">Part 2: Buoyancy Experiments</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#part-3-quadrant-balance-hydrostatic-forces">Part 3: Quadrant Balance/Hydrostatic Forces</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#results"><strong>Results</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fluid-properties"><strong>Fluid Properties</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#density"><strong>Density</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#specific-gravity"><strong>Specific Gravity</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#water-viscosity"><strong>Water Viscosity</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#salt-water-viscosity"><strong>Salt Water Viscosity</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#glycerine-viscosity"><strong>Glycerine Viscosity</strong></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#buoyancy-experiments"><strong>Buoyancy Experiments</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quadrant-balance-partial-submerge"><strong>Quadrant Balance (Partial Submerge)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quadrant-balance-fully-submerge"><strong>Quadrant Balance (Fully Submerge)</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-analysis-for-fluid-properties"><strong>Data Analysis for Fluid Properties</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#viscosity-summary"><strong>Viscosity Summary</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#buoyancy"><strong>Buoyancy</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hydrostatic-forces"><strong>Hydrostatic Forces</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion"><strong>Discussion</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusions"><strong>Conclusions</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Fluid Properties:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bouyancy-and-hydrostatic-force-principles">Bouyancy and Hydrostatic Force Principles</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references"><strong>References</strong></a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="laboratory-1-sample-report">
+<h1>Laboratory 1 Sample Report<a class="headerlink" href="#laboratory-1-sample-report" title="Link to this heading">#</a></h1>
+<section id="fluid-statics-density-viscosity-bouyancy-forces">
+<h2><strong>Fluid Statics: Density, Viscosity, Bouyancy, Forces</strong><a class="headerlink" href="#fluid-statics-density-viscosity-bouyancy-forces" title="Link to this heading">#</a></h2>
+<section id="authors">
+<h3>Authors<a class="headerlink" href="#authors" title="Link to this heading">#</a></h3>
+<p>P. N. Guinn and P. Olar Bear (Team 1)</p>
+</section>
+<section id="objective-s">
+<h3>Objective(s)<a class="headerlink" href="#objective-s" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Determine the density, specific gravity, and viscosity of liquids using gravimetric and other experimental methods, and to compare the results to standard reference values.</p></li>
+<li><p>To investigate fluid statics by measuring buoyancy forces and hydrostatic thrust, and to validate theoretical principles using experimental data.</p></li>
+</ol>
+</section>
+</section>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<p>The purpose of this laboratory experiment was to investigate fluid properties and fluid statics by:</p>
+<ol class="arabic simple">
+<li><p>Measuring the density, specific gravity, and viscosity of three assigned fluids using gravimetric and other methods.</p></li>
+<li><p>Measure the buoyancy force on various objects to verify Archimedes’ Principle.</p></li>
+<li><p>Determine the hydrostatic thrust acting on a plane surface using a quadrant balance, for both partially and fully submerged conditions.</p></li>
+</ol>
+</section>
+<hr class="docutils" />
+<section id="materials-and-methods">
+<h2>Materials and Methods<a class="headerlink" href="#materials-and-methods" title="Link to this heading">#</a></h2>
+<section id="materials">
+<h3><strong>Materials</strong><a class="headerlink" href="#materials" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Quadrant balance apparatus</p></li>
+<li><p>Graduated cylinder</p></li>
+<li><p>Thermometer</p></li>
+<li><p>Objects for buoyancy testing (rocks, composites, wood samples)</p></li>
+<li><p>Weighing scale</p></li>
+<li><p>Water</p></li>
+<li><p>Transfer pipette</p></li>
+<li><p>Standard weights and hangers</p></li>
+</ul>
+</section>
+<section id="methods">
+<h3><strong>Methods</strong><a class="headerlink" href="#methods" title="Link to this heading">#</a></h3>
+<section id="part-1-fluid-properties">
+<h4>Part 1: Fluid Properties<a class="headerlink" href="#part-1-fluid-properties" title="Link to this heading">#</a></h4>
+<p><strong>Density</strong></p>
+<ol class="arabic simple">
+<li><p>Measure the fluid’s temperature.</p></li>
+<li><p>Weigh the empty beaker.</p></li>
+<li><p>Fill the beaker with the fluid and measure its combined mass.</p></li>
+<li><p>Measure the fluid’s volume using a graduated cylinder.</p></li>
+<li><p>Calculate the density.</p></li>
+<li><p>Compare to tabulated values from authoratative sources (include citations)</p></li>
+</ol>
+<p><strong>Specific Gravity Measurement</strong></p>
+<ol class="arabic simple">
+<li><p>Submerge the hydrometer in the fluid.</p></li>
+<li><p>Record the hydrometer reading at the lower meniscus level.</p></li>
+<li><p>Compare to calculated value from density measurement(s).</p></li>
+</ol>
+<p><strong>Viscosity Measurement</strong></p>
+<ol class="arabic simple">
+<li><p>Measure the diameter of the steel sphere.</p></li>
+<li><p>Release the sphere in the fluid column.</p></li>
+<li><p>Record the time it takes to travel between two markers.</p></li>
+<li><p>Apply Stoke’s Law to estimate viscosity.</p></li>
+</ol>
+</section>
+<section id="part-2-buoyancy-experiments">
+<h4>Part 2: Buoyancy Experiments<a class="headerlink" href="#part-2-buoyancy-experiments" title="Link to this heading">#</a></h4>
+<ol class="arabic simple">
+<li><p>Measured the temperature of water and recorded initial volumes in a graduated cylinder.</p></li>
+<li><p>Submerged objects (Rock-1, Rock-2, etc.) and recorded displaced volumes.</p></li>
+<li><p>Repeated measurements three times for each object to ensure accuracy.</p></li>
+<li><p>Recorded data for each object, including mass and displacement.</p></li>
+</ol>
+</section>
+<section id="part-3-quadrant-balance-hydrostatic-forces">
+<h4>Part 3: Quadrant Balance/Hydrostatic Forces<a class="headerlink" href="#part-3-quadrant-balance-hydrostatic-forces" title="Link to this heading">#</a></h4>
+<ol class="arabic simple">
+<li><p>Set up the quadrant balance and trimmed it to ensure the plane surface was vertical.</p></li>
+<li><p>Conducted trials for partially submerged conditions by adjusting weights and water levels.</p></li>
+<li><p>Conducted trials for fully submerged conditions by further submerging the plane surface.</p></li>
+<li><p>Recorded water depths <span class="math notranslate nohighlight">\( h \)</span> and widths <span class="math notranslate nohighlight">\( b \)</span> of the free surface for all trials.</p></li>
+</ol>
+</section>
+</section>
+</section>
+<hr class="docutils" />
+<section id="results">
+<h2><strong>Results</strong><a class="headerlink" href="#results" title="Link to this heading">#</a></h2>
+<section id="fluid-properties">
+<h3><strong>Fluid Properties</strong><a class="headerlink" href="#fluid-properties" title="Link to this heading">#</a></h3>
+<section id="density">
+<h4><strong>Density</strong><a class="headerlink" href="#density" title="Link to this heading">#</a></h4>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Fluid</p></th>
+<th class="head"><p>Temperature (°C)</p></th>
+<th class="head"><p>Total Mass (g)</p></th>
+<th class="head"><p>Volume (mL)</p></th>
+<th class="head"><p>Density (g/mL)</p></th>
+<th class="head"><p>Density (literature)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Water</p></td>
+<td><p>19.0</p></td>
+<td><p>179.1</p></td>
+<td><p>59</p></td>
+<td><p>1001.7</p></td>
+<td><p>998.2</p></td>
+</tr>
+<tr class="row-odd"><td><p>Salt Water</p></td>
+<td><p>19.5</p></td>
+<td><p>204.0</p></td>
+<td><p>84</p></td>
+<td><p>1120.0</p></td>
+<td><p>(Sat. Sol. NaCl) 1202</p></td>
+</tr>
+<tr class="row-even"><td><p>Glycerine</p></td>
+<td><p>20.0</p></td>
+<td><p>138.0</p></td>
+<td><p>50</p></td>
+<td><p>1250.0</p></td>
+<td><p>1261</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<blockquote>
+<div><p>Beaker for Water == 120.0 <span class="math notranslate nohighlight">\(g\)</span>; Beaker for Glycerine == 88.0 <span class="math notranslate nohighlight">\(g\)</span></p>
+</div></blockquote>
+</section>
+<section id="specific-gravity">
+<h4><strong>Specific Gravity</strong><a class="headerlink" href="#specific-gravity" title="Link to this heading">#</a></h4>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Fluid</p></th>
+<th class="head"><p>SG (from density)</p></th>
+<th class="head"><p>SG (Hydrometer)</p></th>
+<th class="head"><p>Remarks</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Water</p></td>
+<td><p>1.000</p></td>
+<td><p>1.00</p></td>
+<td><p>Water is reference</p></td>
+</tr>
+<tr class="row-odd"><td><p>Salt Water</p></td>
+<td><p>1.118</p></td>
+<td><p>1.08</p></td>
+<td><p>Scale hard to read</p></td>
+</tr>
+<tr class="row-even"><td><p>Glycerine</p></td>
+<td><p>1.248</p></td>
+<td><p>n/a</p></td>
+<td><p>hydrometer range inadequate</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="water-viscosity">
+<h4><strong>Water Viscosity</strong><a class="headerlink" href="#water-viscosity" title="Link to this heading">#</a></h4>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Sphere ID</p></th>
+<th class="head"><p>Diameter (mm)</p></th>
+<th class="head"><p>Mass (g)</p></th>
+<th class="head"><p>Time(s)</p></th>
+<th class="head"><p>Kinematic Viscosity (m²/s)</p></th>
+<th class="head"><p>Dynamic Viscosity (Pa·s)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>small</p></td>
+<td><p>1.57</p></td>
+<td><p>0.016</p></td>
+<td><p>0.65</p></td>
+<td><p><span class="math notranslate nohighlight">\(1.8750 \times 10^{-08}\)</span></p></td>
+<td><p>0.000021</p></td>
+</tr>
+<tr class="row-odd"><td><p>medium</p></td>
+<td><p>3.14</p></td>
+<td><p>0.127</p></td>
+<td><p>0.38</p></td>
+<td><p><span class="math notranslate nohighlight">\(4.4643 \times 10^{-08}\)</span></p></td>
+<td><p>0.000050</p></td>
+</tr>
+<tr class="row-even"><td><p>large</p></td>
+<td><p>12.67</p></td>
+<td><p>8.45</p></td>
+<td><p>0.09</p></td>
+<td><p><span class="math notranslate nohighlight">\(1.3721 \times 10^{-07}\)</span></p></td>
+<td><p>0.000194</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<blockquote>
+<div><p>Fall distance == 24.7 <span class="math notranslate nohighlight">\(cm\)</span></p>
+</div></blockquote>
+</section>
+<section id="salt-water-viscosity">
+<h4><strong>Salt Water Viscosity</strong><a class="headerlink" href="#salt-water-viscosity" title="Link to this heading">#</a></h4>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Sphere ID</p></th>
+<th class="head"><p>Diameter (mm)</p></th>
+<th class="head"><p>Mass (g)</p></th>
+<th class="head"><p>Time(s)</p></th>
+<th class="head"><p>Kinematic Viscosity (m²/s)</p></th>
+<th class="head"><p>Dynamic Viscosity (Pa·s)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>small</p></td>
+<td><p>1.57</p></td>
+<td><p>0.016</p></td>
+<td><p>0.65</p></td>
+<td><p><span class="math notranslate nohighlight">\(2.4958 \times 10^{-08}\)</span></p></td>
+<td><p>0.000025</p></td>
+</tr>
+<tr class="row-odd"><td><p>medium</p></td>
+<td><p>3.14</p></td>
+<td><p>0.127</p></td>
+<td><p>0.38</p></td>
+<td><p><span class="math notranslate nohighlight">\(2.4958 \times 10^{-08}\)</span></p></td>
+<td><p>0.000059</p></td>
+</tr>
+<tr class="row-even"><td><p>large</p></td>
+<td><p>12.67</p></td>
+<td><p>8.45</p></td>
+<td><p>0.09</p></td>
+<td><p><span class="math notranslate nohighlight">\(2.4458 \times 10^{-07}\)</span></p></td>
+<td><p>0.000245</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<blockquote>
+<div><p>Fall distance == 24.7 <span class="math notranslate nohighlight">\(cm\)</span></p>
+</div></blockquote>
+</section>
+<section id="glycerine-viscosity">
+<h4><strong>Glycerine Viscosity</strong><a class="headerlink" href="#glycerine-viscosity" title="Link to this heading">#</a></h4>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Sphere ID</p></th>
+<th class="head"><p>Diameter (mm)</p></th>
+<th class="head"><p>Mass (g)</p></th>
+<th class="head"><p>Time(s)</p></th>
+<th class="head"><p>Kinematic Viscosity (m²/s)</p></th>
+<th class="head"><p>Dynamic Viscosity (Pa·s)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>small</p></td>
+<td><p>1.57</p></td>
+<td><p>0.016</p></td>
+<td><p>16.81</p></td>
+<td><p><span class="math notranslate nohighlight">\(8.272 \times 10^{-07}\)</span></p></td>
+<td><p>0.001034</p></td>
+</tr>
+<tr class="row-odd"><td><p>medium</p></td>
+<td><p>3.14</p></td>
+<td><p>0.127</p></td>
+<td><p>3.29</p></td>
+<td><p><span class="math notranslate nohighlight">\(6.416 \times 10^{-06}\)</span></p></td>
+<td><p>0.000802</p></td>
+</tr>
+<tr class="row-even"><td><p>large</p></td>
+<td><p>12.67</p></td>
+<td><p>8.45</p></td>
+<td><p>3.03</p></td>
+<td><p><span class="math notranslate nohighlight">\(9.7664 \times 10^{-06}\)</span></p></td>
+<td><p>0.012208</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<blockquote>
+<div><p>Fall distance == 11.6 <span class="math notranslate nohighlight">\(cm\)</span></p>
+</div></blockquote>
+</section>
+</section>
+<hr class="docutils" />
+<section id="buoyancy-experiments">
+<h3><strong>Buoyancy Experiments</strong><a class="headerlink" href="#buoyancy-experiments" title="Link to this heading">#</a></h3>
+<p>All volumes in <span class="math notranslate nohighlight">\(mL\)</span>, all mass in <span class="math notranslate nohighlight">\(g\)</span></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-right"><p>Material</p></th>
+<th class="head text-right"><p><span class="math notranslate nohighlight">\(V_{initial}\)</span></p></th>
+<th class="head text-right"><p><span class="math notranslate nohighlight">\(V_{final}\)</span></p></th>
+<th class="head text-right"><p><span class="math notranslate nohighlight">\(\Delta V\)</span></p></th>
+<th class="head text-right"><p><span class="math notranslate nohighlight">\(V_o\)</span> geometry</p></th>
+<th class="head text-right"><p><span class="math notranslate nohighlight">\(V_o\)</span> displacement</p></th>
+<th class="head text-right"><p>mass</p></th>
+<th class="head text-right"><p>submerged(yes/no)</p></th>
+<th class="head text-right"><p><span class="math notranslate nohighlight">\(W\)</span> (N)</p></th>
+<th class="head text-right"><p><span class="math notranslate nohighlight">\(F_b\)</span> (N)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-right"><p>Rock-1</p></td>
+<td class="text-right"><p>800</p></td>
+<td class="text-right"><p>860</p></td>
+<td class="text-right"><p>60</p></td>
+<td class="text-right"><p>47.59</p></td>
+<td class="text-right"><p>60</p></td>
+<td class="text-right"><p>71.14</p></td>
+<td class="text-right"><p>yes</p></td>
+<td class="text-right"><p>0.6974</p></td>
+<td class="text-right"><p>0.588</p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>Rock-2</p></td>
+<td class="text-right"><p>688</p></td>
+<td class="text-right"><p>750</p></td>
+<td class="text-right"><p>62</p></td>
+<td class="text-right"><p>47.55</p></td>
+<td class="text-right"><p>62</p></td>
+<td class="text-right"><p>71.14</p></td>
+<td class="text-right"><p>yes</p></td>
+<td class="text-right"><p>0.6974</p></td>
+<td class="text-right"><p>0.607</p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p>Composite-1</p></td>
+<td class="text-right"><p>2001.22</p></td>
+<td class="text-right"><p>2216.74</p></td>
+<td class="text-right"><p>215.52</p></td>
+<td class="text-right"><p>196.76</p></td>
+<td class="text-right"><p>215.52</p></td>
+<td class="text-right"><p>485.3</p></td>
+<td class="text-right"><p>yes</p></td>
+<td class="text-right"><p>4.755</p></td>
+<td class="text-right"><p>2.107</p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>Composite-2</p></td>
+<td class="text-right"><p>2078.19</p></td>
+<td class="text-right"><p>2278.31</p></td>
+<td class="text-right"><p>200.12</p></td>
+<td class="text-right"><p>201.7</p></td>
+<td class="text-right"><p>200.12</p></td>
+<td class="text-right"><p>485.3</p></td>
+<td class="text-right"><p>yes</p></td>
+<td class="text-right"><p>4.755</p></td>
+<td class="text-right"><p>1.961</p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p>Wood-1</p></td>
+<td class="text-right"><p>750</p></td>
+<td class="text-right"><p>760</p></td>
+<td class="text-right"><p>10</p></td>
+<td class="text-right"><p>10.0</p></td>
+<td class="text-right"><p>12.65</p></td>
+<td class="text-right"><p>9.12</p></td>
+<td class="text-right"><p>no</p></td>
+<td class="text-right"><p>0.0893</p></td>
+<td class="text-right"><p>0.098</p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>Wood-2</p></td>
+<td class="text-right"><p>640</p></td>
+<td class="text-right"><p>650</p></td>
+<td class="text-right"><p>10</p></td>
+<td class="text-right"><p>10.0</p></td>
+<td class="text-right"><p>12.65</p></td>
+<td class="text-right"><p>9.12</p></td>
+<td class="text-right"><p>no</p></td>
+<td class="text-right"><p>0.0893</p></td>
+<td class="text-right"><p>0.098</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="quadrant-balance-partial-submerge">
+<h3><strong>Quadrant Balance (Partial Submerge)</strong><a class="headerlink" href="#quadrant-balance-partial-submerge" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-right"><p>Trial</p></th>
+<th class="head text-right"><p>mass (grams)</p></th>
+<th class="head text-right"><p><span class="math notranslate nohighlight">\(h\)</span> mm</p></th>
+<th class="head text-right"><p><span class="math notranslate nohighlight">\(b\)</span> mm</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-right"><p>1</p></td>
+<td class="text-right"><p>5.0</p></td>
+<td class="text-right"><p>12.0</p></td>
+<td class="text-right"><p>68.0</p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>2</p></td>
+<td class="text-right"><p>15.0</p></td>
+<td class="text-right"><p>20.5</p></td>
+<td class="text-right"><p>88.0</p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p>3</p></td>
+<td class="text-right"><p>40.0</p></td>
+<td class="text-right"><p>33.5</p></td>
+<td class="text-right"><p>110.5</p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>4</p></td>
+<td class="text-right"><p>85.0</p></td>
+<td class="text-right"><p>50.0</p></td>
+<td class="text-right"><p>133.0</p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p>5</p></td>
+<td class="text-right"><p>260.0</p></td>
+<td class="text-right"><p>90.5</p></td>
+<td class="text-right"><p>167.5</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="quadrant-balance-fully-submerge">
+<h3><strong>Quadrant Balance (Fully Submerge)</strong><a class="headerlink" href="#quadrant-balance-fully-submerge" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-right"><p>Trial</p></th>
+<th class="head text-right"><p>mass (grams)</p></th>
+<th class="head text-right"><p><span class="math notranslate nohighlight">\(h\)</span> mm</p></th>
+<th class="head text-right"><p><span class="math notranslate nohighlight">\(b\)</span> mm</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-right"><p>1</p></td>
+<td class="text-right"><p>370</p></td>
+<td class="text-right"><p>110.0</p></td>
+<td class="text-right"><p>135</p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>2</p></td>
+<td class="text-right"><p>480</p></td>
+<td class="text-right"><p>130.0</p></td>
+<td class="text-right"><p>116</p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p>3</p></td>
+<td class="text-right"><p>545</p></td>
+<td class="text-right"><p>141.5</p></td>
+<td class="text-right"><p>110</p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>4</p></td>
+<td class="text-right"><p>600</p></td>
+<td class="text-right"><p>152.0</p></td>
+<td class="text-right"><p>106</p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p>5</p></td>
+<td class="text-right"><p>660</p></td>
+<td class="text-right"><p>162.0</p></td>
+<td class="text-right"><p>104</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="data-analysis-for-fluid-properties">
+<h2><strong>Data Analysis for Fluid Properties</strong><a class="headerlink" href="#data-analysis-for-fluid-properties" title="Link to this heading">#</a></h2>
+<section id="viscosity-summary">
+<h3><strong>Viscosity Summary</strong><a class="headerlink" href="#viscosity-summary" title="Link to this heading">#</a></h3>
+<p>Results reported as  <span class="math notranslate nohighlight">\(\bar \nu\)</span> (<span class="math notranslate nohighlight">\(SD\)</span>)</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Liquid ID</p></th>
+<th class="head text-right"><p>Kinematic Viscosity (m²/s)</p></th>
+<th class="head text-right"><p>Dynamic Viscosity (Pa·s)</p></th>
+<th class="head"><p>Remarks</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Water</p></td>
+<td class="text-right"><p><span class="math notranslate nohighlight">\(9.8165 \times 10^{-08}\)</span>  (<span class="math notranslate nohighlight">\(1.268 \times 10^{-07}\)</span>)</p></td>
+<td class="text-right"><p>0.0001097 (0.0001184)</p></td>
+<td><p>Literature value 0.0010016 100X too small</p></td>
+</tr>
+<tr class="row-odd"><td><p>Brine</p></td>
+<td class="text-right"><p><span class="math notranslate nohighlight">\(6.6868 \times 10^{-08}\)</span>  (<span class="math notranslate nohighlight">\(6.2279 \times 10^{-08}\)</span>)</p></td>
+<td class="text-right"><p>0.0000883 (0.0000927)</p></td>
+<td><p>Saturated brine 3X larger than fresh; 300X too small</p></td>
+</tr>
+<tr class="row-even"><td><p>Glycerine</p></td>
+<td class="text-right"><p><span class="math notranslate nohighlight">\(5.6699 \times 10^{-06}\)</span>  (<span class="math notranslate nohighlight">\(4.5161 \times 10^{-06}\)</span>)</p></td>
+<td class="text-right"><p>0.0046813 (0.0065193)</p></td>
+<td><p>Literature value 0.56183 100X too small</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr class="docutils" />
+<p>Data analysis scripts are listed below were used to populate the tables above.  Two key observations are:</p>
+<ol class="arabic simple">
+<li><p>The reported densities are consistent with values in the open literature, whereas the viscosities are 100-fold too small.  This under-report could be a 100X error in the computational script in the appendix most likely attributed to a unit conversion error somewhere in the code.</p></li>
+<li><p>The standard deviations and mean values of viscosity are about the same - generally that means low reliability in the experiments  (If the standard deviation is close to the mean, it  indicates a lack of precision.).  Causes could be measurement errors, especially in time - or just as likely the spheres have not reached their terminal velocity in the cylinders.  Either way (misreading the videos, or spheres still decelerating) the high standard deviation relative to the mean values means these results are suspect.</p></li>
+</ol>
+<p>The script below is used to compute <strong>density</strong> from the recorded measurements; output is <span class="math notranslate nohighlight">\(\frac{grams}{Liter}\)</span></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Function to ensure valid numeric input</span>
+<span class="k">def</span> <span class="nf">get_valid_float</span><span class="p">(</span><span class="n">prompt</span><span class="p">):</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="n">prompt</span><span class="p">))</span>
+        <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Invalid input. Please enter a numeric value.&quot;</span><span class="p">)</span>
+
+<span class="c1"># Function to ensure valid string input</span>
+<span class="k">def</span> <span class="nf">get_valid_string</span><span class="p">(</span><span class="n">prompt</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s2">&quot;Not Specified&quot;</span><span class="p">):</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">user_input</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">user_input</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">user_input</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Invalid input. Defaulting to &#39;</span><span class="si">{</span><span class="n">default</span><span class="si">}</span><span class="s2">&#39;.&quot;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">default</span>
+
+<span class="c1"># Prompt for inputs</span>
+<span class="n">liquidName</span> <span class="o">=</span> <span class="n">get_valid_string</span><span class="p">(</span><span class="s2">&quot;Enter the name of the liquid (default: Not Specified): &quot;</span><span class="p">)</span>
+<span class="n">mass_Beaker</span> <span class="o">=</span> <span class="n">get_valid_float</span><span class="p">(</span><span class="s2">&quot;Enter the mass of the beaker (g): &quot;</span><span class="p">)</span>
+<span class="n">mass_LiquidAndBeaker</span> <span class="o">=</span> <span class="n">get_valid_float</span><span class="p">(</span><span class="s2">&quot;Enter the mass of the liquid and beaker combined (g): &quot;</span><span class="p">)</span>
+<span class="n">vol_Liquid</span> <span class="o">=</span> <span class="n">get_valid_float</span><span class="p">(</span><span class="s2">&quot;Enter the volume of the liquid (mL): &quot;</span><span class="p">)</span>
+
+<span class="c1"># Convert volume to liters</span>
+<span class="n">vol_Liquid</span> <span class="o">=</span> <span class="n">vol_Liquid</span> <span class="o">/</span> <span class="mi">1000</span>  <span class="c1"># Convert mL to Liters</span>
+
+<span class="c1"># Calculate density</span>
+<span class="n">density</span> <span class="o">=</span> <span class="p">(</span><span class="n">mass_LiquidAndBeaker</span> <span class="o">-</span> <span class="n">mass_Beaker</span><span class="p">)</span> <span class="o">/</span> <span class="n">vol_Liquid</span>
+
+<span class="c1"># Output the result</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Results:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Liquid Name: </span><span class="si">{</span><span class="n">liquidName</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Density of </span><span class="si">{</span><span class="n">liquidName</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="nb">round</span><span class="p">(</span><span class="n">density</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="si">}</span><span class="s2"> g/L&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The script below is used to compute <strong>specific gravity</strong> from the recorded measurements; output is dimensionless</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Script to calculate specific gravity</span>
+
+<span class="c1"># Function to ensure a valid string input</span>
+<span class="k">def</span> <span class="nf">get_valid_string</span><span class="p">(</span><span class="n">prompt</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s2">&quot;Not Specified&quot;</span><span class="p">):</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">user_input</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">user_input</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">user_input</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Invalid input. Defaulting to &#39;</span><span class="si">{</span><span class="n">default</span><span class="si">}</span><span class="s2">&#39;.&quot;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">default</span>
+
+<span class="c1"># Function to ensure a valid numeric input</span>
+<span class="k">def</span> <span class="nf">get_valid_float</span><span class="p">(</span><span class="n">prompt</span><span class="p">):</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="n">prompt</span><span class="p">))</span>
+        <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Invalid input. Please enter a numeric value.&quot;</span><span class="p">)</span>
+
+<span class="c1"># Prompt for inputs</span>
+<span class="n">liquid_name</span> <span class="o">=</span> <span class="n">get_valid_string</span><span class="p">(</span><span class="s2">&quot;Enter the name of the liquid (default: Not Specified): &quot;</span><span class="p">)</span>
+<span class="n">density_named_liquid</span> <span class="o">=</span> <span class="n">get_valid_float</span><span class="p">(</span><span class="s2">&quot;Enter the density of the named liquid (mg/L): &quot;</span><span class="p">)</span>
+<span class="n">density_reference_liquid</span> <span class="o">=</span> <span class="n">get_valid_float</span><span class="p">(</span><span class="s2">&quot;Enter the density of the reference liquid (mg/L): &quot;</span><span class="p">)</span>
+
+<span class="c1"># Calculate specific gravity</span>
+<span class="k">if</span> <span class="n">density_reference_liquid</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>  <span class="c1"># Avoid division by zero</span>
+    <span class="n">specific_gravity</span> <span class="o">=</span> <span class="n">density_named_liquid</span> <span class="o">/</span> <span class="n">density_reference_liquid</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">specific_gravity</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Error: The density of the reference liquid cannot be zero.&quot;</span><span class="p">)</span>
+
+<span class="c1"># Output the result</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Results:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Liquid Name: </span><span class="si">{</span><span class="n">liquid_name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">specific_gravity</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Specific Gravity (Named/Reference): </span><span class="si">{</span><span class="n">specific_gravity</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Specific Gravity calculation failed due to invalid reference density.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The script below is used to compute <strong>viscosity</strong> from Stoke’s law using the recorded measurements; output is <span class="math notranslate nohighlight">\(Pa \cdot s\)</span></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Estimate Viscosity from Stokes Law</span>
+<span class="c1"># Support functions</span>
+<span class="k">def</span> <span class="nf">volSphere</span><span class="p">(</span><span class="n">diameter</span><span class="p">):</span>
+    <span class="kn">import</span> <span class="nn">math</span>
+    <span class="n">diameter</span> <span class="o">=</span> <span class="n">diameter</span> <span class="o">/</span> <span class="mi">1000</span>  <span class="c1"># convert mm into m</span>
+    <span class="n">volSphere</span> <span class="o">=</span> <span class="p">(</span><span class="mf">4.</span> <span class="o">/</span> <span class="mf">3.</span><span class="p">)</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="p">(</span><span class="n">diameter</span> <span class="o">/</span> <span class="mf">2.</span><span class="p">)</span><span class="o">**</span><span class="mi">3</span>
+    <span class="k">return</span> <span class="n">volSphere</span>
+
+<span class="k">def</span> <span class="nf">_viscosity</span><span class="p">(</span><span class="n">diameter</span><span class="p">,</span><span class="n">velocity</span><span class="p">,</span><span class="n">sigma</span><span class="p">,</span><span class="n">rho</span><span class="p">):</span>
+    <span class="n">gravity</span> <span class="o">=</span> <span class="mf">9.8</span>
+    <span class="n">_viscosity</span> <span class="o">=</span> <span class="p">((</span><span class="n">gravity</span> <span class="o">*</span> <span class="p">(</span><span class="n">diameter</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span> <span class="o">*</span> <span class="p">((</span><span class="n">sigma</span><span class="o">/</span><span class="n">rho</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span><span class="mf">18.0</span> <span class="o">*</span> <span class="n">velocity</span><span class="p">)</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">_viscosity</span><span class="p">)</span>
+
+<span class="c1"># Function to ensure a valid string input</span>
+<span class="k">def</span> <span class="nf">get_valid_string</span><span class="p">(</span><span class="n">prompt</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s2">&quot;Not Specified&quot;</span><span class="p">):</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">user_input</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">user_input</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">user_input</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Invalid input. Defaulting to &#39;</span><span class="si">{</span><span class="n">default</span><span class="si">}</span><span class="s2">&#39;.&quot;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">default</span>
+
+<span class="c1"># Function to ensure a valid numeric input</span>
+<span class="k">def</span> <span class="nf">get_valid_float</span><span class="p">(</span><span class="n">prompt</span><span class="p">):</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="n">prompt</span><span class="p">))</span>
+        <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Invalid input. Please enter a numeric value.&quot;</span><span class="p">)</span>
+
+<span class="c1"># Prompt for inputs</span>
+<span class="n">liquidName</span> <span class="o">=</span> <span class="n">get_valid_string</span><span class="p">(</span><span class="s2">&quot;Enter the name of the liquid (default: Not Specified): &quot;</span><span class="p">)</span>
+<span class="n">gravity</span> <span class="o">=</span> <span class="mf">9.81</span>  <span class="c1"># m/s^2 (constant)</span>
+
+<span class="c1"># Numeric inputs</span>
+<span class="n">density_liquid</span> <span class="o">=</span> <span class="n">get_valid_float</span><span class="p">(</span><span class="s2">&quot;Enter the liquid density (mg/L): &quot;</span><span class="p">)</span>
+<span class="n">sphereDiameter</span> <span class="o">=</span> <span class="n">get_valid_float</span><span class="p">(</span><span class="s2">&quot;Enter the sphere diameter (mm): &quot;</span><span class="p">)</span>
+<span class="n">sphereMass</span> <span class="o">=</span> <span class="n">get_valid_float</span><span class="p">(</span><span class="s2">&quot;Enter the sphere mass (g): &quot;</span><span class="p">)</span>
+<span class="n">fall_distance</span> <span class="o">=</span> <span class="n">get_valid_float</span><span class="p">(</span><span class="s2">&quot;Enter the fall distance (cm): &quot;</span><span class="p">)</span>
+<span class="n">fall_time</span> <span class="o">=</span> <span class="n">get_valid_float</span><span class="p">(</span><span class="s2">&quot;Enter the fall time (sec): &quot;</span><span class="p">)</span>
+
+<span class="c1"># Intermediate Calculations</span>
+<span class="n">sphereVolume</span> <span class="o">=</span> <span class="n">volSphere</span><span class="p">(</span><span class="n">sphereDiameter</span><span class="p">)</span>  <span class="c1"># volume in m^3</span>
+<span class="n">density_sphere</span> <span class="o">=</span> <span class="n">sphereMass</span> <span class="o">/</span> <span class="n">sphereVolume</span>  <span class="c1"># density in g/m^3</span>
+<span class="n">density_sphere</span> <span class="o">/=</span> <span class="mi">1000</span>  <span class="c1"># convert to kg/m^3</span>
+<span class="n">fallspeed</span> <span class="o">=</span> <span class="n">fall_distance</span> <span class="o">/</span> <span class="n">fall_time</span>  <span class="c1"># cm/sec</span>
+<span class="n">fallspeed</span> <span class="o">=</span> <span class="n">fallspeed</span><span class="o">/</span><span class="mi">100</span> <span class="c1"># convert to m/s</span>
+<span class="n">sphereDiameter</span> <span class="o">=</span> <span class="n">sphereDiameter</span><span class="o">/</span><span class="mi">1000</span> <span class="c1"># convert to m</span>
+<span class="c1"># Output the results</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Results:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Liquid Name: </span><span class="si">{</span><span class="n">liquidName</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Sphere Diameter: </span><span class="si">{</span><span class="n">sphereDiameter</span><span class="si">:</span><span class="s2">.5f</span><span class="si">}</span><span class="s2"> meters&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Sphere Volume: </span><span class="si">{</span><span class="n">sphereVolume</span><span class="si">:</span><span class="s2">.8f</span><span class="si">}</span><span class="s2"> cubic meters&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Sphere Mass: </span><span class="si">{</span><span class="n">sphereMass</span><span class="o">/</span><span class="mi">1000</span><span class="si">:</span><span class="s2">.5f</span><span class="si">}</span><span class="s2"> kg&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Fall Distance: </span><span class="si">{</span><span class="n">fall_distance</span><span class="o">/</span><span class="mi">100</span><span class="si">:</span><span class="s2">.5f</span><span class="si">}</span><span class="s2"> meters&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Fall Time: </span><span class="si">{</span><span class="n">fall_time</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> sec&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Fall Speed: </span><span class="si">{</span><span class="n">fallspeed</span><span class="si">:</span><span class="s2">.5f</span><span class="si">}</span><span class="s2"> m/sec&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Liquid Density: </span><span class="si">{</span><span class="n">density_liquid</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> kg/m^3&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Sphere Density: </span><span class="si">{</span><span class="n">density_sphere</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> kg/m^3&quot;</span><span class="p">)</span>
+<span class="c1"># Viscosity Calculations</span>
+
+<span class="n">viscosity</span> <span class="o">=</span> <span class="n">_viscosity</span><span class="p">(</span><span class="n">sphereDiameter</span><span class="p">,</span><span class="n">fallspeed</span><span class="p">,</span><span class="n">density_sphere</span><span class="p">,</span><span class="n">density_liquid</span><span class="p">)</span>
+<span class="c1"># Viscosity Output</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Stokes Flow Viscosity: </span><span class="si">{</span><span class="n">viscosity</span><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="s2"> Ns/m^2&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="buoyancy">
+<h3><strong>Buoyancy</strong><a class="headerlink" href="#buoyancy" title="Link to this heading">#</a></h3>
+<ol class="arabic">
+<li><p>Calculated the displaced volume <span class="math notranslate nohighlight">\( \Delta V \)</span> for each object.</p></li>
+<li><p>Determined buoyancy forces <span class="math notranslate nohighlight">\( F_B \)</span> using:</p>
+<div class="math notranslate nohighlight">
+\[ F_B = \rho_{\text{water}} \cdot \Delta V \cdot g \]</div>
+</li>
+<li><p>Compared calculated object volumes with geometry-based volumes.</p></li>
+<li><p>Verified Archimedes’ Principle for floating and submerged objects.</p></li>
+</ol>
+</section>
+<section id="hydrostatic-forces">
+<h3><strong>Hydrostatic Forces</strong><a class="headerlink" href="#hydrostatic-forces" title="Link to this heading">#</a></h3>
+<p>[Insert Drawing Here] to show meanings of variables listed in analysis below.</p>
+<ol class="arabic">
+<li><p>Compute moments from the hydrostatic pressure force <span class="math notranslate nohighlight">\( M \)</span> for all trials, and solve for the unknown <span class="math notranslate nohighlight">\(\rho g\)</span> using Newton’s method and the counter moment from the hanger weight(s):</p>
+<div class="math notranslate nohighlight">
+\[ M_{pressure} = {\rho g}\frac{h}{2} \cdot W h \cdot (R2 - \frac{h}{3}) \]</div>
+<div class="math notranslate nohighlight">
+\[ M_{hanger} = g \cdot m_{hanger} \cdot R3 \]</div>
+<p>where units are converted into meters for distances.</p>
+<p>In the tables below, the ratio <span class="math notranslate nohighlight">\(\frac{ M_{pressure}}{\rho g}\)</span> is used in the Newton’s method function for each trial, and <span class="math notranslate nohighlight">\(M_{hanger}\)</span> is the target constant.  The solver below will return values of <span class="math notranslate nohighlight">\(\rho g\)</span> that minimize the difference between the two moments (the difference should be zero).</p>
+</li>
+</ol>
+<p><strong>Partial Submerged</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-right"><p>Trial</p></th>
+<th class="head text-right"><p>mass (grams)</p></th>
+<th class="head text-right"><p><span class="math notranslate nohighlight">\(h\)</span> (mm)</p></th>
+<th class="head text-right"><p><span class="math notranslate nohighlight">\(b\)</span> (mm)</p></th>
+<th class="head text-right"><p><span class="math notranslate nohighlight">\(\frac{M_{pressure}}{\rho g}\)</span> (m<span class="math notranslate nohighlight">\(^4\)</span>)</p></th>
+<th class="head text-right"><p><span class="math notranslate nohighlight">\(\rho g\)</span> (<span class="math notranslate nohighlight">\(\frac{N}{m^3}\)</span>)</p></th>
+<th class="head text-right"><p><span class="math notranslate nohighlight">\(M_{pressure}\)</span> (N-m)</p></th>
+<th class="head text-left"><p><span class="math notranslate nohighlight">\(M_{hanger}\)</span> (N-m)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-right"><p>1</p></td>
+<td class="text-right"><p>5.0</p></td>
+<td class="text-right"><p>12.0</p></td>
+<td class="text-right"><p>68.0</p></td>
+<td class="text-right"><p>1.05840E-06</p></td>
+<td class="text-right"><p>9259</p></td>
+<td class="text-right"><p>0.0098</p></td>
+<td class="text-left"><p>0.0098</p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>2</p></td>
+<td class="text-right"><p>15.0</p></td>
+<td class="text-right"><p>20.5</p></td>
+<td class="text-right"><p>88.0</p></td>
+<td class="text-right"><p>3.04419E-06</p></td>
+<td class="text-right"><p>9657</p></td>
+<td class="text-right"><p>0.0294</p></td>
+<td class="text-left"><p>0.0294</p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p>3</p></td>
+<td class="text-right"><p>40.0</p></td>
+<td class="text-right"><p>33.5</p></td>
+<td class="text-right"><p>110.5</p></td>
+<td class="text-right"><p>7.94693E-06</p></td>
+<td class="text-right"><p>9865</p></td>
+<td class="text-right"><p>0.0784</p></td>
+<td class="text-left"><p>0.0784</p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>4</p></td>
+<td class="text-right"><p>85.0</p></td>
+<td class="text-right"><p>50.0</p></td>
+<td class="text-right"><p>133.0</p></td>
+<td class="text-right"><p>1.71875E-05</p></td>
+<td class="text-right"><p>9693</p></td>
+<td class="text-right"><p>0.1666</p></td>
+<td class="text-left"><p>0.1666</p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p>5</p></td>
+<td class="text-right"><p>260.0</p></td>
+<td class="text-right"><p>90.5</p></td>
+<td class="text-right"><p>167.5</p></td>
+<td class="text-right"><p>5.21617E-05</p></td>
+<td class="text-right"><p>9769</p></td>
+<td class="text-right"><p>0.5096</p></td>
+<td class="text-left"><p>0.5096</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Fully Submerged</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-right"><p>Trial</p></th>
+<th class="head text-right"><p>mass (grams)</p></th>
+<th class="head text-right"><p><span class="math notranslate nohighlight">\(h\)</span> (mm)</p></th>
+<th class="head text-right"><p><span class="math notranslate nohighlight">\(b\)</span> (mm)</p></th>
+<th class="head text-right"><p><span class="math notranslate nohighlight">\(\frac{M_{pressure}}{\rho g}\)</span> (m<span class="math notranslate nohighlight">\(^4\)</span>)</p></th>
+<th class="head text-right"><p><span class="math notranslate nohighlight">\(\rho g\)</span> (<span class="math notranslate nohighlight">\(\frac{N}{m^3}\)</span>)</p></th>
+<th class="head text-right"><p><span class="math notranslate nohighlight">\(M_{pressure}\)</span> (N-m)</p></th>
+<th class="head text-left"><p><span class="math notranslate nohighlight">\(M_{hanger}\)</span> (N-m)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-right"><p>1</p></td>
+<td class="text-right"><p>370</p></td>
+<td class="text-right"><p>110.0</p></td>
+<td class="text-right"><p>135</p></td>
+<td class="text-right"><p>7.41125E-05</p></td>
+<td class="text-right"><p>9785</p></td>
+<td class="text-right"><p>0.7252</p></td>
+<td class="text-left"><p>0.7252</p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>2</p></td>
+<td class="text-right"><p>480</p></td>
+<td class="text-right"><p>130.0</p></td>
+<td class="text-right"><p>116</p></td>
+<td class="text-right"><p>9.92875E-05</p></td>
+<td class="text-right"><p>9771</p></td>
+<td class="text-right"><p>0.9408</p></td>
+<td class="text-left"><p>0.9702</p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p>3</p></td>
+<td class="text-right"><p>545</p></td>
+<td class="text-right"><p>141.5</p></td>
+<td class="text-right"><p>110</p></td>
+<td class="text-right"><p>0.000114753</p></td>
+<td class="text-right"><p>9821</p></td>
+<td class="text-right"><p>1.127</p></td>
+<td class="text-left"><p>1.127</p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>4</p></td>
+<td class="text-right"><p>600</p></td>
+<td class="text-right"><p>152.0</p></td>
+<td class="text-right"><p>106</p></td>
+<td class="text-right"><p>0.000129382</p></td>
+<td class="text-right"><p>9771</p></td>
+<td class="text-right"><p>1.1760</p></td>
+<td class="text-left"><p>1.1760</p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p>5</p></td>
+<td class="text-right"><p>660</p></td>
+<td class="text-right"><p>162.0</p></td>
+<td class="text-right"><p>104</p></td>
+<td class="text-right"><p>0.000143686</p></td>
+<td class="text-right"><p>9753</p></td>
+<td class="text-right"><p>1.4014</p></td>
+<td class="text-left"><p>1.4014</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The average value computed for the specific weight of water was:</p>
+<div class="math notranslate nohighlight">
+\[\rho g = \gamma_w =~9714~\frac{N}{m^3}\]</div>
+<p>The tabulated value at <span class="math notranslate nohighlight">\(T = 20^o C\)</span> is :</p>
+<div class="math notranslate nohighlight">
+\[\gamma_w =~9790~\frac{N}{m^3}\]</div>
+<p>This means the measured value is about 0.7% lower than expected. Assuming the published value is correct, there are several possible reasons for the discrepancy:</p>
+<ul class="simple">
+<li><p>Weight resolution: The hanger weights are only adjustable in 5-gram increments. Since the moments involved in this experiment are fairly small, that limited resolution likely introduced some rounding error.</p></li>
+<li><p>Depth measurement: We used a machinist’s ruler to measure the water surface height. The smallest increment on the ruler is 0.5 mm, but due to the thickness of the meniscus (about 2 mm), there was some guesswork involved in deciding where the actual waterline was.</p></li>
+<li><p>Leveling: The quadrant had to be leveled manually, using a carpenter’s level and visual judgment. This introduces some subjectivity, especially when resetting between trials.</p></li>
+<li><p>Unit conversions and numerical precision: Because we converted all values to SI units (kilograms and meters), the numbers involved became quite small. There’s a chance that rounding or limited precision in our calculator or spreadsheet affected the final outcome.</p></li>
+</ul>
+<p>Overall, a 0.7% underestimation seems quite reasonable given the experimental setup.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># === User-defined function ===</span>
+<span class="k">def</span> <span class="nf">func1</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="c1"># Replace with your own function definition</span>
+    <span class="k">return</span> <span class="mf">9.92875E-05</span> 	 <span class="o">*</span> <span class="n">x</span>
+
+<span class="c1"># === Root-finding parameters ===</span>
+<span class="n">target_constant</span> <span class="o">=</span> <span class="mf">0.9702</span>     <span class="c1"># Change this as needed</span>
+<span class="n">initial_guess</span> <span class="o">=</span> <span class="mf">0.5</span>                 <span class="c1"># Starting point for iteration</span>
+<span class="n">tolerance</span> <span class="o">=</span> <span class="mf">1e-6</span>                    <span class="c1"># Convergence tolerance</span>
+<span class="n">max_iterations</span> <span class="o">=</span> <span class="mi">20</span>                <span class="c1"># Limit to avoid infinite loop</span>
+<span class="n">dx</span> <span class="o">=</span> <span class="mf">1e-6</span>                           <span class="c1"># Step size for numerical derivative</span>
+
+<span class="c1"># === Newton&#39;s Method Implementation ===</span>
+<span class="k">def</span> <span class="nf">newton_solve</span><span class="p">(</span><span class="n">func1</span><span class="p">,</span> <span class="n">target_constant</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">tol</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">,</span> <span class="n">max_iter</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">dx</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">max_iter</span><span class="p">):</span>
+        <span class="n">f_val</span> <span class="o">=</span> <span class="n">func1</span><span class="p">(</span><span class="n">x0</span><span class="p">)</span> <span class="o">-</span> <span class="n">target_constant</span>
+        <span class="n">f_prime</span> <span class="o">=</span> <span class="p">(</span><span class="n">func1</span><span class="p">(</span><span class="n">x0</span> <span class="o">+</span> <span class="n">dx</span><span class="p">)</span> <span class="o">-</span> <span class="n">func1</span><span class="p">(</span><span class="n">x0</span> <span class="o">-</span> <span class="n">dx</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">dx</span><span class="p">)</span>
+        
+        <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">f_prime</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">1e-12</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ZeroDivisionError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Derivative too small at iteration </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">, x = </span><span class="si">{</span><span class="n">x0</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        
+        <span class="n">x1</span> <span class="o">=</span> <span class="n">x0</span> <span class="o">-</span> <span class="n">f_val</span> <span class="o">/</span> <span class="n">f_prime</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Iter </span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">:</span><span class="s2">2d</span><span class="si">}</span><span class="s2">: x = </span><span class="si">{</span><span class="n">x1</span><span class="si">:</span><span class="s2">.8f</span><span class="si">}</span><span class="s2">, f(x) = </span><span class="si">{</span><span class="n">func1</span><span class="p">(</span><span class="n">x1</span><span class="p">)</span><span class="si">:</span><span class="s2">.8f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">x1</span> <span class="o">-</span> <span class="n">x0</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">tol</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">x1</span>
+        
+        <span class="n">x0</span> <span class="o">=</span> <span class="n">x1</span>
+    
+    <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;Newton&#39;s method did not converge.&quot;</span><span class="p">)</span>
+
+<span class="c1"># === Run the solver ===</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">root</span> <span class="o">=</span> <span class="n">newton_solve</span><span class="p">(</span><span class="n">func1</span><span class="p">,</span> <span class="n">target_constant</span><span class="p">,</span> <span class="n">initial_guess</span><span class="p">,</span> <span class="n">tolerance</span><span class="p">,</span> <span class="n">max_iterations</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Root found: x ≈ </span><span class="si">{</span><span class="n">root</span><span class="si">:</span><span class="s2">.8f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;func1(x) ≈ </span><span class="si">{</span><span class="n">func1</span><span class="p">(</span><span class="n">root</span><span class="p">)</span><span class="si">:</span><span class="s2">.8f</span><span class="si">}</span><span class="s2">, target = </span><span class="si">{</span><span class="n">target_constant</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Iter  1: x = 9771.62281270, f(x) = 0.97020000
+Iter  2: x = 9771.62281254, f(x) = 0.97020000
+
+Root found: x ≈ 9771.62281254
+func1(x) ≈ 0.97020000, target = 0.9702
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="discussion">
+<h2><strong>Discussion</strong><a class="headerlink" href="#discussion" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><strong>Archimedes’ Principle</strong>: Confirmed that buoyant forces matched theoretical predictions for displaced water volumes. Floating objects adhered closely to calculated masses.</p></li>
+<li><p><strong>Hydrostatic Forces</strong>: Experimental results for center of pressure and moments were consistent with theoretical expectations. Minor deviations were attributed to setup precision and measurement errors.</p></li>
+<li><p><strong>Potential Improvements</strong>: Better calibration of the quadrant balance and more trials could enhance result accuracy.</p></li>
+</ol>
+</section>
+<hr class="docutils" />
+<section id="conclusions">
+<h2><strong>Conclusions</strong><a class="headerlink" href="#conclusions" title="Link to this heading">#</a></h2>
+<section id="id1">
+<h3>Fluid Properties:<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>Glycerine exhibited higher viscosity, evident from longer fall times of the steel balls.  Salt content influenced water properties.  The solution was close to saturation as indicated by residual solids in the storage vessel. The anticipated increased viscosity of the brine solution was not observed.</p>
+<p>Likely sources of error include timing inaccuracies and limited trials for some measurements. A unit conversion error in the data reduction script may explain the 100-fold low values observed for viscosity.</p>
+<p><font color=red> As noted above in the data analysis section, these results are suspect because the standard deviation is same order of magnitude as the mean values</font> These experiments should be repeated with more attention paid to gathering the viscosity data, including using taller cylinders for the Stoke’s Law application (to ensure terminal velocity is reached), and better video logging to observe the spheres traverse the known distance.</p>
+<p>Such efforts have relevance to lubrication systems, such as determining optimal oil viscosities for machinery, or selecting drag reducing agents for oil pipelines.</p>
+</section>
+<section id="bouyancy-and-hydrostatic-force-principles">
+<h3>Bouyancy and Hydrostatic Force Principles<a class="headerlink" href="#bouyancy-and-hydrostatic-force-principles" title="Link to this heading">#</a></h3>
+<p>This experiment validated Archimedes’ Principle and hydrostatic force theory using hands-on experimentation. The buoyancy and hydrostatic thrust analyses provided foundational insights into fluid statics, bridging theory and practice.  Newton’s method was employed to balance moments in the quadrant balance and solve for values of unspecified density.  The resulting values having small (unreported) variance over a wide range of depths shows both the precision conferred by the quadrant balance (as opposed to gravimetric measurements) and verifies the hydrostatic pressure assumption.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="references">
+<h2><strong>References</strong><a class="headerlink" href="#references" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Holman, J.P., <em>Experimental Methods for Engineers</em>, 8th Ed., McGraw-Hill, 2012.</p></li>
+<li><p>Laboratory 2 Example Report, CE 3105 Materials.</p></li>
+<li><p>Relevant data from textbooks and online resources for water density at measured temperatures.</p></li>
+</ol>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python-my-env",
+            path: "./experiments/4ex1-statics"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python-my-env'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fluid-statics-density-viscosity-bouyancy-forces"><strong>Fluid Statics: Density, Viscosity, Bouyancy, Forces</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#authors">Authors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#objective-s">Objective(s)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#materials-and-methods">Materials and Methods</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#materials"><strong>Materials</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#methods"><strong>Methods</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#part-1-fluid-properties">Part 1: Fluid Properties</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#part-2-buoyancy-experiments">Part 2: Buoyancy Experiments</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#part-3-quadrant-balance-hydrostatic-forces">Part 3: Quadrant Balance/Hydrostatic Forces</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#results"><strong>Results</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fluid-properties"><strong>Fluid Properties</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#density"><strong>Density</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#specific-gravity"><strong>Specific Gravity</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#water-viscosity"><strong>Water Viscosity</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#salt-water-viscosity"><strong>Salt Water Viscosity</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#glycerine-viscosity"><strong>Glycerine Viscosity</strong></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#buoyancy-experiments"><strong>Buoyancy Experiments</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quadrant-balance-partial-submerge"><strong>Quadrant Balance (Partial Submerge)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quadrant-balance-fully-submerge"><strong>Quadrant Balance (Fully Submerge)</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-analysis-for-fluid-properties"><strong>Data Analysis for Fluid Properties</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#viscosity-summary"><strong>Viscosity Summary</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#buoyancy"><strong>Buoyancy</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hydrostatic-forces"><strong>Hydrostatic Forces</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion"><strong>Discussion</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusions"><strong>Conclusions</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Fluid Properties:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bouyancy-and-hydrostatic-force-principles">Bouyancy and Hydrostatic Force Principles</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references"><strong>References</strong></a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Theodore G. Cleveland
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

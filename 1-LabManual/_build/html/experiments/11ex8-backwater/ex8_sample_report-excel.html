@@ -1,0 +1,825 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Lab 8. - Sample Report (Spreadsheet Version) &#8212; Mechanics of Fluids Laboratory</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'experiments/11ex8-backwater/ex8_sample_report-excel';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Lab 8. - Sample Report (Python Version)" href="ex8_sample_report-python.html" />
+    <link rel="prev" title="Lab 7. - Water Surface Profiles: Backwater Curves" href="ex8.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo2.png" class="logo__image only-light" alt="Mechanics of Fluids Laboratory - Home"/>
+    <script>document.write(`<img src="../../_static/logo2.png" class="logo__image only-dark" alt="Mechanics of Fluids Laboratory - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    CE 3105 Mechanics of Fluids Laboratory
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../0syllabus/ce-3105-syllabus-2025-3.html">Syllabus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1safety/safety.html">0.0 Safety Considerations</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../3experimentation/experimentation.html">Lab 0 - Role of Engineering Experimentation</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../4ex1-statics/ex1.html">Lab 1 - Fluid Statics: Density, Viscosity, Bouyancy, Forces</a></li>
+
+
+
+<li class="toctree-l1 has-children"><a class="reference internal" href="../5ex2-pipeflow/ex2.html">Lab 2 - Flow Measurement in Conduits</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../5ex2-pipeflow/ex2_sample_report.html">Lab 2. Sample Report</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../7ex4-pipeloss/ex4.html">Lab 3 - Friction Losses in Pipes and Fittings</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../7ex4-pipeloss/ex4_sample_report.html">Laboratory 4 Sample Report</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../8ex5-momentum/ex5.html">Lab 4 - Momentum Transfer</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../8ex5-momentum/ex5_sample_report.html">Laboratory 5 Sample Report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../8ex5-momentum/ex5_sample_calculations.html">Lab 5. Sample Calculations</a></li>
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../9ex6-pumps/ex6A.html">Lab 5 - Bilge Pump Curve</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../9ex6-pumps/ex6A_samplereport.html">Lab 6A Sample Report</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../10ex7-openflow/ex7.html">Lab 6. - Open Channel Flow Measurement</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="ex8.html">Lab 7. - Water Surface Profiles: Backwater Curves</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Lab 8. - Sample Report (Spreadsheet Version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex8_sample_report-python.html">Lab 8. - Sample Report (Python Version)</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../12ex9-hydraulicjump/ex9.html">Lab 8. - Water Surface Profiles: Hydraulic Jump</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../12ex9-hydraulicjump/ex9_sample_report.html">Laboratory 9 - Sample Report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../12ex9-hydraulicjump/ex9_sample_calculations.html">Lab 9: Analysis Guidelines</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../14ex11-flownets/ex11.html">14. Lab 11 - Porous Media : Flow Nets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../abet_plan/abet_plan.html">Assessment Plan for ABET (6)</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fexperiments/11ex8-backwater/ex8_sample_report-excel.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/experiments/11ex8-backwater/ex8_sample_report-excel.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Lab 8. - Sample Report (Spreadsheet Version)</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#title">Title:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#purpose">Purpose:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methods">Methods:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deliverables">Deliverables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#procedure">Procedure:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-table-measurements-and-experiment-notes">1. Data Table (measurements and experiment notes)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sharp-crested-weir-discharge-formula">2. Sharp Crested Weir Discharge Formula</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#backwater-method-script-using-experiment-values">3. Backwater Method Script using Experiment Values</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-s-of-simulated-and-measured-water-surface-profiles">4. Plot(s) of Simulated and Measured Water Surface Profiles</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-and-conclusions">Summary and Conclusions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#end-of-section">End of Section</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="lab-8-sample-report-spreadsheet-version">
+<h1>Lab 8. - Sample Report (Spreadsheet Version)<a class="headerlink" href="#lab-8-sample-report-spreadsheet-version" title="Link to this heading">#</a></h1>
+<section id="title">
+<h2>Title:<a class="headerlink" href="#title" title="Link to this heading">#</a></h2>
+<p>Water Surface Profiles: Testing Hydraulic Predictions in the Lab</p>
+<p><em>An exploration of fixed-step methods and weir-based discharge estimation in open channel flow</em></p>
+</section>
+<section id="purpose">
+<h2>Purpose:<a class="headerlink" href="#purpose" title="Link to this heading">#</a></h2>
+<p>The purpose of Laboratory 81 is to compare a computed water surface profile to an experimental profile and confirm or refute the ability of computational hydraulics to predict behavior of real systems.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Because Laboratory 81 is a <em>practical</em> laboratory examination, the report is abbreviated considerably compared to an ordinary laboratory report.</p>
+</div>
+</section>
+<section id="methods">
+<h2>Methods:<a class="headerlink" href="#methods" title="Link to this heading">#</a></h2>
+<p>Using a computer and provided algorithms, create a computed water surface profile for the conditions of the laboratory flume.</p>
+<p>The computer program will need the channel cross-section geometry (rectangular), channel discharge (<span class="math notranslate nohighlight">\(Q\)</span> - unknown, but measurable using principles of sharp-crested weir), the channel slope, the channel resistance term (Manning’s <span class="math notranslate nohighlight">\(n\)</span>).</p>
+<p>The experimental measurements include the depth of flow over the weir crest (assumed critical depth - this is the only reliable way to estimate discharge), the channel slope, the depth of flow at stations <span class="math notranslate nohighlight">\(-30,-60, ... ,300 cm\)</span> marked on the channel walls.</p>
+</section>
+<section id="deliverables">
+<h2>Deliverables<a class="headerlink" href="#deliverables" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Data tables populated with measurements</p></li>
+<li><p>Calculations to estimate flow over a sharp crested weir (spreadsheet, Jupyter Notebook, or by-hand calculations)</p></li>
+<li><p>The computer script (code) used; if a spreadsheet is used, be sure to turn on “display equations” mode, so the actual code shows, not just tabl;es of values.</p></li>
+<li><p>The plot of the <em>simulated water surface profile</em> and the <em>measured water surface profile</em> on the same graph.</p></li>
+</ol>
+</section>
+<section id="procedure">
+<h2>Procedure:<a class="headerlink" href="#procedure" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Measure the height of the weir crest. (Use DTW probe - take some care to make an accurate measurement)</p></li>
+<li><p>Set the DTW probe to read 0 at weir crest height, with probe in middle of its up-down range.  This will make later calculations easier.</p></li>
+<li><p>Measure flume width.</p></li>
+<li><p>The laboratory instructor will set a channel slope and a flow-rate.  Once a steady condition is obtained the student(s) will</p></li>
+<li><p>Determine channel slope by direct measurement(s); measure distance on two points on the flume to the floor, calculate the slope.</p></li>
+<li><p>Determine channel slope from the channel slope indicator.</p></li>
+<li><p>Measure the height of the water surface above the weir crest.</p></li>
+<li><p>Measure the height of the water surface above the channel bottom at the 12 stations marked on the flume.</p></li>
+<li><p>Calculate the flow rate based on the weir measurements.</p></li>
+<li><p>Calculate the water-surface position using an appropriate tool to produce a <em>simulated water surface profile</em></p></li>
+<li><p>Plot the <em>simulated water surface profile</em> and the <em>measured water surface profile</em> on the same graph.</p></li>
+<li><p>Adjust the value of Manning’s <span class="math notranslate nohighlight">\(n\)</span>, until the <em>simulated water surface profile</em> and the <em>measured water surface profile</em> are as similar.</p></li>
+<li><p>Report the “best” value of Manning’s <span class="math notranslate nohighlight">\(n\)</span>.</p></li>
+<li><p>Compute a metric of the modeling error.</p></li>
+</ol>
+<p>The photograph below shows the experiment in progress, with particular focus at the weir end of the appratus.</p>
+<p style="text-align: center;">
+  <img src="http://54.243.252.9/ce-3105-webroot/ce3105notes/lessons/laboratory81/sample-report81-pic1.png" alt="Experimental setup" width="400"/>
+</p>
+<p>The next photograph (below) showns a portion of the experiment on the downstream half.  The stations are clearly indicated by vertical lines, the small crosses, and annotations are the readings from the DTW gage.</p>
+<p style="text-align: center;">
+  <img src="http://54.243.252.9/ce-3105-webroot/ce3105notes/lessons/laboratory81/sample-report81-pic2.png" alt="Experimental setup 2" width="400"/>
+</p>
+<p>The next photograph (below) showns a portion of the experiment on the upstream half.  The stations are clearly indicated by vertical lines, the small crosses, and annotations are the readings from the DTW gage.</p>
+<p style="text-align: center;">
+  <img src="http://54.243.252.9/ce-3105-webroot/ce3105notes/lessons/laboratory81/sample-report81-pic3.png" alt="Experimental setup 2" width="400"/>
+</p></section>
+<section id="data-table-measurements-and-experiment-notes">
+<h2>1. Data Table (measurements and experiment notes)<a class="headerlink" href="#data-table-measurements-and-experiment-notes" title="Link to this heading">#</a></h2>
+<p><span class="math notranslate nohighlight">\(P\)</span> = weir crest height (m): <strong>0.230</strong> <br>
+<span class="math notranslate nohighlight">\(L\)</span>  = weir crest width (m):  <strong>0.3048</strong> <br>
+<span class="math notranslate nohighlight">\(S_0\)</span> = channel slope (<span class="math notranslate nohighlight">\(\%\)</span>): <strong>1.50</strong> From slope indicator on device<br></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>STATION_ID</p></th>
+<th class="head text-right"><p>x-coordinate (m)</p></th>
+<th class="head text-right"><p>DTW (mm)</p></th>
+<th class="head text-right"><p>water depth(mm)</p></th>
+<th class="head"><p>DTF (mm)</p></th>
+<th class="head"><p>Channel Slope</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0 : ~ weir</p></td>
+<td class="text-right"><p>~0.00</p></td>
+<td class="text-right"><p><strong>37.88</strong></p></td>
+<td class="text-right"><p><strong>0.26788</strong></p></td>
+<td><p><strong>157.5</strong></p></td>
+<td><p>–N/A–</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td class="text-right"><p>-0.30</p></td>
+<td class="text-right"><p><strong>37.06</strong></p></td>
+<td class="text-right"><p><strong>0.26706</strong></p></td>
+<td><p><strong>157.9</strong></p></td>
+<td><p><strong>0.0133</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>2</p></td>
+<td class="text-right"><p>-0.60</p></td>
+<td class="text-right"><p><strong>32.14</strong></p></td>
+<td class="text-right"><p><strong>0.26214</strong></p></td>
+<td><p><strong>158.5</strong></p></td>
+<td><p><strong>0.0200</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>3</p></td>
+<td class="text-right"><p>-0.90</p></td>
+<td class="text-right"><p><strong>28.49</strong></p></td>
+<td class="text-right"><p><strong>0.25849</strong></p></td>
+<td><p><strong>159.5</strong></p></td>
+<td><p><strong>0.0333</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>4</p></td>
+<td class="text-right"><p>-1.20</p></td>
+<td class="text-right"><p><strong>23.92</strong></p></td>
+<td class="text-right"><p><strong>0.25392</strong></p></td>
+<td><p><strong>159.9</strong></p></td>
+<td><p><strong>0.0133</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>5</p></td>
+<td class="text-right"><p>-1.50</p></td>
+<td class="text-right"><p><strong>19.10</strong></p></td>
+<td class="text-right"><p><strong>0.24910</strong></p></td>
+<td><p><strong>160.2</strong></p></td>
+<td><p><strong>0.0100</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>6</p></td>
+<td class="text-right"><p>-1.80</p></td>
+<td class="text-right"><p><strong>14.56</strong></p></td>
+<td class="text-right"><p><strong>0.24456</strong></p></td>
+<td><p><strong>160.4</strong></p></td>
+<td><p><strong>0.0067</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>7</p></td>
+<td class="text-right"><p>-2.10</p></td>
+<td class="text-right"><p><strong>10.18</strong></p></td>
+<td class="text-right"><p><strong>0.24018</strong></p></td>
+<td><p><strong>160.7</strong></p></td>
+<td><p><strong>0.0100</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>8</p></td>
+<td class="text-right"><p>-2.40</p></td>
+<td class="text-right"><p><strong>5.11</strong></p></td>
+<td class="text-right"><p><strong>0.23511</strong></p></td>
+<td><p><strong>161.4</strong></p></td>
+<td><p><strong>0.0233</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>9</p></td>
+<td class="text-right"><p>-2.70</p></td>
+<td class="text-right"><p><strong>0.18</strong></p></td>
+<td class="text-right"><p><strong>0.23018</strong></p></td>
+<td><p><strong>161.7</strong></p></td>
+<td><p><strong>0.0100</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>10</p></td>
+<td class="text-right"><p>-3.00</p></td>
+<td class="text-right"><p><strong>-4.26</strong></p></td>
+<td class="text-right"><p><strong>0.22574</strong></p></td>
+<td><p><strong>162.4</strong></p></td>
+<td><p><strong>0.0233</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>11</p></td>
+<td class="text-right"><p>-3.30</p></td>
+<td class="text-right"><p><strong>-9.83</strong></p></td>
+<td class="text-right"><p><strong>0.22017</strong></p></td>
+<td><p><strong>163.1</strong></p></td>
+<td><p><strong>0.0233</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>12 : ~ head tank</p></td>
+<td class="text-right"><p>-3.60</p></td>
+<td class="text-right"><p><strong>-15.44</strong></p></td>
+<td class="text-right"><p><strong>0.21456</strong></p></td>
+<td><p><strong>163.5</strong></p></td>
+<td><p><strong>0.0133</strong></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><em>Note(s):</em></p>
+<ol class="arabic simple">
+<li><p>The DTW gage was set to read 00.00 at the weir crest, with the gage set about the middle of the moveable range.  Water depth = DTW + 230.00 (mm) for the data below.</p></li>
+<li><p>The distance to floor (DTF) is measured from the top rail to the floor at each station location - assuming the epoxy coating is uniform and the floor was placed using self-leveling concrete these values are used to determine an average slope for the apparatus, which is used to validate or refute the channel slope device on the flume.  The slopes are computed using adjacent stations</p></li>
+<li><p>The average slope and standard deviation computed from the last column are:
+$<span class="math notranslate nohighlight">\( \bar S_o = 0.01695 ~~;~~ \sigma = 0.821 \)</span>$ The variation is moderate — the standard deviation is nearly 50% of the mean. This result suggests either inherent variability in the floor (not level, hence unsuitable as a datum) or of the flume (the top rail is not parallel to the flume bottom), and/or instrument noise (tape measure is hard to read), or setup differences between trials.  Nevertheless, the value is reasonably close to the slope indicator value of 0.015.  Or more precisely, the slope indicator value of 0.015 is within the +/- 1 standard deviation range from the distance to floor measurements.</p></li>
+</ol>
+<section id="sharp-crested-weir-discharge-formula">
+<h3>2. Sharp Crested Weir Discharge Formula<a class="headerlink" href="#sharp-crested-weir-discharge-formula" title="Link to this heading">#</a></h3>
+<p>A sketch of the elevation view at a weir is</p>
+<p style="text-align: center;">
+  <img src="http://54.243.252.9/ce-3105-webroot/ce3105notes/lessons/laboratory81/sideviewweir.png" alt="Side view weir" width="400"/>
+</p>
+<p>An end view of the weir is</p>
+<p style="text-align: center;">
+  <img src="http://54.243.252.9/ce-3105-webroot/ce3105notes/lessons/laboratory81/endviewweir.png" alt="End view weir" width="400"/>
+</p>
+<p>A simple formula to compute discharge over a <em>suppressed</em> sharp crested weir (in SI units) is</p>
+<div class="math notranslate nohighlight">
+\[ Q = 1.84LH^{3/2} \]</div>
+<p>where,</p>
+<p><span class="math notranslate nohighlight">\(Q\)</span> is the discharge in <span class="math notranslate nohighlight">\(m^3/sec\)</span> <br>
+<span class="math notranslate nohighlight">\(L\)</span> is the weir crest width (channel width, <span class="math notranslate nohighlight">\(B\)</span>, in this case) in <span class="math notranslate nohighlight">\(m\)</span> <br>
+<span class="math notranslate nohighlight">\(H\)</span> is the water surface height above the elevation of the weir crest in <span class="math notranslate nohighlight">\(m\)</span> <br></p>
+<p>In the experimental apparatus, and the flow depths used, the weir is indeed a suppressed weir. Consult <a class="reference external" href="https://www.usbr.gov/tsc/techreferences/mands/wmm/WMM_3rd_2001.pdf">USBR (United States Bureau of Reclamation) (2001). Water Measurement Manual, 3rd Edition Revised Reprinted. Technical report, Water Resources Research Laboratory, US Department of the Interior (p. 317). </a> to learn the conditions for a <em>suppressed</em> sharp crested weir formula to be applicable.</p>
+<p>The water surface height approaching the weir is made at a location just upstream of where “curvature” of the free surface appears - it is a bit subjective, but in the above experiment (photographs) this point is about 40 mm upstream of the weir crest.</p>
+<p>The image below shows the Weir Flow Formulas in Excel</p>
+<p><img alt="" src="../../_images/weirFormula.png" /></p>
+<p>The next image is the worksheet rendered in usual Excel format.</p>
+<p><img alt="" src="../../_images/weirExcel.png" /></p>
+</section>
+</section>
+<section id="backwater-method-script-using-experiment-values">
+<h2>3. Backwater Method Script using Experiment Values<a class="headerlink" href="#backwater-method-script-using-experiment-values" title="Link to this heading">#</a></h2>
+<p>The variable-step backwater method is employed using an Excel spreadsheet.</p>
+<p>The example spreadsheet is used, but with the experimental conditions.  Because the spacing is constant, the analyst must sucessively guess values of depth to obtain the known <span class="math notranslate nohighlight">\(\Delta~x\)</span> value in the experiment.  By far the easiest way is to use <code class="docutils literal notranslate"><span class="pre">Goal</span> <span class="pre">Seek</span></code> where the target value is <span class="math notranslate nohighlight">\(-0.30\)</span>, and the cell to change is the same-row <strong>Mod. Depth</strong></p>
+<p>The value for Manning’s <span class="math notranslate nohighlight">\(n\)</span> was obtained from an on-line database, a screen capture of the interaction is shown below</p>
+<p style="text-align: center;">
+  <img src="http://54.243.252.9/ce-3105-webroot/ce3105notes/lessons/laboratory81/manningsN.png" alt="mannings" width="800"/>
+</p>
+<p>The image below is the spreadsheet as formulas (the <strong>Goal Seek</strong> process is already completed)</p>
+<p><img alt="" src="../../_images/GVF-ExcelFormulas.png" /></p>
+<p>The next image is the spreadsheet rendered normally</p>
+<p><img alt="" src="../../_images/GVF-Excel1.png" /></p>
+</section>
+<section id="plot-s-of-simulated-and-measured-water-surface-profiles">
+<h2>4. Plot(s) of Simulated and Measured Water Surface Profiles<a class="headerlink" href="#plot-s-of-simulated-and-measured-water-surface-profiles" title="Link to this heading">#</a></h2>
+<p>The spreadsheet above generates a plot of the simulated (solid blue line), measured (open circle markers only), and the channel bottom (assuming the base of the weir is the origin).</p>
+<p>The spreadsheet also reports some performance metrics</p>
+<ul class="simple">
+<li><p>MSE (mean squared error) = <span class="math notranslate nohighlight">\(\frac{1}{n}\sum_{i=1}^{n}{(model_i-measured_i)^2}\)</span></p></li>
+<li><p>MRPE (mean relative prediction error = <span class="math notranslate nohighlight">\(\frac{1}{n}\sum_{i=1}^{n}{\frac{model_i-measured_i}{measured_i}}\)</span></p></li>
+<li><p>RMSE (root mean square error) = <span class="math notranslate nohighlight">\(\sqrt(MSE)\)</span></p></li>
+</ul>
+<p>A negative value of MRPE means the model underpredicts the water surface profile, a positive value means it overpredicts the profile. The error scale is the same magnitude as the values, so the results can be interpreted as an average percent error.</p>
+<p>The RMSE provides an estimate of the typical magnitude of model prediction error — also in the same units as the measured data (e.g., meters). It reflects how far, on average, the simulated water surface elevations deviate from the observed values.</p>
+<p>Lower RMSE values indicate better model agreement with observations. For example, an RMSE of 0.001 m suggests that, on average, the model’s predicted water surface elevations differ from the measured profile by about 1 millimeter.</p>
+</section>
+<section id="summary-and-conclusions">
+<h2>Summary and Conclusions<a class="headerlink" href="#summary-and-conclusions" title="Link to this heading">#</a></h2>
+<p>The comparison between measured and simulated water surface profiles shows close agreement under the experimental conditions. The simulation, based on a fixed spatial step method and calibrated inputs, captures the overall shape and gradient of the observed profile with high fidelity.</p>
+<p>Several sources of experimental error may contribute to the small discrepancies observed:</p>
+<ul class="simple">
+<li><p><strong>Channel bed irregularities:</strong> The laboratory floor is not perfectly level and is therefore unsuitable as a true datum, introducing bias into depth readings.</p></li>
+<li><p><strong>Flume construction tolerances:</strong> The top rail of the flume is not precisely parallel to the bottom, affecting alignment and potentially skewing visual depth references.</p></li>
+<li><p><strong>Instrument noise and operator variability:</strong> The primary measurement tool for determining channel slope (a tape measure) is difficult to read accurately across multiple stations.</p></li>
+<li><p><strong>Datum and stationing uncertainty:</strong> The digital depth-to-water (DTW) sensor may not maintain a consistent zero point, and the physical stationing of measurements along the flume is imprecise.</p></li>
+<li><p><strong>Weir crest elevation:</strong> Uncertainty in the weir crest measurement directly affects flow estimates and introduces variability in the control section depth.</p></li>
+<li><p><strong>Simplified hydraulics:</strong> The use of a standard sharp-crested weir formula, while appropriate for first-order calculations, may not capture all the subtleties of the laboratory flow conditions.</p></li>
+</ul>
+<p>Among these, errors associated with channel slope estimation are particularly impactful, as slope directly influences computed friction losses and governs the profile shape. Likewise, the weir-based discharge estimate significantly affects velocity and energy gradient calculations. Incorporating an alternate or supplementary method for measuring discharge (e.g., timed volumetric collection or electromagnetic flow sensor) would enhance the reliability of input parameters.</p>
+<p>Despite these uncertainties, the model prediction error remains small—with a root mean squared error (RMSE) under 4 mm. This level of discrepancy is measurable with high-resolution laboratory tools but would likely fall within the uncertainty band of standard field instruments (e.g., staff gages, velocity meters, wading rods).</p>
+<p>It is also important to recognize that these computational methods are typically applied to <strong>riverine-scale</strong> systems, not centimeter-scale laboratory models. That they produce meaningful and accurate results at all at such a small small scale is both surprising and reassuring. It speaks to the robustness of the governing hydraulic principles and underscores the utility of such models in real-world applications.</p>
+<p>The primary conclusion is that computational hydraulic methods provide accurate predictions of water surface profiles, even under imperfect laboratory conditions. With thoughtful calibration and awareness of key sensitivities—particularly slope and discharge—such models are valuable tools for both design and analysis in hydraulic engineering.</p>
+</section>
+<section id="end-of-section">
+<h2>End of Section<a class="headerlink" href="#end-of-section" title="Link to this heading">#</a></h2>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./experiments/11ex8-backwater"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="ex8.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Lab 7. - Water Surface Profiles: Backwater Curves</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="ex8_sample_report-python.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Lab 8. - Sample Report (Python Version)</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#title">Title:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#purpose">Purpose:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methods">Methods:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deliverables">Deliverables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#procedure">Procedure:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-table-measurements-and-experiment-notes">1. Data Table (measurements and experiment notes)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sharp-crested-weir-discharge-formula">2. Sharp Crested Weir Discharge Formula</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#backwater-method-script-using-experiment-values">3. Backwater Method Script using Experiment Values</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-s-of-simulated-and-measured-water-surface-profiles">4. Plot(s) of Simulated and Measured Water Surface Profiles</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-and-conclusions">Summary and Conclusions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#end-of-section">End of Section</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Theodore G. Cleveland
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

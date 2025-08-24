@@ -1,0 +1,965 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Lab 6. - Open Channel Flow Measurement &#8212; Mechanics of Fluids Laboratory</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'experiments/10ex7-openflow/ex7';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Lab 7. - Water Surface Profiles: Backwater Curves" href="../11ex8-backwater/ex8.html" />
+    <link rel="prev" title="Lab 6A Sample Report" href="../9ex6-pumps/ex6A_samplereport.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo2.png" class="logo__image only-light" alt="Mechanics of Fluids Laboratory - Home"/>
+    <script>document.write(`<img src="../../_static/logo2.png" class="logo__image only-dark" alt="Mechanics of Fluids Laboratory - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    CE 3105 Mechanics of Fluids Laboratory
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../0syllabus/ce-3105-syllabus-2025-3.html">Syllabus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1safety/safety.html">0.0 Safety Considerations</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../3experimentation/experimentation.html">Lab 0 - Role of Engineering Experimentation</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../4ex1-statics/ex1.html">Lab 1 - Fluid Statics: Density, Viscosity, Bouyancy, Forces</a></li>
+
+
+
+<li class="toctree-l1 has-children"><a class="reference internal" href="../5ex2-pipeflow/ex2.html">Lab 2 - Flow Measurement in Conduits</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../5ex2-pipeflow/ex2_sample_report.html">Lab 2. Sample Report</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../7ex4-pipeloss/ex4.html">Lab 3 - Friction Losses in Pipes and Fittings</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../7ex4-pipeloss/ex4_sample_report.html">Laboratory 4 Sample Report</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../8ex5-momentum/ex5.html">Lab 4 - Momentum Transfer</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../8ex5-momentum/ex5_sample_report.html">Laboratory 5 Sample Report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../8ex5-momentum/ex5_sample_calculations.html">Lab 5. Sample Calculations</a></li>
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../9ex6-pumps/ex6A.html">Lab 5 - Bilge Pump Curve</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../9ex6-pumps/ex6A_samplereport.html">Lab 6A Sample Report</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Lab 6. - Open Channel Flow Measurement</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../11ex8-backwater/ex8.html">Lab 7. - Water Surface Profiles: Backwater Curves</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../11ex8-backwater/ex8_sample_report-excel.html">Lab 8. - Sample Report (Spreadsheet Version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../11ex8-backwater/ex8_sample_report-python.html">Lab 8. - Sample Report (Python Version)</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../12ex9-hydraulicjump/ex9.html">Lab 8. - Water Surface Profiles: Hydraulic Jump</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../12ex9-hydraulicjump/ex9_sample_report.html">Laboratory 9 - Sample Report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../12ex9-hydraulicjump/ex9_sample_calculations.html">Lab 9: Analysis Guidelines</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../14ex11-flownets/ex11.html">14. Lab 11 - Porous Media : Flow Nets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../abet_plan/abet_plan.html">Assessment Plan for ABET (6)</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fexperiments/10ex7-openflow/ex7.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/experiments/10ex7-openflow/ex7.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Lab 6. - Open Channel Flow Measurement</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#readings">Readings</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#videos">Videos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#purpose">Purpose</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background-theory">Background/Theory</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#steady-uniform-flow">Steady-Uniform Flow</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#head-loss-models">Head Loss Models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#steady-rapid-varied-flow">Steady-Rapid Varied Flow</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hydraulic-jump">Hydraulic Jump</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#laboratory-apparatus">Laboratory Apparatus</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#discharge-measurements">Discharge Measurements</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#flow-depth-measurements">Flow Depth Measurements</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-suggested-procedure">A Suggested Procedure</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deliverables">Deliverables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#end-of-section">End of Section</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="lab-6-open-channel-flow-measurement">
+<h1>Lab 6. - Open Channel Flow Measurement<a class="headerlink" href="#lab-6-open-channel-flow-measurement" title="Link to this heading">#</a></h1>
+<div class="admonition-course-website admonition">
+<p class="admonition-title">Course Website</p>
+<p><a class="reference external" href="http://54.243.252.9/ce-3105-webroot/">http://54.243.252.9/ce-3105-webroot/</a></p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This laboratory experiment is being re-written, to include multiple measurement technologies.  This content is a placeholder for time being</p>
+</div>
+<section id="readings">
+<h2>Readings<a class="headerlink" href="#readings" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://siris.co.uk/v-notch-weir-design-how-does-it-work/">V-Notch Weir Theory</a></p></li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Hydraulic_jump">Hydraulic Jump Theory</a></p></li>
+<li><p><a class="reference external" href="https://www.omnicalculator.com/physics/hydraulic-jump">Hydraulic Jump Calculator</a></p></li>
+<li><p><a class="reference external" href="http://ponce.sdsu.edu/onlineveenotchdescription.html">V-Notch Weir Calculator</a></p></li>
+</ol>
+<!--5. [Example Report](http://54.243.252.9/ce-3105-webroot/2-Exercises/laboratory8/GoBy8.pdf)-->
+<ol class="arabic simple" start="5">
+<li><p><a class="reference external" href="http://54.243.252.9/ce-3105-webroot/7-user-manuals/ModelB-16-HydraulicDemonstrationChannel.pdf">B-16 Hydraulic Demonstration Channel (User Manual)</a></p></li>
+<li><p><a class="reference external" href="https://pubs.usgs.gov/wsp/wsp_1849/pdf/wsp_1849.pdf">Barnes, 1967 USGS Water Supply Paper 1849</a>  A collection of photographs and computed Manning’s <span class="math notranslate nohighlight">\(n\)</span></p></li>
+<li><p><a class="reference external" href="https://www.usgs.gov/centers/sawsc/science/mannings-roughness-coefficients-south-carolina-streams#overview">https://www.usgs.gov/centers/sawsc/science/mannings-roughness-coefficients-south-carolina-streams#overview</a></p></li>
+<li><p><a class="reference external" href="https://pubs.usgs.gov/ds/668/pdf/DataSeries_668_2.pdf">https://pubs.usgs.gov/ds/668/pdf/DataSeries_668_2.pdf</a></p></li>
+</ol>
+</section>
+<section id="videos">
+<h2>Videos<a class="headerlink" href="#videos" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=_3ZBN_Ec9q4">Laboratory 8 Instructional Video by Dr. Uddameri</a></p></li>
+</ol>
+</section>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<p>Open channel flow is critical for understanding the hydraulics of natural and engineered systems such as rivers, canals, and drainage channels. This laboratory investigates steady uniform flow, head loss models, and hydraulic jumps in open channels. Using a recirculating flume equipped with depth gauges, a digital distance gauge, and calibrated discharge measurements, students will determine Manning’s roughness coefficient for a rock bed and analyze alternate and sequent depths in a hydraulic jump. This experiment emphasizes the application of fundamental hydraulics principles to real-world flow conditions.</p>
+</section>
+<section id="purpose">
+<h2>Purpose<a class="headerlink" href="#purpose" title="Link to this heading">#</a></h2>
+<p>To examine behavior in open channels, in particular determining Manning’s <span class="math notranslate nohighlight">\(n\)</span> for a portion of a channel, and creating and observing the alternate and sequent depths in a hydraulic jump.</p>
+</section>
+<section id="background-theory">
+<h2>Background/Theory<a class="headerlink" href="#background-theory" title="Link to this heading">#</a></h2>
+<p>Open channel flow - free surface, gravity driven.</p>
+<blockquote>
+<div><p>From pg. 1 of <a class="reference external" href="https://www.amazon.com/Channel-Hydraulics-Third-Terry-Sturm/dp/1260469700">Sturm, T. Open Channel Hydraulics, 1 st Ed.</a></p>
+<p><img alt="" src="../../_images/open-flow-narrative.png" /></p>
+</div></blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The gravity “drive” is mostly true - I would say such flows are dominated by momentum conditions, mostly with gravity influence.  Open flow can go uphill (adverse to gravitational drive) but not for much distance (os one will run out of momentum)</p>
+</div>
+<p>Common examples of open channels:</p>
+<ul class="simple">
+<li><p>rivers, streams, brooks, creeks, cricks (Applacian meaning small stream), billabongs, bourns, wadis, and many more localized terms for small streams</p></li>
+<li><p>ditches, canals, aqueducts, storm sewers, sanitary sewers</p></li>
+</ul>
+<blockquote>
+<div><p>From pg. 1 of <a class="reference external" href="https://www.amazon.com/Channel-Hydraulics-Third-Terry-Sturm/dp/1260469700">Sturm, T. Open Channel Hydraulics, 1 st Ed.</a></p>
+<p><img alt="" src="../../_images/examples-ocf.png" /></p>
+</div></blockquote>
+<p>Applications of open channel flow principles</p>
+<ul class="simple">
+<li><p>Culvert design, bridge design, spillway design</p></li>
+<li><p>Floodway analysis, and nusiance flooding prediction</p></li>
+<li><p>Fate and transport of yummy/yucky stuff (dissolved and/or suspended)</p></li>
+<li><p>Surge estimation and coastal flooding from cyclonic storms <a class="reference external" href="https://en.wikipedia.org/wiki/Tropical_cyclone">(hurricane,typhoon)</a></p></li>
+</ul>
+<blockquote>
+<div><p>From pg. 1 of <a class="reference external" href="https://www.amazon.com/Channel-Hydraulics-Third-Terry-Sturm/dp/1260469700">Sturm, T. Open Channel Hydraulics, 1 st Ed.</a></p>
+<p><img alt="" src="../../_images/applications-ocf.png" /></p>
+</div></blockquote>
+<p>Natural and man-made open channels are of interest to engineers. The Manning’s equation is a fundamental equation governing open channel flow and is given by</p>
+<div class="math notranslate nohighlight">
+\[ Q= \frac{K_n}{n}AR^{2/3}S^{1/2} \]</div>
+<p>Where <span class="math notranslate nohighlight">\(K_n\)</span> is the conversion factor (1 for SI and 1.49 for English units);
+<span class="math notranslate nohighlight">\(n\)</span> is the Manning’s roughness coefficient, <span class="math notranslate nohighlight">\(A\)</span> is the cross-sectional area and <span class="math notranslate nohighlight">\(R\)</span> is the hydraulic radius which is given as:</p>
+<div class="math notranslate nohighlight">
+\[ R=\frac{A}{P_W}\]</div>
+<p>where <span class="math notranslate nohighlight">\(P_W\)</span> is the wetted perimeter.</p>
+</section>
+<section id="steady-uniform-flow">
+<h2>Steady-Uniform Flow<a class="headerlink" href="#steady-uniform-flow" title="Link to this heading">#</a></h2>
+<p>Uniform flow occurs when the average velocities in successive cross sections of a channel are the same. This occurs only when the cross section is constant. Non-uniform flow results from gradual or sudden changes in the cross sectional area.
+If the water surface is parallel to the channel bottom, flow is uniform and the water surface is at normal depth <span class="math notranslate nohighlight">\(y_n\)</span></p>
+<p>Used for design of long open channels with the goal to have the water surface slope equal to the bed slope.  Heres a couple of pictures,</p>
+<p>First a Central Aridzona Project canal</p>
+<p><img alt="" src="../../_images/CAPcanal.png" /></p>
+<p>And the Central Valley Project (Callyfornia) canal I grew up swimmin’ in.</p>
+<p><img alt="" src="../../_images/CVPcanal.png" /></p>
+<p>The line of floaty balls means you are approaching one of these:</p>
+<p><img alt="" src="../../_images/CVPliftStation.png" /></p>
+<p>Even though swimmin’ in the canals is illegal, the operators dont want to turn a bunch of kids into fish food, so they put up the balls.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Despite the obvious Darwinian advantage of grinding up kids - dead meat does not pay taxes; support old folks; nor serve as a supply of harvestable kidneys.  Hence we try to save them.</p>
+</div>
+<p>In these applications the resistance to flow is balanced by a driving force provided by gravity.</p>
+<p>Resistance is a consequence of cross-section shape, soil, vegetation, materials (in engineered channels).  In pipelines the resistance was understood by laboratory experimenters by the 1930’s.  In open channels interest started later</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Obviously people have built working open channels much earlier, but techniques of design were empirical passed down by secret societies who wore wizard hats and flew on brooms!</p>
+</div>
+<p>Consider a generic force balance diagram over a short section of channel, <span class="math notranslate nohighlight">\(\Delta L\)</span> long:</p>
+<p><img alt="" src="../../_images/controlvolume1.png" /></p>
+<p>Now insert the Energy Grade Line (EGL)</p>
+<p><img alt="" src="../../_images/cvcomplete.png" /></p>
+<p>In the case of uniform flow the flow depths are the same at each end of the section, the section length is such that the end areas are about the same, hence the upstream and downstream pressure force are the same, and the remaining forces are gravity (drive) and friction:</p>
+<div class="math notranslate nohighlight">
+\[ W sin \theta = \rho g A \Delta L sin \theta = Fr \]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In the above expression <span class="math notranslate nohighlight">\(Fr\)</span> is the frictional shear force, not the Froude number.  Use the principle of algebraic substitution, and give friction any name you want in the drawing, except Elroy</p>
+</div>
+<p>If friction is stipulated to be generated only by the shear force induced at the solid-liquid interface (and not at the free surface) then the expression becomes</p>
+<div class="math notranslate nohighlight">
+\[ \rho g A \Delta L sin \theta = \tau_0 P \Delta L \]</div>
+<p>where <span class="math notranslate nohighlight">\(P\)</span> is the wetted perimeter</p>
+<p>Divide by <span class="math notranslate nohighlight">\(P \Delta L\)</span> to obtain</p>
+<div class="math notranslate nohighlight">
+\[ \frac{\rho g A \Delta L sin \theta}{P \Delta L} = \tau_0  \]</div>
+<p>observe the hydraulic radius, <span class="math notranslate nohighlight">\(R_h = \frac{A}{P}\)</span> appears</p>
+<div class="math notranslate nohighlight">
+\[ \rho g R_h sin \theta = \tau_0  \]</div>
+<p>The boundary shear stress is the factor that expresses the resistance properties of the fluid (wasser) and the solid material (conduit wall).  A usual simplification is to observe that the angle is usuall pretty small so that</p>
+<div class="math notranslate nohighlight">
+\[ sin \theta~\approx~S_0 \]</div>
+<p>In pipe flow (CE 3305) the shear stress was something like</p>
+<div class="math notranslate nohighlight">
+\[ \tau_0 = \frac{f \rho V^2}{8}\]</div>
+<p>Or more usefully (in that context)</p>
+<div class="math notranslate nohighlight">
+\[ f= \frac{8\tau_0}{\rho V^2}\]</div>
+<p>And one either looked up a value in the Moody chart or applied Swammee-Jain equations to find <span class="math notranslate nohighlight">\(f\)</span> for various Reynolds numbers and material relative roughness.</p>
+<p>Returning to our situation we have</p>
+<div class="math notranslate nohighlight">
+\[ \frac{\Delta h}{\Delta L}= \frac{\tau_O}{\rho g R}=\frac{\frac{f \rho V^2}{8}}{\rho g R}= \frac{f}{4R}\frac{V^2}{2g}\]</div>
+<p>So now we need some way to express <span class="math notranslate nohighlight">\(f\)</span>.</p>
+</section>
+<section id="head-loss-models">
+<h2>Head Loss Models<a class="headerlink" href="#head-loss-models" title="Link to this heading">#</a></h2>
+<p><strong>Chezy Correlation</strong></p>
+<div class="math notranslate nohighlight">
+\[V = (\frac{8g}{f})^{1/2} \sqrt{R S_0} = C \sqrt{R S_0}\]</div>
+<p>and the value <span class="math notranslate nohighlight">\(C\)</span> is the Chezy coefficient.</p>
+<p><strong>Manning Correlation</strong></p>
+<p>Manning several years before his football career developed a similar correlation but observed that the hydraulic radius varied by the 2/3 power as</p>
+<div class="math notranslate nohighlight">
+\[V  = C R^{2/3} S_0^{1/2}\]</div>
+<p>There is meaningful theory to relate surface roughness to the “<span class="math notranslate nohighlight">\(C\)</span>” values</p>
+<p><img alt="" src="../../_images/velocitydistributions.png" /></p>
+<p>From here one can relate the friction factor back to Manning’s n or the Chezy coefficient:</p>
+<p><img alt="" src="../../_images/mann_n-explain.png" /></p>
+<p>The usual way to specify Manning’s n is by a table lookup such as <a class="reference external" href="http://54.243.252.9/toolbox/Databases/ManningN/ManningsN.html">http://54.243.252.9/toolbox/Databases/ManningN/ManningsN.html</a></p>
+<p>or tables similar to those in our book</p>
+<p><img alt="" src="../../_images/mann1.png" />
+<img alt="" src="../../_images/mann2.png" />
+<img alt="" src="../../_images/mann3.png" />
+<img alt="" src="../../_images/mann4.png" /></p>
+<p>or by comparison with photographs of channels</p>
+<ol class="arabic simple">
+<li><p>Barnes, 1967 (A classic reference document) <a class="reference external" href="https://pubs.usgs.gov/wsp/wsp_1849/pdf/wsp_1849.pdf">https://pubs.usgs.gov/wsp/wsp_1849/pdf/wsp_1849.pdf</a></p></li>
+<li><p><a class="reference external" href="https://www.usgs.gov/centers/sawsc/science/mannings-roughness-coefficients-south-carolina-streams#overview">https://www.usgs.gov/centers/sawsc/science/mannings-roughness-coefficients-south-carolina-streams#overview</a></p></li>
+<li><p><a class="reference external" href="https://pubs.usgs.gov/ds/668/pdf/DataSeries_668_2.pdf">https://pubs.usgs.gov/ds/668/pdf/DataSeries_668_2.pdf</a></p></li>
+</ol>
+<p>and many others.</p>
+<p>Normal Flow Calculations</p>
+<div class="math notranslate nohighlight">
+\[Q=VA= \frac{K_n}{n} A R^{2/3} S_0^{1/2}\]</div>
+<p>where <span class="math notranslate nohighlight">\(S_0\)</span> is the bed slope, <span class="math notranslate nohighlight">\(S_f\)</span> is the slope of the energy grade line (called the friction slope).</p>
+<p>Typical cases:</p>
+<ol class="arabic simple">
+<li><p>Know <span class="math notranslate nohighlight">\(y_0\)</span> or <span class="math notranslate nohighlight">\(y_n\)</span>, shape, <span class="math notranslate nohighlight">\(S_0\)</span>,<span class="math notranslate nohighlight">\(n\)</span>, compute <span class="math notranslate nohighlight">\(Q\)</span> directly.</p></li>
+<li><p>Know <span class="math notranslate nohighlight">\(y_0\)</span>, shape, <span class="math notranslate nohighlight">\(Q\)</span>,<span class="math notranslate nohighlight">\(n\)</span>, compute <span class="math notranslate nohighlight">\(S_0\)</span> directly.</p></li>
+<li><p>Know shape, <span class="math notranslate nohighlight">\(Q\)</span>,<span class="math notranslate nohighlight">\(n\)</span>,<span class="math notranslate nohighlight">\(S_0\)</span> compute <span class="math notranslate nohighlight">\(y_0\)</span> iteratively.</p></li>
+</ol>
+</section>
+<section id="steady-rapid-varied-flow">
+<h2>Steady-Rapid Varied Flow<a class="headerlink" href="#steady-rapid-varied-flow" title="Link to this heading">#</a></h2>
+<p>Momentum is a property of moving things and is the product of mass and velocity.  Angular momentum is the similar property in rotating geometries.  It takes an external force to change the momentum of an object.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Except at faster than light travel (FTL) when impulse-momentum no longer applies; instead ones survival depends largely on the skill of the scriptwriter.  As engineers we wear the red shirts and are usually sacrificed, although Scottish engineers seem to last many episodes!</p>
+</div>
+<p>In the context of hydraulics many phenomenon which cannot be analyzed using the energy equation succumb nicely to momentum. The primary advantage of the momentum equation are that details of internal (to the control volume) flow patterns are irrelevant, only the external forces and momentum fluxes need to be considered.  The momentum balance was used earlier to solve the head loss caused by a bridge pier and this is a typical application of momentum balances.</p>
+<p>It matters greatly in computational hydraulics in unsteady flow.</p>
+<section id="hydraulic-jump">
+<h3>Hydraulic Jump<a class="headerlink" href="#hydraulic-jump" title="Link to this heading">#</a></h3>
+<p>A <a class="reference external" href="https://www.youtube.com/watch?v=7tjf8HWiR3Y">hydraulic jump</a> occurs:</p>
+<ol class="arabic simple">
+<li><p>when you startle a sugary liquid, it jumps and spills.</p></li>
+<li><p>when flow transitions for supercritical flow to subcritical flow over a short distance.</p></li>
+<li><p>when a lowrider activates the car hydraulics and hops.</p></li>
+</ol>
+<p>well for this lab its the second answer.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The highest lowrider hop 414.65 cm (163.25 in) and was achieved by Robert White (USA) at the Los Magnificos car show in Austin, Texas, USA on 21 November 2015. The hop was made by a converted school bus called the Honeybadger.</p>
+</div>
+<p>Here’s a useful sketch.  Supercritical flow upstream meets subcritical downstream.  Downstream controls the flow, <span class="math notranslate nohighlight">\(Q\)</span> is same but the downstream velocity os exchanged for flow depth, a bit of energy is lost in the transition.  The jump itself is quite turbulent and has a practical value in chemical mixing as well as energy dissipation.</p>
+<p><img alt="" src="../../_images/hydjump-sketch.png" /></p>
+<p>Engineering design is typically concerned with forcing jumps in armored channel sections otherwise the energy will chew away at the channel and destroy thangs.</p>
+<p>A control volume around the jump might look like</p>
+<p><img alt="" src="../../_images/controlvolume2.png" /></p>
+<p>The jumps occur over a short distance, so the friction term is usually small compared to the other forces and change in momentum flux.</p>
+<p>Conservation of momentum is</p>
+<div class="math notranslate nohighlight">
+\[ \sum F_x = Fp_1 - Fp_2 - Fr = \rho Q(V_2 - V_1)\]</div>
+<p>The pressure forces assume hydrostatic distributions so that</p>
+<div class="math notranslate nohighlight">
+\[ Fp = p_i A_i = \rho g \bar h_{i} A_i\]</div>
+<p>where <span class="math notranslate nohighlight">\(\bar h_i\)</span> is the depth to the centroid of the cross section (<span class="math notranslate nohighlight">\(\frac{y}{2}\)</span></p>
+<p>Making the substitutions and neglecting the friction term yields</p>
+<div class="math notranslate nohighlight">
+\[  (\rho~g~\bar h_{1}~A_1) - (\rho~g~\bar h_{2}~A_2) = \rho Q(V_2 - V_1)\]</div>
+<p>Rearrangement gives</p>
+<div class="math notranslate nohighlight">
+\[  (\rho~g~\bar h_{1}~A_1) + \rho Q~V_1 = (\rho~g~\bar h_{2}~A_2) + \rho Q~V_2\]</div>
+<p>Divide by <span class="math notranslate nohighlight">\(\rho~g\)</span></p>
+<div class="math notranslate nohighlight">
+\[  (h_{1}~A_1) + \frac{Q^2}{gA_1} = (h_{2}~A_2) + \frac{Q^2}{gA_2}\]</div>
+<p>The result above is called the momentum function, and interestingly looks similar to the specific energy function with the section geometry explicitly part of the balance.</p>
+<div class="math notranslate nohighlight">
+\[ M_1 = M_2\]</div>
+<p>The balance is at the two sections implies that the two different depths have the same momentum function, and these are called the alternate (upstream) and sequent (downstream) depths.</p>
+<p>The function itself is dependent on section geometry a few analytical examples are:</p>
+<p><img alt="" src="../../_images/momentumfunctions.png" /></p>
+<p>For other cross sections, numerical methods are employed.</p>
+</section>
+</section>
+<section id="laboratory-apparatus">
+<h2>Laboratory Apparatus<a class="headerlink" href="#laboratory-apparatus" title="Link to this heading">#</a></h2>
+<p>The apparatus is a recirculating water flume (photo below), width 1 ft, comprising a supply tank (in the flumw base) a head tank, two pumps, rectangular channel with side rails, depth gauges, total head tubes, bed tappings and downstream control gate.</p>
+<p><img alt="" src="../../_images/flumephoto.png" /></p>
+<p>Two parts of the experiment are :</p>
+<ol class="arabic simple">
+<li><p>measure depth and flow over a rock bed (already in the flume) and determine Manning’s n for the rock bed and compare to literature values, and</p></li>
+<li><p>create a hydraulic jump (by using the tail-race valve), stabilizing it, then measuring the alternate and sequent depths and comparing these to calculated values based on the discharge.</p></li>
+</ol>
+<section id="discharge-measurements">
+<h3>Discharge Measurements<a class="headerlink" href="#discharge-measurements" title="Link to this heading">#</a></h3>
+<p>The flowrate is determined using the calibration chart below.</p>
+<p><img alt="" src="../../_images/calibration.png" /></p>
+<p>The y-axis is the difference of the manometers readings(<span class="math notranslate nohighlight">\(\Delta H\)</span>) and the x-axis is the flowrate (Q). The following equation belongs to the “Large Orifice” line on the chart.</p>
+<div class="math notranslate nohighlight">
+\[ log_{10}(Q) = \frac{log_{10}(\Delta H)- 1.47}{2.096} \]</div>
+</section>
+<section id="flow-depth-measurements">
+<h3>Flow Depth Measurements<a class="headerlink" href="#flow-depth-measurements" title="Link to this heading">#</a></h3>
+<p>Flow depth measurements are made using a digital distance gage (a ruler widda digital readout) if the battery is dead, you will still uset the device but make manual measurements using a ruler from different device settings.</p>
+<p><img alt="" src="../../_images/depthreadings.png" /></p>
+<p>The digital device reports distnace from the rail top to the pointer setting (<span class="math notranslate nohighlight">\(h_D\)</span>, in our case depth to water.  The total depth of the channel is <span class="math notranslate nohighlight">\(h_b\)</span> = 44 mm.  The flow depth is the difference in these readings.</p>
+<div class="math notranslate nohighlight">
+\[ h_{flow} = h_b - h_D\]</div>
+<p>A second reading is made when the V-notch weir is in place.  It is used to check the pump flow calibration (it needs to be removed to create a stable hydraulic jump.</p>
+<div class="math notranslate nohighlight">
+\[ h_{flow&#64;weir} = h_{M}+h_{notch}\]</div>
+</section>
+<section id="a-suggested-procedure">
+<h3>A Suggested Procedure<a class="headerlink" href="#a-suggested-procedure" title="Link to this heading">#</a></h3>
+<p><strong>Part 1</strong>
+This part is to validate the flow calibration chart and equation.
+0. Set the slope to 1-percent.</p>
+<ol class="arabic simple">
+<li><p>Ensure flume tailgate is down.</p></li>
+<li><p>Close the red valves for both pumps.</p></li>
+<li><p>Start the pumps.</p></li>
+<li><p>Move the depth logger to the same elevation as the height of V notch and reset the value to zero.</p></li>
+<li><p>Make sure the manometer valves corresponding to the selected orifice(s) is(are) open.</p></li>
+<li><p>Ensure the manometers are free of air bubbles.</p></li>
+<li><p>Open the red valve(s) to let flow into the flume.</p></li>
+<li><p>Move the depth logger till it touches the top of the water level. Measure the height. Record this measurement.</p></li>
+<li><p>Record the manometer readings for each pump.</p></li>
+<li><p>Repeat the procedure for 4 different flowrates keeping the slope constant.  Use the red valves to adjust flowrates.</p></li>
+</ol>
+<p><strong>Part2</strong>
+This can be conducted with the weir in place</p>
+<ol class="arabic simple">
+<li><p>Move the depth logger to top of one of the rocks and reset the value to zero.</p></li>
+<li><p>Make sure the manometer valves corresponding to the selected orifice is/are open</p></li>
+<li><p>Ensure the manometers are free of air bubbles.</p></li>
+<li><p>Open the Orifice to let flow into the flume</p></li>
+<li><p>Move the depth logger till it touches the top of the water level. Measure the height</p></li>
+<li><p>Repeat the procedure for 2 other flowrates keep the slope constant</p></li>
+<li><p>Repeat the above steps for a total of 3 different <strong>slopes</strong></p></li>
+</ol>
+<p><strong>Part 3</strong>
+This part will create a stable hydraulic jump.  It is easiest to remove the weir.</p>
+<ol class="arabic simple">
+<li><p>Shut down the pumps, close the red valves, and remove the weir - everything else can be left as-is.</p></li>
+<li><p>Set the slope to 4-percent (its going to look steep, but the machine can handle it!)</p></li>
+<li><p>Start the pumps (you can try with just a single pump if you wish).</p></li>
+<li><p>Raise the tailgate a lot!</p></li>
+<li><p>Zero the depth gage to the channel bottom.</p></li>
+<li><p>Open the red valve(s) to start the flow.</p></li>
+<li><p>Raise the headgate to just above the water height.</p></li>
+<li><p>Lower the tailgate a little bit at a time - you will likely observe two jumps, one near the head gate and one after the rocks.  The stable one is the one at the head gate.</p></li>
+<li><p>Lower the headgate until it just touches the water surface - you are forcing supercritical depth at this location.  You should be able to create a stable jump about 0.5 to 1-foot from the head gate, and the water surface after the jump should be fairly established at the rocks.</p></li>
+<li><p>Record the manometer readings for the pump(s)</p></li>
+<li><p>Measure the flow depth befor the jump (halfway between the headgate and the jump should do). This is the alternate depth.</p></li>
+<li><p>Measure the flow depth after the jump where the surface waves have dissipated (probably at the rocks).  This is the sequent depth.</p></li>
+</ol>
+</section>
+</section>
+<section id="deliverables">
+<h2>Deliverables<a class="headerlink" href="#deliverables" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><strong>Experimental Protocol</strong></p></li>
+</ol>
+<p>Each group must submit a detailed, step-by-step protocol to ensure the experimental procedures are clearly documented and reproducible. The protocol should include:</p>
+<ol class="arabic simple">
+<li><p>Preparation:</p></li>
+</ol>
+<ul class="simple">
+<li><p>Steps for setting up the flume, including adjusting slopes and ensuring proper calibration of measurement devices.</p></li>
+<li><p>Confirmation of clear manometer tubes and operational pumps.</p></li>
+</ul>
+<ol class="arabic simple" start="2">
+<li><p>Measurements:</p></li>
+</ol>
+<ul class="simple">
+<li><p>Instructions for measuring flow depths using the digital distance gauge.</p></li>
+<li><p>Procedure for recording flow rates from the manometer readings.</p></li>
+<li><p>Steps for stabilizing and measuring alternate and sequent depths during the hydraulic jump analysis.</p></li>
+</ul>
+<ol class="arabic simple" start="3">
+<li><p>Safety and Maintenance:</p></li>
+</ol>
+<ul class="simple">
+<li><p>Guidelines for handling equipment safely and ensuring proper water circulation.</p></li>
+</ul>
+<ol class="arabic simple" start="2">
+<li><p><strong>Laboratory Report</strong></p></li>
+</ol>
+<p>The laboratory report should include the following sections:</p>
+<ol class="arabic simple">
+<li><p>Title Page: Include the lab title, group members, date, and course information.</p></li>
+<li><p>Abstract: Provide a concise summary of the objectives, methods, results, and conclusions.</p></li>
+<li><p>Introduction: Outline the purpose of the lab, focusing on the significance of Manning’s equation and hydraulic jumps in open channel flow.</p></li>
+<li><p>Apparatus and Methods:</p></li>
+</ol>
+<ul class="simple">
+<li><p>Description of the recirculating flume and its components (e.g., pumps, digital gauge, manometer, tailgate).</p></li>
+<li><p>Detailed summary of procedures for each part of the experiment, emphasizing flow measurement and hydraulic jump stabilization.</p></li>
+</ul>
+<ol class="arabic simple" start="5">
+<li><p>Data and Results:</p></li>
+</ol>
+<ul class="simple">
+<li><p>Present depth and flow measurements in tabular form.</p></li>
+<li><p>Include plots for Manning’s roughness coefficient calculations and a comparison to literature values.</p></li>
+<li><p>Graphically represent alternate and sequent depths with the corresponding flow conditions.</p></li>
+</ul>
+<ol class="arabic simple" start="6">
+<li><p>Analysis:</p></li>
+</ol>
+<ul class="simple">
+<li><p>Discuss how measured Manning’s coefficients compare to reference values for the rock bed.</p></li>
+<li><p>Evaluate the observed alternate and sequent depths relative to theoretical predictions.</p></li>
+<li><p>Address any discrepancies and potential sources of error.</p></li>
+</ul>
+<ol class="arabic simple" start="7">
+<li><p>Discussion:</p></li>
+</ol>
+<ul class="simple">
+<li><p>Highlight the practical significance of the findings in hydraulic design applications.</p></li>
+<li><p>Interpret the relationship between flow dynamics and channel characteristics.</p></li>
+<li><p>Evaluate the precision of measurements, including comparisons of depth readings from manual and digital methods (if applicable).</p></li>
+</ul>
+<ol class="arabic simple" start="8">
+<li><p>Conclusion: Summarize the key results and their implications for open channel hydraulics.</p></li>
+<li><p>Appendices: Include raw data, calibration charts, and detailed calculations.</p></li>
+</ol>
+</section>
+<section id="end-of-section">
+<h2>End of Section<a class="headerlink" href="#end-of-section" title="Link to this heading">#</a></h2>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./experiments/10ex7-openflow"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../9ex6-pumps/ex6A_samplereport.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Lab 6A Sample Report</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../11ex8-backwater/ex8.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Lab 7. - Water Surface Profiles: Backwater Curves</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#readings">Readings</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#videos">Videos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#purpose">Purpose</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background-theory">Background/Theory</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#steady-uniform-flow">Steady-Uniform Flow</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#head-loss-models">Head Loss Models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#steady-rapid-varied-flow">Steady-Rapid Varied Flow</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hydraulic-jump">Hydraulic Jump</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#laboratory-apparatus">Laboratory Apparatus</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#discharge-measurements">Discharge Measurements</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#flow-depth-measurements">Flow Depth Measurements</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-suggested-procedure">A Suggested Procedure</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deliverables">Deliverables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#end-of-section">End of Section</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Theodore G. Cleveland
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
