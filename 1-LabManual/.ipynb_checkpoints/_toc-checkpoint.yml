@@ -39,8 +39,8 @@ chapters:
   - file: experiments/9ex6-pumps/ex6A_samplereport
 #######################################################
 - file: experiments/10ex7-openflow/ex7 # flow measurement in open channels
-  sections:
-  - file: experiments/10ex7-openflow/ex7_sample_report
+#  sections:
+#  - file: experiments/10ex7-openflow/ex7_sample_report
 #######################################################
 - file: experiments/11ex8-backwater/ex8 # water surface profile - backwater curves
   sections:
@@ -56,7 +56,7 @@ chapters:
 #  sections:
 #  - file: experiments/.../ex6A_samplereport
 ########################################################
-#- file: experiments/14ex11-flownets/ex11 # porous media flow nets
+- file: experiments/14ex11-flownets/ex11 # porous media flow nets
 #  sections:
 #  - file: experiments/.../ex6A_samplereport
 #######################################################
