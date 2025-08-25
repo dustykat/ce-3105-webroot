@@ -29,9 +29,8 @@ The **purpose** of this fluids laboratory course is not simply to repeat known f
 :::
 
 ## Course Syllabus
-A formal syllabus is located at [http://54.243.252.9/ce-3105-webroot/0-Syllabus/ce-3105-syllabus-2025-1.html](http://54.243.252.9/ce-3105-webroot/0-Syllabus/ce-3105-syllabus-2025-1.html).
 
 :::{note}
-A working copy of the syllabus appears directly in the JupyterBook.
+The working copy of the [syllabus](http://54.243.252.9/ce-3105-webroot/1-LabManual/_build/html/experiments/0syllabus/ce-3105-syllabus-2025-3.html) appears directly in the JupyterBook.
 :::
 

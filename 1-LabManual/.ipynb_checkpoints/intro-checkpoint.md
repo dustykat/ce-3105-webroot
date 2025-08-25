@@ -17,10 +17,20 @@ This JupyterBook is an OER.
 Open Educational Resources (OERs) are any type of educational materials that are either in the public domain, or published under open licenses (e.g. Creative Commons) that specify how materials can be used, reused, adapted, shared and modified according to specific needs. They can include textbooks, lecture notes, syllabi, assignments and tests.
 :::
 
+## Course Purpose 
+
+:::{admonition} Why a Laboratory Experience?
+
+A laboratory experience in engineering education provides students with hands-on opportunities to apply theoretical knowledge, develop practical skills, and foster critical thinking and problem-solving abilities essential for professional and academic success.  
+
+Engineering relies on models to represent how the physical world behaves under various conditions. These models may be derived from physical laws (e.g., conservation of mass or energy), empirical observations, or simplifications of complex phenomena.
+
+The **purpose** of this fluids laboratory course is not simply to repeat known formulas or perform routine measurements—it is to **test, calibrate, and validate models of fluid behavior** through structured experimentation.
+:::
+
 ## Course Syllabus
-A formal syllabus is located at [http://54.243.252.9/ce-3105-webroot/0-Syllabus/ce-3105-syllabus-2025-1.html](http://54.243.252.9/ce-3105-webroot/0-Syllabus/ce-3105-syllabus-2025-1.html).
 
 :::{note}
-A working copy of the syllabus appears directly in the JupyterBook.
+The working copy of the [syllabus](http://54.243.252.9/ce-3105-webroot/1-LabManual/_build/html/experiments/0syllabus/ce-3105-syllabus-2025-3.html) appears directly in the JupyterBook.
 :::
 
