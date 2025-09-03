@@ -5,15 +5,15 @@ format: jb-book
 root: intro
 chapters:
 - file: experiments/0syllabus/ce-3105-syllabus-2025-3
-#- file: experiments/0apparatus/apparatus # lab description for donors
+######################################################
 - file: experiments/1safety/safety
-#- file: experiments/2purpose/purpose
+######################################################
 - file: experiments/3experimentation/experimentation
   sections:
   - file: experiments/3experimentation/lab-report-format
   - file: experiments/3experimentation/lab-report-rubric
 #######################################################
-- file: experiments/4ex1-statics/ex1 # fluid statics
+- file: experiments/4ex1-statics/ex1 # fluid properties and statics
   sections:
   - file: experiments/4ex1-statics/ex1_sample_report
 #######################################################
