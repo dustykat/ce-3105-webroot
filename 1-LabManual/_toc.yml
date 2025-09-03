@@ -13,7 +13,7 @@ chapters:
   - file: experiments/3experimentation/lab-report-format
   - file: experiments/3experimentation/lab-report-rubric
 #######################################################
-- file: experiments/4ex1-statics/ex1 # fluid statics
+- file: experiments/4ex1-statics/ex1 # fluid properties and statics
   sections:
   - file: experiments/4ex1-statics/ex1_sample_report
 #######################################################
