@@ -13,7 +13,8 @@ chapters:
 - file: experiments/3experimentation/lab-report-rubric
 #######################################################
 - file: experiments/4ex1-statics/ex1 # fluid properties and statics
-- file: experiments/4ex1-statics/ex1_sample_report
+  sections:
+  - file: experiments/4ex1-statics/ex1_sample_report
 #######################################################
 - file: experiments/5ex2-pipeflow/ex2 # flow measurement in conduits
   sections:
