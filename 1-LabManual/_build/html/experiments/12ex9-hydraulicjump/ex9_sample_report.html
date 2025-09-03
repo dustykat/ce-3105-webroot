@@ -1,0 +1,932 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Laboratory 9 - Sample Report &#8212; Mechanics of Fluids Laboratory</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'experiments/12ex9-hydraulicjump/ex9_sample_report';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Lab 9: Analysis Guidelines" href="ex9_sample_calculations.html" />
+    <link rel="prev" title="Lab 8. - Water Surface Profiles: Hydraulic Jump" href="ex9.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo2.png" class="logo__image only-light" alt="Mechanics of Fluids Laboratory - Home"/>
+    <script>document.write(`<img src="../../_static/logo2.png" class="logo__image only-dark" alt="Mechanics of Fluids Laboratory - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    CE 3105 Mechanics of Fluids Laboratory
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../0syllabus/ce-3105-syllabus-2025-3.html">Syllabus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1safety/safety.html">0.0 Safety Considerations</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../3experimentation/experimentation.html">Lab 0 - Role of Engineering Experimentation</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../4ex1-statics/ex1.html">Lab 1 - Density, Viscosity, Bouyancy, Forces</a></li>
+
+
+
+<li class="toctree-l1 has-children"><a class="reference internal" href="../5ex2-pipeflow/ex2.html">Lab 2 - Flow Measurement in Conduits</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../5ex2-pipeflow/ex2_sample_report.html">Lab 2. Sample Report</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../7ex4-pipeloss/ex4.html">Lab 3 - Friction Losses in Pipes and Fittings</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../7ex4-pipeloss/ex4_sample_report.html">Laboratory 4 Sample Report</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../8ex5-momentum/ex5.html">Lab 4 - Momentum Transfer</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../8ex5-momentum/ex5_sample_report.html">Laboratory 5 Sample Report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../8ex5-momentum/ex5_sample_calculations.html">Lab 5. Sample Calculations</a></li>
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../9ex6-pumps/ex6A.html">Lab 5 - Bilge Pump Curve</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../9ex6-pumps/ex6A_samplereport.html">Lab 6A Sample Report</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../10ex7-openflow/ex7.html">Lab 6. - Open Channel Flow Measurement</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../11ex8-backwater/ex8.html">Lab 7. - Water Surface Profiles: Backwater Curves</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../11ex8-backwater/ex8_sample_report-excel.html">Lab 8. - Sample Report (Spreadsheet Version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../11ex8-backwater/ex8_sample_report-python.html">Lab 8. - Sample Report (Python Version)</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="ex9.html">Lab 8. - Water Surface Profiles: Hydraulic Jump</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Laboratory 9 - Sample Report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex9_sample_calculations.html">Lab 9: Analysis Guidelines</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../14ex11-flownets/ex11.html">14. Lab 11 - Porous Media : Flow Nets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../abet_plan/abet_plan.html">Assessment Plan for ABET (6)</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fexperiments/12ex9-hydraulicjump/ex9_sample_report.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/experiments/12ex9-hydraulicjump/ex9_sample_report.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Laboratory 9 - Sample Report</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#title">Title</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#purpose">Purpose</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objective-s">Objective(s)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-acquisition">Data Acquisition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-analysis">Data Analysis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion-interpretation">Discussion/Interpretation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-records">Data Records</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#videos">Videos</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="laboratory-9-sample-report">
+<h1>Laboratory 9 - Sample Report<a class="headerlink" href="#laboratory-9-sample-report" title="Link to this heading">#</a></h1>
+<section id="title">
+<h2>Title<a class="headerlink" href="#title" title="Link to this heading">#</a></h2>
+</section>
+<section id="purpose">
+<h2>Purpose<a class="headerlink" href="#purpose" title="Link to this heading">#</a></h2>
+<p>Examine behavior in open channels, in particular determining Manning’s n for a portion of a channel, and cerating and observing the alternate and sequent depths in a hydraulic jump.</p>
+</section>
+<section id="objective-s">
+<h2>Objective(s)<a class="headerlink" href="#objective-s" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Validate the manufacturer calibration using a V-Notch Weir.</p></li>
+<li><p>Measure depth and flow over a rock bed (already in the flume) and determine Manning’s n for the rock bed and compare to literature values, and</p></li>
+<li><p>Create a hydraulic jump, stabilizing it, then measuring the alternate and sequent depths and comparing these to calculated values based on the discharge.</p></li>
+</ol>
+</section>
+<section id="data-acquisition">
+<h2>Data Acquisition<a class="headerlink" href="#data-acquisition" title="Link to this heading">#</a></h2>
+<p><strong>Part 1</strong>
+This part is to validate the flow calibration chart and equation.
+0. Set the slope to 1-percent.</p>
+<ol class="arabic simple">
+<li><p>Ensure flume tailgate is down.</p></li>
+<li><p>Close the red valves for both pumps.</p></li>
+<li><p>Start the pumps.</p></li>
+<li><p>Move the depth logger to the same elevation as the height of V notch and reset the value to zero.</p></li>
+<li><p>Make sure the manometer valves corresponding to the selected orifice(s) is(are) open.</p></li>
+<li><p>Ensure the manometers are free of air bubbles.</p></li>
+<li><p>Open the red valve(s) to let flow into the flume.</p></li>
+<li><p>Move the depth logger till it touches the top of the water level. Measure the height. Record this measurement.</p></li>
+<li><p>Record the manometer readings for each pump.</p></li>
+<li><p>Repeat the procedure for 4 different flowrates keeping the slope constant.  Use the red valves to adjust flowrates.</p></li>
+</ol>
+<p><strong>Part2</strong>
+This can be conducted with the weir in place</p>
+<ol class="arabic simple">
+<li><p>Move the depth logger to top of one of the rocks and reset the value to zero.</p></li>
+<li><p>Make sure the manometer valves corresponding to the selected orifice is/are open</p></li>
+<li><p>Ensure the manometers are free of air bubbles.</p></li>
+<li><p>Open the Orifice to let flow into the flume</p></li>
+<li><p>Move the depth logger till it touches the top of the water level. Measure the height</p></li>
+<li><p>Repeat the procedure for 2 other flowrates keep the slope constant</p></li>
+<li><p>Repeat the above steps for a total of 3 different <strong>slopes</strong></p></li>
+</ol>
+<p><strong>Part 3</strong>
+This part will create a stable hydraulic jump.  It is easiest to remove the weir.</p>
+<ol class="arabic simple">
+<li><p>Shut down the pumps, close the red valves, and remove the weir - everything else can be left as-is.</p></li>
+<li><p>Set the slope to 4-percent (its going to look steep, but the machine can handle it!)</p></li>
+<li><p>Start the pumps (you can try with just a single pump if you wish).</p></li>
+<li><p>Raise the tailgate a lot!</p></li>
+<li><p>Zero the depth gage to the channel bottom.</p></li>
+<li><p>Open the red valve(s) to start the flow.</p></li>
+<li><p>Raise the headgate to just above the water height.</p></li>
+<li><p>Lower the tailgate a little bit at a time - you will likely observe two jumps, one near the head gate and one after the rocks.  The stable one is the one at the head gate.</p></li>
+<li><p>Lower the headgate until it just touches the water surface - you are forcing supercritical depth at this location.  You should be able to create a stable jump about 0.5 to 1-foot from the head gate, and the water surface after the jump should be fairly established at the rocks.</p></li>
+<li><p>Record the manometer readings for the pump(s)</p></li>
+<li><p>Measure the flow depth befor the jump (halfway between the headgate and the jump should do). This is the alternate depth.</p></li>
+<li><p>Measure the flow depth after the jump where the surface waves have dissipated (probably at the rocks).  This is the sequent depth.</p></li>
+</ol>
+</section>
+<section id="data-analysis">
+<h2>Data Analysis<a class="headerlink" href="#data-analysis" title="Link to this heading">#</a></h2>
+<p><strong>Part 1</strong></p>
+<ol class="arabic simple">
+<li><p>Use the calibration chart provided to calculate the flowate based on the difference of the manometers’s readings.</p></li>
+<li><p>Use the V-Notch weir data to calculate the flowrate based on those measurements.</p></li>
+<li><p>Create a “Stage Discharge Plot” of “log of Flowrate (Manometer)”, Q (y-axis) ,”log of Flowrate (Weir)”, Q (y-axis)vs. “Depth” y (x-axis)</p></li>
+<li><p>Tabulate all results</p></li>
+</ol>
+<p><strong>Part 2</strong></p>
+<ol class="arabic simple">
+<li><p>For each flow depth (over the rock bed) calculate the wetted perimeter and hydraulic radius.</p></li>
+<li><p>Use the calibration chart provided to calculate the flowate based on the difference of the manometers’s readings.</p></li>
+<li><p>For each flowrate and depth calculate the Manning’s n. Make sure you are using consistent set of units.</p></li>
+<li><p>Calculate the mean and standard deviation of the computed Manning’s n.</p></li>
+<li><p>Create a plot of Flowrate, Q (y-axis) vs. <span class="math notranslate nohighlight">\(K_nAR^{2/3}S^{1/2}\)</span> (x-axis). The slope will be equal to 1/n. Compare this value obtained graphically with the mean value obtained from individual calculations</p></li>
+<li><p>Tabulate all results
+<strong>Part3</strong></p></li>
+</ol>
+<p><img alt="" src="../../_images/hydjumppicture.png" /></p>
+<ol class="arabic simple">
+<li><p>Compute the Froude Number upstream and downstream of the stable jump</p></li>
+<li><p>Using the flowrate from your calibration chart(s) determine the anticipated sequent depth downstream of the jump. You can use an on-line <a class="reference external" href="https://www.omnicalculator.com/physics/hydraulic-jump">hydraulic jump calculator</a> or the formula from your fluids textbook.</p></li>
+<li><p>Compare the computed result to the measured result.</p></li>
+</ol>
+</section>
+<section id="discussion-interpretation">
+<h2>Discussion/Interpretation<a class="headerlink" href="#discussion-interpretation" title="Link to this heading">#</a></h2>
+<p>Interpretation Questions (for Report)</p>
+<ol class="arabic simple">
+<li><p>The Manning’s coefficient for a bed rock channel flowing partially full is in the range of 0.035 - 0.050. How do your values compare to this reported range?</p></li>
+<li><p>Why is it important to know the channel bed material in a river or a stream?</p></li>
+<li><p>Many rivers and streams have submerged vegetation. How would these vegetation affect Manning’s n?</p></li>
+<li><p>What is the purpose of a Hydraulic Jump and where might it occur?</p></li>
+<li><p>Errors between experiment and theory have multiple sources. Which of the following do you think are most significant in your experiment, and why?</p></li>
+</ol>
+<ul class="simple">
+<li><p>inadequate theory (assumptions violated)</p></li>
+<li><p>errors in experimental measurement (instrument precision)</p></li>
+<li><p>calculation errors</p></li>
+</ul>
+</section>
+<section id="data-records">
+<h2>Data Records<a class="headerlink" href="#data-records" title="Link to this heading">#</a></h2>
+<p><strong>Part 1</strong>
+Some values are to be computed afterwards</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Trial</p></th>
+<th class="head text-right"><p><span class="math notranslate nohighlight">\(\Delta H\)</span>-Pump 1</p></th>
+<th class="head text-right"><p><span class="math notranslate nohighlight">\(\Delta H\)</span>-Pump 2</p></th>
+<th class="head text-right"><p><span class="math notranslate nohighlight">\(H_{weir}\)</span></p></th>
+<th class="head text-right"><p><span class="math notranslate nohighlight">\(S_0\)</span></p></th>
+<th class="head text-right"><p><span class="math notranslate nohighlight">\(Q_{chart}\)</span></p></th>
+<th class="head text-right"><p><span class="math notranslate nohighlight">\(Q_{weir}\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>1</p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>2</p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>3</p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>4</p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>5</p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Part 2</strong></p>
+<p>Some values are to be computed afterwards (if weir is removed, ignore that column).  Three different slopes!</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Trial</p></th>
+<th class="head text-right"><p><span class="math notranslate nohighlight">\(\Delta H\)</span>-Pump 1</p></th>
+<th class="head text-right"><p><span class="math notranslate nohighlight">\(\Delta H\)</span>-Pump 2</p></th>
+<th class="head text-right"><p><span class="math notranslate nohighlight">\(H_{weir}\)</span></p></th>
+<th class="head text-right"><p><span class="math notranslate nohighlight">\(S_0\)</span></p></th>
+<th class="head text-right"><p><span class="math notranslate nohighlight">\(Q_{chart}\)</span></p></th>
+<th class="head text-right"><p><span class="math notranslate nohighlight">\(Q_{weir}\)</span></p></th>
+<th class="head text-right"><p><span class="math notranslate nohighlight">\(P_W\)</span></p></th>
+<th class="head text-right"><p><span class="math notranslate nohighlight">\(R_h\)</span></p></th>
+<th class="head text-right"><p><span class="math notranslate nohighlight">\(n\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>1</p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>2</p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>3</p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Trial</p></th>
+<th class="head text-right"><p><span class="math notranslate nohighlight">\(\Delta H\)</span>-Pump 1</p></th>
+<th class="head text-right"><p><span class="math notranslate nohighlight">\(\Delta H\)</span>-Pump 2</p></th>
+<th class="head text-right"><p><span class="math notranslate nohighlight">\(H_{weir}\)</span></p></th>
+<th class="head text-right"><p><span class="math notranslate nohighlight">\(S_0\)</span></p></th>
+<th class="head text-right"><p><span class="math notranslate nohighlight">\(Q_{chart}\)</span></p></th>
+<th class="head text-right"><p><span class="math notranslate nohighlight">\(Q_{weir}\)</span></p></th>
+<th class="head text-right"><p><span class="math notranslate nohighlight">\(P_W\)</span></p></th>
+<th class="head text-right"><p><span class="math notranslate nohighlight">\(R_h\)</span></p></th>
+<th class="head text-right"><p><span class="math notranslate nohighlight">\(n\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>1</p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>2</p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>3</p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Trial</p></th>
+<th class="head text-right"><p><span class="math notranslate nohighlight">\(\Delta H\)</span>-Pump 1</p></th>
+<th class="head text-right"><p><span class="math notranslate nohighlight">\(\Delta H\)</span>-Pump 2</p></th>
+<th class="head text-right"><p><span class="math notranslate nohighlight">\(H_{weir}\)</span></p></th>
+<th class="head text-right"><p><span class="math notranslate nohighlight">\(S_0\)</span></p></th>
+<th class="head text-right"><p><span class="math notranslate nohighlight">\(Q_{chart}\)</span></p></th>
+<th class="head text-right"><p><span class="math notranslate nohighlight">\(Q_{weir}\)</span></p></th>
+<th class="head text-right"><p><span class="math notranslate nohighlight">\(P_W\)</span></p></th>
+<th class="head text-right"><p><span class="math notranslate nohighlight">\(R_h\)</span></p></th>
+<th class="head text-right"><p><span class="math notranslate nohighlight">\(n\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>1</p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>2</p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>3</p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Part 3</strong>
+This will involve a single experiment, take a photograph of your jump and include it in the report.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-right"><p><span class="math notranslate nohighlight">\(\Delta H\)</span>-Pump 1</p></th>
+<th class="head text-right"><p><span class="math notranslate nohighlight">\(\Delta H\)</span>-Pump 2</p></th>
+<th class="head text-right"><p><span class="math notranslate nohighlight">\(S_0\)</span></p></th>
+<th class="head text-right"><p><span class="math notranslate nohighlight">\(Q_{chart}\)</span></p></th>
+<th class="head text-right"><p><span class="math notranslate nohighlight">\(h_{up}\)</span></p></th>
+<th class="head text-right"><p><span class="math notranslate nohighlight">\(h_{down}\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="http://54.243.252.9/ce-3105-webroot/pdf-source/Experiment8OpenChannelHydraulics.pdf">Laboratory 8 circa 2021</a></p></li>
+<li><p><a class="reference external" href="http://54.243.252.9/engr-1330-webroot/engr1330notes/_build/html/examples/8statistical/1descriptivestatistics.html">Descriptive Statistics</a></p></li>
+<li><p><a class="reference external" href="http://54.243.252.9/engr-1330-webroot/engr1330notes/_build/html/examples/7graphing/example05.html">Plotting Data</a></p></li>
+<li><p><a class="reference external" href="http://54.243.252.9/engr-1330-webroot/engr1330notes/_build/html/examples/10datamodels/datamodels.html">Fitting Data Models</a></p></li>
+<li><p><a class="reference external" href="https://mech.at.ua/HolmanICS.pdf">Holman, J.P., (2012) Experimental Methods for Engineers, 8th Ed. (Chapters 1-3)</a></p></li>
+<li><p><a class="reference external" href="https://mech.at.ua/HolmanICS.pdf">Holman, J.P., (2012) Experimental Methods for Engineers, 8th Ed. (Chapter 15 Report Writing)</a></p></li>
+<li><p><a class="reference external" href="https://siris.co.uk/v-notch-weir-design-how-does-it-work/">V-Notch Weir Theory</a></p></li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Hydraulic_jump">Hydraulic Jump Theory</a></p></li>
+<li><p><a class="reference external" href="https://www.omnicalculator.com/physics/hydraulic-jump">Hydraulic Jump Calculator</a></p></li>
+<li><p><a class="reference external" href="http://ponce.sdsu.edu/onlineveenotchdescription.html">V-Notch Weir Calculator</a></p></li>
+</ol>
+</section>
+<section id="videos">
+<h2>Videos<a class="headerlink" href="#videos" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=_3ZBN_Ec9q4">Laboratory 8 Video by Dr. Uddameri</a></p></li>
+</ol>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./experiments/12ex9-hydraulicjump"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="ex9.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Lab 8. - Water Surface Profiles: Hydraulic Jump</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="ex9_sample_calculations.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Lab 9: Analysis Guidelines</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#title">Title</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#purpose">Purpose</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objective-s">Objective(s)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-acquisition">Data Acquisition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-analysis">Data Analysis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion-interpretation">Discussion/Interpretation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-records">Data Records</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#videos">Videos</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Theodore G. Cleveland
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

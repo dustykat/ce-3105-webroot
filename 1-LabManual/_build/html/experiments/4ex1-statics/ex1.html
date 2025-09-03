@@ -1,0 +1,1439 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Lab 1 - Density, Viscosity, Bouyancy, Forces &#8212; Mechanics of Fluids Laboratory</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'experiments/4ex1-statics/ex1';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Laboratory 1 Sample Report" href="ex1_sample_report.html" />
+    <link rel="prev" title="Report Evaluation Rubric" href="../3experimentation/lab-report-rubric.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo2.png" class="logo__image only-light" alt="Mechanics of Fluids Laboratory - Home"/>
+    <script>document.write(`<img src="../../_static/logo2.png" class="logo__image only-dark" alt="Mechanics of Fluids Laboratory - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    CE 3105 Mechanics of Fluids Laboratory
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../0syllabus/ce-3105-syllabus-2025-3.html">Syllabus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1safety/safety.html">0.0 Safety Considerations</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../3experimentation/experimentation.html">Lab 0 - Role of Engineering Experimentation</a></li>
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Lab 1 - Density, Viscosity, Bouyancy, Forces</a></li>
+
+
+
+<li class="toctree-l1 has-children"><a class="reference internal" href="../5ex2-pipeflow/ex2.html">Lab 2 - Flow Measurement in Conduits</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../5ex2-pipeflow/ex2_sample_report.html">Lab 2. Sample Report</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../7ex4-pipeloss/ex4.html">Lab 3 - Friction Losses in Pipes and Fittings</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../7ex4-pipeloss/ex4_sample_report.html">Laboratory 4 Sample Report</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../8ex5-momentum/ex5.html">Lab 4 - Momentum Transfer</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../8ex5-momentum/ex5_sample_report.html">Laboratory 5 Sample Report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../8ex5-momentum/ex5_sample_calculations.html">Lab 5. Sample Calculations</a></li>
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../9ex6-pumps/ex6A.html">Lab 5 - Bilge Pump Curve</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../9ex6-pumps/ex6A_samplereport.html">Lab 6A Sample Report</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../10ex7-openflow/ex7.html">Lab 6. - Open Channel Flow Measurement</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../11ex8-backwater/ex8.html">Lab 7. - Water Surface Profiles: Backwater Curves</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../11ex8-backwater/ex8_sample_report-excel.html">Lab 8. - Sample Report (Spreadsheet Version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../11ex8-backwater/ex8_sample_report-python.html">Lab 8. - Sample Report (Python Version)</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../12ex9-hydraulicjump/ex9.html">Lab 8. - Water Surface Profiles: Hydraulic Jump</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../12ex9-hydraulicjump/ex9_sample_report.html">Laboratory 9 - Sample Report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../12ex9-hydraulicjump/ex9_sample_calculations.html">Lab 9: Analysis Guidelines</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../14ex11-flownets/ex11.html">14. Lab 11 - Porous Media : Flow Nets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../abet_plan/abet_plan.html">Assessment Plan for ABET (6)</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fexperiments/4ex1-statics/ex1.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/experiments/4ex1-statics/ex1.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Lab 1 - Density, Viscosity, Bouyancy, Forces</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Lab 1 - Density, Viscosity, Bouyancy, Forces</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#readings">Readings</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#videos">Videos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#outline">Outline</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#material-properties">4.1 Material Properties</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mass-density">Mass Density</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#measuring-density-of-fluids">Measuring Density of Fluids</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#importance-of-density-in-fluid-mechanics">Importance of Density in Fluid Mechanics</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#specific-weight">Specific Weight</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#specific-gravity">Specific Gravity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#viscosity">Viscosity</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dynamic-viscosity-mu">Dynamic Viscosity (<span class="math notranslate nohighlight">\(\mu\)</span>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kinematic-viscosity-nu">Kinematic Viscosity (<span class="math notranslate nohighlight">\(\nu\)</span>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#viscosity-details">Viscosity Details</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#measuring-viscosity">Measuring Viscosity</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#importance-of-viscosity-in-fluid-mechanics">Importance of Viscosity in Fluid Mechanics</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#bouyancy">4.2 Bouyancy</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#archimedes-principle">Archimedes’ Principle</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#forces-on-submerged-plane-surfaces">4.3 Forces on Submerged Plane Surfaces</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#laboratory-objectives">Laboratory Objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experimental-setup-s">Experimental Setup(s)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fluid-properties">Fluid Properties</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quadrant-balance">Quadrant Balance</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deliverables">Deliverables</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="lab-1-density-viscosity-bouyancy-forces">
+<h1>Lab 1 - Density, Viscosity, Bouyancy, Forces<a class="headerlink" href="#lab-1-density-viscosity-bouyancy-forces" title="Link to this heading">#</a></h1>
+<div class="admonition-course-website admonition">
+<p class="admonition-title">Course Website</p>
+<p><a class="reference external" href="http://54.243.252.9/ce-3105-webroot/">http://54.243.252.9/ce-3105-webroot/</a></p>
+</div>
+<section id="readings">
+<h2>Readings<a class="headerlink" href="#readings" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="http://54.243.252.9/ce-3105-webroot/2-Exercises/laboratory1/EFM-2.pdf">Engineering Fluid Mechanics - Chapter 2</a></p></li>
+<li><p><a class="reference external" href="http://54.243.252.9/ce-3105-webroot/ce3105notes/lessons/laboratory2/EFM-3.pdf">Engineering Fluid Mechanics - Chapter 3</a></p></li>
+<li><p><a class="reference external" href="http://54.243.252.9/ce-3105-webroot/2-Exercises/laboratory1/EFM-22.pdf">Engineering Fluid Mechanics - Chapter 11 (Cd for spheres, p.414)</a></p></li>
+<li><p><a class="reference external" href="https://mech.at.ua/HolmanICS.pdf">Holman, J.P. (2012) <em>Experimental Methods for Engineers</em>, 8th Ed. (Chapters 1-3)</a></p></li>
+<li><p><a class="reference external" href="http://54.243.252.9/ce-3105-webroot/pdf-source/Experiment2Archimedes.pdf">Forces on Planes, Archimedes Principle (Laboratory 2 circa 2020</a></p></li>
+<li><p><a class="reference external" href="http://54.243.252.9/ce-3105-webroot/7-user-manuals/H314-HydrostaticsAndPropertiesofFluids.pdf">H314 Hydrostatic Bench User Manual</a></p></li>
+</ol>
+</section>
+<section id="videos">
+<h2>Videos<a class="headerlink" href="#videos" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=WwV-azCJWis">Laboratory 1 Instructional Video by Dr. Uddameri</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=_0zJg4kfYwY">Laboratory 2 Instructional Video by Dr. Uddameri</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=NJhxwlVKong">Measuring Liquid Density (YouTube)</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/shorts/DsYuumidARg">Measuring Viscosity Falling Sphere (YouTube)</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=_p-hwElkrlk">Archimedes’ Principle: Made EASY | Physics (YouTube)</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=wChr0hCga5g">Archimedes Principle: Explained in Really Simple Words (YouTube)</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=g6aErhwFXsg">Archimedes Principle: Demonstrated (YouTube)</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=AQGbqnFhr4E">Measure Density/Specific Gravity Easily Using Buoyancy Force</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=ZsdceKBWOzs">Determination of Hydrostatic force of partially submerged body || TecQuipment</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=suvT4gQsH9Y">HB012 HYDROSTATIC PRESSURE, Tilting Submerged Quadrant</a></p></li>
+</ol>
+</section>
+<section id="outline">
+<h2>Outline<a class="headerlink" href="#outline" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Fluid properties; density, specific weight, viscosity</p></li>
+<li><p>Bouyancy; Archimedes’ Principle</p></li>
+<li><p>Hydrostatic Forces on Submerged Planar Surfaces</p></li>
+<li><p>Laboratory Objectives</p></li>
+</ol>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="material-properties">
+<h1>4.1 Material Properties<a class="headerlink" href="#material-properties" title="Link to this heading">#</a></h1>
+<p>A fluid has certain characteristics by which its physical condition may be described. These characteristics are called properties of the fluid.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Properties help describe the “state” of the system under study.  A system is whatever is being studied or analyzed, anything not part of the system is part of the surroundings.  The boundary is the imagined surface that separates the system from its surroundings.</p>
+<p>Systems are described by specifying values that characterize the system; these values are called properties.  A <strong>property</strong> is a measurable characteristic of a system that depends only on the present conditions within the system (called the <strong>state</strong> of the system). The state of a system means the conditions of the system as defined by specifying its properties.</p>
+<p>Properties can be organized into categories, one of which is <strong>material properties</strong>; the properties explored in this laboratory are selected material properties of some liquids</p>
+</div>
+<section id="mass-density">
+<h2>Mass Density<a class="headerlink" href="#mass-density" title="Link to this heading">#</a></h2>
+<p>Mass density, or just plain density, denoted by the symbol <span class="math notranslate nohighlight">\(\rho\)</span>, is a fundamental property of all substances, including fluids.</p>
+<p>It is defined as the mass per unit volume of a material and can be expressed as an equation in words:</p>
+<div class="math notranslate nohighlight">
+\[\text{Density} = \frac{\text{Mass of the Fluid}}{\text{Volume occupied by the fluid}}\]</div>
+<p>Or using Greek letters, mathematically as:</p>
+<div class="math notranslate nohighlight">
+\[\rho = \frac{M}{V}\]</div>
+<p>Units: <span class="math notranslate nohighlight">\(\mathrm{kg/m^3}\)</span> (SI), <span class="math notranslate nohighlight">\(\mathrm{lbm/ft^3}\)</span> (FPS).</p>
+<p>In the context of fluids, density provides critical insight into how fluids behave under various conditions, such as flow through pipes, buoyancy, and pressure variations with depth.</p>
+<p>For instance, the density of water at standard temperature and pressure (STP) is approximately <span class="math notranslate nohighlight">\(1000~kg/m^3\)</span>, while air has a much lower density of about <span class="math notranslate nohighlight">\(1.2~kg/m^3\)</span>.</p>
+<section id="measuring-density-of-fluids">
+<h3>Measuring Density of Fluids<a class="headerlink" href="#measuring-density-of-fluids" title="Link to this heading">#</a></h3>
+<p>Practical methods to measure the density of a liquid include:</p>
+<p><strong>Gravimetric Method</strong></p>
+<p>This method involves directly measuring the mass and volume of a liquid sample and using the formula <span class="math notranslate nohighlight">\(\rho = \frac{M}{V}\)</span>.</p>
+<p>Steps:</p>
+<ul class="simple">
+<li><p>Weigh an empty container on a precision scale and record its mass.</p></li>
+<li><p>Fill the container with the fluid and weigh it again to determine the mass of the fluid (<span class="math notranslate nohighlight">\(M\)</span>).</p></li>
+<li><p>Measure the volume (<span class="math notranslate nohighlight">\(V\)</span>) of the fluid using a graduated cylinder or volumetric flask.</p></li>
+<li><p>Calculate the density.</p></li>
+</ul>
+<p><em>Example:</em></p>
+<p>If <span class="math notranslate nohighlight">\(M=0.25 kg\)</span> and <span class="math notranslate nohighlight">\(V=0.00025 m^3\)</span>, the density is:</p>
+<p><span class="math notranslate nohighlight">\(\rho=\frac{0.250~kg}{0.00025~m^3}=1000 kg/m3\)</span></p>
+<p><strong>Hydrometer Method</strong></p>
+<p>A hydrometer is a floating instrument calibrated to measure fluid density directly.</p>
+<p>Steps:</p>
+<ul class="simple">
+<li><p>Submerge the hydrometer in the fluid.</p></li>
+<li><p>Read the density from the scale where the hydrometer’s surface level aligns with the fluid.</p></li>
+</ul>
+<p>This method is especially useful for liquids like alcohol, brines, and oils.</p>
+<p><strong>Pycnometer Method</strong></p>
+<p>A pycnometer is a specialized container with a known volume used for highly precise density measurements.</p>
+<p>Steps:</p>
+<ul class="simple">
+<li><p>Weigh the empty, dry pycnometer.</p></li>
+<li><p>Fill it with the fluid and weigh it again to determine the mass of the fluid.</p></li>
+<li><p>Calculate the density using the known volume of the pycnometer.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The pycnometer is clearly a gravimetric technique, but eliminates the need to measure the volume, as the device itself performs this measurement directly</p>
+</div>
+</section>
+<section id="importance-of-density-in-fluid-mechanics">
+<h3>Importance of Density in Fluid Mechanics<a class="headerlink" href="#importance-of-density-in-fluid-mechanics" title="Link to this heading">#</a></h3>
+<p>Understanding density is critical for:</p>
+<ul class="simple">
+<li><p>Buoyancy Analysis: The density difference between a fluid and a submerged object determines whether it floats or sinks.</p></li>
+<li><p>Hydrostatics: Density directly influences the pressure variation in a fluid column, P=ρghP=ρgh.</p></li>
+<li><p>Flow Dynamics: Density is a key parameter in determining the Reynolds number, which predicts flow behavior (laminar or turbulent).</p></li>
+</ul>
+<div class="admonition-temperature-matters admonition">
+<p class="admonition-title">Temperature Matters</p>
+<p>At a given temperature and pressure the density of a given liquid is constant. Let us say we keep pouring some liquid into a beaker, as the mass increases so does the volume whereas density, which is the ratio of mass to volume, stays constant.</p>
+<p>As such all experimental determinations of density require that the temperature of the liquid be measured.</p>
+</div>
+<p>Accurately measuring and understanding fluid density, informs engineers so they can design systems involving fluid transport, storage, and control.</p>
+</section>
+</section>
+<section id="specific-weight">
+<h2>Specific Weight<a class="headerlink" href="#specific-weight" title="Link to this heading">#</a></h2>
+<p><strong>Specific Weight</strong> is the <strong>weight</strong> per unit volume of the material.
+Remember that weight is a force obtained by multiplying mass and gravitational acceleration (g).</p>
+<p>As an equation in words:</p>
+<div class="math notranslate nohighlight">
+\[\text{Specific Weight} = \frac{\text{weight}}{\text{volume}}\]</div>
+<p>or more conventionally</p>
+<div class="math notranslate nohighlight">
+\[\gamma = \frac{W}{V} = \frac{m \cdot g}{V}\]</div>
+<p>At a given temperature, pressure and location, the specific weight of a fluid is constant. However, the acceleration due to gravity varies slightly with location. The specific weight of a fluid is slightly lower at the poles than at the equator even when the temperature and pressure of the fluid are the same at both locations.</p>
+</section>
+<section id="specific-gravity">
+<h2>Specific Gravity<a class="headerlink" href="#specific-gravity" title="Link to this heading">#</a></h2>
+<p><strong>Specific Gravity</strong> is another important fluid property that is defined as the ratio of the density of a fluid to the density of water at the same temperature.</p>
+<p>Clearly, the specific gravity is equal to 1.0 for water. Fluids denser than water have a specific gravity greater than 1 while those lighter than water have specific gravity less than 1.</p>
+<div class="math notranslate nohighlight">
+\[SG = \frac{\rho_s}{\rho_{H2O}} \]</div>
+<p>Being a ratio of two densities, specific gravity is a dimensionless quantity. Specific gravity can tell us whether an object will float or sink in water. Specific Gravity also provides consistency to compare fluids across different units.</p>
+</section>
+<section id="viscosity">
+<h2>Viscosity<a class="headerlink" href="#viscosity" title="Link to this heading">#</a></h2>
+<p>Viscosity is a measure of a fluid’s resistance to deformation or flow under an applied shear force. It quantifies the internal friction between adjacent layers of fluid that are moving at different velocities. Viscosity plays a central role in fluid mechanics as it affects flow characteristics, energy losses, and the behavior of fluids in engineering systems.</p>
+<p>There are two primary types of viscosity:</p>
+<section id="dynamic-viscosity-mu">
+<h3>Dynamic Viscosity (<span class="math notranslate nohighlight">\(\mu\)</span>)<a class="headerlink" href="#dynamic-viscosity-mu" title="Link to this heading">#</a></h3>
+<p>Dynamic viscosity measures the tangential force per unit area (ττ) required to move one fluid layer relative to another at a unit velocity while maintaining a unit distance separation. It follows Newton’s law of viscosity:</p>
+<p><span class="math notranslate nohighlight">\(\tau = \mu \frac{\partial y}{\partial u}\)</span></p>
+<p>Where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\tau\)</span>: is the applied shear stress (<span class="math notranslate nohighlight">\(Pa\)</span>)</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mu\)</span>: is the dynamic viscosity (<span class="math notranslate nohighlight">\(Pa \cdot s\)</span>)</p></li>
+<li><p><span class="math notranslate nohighlight">\(\frac{\partial y}{\partial u}\)</span>: is the velocity gradient perpendicular to the flow.</p></li>
+</ul>
+</section>
+<section id="kinematic-viscosity-nu">
+<h3>Kinematic Viscosity (<span class="math notranslate nohighlight">\(\nu\)</span>)<a class="headerlink" href="#kinematic-viscosity-nu" title="Link to this heading">#</a></h3>
+<p>Kinematic viscosity is the ratio of dynamic viscosity to fluid density:</p>
+<p><span class="math notranslate nohighlight">\(\nu = \frac{\mu}{\rho}\)</span></p>
+<p>Units: <span class="math notranslate nohighlight">\(m^2/s\)</span> in SI.</p>
+</section>
+<section id="viscosity-details">
+<h3>Viscosity Details<a class="headerlink" href="#viscosity-details" title="Link to this heading">#</a></h3>
+<p><strong>Viscosity</strong> quantifies the ability of the fluid to resist shear stress (i.e.,
+internal resistance). One can also conceptualize viscosity as the frictional
+forces that exist between two layers of fluid that are in relative motion.</p>
+<p><strong>Dynamic Viscosity</strong> measures the tangential force per unit area required to move one horizonal plane relative to another at a unit velocity when maintaining unit distance separation. The shear stress applied causes the fluid to flow (or flow causes stress).</p>
+<p>Newton’s law of viscosity states that the shear stress, <span class="math notranslate nohighlight">\(\tau\)</span>, is proportional to the velocity gradient (across the flow flow), <span class="math notranslate nohighlight">\(\frac{du}{dy}\)</span> (see Figure 1).
+Dynamic viscosity ,<span class="math notranslate nohighlight">\(\mu\)</span>, is the constant of proportionality.</p>
+<figure align="center">
+<!--<img src="./Hydropower.png" width="300" >-->
+<img src="http://54.243.252.9/ce-3105-webroot/2-Exercises/laboratory1/shearstress.png" width="300" >
+<figcaption>Figure 1: Shear stress conceptual diagram </figcaption>
+</figure>
+<p>Newton’s law expressed as an equation is:
+$<span class="math notranslate nohighlight">\(\tau = \mu \cdot \frac{du}{dy} \)</span>$</p>
+<p>thus dynamic viscosity is the ratio of shear force to the velocity gradient. It has units of <span class="math notranslate nohighlight">\( Pa \cdot s = \frac{kg \cdot m}{s^2} \cdot \frac{s}{m^2}\)</span>.</p>
+<p>In cgs system the units of dynamic viscosity is Poise (or more commonly centipoise, cP).</p>
+<p>In US Customary units we express viscosity as <span class="math notranslate nohighlight">\(\frac{lbf}{ft \cdot s}\)</span>.</p>
+<p>In practical fluid mechanics, we often encounter the ratio of dynamic viscosity to density. This term is the <strong>kinematic viscosity</strong>.</p>
+<p>Expressed as an equation in commonly used notation:</p>
+<div class="math notranslate nohighlight">
+\[ \nu = \frac{\mu}{\rho}\]</div>
+<p>The kinematic viscosity has SI units of $<span class="math notranslate nohighlight">\(\frac{m^2}{s}\)</span>$.</p>
+<p>A useful method to determine viscosity of liquids is to record the rate at which a
+sphere will fall through a liquid of interest.
+Under equilibrium conditions, the frictional forces experienced by the sphere will be equal to its weight. The sphere will fall at a constant speed known as the terminal velocity.
+The phenomenon is called Stokes law (or Stokes flow).</p>
+<p>A simple force balance is depicted in Figure 2, where the bouyant force and drag force are equal to the weight of the sphere.</p>
+<figure align="center">
+<!--<img src="./Hydropower.png" width="300" >-->
+<img src="http://54.243.252.9/ce-3105-webroot/2-Exercises/laboratory1/sphereforces.png" width="300" >
+<figcaption>Figure 2: Force balance on a sphere falling at constant velocity </figcaption>
+</figure>
+<p>Stokes flow occurs at pretty low Reynolds numbers so the laminar correlation for the drag coefficient is appropriate</p>
+<div class="math notranslate nohighlight">
+\[ c_d = \frac{24}{Re}+\frac{4}{\sqrt{Re}}+0.4 \]</div>
+<p>If the Reynolds number is less than <span class="math notranslate nohighlight">\(\frac{1}{2}\)</span> the drag coefficient is <span class="math notranslate nohighlight">\(c_d = \frac{24}{Re}\)</span>, using this representation of drag the force balance for the sphere allows us to solve for velocity, <span class="math notranslate nohighlight">\(u\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[ u = \frac{g \cdot d^2}{18 \nu}(\sigma-\rho)\]</div>
+<p>where, <em>g</em> is the acceleration due to gravity, <em>d</em> is the diameter of the sphere,
+<span class="math notranslate nohighlight">\(\nu\)</span> is the kinematic viscosity, <span class="math notranslate nohighlight">\(\sigma\)</span> is the density of the sphere, <span class="math notranslate nohighlight">\(\rho\)</span> is the density of the fluid.</p>
+<p>We can apply the formula to get an idea of how fast to expect a sphere to fall if Stokes flow holds.  In the experiment we will use Glycerine as the liquid phase, and small steel spheres the largest is about 2.5 millimeters</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Estimate Sphere Falling Speed assuming laminar (Stokes) flow</span>
+
+<span class="c1"># --- Inputs ---</span>
+<span class="n">gravity</span> <span class="o">=</span> <span class="mf">9.81</span>  <span class="c1"># m/s^2</span>
+<span class="n">viscosity</span> <span class="o">=</span> <span class="mf">15.103</span>  <span class="c1"># Ns/m^2</span>
+<span class="n">density_liquid</span> <span class="o">=</span> <span class="p">(</span><span class="mf">69.5</span> <span class="o">/</span> <span class="mi">50</span><span class="p">)</span> <span class="o">*</span> <span class="mi">1000</span> <span class="o">*</span> <span class="mi">1000</span>  <span class="c1"># kg/m^3</span>
+<span class="n">density_sphere</span> <span class="o">=</span> <span class="mf">11.350</span> <span class="o">*</span> <span class="mi">1000</span> <span class="o">*</span> <span class="mi">1000</span>  <span class="c1"># kg/m^3</span>
+<span class="n">diameter</span> <span class="o">=</span> <span class="mf">0.0025</span>  <span class="c1"># meters (nominal 2.5 mm sphere)</span>
+
+<span class="c1"># --- Print Inputs ---</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;INPUTS:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Gravitational acceleration = </span><span class="si">{</span><span class="n">gravity</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> m/s^2&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Dynamic viscosity of liquid = </span><span class="si">{</span><span class="n">viscosity</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> Ns/m^2&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Density of liquid = </span><span class="si">{</span><span class="n">density_liquid</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2"> kg/m^3&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Density of sphere = </span><span class="si">{</span><span class="n">density_sphere</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2"> kg/m^3&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Sphere diameter = </span><span class="si">{</span><span class="n">diameter</span><span class="o">*</span><span class="mi">1000</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> mm&quot;</span><span class="p">)</span>
+
+<span class="c1"># --- Computation ---</span>
+<span class="n">upper_support_terminal_speed</span> <span class="o">=</span> <span class="p">(</span><span class="n">gravity</span> <span class="o">*</span> <span class="n">diameter</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">density_sphere</span> <span class="o">-</span> <span class="n">density_liquid</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mf">18.0</span> <span class="o">*</span> <span class="n">viscosity</span><span class="p">)</span>
+
+<span class="c1"># --- Output ---</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">OUTPUT:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Estimated terminal speed (Stokes flow) = </span><span class="si">{</span><span class="n">upper_support_terminal_speed</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">1000</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> mm/s&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INPUTS:
+  Gravitational acceleration = 9.81 m/s^2
+  Dynamic viscosity of liquid = 15.103 Ns/m^2
+  Density of liquid = 1390000.0 kg/m^3
+  Density of sphere = 11350000.0 kg/m^3
+  Sphere diameter = 2.50 mm
+
+OUTPUT:
+  Estimated terminal speed (Stokes flow) = 2246.325 mm/s
+</pre></div>
+</div>
+</div>
+</div>
+<p>So using the above script we conclude that we should be able to make measurements for spheres as large as 25 mm, using a stopwatch and visual observation, our spheres are quite a bit smaller, so we should have no issues.</p>
+</section>
+<section id="measuring-viscosity">
+<h3>Measuring Viscosity<a class="headerlink" href="#measuring-viscosity" title="Link to this heading">#</a></h3>
+<p>Several methods can be used to measure viscosity. In this laboratory, we will use on Stoke’s law due to its feasibility, but additional methods are included for context.</p>
+<p><strong>Stoke’s Law (Falling Sphere Method)</strong></p>
+<p>Principle: A small sphere is dropped into a fluid, and its terminal velocity (<span class="math notranslate nohighlight">\(u\)</span>) is recorded. Under terminal velocity conditions, the drag force equals the sum of buoyant and gravitational forces. From Stoke’s law, the dynamic viscosity is calculated as:</p>
+<p><span class="math notranslate nohighlight">\(\mu=\frac{2r^2(\rho_s−\rho_f)g}{9u}\)</span></p>
+<p>Where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(r\)</span>: Sphere radius (mm)</p></li>
+<li><p><span class="math notranslate nohighlight">\(\rho_s,\rho_f\)</span>: Densities of the sphere and fluid (<span class="math notranslate nohighlight">\(kg/m^3\)</span>)</p></li>
+<li><p><span class="math notranslate nohighlight">\(g\)</span>: Gravitational acceleration (<span class="math notranslate nohighlight">\(m/s^2\)</span>)</p></li>
+<li><p><span class="math notranslate nohighlight">\(u\)</span>: Terminal velocity (<span class="math notranslate nohighlight">\(m/s\)</span>)</p></li>
+</ul>
+<p>Setup: Use a tall column of fluid, small spheres, and a stopwatch to measure the sphere’s falling time over a known distance.</p>
+<p><strong>Capillary Tube Viscometer</strong></p>
+<p>Principle: Measures the time (<span class="math notranslate nohighlight">\(t\)</span>) it takes for a fluid to flow through a capillary under gravity or applied pressure. Viscosity is calculated as:</p>
+<p><span class="math notranslate nohighlight">\(\mu=K \cdot t\)</span></p>
+<p>Where <span class="math notranslate nohighlight">\(K\)</span> is a calibration constant based on the tube’s geometry and fluid properties.</p>
+<p>Use: Common for low-viscosity fluids like water and oils.</p>
+<p><strong>Rotational Viscometer</strong></p>
+<ul class="simple">
+<li><p>Principle: Measures the torque required to rotate an object (e.g., spindle or cylinder) in a fluid at a constant speed. The torque is proportional to the fluid’s viscosity.</p></li>
+<li><p>Use: Suitable for measuring a wide range of viscosities, including non-Newtonian fluids.</p></li>
+</ul>
+<p><strong>Inclined Plane Method</strong></p>
+<ul class="simple">
+<li><p>Principle: A known volume of liquid is released on an inclined plane, and the time it takes to travel a set distance is recorded. The viscosity is inferred from the relationship between time, fluid properties, and inclination angle.</p></li>
+<li><p>Use: While less precise, this method is a feasible alternative for determining relative viscosities in a laboratory.</p></li>
+</ul>
+</section>
+<section id="importance-of-viscosity-in-fluid-mechanics">
+<h3>Importance of Viscosity in Fluid Mechanics<a class="headerlink" href="#importance-of-viscosity-in-fluid-mechanics" title="Link to this heading">#</a></h3>
+<p>Viscosity influences several critical aspects of fluid behavior, including:</p>
+<ul class="simple">
+<li><p>Energy Losses: Higher viscosity increases resistance to flow, leading to greater energy dissipation.</p></li>
+<li><p>Laminar and Turbulent Flow: The Reynolds number, which predicts flow regimes, depends on viscosity.</p></li>
+<li><p>Practical Applications: From lubrication in machinery to fluid transport in pipelines, viscosity is a key parameter.</p></li>
+</ul>
+<div class="admonition-temperature-matters admonition">
+<p class="admonition-title">Temperature Matters</p>
+<p>Viscosity is strongly temperature-dependent. Consider how honey flows more easily when warmed compared to when it’s at room temperature or chilled. Similarly, engine oil thickens in cold weather, making it harder for car engines to start.</p>
+<p>As such, all experimental determinations of viscosity require that the temperature of the liquid be measured.</p>
+</div>
+<p>By accurately measuring viscosity, engineers can design efficient systems that minimize losses and optimize performance. In this lab, we will use Stoke’s law to measure the viscosity of different fluids, but the insights extend to various industrial and natural applications.</p>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="bouyancy">
+<h1>4.2 Bouyancy<a class="headerlink" href="#bouyancy" title="Link to this heading">#</a></h1>
+<p>Buoyancy is the tendency of an object to float or rise when placed in a fluid (liquid or gas). This phenomenon is the result of a vertical force called the buoyant force, which acts in the direction opposite to gravity. Understanding buoyancy helps explain why objects feel lighter in water, why some things float while others sink, and how engineers design ships, submarines, and even hot air balloons.</p>
+<p>The buoyant force originates from pressure differences in the surrounding fluid. Since pressure increases with depth, the pressure on the bottom surface of a submerged object is always greater than on the top surface. This imbalance in pressure results in a net upward force—the buoyant force.</p>
+<p>Whether an object floats, sinks, or remains neutrally buoyant depends on the relationship between the object’s weight and the buoyant force:</p>
+<ul class="simple">
+<li><p>Floats if the buoyant force is greater than the object’s weight.</p></li>
+<li><p>Sinks if the buoyant force is less than the object’s weight.</p></li>
+<li><p>Suspends or remains neutrally buoyant if the buoyant force equals the object’s weight.</p></li>
+</ul>
+<p>In simple terms:</p>
+<ul class="simple">
+<li><p>Less dense objects float.</p></li>
+<li><p>More dense objects sink.</p></li>
+</ul>
+<p>Objects with equal density to the fluid will hover at a constant depth.</p>
+<p>This principle is not only foundational in fluid mechanics but also in fields such as:</p>
+<ul class="simple">
+<li><p>Civil engineering: understanding forces on submerged structures.</p></li>
+<li><p>Naval architecture: ensuring stability of floating vessels.</p></li>
+<li><p>Biomedical engineering: designing implants or devices that behave predictably in bodily fluids.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A common misconception is that only floating objects experience buoyancy. In fact, all submerged objects—floating or not—experience a buoyant force, even if it’s not enough to prevent sinking. That’s why people feel lighter in a swimming pool—the buoyant force supports part of their weight.</p>
+</div>
+<p>Understanding buoyancy not only explains everyday observations but also provides a tool to measure unknown volumes or densities. By submerging an object and calculating the displaced fluid’s weight, engineers and scientists can infer properties that are otherwise difficult to measure.</p>
+<section id="archimedes-principle">
+<h2>Archimedes’ Principle<a class="headerlink" href="#archimedes-principle" title="Link to this heading">#</a></h2>
+<p>Archimedes’ principle states that an object submerged in a fluid experiences an upward buoyant force equal to the weight of the <strong>displaced fluid</strong>. For partially submerged objects, the buoyant force corresponds to the weight of the volume of the <strong>submerged portion</strong>.</p>
+<p>Key Points:</p>
+<ul class="simple">
+<li><p>Fully Submerged Objects: The volume of the displaced fluid equals the object’s volume.</p></li>
+<li><p>Partially Submerged Objects: The buoyant force balances the object’s weight, ensuring it floats without sinking or rising.</p></li>
+</ul>
+<p>Archimedes principle is useful to find the volume of irregularly shaped objects - Simply submerge them into a liquid and measure the volume displaced. Similarily it is useful for determining the density of irregularly shaped objects.  (The curated videos above have examples of these applications).</p>
+<p>A more detailed representation is</p>
+<ul class="simple">
+<li><p>when a solid object is fully or partially submerged into a liquid then the upward buoyant force exerted by the liquid on the object is equal to the <strong>weight of the liquid</strong> displaced by the object. Mathematically, this can be stated as:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[B = W_f = \rho  V_f g \]</div>
+<p>where, <span class="math notranslate nohighlight">\(V_f\)</span> is the volume of the liquid displaced m3, <span class="math notranslate nohighlight">\(\rho\)</span> is the density of the liquid (<span class="math notranslate nohighlight">\(\frac{\)</span>kg}{m^3}<span class="math notranslate nohighlight">\(), \)</span>g<span class="math notranslate nohighlight">\( is the gravitational acceleration and \)</span>B<span class="math notranslate nohighlight">\( is the buoyant force (\)</span>N<span class="math notranslate nohighlight">\() and \)</span>W_f<span class="math notranslate nohighlight">\( is the weight of the displaced liquid (\)</span>N$).</p>
+<!--Consider a submerged object shown in the Figure below. 
+
+![](bouyancysketch.png)
+
+The weight of the object causes the body to sink into the liquid, while the upward buoyant force tries
+to push it up. If the object does not sink further (or raise) then these forces are balanced. 
+
+For a submerged object, the volume of the object equals the volume of the liquid displaced. 
+
+Therefore, the resultant force can be written as:
+$$B - w_o = (\rho_{f} - \rho_{o}) V_{o} g$$
+
+Where, $B$ is the buoyant force ($N$), $w_o$ is the weight of the object ($N$), $\rho_f$
+is the density of the liquid,$\rho_o$ is the density of the object, $g$ is
+the gravitational acceleration and $V_o$ is the volume of the object.
+
+From, Archimedes Principle, the Buoyant force (B) is equal to the weight of
+the liquid displaced. From the equation above, we can say an object will be pushed
+upward if $\rho_f$ is greater $\rho_o$ or sink (pushed downward) when $\rho_f$ is smaller than $\rho_o$.
+-->
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It is important to remember that when an object sinks to the bottom of the
+liquid in a container, there is still a buoyant force acting on it. This buoyant
+force is still equal to the weight of the liquid that is displaced. However,
+the upward buoyant force exerted on the object is insufficient to overcome
+the downward gravitational force which causes the object to sink. In this
+situation, as the object is fully submerged, the volume of the object is equal
+to the volume of the liquid displaced. The object will feel lighter than in air
+due to buoyancy.</p>
+</div>
+<p>When an object is floating on a surface (neither raising or sinking) then the
+volume of the liquid displaced by the object is not equal to the volume of the
+object. It is only equal to the volume of the object that is submerged in the
+liquid. However, the upward buoyant force of the liquid exactly balances the
+weight of the object.</p>
+<!-- Also, from Archimedes principle, the buoyant force is
+equal to the weight of the liquid that is displaced. Mathematically,
+
+1. $B-w_0 = 0$
+2. $ \rho_f V_f g = \rho_o V_o g$
+3. $\frac{V_o}{V_f} = \frac{\rho_f}{=rho_o}$ 
+--></section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="forces-on-submerged-plane-surfaces">
+<h1>4.3 Forces on Submerged Plane Surfaces<a class="headerlink" href="#forces-on-submerged-plane-surfaces" title="Link to this heading">#</a></h1>
+<p>When a uniform pressure acts on a plane surface:</p>
+<p><img alt="" src="../../_images/uniform.png" /></p>
+<ul class="simple">
+<li><p>The magnitude of the resultant force is the product of the plane area and the pressure.</p></li>
+<li><p>The resultant force acts at the centroid of the plane area</p></li>
+<li><p>The center of pressure (uniform pressure) is coincident with the centroid.</p></li>
+</ul>
+<p>When a plane surface is submerged in a liquid:</p>
+<p><img alt="" src="../../_images/hydrostatic.png" /></p>
+<ul class="simple">
+<li><p>The fluid createss a hydrostatic pressure distribution that increases linearly with depth.</p></li>
+<li><p>The magnitude of the resultant force is the product of the plane area and the pressure at the plane area centroid.</p></li>
+<li><p>The line of action of the resultant force acts at the center of pressure of the submerged area, which is deeper then the centroid of the plane area.</p></li>
+</ul>
+<!-- ![](center-o-pressure.png) -->
+<p>The force exerted by liquids on surfaces they come to contact with is important when determining engineering structures to hold fluids (e.g., tanks,reservoirs). If water is our liquid of interest, then the hydrostatic pressure exerted by the liquid varies linearly with depth. <!--It is equal to zero gage pressure when the water is open to atmosphere and increases downward (see the Figure below). --></p>
+<p>For engineering design, we replace the pressure distribution with a resultant hydrostatic pressure acting at the centroid. This resultant force is obtained by multiplying the hydrostatic pressure with the cross-sectional area over which the liquid exerts the pressure. The pressure is assumed to act
+normal to this planar area. The point where the resultant pressure (force) is assumed to act is also referred to the center of pressure (see Figure above).
+The center of the pressure is defined as “the point in a plane at which the
+total liquid thrust is be acting normal on that plane”.</p>
+<section id="laboratory-objectives">
+<h2>Laboratory Objectives<a class="headerlink" href="#laboratory-objectives" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Develop an experimental protocol (step-by-step instructions) to a) measure density, specific gravity, and viscosity of three different liquids and to collect, analyze, and interpret data related to hydrostatic forces and buoyancy.</p></li>
+<li><p>Conduct experiments in triplicate to measure the density, specific gravity, and viscosity of three different liquids.</p></li>
+<li><p>Apply Archimedes’ principle to determine buoyant forces on submerged and partially submerged objects.</p></li>
+<li><p>Analyze hydrostatic Forces on plane surfaces, calculating the resultant force and locating the center of pressure using theoretical methods.</p></li>
+<li><p>Use the quadrant balance to measure moments caused by hydrostatic forces and validate theoretical predictions.</p></li>
+<li><p>Document the experiment(s) into a laboratory report and address the following in the report:</p></li>
+</ol>
+<p><strong>Fluid Properties</strong></p>
+<ul class="simple">
+<li><p>Derive the fall velocity equation, starting from the force balance on the sphere and assuming that <span class="math notranslate nohighlight">\(C_D=\frac{24}{Re_D}\)</span></p></li>
+<li><p>Compare your results with tabulated values for density and viscosity for the three fluids.</p></li>
+</ul>
+<p><strong>Bouyancy</strong></p>
+<ul class="simple">
+<li><p>Calculate the volume of displaced water, <span class="math notranslate nohighlight">\(\Delta V\)</span>, for all objects. Determine the buoyancy force, <span class="math notranslate nohighlight">\(F_B\)</span>, on each object.</p></li>
+<li><p>For fully submerged objects, calculate the volume of the object based on displacement.</p></li>
+<li><p>Use the measured mass and the density of the object to calculate the volume of the objects.</p></li>
+<li><p>How do they compare with volumes measured using water displacement?</p></li>
+<li><p>For the floating object-Calculate the mass of the object using Archimedes principle.</p></li>
+<li><p>How does this mass compare to the measured value?</p></li>
+</ul>
+<p><strong>Center of Pressure</strong></p>
+<ul class="simple">
+<li><p>Calculate moment (<span class="math notranslate nohighlight">\(M\)</span>) for generated by each applied weight.</p></li>
+<li><p>Using the <span class="math notranslate nohighlight">\(\sum{M} = 0\)</span> principle calculate the approximate vertical force for each set of measurements. This force acts at a distance of <span class="math notranslate nohighlight">\(\frac{3b}{8}\)</span> from the planar surface. While this is strictly true only for partially submerged conditions; it is a first-order approximation for the fully submerged case as well.</p></li>
+<li><p>Plot moment <span class="math notranslate nohighlight">\(M\)</span> (Nm) vs. height of depth of liquid, <span class="math notranslate nohighlight">\(h\)</span> (m) for the fully submerged dataset. Fit a straight line and compute the coefficient of determination <span class="math notranslate nohighlight">\(R^2\)</span>.</p></li>
+<li><p>Use the slope of the line from previous step - which is equal to <span class="math notranslate nohighlight">\(- \frac{\gamma_w W}{2}(R_2^2-R_1^2)\)</span>. Using R1 = 100 mm and R2= 200 mm, calculate the weight of water per unit volume (<span class="math notranslate nohighlight">\(\gamma_w\)</span>).</p></li>
+<li><p>Compare this value to the specific weight reported in the literature for the measured temperature. For the partially submerged dataset plot <span class="math notranslate nohighlight">\(M + \frac{\gamma_w W R_2^2 h}{2}\)</span> versus <span class="math notranslate nohighlight">\(h^3\)</span>.</p></li>
+<li><p>Fit a straight line and evaluate the adequacy of the fit using the coefficient of determination <span class="math notranslate nohighlight">\(R^2\)</span>.</p></li>
+</ul>
+<p><strong>Evaluate Results</strong></p>
+<ul class="simple">
+<li><p>Evaluate experimental results against theoretical expectations.</p></li>
+<li><p>Experiments are conducted in triplicate, so you can compute mean values and standard deviations; what does this information tell us about the accuracy of the measurements?, What does it tell us about the repeatability of the measurements?</p></li>
+<li><p>What are some potential sources of errors in your lab experiments. Discuss in the context of measuring density, specific gravity and viscosity.</p></li>
+</ul>
+</section>
+<section id="experimental-setup-s">
+<h2>Experimental Setup(s)<a class="headerlink" href="#experimental-setup-s" title="Link to this heading">#</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This laboratory exercise uses two different hydraulic benches (set-ups).  One bench has the materials for fluid properties measurement and bouyancy, the other bench has the quadrant balance set up.</p>
+</div>
+<section id="fluid-properties">
+<h3>Fluid Properties<a class="headerlink" href="#fluid-properties" title="Link to this heading">#</a></h3>
+<p>The photograph below shows the required equipment needed for the fluid properties and bouyancy components of the laboratory exercise.  Missing from the photograph is the electronic scale or analytical balance needed for weighing various objects.</p>
+<p><img alt="" src="../../_images/lab1setup.png" /></p>
+<ol class="arabic simple">
+<li><p>Liquids: Water, salt water, glycerin</p></li>
+<li><p>Measurement tools: Thermometer, hydrometer, graduated cylinders, scale, and stopwatch/iPhone</p></li>
+<li><p>Steel balls of varying diameters</p></li>
+<li><p>Other equipment: Beakers and recording devices, electorinc scale or analytical balance.</p></li>
+</ol>
+</section>
+<section id="quadrant-balance">
+<h3>Quadrant Balance<a class="headerlink" href="#quadrant-balance" title="Link to this heading">#</a></h3>
+<p>The photograph below shows the quadrant balance with a leveling mass in the trim tank (to the left of the pivot point) and a partially submerged case (water surface between lower and upper curved surface) to the right of the pivot.  The carpenter’s level is not part of the appratus, although it is useful at times for the experiment.</p>
+<p><img alt="" src="../../_images/moment-setup.png" /></p>
+<p>The quadrant balance is used to measure the moment caused by hydrostatic forces on submerged surfaces. By balancing the apparatus and recording the moments, you can compare experimental results to theoretical calculations.</p>
+<p>Key Procedure Highlights:</p>
+<ul class="simple">
+<li><p>Adjust the apparatus to ensure accurate alignment of the plane surface.</p></li>
+<li><p>Incrementally submerge the plane and record measurements of force and depth. (In our experiments we adjust the water depth instead)</p></li>
+<li><p>Use the data to calculate hydrostatic forces and verify against theoretical predictions.</p></li>
+</ul>
+<p>The quadrant balance provides a direct and practical way to understand hydrostatic forces, combining fundamental principles with hands-on experimentation.</p>
+<p>The sketch below show the apparatus which permits the moment caused by the total liquid thrust on a wholly or partially submerged plane surface to be measured directly and compared with theoretical analysis.</p>
+<p><img alt="" src="../../_images/moment-sketch.png" /></p>
+<p>The photograph below illustrates the apparatus set up in the laboratory</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The following analysis from <a class="reference external" href="http://54.243.252.9/ce-3105-webroot/7-user-manuals/H314-HydrostaticsAndPropertiesofFluids.pdf">H314 Hydrostatic Bench User Manual</a> is applied to the general condition of plane surface at various angles when it is wholly or partially submerged in a liquid.</p>
+<p>Consider an element at an inclined depth <span class="math notranslate nohighlight">\(y\)</span> and height <span class="math notranslate nohighlight">\(\delta y\)</span>.</p>
+<p>The force on this infinitesimal (itty-bitty) element can be written as:</p>
+<div class="math notranslate nohighlight">
+\[\delta F = \gamma_w W(y~cos(\theta) - h) \delta y \]</div>
+<p>Where, <span class="math notranslate nohighlight">\(\gamma_w\)</span> is the weight per unit volume of the liquid , <span class="math notranslate nohighlight">\(W\)</span> is the width
+of the plane normal to the direction of the force and <span class="math notranslate nohighlight">\(h\)</span> is the height to the water surface measured from the pivot point O (see the apparatus sketch).</p>
+<p>The moment of force on element about the point O, <span class="math notranslate nohighlight">\(\delta M\)</span> can be written as</p>
+<div class="math notranslate nohighlight">
+\[\delta M_O = \gamma_w W(y~cos(\theta) - h)y \delta y \]</div>
+<p>The total moment (M) over the entire submerged surface can be obtained by
+integrating:</p>
+<div class="math notranslate nohighlight">
+\[M = \int_{ll}^{ul}{\delta M_O} = \int_{ll}^{ul}{\gamma_w W(y^2~cos(\theta) - hy) \delta y} \]</div>
+<p>The limits of integration in 8 depends upon whether the plane is fully sub-
+merged or partially submerged. For the fully submerged case, the limits are
+from R1 to R2 and the equation for the moment around point O can be
+written as:</p>
+<div class="math notranslate nohighlight">
+\[M = \int_{R_1}^{R_2}{\gamma_w W(y^2~cos(\theta) - hy) \delta y}= \frac{\gamma_w W~cos(\theta)}{3}(R_2^3-R_1^3) - \frac{\gamma_w W}{2}(R_2^2-R_1^2)h\]</div>
+<p>This equation is of the form of y = mx + b,therefore, a plot of M against h will yield a straight line of gradient</p>
+<div class="math notranslate nohighlight">
+\[- \frac{\gamma_w W}{2}(R_2^2-R_1^2)\]</div>
+<p>This slope can be used to calculate the unknown specific weight <span class="math notranslate nohighlight">\(\gamma_w\)</span>.</p>
+<p>For a partially submerged plane, the limits of the integration are from <span class="math notranslate nohighlight">\(R_2\)</span> to <span class="math notranslate nohighlight">\(hsec(\theta)\)</span>. The moment in this case is given as:</p>
+<div class="math notranslate nohighlight">
+\[M = \frac{\gamma_w W sec^2(\theta)h^3}{6} + \frac{\gamma_w W cos(\theta) R_2^3}{3} - \frac{\gamma_w W R_2^2 h}{2}\]</div>
+<p>A plot of <span class="math notranslate nohighlight">\(M + \frac{\gamma_w W R_2^2 h}{2}\)</span> versus <span class="math notranslate nohighlight">\(h^3\)</span> will result in a straight line plot.</p>
+</div>
+<p>An alternate analysis simply focuses on finding the weight of the water element in the quadrant balance, and the location of the centroid of that element, using integration.</p>
+<p>For the unsubmerged case, assume a volume of water is added, and the weights are added to the hanger until the balance is level (top edge horizontal).  Also it is stipulated that the balance is initially trimmed (hence the point of the trim tank) so the instrument itself does not contribute to the moment balance.</p>
+<p>Once horizontal the following hold:</p>
+<p><span class="math notranslate nohighlight">\(Y = R2 - d\)</span></p>
+<p><span class="math notranslate nohighlight">\(\theta = cos^{-1}(1 - \frac{2*Y}{2*R2})\)</span></p>
+<p><span class="math notranslate nohighlight">\(X = R2*sin(\theta)\)</span></p>
+<p>To find the area, evaluate the integral</p>
+<p><span class="math notranslate nohighlight">\(A = \int_0^X dA = \int_0^X Y - (R2 - \sqrt{(R2^2 - x^2)} dx\)</span></p>
+<p>To find centroids evaluate the first moments of area about the <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> axes</p>
+<p><span class="math notranslate nohighlight">\(\bar x = \frac{\int_0^X x * (Y - (R2 - \sqrt{(R2^2 - x^2)}) dx}{A}\)</span></p>
+<p><span class="math notranslate nohighlight">\(\bar y = \frac{\int_0^X  1/2 * (Y^2 - [R2 - \sqrt{(R2^2 - x^2)}]^2)dx}{A}\)</span></p>
+<p>Then multiply by the tank thickness (breath) to obtain a water volume (which should be the same as the added volume).</p>
+<p>Once volume is known, the product of volume and specific weight gives the weight of the water (acting through the center of gravity) and makes the force balance simple to evaluate.</p>
+<p>The script below makes the necessary calculations (again using numerical integration methods) given the depth of water in a level (and trimmed) quadrant balance.</p>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/List_of_centroids">https://en.wikipedia.org/wiki/List_of_centroids</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sqrt</span><span class="p">,</span> <span class="n">asin</span>
+<span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">quad</span>
+
+<span class="c1">## Quadrant Balance Script for UNSUBMERGED CASES </span>
+<span class="c1">## Verify by direct measurement on apparatus</span>
+<span class="c1">## These are constants, just check they agree with the physical instrument</span>
+<span class="n">R1</span> <span class="o">=</span> <span class="mi">100</span> <span class="c1"># mm Inner radius of balance</span>
+<span class="n">R2</span> <span class="o">=</span> <span class="mi">200</span> <span class="c1"># mm Outer radius of balance (also acts as radius of curved face)</span>
+<span class="n">R3</span> <span class="o">=</span> <span class="mi">200</span> <span class="c1"># mm Moment arm for weight hanger</span>
+<span class="n">B</span>  <span class="o">=</span>  <span class="mi">75</span> <span class="c1"># mm Breadth of plane (how wide is the quadrant balance between front and back walls - inside measure)</span>
+
+<span class="c1">## BE SURE BALANCE IS TRIMMED LEVEL BEFORE MAKING REMAINING MEASUREMENTS </span>
+<span class="c1">## The moment analysis depends on trimmed empty tank, so its mass does not contribute to the moment balance.</span>
+
+<span class="c1">## Liquid Properties </span>
+<span class="c1">## Measure at beginning of experiment, they won&#39;t change during experiment enough to impact results.</span>
+<span class="n">Temp</span> <span class="o">=</span> <span class="mi">20</span> <span class="c1"># degrees Celsius (use value to look up water density)</span>
+<span class="n">rho</span>  <span class="o">=</span> <span class="mi">998</span> <span class="c1"># density in kg/m^3</span>
+<span class="n">SpW</span>  <span class="o">=</span> <span class="mi">9790</span> <span class="c1"># specific weight in N/m^3 (use if you work in force balance directly)</span>
+
+<span class="c1">## Measured Values (modify for each test)</span>
+<span class="n">d</span> <span class="o">=</span> <span class="mi">70</span> <span class="c1"># mm Distance from pivot to water surface (measured vertically)</span>
+<span class="n">W</span> <span class="o">=</span> <span class="mi">50</span>  <span class="c1"># grams Weights on hanger (to balance hydrostatic moment)</span>
+
+<span class="c1"># === Area and Centroid Integrals ===</span>
+<span class="c1"># The following compute area and first moments of area for the fluid wedge above the circular arc and below waterline</span>
+
+<span class="c1"># Area of curved segment from x=0 to x=X</span>
+<span class="k">def</span> <span class="nf">dA_numeric</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">r</span><span class="p">):</span>
+    <span class="n">integrand</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">Y</span> <span class="o">-</span> <span class="p">(</span><span class="n">r</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">r</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>  <span class="c1"># height of fluid above curved surface</span>
+    <span class="n">result</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">quad</span><span class="p">(</span><span class="n">integrand</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">result</span>
+
+<span class="c1"># First moment of area about y-axis (used to get x̄)</span>
+<span class="k">def</span> <span class="nf">xdA_numeric</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">r</span><span class="p">):</span>
+    <span class="n">integrand</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">*</span> <span class="p">(</span><span class="n">Y</span> <span class="o">-</span> <span class="p">(</span><span class="n">r</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">r</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)))</span>
+    <span class="n">result</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">quad</span><span class="p">(</span><span class="n">integrand</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">result</span>
+
+<span class="c1"># First moment of area about x-axis (used to get ȳ)</span>
+<span class="k">def</span> <span class="nf">ydA_numeric</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">r</span><span class="p">):</span>
+    <span class="n">integrand</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">Y</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="p">(</span><span class="n">r</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">r</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">result</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">quad</span><span class="p">(</span><span class="n">integrand</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">result</span>
+
+<span class="c1"># === Geometry Calculations from Inputs ===</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">R2</span>
+<span class="n">depth</span> <span class="o">=</span> <span class="n">R2</span> <span class="o">-</span> <span class="n">d</span>  <span class="c1"># Vertical depth of water below quadrant pivot point</span>
+<span class="n">Y</span> <span class="o">=</span> <span class="n">depth</span>       <span class="c1"># y = depth of horizontal waterline from center of arc</span>
+
+<span class="c1"># Compute angle θ and horizontal X extent of wetted curved area</span>
+<span class="n">angle</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">acos</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="mf">2.0</span> <span class="o">*</span> <span class="n">depth</span> <span class="o">/</span> <span class="p">(</span><span class="mf">2.0</span> <span class="o">*</span> <span class="n">r</span><span class="p">))</span>  <span class="c1"># radians subtended by chord</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span> <span class="o">*</span> <span class="n">r</span>  <span class="c1"># horizontal reach of water surface from centerline to edge</span>
+
+<span class="c1"># === Numerical Integrations ===</span>
+<span class="n">A_numeric</span> <span class="o">=</span> <span class="n">dA_numeric</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
+<span class="n">xA_numeric</span> <span class="o">=</span> <span class="n">xdA_numeric</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
+<span class="n">yA_numeric</span> <span class="o">=</span> <span class="n">ydA_numeric</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
+
+<span class="n">x_bar</span> <span class="o">=</span> <span class="n">xA_numeric</span> <span class="o">/</span> <span class="n">A_numeric</span>
+<span class="n">y_bar</span> <span class="o">=</span> <span class="n">yA_numeric</span> <span class="o">/</span> <span class="n">A_numeric</span>
+
+<span class="n">Volume</span> <span class="o">=</span> <span class="n">A_numeric</span><span class="o">*</span><span class="n">B</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">1000</span><span class="p">)</span><span class="o">**</span><span class="mi">3</span>  <span class="c1"># convert to m^3</span>
+<span class="n">Mass</span> <span class="o">=</span> <span class="n">Volume</span><span class="o">*</span><span class="n">rho</span>
+<span class="n">Weight</span> <span class="o">=</span> <span class="n">Volume</span><span class="o">*</span><span class="n">SpW</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Numerical area A (quad): </span><span class="si">{</span><span class="n">A_numeric</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> mm²&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Numerical x̄ (quad): </span><span class="si">{</span><span class="n">x_bar</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> mm&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Numerical ȳ (quad): </span><span class="si">{</span><span class="n">y_bar</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> mm&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Volume Water (m^3): </span><span class="si">{</span><span class="n">Volume</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Mass Water (kg): </span><span class="si">{</span><span class="n">Mass</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Weight Water (Newtons): </span><span class="si">{</span><span class="n">Weight</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># === Plotting for Visual Sanity Check ===</span>
+<span class="n">y_line</span> <span class="o">=</span> <span class="n">Y</span>  <span class="c1"># constant waterline height</span>
+
+<span class="c1"># Semicircle arc</span>
+<span class="n">x_vals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">y_vals</span> <span class="o">=</span> <span class="n">r</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">r</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">x_vals</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>  <span class="c1"># arc height</span>
+
+<span class="c1"># Horizontal waterline (constant height)</span>
+<span class="n">y_const</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">full_like</span><span class="p">(</span><span class="n">x_vals</span><span class="p">,</span> <span class="n">y_line</span><span class="p">)</span>
+
+<span class="c1"># Begin plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_vals</span><span class="p">,</span> <span class="n">y_vals</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;y = r - √(r² - x²)&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="n">y_line</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;y = </span><span class="si">{</span><span class="n">y_line</span><span class="si">:</span><span class="s1">.0f</span><span class="si">}</span><span class="s1"> mm&#39;</span><span class="p">)</span>
+
+<span class="c1"># Fill fluid region (between curve and waterline)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">x_vals</span><span class="p">,</span> <span class="n">y_line</span><span class="p">,</span> <span class="n">y_vals</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="p">(</span><span class="n">y_vals</span> <span class="o">&lt;</span> <span class="n">y_line</span><span class="p">),</span> 
+                 <span class="n">interpolate</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> 
+                 <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Fluid Region&#39;</span><span class="p">)</span>
+
+<span class="c1"># Mark centroid</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_bar</span><span class="p">,</span> <span class="n">y_bar</span><span class="p">,</span> <span class="s1">&#39;ko&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Centroid&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">x_bar</span> <span class="o">+</span> <span class="mi">5</span><span class="p">,</span> <span class="n">y_bar</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;(</span><span class="si">{</span><span class="n">x_bar</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="n">y_bar</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+
+<span class="c1"># Format plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Fluid Region Above Circular Arc&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;x (mm)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;y (mm)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;lower right&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Numerical area A (quad): 17707.257 mm²
+Numerical x̄ (quad): 74.762 mm
+Numerical ȳ (quad): 76.209 mm
+Volume Water (m^3): 0.001
+Mass Water (kg): 1.325
+Weight Water (Newtons): 13.002
+</pre></div>
+</div>
+<img alt="../../_images/b275d75cd67ea8bc0ea74989e7bd39eeb3de9586433ffe8fb88e63fa86c77c7e.png" src="../../_images/b275d75cd67ea8bc0ea74989e7bd39eeb3de9586433ffe8fb88e63fa86c77c7e.png" />
+</div>
+</div>
+<p>The unsubmerged case is more complex, but the gist of the analysis is to</p>
+<ol class="arabic">
+<li><p>Compute area and centroid of an annular fluid region as the difference between two segments.</p></li>
+<li><p>Apply the principle of composite areas:</p>
+<p><span class="math notranslate nohighlight">\(A = A_{outer}-A_{inner}\)</span></p>
+</li>
+<li><p>Apply moment balances:</p>
+<p><span class="math notranslate nohighlight">\(\bar x = \frac{xA_{outer} - xA_{inner}}{A}\)</span></p>
+<p><span class="math notranslate nohighlight">\(\bar y = \frac{yA_{outer} - yA_{inner}}{A}\)</span></p>
+</li>
+</ol>
+<p>The script below makes the necessary calculations (again using numerical integration methods) given the depth of water in a level (and trimmed) quadrant balance.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">quad</span>
+
+<span class="c1"># === Instrument Constants ===</span>
+<span class="n">R1</span> <span class="o">=</span> <span class="mi">100</span>  <span class="c1"># mm Inner radius</span>
+<span class="n">R2</span> <span class="o">=</span> <span class="mi">200</span>  <span class="c1"># mm Outer radius</span>
+<span class="n">B</span>  <span class="o">=</span>  <span class="mi">75</span>  <span class="c1"># mm Breadth</span>
+<span class="n">R3</span> <span class="o">=</span> <span class="mi">200</span>  <span class="c1"># mm Moment arm (not used yet)</span>
+
+<span class="c1"># === Fluid Properties ===</span>
+<span class="n">Temp</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">rho</span> <span class="o">=</span> <span class="mi">998</span>  <span class="c1"># kg/m³</span>
+<span class="n">SpW</span> <span class="o">=</span> <span class="mi">9790</span> <span class="c1"># N/m³</span>
+
+<span class="c1"># === Experimental Input ===</span>
+<span class="n">d</span> <span class="o">=</span> <span class="mf">90.0</span>  <span class="c1"># mm depth from pivot to water surface</span>
+<span class="n">W</span> <span class="o">=</span> <span class="mi">50</span>  <span class="c1"># grams (counterweight)</span>
+
+<span class="c1"># === Derived Geometry ===</span>
+<span class="n">depth</span> <span class="o">=</span> <span class="n">R2</span> <span class="o">-</span> <span class="n">d</span>         <span class="c1"># Vertical depth from outer arc center to waterline</span>
+<span class="n">Y</span> <span class="o">=</span> <span class="n">depth</span>              <span class="c1"># Height from outer arc center to waterline</span>
+
+<span class="k">assert</span> <span class="n">Y</span> <span class="o">&lt;=</span> <span class="n">R2</span><span class="p">,</span> <span class="s2">&quot;Overflow: water depth exceeds outer arc.&quot;</span>
+<span class="k">assert</span> <span class="n">Y</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;No fluid present.&quot;</span>
+
+<span class="c1"># Centroid integrals for a segment from arc up to waterline</span>
+<span class="k">def</span> <span class="nf">area_segment</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">r</span><span class="p">):</span>
+    <span class="n">integrand</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">Y</span> <span class="o">-</span> <span class="p">(</span><span class="n">r</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">r</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
+    <span class="n">result</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">quad</span><span class="p">(</span><span class="n">integrand</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">result</span>
+
+<span class="k">def</span> <span class="nf">x_moment_segment</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">r</span><span class="p">):</span>
+    <span class="n">integrand</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">*</span> <span class="p">(</span><span class="n">Y</span> <span class="o">-</span> <span class="p">(</span><span class="n">r</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">r</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)))</span>
+    <span class="n">result</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">quad</span><span class="p">(</span><span class="n">integrand</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">result</span>
+
+<span class="k">def</span> <span class="nf">y_moment_segment</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">r</span><span class="p">):</span>
+    <span class="n">integrand</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">Y</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="p">(</span><span class="n">r</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">r</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">result</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">quad</span><span class="p">(</span><span class="n">integrand</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">result</span>
+
+<span class="c1"># === Outer arc intercepts ===</span>
+<span class="n">theta_outer</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">acos</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="mf">2.0</span> <span class="o">*</span> <span class="n">Y</span> <span class="o">/</span> <span class="p">(</span><span class="mf">2.0</span> <span class="o">*</span> <span class="n">R2</span><span class="p">))</span>
+<span class="n">X_outer</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta_outer</span><span class="p">)</span> <span class="o">*</span> <span class="n">R2</span>
+
+<span class="c1"># === Inner arc intercepts ===</span>
+<span class="c1"># Inner arc lies 100 mm *above* the outer arc → depth from inner arc center = Y - 100</span>
+<span class="n">Y_inner</span> <span class="o">=</span> <span class="n">Y</span> <span class="o">-</span> <span class="p">(</span><span class="n">R2</span> <span class="o">-</span> <span class="n">R1</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">Y_inner</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="c1"># Inner arc not submerged → entire area is outer segment</span>
+    <span class="n">X_inner</span> <span class="o">=</span> <span class="mf">0.0</span>
+    <span class="n">A_fill</span> <span class="o">=</span> <span class="n">area_segment</span><span class="p">(</span><span class="n">X_outer</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">R2</span><span class="p">)</span>
+    <span class="n">x_fill</span> <span class="o">=</span> <span class="n">x_moment_segment</span><span class="p">(</span><span class="n">X_outer</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">R2</span><span class="p">)</span>
+    <span class="n">y_fill</span> <span class="o">=</span> <span class="n">y_moment_segment</span><span class="p">(</span><span class="n">X_outer</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">R2</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">theta_inner</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">acos</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="mf">2.0</span> <span class="o">*</span> <span class="n">Y_inner</span> <span class="o">/</span> <span class="p">(</span><span class="mf">2.0</span> <span class="o">*</span> <span class="n">R1</span><span class="p">))</span>
+    <span class="n">X_inner</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta_inner</span><span class="p">)</span> <span class="o">*</span> <span class="n">R1</span>
+
+    <span class="n">A_outer</span> <span class="o">=</span> <span class="n">area_segment</span><span class="p">(</span><span class="n">X_outer</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">R2</span><span class="p">)</span>
+    <span class="n">xA_outer</span> <span class="o">=</span> <span class="n">x_moment_segment</span><span class="p">(</span><span class="n">X_outer</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">R2</span><span class="p">)</span>
+    <span class="n">yA_outer</span> <span class="o">=</span> <span class="n">y_moment_segment</span><span class="p">(</span><span class="n">X_outer</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">R2</span><span class="p">)</span>
+
+    <span class="n">A_inner</span> <span class="o">=</span> <span class="n">area_segment</span><span class="p">(</span><span class="n">X_inner</span><span class="p">,</span> <span class="n">Y_inner</span><span class="p">,</span> <span class="n">R1</span><span class="p">)</span>
+    <span class="n">xA_inner</span> <span class="o">=</span> <span class="n">x_moment_segment</span><span class="p">(</span><span class="n">X_inner</span><span class="p">,</span> <span class="n">Y_inner</span><span class="p">,</span> <span class="n">R1</span><span class="p">)</span>
+    <span class="n">yA_inner</span> <span class="o">=</span> <span class="n">y_moment_segment</span><span class="p">(</span><span class="n">X_inner</span><span class="p">,</span> <span class="n">Y_inner</span><span class="p">,</span> <span class="n">R1</span><span class="p">)</span>
+
+    <span class="n">A_fill</span> <span class="o">=</span> <span class="n">A_outer</span> <span class="o">-</span> <span class="n">A_inner</span>
+    <span class="n">x_fill</span> <span class="o">=</span> <span class="n">xA_outer</span> <span class="o">-</span> <span class="n">xA_inner</span>
+    <span class="n">y_fill</span> <span class="o">=</span> <span class="n">yA_outer</span> <span class="o">-</span> <span class="n">yA_inner</span>
+
+<span class="c1"># === Centroid location ===</span>
+<span class="n">x_bar</span> <span class="o">=</span> <span class="n">x_fill</span> <span class="o">/</span> <span class="n">A_fill</span>
+<span class="n">y_bar</span> <span class="o">=</span> <span class="n">y_fill</span> <span class="o">/</span> <span class="n">A_fill</span>
+
+<span class="n">Volume</span> <span class="o">=</span> <span class="n">A_fill</span><span class="o">*</span><span class="n">B</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">1000</span><span class="p">)</span><span class="o">**</span><span class="mi">3</span>  <span class="c1"># convert to m^3</span>
+<span class="n">Mass</span> <span class="o">=</span> <span class="n">Volume</span><span class="o">*</span><span class="n">rho</span>
+<span class="n">Weight</span> <span class="o">=</span> <span class="n">Volume</span><span class="o">*</span><span class="n">SpW</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Submerged Annular Area: </span><span class="si">{</span><span class="n">A_fill</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> mm²&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Centroid x̄: </span><span class="si">{</span><span class="n">x_bar</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> mm&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Centroid ȳ: </span><span class="si">{</span><span class="n">y_bar</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> mm&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;X_outer: </span><span class="si">{</span><span class="n">X_outer</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> mm&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;X_inner: </span><span class="si">{</span><span class="n">X_inner</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> mm&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Surface Width: </span><span class="si">{</span><span class="n">X_outer</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">X_inner</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> mm&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Depth Water (mm): </span><span class="si">{</span><span class="n">depth</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Volume Water (m^3): </span><span class="si">{</span><span class="n">Volume</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Mass Water (kg): </span><span class="si">{</span><span class="n">Mass</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Weight Water (Newtons): </span><span class="si">{</span><span class="n">Weight</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># === Plotting ===</span>
+<span class="n">x_vals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">X_outer</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+<span class="n">y_outer</span> <span class="o">=</span> <span class="n">R2</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">R2</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">x_vals</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">y_inner</span> <span class="o">=</span> <span class="n">R1</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">R1</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">x_vals</span><span class="p">[</span><span class="n">x_vals</span> <span class="o">&lt;=</span> <span class="n">R1</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">R2</span> <span class="o">-</span> <span class="n">R1</span><span class="p">)</span>  <span class="c1"># shift inner arc upward</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="n">Y</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Waterline&#39;</span><span class="p">)</span>
+
+<span class="c1"># Outer arc and fill</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_vals</span><span class="p">,</span> <span class="n">y_outer</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Outer Arc (R2)&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">x_vals</span><span class="p">,</span> <span class="n">y_outer</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="p">(</span><span class="n">y_outer</span> <span class="o">&lt;</span> <span class="n">Y</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span>
+
+<span class="c1"># Inner arc and masking region</span>
+<span class="k">if</span> <span class="n">Y_inner</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">x_inner</span> <span class="o">=</span> <span class="n">x_vals</span><span class="p">[</span><span class="n">x_vals</span> <span class="o">&lt;=</span> <span class="n">R1</span><span class="p">]</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">x_inner</span><span class="p">,</span> <span class="n">y_inner</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="p">(</span><span class="n">y_inner</span> <span class="o">&lt;</span> <span class="n">Y</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_inner</span><span class="p">,</span> <span class="n">y_inner</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Inner Arc (R1)&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">)</span>
+
+<span class="c1"># Centroid</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_bar</span><span class="p">,</span> <span class="n">y_bar</span><span class="p">,</span> <span class="s1">&#39;ko&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Centroid&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">x_bar</span> <span class="o">+</span> <span class="mi">5</span><span class="p">,</span> <span class="n">y_bar</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;(</span><span class="si">{</span><span class="n">x_bar</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="n">y_bar</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Submerged Fluid Region (Annular Segment)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;x (mm)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;y (mm)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;lower right&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Submerged Annular Area: 13749.73 mm²
+Centroid x̄: 71.52 mm
+Centroid ȳ: 66.02 mm
+X_outer: 178.61 mm
+X_inner: 43.59 mm
+Surface Width: 135.02 mm
+Depth Water (mm): 110.000
+Volume Water (m^3): 0.001
+Mass Water (kg): 1.029
+Weight Water (Newtons): 10.096
+</pre></div>
+</div>
+<img alt="../../_images/7c44496b098f07a3303d9e7013f95dea81408afacededc97f41fdca2999c38f1.png" src="../../_images/7c44496b098f07a3303d9e7013f95dea81408afacededc97f41fdca2999c38f1.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="deliverables">
+<h2>Deliverables<a class="headerlink" href="#deliverables" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Develop an <strong>experimental protocol</strong> (step-by-step instructions) to measure density, specific gravity, and viscosity of three different liquids.  Submitted in advance for instructor approval - the protocol will become part of your laboratory report.</p></li>
+<li><p><strong>Laboratory Report</strong> documenting the actual experiments, and other required content including comparison to tabulated values.</p></li>
+</ol>
+</section>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python-my-env",
+            path: "./experiments/4ex1-statics"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python-my-env'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../3experimentation/lab-report-rubric.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Report Evaluation Rubric</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="ex1_sample_report.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Laboratory 1 Sample Report</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Lab 1 - Density, Viscosity, Bouyancy, Forces</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#readings">Readings</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#videos">Videos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#outline">Outline</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#material-properties">4.1 Material Properties</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mass-density">Mass Density</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#measuring-density-of-fluids">Measuring Density of Fluids</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#importance-of-density-in-fluid-mechanics">Importance of Density in Fluid Mechanics</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#specific-weight">Specific Weight</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#specific-gravity">Specific Gravity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#viscosity">Viscosity</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dynamic-viscosity-mu">Dynamic Viscosity (<span class="math notranslate nohighlight">\(\mu\)</span>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kinematic-viscosity-nu">Kinematic Viscosity (<span class="math notranslate nohighlight">\(\nu\)</span>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#viscosity-details">Viscosity Details</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#measuring-viscosity">Measuring Viscosity</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#importance-of-viscosity-in-fluid-mechanics">Importance of Viscosity in Fluid Mechanics</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#bouyancy">4.2 Bouyancy</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#archimedes-principle">Archimedes’ Principle</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#forces-on-submerged-plane-surfaces">4.3 Forces on Submerged Plane Surfaces</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#laboratory-objectives">Laboratory Objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experimental-setup-s">Experimental Setup(s)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fluid-properties">Fluid Properties</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quadrant-balance">Quadrant Balance</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deliverables">Deliverables</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Theodore G. Cleveland
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
