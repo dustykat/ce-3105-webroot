@@ -62,8 +62,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'experiments/5ex2-pipeflow/ex2';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Lab 2. Sample Report" href="ex2_sample_report.html" />
-    <link rel="prev" title="Laboratory 1 Sample Report" href="../4ex1-statics/ex1_sample_report.html" />
+    <link rel="next" title="Mass Flow Meter &amp; Datalogger Scripts" href="ex2_massflowmeters.html" />
+    <link rel="prev" title="\(\cdot\) Laboratory 1 Sample Report" href="../4ex1-statics/ex1_sample_report.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -187,12 +187,15 @@
 
 <li class="toctree-l1"><a class="reference internal" href="../3experimentation/experimentation.html">Role of Engineering Experimentation</a></li>
 
+<li class="toctree-l1"><a class="reference internal" href="../3experimentation/lab-report-format.html">Laboratory Report Format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3experimentation/lab-report-rubric.html">Report Evaluation Rubric</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../4ex1-statics/ex1.html">Lab 1 - Fluid Properties</a></li>
 
 
 
 
 <li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Lab 2 - Flow Measurement in Conduits</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="ex2_massflowmeters.html">Mass Flow Meter &amp; Datalogger Scripts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ex2_sample_report.html">Lab 2. Sample Report</a></li>
 </ul>
 </details></li>
@@ -425,10 +428,8 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#venturi-meter">Venturi Meter</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#orifice-plate-meter">Orifice Plate Meter</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rotameter">Rotameter</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mass-flow-meters">Mass Flow Meters</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deliverables">Deliverables</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#experimental-protocol">1. Experimental Protocol</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#laboratory-report">2. Laboratory Report</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mass-flow-meters">Mass Flow Meters</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#laboratory-report">1. Laboratory Report</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#end-of-section">End of Section</a></li>
@@ -465,16 +466,20 @@ document.write(`
 <section id="videos">
 <h2>Videos<a class="headerlink" href="#videos" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
-<li><p><a class="reference external" href="https://www.youtube.com/watch?v=rIiR-dSHYvM">Laboratory 3 Instructional Video by Dr. Uddameri</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=rIiR-dSHYvM">Laboratory 2 Instructional Video by Dr. Uddameri</a></p></li>
 <li><p><a class="reference external" href="https://www.youtube.com/watch?v=tStj2r5c7U8">Flowmeter (Venturi/Orifice) Theory and Experiments (TQ 2020) (YouTube)</a>  This video uses nearly identical apparatus as used here at TTU.  The entire video is theory and demonstration of the apparatus; the demonstration starts at time stamp 10:41 (if you want to skip the theory)</p></li>
 <li><p><a class="reference external" href="https://www.youtube.com/watch?v=yuMXTJadFXM">Rotameter Working Explanation with 3D Animation (YouTube)</a></p></li>
 <li><p><a class="reference external" href="https://www.youtube.com/watch?v=bMrSYEAVLwM">Installing a cheap water flow meter with attached Raspberry Pi ZeroW</a>  Nearly identical to the mass flow meter used in the laboratory.  The script in the laboratory uses a different GPIO pin than used in this video.</p></li>
-<li><p><a class="reference external" href="https://youtu.be/dp-LujkiMRQ">CE-3105-FlowMeter-Datalogger Connection (Component of Laboratory 3)</a> Video showing how to connect to the datalogger.</p></li>
+<li><p><a class="reference external" href="https://youtu.be/dp-LujkiMRQ">CE-3105-FlowMeter-Datalogger Connection (Component of Laboratory 2)</a> Video showing how to connect to the datalogger.</p></li>
 </ol>
 </section>
 <section id="objective">
 <h2>Objective<a class="headerlink" href="#objective" title="Link to this heading">#</a></h2>
-<p>To determine the flow rate of an incompressible fluid using various flow measurement devices, including Venturi meter, orifice plate meter, and rotameter, and to evaluate their accuracy and efficiency.</p>
+<p>Measure the flow rate of an incompressible fluid using several devices—Venturi meter, orifice plate, rotameter, external mass flow meter, internal turbine meter, and the time-to-fill method—and compare their apparent accuracy and efficiency.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In this exercise, <strong>time-to-fill</strong> is treated as the ground-truth measurement.</p>
+</div>
 </section>
 <section id="background">
 <h2>Background<a class="headerlink" href="#background" title="Link to this heading">#</a></h2>
@@ -523,34 +528,30 @@ The weight of the plug acts downward. The equilibrium position of the plug depen
 <p>A mass flow meter directly measures the flow by means of a near zero-inertia turbine that is rotated by liquid moving through the device (a mass flow sensor), the rotating turbine has a small ring that is magnetic, but is interrupted in one portion. Inside the cap is a hall detector (a coil) that converts the rotating magnetic field into a digital pulse that the microprocessor can count. These scale in size to very large devices but the general principle of operation is the same.  The figure below shows a small (20L/minute) flowmeter.</p>
 <p><img alt="" src="../../_images/massflowmeter.png" /></p>
 <p>This flowmeter is placed in-line with the water outlet (or inlet) to provide an total flow.</p>
+<p>The laboratory may incorporate the newer hydraulic bench (<a class="reference external" href="http://54.243.252.9/ce-3105-webroot/1-LabManual/experiments/5ex2-pipeflow/H1F.pdf">model H1F</a>) with a built-in flowmeter (herein labeled as <em>internal turbine flow meter</em> which is to be used to compare the result from the external mass flow meter, time-to-fill, and the various pressure drop devices.</p>
+<blockquote>
+<div><p>The (New) TecQuipment H1F Digital Hydraulic Bench uses an electronic flowmeter that operates on the turbine flowmeter principle. A turbine flowmeter measures the volumetric flow rate of a fluid by having the fluid pass through a pipe and cause a rotor to spin. <br> How the H1F’s flowmeter works</p>
 <ul class="simple">
-<li><p>The newer hydraulic bench with a built-in flowmeter can be used to compare the result from the mass flow meter, and a stopwatch and bucket method.</p></li>
-<li><p>The older bench without the built-in flowmeter will only compare readings with the stopwatch and bucket method (as well as the various pressure drop devices</p></li>
+<li><p>A rotor with angled blades is positioned within the path of the water flowing from the submersible pump.</p></li>
+<li><p>As water flows through the meter, it causes the rotor to spin. The speed at which the rotor spins is directly proportional to the flow rate of the water.</p></li>
+<li><p>As the blades of the rotor pass a magnetic pickup sensor, an electrical pulse is generated. The faster the rotor spins, the more pulses are generated per unit of time.</p></li>
+<li><p>The frequency of these electrical pulses is measured by a transmitter, which processes the signal and sends the data to the hydraulic bench’s digital display.</p></li>
+<li><p>The digital display then shows the flow rate in units like litres per second (L·s⁻¹) or litres per minute (L·min⁻¹).</p></li>
 </ul>
-</section>
-<section id="deliverables">
-<h2>Deliverables<a class="headerlink" href="#deliverables" title="Link to this heading">#</a></h2>
-<section id="experimental-protocol">
-<h3>1. Experimental Protocol<a class="headerlink" href="#experimental-protocol" title="Link to this heading">#</a></h3>
-<p>Students must prepare an <strong>experimental protocol</strong>.  Submitted in advance for instructor approval - the protocol will become part of your laboratory report.
-The protocol should include:</p>
+</div></blockquote>
+<p>If your instructor uses the older bench (<a class="reference external" href="http://54.243.252.9/ce-3105-webroot/1-LabManual/experiments/5ex2-pipeflow/H1D-VolumetricHydraulicBench.pdf">model H1D</a>) without the built-in flowmeter you will only report the esternal mass flow meter, time-to-fill and the various pressure drop devices.  Simply leave the <em>turbine meter</em> entries unfilled (or N/A).</p>
+<section id="laboratory-report">
+<h3>1. Laboratory Report<a class="headerlink" href="#laboratory-report" title="Link to this heading">#</a></h3>
+<p>After completing the experiment, students must submit a detailed laboratory report. The report should include:</p>
 <ul class="simple">
-<li><p><strong>Objective</strong>: Clearly state the aim of the experiment.</p></li>
+<li><p><strong>Introduction</strong>: Overview of the principles of flow measurement and the objectives of the experiment.</p></li>
+<li><p><strong>Methods</strong>: Detailed description of the experimental procedure and setup.  The section must include:</p>
+<ul>
 <li><p><strong>Apparatus and Materials</strong>: List all equipment and materials used, including flow meters and auxiliary devices.</p></li>
 <li><p><strong>Procedure</strong>: Provide a step-by-step outline of how the experiment will be performed, ensuring it aligns with the provided laboratory datasheets.</p></li>
 <li><p><strong>Safety Considerations</strong>: Include all safety measures relevant to the setup and execution of the experiment.</p></li>
 </ul>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>The protocol is evaluated to ensure that the envisioned procedures can be safely conducted under appropriate supervision.  The experiments may produce incomplete results if steps are ommitted.</p>
-</div>
-</section>
-<section id="laboratory-report">
-<h3>2. Laboratory Report<a class="headerlink" href="#laboratory-report" title="Link to this heading">#</a></h3>
-<p>After completing the experiment, students must submit a detailed laboratory report. The report should include:</p>
-<ul class="simple">
-<li><p><strong>Introduction</strong>: Overview of the principles of flow measurement and the objectives of the experiment.</p></li>
-<li><p><strong>Methods</strong>: Detailed description of the experimental procedure and setup.</p></li>
+</li>
 <li><p><strong>Results</strong>: Present all collected data, calculations, and graphical representations (e.g., calibration curves).</p></li>
 <li><p><strong>Discussion</strong>: Analyze results, including errors and observations, and compare findings to theoretical expectations.</p></li>
 <li><p><strong>Conclusion</strong>: Summarize findings and their implications.</p></li>
@@ -639,15 +640,15 @@ Mass flow meters measure flow directly using near-zero-inertia turbines. These t
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Laboratory 1 Sample Report</p>
+        <p class="prev-next-title"><span class="math notranslate nohighlight">\(\cdot\)</span> Laboratory 1 Sample Report</p>
       </div>
     </a>
     <a class="right-next"
-       href="ex2_sample_report.html"
+       href="ex2_massflowmeters.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Lab 2. Sample Report</p>
+        <p class="prev-next-title">Mass Flow Meter &amp; Datalogger Scripts</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -674,10 +675,8 @@ Mass flow meters measure flow directly using near-zero-inertia turbines. These t
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#venturi-meter">Venturi Meter</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#orifice-plate-meter">Orifice Plate Meter</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rotameter">Rotameter</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mass-flow-meters">Mass Flow Meters</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deliverables">Deliverables</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#experimental-protocol">1. Experimental Protocol</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#laboratory-report">2. Laboratory Report</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mass-flow-meters">Mass Flow Meters</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#laboratory-report">1. Laboratory Report</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#end-of-section">End of Section</a></li>
