@@ -11,21 +11,18 @@ chapters:
 - file: experiments/3experimentation/experimentation
 - file: experiments/3experimentation/lab-report-format
 - file: experiments/3experimentation/lab-report-rubric
+- file: experiments/abet_plan/abet_plan
 #######################################################
-#- file: experiments/4ex1-statics/ex1 # fluid properties and statics
-#  sections:
-#  - file: experiments/4ex1-statics/ex1_sample_report
+- file: experiments/4ex1-statics/ex1 # fluid properties and statics
+  sections:
+  - file: experiments/4ex1-statics/ex1_sample_report
 #######################################################
 - file: experiments/5ex2-pipeflow/ex2 # flow measurement in conduits
   sections:
   - file: experiments/5ex2-pipeflow/ex2_massflowmeters
   - file: experiments/5ex2-pipeflow/ex2_sample_report
 #######################################################
-- file: experiments/4ex1-statics/ex1 # fluid properties and statics
-  sections:
-  - file: experiments/4ex1-statics/ex1_sample_report  
-#######################################################
-#- file: experiments/6ex3-reynolds/ex3 # reynolds apparatus
+- file: experiments/6ex3-reynolds/ex3 # reynolds apparatus
 #  sections:
 #  - file: experiments/.../ex6A_samplereport
 #######################################################
@@ -56,7 +53,7 @@ chapters:
   - file: experiments/12ex9-hydraulicjump/ex9_sample_report
   - file: experiments/12ex9-hydraulicjump/ex9_sample_calculations
 #######################################################
-#- file: experiments/13ex10-waterhammer/ex10 # waterhammer
+- file: experiments/13ex10-waterhammer/ex10 # waterhammer
 #  sections:
 #  - file: experiments/.../ex6A_samplereport
 ########################################################
@@ -64,8 +61,6 @@ chapters:
 #  sections:
 #  - file: experiments/.../ex6A_samplereport
 #######################################################
-- file: experiments/abet_plan/abet_plan
-
 #- file: markdown
 #- file: notebooks
 #- file: markdown-notebooks
