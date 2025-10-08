@@ -432,21 +432,22 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experimental-measurements">Experimental Measurements</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pipe-loss">Pipe Loss</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#calculation-tools">Calculation Tools</a></li>
-</ul>
-</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pipe-loss">Pipe Loss</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Fitting Losses</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#results-and-discussion">Results and Discussion</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fitting">Fitting</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-analysis-pipe-loss">Data Analysis - Pipe Loss</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-analysis-fitting-losses">Data Analysis - Fitting Losses</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accuracy-and-repeatability">Accuracy and Repeatability:</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sources-of-error">Sources of Error:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sources-of-error">Sources of Error</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#appendix-i-calculation-tools">Appendix I: Calculation Tools</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-calculations">Example Calculations</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#appendix-ii-reference-materials">Appendix II: Reference Materials</a></li>
 </ul>
             </nav>
         </div>
@@ -465,10 +466,14 @@ document.write(`
 <p>Investigation of Friction Losses in a Pipe</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># code here to make tables left justified</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%html</span>
+<span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span><span class="w"> </span><span class="nt">table</span><span class="w"> </span><span class="p">{</span><span class="k">margin-left</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="cp">!important</span><span class="p">;}</span><span class="w"> </span><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style> table {margin-left: 0 !important;} </style>
+</div></div>
 </div>
 </section>
 <section id="authors">
@@ -477,17 +482,29 @@ document.write(`
 </section>
 <section id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Link to this heading">#</a></h2>
-<p>This experiment aimed to investigate frictional losses in a pipe system under varying flow conditions. Measurements of flow rate, pressure drop, and head loss were recorded using both manual methods (stopwatch and bucket) and automated data acquisition systems (flowmeter and pressure transducers). The results were analyzed for accuracy, repeatability, and potential sources of error. The behavior of the friction factor was observed, and Reynolds number was computed for each set of measurements.
-Introduction</p>
-<p>Friction loss in pipes is a critical factor in designing efficient fluid transport systems. This experiment utilized the Darcy-Weisbach equation to quantify friction losses based on measured parameters, including flow velocity, pressure drop, and pipe characteristics. The effect of Reynolds number on flow regime classification was also examined.</p>
+<p>The objective of this experiment is to investigate frictional loss with varying velocity and Reynolds number in a pipeline and to determine minor losses in pipe fittings, including bends, sudden expansions, and sudden contractions. Specifically, the experiment aims to:</p>
+<ul class="simple">
+<li><p>Measure pressure drops across two locations on a pipeline for varying flow rates</p></li>
+<li><p>Measure and compare pressure drops across different fittings to determine their respective loss coefficients (<span class="math notranslate nohighlight">\(K\)</span>).</p></li>
+<li><p>Evaluate the relationship between friction factor and Reynolds number in a small pipeline.</p></li>
+<li><p>Develop hands-on experience with data acquisition techniques, including manual flow rate measurements and the use of a Raspberry Pi-based flowmeter.</p></li>
+<li><p>Validate experimental findings by comparing measured loss coefficients to standard tabulated values reported in the literature.</p></li>
+<li><p>Encourage critical thinking by requiring:</p>
+<ol class="arabic simple">
+<li><p>Explaination of probable sources of experimental error</p></li>
+<li><p>Using visualization to support findings and condense tabular results</p></li>
+</ol>
+</li>
+</ul>
 </section>
 <section id="experimental-setup-and-methods">
 <h2>Experimental Setup and Methods<a class="headerlink" href="#experimental-setup-and-methods" title="Link to this heading">#</a></h2>
+<p>The two experimental configurations (pipe loss and fitting loss) are described in the sub-sections that follow.</p>
 <section id="pipe-losses">
 <h3>Pipe Losses<a class="headerlink" href="#pipe-losses" title="Link to this heading">#</a></h3>
 <p>The experiment was conducted using the H1-D hydraulic bench, a header tank, a test pipe, and both manual and automated measurement devices. Flow rate was measured using the time-to-fill method.</p>
 <p>A labeled photo of the apparatus used in Pipe Loss component of the experiment is displayed below.</p>
-<p><strong>picture here</strong></p>
+<p><img alt="" src="../../_images/pipeLoss.png" /></p>
 <p>Pipe internal diameter and distance between pressure ports are shown in the user manual referenced in the <a class="reference external" href="http://54.243.252.9/ce-3105-webroot/7-user-manuals/H7-FrictionLossInAPipe.pdf">H-7 Friction Loss in a Pipe (User Manual)</a> which is linked in the course web page.  The relevant portion is depicted below.</p>
 <p><img alt="" src="../../_images/pipeDiameters.png" /></p>
 <p>Pressure drop was measured with manometers, and a handheld electronic pressure meter.</p>
@@ -507,15 +524,12 @@ The photo below contains additional information on pipe internal diameters and b
 <p><strong>Need A Photo Here of python readout</strong></p>
 </section>
 </section>
+<hr class="docutils" />
 <section id="experimental-measurements">
 <h2>Experimental Measurements<a class="headerlink" href="#experimental-measurements" title="Link to this heading">#</a></h2>
 <section id="pipe-loss">
 <h3>Pipe Loss<a class="headerlink" href="#pipe-loss" title="Link to this heading">#</a></h3>
-<p>The pipe loss experimental results and related calculations are shown below.</p>
-<p>The fluid properties were determined using on-line resources.  A screen capture is shown below.</p>
-<!--![](fluidProperties.png)-->
-<img src="fluidProperties.png" alt=" " width="700"/>
-<p>The Reynolds number is computed using on-line resources.  A screen capture is shown below.</p>
+<p>The pipe loss experimental results and intermediate related calculations are shown below.</p>
 <p>Notes:</p>
 <ul class="simple">
 <li><p>Temperature of water was 17 degrees Celsius on the experiment date.  Fluid properties for 15 degrees were used (alternately 20C would work sufficiantly too)</p></li>
@@ -525,6 +539,8 @@ The photo below contains additional information on pipe internal diameters and b
 <li><p>1 <span class="math notranslate nohighlight">\(\frac{m^3}{s}\)</span> = 1000 <span class="math notranslate nohighlight">\(\frac{L}{s}\)</span> (Conversion implicit in data table below, used to calculate velocity)</p></li>
 <li><p>1 m == 1000 mm (Conversion implicit in data table below, used to calculate gradient)</p></li>
 <li><p><span class="math notranslate nohighlight">\(\Delta\)</span>p (kPa) is computed by subtracting 27.7 kPa (the reference reading on the digital pressure instrument) from the value reported on the meter.</p></li>
+<li><p>Second to last column is Modified Bernoulli rearranged to find friction factor; it is an experimental result</p></li>
+<li><p>Last column is theoretical friction factor for <strong>laminar</strong> flow in a pipe</p></li>
 </ul>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
@@ -569,7 +585,7 @@ The photo below contains additional information on pipe internal diameters and b
 <td><p>0.00154</p></td>
 <td class="text-right"><p>0.003</p></td>
 <td class="text-right"><p>7.069e-06</p></td>
-<td class="text-right"><p>0.0218</p></td>
+<td class="text-right"><p>0.218</p></td>
 <td class="text-right"><p>293</p></td>
 <td class="text-right"><p>258</p></td>
 <td class="text-right"><p>0.035</p></td>
@@ -577,16 +593,16 @@ The photo below contains additional information on pipe internal diameters and b
 <td class="text-right"><p>0.524</p></td>
 <td class="text-right"><p>0.067</p></td>
 <td class="text-right"><p>-1.175</p></td>
-<td class="text-right"><p>57.4</p></td>
-<td class="text-right"><p>8.27</p></td>
-<td class="text-right"><p>1.11</p></td>
+<td class="text-right"><p>573.7</p></td>
+<td class="text-right"><p>0.083</p></td>
+<td class="text-right"><p>0.111</p></td>
 </tr>
 <tr class="row-even"><td><p>2</p></td>
 <td><p>35.24</p></td>
 <td><p>0.00227</p></td>
 <td class="text-right"><p>0.003</p></td>
 <td class="text-right"><p>7.069e-06</p></td>
-<td class="text-right"><p>0.0321</p></td>
+<td class="text-right"><p>0.321</p></td>
 <td class="text-right"><p>302</p></td>
 <td class="text-right"><p>245</p></td>
 <td class="text-right"><p>0.057</p></td>
@@ -594,16 +610,16 @@ The photo below contains additional information on pipe internal diameters and b
 <td class="text-right"><p>0.524</p></td>
 <td class="text-right"><p>0.109</p></td>
 <td class="text-right"><p>-0.964</p></td>
-<td class="text-right"><p>84.5</p></td>
-<td class="text-right"><p>6.21</p></td>
-<td class="text-right"><p>0.757</p></td>
+<td class="text-right"><p>844.7</p></td>
+<td class="text-right"><p>0.062</p></td>
+<td class="text-right"><p>0.075</p></td>
 </tr>
 <tr class="row-odd"><td><p>3</p></td>
 <td><p>20.73</p></td>
 <td><p>0.00386</p></td>
 <td class="text-right"><p>0.003</p></td>
 <td class="text-right"><p>7.069e-06</p></td>
-<td class="text-right"><p>0.0546</p></td>
+<td class="text-right"><p>0.546</p></td>
 <td class="text-right"><p>322</p></td>
 <td class="text-right"><p>219</p></td>
 <td class="text-right"><p>0.103</p></td>
@@ -611,16 +627,16 @@ The photo below contains additional information on pipe internal diameters and b
 <td class="text-right"><p>0.524</p></td>
 <td class="text-right"><p>0.196</p></td>
 <td class="text-right"><p>-0.707</p></td>
-<td class="text-right"><p>143.7</p></td>
-<td class="text-right"><p>3.88</p></td>
-<td class="text-right"><p>0.445</p></td>
+<td class="text-right"><p>1436.8</p></td>
+<td class="text-right"><p>0.039</p></td>
+<td class="text-right"><p>0.044</p></td>
 </tr>
 <tr class="row-even"><td><p>4</p></td>
 <td><p>15.26</p></td>
 <td><p>0.00524</p></td>
 <td class="text-right"><p>0.003</p></td>
 <td class="text-right"><p>7.069e-06</p></td>
-<td class="text-right"><p>0.0742</p></td>
+<td class="text-right"><p>0.742</p></td>
 <td class="text-right"><p>382</p></td>
 <td class="text-right"><p>181</p></td>
 <td class="text-right"><p>0.201</p></td>
@@ -628,16 +644,16 @@ The photo below contains additional information on pipe internal diameters and b
 <td class="text-right"><p>0.524</p></td>
 <td class="text-right"><p>0.383</p></td>
 <td class="text-right"><p>-0.416</p></td>
-<td class="text-right"><p>195.3</p></td>
-<td class="text-right"><p>4.10</p></td>
-<td class="text-right"><p>0.327</p></td>
+<td class="text-right"><p>1952.6</p></td>
+<td class="text-right"><p>0.041</p></td>
+<td class="text-right"><p>0.033</p></td>
 </tr>
 <tr class="row-odd"><td><p>5</p></td>
 <td><p>14.46</p></td>
 <td><p>0.00553</p></td>
 <td class="text-right"><p>0.003</p></td>
 <td class="text-right"><p>7.069e-06</p></td>
-<td class="text-right"><p>0.0784</p></td>
+<td class="text-right"><p>0.784</p></td>
 <td class="text-right"><p>365</p></td>
 <td class="text-right"><p>166</p></td>
 <td class="text-right"><p>0.199</p></td>
@@ -645,112 +661,13 @@ The photo below contains additional information on pipe internal diameters and b
 <td class="text-right"><p>0.524</p></td>
 <td class="text-right"><p>0.380</p></td>
 <td class="text-right"><p>-0.421</p></td>
-<td class="text-right"><p>206.0</p></td>
-<td class="text-right"><p>3.64</p></td>
-<td class="text-right"><p>0.310</p></td>
+<td class="text-right"><p>2063.2</p></td>
+<td class="text-right"><p>0.036</p></td>
+<td class="text-right"><p>0.031</p></td>
 </tr>
 </tbody>
 </table>
 </div>
-<section id="calculation-tools">
-<h4>Calculation Tools<a class="headerlink" href="#calculation-tools" title="Link to this heading">#</a></h4>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-
-<span class="c1"># Sample data</span>
-<span class="n">V</span>   <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.0218</span><span class="p">,</span> <span class="mf">0.0321</span><span class="p">,</span> <span class="mf">0.0546</span><span class="p">,</span> <span class="mf">0.0742</span><span class="p">,</span> <span class="mf">0.0784</span><span class="p">])</span>
-<span class="n">DH</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.035</span><span class="p">,</span> <span class="mf">0.057</span><span class="p">,</span> <span class="mf">0.103</span><span class="p">,</span> <span class="mf">0.201</span><span class="p">,</span> <span class="mf">0.199</span><span class="p">])</span>
-
-<span class="c1"># Create plot</span>
-<span class="n">fig</span><span class="p">,</span> <span class="n">ax1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
-
-<span class="c1"># Primary axis: FF1 vs RE</span>
-<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">V</span><span class="p">,</span> <span class="n">DH</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span> <span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;tab:blue&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Head Loss&#39;</span><span class="p">)</span>
-<span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Velocity (m/s)&#39;</span><span class="p">)</span>
-<span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Head Loss (m)&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;tab:blue&#39;</span><span class="p">)</span>
-<span class="n">ax1</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">labelcolor</span><span class="o">=</span><span class="s1">&#39;tab:blue&#39;</span><span class="p">)</span>
-<span class="n">ax1</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Head Loss vs Velocity&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/d41daa28cec5e590846aea9ab38395211e90ed48cb0a3a540627cac845228150.png" src="../../_images/d41daa28cec5e590846aea9ab38395211e90ed48cb0a3a540627cac845228150.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compute Area for a Circular Pipe</span>
-<span class="k">def</span> <span class="nf">area_circle</span><span class="p">(</span><span class="n">diameter</span><span class="p">):</span>
-    <span class="kn">import</span> <span class="nn">math</span>
-    <span class="n">area_circle</span> <span class="o">=</span> <span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">diameter</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="mf">4.0</span>
-    <span class="k">return</span> <span class="n">area_circle</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Pipe Flow Area: </span><span class="si">{</span><span class="n">area_circle</span><span class="p">(</span><span class="mf">0.003</span><span class="p">)</span><span class="si">:</span><span class="s2">10.3e</span><span class="si">}</span><span class="s2"> square meters&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Pipe Flow Area:  7.069e-06 square meters
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compute Reynolds Number</span>
-<span class="k">def</span> <span class="nf">reynolds</span><span class="p">(</span><span class="n">velocity</span><span class="p">,</span><span class="n">diameter</span><span class="p">,</span><span class="n">kinematic</span><span class="p">):</span>
-    <span class="n">reynolds</span> <span class="o">=</span> <span class="n">velocity</span><span class="o">*</span><span class="n">diameter</span><span class="o">/</span><span class="n">kinematic</span>
-    <span class="k">return</span><span class="p">(</span><span class="n">reynolds</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Reynolds Number: </span><span class="si">{</span><span class="n">reynolds</span><span class="p">(</span><span class="mf">0.0218</span><span class="p">,</span><span class="mf">0.003</span><span class="p">,</span><span class="mf">1.14e-06</span><span class="p">)</span><span class="si">:</span><span class="s2">10.1f</span><span class="si">}</span><span class="s2"> &quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Reynolds Number:       57.4 
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compute Friction Factor given Headloss</span>
-<span class="k">def</span> <span class="nf">fricfact</span><span class="p">(</span><span class="n">length</span><span class="p">,</span><span class="n">diameter</span><span class="p">,</span><span class="n">velocity</span><span class="p">,</span><span class="n">gravity</span><span class="p">,</span><span class="n">headloss</span><span class="p">):</span>
-    <span class="n">fricfact</span> <span class="o">=</span> <span class="n">headloss</span><span class="o">*</span><span class="p">(</span><span class="n">diameter</span><span class="o">/</span><span class="n">length</span><span class="p">)</span><span class="o">*</span><span class="p">((</span><span class="mf">2.0</span><span class="o">*</span><span class="n">gravity</span><span class="p">)</span><span class="o">/</span><span class="n">velocity</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
-    <span class="k">return</span><span class="p">(</span><span class="n">fricfact</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Friction Factor: </span><span class="si">{</span><span class="n">fricfact</span><span class="p">(</span><span class="mf">0.524</span><span class="p">,</span><span class="mf">0.003</span><span class="p">,</span><span class="mf">0.0218</span><span class="p">,</span><span class="mf">9.81</span><span class="p">,</span><span class="mf">0.035</span><span class="p">)</span><span class="si">:</span><span class="s2">10.2f</span><span class="si">}</span><span class="s2"> &quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Friction Factor:       8.27 
-</pre></div>
-</div>
-</div>
-</div>
-</section>
 </section>
 <section id="id1">
 <h3>Fitting Losses<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
@@ -804,7 +721,7 @@ The photo below contains additional information on pipe internal diameters and b
 <td><p>380</p></td>
 <td><p>370</p></td>
 <td><p>370</p></td>
-<td><p>265</p></td>
+<td><p>365</p></td>
 </tr>
 <tr class="row-even"><td><p>2</p></td>
 <td><p>6.13</p></td>
@@ -877,41 +794,462 @@ The photo below contains additional information on pipe internal diameters and b
 </section>
 <section id="results-and-discussion">
 <h2>Results and Discussion<a class="headerlink" href="#results-and-discussion" title="Link to this heading">#</a></h2>
-<p>Flow Rate Comparisons:</p>
-<ul class="simple">
-<li><p>The flowmeter and stopwatch/bucket method provided similar results for high flow rates, but discrepancies were noted at low flow rates.</p></li>
-<li><p>The flowmeter was less accurate for very low flows, where small variations were more difficult to detect.</p></li>
-</ul>
-<p>Pressure Drop Comparisons:</p>
-<ul class="simple">
-<li><p>The manometer and handheld pressure meter readings closely matched, serving as reliable “ground truth.”</p></li>
-<li><p>The automated datalogger system, after applying the necessary voltage-to-pressure conversion, provided consistent results but required calibration for accurate pressure readings.</p></li>
-<li><p>The transducers demonstrated a slight non-linearity at extreme pressure ranges, which was corrected using a conversion factor.</p></li>
-</ul>
-<section id="fitting">
-<h3>Fitting<a class="headerlink" href="#fitting" title="Link to this heading">#</a></h3>
+<section id="data-analysis-pipe-loss">
+<h3>Data Analysis - Pipe Loss<a class="headerlink" href="#data-analysis-pipe-loss" title="Link to this heading">#</a></h3>
+<p>The manometer and handheld pressure meter readings closely matched, serving as reliable “ground truth.”  The calculations used for computing friction factor were based on the manometer readings. Plots the observed (measured) friction factor versus Reynolds’ number, and theoretical friction factor versus Reynolds’ number are shown below - in laminar flow we anticipate the relationship to be <span class="math notranslate nohighlight">\(f = \frac{64}{Re}\)</span>, so a log-log plot should appear as a straight line.</p>
+<p>The script and plot below visually compares the observed and theoretical friction factors for the experimental conditions.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># ----------------------------</span>
+<span class="c1"># Data</span>
+<span class="c1"># ----------------------------</span>
+<span class="n">RE</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">573</span><span class="p">,</span> <span class="mi">845</span><span class="p">,</span> <span class="mi">1437</span><span class="p">,</span> <span class="mi">1953</span><span class="p">,</span> <span class="mi">2063</span><span class="p">])</span>
+<span class="c1"># FF = theoretical; FF2 = measured (fill in your measured values)</span>
+<span class="n">FF</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.111</span><span class="p">,</span> <span class="mf">0.075</span><span class="p">,</span> <span class="mf">0.044</span><span class="p">,</span> <span class="mf">0.033</span><span class="p">,</span> <span class="mf">0.031</span><span class="p">])</span>   <span class="c1"># theoretical (~64/RE)</span>
+<span class="n">FF2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.083</span> <span class="p">,</span> <span class="mf">0.062</span> <span class="p">,</span> <span class="mf">0.039</span> <span class="p">,</span> <span class="mf">0.041</span> <span class="p">,</span> <span class="mf">0.036</span><span class="p">])</span>   <span class="c1"># &lt;&lt;&lt; lab measured/computed</span>
+
+<span class="c1"># ----------------------------</span>
+<span class="c1"># Prototype Functions</span>
+<span class="c1"># ----------------------------</span>
+<span class="k">def</span> <span class="nf">fit_powerlaw</span><span class="p">(</span><span class="n">x_val</span><span class="p">,</span> <span class="n">y_val</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Fit y = a * x^b via log-log linear regression.</span>
+<span class="sd">    Returns: a, b, r2, y_pred</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">x_val</span><span class="p">)</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">y_val</span><span class="p">)</span>
+    <span class="n">b</span><span class="p">,</span> <span class="n">ln_a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">ln_a</span><span class="p">)</span>
+
+    <span class="n">y_pred</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="n">x_val</span><span class="o">**</span><span class="n">b</span>
+    <span class="n">ss_res</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">((</span><span class="n">y_val</span> <span class="o">-</span> <span class="n">y_pred</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">ss_tot</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">((</span><span class="n">y_val</span> <span class="o">-</span> <span class="n">y_val</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">r2</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">ss_res</span><span class="o">/</span><span class="n">ss_tot</span>
+    <span class="k">return</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">r2</span><span class="p">,</span> <span class="n">y_pred</span>
+
+<span class="c1"># ----------------------------</span>
+<span class="c1"># Fits</span>
+<span class="c1"># ----------------------------</span>
+<span class="n">a1</span><span class="p">,</span> <span class="n">b1</span><span class="p">,</span> <span class="n">r2_1</span><span class="p">,</span> <span class="n">FF_pred</span>  <span class="o">=</span> <span class="n">fit_powerlaw</span><span class="p">(</span><span class="n">RE</span><span class="p">,</span> <span class="n">FF</span><span class="p">)</span>
+<span class="n">a2</span><span class="p">,</span> <span class="n">b2</span><span class="p">,</span> <span class="n">r2_2</span><span class="p">,</span> <span class="n">FF2_pred</span> <span class="o">=</span> <span class="n">fit_powerlaw</span><span class="p">(</span><span class="n">RE</span><span class="p">,</span> <span class="n">FF2</span><span class="p">)</span>
+
+<span class="c1"># Smooth curve for plotting</span>
+<span class="n">RE_fit</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">RE</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">RE</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="mi">400</span><span class="p">)</span>
+<span class="n">FF_fit</span>  <span class="o">=</span> <span class="n">a1</span> <span class="o">*</span> <span class="n">RE_fit</span><span class="o">**</span><span class="n">b1</span>
+<span class="n">FF2_fit</span> <span class="o">=</span> <span class="n">a2</span> <span class="o">*</span> <span class="n">RE_fit</span><span class="o">**</span><span class="n">b2</span>
+
+<span class="c1"># Equation strings</span>
+<span class="n">eqn1</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;FF(th)  = </span><span class="si">{</span><span class="n">a1</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">·Re^</span><span class="si">{</span><span class="n">b1</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">   R²=</span><span class="si">{</span><span class="n">r2_1</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="n">eqn2</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;FF2(meas)= </span><span class="si">{</span><span class="n">a2</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">·Re^</span><span class="si">{</span><span class="n">b2</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">   R²=</span><span class="si">{</span><span class="n">r2_2</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">eqn1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">eqn2</span><span class="p">)</span>
+
+<span class="c1"># ----------------------------</span>
+<span class="c1"># Plot (log–log)</span>
+<span class="c1"># ----------------------------</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+
+<span class="c1"># Data</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">RE</span><span class="p">,</span> <span class="n">FF</span><span class="p">,</span>  <span class="s1">&#39;o&#39;</span><span class="p">,</span>  <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Theoretical (samples)&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.9</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">RE</span><span class="p">,</span> <span class="n">FF2</span><span class="p">,</span> <span class="s1">&#39;s&#39;</span><span class="p">,</span>  <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Measured (lab)&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.9</span><span class="p">)</span>
+
+<span class="c1"># Fits</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">RE_fit</span><span class="p">,</span> <span class="n">FF_fit</span><span class="p">,</span>  <span class="s1">&#39;-&#39;</span><span class="p">,</span>  <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Fit (theoretical)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">RE_fit</span><span class="p">,</span> <span class="n">FF2_fit</span><span class="p">,</span> <span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Fit (measured)&#39;</span><span class="p">)</span>
+
+<span class="c1"># Axes scaling and limits</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_yscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">500</span><span class="p">,</span> <span class="mi">3000</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mf">0.03</span><span class="p">,</span> <span class="mf">0.15</span><span class="p">)</span>
+
+<span class="c1"># Labels, grid, legend</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Reynolds Number (log scale)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Friction Factor (log scale)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Friction Factor vs. Reynolds Number — Theoretical vs Measured (Power-Law Fits)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
+<span class="c1"># Annotation</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span>
+    <span class="mf">0.02</span><span class="p">,</span> <span class="mf">0.24</span><span class="p">,</span>
+    <span class="n">eqn1</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="n">eqn2</span><span class="p">,</span>
+    <span class="n">transform</span><span class="o">=</span><span class="n">ax</span><span class="o">.</span><span class="n">transAxes</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">&#39;top&#39;</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">,</span>
+    <span class="n">bbox</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">boxstyle</span><span class="o">=</span><span class="s1">&#39;round&#39;</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
+<span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># ----------------------------</span>
+<span class="c1"># (Optional) If you want to overlay the canonical laminar theory f=64/Re:</span>
+<span class="c1"># ----------------------------</span>
+<span class="c1"># FF_theory_curve = 64.0 / RE_fit</span>
+<span class="c1"># ax.plot(RE_fit, FF_theory_curve, &#39;:&#39;, label=&#39;f = 64 / Re&#39;)</span>
+<span class="c1"># ax.legend()</span>
+<span class="c1"># plt.show()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>FF(th)  = 60.3537·Re^-0.9924   R²=0.9999
+FF2(meas)= 4.2093·Re^-0.6247   R²=0.9618
+</pre></div>
+</div>
+<img alt="../../_images/a56f9043ab946fc045f25ddfd3faee79751b17a46eae3efda408f3bb943a3ac8.png" src="../../_images/a56f9043ab946fc045f25ddfd3faee79751b17a46eae3efda408f3bb943a3ac8.png" />
+</div>
+</div>
+<p><strong>Interpretation</strong></p>
+<p>The experimental results display the correct sign on the fitted exponent in agreement with laminar flow theory. The magnitude is such that the plotted line has a lower slope than anticipated.  The constant is 16 times too small, suggesting considerable experimental error.</p>
+<ol class="arabic simple">
+<li><p>Reading uncertainty on the manometer – the smallest division is 2 mm, which limits resolution.  Readings that are too low would underpredict head loss and can explain the low friction factor values as compared to theoretical values.</p></li>
+<li><p>Variability in time‐to‐fill measurements – this component is vital to computing velocity which is squared in the computations.  A tipping‐bucket type flow measurement device would improve precision and repeatability.  If the velocities are computed as too large (calling “stop” too soon) that too would lead to low friction factor values.</p></li>
+<li><p>Use of tabulated fluid properties not corrected for the actual temperature - this component would affect the computation of Re in the tables, and also produce off-theory friction factors.  This source of error is probably the least significant, as the literature tabulated values change by less than 0.1% in the 5-degree temperature range near the laboratory temperature.</p></li>
+</ol>
+<p>Despite these issues, the measured results follow the anticipated trend (in fact if the last two measurements are ignored the fitted lines would be parallel) reinforcing the theory of head loss in a pipe in laminar flow.</p>
 </section>
-</section>
-<section id="accuracy-and-repeatability">
-<h2>Accuracy and Repeatability:<a class="headerlink" href="#accuracy-and-repeatability" title="Link to this heading">#</a></h2>
+<section id="data-analysis-fitting-losses">
+<h3>Data Analysis - Fitting Losses<a class="headerlink" href="#data-analysis-fitting-losses" title="Link to this heading">#</a></h3>
+<p>The reduced fitting loss data are shown below:</p>
+<p>Notes:</p>
 <ul class="simple">
-<li><p>The mean and standard deviation of measurements were calculated for each set.</p></li>
-<li><p>The high precision of the automated data logger, with its high sampling rate, reduced variance in pressure readings compared to manual methods.</p></li>
+<li><p>U_small == velocity is smaller diameter portions; used for mitre, elbow, expansion, contraction, and long sweep</p></li>
+<li><p>U_large == velocity in larger diameter portions; used for contraction and expansion</p></li>
+<li><p>DH == Head loss in meters (implicit units conversion already applied)</p></li>
+<li><p>Q_bar == average flow all measurement methods that had non-zero values</p></li>
+<li><p>Re &gt; 6000 for all rows below; turbulent regime.</p></li>
 </ul>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-right"><p>Q_bar (L/s)</p></th>
+<th class="head text-right"><p>U_small (m/s)</p></th>
+<th class="head text-right"><p>U_big (m/s)</p></th>
+<th class="head text-right"><p>DH_mitre (m)</p></th>
+<th class="head text-right"><p>DH_Elbow (m)</p></th>
+<th class="head text-right"><p>DH_Expand (m)</p></th>
+<th class="head text-right"><p>DH_Contract (m)</p></th>
+<th class="head text-right"><p>DH_sweep (m)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-right"><p>0.159</p></td>
+<td class="text-right"><p>0.418</p></td>
+<td class="text-right"><p>0.251</p></td>
+<td class="text-right"><p>0.016</p></td>
+<td class="text-right"><p>0.011</p></td>
+<td class="text-right"><p>0.004</p></td>
+<td class="text-right"><p>0.010</p></td>
+<td class="text-right"><p>0.005</p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>0.322</p></td>
+<td class="text-right"><p>0.847</p></td>
+<td class="text-right"><p>0.508</p></td>
+<td class="text-right"><p>0.056</p></td>
+<td class="text-right"><p>0.035</p></td>
+<td class="text-right"><p>0.010</p></td>
+<td class="text-right"><p>0.035</p></td>
+<td class="text-right"><p>0.020</p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p>0.340</p></td>
+<td class="text-right"><p>0.894</p></td>
+<td class="text-right"><p>0.536</p></td>
+<td class="text-right"><p>0.059</p></td>
+<td class="text-right"><p>0.040</p></td>
+<td class="text-right"><p>0.011</p></td>
+<td class="text-right"><p>0.038</p></td>
+<td class="text-right"><p>0.018</p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>0.359</p></td>
+<td class="text-right"><p>0.945</p></td>
+<td class="text-right"><p>0.567</p></td>
+<td class="text-right"><p>0.076</p></td>
+<td class="text-right"><p>0.044</p></td>
+<td class="text-right"><p>0.013</p></td>
+<td class="text-right"><p>0.044</p></td>
+<td class="text-right"><p>0.023</p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p>0.378</p></td>
+<td class="text-right"><p>0.993</p></td>
+<td class="text-right"><p>0.596</p></td>
+<td class="text-right"><p>0.078</p></td>
+<td class="text-right"><p>0.045</p></td>
+<td class="text-right"><p>0.012</p></td>
+<td class="text-right"><p>0.047</p></td>
+<td class="text-right"><p>0.021</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The table below shows the computed K-values from the experimental results using the fitting loss prototype function in Appendix I.  Selected literature values are shown in adjacent columns.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-right"><p>K_mitre (obs)</p></th>
+<th class="head text-right"><p>K_mitre (lit)</p></th>
+<th class="head text-right"><p>K_elbow (obs)</p></th>
+<th class="head text-right"><p>K_elbow (lit)</p></th>
+<th class="head text-right"><p>K_expand (obs)</p></th>
+<th class="head text-right"><p>K_expand (lit)</p></th>
+<th class="head text-right"><p>K_contract (obs)</p></th>
+<th class="head text-right"><p>K_contract (lit)</p></th>
+<th class="head text-right"><p>K_sweep (obs)</p></th>
+<th class="head text-right"><p>K_sweep (lit)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-right"><p>1.797</p></td>
+<td class="text-right"><p>1.2</p></td>
+<td class="text-right"><p>1.235</p></td>
+<td class="text-right"><p>0.7</p></td>
+<td class="text-right"><p>0.449</p></td>
+<td class="text-right"><p>0.444</p></td>
+<td class="text-right"><p>1.123</p></td>
+<td class="text-right"><p>0.159</p></td>
+<td class="text-right"><p>0.561</p></td>
+<td class="text-right"><p>~0.25</p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>1.438</p></td>
+<td class="text-right"><p>1.2</p></td>
+<td class="text-right"><p>0.957</p></td>
+<td class="text-right"><p>0.7</p></td>
+<td class="text-right"><p>0.273</p></td>
+<td class="text-right"><p>0.444</p></td>
+<td class="text-right"><p>0.957</p></td>
+<td class="text-right"><p>0.159</p></td>
+<td class="text-right"><p>0.547</p></td>
+<td class="text-right"><p>~0.25</p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p>1.448</p></td>
+<td class="text-right"><p>1.2</p></td>
+<td class="text-right"><p>0.982</p></td>
+<td class="text-right"><p>0.7</p></td>
+<td class="text-right"><p>0.270</p></td>
+<td class="text-right"><p>0.444</p></td>
+<td class="text-right"><p>0.933</p></td>
+<td class="text-right"><p>0.159</p></td>
+<td class="text-right"><p>0.442</p></td>
+<td class="text-right"><p>~0.25</p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>1.670</p></td>
+<td class="text-right"><p>1.2</p></td>
+<td class="text-right"><p>0.967</p></td>
+<td class="text-right"><p>0.7</p></td>
+<td class="text-right"><p>0.286</p></td>
+<td class="text-right"><p>0.444</p></td>
+<td class="text-right"><p>0.967</p></td>
+<td class="text-right"><p>0.159</p></td>
+<td class="text-right"><p>0.505</p></td>
+<td class="text-right"><p>~0.25</p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p>1.552</p></td>
+<td class="text-right"><p>1.2</p></td>
+<td class="text-right"><p>0.895</p></td>
+<td class="text-right"><p>0.7</p></td>
+<td class="text-right"><p>0.239</p></td>
+<td class="text-right"><p>0.444</p></td>
+<td class="text-right"><p>0.935</p></td>
+<td class="text-right"><p>0.159</p></td>
+<td class="text-right"><p>0.418</p></td>
+<td class="text-right"><p>~0.25</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Literature Values from:</p>
+<ul class="simple">
+<li><p>Elbow bend K value: <a class="reference external" href="https://innovationspace.ansys.com/courses/wp-content/uploads/sites/5/2020/09/Lesson-4-Minor-Losses-in-Pipes-and-Ducts-Handout.pdf">https://innovationspace.ansys.com/Lesson-4-Minor-Losses-in-Pipes-and-Ducts-Handout.pdf</a></p></li>
+<li><p>Mitre bend K value: <a class="reference external" href="https://datatool.pumps.org/fluid-flow-iii/fr-loss-water">https://datatool.pumps.org/fluid-flow-iii/fr-loss-water</a></p></li>
+<li><p>Expansion/contraction K value(s): <a class="reference external" href="https://www.ryantoomey.org/wiki/Loss_coefficient">https://www.ryantoomey.org/wiki/Loss_coefficient</a></p></li>
+<li><p>Long sweep K value: <a class="reference external" href="https://help.autodesk.com/view/INFWP/ENU/?guid=GUID-A39E901A-1D47-4FFD-8AED-81AFDAA15375">https://help.autodesk.com/view/INFWP/ENU/?guid=GUID-A39E901A-1D47-4FFD-8AED-81AFDAA15375</a></p></li>
+</ul>
+<p><strong>Interpretation</strong></p>
+<p>The experimentally obtained loss coefficients are summarized in the tables and displayed in the box-and-whisker plots below. For each fitting type, the black circles indicate the experimental means, while the red diamonds denote the commonly accepted literature values.</p>
+<p>In four of the five fittings (mitre, elbow, contraction, and sweep), the experimental means exceed the corresponding literature values. The expansion fitting is the only case where the measured mean falls slightly below the published reference. This consistent bias suggests some combination of measurement uncertainty, local flow effects, or apparatus‐related losses not fully reflected in idealized literature values.</p>
+<p>Although none of the literature values lie within the interquartile range (IQR) of the experimental distributions, most fall well within approximately three standard deviations of the observed data. In other words, while the central tendency of the experiments is shifted relative to published benchmarks, the spread of the data still encompasses the literature values within a statistically reasonable tolerance. Taken together, the results do not contradict established sources and generally support the existing literature, especially when accounting for typical variability in laboratory conditions.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># ----------------------------</span>
+<span class="c1"># Data</span>
+<span class="c1"># ----------------------------</span>
+<span class="n">Kmitre</span>    <span class="o">=</span> <span class="p">[</span><span class="mf">1.797</span><span class="p">,</span> <span class="mf">1.438</span><span class="p">,</span> <span class="mf">1.448</span><span class="p">,</span> <span class="mf">1.67</span><span class="p">,</span> <span class="mf">1.552</span><span class="p">]</span>
+<span class="n">Kelbow</span>    <span class="o">=</span> <span class="p">[</span><span class="mf">1.235</span><span class="p">,</span> <span class="mf">0.957</span><span class="p">,</span> <span class="mf">0.982</span><span class="p">,</span> <span class="mf">0.967</span><span class="p">,</span> <span class="mf">0.895</span><span class="p">]</span>
+<span class="n">Kexpand</span>   <span class="o">=</span> <span class="p">[</span><span class="mf">0.449</span><span class="p">,</span> <span class="mf">0.273</span><span class="p">,</span> <span class="mf">0.27</span><span class="p">,</span> <span class="mf">0.286</span><span class="p">,</span> <span class="mf">0.239</span><span class="p">]</span>
+<span class="n">Kcontract</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.123</span><span class="p">,</span> <span class="mf">0.957</span><span class="p">,</span> <span class="mf">0.933</span><span class="p">,</span> <span class="mf">0.967</span><span class="p">,</span> <span class="mf">0.935</span><span class="p">]</span>
+<span class="n">Ksweep</span>    <span class="o">=</span> <span class="p">[</span><span class="mf">0.561</span><span class="p">,</span> <span class="mf">0.547</span><span class="p">,</span> <span class="mf">0.442</span><span class="p">,</span> <span class="mf">0.505</span><span class="p">,</span> <span class="mf">0.418</span><span class="p">]</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="n">Kmitre</span><span class="p">,</span> <span class="n">Kelbow</span><span class="p">,</span> <span class="n">Kexpand</span><span class="p">,</span> <span class="n">Kcontract</span><span class="p">,</span> <span class="n">Ksweep</span><span class="p">]</span>
+<span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Kmitre&quot;</span><span class="p">,</span> <span class="s2">&quot;Kelbow&quot;</span><span class="p">,</span> <span class="s2">&quot;Kexpand&quot;</span><span class="p">,</span> <span class="s2">&quot;Kcontract&quot;</span><span class="p">,</span> <span class="s2">&quot;Ksweep&quot;</span><span class="p">]</span>
+
+<span class="c1"># Literature values (one per list)</span>
+<span class="n">Kliterature</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.2</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.444</span><span class="p">,</span> <span class="mf">0.159</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">]</span>
+
+<span class="c1"># ----------------------------</span>
+<span class="c1"># Plot</span>
+<span class="c1"># ----------------------------</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+
+<span class="n">box</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span>
+    <span class="n">data</span><span class="p">,</span>
+    <span class="n">tick_labels</span><span class="o">=</span><span class="n">labels</span><span class="p">,</span>
+    <span class="n">showmeans</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">meanline</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">meanprops</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;marker&quot;</span><span class="p">:</span> <span class="s2">&quot;o&quot;</span><span class="p">,</span> <span class="s2">&quot;markerfacecolor&quot;</span><span class="p">:</span> <span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="s2">&quot;markersize&quot;</span><span class="p">:</span> <span class="mi">6</span><span class="p">}</span>
+<span class="p">)</span>
+
+<span class="c1"># Overlay literature values as red diamonds</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">Kliterature</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">val</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span>
+            <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Literature&#39;</span> <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">1</span> <span class="k">else</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+
+<span class="c1"># Labeling and grid</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Box and Whisker Plot of K-values with Literature Reference&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Value&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+
+<span class="c1"># Ensure legend appears only once</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/136a2c3df054170ee2e4bf724fa88030e4958652275f998b74c2b5c56f8abf79.png" src="../../_images/136a2c3df054170ee2e4bf724fa88030e4958652275f998b74c2b5c56f8abf79.png" />
+</div>
+</div>
+</section>
 </section>
 <section id="sources-of-error">
-<h2>Sources of Error:<a class="headerlink" href="#sources-of-error" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Potential sources of error included slight inaccuracies in manual flow measurement (due to timing inconsistencies) and sensor calibration errors for the automated data acquisition system.</p></li>
-<li><p>Environmental factors such as temperature variations could also have affected viscosity and other fluid properties.</p></li>
-</ul>
+<h2>Sources of Error<a class="headerlink" href="#sources-of-error" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Flow rate determination by time-to-fill
+The dominant source of experimental uncertainty arises from the use of time-to-fill measurements to estimate the volumetric flow rate. This value propagates through all subsequent calculations, including velocity, Reynolds number, friction factor, and fitting loss coefficients. Because the flow rates in the pipe‐loss experiment were below the stall threshold of the available flowmeters, no alternative measurement method was feasible.</p></li>
+<li><p>Approximation of fluid properties
+Standard reference tables report density and viscosity at 5 °C intervals. The experimental fluid temperature was approximately 17 °C, which is not explicitly tabulated. The nearest tabulated values were adopted without interpolation. Given that density and viscosity typically vary by less than 0.1 percent over a 5 °C range, the resulting error is considered negligible relative to other uncertainties.</p></li>
+<li><p>Manometer reading resolution and vibration effects
+The minimum practical reading increment on the manometer was 2 mm of water. The meniscus was of comparable thickness, and small pressure oscillations induced by the pump were visually apparent during measurement. Under these conditions, the resolution of the apparatus is at or near its practical limit. More precise measurements would require instrumentation such as pressure transducers integrated into a Wheatstone-bridge configuration with appropriate noise filtering.</p></li>
+<li><p>Transcription of recorded values
+A minor source of potential error is the manual transfer of recorded measurements into the data tables. Although attention to accuracy was maintained, the possibility of transcription errors cannot be fully precluded.</p></li>
+</ol>
 </section>
 <section id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h2>
-<p>The experiment successfully demonstrated the application of both manual and automated methods for measuring frictional losses in a pipe system. While automated systems offered advantages in data precision, manual methods remained valuable for calibration and verification. Further improvements to the flowmeter’s sensitivity and pressure transducer calibration will enhance measurement accuracy for low flow rates.</p>
+<p>The experimental work successfully demonstrated that theoretical friction factors for laminar flow can be reproduced using small‐scale apparatus and relatively basic measurement techniques. Although exact numerical agreement with theoretical values was not achieved, the observed trends closely followed the expected behavior. When the identified sources of experimental uncertainty are considered, the results fall well within a reasonable range of agreement. These findings support the reliability of published friction factor correlations and indicate that laboratory‐scale validation is feasible even with modest instrumentation.</p>
+<p>Similarly, the literature values for minor loss coefficients were effectively corroborated. Because such coefficients are empirically derived and inherently sensitive to geometry, connection type (e.g., threaded, flanged, or solvent‐welded), and material, some variability between measured and published values is expected. In this context, the experimental results are sufficiently close to the literature benchmarks to be considered confirmatory. The small physical scale of the fittings and limitations in flow measurement likely account for most of the observed deviations. An alternative interpretation is that the slight positive bias in experimental results reflects conservative reporting practices in the literature, intended to reduce the risk of under‐design in hydraulic systems.</p>
+<p>Overall, the study provides credible experimental support for established friction factor relationships and minor loss coefficients. The outcomes reinforce the applicability of literature values while highlighting the importance of measurement resolution, apparatus scale, and experimental method when interpreting laboratory results.</p>
 </section>
-<section id="references">
-<h2>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h2>
+<hr class="docutils" />
+<section id="appendix-i-calculation-tools">
+<h2>Appendix I: Calculation Tools<a class="headerlink" href="#appendix-i-calculation-tools" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Prototype Functions</span>
+
+<span class="c1"># Compute Area for a Circular Pipe</span>
+<span class="k">def</span> <span class="nf">area_circle</span><span class="p">(</span><span class="n">diameter</span><span class="p">):</span>
+    <span class="kn">import</span> <span class="nn">math</span>
+    <span class="n">area_circle</span> <span class="o">=</span> <span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">diameter</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="mf">4.0</span>
+    <span class="k">return</span> <span class="n">area_circle</span>
+
+<span class="c1"># Compute Reynolds Number</span>
+<span class="k">def</span> <span class="nf">reynolds</span><span class="p">(</span><span class="n">velocity</span><span class="p">,</span><span class="n">diameter</span><span class="p">,</span><span class="n">kinematic</span><span class="p">):</span>
+    <span class="n">reynolds</span> <span class="o">=</span> <span class="n">velocity</span><span class="o">*</span><span class="n">diameter</span><span class="o">/</span><span class="n">kinematic</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">reynolds</span><span class="p">)</span>
+
+<span class="c1"># Compute Friction Factor given Headloss</span>
+<span class="k">def</span> <span class="nf">fricfact</span><span class="p">(</span><span class="n">length</span><span class="p">,</span><span class="n">diameter</span><span class="p">,</span><span class="n">velocity</span><span class="p">,</span><span class="n">gravity</span><span class="p">,</span><span class="n">headloss</span><span class="p">):</span>
+    <span class="n">fricfact</span> <span class="o">=</span> <span class="n">headloss</span><span class="o">*</span><span class="p">(</span><span class="n">diameter</span><span class="o">/</span><span class="n">length</span><span class="p">)</span><span class="o">*</span><span class="p">((</span><span class="mf">4.0</span><span class="o">*</span><span class="n">gravity</span><span class="p">)</span><span class="o">/</span><span class="n">velocity</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">fricfact</span><span class="p">)</span>
+
+<span class="c1"># Compute loss coefficient given headloss and velocity</span>
+<span class="k">def</span> <span class="nf">Kfitting</span><span class="p">(</span><span class="n">headloss</span><span class="p">,</span><span class="n">velocity</span><span class="p">,</span><span class="n">gravity</span><span class="p">):</span>
+    <span class="n">Kfitting</span><span class="o">=</span><span class="n">headloss</span><span class="o">/</span><span class="p">((</span><span class="n">velocity</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mf">2.0</span><span class="o">*</span><span class="n">gravity</span><span class="p">))</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">Kfitting</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="example-calculations">
+<h3>Example Calculations<a class="headerlink" href="#example-calculations" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Pipe Flow Area: </span><span class="si">{</span><span class="n">area_circle</span><span class="p">(</span><span class="mf">0.0284</span><span class="p">)</span><span class="si">:</span><span class="s2">10.3e</span><span class="si">}</span><span class="s2"> square meters&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Pipe Flow Area:  6.335e-04 square meters
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Reynolds Number: </span><span class="si">{</span><span class="n">reynolds</span><span class="p">(</span><span class="mf">0.418</span><span class="p">,</span><span class="mf">0.022</span><span class="p">,</span><span class="mf">1.14e-06</span><span class="p">)</span><span class="si">:</span><span class="s2">10.1f</span><span class="si">}</span><span class="s2"> &quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Reynolds Number:     8066.7 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Friction Factor: </span><span class="si">{</span><span class="n">fricfact</span><span class="p">(</span><span class="mf">0.524</span><span class="p">,</span><span class="mf">0.003</span><span class="p">,</span><span class="mf">0.218</span><span class="p">,</span><span class="mf">9.81</span><span class="p">,</span><span class="mf">0.035</span><span class="p">)</span><span class="si">:</span><span class="s2">10.3f</span><span class="si">}</span><span class="s2"> &quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Friction Factor:      0.165 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;K fitting: </span><span class="si">{</span><span class="n">Kfitting</span><span class="p">(</span><span class="mf">0.021</span><span class="p">,</span><span class="mf">0.993</span><span class="p">,</span><span class="mf">9.81</span><span class="p">)</span><span class="si">:</span><span class="s2">10.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>K fitting:      0.418
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Expansion/Contraction Loss coefficients based on diameter ratio</span>
+<span class="n">diam_small</span> <span class="o">=</span> <span class="mf">22.0</span>
+<span class="n">diam_big</span>   <span class="o">=</span> <span class="mf">28.4</span>
+<span class="n">K_contract</span> <span class="o">=</span><span class="p">(</span><span class="mf">1.0</span> <span class="o">-</span> <span class="p">(</span><span class="n">diam_small</span><span class="o">/</span><span class="n">diam_big</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+<span class="n">K_expand</span>   <span class="o">=</span><span class="p">((</span><span class="n">diam_big</span><span class="o">/</span><span class="n">diam_small</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;K for sudden contraction: </span><span class="si">{</span><span class="n">K_contract</span><span class="si">:</span><span class="s2">10.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;K for sudden expansion: </span><span class="si">{</span><span class="n">K_expand</span><span class="si">:</span><span class="s2">10.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>K for sudden contraction:      0.160
+K for sudden expansion:      0.444
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="appendix-ii-reference-materials">
+<h2>Appendix II: Reference Materials<a class="headerlink" href="#appendix-ii-reference-materials" title="Link to this heading">#</a></h2>
+<p>The fluid properties used in the experiment were determined using on-line resources.  A screen capture is shown below.</p>
+<p><img alt="" src="../../_images/fluidProperties.png" /></p>
 </section>
 </section>
 
@@ -988,21 +1326,22 @@ The photo below contains additional information on pipe internal diameters and b
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experimental-measurements">Experimental Measurements</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pipe-loss">Pipe Loss</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#calculation-tools">Calculation Tools</a></li>
-</ul>
-</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pipe-loss">Pipe Loss</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Fitting Losses</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#results-and-discussion">Results and Discussion</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fitting">Fitting</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-analysis-pipe-loss">Data Analysis - Pipe Loss</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-analysis-fitting-losses">Data Analysis - Fitting Losses</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accuracy-and-repeatability">Accuracy and Repeatability:</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sources-of-error">Sources of Error:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sources-of-error">Sources of Error</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#appendix-i-calculation-tools">Appendix I: Calculation Tools</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-calculations">Example Calculations</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#appendix-ii-reference-materials">Appendix II: Reference Materials</a></li>
 </ul>
   </nav></div>
 
