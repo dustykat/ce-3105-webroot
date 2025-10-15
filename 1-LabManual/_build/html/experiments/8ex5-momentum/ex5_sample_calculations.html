@@ -62,8 +62,6 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'experiments/8ex5-momentum/ex5_sample_calculations';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Lab 9 - Bilge Pump Curve" href="../9ex6-pumps/ex6A.html" />
-    <link rel="prev" title="Laboratory 5 Sample Report" href="ex5_sample_report.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -126,6 +124,8 @@
       
       
       
+        
+      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -181,7 +181,7 @@
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
+        <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../0syllabus/ce-3105-syllabus-2025-3.html">Syllabus</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../1safety/safety.html">Safety Considerations</a></li>
 
@@ -189,6 +189,7 @@
 
 <li class="toctree-l1"><a class="reference internal" href="../3experimentation/lab-report-format.html">Laboratory Report Format</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../3experimentation/lab-report-rubric.html">Report Evaluation Rubric</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="../abet_plan/abet_plan.html">Assessment Plan for ABET (6)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../4ex1-statics/ex1.html">Lab 1 - Fluid Properties</a></li>
 
@@ -205,23 +206,21 @@
 <li class="toctree-l2"><a class="reference internal" href="../7ex4-pipeloss/ex4_sample_report.html">Laboratory 4 Sample Report</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="ex5.html">Lab 5 - Momentum Transfer</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="ex5.html">Lab 5 - Momentum Transfer</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="ex5_sample_report.html">Laboratory 5 Sample Report</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Lab 5. Sample Calculations</a></li>
-
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../9ex6-pumps/ex6A.html">Lab 9 - Bilge Pump Curve</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../9ex6-pumps/ex6A.html">Lab 6A - Bilge Pump Curve</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../9ex6-pumps/ex6A_samplereport.html">Lab 6A Sample Report</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1"><a class="reference internal" href="../10ex7-openflow/ex7.html">Lab 6. - Open Channel Flow Measurement</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../11ex8-backwater/ex8.html">Lab 7. - Water Surface Profiles: Backwater Curves</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1"><a class="reference internal" href="../10ex7-openflow/ex7.html">Lab 7. - Open Channel Flow Measurement</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../11ex8-backwater/ex8.html">Lab 8. - Water Surface Profiles: Backwater Curves</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../11ex8-backwater/ex8_sample_report-excel.html">Lab 8. - Sample Report (Spreadsheet Version)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../11ex8-backwater/ex8_sample_report-python.html">Lab 8. - Sample Report (Python Version)</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../12ex9-hydraulicjump/ex9.html">Lab 8. - Water Surface Profiles: Hydraulic Jump</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../12ex9-hydraulicjump/ex9.html">Lab 9. - Water Surface Profiles: Hydraulic Jump</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../12ex9-hydraulicjump/ex9_sample_report.html">Laboratory 9 - Sample Report</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../12ex9-hydraulicjump/ex9_sample_calculations.html">Lab 9: Analysis Guidelines</a></li>
 </ul>
@@ -510,6 +509,18 @@ F = \frac{M \cdot g \cdot (a + y)}{a}
                 <span class="p">[</span><span class="mf">4.98</span><span class="p">,</span> <span class="mf">4.75</span><span class="p">,</span> <span class="mf">4.93</span><span class="p">],</span>
                 <span class="p">[</span><span class="mf">6.68</span><span class="p">,</span> <span class="mf">6.25</span><span class="p">,</span> <span class="mf">6.58</span><span class="p">],</span>
                 <span class="p">[</span><span class="mf">9.49</span><span class="p">,</span> <span class="mf">9.36</span><span class="p">,</span> <span class="mf">9.54</span><span class="p">]])</span>
+
+<span class="n">t1_mean</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">t1</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># Mean time for each measurement</span>
+<span class="n">t2_mean</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">t2</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># Mean time for each measurement</span>
+<span class="n">q1</span> <span class="o">=</span> <span class="mi">60</span><span class="o">*</span><span class="p">(</span><span class="n">vol1</span><span class="o">/</span><span class="mi">1000</span><span class="p">)</span><span class="o">/</span><span class="n">t1_mean</span>
+<span class="n">q2</span> <span class="o">=</span> <span class="mi">60</span><span class="o">*</span><span class="p">(</span><span class="n">vol2</span><span class="o">/</span><span class="mi">1000</span><span class="p">)</span><span class="o">/</span><span class="n">t2_mean</span>
+
+<span class="n">q1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([35.96403596, 31.6344464 , 27.56508423, 22.98850575, 17.50972763])
 </pre></div>
 </div>
 </div>
@@ -990,24 +1001,6 @@ F = \frac{M \cdot g \cdot (a + y)}{a}
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="ex5_sample_report.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Laboratory 5 Sample Report</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="../9ex6-pumps/ex6A.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Lab 9 - Bilge Pump Curve</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               
