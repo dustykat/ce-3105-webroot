@@ -33,7 +33,7 @@ chapters:
 - file: experiments/8ex5-momentum/ex5 # momentum
   sections:
   - file: experiments/8ex5-momentum/ex5_sample_report
-  - file: experiments/8ex5-momentum/ex5_sample_calculations
+#  - file: experiments/8ex5-momentum/ex5_sample_calculations
 #######################################################
 - file: experiments/9ex6-pumps/ex6A # pumps
   sections:
