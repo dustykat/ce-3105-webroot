@@ -37,7 +37,7 @@ chapters:
 #######################################################
 - file: experiments/9ex6-pumps/ex6A # pumps
   sections:
-  - file: experiments/9ex6-pumps/ex6A_samplereport
+  - file: experiments/9ex6-pumps/ex6A_sample_report
 #######################################################
 - file: experiments/10ex7-openflow/ex7 # flow measurement in open channels
 #  sections:
