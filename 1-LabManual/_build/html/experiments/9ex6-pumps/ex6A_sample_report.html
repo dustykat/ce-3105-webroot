@@ -57,6 +57,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'experiments/9ex6-pumps/ex6A_sample_report';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -474,6 +476,137 @@ document.write(`
 <section id="data-and-results">
 <h2>Data and Results:<a class="headerlink" href="#data-and-results" title="Link to this heading">#</a></h2>
 <p>Tabulated data for torque, input power, rpm, head, and flow rate for each configuration.</p>
+<p><strong>Selected Manual Readings (and calculations)</strong></p>
+<p>Computed values in <font color="blue"> blue </font></p>
+<p><strong>System Discharge</strong></p>
+<p><span class="math notranslate nohighlight">\(Q_{venturi} = C_d~A_1~~~\sqrt{~~~\frac{~2 \Delta P}{\rho (\frac{A_1^2}{A_2^2} - 1)} }\)</span></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-right"><p><span class="math notranslate nohighlight">\(\Delta P_{venturi}~(bar)\)</span></p></th>
+<th class="head text-right"><p><span class="math notranslate nohighlight">\(Q_{venturi}~(m^3/s)\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-right"><p>0.02</p></td>
+<td class="text-right"><p><font color="blue">5.888e-04</font></p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>0.07</p></td>
+<td class="text-right"><p><font color="blue">1.101e-03</font></p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p>0.07</p></td>
+<td class="text-right"><p><font color="blue">1.101e-03</font></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>System Mechanical Input Power</strong></p>
+<p><span class="math notranslate nohighlight">\(P_{input} = \Omega \cdot T\)</span></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-right"><p>Torque <span class="math notranslate nohighlight">\(T~(Nm)\)</span></p></th>
+<th class="head text-right"><p><span class="math notranslate nohighlight">\(\omega~(RPM)\)</span></p></th>
+<th class="head text-right"><p><span class="math notranslate nohighlight">\(\Omega~(\text{radians/sec})\)</span></p></th>
+<th class="head text-right"><p>Mechanical Power (watts)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-right"><p>0.44</p></td>
+<td class="text-right"><p>2000</p></td>
+<td class="text-right"><p><font color="blue">209</font></p></td>
+<td class="text-right"><p><font color="blue">92</font></p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>0.71</p></td>
+<td class="text-right"><p>2500</p></td>
+<td class="text-right"><p><font color="blue">262</font></p></td>
+<td class="text-right"><p><font color="blue">186</font></p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p>0.44</p></td>
+<td class="text-right"><p>2375</p></td>
+<td class="text-right"><p><font color="blue">209</font></p></td>
+<td class="text-right"><p><font color="blue">174</font></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Pump Added Head</strong></p>
+<p><span class="math notranslate nohighlight">\(H_p = \frac{P_{out} - P_{in}}{\rho~g}\)</span></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-right"><p><span class="math notranslate nohighlight">\(Q~(m^3/s)\)</span></p></th>
+<th class="head text-right"><p><span class="math notranslate nohighlight">\(P_{out}~(bar)\)</span></p></th>
+<th class="head text-right"><p><span class="math notranslate nohighlight">\(P_{in}~(bar)\)</span></p></th>
+<th class="head text-right"><p><span class="math notranslate nohighlight">\(H_p\)</span>~(m)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-right"><p><font color="blue">5.888e-04</font></p></td>
+<td class="text-right"><p>0.05</p></td>
+<td class="text-right"><p>-0.25</p></td>
+<td class="text-right"><p><font color="blue">3.06</font></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Pump Hydraulic Output Power</strong></p>
+<p><span class="math notranslate nohighlight">\(P_{pump} = {Q~\rho~g~H_p}\)</span></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-right"><p><span class="math notranslate nohighlight">\(Q~(m^3/s)\)</span></p></th>
+<th class="head text-right"><p><span class="math notranslate nohighlight">\(H_p\)</span>~(m)</p></th>
+<th class="head text-right"><p><span class="math notranslate nohighlight">\(P_{pump}\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Pump Efficiency</strong></p>
+<p><span class="math notranslate nohighlight">\(\eta = \frac{P_{pump}}{P_{input}}\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">Qventuri</span><span class="p">(</span><span class="n">deltaP</span><span class="p">,</span><span class="n">cd</span><span class="p">,</span><span class="n">area1</span><span class="p">,</span><span class="n">area2</span><span class="p">,</span><span class="n">rho</span><span class="p">):</span>
+    <span class="kn">import</span> <span class="nn">math</span>
+    <span class="n">term1</span><span class="o">=</span><span class="n">cd</span><span class="o">*</span><span class="n">area1</span>
+    <span class="n">term2</span><span class="o">=</span><span class="mi">2</span><span class="o">*</span><span class="n">deltaP</span><span class="o">*</span><span class="mi">100000</span> <span class="c1"># Convert pressure in bar into N/m^2</span>
+    <span class="n">term3</span><span class="o">=</span><span class="n">rho</span><span class="o">*</span><span class="p">((</span><span class="n">area1</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">area2</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span><span class="mf">1.0</span><span class="p">)</span>
+    <span class="n">Qventuri</span><span class="o">=</span><span class="n">term1</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">term2</span><span class="o">/</span><span class="n">term3</span><span class="p">)</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">Qventuri</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">Omega</span><span class="p">(</span><span class="n">rpm</span><span class="p">):</span>
+    <span class="kn">import</span> <span class="nn">math</span>
+    <span class="n">Omega</span><span class="o">=</span><span class="n">rpm</span><span class="o">*</span><span class="mi">2</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">60</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">Omega</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">Pmech</span><span class="p">(</span><span class="n">omega</span><span class="p">,</span><span class="n">torque</span><span class="p">):</span>
+    <span class="n">Pmech</span><span class="o">=</span><span class="n">torque</span><span class="o">*</span><span class="n">omega</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">Pmech</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">addedH</span><span class="p">(</span><span class="n">pout</span><span class="p">,</span><span class="n">pin</span><span class="p">,</span><span class="n">rho</span><span class="p">,</span><span class="n">gee</span><span class="p">):</span>
+    <span class="n">po</span><span class="o">=</span><span class="n">pout</span><span class="o">*</span><span class="mi">100000</span>
+    <span class="n">pi</span><span class="o">=</span><span class="n">pin</span><span class="o">*</span><span class="mi">100000</span>
+    <span class="n">addedH</span><span class="o">=</span><span class="p">(</span><span class="n">po</span><span class="o">-</span><span class="n">pi</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">rho</span><span class="o">*</span><span class="n">gee</span><span class="p">)</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">addedH</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Flow rate </span><span class="si">{</span><span class="n">Qventuri</span><span class="p">(</span><span class="mf">0.02</span><span class="p">,</span><span class="mf">0.97</span><span class="p">,</span><span class="mf">0.000581</span><span class="p">,</span><span class="mf">0.000269</span><span class="p">,</span><span class="mi">1000</span><span class="p">)</span><span class="si">:</span><span class="s2">10.3e</span><span class="si">}</span><span class="s2"> cubic meters per second&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Angular velocity </span><span class="si">{</span><span class="n">Omega</span><span class="p">(</span><span class="mi">2375</span><span class="p">)</span><span class="si">:</span><span class="s2">10.3g</span><span class="si">}</span><span class="s2"> radians per second&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Mechanical power </span><span class="si">{</span><span class="n">Pmech</span><span class="p">(</span><span class="mi">249</span><span class="p">,</span><span class="mf">0.70</span><span class="p">)</span><span class="si">:</span><span class="s2">10.3g</span><span class="si">}</span><span class="s2"> watts&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Added head </span><span class="si">{</span><span class="n">addedH</span><span class="p">(</span><span class="mf">0.05</span><span class="p">,</span><span class="o">-</span><span class="mf">0.25</span><span class="p">,</span><span class="mi">1000</span><span class="p">,</span><span class="mf">9.81</span><span class="p">)</span><span class="si">:</span><span class="s2">10.3g</span><span class="si">}</span><span class="s2"> meters&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Flow rate  5.888e-04 cubic meters per second
+Angular velocity        249 radians per second
+Mechanical power        174 watts
+Added head       3.06 meters
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="performance-curves">
 <h2>Performance Curves:<a class="headerlink" href="#performance-curves" title="Link to this heading">#</a></h2>

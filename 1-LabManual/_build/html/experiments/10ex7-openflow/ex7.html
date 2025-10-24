@@ -62,8 +62,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'experiments/10ex7-openflow/ex7';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Lab 7. - Water Surface Profiles: Backwater Curves" href="../11ex8-backwater/ex8.html" />
-    <link rel="prev" title="Lab 6A Sample Report" href="../9ex6-pumps/ex6A_samplereport.html" />
+    <link rel="next" title="Lab 8. - Water Surface Profiles: Backwater Curves" href="../11ex8-backwater/ex8.html" />
+    <link rel="prev" title="Laboratory 6 Sample Report" href="../9ex6-pumps/ex6A_sample_report.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -189,6 +189,7 @@
 
 <li class="toctree-l1"><a class="reference internal" href="../3experimentation/lab-report-format.html">Laboratory Report Format</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../3experimentation/lab-report-rubric.html">Report Evaluation Rubric</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="../abet_plan/abet_plan.html">Assessment Plan for ABET (6)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../4ex1-statics/ex1.html">Lab 1 - Fluid Properties</a></li>
 
@@ -207,21 +208,19 @@
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../8ex5-momentum/ex5.html">Lab 5 - Momentum Transfer</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../8ex5-momentum/ex5_sample_report.html">Laboratory 5 Sample Report</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../8ex5-momentum/ex5_sample_calculations.html">Lab 5. Sample Calculations</a></li>
-
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../9ex6-pumps/ex6A.html">Lab 6A - Bilge Pump Curve</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../9ex6-pumps/ex6A_samplereport.html">Lab 6A Sample Report</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../9ex6-pumps/ex6A.html">Lab 6. - Pump Performance</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../9ex6-pumps/ex6A_sample_report.html">Laboratory 6 Sample Report</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Lab 7. - Open Channel Flow Measurement</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../11ex8-backwater/ex8.html">Lab 7. - Water Surface Profiles: Backwater Curves</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../11ex8-backwater/ex8.html">Lab 8. - Water Surface Profiles: Backwater Curves</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../11ex8-backwater/ex8_sample_report-excel.html">Lab 8. - Sample Report (Spreadsheet Version)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../11ex8-backwater/ex8_sample_report-python.html">Lab 8. - Sample Report (Python Version)</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../12ex9-hydraulicjump/ex9.html">Lab 8. - Water Surface Profiles: Hydraulic Jump</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../12ex9-hydraulicjump/ex9.html">Lab 9. - Water Surface Profiles: Hydraulic Jump</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../12ex9-hydraulicjump/ex9_sample_report.html">Laboratory 9 - Sample Report</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../12ex9-hydraulicjump/ex9_sample_calculations.html">Lab 9: Analysis Guidelines</a></li>
 </ul>
@@ -426,8 +425,26 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#readings">Readings</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#videos">Videos</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#purpose">Purpose</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objective">Objective</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background-theory">Background/Theory</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acoustic-doppler-current-profiler-adcp">Acoustic Doppler Current Profiler (ADCP)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#weirs">Weirs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flow-measurement">Flow Measurement</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stage-control-water-quality-enhancement">Stage Control - Water Quality Enhancement</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stage-control-erosion-management">Stage Control - Erosion Management</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stage-control-navigation">Stage Control - Navigation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stage-control-diversion-extraction">Stage Control - Diversion/Extraction</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sharp-crested-rectangular-notch-weir">Sharp-Crested Rectangular Notch Weir</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sharp-crested-triangular-notch-weir">Sharp-Crested Triangular Notch Weir</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#general-formula">General Formula</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#kindsvater-carter-formula">Kindsvater-Carter formula</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#broad-crested-weir">Broad-Crested Weir</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2-5-from-sturm">Example 2.5 (from Sturm)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#flumes">Flumes</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#steady-uniform-flow">Steady-Uniform Flow</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#head-loss-models">Head Loss Models</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#steady-rapid-varied-flow">Steady-Rapid Varied Flow</a><ul class="nav section-nav flex-column">
@@ -467,8 +484,10 @@ document.write(`
 <h2>Readings<a class="headerlink" href="#readings" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p><a class="reference external" href="https://siris.co.uk/v-notch-weir-design-how-does-it-work/">V-Notch Weir Theory</a></p></li>
-<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Hydraulic_jump">Hydraulic Jump Theory</a></p></li>
-<li><p><a class="reference external" href="https://www.omnicalculator.com/physics/hydraulic-jump">Hydraulic Jump Calculator</a></p></li>
+</ol>
+<!--2. [Hydraulic Jump Theory](https://en.wikipedia.org/wiki/Hydraulic_jump)-->
+<!--3. [Hydraulic Jump Calculator](https://www.omnicalculator.com/physics/hydraulic-jump)-->
+<ol class="arabic simple" start="4">
 <li><p><a class="reference external" href="http://ponce.sdsu.edu/onlineveenotchdescription.html">V-Notch Weir Calculator</a></p></li>
 </ol>
 <!--5. [Example Report](http://54.243.252.9/ce-3105-webroot/2-Exercises/laboratory8/GoBy8.pdf)-->
@@ -477,6 +496,7 @@ document.write(`
 <li><p><a class="reference external" href="https://pubs.usgs.gov/wsp/wsp_1849/pdf/wsp_1849.pdf">Barnes, 1967 USGS Water Supply Paper 1849</a>  A collection of photographs and computed Manning’s <span class="math notranslate nohighlight">\(n\)</span></p></li>
 <li><p><a class="reference external" href="https://www.usgs.gov/centers/sawsc/science/mannings-roughness-coefficients-south-carolina-streams#overview">https://www.usgs.gov/centers/sawsc/science/mannings-roughness-coefficients-south-carolina-streams#overview</a></p></li>
 <li><p><a class="reference external" href="https://pubs.usgs.gov/ds/668/pdf/DataSeries_668_2.pdf">https://pubs.usgs.gov/ds/668/pdf/DataSeries_668_2.pdf</a></p></li>
+<li><p><a class="reference external" href="https://www.amazon.com/Channel-Hydraulics-Third-Terry-Sturm/dp/1260469700">Sturm, T. Open Channel Hydraulics, 1 st Ed.</a></p></li>
 </ol>
 </section>
 <section id="videos">
@@ -487,11 +507,17 @@ document.write(`
 </section>
 <section id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
-<p>Open channel flow is critical for understanding the hydraulics of natural and engineered systems such as rivers, canals, and drainage channels. This laboratory investigates steady uniform flow, head loss models, and hydraulic jumps in open channels. Using a recirculating flume equipped with depth gauges, a digital distance gauge, and calibrated discharge measurements, students will determine Manning’s roughness coefficient for a rock bed and analyze alternate and sequent depths in a hydraulic jump. This experiment emphasizes the application of fundamental hydraulics principles to real-world flow conditions.</p>
+<p>Open channel flow is critical for understanding the hydraulics of natural and engineered systems such as rivers, canals, and drainage channels. This laboratory investigates steady flows in open channels. Using a recirculating flume equipped with depth gauges, a digital distance gauge, and various velocity measuring tools students will measure the flow rate of water in an open channel.</p>
 </section>
-<section id="purpose">
-<h2>Purpose<a class="headerlink" href="#purpose" title="Link to this heading">#</a></h2>
-<p>To examine behavior in open channels, in particular determining Manning’s <span class="math notranslate nohighlight">\(n\)</span> for a portion of a channel, and creating and observing the alternate and sequent depths in a hydraulic jump.</p>
+<section id="objective">
+<h2>Objective<a class="headerlink" href="#objective" title="Link to this heading">#</a></h2>
+<p>Measure the flow rate of water in an open channel using several devices:</p>
+<ul class="simple">
+<li><p>Micro ADV (Acoustic-Doppler Current Profiler)</p></li>
+<li><p>Weir(s)</p></li>
+<li><p>Drift tracer</p></li>
+<li><p>Slope-Area (stage measurements)</p></li>
+</ul>
 </section>
 <section id="background-theory">
 <h2>Background/Theory<a class="headerlink" href="#background-theory" title="Link to this heading">#</a></h2>
@@ -525,13 +551,255 @@ document.write(`
 <p><img alt="" src="../../_images/applications-ocf.png" /></p>
 </div></blockquote>
 <p>Natural and man-made open channels are of interest to engineers. The Manning’s equation is a fundamental equation governing open channel flow and is given by</p>
-<div class="math notranslate nohighlight">
-\[ Q= \frac{K_n}{n}AR^{2/3}S^{1/2} \]</div>
+<p><span class="math notranslate nohighlight">\( Q= \frac{K_n}{n}AR^{2/3}S^{1/2} \)</span></p>
 <p>Where <span class="math notranslate nohighlight">\(K_n\)</span> is the conversion factor (1 for SI and 1.49 for English units);
 <span class="math notranslate nohighlight">\(n\)</span> is the Manning’s roughness coefficient, <span class="math notranslate nohighlight">\(A\)</span> is the cross-sectional area and <span class="math notranslate nohighlight">\(R\)</span> is the hydraulic radius which is given as:</p>
-<div class="math notranslate nohighlight">
-\[ R=\frac{A}{P_W}\]</div>
+<p><span class="math notranslate nohighlight">\( R=\frac{A}{P_W}\)</span></p>
 <p>where <span class="math notranslate nohighlight">\(P_W\)</span> is the wetted perimeter.</p>
+</section>
+<section id="acoustic-doppler-current-profiler-adcp">
+<h2>Acoustic Doppler Current Profiler (ADCP)<a class="headerlink" href="#acoustic-doppler-current-profiler-adcp" title="Link to this heading">#</a></h2>
+<p>An Acoustic Doppler Current Profiler, or Acoustic Doppler Profiler, is often referred to with the acronym ADCP.</p>
+<p><img alt="" src="../../_images/adcp-picture.png" /></p>
+<p>Scientists use the instrument to measure how fast water is moving across an entire water column. An ADCP (uplooking) anchored to the seafloor can measure current speed not just at the bottom, but also at equal intervals all the way up to the surface.</p>
+<p><img alt="" src="../../_images/side-looking-adcp.png" /></p>
+<p>The instrument can also be mounted horizontally on seawalls or bridge pilings in rivers and canals to measure the current profile from shore to shore, and to the bottoms of ships to take constant current measurements as the boats move. In very deep areas, they can be lowered on a cable from the surface.</p>
+<blockquote>
+<div><p>The ADCP measures water currents with sound, using a principle of sound waves called the Doppler effect. A sound wave has a higher frequency, or pitch, when it moves to you than when it moves away. You hear the Doppler effect in action when a car speeds past with a characteristic building of sound that fades when the car passes.</p>
+<p><img alt="" src="../../_images/adcp-works.png" /></p>
+<p>The ADCP works by transmitting “pings” of sound at a constant frequency into the water. (The pings are so highly pitched that humans and even dolphins can’t hear them.) As the sound waves travel, they ricochet off particles suspended in the moving water, and reflect back to the instrument. Due to the Doppler effect, sound waves bounced back from a particle moving away from the profiler have a slightly lowered frequency when they return. Particles moving toward the instrument send back higher frequency waves. The difference in frequency between the waves the profiler sends out and the waves it receives is called the Doppler shift. The instrument uses this shift to calculate how fast the particle and the water around it are moving.</p>
+<p>Sound waves that hit particles far from the profiler take longer to come back than waves that strike close by. By measuring the time it takes for the waves to bounce back and the Doppler shift, the profiler can measure current speed at many different depths with each series of pings.</p>
+</div></blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Acoustic Doppler Current Profilers (ADCPs) provide direct measurements of flow velocity across a cross-section, in contrast to traditional stage-based methods, where water surface elevation (stage) is recorded continuously and discharge is inferred using a pre-established stage–discharge rating curve. Both approaches are widely used in streamflow monitoring. While stage data remain essential—at minimum—to define cross-sectional geometry and support rating curve development, continuous velocity profiling is less commonly implemented due to cost and deployment complexity. However, advances in sensor technology and data telemetry are rapidly increasing the feasibility of high-frequency, velocity-based discharge monitoring at both permanent and temporary sites.</p>
+</div>
+<p>Single-point velocity measurement in an open channel can be done using a Doppler flow meter that measures particle velocity at a specific point, or by using the “six-tenths method” with a flow meter where a single reading is taken at 60% of the water depth. For large channels, taking multiple measurements at different depths is more accurate for calculating the overall flow rate, but the six-tenths method is a common way to estimate the average velocity at a single vertical location.
+Doppler flow meters</p>
+<p>The “six-tenths” method</p>
+<ul class="simple">
+<li><p>Principle: This method assumes that the average vertical velocity in an open channel occurs at a specific depth.</p></li>
+</ul>
+<p>Procedure:</p>
+<ol class="arabic simple">
+<li><p>Determine the total flow depth of the channel.</p></li>
+<li><p>Place a ADCP at a single vertical station.</p></li>
+<li><p>Take a single velocity measurement at 60% of the total depth, measured from the channel bed.</p></li>
+<li><p>This single measurement is used as the average velocity for that vertical section.</p></li>
+</ol>
+<ul class="simple">
+<li><p>Application: This is a common and practical method used by organizations like the U.S. Geological Survey (USGS) to estimate average velocity in a single vertical when a full cross-section velocity survey is not feasible.</p></li>
+</ul>
+</section>
+<section id="weirs">
+<h2>Weirs<a class="headerlink" href="#weirs" title="Link to this heading">#</a></h2>
+<p>Used as flow measuring devices and to maintain specific pool elevations in hydraulic systems.</p>
+</section>
+<section id="flow-measurement">
+<h2>Flow Measurement<a class="headerlink" href="#flow-measurement" title="Link to this heading">#</a></h2>
+<p><img alt="" src="../../_images/stream_weir.png" /></p>
+</section>
+<section id="stage-control-water-quality-enhancement">
+<h2>Stage Control - Water Quality Enhancement<a class="headerlink" href="#stage-control-water-quality-enhancement" title="Link to this heading">#</a></h2>
+<p><img alt="" src="../../_images/Dobbsweirvdropsjan2006.png" /></p>
+</section>
+<section id="stage-control-erosion-management">
+<h2>Stage Control - Erosion Management<a class="headerlink" href="#stage-control-erosion-management" title="Link to this heading">#</a></h2>
+<p><img alt="" src="../../_images/Weir_on_the_river_wear.png" /></p>
+</section>
+<section id="stage-control-navigation">
+<h2>Stage Control - Navigation<a class="headerlink" href="#stage-control-navigation" title="Link to this heading">#</a></h2>
+<p><img alt="" src="../../_images/bath-weir.png" /></p>
+</section>
+<section id="stage-control-diversion-extraction">
+<h2>Stage Control - Diversion/Extraction<a class="headerlink" href="#stage-control-diversion-extraction" title="Link to this heading">#</a></h2>
+<p><img alt="" src="../../_images/Typical-weir-system-in-Northern-Thailand-consists-of-weirs-and-canals.png" /></p>
+<p>Most of the weirs pictured above are morphologically the same as a handful of well studied types, which can be used for flow measurement as well as stage control or diversion structures.</p>
+<section id="sharp-crested-rectangular-notch-weir">
+<h3>Sharp-Crested Rectangular Notch Weir<a class="headerlink" href="#sharp-crested-rectangular-notch-weir" title="Link to this heading">#</a></h3>
+<p><img alt="" src="../../_images/sharp-crest.png" /></p>
+<p>A sketch of a sharp-crested weir (weir plate is thin in the flow direction) is shown below</p>
+<p><img alt="" src="../../_images/sharp-crest-sketch.png" /></p>
+<p>Assuming no head loss, atmospheric pressure across AB (implies flow over the crest is like a jet, that is <span class="math notranslate nohighlight">\(\Delta p\)</span>  is small from top to bottom - the assumption becomes weak when the weir becomes flooded), negligible contraction of the <a class="reference external" href="https://en.wikipedia.org/wiki/Nappe_(water)">nappe</a>.</p>
+<p>Integrating the velocity profile from A to B to obtain a mean section speed in the nappe, and multiplying by the cross section width produces (Eqn 2.39)</p>
+<div class="math notranslate nohighlight">
+\[ Q = \frac{2}{3}\sqrt{2g}C_d~L~H^{3/2} \]</div>
+<p>Where <span class="math notranslate nohighlight">\(L\)</span> is the width (weir length) of the notch crest perpindicular to flow, and <span class="math notranslate nohighlight">\(H\)</span> is the static head above the crest height (the flow depth of the nappe at the crest).</p>
+<p>The weir coefficient <span class="math notranslate nohighlight">\(C_d\)</span> is determined by weir morphology:</p>
+<p><img alt="" src="../../_images/weir-charts-one.png" /></p>
+<p>These charts are used with an adjusted formula</p>
+<div class="math notranslate nohighlight">
+\[ Q = \frac{2}{3}\sqrt{2g}C_{de}~L_{e}~H_e^{3/2} \]</div>
+<p>where</p>
+<div class="math notranslate nohighlight">
+\[L_{de}=L + k_L\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[H_e=H + k_H\]</div>
+<p><span class="math notranslate nohighlight">\(k_L\)</span> is read from the chart and <span class="math notranslate nohighlight">\(k_H\)</span> is a constant 0.001 m (0.003 ft)</p>
+<p>An alternate approach is a formula for <span class="math notranslate nohighlight">\(C_{de}\)</span> (Kindsvater-Carter formula)</p>
+<p><span class="math notranslate nohighlight">\(C_{de} = \beta_1 + \beta_2 \frac{H}{P}\)</span></p>
+<p>where</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-right"><p><span class="math notranslate nohighlight">\(\frac{L}{b}\)</span></p></th>
+<th class="head text-right"><p><span class="math notranslate nohighlight">\(\beta_1\)</span></p></th>
+<th class="head text-right"><p><span class="math notranslate nohighlight">\(\beta_2\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-right"><p>1.0</p></td>
+<td class="text-right"><p>0.602</p></td>
+<td class="text-right"><p>0.075</p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>0.9</p></td>
+<td class="text-right"><p>0.599</p></td>
+<td class="text-right"><p>0.064</p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p>0.8</p></td>
+<td class="text-right"><p>0.597</p></td>
+<td class="text-right"><p>0.045</p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>0.7</p></td>
+<td class="text-right"><p>0.595</p></td>
+<td class="text-right"><p>0.030</p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p>0.6</p></td>
+<td class="text-right"><p>0.593</p></td>
+<td class="text-right"><p>0.018</p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>0.5</p></td>
+<td class="text-right"><p>0.592</p></td>
+<td class="text-right"><p>0.011</p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p>0.4</p></td>
+<td class="text-right"><p>0.591</p></td>
+<td class="text-right"><p>0.0058</p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>0.3</p></td>
+<td class="text-right"><p>0.590</p></td>
+<td class="text-right"><p>0.0020</p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p>0.2</p></td>
+<td class="text-right"><p>0.589</p></td>
+<td class="text-right"><p>-0.0018</p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>0.1</p></td>
+<td class="text-right"><p>0.588</p></td>
+<td class="text-right"><p>-0.0021</p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p>0.0</p></td>
+<td class="text-right"><p>0.587</p></td>
+<td class="text-right"><p>-0.0023</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="sharp-crested-triangular-notch-weir">
+<h3>Sharp-Crested Triangular Notch Weir<a class="headerlink" href="#sharp-crested-triangular-notch-weir" title="Link to this heading">#</a></h3>
+<p><img alt="" src="../../_images/V-notch.png" /></p>
+<p><img alt="" src="../../_images/vee-notch-weir-in-brick-tunnel-t.png" /></p>
+<section id="general-formula">
+<h4>General Formula<a class="headerlink" href="#general-formula" title="Link to this heading">#</a></h4>
+<p>The general formula for a V-Notch weir (with experimentally determined discharge coefficients for the geometry in the sketch below</p>
+<p><img alt="" src="../../_images/v-notch-sketch.png" /></p>
+<p>is</p>
+<div class="math notranslate nohighlight">
+\[Q = C_d \frac{8}{15} \sqrt{2g}~tan(\frac{\theta}{2})H^{5/2}\]</div>
+</section>
+<section id="kindsvater-carter-formula">
+<h4>Kindsvater-Carter formula<a class="headerlink" href="#kindsvater-carter-formula" title="Link to this heading">#</a></h4>
+<p>In the Kindsvater-Carter form using the concept of effective head (<span class="math notranslate nohighlight">\(H_e = H + k_H\)</span>) is</p>
+<div class="math notranslate nohighlight">
+\[Q = C_{de} \frac{8}{15} \sqrt{2g}~tan(\frac{\theta}{2})H_e^{5/2}\]</div>
+</section>
+</section>
+<section id="broad-crested-weir">
+<h3>Broad-Crested Weir<a class="headerlink" href="#broad-crested-weir" title="Link to this heading">#</a></h3>
+<p>A broad crested weir is distinct from the sharp edged wiers by virtue of having a substantial portion of the crest in the direction of flow of at least several approach depth equivalents.</p>
+<p>The wier below is nearly flooded, but yopu can see the crest length relative to the approach depth, the central “channel” is a notch in the system for lower flows/pool elevations.</p>
+<p><img alt="" src="../../_images/BCweir4.png" /></p>
+<p>The weir below is clearly either a flow measuring weir or a debris trap - the notch is to guarentee enough flow to scour the trap after a substantial solids flow event.  The “crest” is pretty long (in the direction of flow) no doubt to withstand the shear forces that would be imparted by a slurry (water and solids) impacting the upstream face.  Notice the geometry - it is a notch-type weir with at least three notches.  The small width portion.  The wider portion near at elevation a little below the gaging vault (or prison cell), and a widest portion using the gaging vault as part of the vertical wall of the notch.  This kind of weir is called acomposite-geometry  weir.</p>
+<p><img alt="" src="../../_images/BCweir3.png" /></p>
+<p>The next two images show a broad crested weir set into a trapezoidal channel, first just after construction waiting for the concrete to harden,</p>
+<p><img alt="" src="../../_images/BCweir2.png" /></p>
+<p>and then with water flowing in the weir.</p>
+<p>Notice the two hydrographers admiring the weir and awaiting their chance to fish in the newly constructed fish race.</p>
+<p><img alt="" src="../../_images/BCweir1.png" /></p>
+<p>The sketch below shows the geometry of a broad crested weir, the width of the weir across the channel is <span class="math notranslate nohighlight">\(L\)</span> whereas the length of the weir in the direction of flow is <span class="math notranslate nohighlight">\(I\)</span> in the drawing.</p>
+<p><img alt="" src="../../_images/broad-crested-sketch.png" /></p>
+<p>Key points in the broad crested weir are that the crest is long enough so that parallel flow and critical depth occur somewhere along the crest.</p>
+<p>The critical energy at this location is</p>
+<div class="math notranslate nohighlight">
+\[H_e = \frac{3}{2}[\frac{(Q/L)^2}{g}]^{1/3}\]</div>
+<p>The discharge equation is</p>
+<div class="math notranslate nohighlight">
+\[Q = C_d~(\frac{H_e}{H})^{3/2}~\frac{2}{3}[\frac{2}{3}g]^{1/2}~LH^{3/2}  \]</div>
+<p>The typical discharge coefficient <span class="math notranslate nohighlight">\(C_d\)</span> is 0.848, but increases as the weir “floods” as indicated by the chart above that relates <span class="math notranslate nohighlight">\(C_d\)</span> to the depth to crest length ratio.  A flooded weir is called “submerged” and Sturm pages 48-50 have a nice discussion regarding submerged weirs if flow measurement is the goal.</p>
+<p>The gist of the pages is a submergence correction for discharge as</p>
+<div class="math notranslate nohighlight">
+\[Q_s = Q_{free} * [1-(\frac{H_t}{H})^{10.0}]^{0.95}\]</div>
+<p>The equation above is essentially eqn 2.52 in Sturm with the constants for a broad-crested weir.</p>
+</section>
+<section id="example-2-5-from-sturm">
+<h3>Example 2.5 (from Sturm)<a class="headerlink" href="#example-2-5-from-sturm" title="Link to this heading">#</a></h3>
+<p>A rectangular broad-crested weir is used in a stormwasser detention pond as part of the outlet structure (most likely to control pool elevation - hence probably a wet bottom pond).  The crest length is 10 feets and the maximum allowable head on the crest is 1.0 ft.  What is the discharge capacity of the weir at free willy?  If the tailwater head is 0.8 ft, what will be the discharge?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># BC weir - free willy flow</span>
+<span class="kn">import</span> <span class="nn">math</span>
+<span class="n">Cd</span> <span class="o">=</span> <span class="mf">0.848</span>
+<span class="n">g</span> <span class="o">=</span> <span class="mf">32.2</span> <span class="c1"># feet per second per second</span>
+<span class="n">H</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="c1"># feet </span>
+<span class="n">Va</span> <span class="o">=</span> <span class="mf">0.0</span> <span class="c1"># approach velocity, negligible in pond</span>
+<span class="n">He</span> <span class="o">=</span> <span class="n">H</span> <span class="o">+</span> <span class="p">(</span><span class="n">Va</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">g</span><span class="p">)</span>
+<span class="n">I</span> <span class="o">=</span> <span class="mf">10.0</span> <span class="c1"># actually unknown in this example, but are told it is a broad crest</span>
+<span class="n">L</span> <span class="o">=</span> <span class="mf">10.0</span> <span class="c1"># feet</span>
+
+<span class="n">Q</span> <span class="o">=</span> <span class="n">Cd</span><span class="o">*</span><span class="p">((</span><span class="n">He</span><span class="o">/</span><span class="n">H</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span><span class="o">*</span><span class="p">(</span><span class="mi">2</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="mi">2</span><span class="o">*</span><span class="n">g</span><span class="o">/</span><span class="mi">3</span><span class="p">))</span><span class="o">*</span><span class="n">L</span><span class="o">*</span><span class="n">H</span><span class="o">**</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Discharge: &quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="s2">&quot; cfs&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Discharge:  26.2  cfs
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># BC weir - submerged flow</span>
+<span class="c1"># compute submergence reduction factor</span>
+<span class="n">Ht</span> <span class="o">=</span> <span class="mf">0.8</span> <span class="c1"># feet</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mf">0.95</span>
+<span class="n">S</span> <span class="o">=</span> <span class="p">(</span><span class="mf">1.0</span><span class="o">-</span><span class="p">(</span><span class="n">Ht</span><span class="o">/</span><span class="n">H</span><span class="p">)</span><span class="o">**</span><span class="n">a</span><span class="p">)</span><span class="o">**</span><span class="n">b</span>
+<span class="n">Qs</span> <span class="o">=</span> <span class="n">S</span><span class="o">*</span><span class="n">Q</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Discharge: &quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">Qs</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="s2">&quot; cfs&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Discharge:  23.5  cfs
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="flumes">
+<h3>Flumes<a class="headerlink" href="#flumes" title="Link to this heading">#</a></h3>
+<p>A flume is another device to measure flow in open channels.  A flume employs contractions and/or a raised bottom section to force flow through critical depth within the measurement section of the flume. A rating curve is provided by manufacturers or if the geometry is known in the critical sectionthat fact can be leveraged to rate the flume.</p>
+<p>Flumes can be pretty small</p>
+<p><img alt="" src="../../_images/flume-small.png" /></p>
+<p>Moderate in size</p>
+<p><img alt="" src="../../_images/flume-medium.png" /></p>
+<p>And semi-portable installations can be fairly large</p>
+<p><img alt="" src="../../_images/flume-field.png" /></p>
+<p>Or even pretty large (notice the dude on the right side trying to figure out how to steal the abandoned bicycle!)</p>
+<p><img alt="" src="../../_images/flume-large.png" /></p>
+</section>
 </section>
 <section id="steady-uniform-flow">
 <h2>Steady-Uniform Flow<a class="headerlink" href="#steady-uniform-flow" title="Link to this heading">#</a></h2>
@@ -862,12 +1130,12 @@ This part will create a stable hydraulic jump.  It is easiest to remove the weir
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../9ex6-pumps/ex6A_samplereport.html"
+       href="../9ex6-pumps/ex6A_sample_report.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Lab 6A Sample Report</p>
+        <p class="prev-next-title">Laboratory 6 Sample Report</p>
       </div>
     </a>
     <a class="right-next"
@@ -875,7 +1143,7 @@ This part will create a stable hydraulic jump.  It is easiest to remove the weir
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Lab 7. - Water Surface Profiles: Backwater Curves</p>
+        <p class="prev-next-title">Lab 8. - Water Surface Profiles: Backwater Curves</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -898,8 +1166,26 @@ This part will create a stable hydraulic jump.  It is easiest to remove the weir
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#readings">Readings</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#videos">Videos</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#purpose">Purpose</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objective">Objective</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background-theory">Background/Theory</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acoustic-doppler-current-profiler-adcp">Acoustic Doppler Current Profiler (ADCP)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#weirs">Weirs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flow-measurement">Flow Measurement</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stage-control-water-quality-enhancement">Stage Control - Water Quality Enhancement</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stage-control-erosion-management">Stage Control - Erosion Management</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stage-control-navigation">Stage Control - Navigation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stage-control-diversion-extraction">Stage Control - Diversion/Extraction</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sharp-crested-rectangular-notch-weir">Sharp-Crested Rectangular Notch Weir</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sharp-crested-triangular-notch-weir">Sharp-Crested Triangular Notch Weir</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#general-formula">General Formula</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#kindsvater-carter-formula">Kindsvater-Carter formula</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#broad-crested-weir">Broad-Crested Weir</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2-5-from-sturm">Example 2.5 (from Sturm)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#flumes">Flumes</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#steady-uniform-flow">Steady-Uniform Flow</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#head-loss-models">Head Loss Models</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#steady-rapid-varied-flow">Steady-Rapid Varied Flow</a><ul class="nav section-nav flex-column">
