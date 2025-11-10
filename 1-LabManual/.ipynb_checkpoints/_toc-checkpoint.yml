@@ -51,7 +51,7 @@ chapters:
 - file: experiments/12ex9-hydraulicjump/ex9 # water surface profile - hydraulic jump
   sections:
   - file: experiments/12ex9-hydraulicjump/ex9_sample_report
-  - file: experiments/12ex9-hydraulicjump/ex9_sample_calculations
+#  - file: experiments/12ex9-hydraulicjump/ex9_sample_calculations
 #######################################################
 - file: experiments/13ex10-waterhammer/ex10 # waterhammer
 #  sections:
