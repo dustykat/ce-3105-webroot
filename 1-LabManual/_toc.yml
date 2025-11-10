@@ -53,11 +53,13 @@ chapters:
   - file: experiments/12ex9-hydraulicjump/ex9_sample_report
 #  - file: experiments/12ex9-hydraulicjump/ex9_sample_calculations
 #######################################################
-- file: experiments/13ex10-waterhammer/ex10 # waterhammer
+- file: experiments/fall2025-finalexam/f25final
+#######################################################
+#- file: experiments/13ex10-waterhammer/ex10 # waterhammer
 #  sections:
 #  - file: experiments/.../ex6A_samplereport
 ########################################################
-- file: experiments/14ex11-flownets/ex11 # porous media flow nets
+#- file: experiments/14ex11-flownets/ex11 # porous media flow nets
 #  sections:
 #  - file: experiments/.../ex6A_samplereport
 #######################################################
