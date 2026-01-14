@@ -1,0 +1,1050 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Pump Performance Curve &#8212; Mechanics of Fluids Laboratory</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=5303cbea" />
+    <link rel="stylesheet" type="text/css" href="../../_static/.ipynb_checkpoints/custom-checkpoint.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/5-pump-performance-curve/pump.performance.curve';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="prev" title="Momentum Transfer from a Water Jet" href="../4-momentum-in-a-jet/momentum.in.a.jet.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo2.png" class="logo__image only-light" alt="Mechanics of Fluids Laboratory - Home"/>
+    <script>document.write(`<img src="../../_static/logo2.png" class="logo__image only-dark" alt="Mechanics of Fluids Laboratory - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../0-syllabus/ce-3105-syllabus-2026-1.html">Syllabus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../0-reporting/reporting.html">Laboratory Reporting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1-flow-measurement-in-pipes/flow.measurements.in.conduits.html">Flow Measurement in Conduits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2-pipe-friction-factor/pipe.friction.factor.html">Friction Factor in Pipes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3-friction-loss-in-fittings/friction.loss.in.fittings.html">Fitting (Minor) Losses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4-momentum-in-a-jet/momentum.in.a.jet.html">Momentum Transfer from a Water Jet</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Pump Performance Curve</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/chapters/5-pump-performance-curve/pump.performance.curve.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Pump Performance Curve</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#readings">Readings</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#objective">Objective</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#background">Background</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#apparatus">Apparatus</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#experimental-setup">Experimental Setup</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#procedure">Procedure</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-collected">Data Collected</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-analysis">Data Analysis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion-questions">Discussion Questions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deliverables">Deliverables</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="pump-performance-curve">
+<h1>Pump Performance Curve<a class="headerlink" href="#pump-performance-curve" title="Link to this heading">#</a></h1>
+<div class="admonition-course-website admonition">
+<p class="admonition-title">Course Website</p>
+<p><a class="reference external" href="http://54.243.252.9/ce-3105-webroot/">http://54.243.252.9/ce-3105-webroot/</a></p>
+</div>
+<p>This laboratory determines performance characteristics of a small pump in various flow configurations.</p>
+<section id="readings">
+<h2>Readings<a class="headerlink" href="#readings" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://mech.at.ua/HolmanICS.pdf">Holman, J.P., (2012) Experimental Methods for Engineers, 8th Ed. (Chapters 5,6, and 10)</a></p></li>
+</ol>
+<p><strong>General Readings about Pumps</strong></p>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="http://54.243.252.9/ce-3105-webroot/ce3105notes/lessons/laboratory7/PumpSelection.pdf">Pump Selection</a></p></li>
+<li><p><a class="reference external" href="http://54.243.252.9/ce-3105-webroot/ce3105notes/lessons/laboratory7/PumpSuctionConditions.pdf">Pump Suction Conditions</a></p></li>
+<li><p><a class="reference external" href="http://54.243.252.9/ce-3105-webroot/ce3105notes/lessons/laboratory7/NPSH-Explain.pdf">Net Positive Suction Head</a></p></li>
+<li><p><a class="reference external" href="http://54.243.252.9/ce-3105-webroot/ce3105notes/lessons/laboratory7/Lecture06.pdf">Pumps and Lift Stations (excerpt from Water Systems Design)</a></p></li>
+<li><p><a class="reference external" href="http://54.243.252.9/ce-3105-webroot/ce3105notes/lessons/laboratory7/2011_coh_design_manual_submersible_lift_stations.pdf">Submersible Lift Stations Design (City of Houston Manual)</a></p></li>
+<li><p><a class="reference external" href="http://54.243.252.9/ce-3105-webroot/ce3105notes/lessons/laboratory7/FHWA-NHI-01-007-LiftStationDesign.pdf">FHWA Lift Station Design</a></p></li>
+</ol>
+<!--9. [Laboratory 7 Example Report](http://54.243.252.9/ce-3105-webroot/2-Exercises/laboratory7/Goby7.pdf)--><section id="objective">
+<h3>Objective<a class="headerlink" href="#objective" title="Link to this heading">#</a></h3>
+<p>To experimentally determine the relationship between discharge (Q), head (H), and power input (P) for a small DC pump operating at variable discharge elevations. Students will produce a pump curve (H vs Q) and evaluate power consumption.</p>
+<section id="background">
+<h4>Background<a class="headerlink" href="#background" title="Link to this heading">#</a></h4>
+<p>A pump curve is a graph showing how the head (H) produced by a pump varies with flow rate (Q).</p>
+<p><strong>Key Concepts:</strong></p>
+<ul>
+<li><p>Total Dynamic Head (TDH) supplied by the pump is determined using the modified Bernoulli equation.</p></li>
+<li><p>Flow Rate (Q) is measured in L/min by the time-to-fill method.</p></li>
+<li><p>Electrical power input (P) for the DC pump is computed using:
+$<span class="math notranslate nohighlight">\( P = V \times I \)</span>$
+where V is voltage and I is current.</p></li>
+<li><p>(Optional) Efficiency can be estimated by:</p>
+<div class="math notranslate nohighlight">
+\[ \eta = \frac{\rho g Q H}{P} \]</div>
+<p>where <span class="math notranslate nohighlight">\( \rho \)</span> is water density and <span class="math notranslate nohighlight">\( g \)</span> is gravity.</p>
+</li>
+<li><p>Modified Bernouli Equation:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[ \frac{p_1}{\rho g} + \frac{v_1^2}{2g} + z_1 + h_p = \frac{p_2}{\rho g} + \frac{v_2^2}{2g} + z_2 + f\frac{L}{D}\frac{V^2}{2g}\]</div>
+<p>For constant diameter pipeline, and discharge into the atmosphere the equation becomes</p>
+<div class="math notranslate nohighlight">
+\[ h_p = (z_2 - z_1) + (1+f\frac{L}{D})\frac{V^2}{2g}\]</div>
+<p>The velocity is determined from the measured flowrate and pipeline inside diameter.  If expressed in discharge form (for circular conduits)</p>
+<div class="math notranslate nohighlight">
+\[ h_p(Q) = (z_2 - z_1) + (1+f\frac{L}{D})\frac{8 Q^2}{\pi^2 g D^4}\]</div>
+<ul class="simple">
+<li><p>Reynolds’ Number:</p></li>
+</ul>
+<p>To determine <span class="math notranslate nohighlight">\(f\)</span> the Reynolds’ number is needed:</p>
+<div class="math notranslate nohighlight">
+\[Re_D(Q)=\frac{4 \rho Q  }{\mu \pi D}\]</div>
+<ul class="simple">
+<li><p>Friction factor:</p></li>
+</ul>
+<p>The friction factor can be approximated using:</p>
+<div class="math notranslate nohighlight">
+\[f = \frac{0.25}{[log_{10}(\frac{\frac{k_s}{D}}{3.7}+\frac{5.74}{Re_d^{0.9}})]^2}\]</div>
+<ul class="simple">
+<li><p>Roughness height <span class="math notranslate nohighlight">\(k_s\)</span></p></li>
+</ul>
+<p>The roughness height is found using <a class="reference external" href="http://54.243.252.9/toolbox/Databases/RoughnessHeight/RoughnessHeight.html">Roughness Height Database</a> or other suitable literature reference.</p>
+</section>
+</section>
+<section id="apparatus">
+<h3>Apparatus<a class="headerlink" href="#apparatus" title="Link to this heading">#</a></h3>
+<p>The experimental set-up is comprised of:</p>
+<ul class="simple">
+<li><p>5.5V DC pump</p></li>
+<li><p>Variable power supply (current limited)</p></li>
+<li><p>Flexible discharge pipe (I.D. = 0.3 inches)</p></li>
+<li><p>Ruler or measuring tape</p></li>
+<li><p>Water container</p></li>
+<li><p>Stopwatch</p></li>
+</ul>
+<p>An image of the system in operation is shown below</p>
+<p><img alt="" src="../../_images/IMG_2975.jpg" /></p>
+<p>The current-limited power supply is visible on the left; flow is determined by time-to-fill.  The discharge outlet can be moved to different locations above the supply tank to produce a pump curve.  There is considerable splash and overflow, so a hose (not pictured) is used to keep the orange tank always full, ensuring a constant head at the supply location.</p>
+</section>
+<section id="experimental-setup">
+<h3>Experimental Setup<a class="headerlink" href="#experimental-setup" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Connect pump to water reservoir.</p></li>
+<li><p>Attach flexible pipe.</p></li>
+<li><p>Elevate discharge outlet to different known heights.</p></li>
+<li><p>Measure V, I, Q, and elevation H.</p></li>
+</ol>
+<p>The figure below is a close-up of the power supply. In the figure the voltage is read from the left display, and current from the right display.  The current can be limited by the experimenter - in current limited conditions a small red indicator appears in the display.</p>
+<p><img alt="" src="../../_images/IMG_2976.jpg" /></p>
+<p>Discharge is measured using a bucket and time-to-fill.</p>
+</section>
+<section id="procedure">
+<h3>Procedure<a class="headerlink" href="#procedure" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Fix power supply voltage (5.5V).</p></li>
+<li><p>Set current limiter to 0.0 A then slowly increase until flow begins</p></li>
+<li><p>Begin with lowest discharge height.</p></li>
+<li><p>Record:</p>
+<ul class="simple">
+<li><p>Voltage (V)</p></li>
+<li><p>Current (I)</p></li>
+<li><p>Flow Rate (Q)</p></li>
+<li><p>Height (H)</p></li>
+</ul>
+</li>
+<li><p>Repeat for multiple heights.</p></li>
+</ol>
+<p><font color='white'>%%html</font></p>
+<style> table {margin-left: 0 !important;} </style></section>
+<section id="data-collected">
+<h3>Data Collected<a class="headerlink" href="#data-collected" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Beaker volume: 200 mL</p></li>
+<li><p>Collect and average 3 times for each flowrate</p></li>
+</ul>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-right"><p>Time (sec)</p></th>
+<th class="head text-right"><p>Q (LPS)</p></th>
+<th class="head text-right"><p>DH (z2-z1)</p></th>
+<th class="head text-right"><p>V(V)</p></th>
+<th class="head text-right"><p>I(A)</p></th>
+<th class="head text-right"><p>P(W)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-right"><p>30.3</p></td>
+<td class="text-right"><p>0.0066</p></td>
+<td class="text-right"><p>0.78</p></td>
+<td class="text-right"><p>5.5</p></td>
+<td class="text-right"><p>0.17</p></td>
+<td class="text-right"><p>0.935</p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>19.6</p></td>
+<td class="text-right"><p>0.0102</p></td>
+<td class="text-right"><p>0.76</p></td>
+<td class="text-right"><p>5.5</p></td>
+<td class="text-right"><p>0.13</p></td>
+<td class="text-right"><p>0.715</p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p>19.0</p></td>
+<td class="text-right"><p>0.0105</p></td>
+<td class="text-right"><p>0.46</p></td>
+<td class="text-right"><p>5.5</p></td>
+<td class="text-right"><p>0.12</p></td>
+<td class="text-right"><p>0.660</p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>16.8</p></td>
+<td class="text-right"><p>0.0119</p></td>
+<td class="text-right"><p>0.37</p></td>
+<td class="text-right"><p>5.5</p></td>
+<td class="text-right"><p>0.13</p></td>
+<td class="text-right"><p>0.715</p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p>16.4</p></td>
+<td class="text-right"><p>0.0122</p></td>
+<td class="text-right"><p>0.30</p></td>
+<td class="text-right"><p>5.5</p></td>
+<td class="text-right"><p>0.13</p></td>
+<td class="text-right"><p>0.715</p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>15.9</p></td>
+<td class="text-right"><p>0.0126</p></td>
+<td class="text-right"><p>0.23</p></td>
+<td class="text-right"><p>5.5</p></td>
+<td class="text-right"><p>0.11</p></td>
+<td class="text-right"><p>0.575</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="data-analysis">
+<h3>Data Analysis<a class="headerlink" href="#data-analysis" title="Link to this heading">#</a></h3>
+<p>The script in the appendix takes the table above (as .csv file) and:</p>
+<ol class="arabic simple">
+<li><p>Ingests the file as shown (the time-to-fill is not supplied in the csv file).</p></li>
+<li><p>Converts Q(LPS) into Q(CMS) for each row</p></li>
+<li><p>Computes: <span class="math notranslate nohighlight">\(Re_D(Q)=\frac{4 \rho Q  }{\mu \pi D}\)</span> for each row</p></li>
+<li><p>Computes: <span class="math notranslate nohighlight">\(f = \frac{0.25}{[log_{10}(\frac{\frac{k_s}{D}}{3.7}+\frac{5.74}{Re_d^{0.9}})]^2}\)</span> for each row</p></li>
+<li><p>Computes: <span class="math notranslate nohighlight">\( h_p(Q) = (z_2 - z_1) + (1+f\frac{L}{D})\frac{8 Q^2}{\pi^2 g D^4}\)</span> for each row</p></li>
+<li><p>Exports an updated file with <span class="math notranslate nohighlight">\(h_p(Q)\)</span> appended as the rightmost column.</p></li>
+</ol>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-right"><p>Q (LPS)</p></th>
+<th class="head text-right"><p>DH (z2-z1)</p></th>
+<th class="head text-right"><p>V(V)</p></th>
+<th class="head text-right"><p>I(A)</p></th>
+<th class="head text-right"><p>P(W)</p></th>
+<th class="head text-right"><p>TDH (m)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-right"><p>0.0066</p></td>
+<td class="text-right"><p>0.78</p></td>
+<td class="text-right"><p>5.5</p></td>
+<td class="text-right"><p>0.17</p></td>
+<td class="text-right"><p>0.935</p></td>
+<td class="text-right"><p>0.81</p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>0.0102</p></td>
+<td class="text-right"><p>0.56</p></td>
+<td class="text-right"><p>5.5</p></td>
+<td class="text-right"><p>0.13</p></td>
+<td class="text-right"><p>0.715</p></td>
+<td class="text-right"><p>0.62</p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p>0.0105</p></td>
+<td class="text-right"><p>0.46</p></td>
+<td class="text-right"><p>5.5</p></td>
+<td class="text-right"><p>0.12</p></td>
+<td class="text-right"><p>0.66</p></td>
+<td class="text-right"><p>0.53</p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>0.0119</p></td>
+<td class="text-right"><p>0.37</p></td>
+<td class="text-right"><p>5.5</p></td>
+<td class="text-right"><p>0.13</p></td>
+<td class="text-right"><p>0.715</p></td>
+<td class="text-right"><p>0.45</p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p>0.0122</p></td>
+<td class="text-right"><p>0.3</p></td>
+<td class="text-right"><p>5.5</p></td>
+<td class="text-right"><p>0.13</p></td>
+<td class="text-right"><p>0.715</p></td>
+<td class="text-right"><p>0.39</p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>0.0126</p></td>
+<td class="text-right"><p>0.23</p></td>
+<td class="text-right"><p>5.5</p></td>
+<td class="text-right"><p>0.11</p></td>
+<td class="text-right"><p>0.606</p></td>
+<td class="text-right"><p>0.32</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ol class="arabic" start="7">
+<li><p>Plots <span class="math notranslate nohighlight">\(h_p(Q) versus Q\)</span></p>
+<p><img alt="" src="../../_images/tdh_curve.png" /></p>
+</li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1"># Data table template</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s1">&#39;Trial&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span>
+    <span class="s1">&#39;Voltage (V)&#39;</span><span class="p">:</span> <span class="p">[</span><span class="kc">None</span><span class="p">]</span><span class="o">*</span><span class="mi">5</span><span class="p">,</span>
+    <span class="s1">&#39;Current (A)&#39;</span><span class="p">:</span> <span class="p">[</span><span class="kc">None</span><span class="p">]</span><span class="o">*</span><span class="mi">5</span><span class="p">,</span>
+    <span class="s1">&#39;Flow Rate Q (L/min)&#39;</span><span class="p">:</span> <span class="p">[</span><span class="kc">None</span><span class="p">]</span><span class="o">*</span><span class="mi">5</span><span class="p">,</span>
+    <span class="s1">&#39;Head H (m)&#39;</span><span class="p">:</span> <span class="p">[</span><span class="kc">None</span><span class="p">]</span><span class="o">*</span><span class="mi">5</span><span class="p">,</span>
+    <span class="s1">&#39;Power Input P (W)&#39;</span><span class="p">:</span> <span class="p">[</span><span class="kc">None</span><span class="p">]</span><span class="o">*</span><span class="mi">5</span>
+<span class="p">})</span>
+<span class="n">data</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Trial</th>
+      <th>Voltage (V)</th>
+      <th>Current (A)</th>
+      <th>Flow Rate Q (L/min)</th>
+      <th>Head H (m)</th>
+      <th>Power Input P (W)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">numpy.polynomial.polynomial</span> <span class="kn">import</span> <span class="n">Polynomial</span>
+
+<span class="c1"># Sample data entry (replace with your measurements)</span>
+<span class="n">Q</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>  <span class="c1"># L/min</span>
+<span class="n">H</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">])</span>  <span class="c1"># meters</span>
+
+<span class="c1"># Fit a 2nd-degree polynomial</span>
+<span class="n">coefs</span> <span class="o">=</span> <span class="n">Polynomial</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span> <span class="n">H</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">convert</span><span class="p">()</span><span class="o">.</span><span class="n">coef</span>
+<span class="c1">#print(f&quot;Fitted Pump Curve Equation: H(Q) = {coefs[0]:.3f} + {coefs[1]:.3f}Q + {coefs[2]:.3f}Q^2&quot;)</span>
+<span class="n">addtitle</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Fitted Pump Curve Equation: H(Q) = </span><span class="si">{</span><span class="n">coefs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> + </span><span class="si">{</span><span class="n">coefs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">Q + </span><span class="si">{</span><span class="n">coefs</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">Q^2&quot;</span>
+<span class="c1"># Plot</span>
+<span class="n">Q_fit</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">Q</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">Q</span><span class="p">),</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">H_fit</span> <span class="o">=</span> <span class="n">coefs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">coefs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">Q_fit</span> <span class="o">+</span> <span class="n">coefs</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">*</span><span class="n">Q_fit</span><span class="o">**</span><span class="mi">2</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span> <span class="n">H</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Measured&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Q_fit</span><span class="p">,</span> <span class="n">H_fit</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Fitted Curve&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Flow Rate Q (L/min)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Head H (m)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Pump Curve: Head vs Flow Rate</span><span class="se">\n</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="n">addtitle</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/3b7361d5a33870964028ca117209fbaefa0087d98c9689a8661693c213288c34.png" src="../../_images/3b7361d5a33870964028ca117209fbaefa0087d98c9689a8661693c213288c34.png" />
+</div>
+</div>
+</section>
+<section id="discussion-questions">
+<h3>Discussion Questions<a class="headerlink" href="#discussion-questions" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>How does head change as flow rate increases?</p></li>
+<li><p>How does power consumption relate to flow rate?</p></li>
+<li><p>Would this pump be suitable for a head requirement of 1.2 m?</p></li>
+<li><p>What measurement errors may affect your results?</p></li>
+</ol>
+<!-- 5. How would pipe friction affect the pump curve in real systems? --></section>
+</section>
+<section id="deliverables">
+<h2>Deliverables<a class="headerlink" href="#deliverables" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Completed data table</p></li>
+<li><p>Graphs (H vs Q and optionally P vs Q)</p></li>
+<li><p>Fitted pump curve equation</p></li>
+<li><p>Answers to discussion questions</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">curve_fit</span>   <span class="c1"># pip install scipy if needed</span>
+
+
+<span class="c1"># --------- CONSTANTS (edit as needed) ---------</span>
+<span class="n">KS</span>  <span class="o">=</span> <span class="mf">7.0e-6</span>     <span class="c1"># pipe roughness [m] (your table lookup)</span>
+<span class="n">NU</span>  <span class="o">=</span> <span class="mf">1.06e-6</span>    <span class="c1"># kinematic viscosity [m^2/s]</span>
+<span class="n">D</span>   <span class="o">=</span> <span class="mf">0.006</span>      <span class="c1"># pipe diameter [m]</span>
+<span class="n">L</span>   <span class="o">=</span> <span class="mf">1.0</span>        <span class="c1"># pipe length [m]</span>
+<span class="n">G</span>   <span class="o">=</span> <span class="mf">9.81</span>       <span class="c1"># gravity [m/s^2]</span>
+
+
+<span class="c1"># --------- HYDRAULIC FUNCTIONS ---------</span>
+<span class="k">def</span> <span class="nf">fricf</span><span class="p">(</span><span class="n">ks</span><span class="p">,</span> <span class="n">Re</span><span class="p">,</span> <span class="n">D</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Jain friction factor.&quot;&quot;&quot;</span>
+    <span class="n">temp1</span> <span class="o">=</span> <span class="n">ks</span> <span class="o">/</span> <span class="p">(</span><span class="mf">3.7</span> <span class="o">*</span> <span class="n">D</span><span class="p">)</span>
+    <span class="n">temp2</span> <span class="o">=</span> <span class="mf">5.74</span> <span class="o">/</span> <span class="p">(</span><span class="n">Re</span> <span class="o">**</span> <span class="mf">0.9</span><span class="p">)</span>
+    <span class="n">temp3</span> <span class="o">=</span> <span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">temp1</span> <span class="o">+</span> <span class="n">temp2</span><span class="p">))</span> <span class="o">**</span> <span class="mi">2</span>
+    <span class="k">return</span> <span class="mf">0.25</span> <span class="o">/</span> <span class="n">temp3</span>
+
+
+<span class="k">def</span> <span class="nf">reynolds</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span> <span class="n">D</span><span class="p">,</span> <span class="n">nu</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Reynolds number for circular conduit.</span>
+<span class="sd">    Q in m^3/s.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="mf">4.0</span> <span class="o">*</span> <span class="n">Q</span> <span class="o">/</span> <span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">nu</span> <span class="o">*</span> <span class="n">D</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">added_head</span><span class="p">(</span><span class="n">dz</span><span class="p">,</span> <span class="n">L</span><span class="p">,</span> <span class="n">D</span><span class="p">,</span> <span class="n">ff</span><span class="p">,</span> <span class="n">Q</span><span class="p">,</span> <span class="n">g</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Pump total dynamic head added.&quot;&quot;&quot;</span>
+    <span class="n">temp1</span> <span class="o">=</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">+</span> <span class="n">ff</span> <span class="o">*</span> <span class="n">L</span> <span class="o">/</span> <span class="n">D</span><span class="p">)</span>
+    <span class="n">temp2</span> <span class="o">=</span> <span class="mf">16.0</span> <span class="o">/</span> <span class="p">((</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">D</span> <span class="o">**</span> <span class="mi">4</span><span class="p">)</span> <span class="o">*</span> <span class="mf">2.0</span> <span class="o">*</span> <span class="n">g</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">dz</span> <span class="o">+</span> <span class="n">temp1</span> <span class="o">*</span> <span class="n">temp2</span> <span class="o">*</span> <span class="n">Q</span> <span class="o">**</span> <span class="mi">2</span>
+
+
+<span class="c1"># --------- ROW-WISE TDH COMPUTATION ---------</span>
+<span class="k">def</span> <span class="nf">compute_tdh_row</span><span class="p">(</span><span class="n">row</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Expects columns:</span>
+<span class="sd">      &#39;Q (LPS)&#39;   – flow in L/s</span>
+<span class="sd">      &#39;DH (z2-z1)&#39;– elevation difference in m</span>
+<span class="sd">    Returns TDH [m] for that row.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">q_lps</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;Q (LPS)&quot;</span><span class="p">]</span>      <span class="c1"># L/s</span>
+    <span class="n">dz</span>    <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;DH (z2-z1)&quot;</span><span class="p">]</span>   <span class="c1"># m</span>
+
+    <span class="c1"># Convert L/s -&gt; m^3/s</span>
+    <span class="n">Q</span> <span class="o">=</span> <span class="n">q_lps</span> <span class="o">/</span> <span class="mf">1000.0</span>
+
+    <span class="c1"># Hydraulics</span>
+    <span class="n">Re</span>  <span class="o">=</span> <span class="n">reynolds</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span> <span class="n">D</span><span class="p">,</span> <span class="n">NU</span><span class="p">)</span>
+    <span class="n">ff</span>  <span class="o">=</span> <span class="n">fricf</span><span class="p">(</span><span class="n">KS</span><span class="p">,</span> <span class="n">Re</span><span class="p">,</span> <span class="n">D</span><span class="p">)</span>
+    <span class="n">tdh</span> <span class="o">=</span> <span class="n">added_head</span><span class="p">(</span><span class="n">dz</span><span class="p">,</span> <span class="n">L</span><span class="p">,</span> <span class="n">D</span><span class="p">,</span> <span class="n">ff</span><span class="p">,</span> <span class="n">Q</span><span class="p">,</span> <span class="n">G</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">tdh</span>
+
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="k">def</span> <span class="nf">plot_tdh_curve</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">output_file</span><span class="o">=</span><span class="s2">&quot;tdh_curve.png&quot;</span><span class="p">):</span>
+    <span class="c1"># Sort for nicer plotting</span>
+    <span class="n">df_sorted</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;Q (LPS)&quot;</span><span class="p">)</span>
+
+    <span class="n">Q_data</span>  <span class="o">=</span> <span class="n">df_sorted</span><span class="p">[</span><span class="s2">&quot;Q (LPS)&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+    <span class="n">TDH_data</span> <span class="o">=</span> <span class="n">df_sorted</span><span class="p">[</span><span class="s2">&quot;TDH (m)&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+
+    <span class="c1"># Fit the model</span>
+    <span class="n">shutoff</span><span class="p">,</span> <span class="n">K</span><span class="p">,</span> <span class="n">exponent</span> <span class="o">=</span> <span class="n">fit_tdh_model</span><span class="p">(</span><span class="n">df_sorted</span><span class="p">)</span>
+
+    <span class="c1"># Generate smooth curve for the fitted model</span>
+    <span class="n">Q_fit</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">Q_data</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">Q_data</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="mi">200</span><span class="p">)</span>
+    <span class="n">TDH_fit</span> <span class="o">=</span> <span class="n">tdh_model</span><span class="p">(</span><span class="n">Q_fit</span><span class="p">,</span> <span class="n">shutoff</span><span class="p">,</span> <span class="n">K</span><span class="p">,</span> <span class="n">exponent</span><span class="p">)</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+
+    <span class="c1"># Measured data</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Q_data</span><span class="p">,</span> <span class="n">TDH_data</span><span class="p">,</span> <span class="s2">&quot;o&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Measured TDH&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Fitted model</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Q_fit</span><span class="p">,</span> <span class="n">TDH_fit</span><span class="p">,</span> <span class="s2">&quot;-&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;Fit: TDH = </span><span class="si">{</span><span class="n">shutoff</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> - </span><span class="si">{</span><span class="n">K</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">·Q^</span><span class="si">{</span><span class="n">exponent</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Flow Rate Q (LPS)&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Total Dynamic Head TDH (m)&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Pump Performance Curve (TDH vs Q)&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">output_file</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+
+<span class="k">def</span> <span class="nf">tdh_model</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span> <span class="n">shutoff</span><span class="p">,</span> <span class="n">K</span><span class="p">,</span> <span class="n">exponent</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Model: TDH(Q) = shutoff - K * Q**exponent.&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">shutoff</span> <span class="o">-</span> <span class="n">K</span> <span class="o">*</span> <span class="p">(</span><span class="n">Q</span> <span class="o">**</span> <span class="n">exponent</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">fit_tdh_model</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+    <span class="n">df_clean</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Q (LPS)&quot;</span><span class="p">,</span> <span class="s2">&quot;TDH (m)&quot;</span><span class="p">])</span>
+    <span class="n">Q</span> <span class="o">=</span> <span class="n">df_clean</span><span class="p">[</span><span class="s2">&quot;Q (LPS)&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+    <span class="n">TDH</span> <span class="o">=</span> <span class="n">df_clean</span><span class="p">[</span><span class="s2">&quot;TDH (m)&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+
+    <span class="n">shutoff0</span>  <span class="o">=</span> <span class="n">TDH</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+    <span class="n">exponent0</span> <span class="o">=</span> <span class="mf">2.0</span>     <span class="c1"># initial guess at the upper bound</span>
+    <span class="n">K0</span>        <span class="o">=</span> <span class="p">(</span><span class="n">shutoff0</span> <span class="o">-</span> <span class="n">TDH</span><span class="o">.</span><span class="n">min</span><span class="p">())</span> <span class="o">/</span> <span class="p">(</span><span class="n">Q</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">**</span> <span class="n">exponent0</span><span class="p">)</span>
+
+    <span class="n">popt</span><span class="p">,</span> <span class="n">pcov</span> <span class="o">=</span> <span class="n">curve_fit</span><span class="p">(</span>
+        <span class="n">tdh_model</span><span class="p">,</span>
+        <span class="n">Q</span><span class="p">,</span>
+        <span class="n">TDH</span><span class="p">,</span>
+        <span class="n">p0</span><span class="o">=</span><span class="p">[</span><span class="n">shutoff0</span><span class="p">,</span> <span class="n">K0</span><span class="p">,</span> <span class="n">exponent0</span><span class="p">],</span>
+        <span class="n">bounds</span><span class="o">=</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">])</span>
+    <span class="p">)</span>
+
+    <span class="n">shutoff</span><span class="p">,</span> <span class="n">K</span><span class="p">,</span> <span class="n">exponent</span> <span class="o">=</span> <span class="n">popt</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Fitted model: TDH = </span><span class="si">{</span><span class="n">shutoff</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> - </span><span class="si">{</span><span class="n">K</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">·Q^</span><span class="si">{</span><span class="n">exponent</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">shutoff</span><span class="p">,</span> <span class="n">K</span><span class="p">,</span> <span class="n">exponent</span>
+
+
+<span class="c1"># --------- TABLE INGEST / OUTPUT ---------</span>
+<span class="k">def</span> <span class="nf">process_table</span><span class="p">(</span><span class="n">input_path</span><span class="p">,</span> <span class="n">output_path</span><span class="p">):</span>
+    <span class="n">input_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">input_path</span><span class="p">)</span>
+    <span class="n">output_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">output_path</span><span class="p">)</span>
+
+    <span class="c1"># Your sample is tab-separated; delim_whitespace=True will also work</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">input_path</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;,&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Fill / overwrite the TDH column</span>
+    <span class="n">df</span><span class="p">[</span><span class="s2">&quot;TDH (m)&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">compute_tdh_row</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="c1"># Write full table back out</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">output_path</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;|&quot;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+    <span class="c1"># --- Plot TDH vs Q ---</span>
+    <span class="n">plot_tdh_curve</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+
+    <span class="c1"># Optional: show first few rows in the console</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span><span class="o">.</span><span class="n">to_string</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="c1"># Change filenames as needed</span>
+    <span class="n">process_table</span><span class="p">(</span><span class="s2">&quot;pump_data.csv&quot;</span><span class="p">,</span> <span class="s2">&quot;pump_data_with_TDH.csv&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Fitted model: TDH = 0.888 - 317137.720·Q^3.032
+</pre></div>
+</div>
+<img alt="../../_images/22877942b211a40d1dfcee0f60d7a8147c31f27ac8158e41bde9bb2f50593ec1.png" src="../../_images/22877942b211a40d1dfcee0f60d7a8147c31f27ac8158e41bde9bb2f50593ec1.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Q (LPS)  DH (z2-z1)  V(V)  I(A)  P(W)  TDH (m)
+  0.0066        0.78   5.5  0.17 0.935 0.810723
+  0.0102        0.56   5.5  0.13 0.715 0.623841
+  0.0105        0.46   5.5  0.12 0.660 0.527063
+  0.0119        0.37   5.5  0.13 0.715 0.453005
+  0.0122        0.30   5.5  0.13 0.715 0.386614
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python-my-env",
+            path: "./chapters/5-pump-performance-curve"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python-my-env'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../4-momentum-in-a-jet/momentum.in.a.jet.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Momentum Transfer from a Water Jet</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#readings">Readings</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#objective">Objective</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#background">Background</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#apparatus">Apparatus</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#experimental-setup">Experimental Setup</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#procedure">Procedure</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-collected">Data Collected</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-analysis">Data Analysis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion-questions">Discussion Questions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deliverables">Deliverables</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Theodore G. Cleveland
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
