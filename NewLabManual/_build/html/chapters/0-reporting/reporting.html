@@ -1,0 +1,635 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Laboratory Reports &#8212; Mechanics of Fluids Laboratory</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=5303cbea" />
+    <link rel="stylesheet" type="text/css" href="../../_static/.ipynb_checkpoints/custom-checkpoint.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/0-reporting/reporting';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Closed Conduit Flow Measurements" href="../1-flow-measurement-in-pipes/flow.measurements.in.conduits.html" />
+    <link rel="prev" title="Syllabus" href="../0-syllabus/ce-3105-syllabus-2026-1.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo2.png" class="logo__image only-light" alt="Mechanics of Fluids Laboratory - Home"/>
+    <script>document.write(`<img src="../../_static/logo2.png" class="logo__image only-dark" alt="Mechanics of Fluids Laboratory - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../0-syllabus/ce-3105-syllabus-2026-1.html">Syllabus</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Laboratory Reports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1-flow-measurement-in-pipes/flow.measurements.in.conduits.html">Closed Conduit Flow Measurements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2-pipe-friction-factor/pipe.friction.factor.html">Friction Factor in Pipes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4-momentum-in-a-jet/momentum.in.a.jet.html">Momentum Transfer from a Water Jet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5-pump-performance-curve/pump.performance.curve.html">Pump Performance Curve</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../6-flow-measurement-in-channels/flow.measurements.in.channels.html">Open Channel Flow Measurements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../7-gradually-varied-flow-backwater-curve/gradually.varied.flow.backwater.curve.html">Gradually Varied Flow - Backwater Curve</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../8-rapid-varied-flow-hydraulic-jump/rapid.varied.flow.hydraulic.jump.html">Lab 9. - Water Surface Profiles: Hydraulic Jump</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../9-porous-media-flownet/porous.media.flownet.html">Porous Media Flow Nets</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/chapters/0-reporting/reporting.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Laboratory Reports</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#report-requirements">Report Requirements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submision-guidelines">Submision Guidelines</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="laboratory-reports">
+<h1>Laboratory Reports<a class="headerlink" href="#laboratory-reports" title="Link to this heading">#</a></h1>
+<p>In engineering practice, written reports are the primary means by which technical work is communicated, reviewed, and relied upon. Decisions involving design, operations, safety, and compliance depend on the engineer’s ability to document methods, present data clearly, justify conclusions, and explain the reasoning behind them. Laboratory reports serve as early, structured training in these professional expectations. They ensure that the work you perform in the lab can be understood, reproduced, and critically evaluated by others—just as it must be in real engineering environments.</p>
+<p>The purpose of this report format is to develop the habits of communication that engineers use throughout their careers. A strong report demonstrates more than completed calculations: it demonstrates understanding of the underlying principles, thoughtful analysis of results, accountability in data handling, and clarity in presenting technical information. The sections below outline the standard structure for laboratory reporting in this course. Each component mirrors a function performed in industry—from stating an objective to supporting conclusions with evidence—so that your work reflects both academic rigor and professional practice.</p>
+<section id="report-requirements">
+<h2>Report Requirements<a class="headerlink" href="#report-requirements" title="Link to this heading">#</a></h2>
+<p>Each student must submit a lab report consisting of the following items:</p>
+<ol class="arabic simple">
+<li><p>Title Page</p>
+<ul class="simple">
+<li><p>Include the course number, section number, and course title, descriptive title of the experiment, date completed, date submitted, and prepared by (author‟s
+name) and submitted to (lab instructor‟s name)</p></li>
+</ul>
+</li>
+<li><p>Table of Contents</p>
+<ul class="simple">
+<li><p>List major report headings;</p></li>
+<li><p>Show a list of tables and figures with titles;</p></li>
+<li><p>Indicate the contents of the appendix ;</p></li>
+<li><p>Show corresponding page numbers</p></li>
+</ul>
+</li>
+<li><p>Objective</p>
+<ul class="simple">
+<li><p>Clearly state the purpose of the investigation</p></li>
+</ul>
+</li>
+<li><p>Theory</p>
+<ul class="simple">
+<li><p>Discuss fundamental principles behind the experiment;</p></li>
+<li><p>Clarify equations to be used and define all variables;</p></li>
+<li><p>Indicate important assumptions for validity of equations;</p></li>
+<li><p>Indicate your anticipated results;</p></li>
+<li><p>Cite references for borrowed ideas or expressions</p></li>
+</ul>
+</li>
+<li><p>Apparatus</p>
+<ul class="simple">
+<li><p>Drawings of the apparatus with important dimensions</p></li>
+</ul>
+</li>
+<li><p>Procedure</p>
+<ul class="simple">
+<li><p>A concise list of the steps your group performed</p></li>
+</ul>
+</li>
+<li><p>Results</p>
+<ul class="simple">
+<li><p>All your results should be presented here;</p></li>
+<li><p>Tables, charts and plots should be incorporated into the report text;</p></li>
+<li><p>For each table or figure, provide a brief narrative that explains the significance of the table or figure, its content, and, by referencing equations in the “Theory” section, how values were obtained;</p></li>
+<li><p>Provide a number and title for each table and figure that corresponds to that given above</p></li>
+</ul>
+</li>
+<li><p>Discussion</p>
+<ul class="simple">
+<li><p>Discuss the accuracy and precision of each result;</p></li>
+<li><p>Analyze probable sources of error</p></li>
+</ul>
+</li>
+<li><p>Conclusion</p>
+<ul class="simple">
+<li><p>State and justify whether your initial objective was met;</p></li>
+<li><p>Can you make recommendations for future related work</p></li>
+</ul>
+</li>
+<li><p>References</p>
+<ul class="simple">
+<li><p>List of references cited in the report</p></li>
+</ul>
+</li>
+<li><p>Appendix</p>
+<ul class="simple">
+<li><p>Original, handwritten data tables (if appropriate);</p></li>
+<li><p>Example hand calculations;</p></li>
+<li><p>Scripts (python code used to analyze data and produce plots)</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="submision-guidelines">
+<h2>Submision Guidelines<a class="headerlink" href="#submision-guidelines" title="Link to this heading">#</a></h2>
+<p>The instructor uses a Language Learning Model (OnPrem.LLM; OpenAI GPT 5+; or similar tools) to screen your reports, generate actionable feedback and provide an initial score for your work. To ensure meaningful evaluation and to maximize your score:</p>
+<ol class="arabic simple">
+<li><p>Follow the explicit file name convention below:</p></li>
+</ol>
+<div class="student-live admonition">
+<p class="admonition-title">File Naming Convention</p>
+<p>The file you upload should be named: <strong>LastName_FirstName_AssignmentName.pdf</strong></p>
+<p>This ensures your work is</p>
+<ol class="arabic simple">
+<li><p>Identifiable for scoring</p></li>
+<li><p>Lexiographically sortable</p></li>
+</ol>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Failure to use the correct naming convention will result in a reduced score.</p>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Use the correct file format:</p></li>
+</ol>
+<div class="student-live admonition">
+<p class="admonition-title">File Format</p>
+<p>The file you upload should be formatted as a PDF file. If your assignment involves computational scripts or code, include them as clearly formatted appendices in the same PDF.  Data tables should be machine readable (not images or screen captures).  Figures must be captioned so the LLM can detect their presence, and attept to interpret them (its hard for LLM to interpret images, but if identified as a Figure there is a better chance).</p>
+<p>Hand-written content is nearly impossible to interpret, so type your reports.</p>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Structure Your Document</p>
+<ul class="simple">
+<li><p>Use the report format provided - verbatim.  Even if some components are empty, include the headings in your report.</p></li>
+</ul>
+</li>
+<li><p>Use Consistent Formatting</p>
+<ul class="simple">
+<li><p>Use a standard font (e.g., Times New Roman, 12pt) and 1.5x line spacing.</p></li>
+<li><p>Use headings for major sections (e.g., “Problem 1,” “Solution”).</p></li>
+<li><p>Label and reference all figures, tables, and equations.</p></li>
+</ul>
+</li>
+<li><p>Code Integration</p>
+<ul class="simple">
+<li><p>If applicable, embed short code snippets directly into the document and ensure they are legible. If you use Word to build your report use Courier font for code fragments.</p></li>
+<li><p>For longer scripts, attach them in the appendix .</p></li>
+</ul>
+</li>
+<li><p>Calculations and Units</p>
+<ul class="simple">
+<li><p>Show all steps in your calculations (representative calculations are preferable -  We assume you will use a script or spreadsheet for repetitive calculations).</p></li>
+<li><p>Use consistent units throughout and verify that units are included in all results.</p></li>
+</ul>
+</li>
+<li><p>Graphs and Diagrams</p>
+<ul class="simple">
+<li><p>Clearly label all axes and include titles. <a class="reference external" href="http://54.243.252.9/engr-1330-webroot/engr1330jb/_build/html/lessons/lesson14/lesson14.html"><strong>Graphics Conventions (link)</strong></a></p></li>
+<li><p>Add legends if multiple datasets are plotted.</p></li>
+<li><p>Ensure diagrams are annotated and relevant to your solution.</p></li>
+</ul>
+</li>
+</ol>
+<div class="admonition-instructor-preparation-class-instructor-prep admonition">
+<p class="admonition-title">Instructor Preparation :class: instructor-prep</p>
+<p>Migrate graphics convention into the next notebook update to avoid a cross-site link :::</p>
+<ol class="arabic simple" start="8">
+<li><p>References</p>
+<ul class="simple">
+<li><p>Cite all external materials used (e.g., textbooks, research papers, or online resources).</p></li>
+</ul>
+</li>
+</ol>
+<div class="admonition-why-this-matters admonition">
+<p class="admonition-title">Why this matters</p>
+<p>Engineering is a profession built on clarity, accountability, and the ability to communicate technical work in a way that others can trust and act upon. A laboratory report is more than a record of what you did in the lab—it is a demonstration of the same skills you will rely on in professional practice: organizing information, documenting methods, presenting data accurately, justifying decisions, and explaining results in a way that another engineer can understand, reproduce, and evaluate.</p>
+<p>The structure and expectations outlined in this template are not arbitrary; they mirror the documentation standards used in design offices, consulting firms, research organizations, and regulatory environments. Developing these habits now prepares you for work where reports influence real decisions about safety, performance, costs, and compliance. Writing a clear, complete, and well-reasoned report is therefore not just a course requirement—it is foundational to becoming a competent and trustworthy engineer.</p>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python-my-env",
+            path: "./chapters/0-reporting"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python-my-env'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../0-syllabus/ce-3105-syllabus-2026-1.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Syllabus</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../1-flow-measurement-in-pipes/flow.measurements.in.conduits.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Closed Conduit Flow Measurements</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#report-requirements">Report Requirements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submision-guidelines">Submision Guidelines</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Theodore G. Cleveland
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

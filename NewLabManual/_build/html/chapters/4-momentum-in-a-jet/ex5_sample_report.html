@@ -1,0 +1,1012 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Laboratory 5 Sample Report &#8212; Mechanics of Fluids Laboratory</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=5303cbea" />
+    <link rel="stylesheet" type="text/css" href="../../_static/.ipynb_checkpoints/custom-checkpoint.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/4-momentum-in-a-jet/ex5_sample_report';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo2.png" class="logo__image only-light" alt="Mechanics of Fluids Laboratory - Home"/>
+    <script>document.write(`<img src="../../_static/logo2.png" class="logo__image only-dark" alt="Mechanics of Fluids Laboratory - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../0-syllabus/ce-3105-syllabus-2026-1.html">Syllabus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../0-reporting/reporting.html">Laboratory Reports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1-flow-measurement-in-pipes/flow.measurements.in.conduits.html">Closed Conduit Flow Measurements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2-pipe-friction-factor/pipe.friction.factor.html">Friction Factor in Pipes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="momentum.in.a.jet.html">Momentum Transfer from a Water Jet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5-pump-performance-curve/pump.performance.curve.html">Pump Performance Curve</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../6-flow-measurement-in-channels/flow.measurements.in.channels.html">Open Channel Flow Measurements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../7-gradually-varied-flow-backwater-curve/gradually.varied.flow.backwater.curve.html">Gradually Varied Flow - Backwater Curve</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../8-rapid-varied-flow-hydraulic-jump/rapid.varied.flow.hydraulic.jump.html">Lab 9. - Water Surface Profiles: Hydraulic Jump</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../9-porous-media-flownet/porous.media.flownet.html">Porous Media Flow Nets</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/chapters/4-momentum-in-a-jet/ex5_sample_report.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Laboratory 5 Sample Report</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#momentum-transfer-in-a-jet">Momentum Transfer in a Jet</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives">Objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#safety-considerations">Safety considerations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experimental-setup-and-methods">Experimental Setup and Methods</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#flat-plate-vane">Flat Plate Vane</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hemispherical-vane">Hemispherical Vane</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-acquisition">Data Acquisition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-reduction">Data Reduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#results-and-discussion">Results and Discussion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sources-of-error">Sources of Error</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#appendix-i-python-analysis-scripts">Appendix-I Python Analysis Scripts</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="laboratory-5-sample-report">
+<h1>Laboratory 5 Sample Report<a class="headerlink" href="#laboratory-5-sample-report" title="Link to this heading">#</a></h1>
+<section id="momentum-transfer-in-a-jet">
+<h2>Momentum Transfer in a Jet<a class="headerlink" href="#momentum-transfer-in-a-jet" title="Link to this heading">#</a></h2>
+</section>
+<section id="objectives">
+<h2>Objectives<a class="headerlink" href="#objectives" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>To demonstrate that the force on a vane is proportional to the rate of delivery of momentum</p></li>
+<li><p>To show that you can predict the force on a vane from a combination of its surface shape and the properties of the jet directed at it</p></li>
+</ul>
+</section>
+<section id="safety-considerations">
+<h2>Safety considerations<a class="headerlink" href="#safety-considerations" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Don’t drink the water!</p></li>
+<li><p>Don’t come to lab intoxicated!</p></li>
+<li><p>Don’t wear shorts, skirt.</p></li>
+<li><p>Don’t wear sandals; shoes or boots (closed toe, Crocks don’t count)</p></li>
+<li><p>What about electricity and water?</p></li>
+<li><p>What about moving water and your eyeballs?</p></li>
+</ol>
+</section>
+<section id="experimental-setup-and-methods">
+<h2>Experimental Setup and Methods<a class="headerlink" href="#experimental-setup-and-methods" title="Link to this heading">#</a></h2>
+<p>The two experimental configurations (flat-plate and hemispherical cup) are described in the sub-sections that follow:</p>
+<section id="flat-plate-vane">
+<h3>Flat Plate Vane<a class="headerlink" href="#flat-plate-vane" title="Link to this heading">#</a></h3>
+<p>The arrangement of the system is shown in the photograph below for the flat plate condition.</p>
+<p><img alt="" src="../../_images/flatplate.png" /></p>
+<p>Not shown is the RPi (external) mass flow meter, and the H1F meter (built-in).</p>
+<p>The experimental procedure is to:</p>
+<ol class="arabic simple" start="0">
+<li><p>Install the Vane</p></li>
+<li><p>Establish repeatable zero for the weight beam is balance</p></li>
+<li><p>Start the hydraulic bench and adjust flow (work from high flow to low flow)</p></li>
+<li><p>Move the jockey weight until the beam balances at the repeatable zero</p>
+<ul class="simple">
+<li><p>Record distance, y, from the zero position</p></li>
+<li><p>Record the flow rate using the hydraulic bench H1F readout</p></li>
+<li><p>Record the flow rate using the PRi external flowmeter</p></li>
+</ul>
+</li>
+<li><p>Change the hydraulic bench flow rate in relatively equal increments for 4 additional readings (attempt to get 5 different flow rates, including lowest possible to produce constant deflection</p>
+<ul class="simple">
+<li><p>Record distance, y, from the zero position for each trial</p></li>
+<li><p>Record the flow rate using the hydraulic bench H1F readout for each trial</p></li>
+<li><p>Record the flow rate using the PRi external flowmeter readout for each trial</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="hemispherical-vane">
+<h3>Hemispherical Vane<a class="headerlink" href="#hemispherical-vane" title="Link to this heading">#</a></h3>
+<p>The arrangement of the system is shown in the photograph below for the hemispherical (cup) condition.</p>
+<p><img alt="" src="../../_images/cupplate.png" /></p>
+<p>The experimental procedure is to:</p>
+<ol class="arabic simple" start="0">
+<li><p>Install the Cup</p></li>
+<li><p>Establish repeatable zero for the weight beam is balance</p></li>
+<li><p>Start the hydraulic bench and adjust flow (work from high flow to low flow)</p></li>
+<li><p>Move the jockey weight until the beam balances at the repeatable zero</p>
+<ul class="simple">
+<li><p>Record distance, y, from the zero position</p></li>
+<li><p>Record the flow rate using the hydraulic bench H1F readout</p></li>
+<li><p>Record the flow rate using the PRi external flowmeter</p></li>
+</ul>
+</li>
+<li><p>Change the hydraulic bench flow rate in relatively equal increments for 4 additional readings (attempt to get 5 different flow rates, including lowest possible to produce constant deflection</p>
+<ul class="simple">
+<li><p>Record distance, y, from the zero position for each trial</p></li>
+<li><p>Record the flow rate using the hydraulic bench H1F readout for each trial</p></li>
+<li><p>Record the flow rate using the PRi external flowmeter readout for each trial</p></li>
+</ul>
+</li>
+</ol>
+</section>
+</section>
+<section id="data-acquisition">
+<h2>Data Acquisition<a class="headerlink" href="#data-acquisition" title="Link to this heading">#</a></h2>
+<p>The data were acquired, reduced, and are listed in the tables below:</p>
+<p><strong>Flat Plate</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Trial</p></th>
+<th class="head text-left"><p>Distance y(<span class="math notranslate nohighlight">\(~mm\)</span>)</p></th>
+<th class="head text-left"><p>H1F Flow Rate (<span class="math notranslate nohighlight">\(\frac{L}{min}\)</span>)</p></th>
+<th class="head text-left"><p>RPi Flow Rate (<span class="math notranslate nohighlight">\(\frac{L}{min}\)</span>)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>1</p></td>
+<td class="text-left"><p>102</p></td>
+<td class="text-left"><p>35.9</p></td>
+<td class="text-left"><p>35.5</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>2</p></td>
+<td class="text-left"><p>86</p></td>
+<td class="text-left"><p>31.6</p></td>
+<td class="text-left"><p>28.4</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>3</p></td>
+<td class="text-left"><p>68</p></td>
+<td class="text-left"><p>27.5</p></td>
+<td class="text-left"><p>27.2</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>4</p></td>
+<td class="text-left"><p>42</p></td>
+<td class="text-left"><p>22.9</p></td>
+<td class="text-left"><p>22.6</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>5</p></td>
+<td class="text-left"><p>19</p></td>
+<td class="text-left"><p>17.5</p></td>
+<td class="text-left"><p>17.3</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Hemispherical Cup</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Trial</p></th>
+<th class="head text-left"><p>Distance y(<span class="math notranslate nohighlight">\(~mm\)</span>)</p></th>
+<th class="head text-left"><p>H1F Flow Rate (<span class="math notranslate nohighlight">\(\frac{L}{min}\)</span>)</p></th>
+<th class="head text-left"><p>RPi Flow Rate (<span class="math notranslate nohighlight">\(\frac{L}{min}\)</span>)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>1</p></td>
+<td class="text-left"><p>188</p></td>
+<td class="text-left"><p>33.5</p></td>
+<td class="text-left"><p>33.1</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>2</p></td>
+<td class="text-left"><p>140</p></td>
+<td class="text-left"><p>30.1</p></td>
+<td class="text-left"><p>29.8</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>3</p></td>
+<td class="text-left"><p>90</p></td>
+<td class="text-left"><p>24.6</p></td>
+<td class="text-left"><p>24.3</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>4</p></td>
+<td class="text-left"><p>50</p></td>
+<td class="text-left"><p>18.4</p></td>
+<td class="text-left"><p>18.2</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>5</p></td>
+<td class="text-left"><p>20</p></td>
+<td class="text-left"><p>12.7</p></td>
+<td class="text-left"><p>12.6</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="data-reduction">
+<h2>Data Reduction<a class="headerlink" href="#data-reduction" title="Link to this heading">#</a></h2>
+<p>The table below lists important physical dimensions in the experiment(s)</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-right"><p>Item</p></th>
+<th class="head text-right"><p>Value</p></th>
+<th class="head text-right"><p>Units</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-right"><p><span class="math notranslate nohighlight">\(\rho\)</span></p></td>
+<td class="text-right"><p><span class="math notranslate nohighlight">\(1000\)</span></p></td>
+<td class="text-right"><p><span class="math notranslate nohighlight">\(\frac{kg}{mm^3}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p><span class="math notranslate nohighlight">\(g\)</span></p></td>
+<td class="text-right"><p><span class="math notranslate nohighlight">\(9.81\)</span></p></td>
+<td class="text-right"><p><span class="math notranslate nohighlight">\(\frac{m}{s^2}\)</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p>jet diameter</p></td>
+<td class="text-right"><p><span class="math notranslate nohighlight">\(10\)</span></p></td>
+<td class="text-right"><p><span class="math notranslate nohighlight">\(mm\)</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>nozzle-to-vane distance</p></td>
+<td class="text-right"><p><span class="math notranslate nohighlight">\(35\)</span></p></td>
+<td class="text-right"><p><span class="math notranslate nohighlight">\(mm\)</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p>Jockey mass</p></td>
+<td class="text-right"><p><span class="math notranslate nohighlight">\(600\)</span></p></td>
+<td class="text-right"><p><span class="math notranslate nohighlight">\(mg\)</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>Vane-to-pivot distance</p></td>
+<td class="text-right"><p><span class="math notranslate nohighlight">\(150\)</span></p></td>
+<td class="text-right"><p><span class="math notranslate nohighlight">\(mm\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The generic reduction procedure is to:</p>
+<ol class="arabic simple">
+<li><p>Convert flow rate to mass flow rate, <span class="math notranslate nohighlight">\(\dot m~\frac{kg}{s}\)</span>, from <span class="math notranslate nohighlight">\(\dot m = \rho ~ Q\)</span></p></li>
+<li><p>Calculate the jet velocity, <span class="math notranslate nohighlight">\(u_j~\frac{m}{s}\)</span>, from <span class="math notranslate nohighlight">\(u = \frac{4Q}{\pi d^2}\)</span> where <span class="math notranslate nohighlight">\(d\)</span> is the nozzle diameter.</p></li>
+<li><p>Calculate the deflected velocity, <span class="math notranslate nohighlight">\(u_0~\frac{m}{s}\)</span> from <span class="math notranslate nohighlight">\(u_0 = \sqrt{u_j^2 - 2gs}\)</span> where <span class="math notranslate nohighlight">\(s\)</span> is the nozzle-to-vane distance.  This velocity accounts for the conversion of kinetic energy to gravitational potential as the jet rises the distance <span class="math notranslate nohighlight">\(s\)</span> before impact with the vane.</p></li>
+<li><p>Calculate rate of delivery of momentum, <span class="math notranslate nohighlight">\(\dot m u_0 ~ \frac{kg~m}{s}\)</span></p></li>
+<li><p>Calculate force, <span class="math notranslate nohighlight">\(F~\frac{kg~m}{s^2}\)</span>.  The values are obtained from the data table(s) <span class="math notranslate nohighlight">\(F = \frac{M \cdot g \cdot (a + y)}{a}\)</span>, where <span class="math notranslate nohighlight">\(y\)</span> is the jockey weight distance from the repeatable zero, <span class="math notranslate nohighlight">\(a\)</span> is the pivot to vane attachment location, and <span class="math notranslate nohighlight">\(M\)</span> is the mass of the jockey weight.</p></li>
+<li><p>Create a plot of force, <span class="math notranslate nohighlight">\(F\)</span> (y-axis) vs. rate of delivery of momentum, <span class="math notranslate nohighlight">\(\dot m u_0\)</span>(x-axis)</p></li>
+</ol>
+<ul class="simple">
+<li><p>Create a trendline for the data points</p></li>
+<li><p>The slope of the trendline indicates the coefficient for theoretical force</p></li>
+</ul>
+<p>Python prototype functions, and data analysis to populate tables are listed in the appendix.  The results are tabulated below</p>
+<p><strong>Flate Plate</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Trial</p></th>
+<th class="head text-left"><p>Discharge (<span class="math notranslate nohighlight">\(Q~\frac{L}{min}\)</span>)</p></th>
+<th class="head text-left"><p>Mass Flow (<span class="math notranslate nohighlight">\(\dot m~\frac{kg}{s}\)</span>)</p></th>
+<th class="head text-left"><p>Distance (<span class="math notranslate nohighlight">\(y\)</span>)</p></th>
+<th class="head text-left"><p>Velocity (<span class="math notranslate nohighlight">\(u_j~\frac{m}{s}\)</span>)</p></th>
+<th class="head text-left"><p>Velocity (<span class="math notranslate nohighlight">\(u_0~\frac{m}{s}\)</span>)</p></th>
+<th class="head text-left"><p>Momentum Flux (<span class="math notranslate nohighlight">\(\dot m u_0~ \frac{kg~m^2}{s^2}\)</span>)</p></th>
+<th class="head text-left"><p>Force (<span class="math notranslate nohighlight">\(F~~ \frac{kg~m}{s^2}\)</span>)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>1</p></td>
+<td class="text-left"><p>35.5</p></td>
+<td class="text-left"><p>0.592</p></td>
+<td class="text-left"><p>102</p></td>
+<td class="text-left"><p>7.533</p></td>
+<td class="text-left"><p>7.488</p></td>
+<td class="text-left"><p>4.43</p></td>
+<td class="text-left"><p>9.888</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>2</p></td>
+<td class="text-left"><p>28.4</p></td>
+<td class="text-left"><p>0.473</p></td>
+<td class="text-left"><p>86</p></td>
+<td class="text-left"><p>6.027</p></td>
+<td class="text-left"><p>5.969</p></td>
+<td class="text-left"><p>2.826</p></td>
+<td class="text-left"><p>9.261</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>3</p></td>
+<td class="text-left"><p>27.2</p></td>
+<td class="text-left"><p>0.453</p></td>
+<td class="text-left"><p>68</p></td>
+<td class="text-left"><p>5.772</p></td>
+<td class="text-left"><p>5.712</p></td>
+<td class="text-left"><p>2.59</p></td>
+<td class="text-left"><p>8.554</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>4</p></td>
+<td class="text-left"><p>22.6</p></td>
+<td class="text-left"><p>0.377</p></td>
+<td class="text-left"><p>42</p></td>
+<td class="text-left"><p>4.796</p></td>
+<td class="text-left"><p>4.724</p></td>
+<td class="text-left"><p>1.779</p></td>
+<td class="text-left"><p>7.534</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>5</p></td>
+<td class="text-left"><p>17.3</p></td>
+<td class="text-left"><p>0.288</p></td>
+<td class="text-left"><p>19</p></td>
+<td class="text-left"><p>3.671</p></td>
+<td class="text-left"><p>3.576</p></td>
+<td class="text-left"><p>1.031</p></td>
+<td class="text-left"><p>6.632</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Hemispherical Cup</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Trial</p></th>
+<th class="head text-left"><p>Discharge (<span class="math notranslate nohighlight">\(Q~\frac{L}{min}\)</span>)</p></th>
+<th class="head text-left"><p>Mass Flow (<span class="math notranslate nohighlight">\(\dot m~\frac{kg}{s}\)</span>)</p></th>
+<th class="head text-left"><p>Distance (<span class="math notranslate nohighlight">\(y\)</span>)</p></th>
+<th class="head text-left"><p>Velocity (<span class="math notranslate nohighlight">\(u_j~\frac{m}{s}\)</span>)</p></th>
+<th class="head text-left"><p>Velocity (<span class="math notranslate nohighlight">\(u_0~\frac{m}{s}\)</span>)</p></th>
+<th class="head text-left"><p>Momentum Flux (<span class="math notranslate nohighlight">\(\dot m u_0~ \frac{kg~m^2}{s^2}\)</span>)</p></th>
+<th class="head text-left"><p>Force (<span class="math notranslate nohighlight">\(F~~ \frac{kg~m}{s^2}\)</span>)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>1</p></td>
+<td class="text-left"><p>33.1</p></td>
+<td class="text-left"><p>0.552</p></td>
+<td class="text-left"><p>188</p></td>
+<td class="text-left"><p>7.024</p></td>
+<td class="text-left"><p>6.975</p></td>
+<td class="text-left"><p>3.848</p></td>
+<td class="text-left"><p>13.263</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>2</p></td>
+<td class="text-left"><p>29.8</p></td>
+<td class="text-left"><p>0.497</p></td>
+<td class="text-left"><p>140</p></td>
+<td class="text-left"><p>6.324</p></td>
+<td class="text-left"><p>6.269</p></td>
+<td class="text-left"><p>3.114</p></td>
+<td class="text-left"><p>11.38</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>3</p></td>
+<td class="text-left"><p>24.3</p></td>
+<td class="text-left"><p>0.405</p></td>
+<td class="text-left"><p>90</p></td>
+<td class="text-left"><p>5.157</p></td>
+<td class="text-left"><p>5.09</p></td>
+<td class="text-left"><p>2.061</p></td>
+<td class="text-left"><p>9.418</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>4</p></td>
+<td class="text-left"><p>18.2</p></td>
+<td class="text-left"><p>0.303</p></td>
+<td class="text-left"><p>50</p></td>
+<td class="text-left"><p>3.862</p></td>
+<td class="text-left"><p>3.772</p></td>
+<td class="text-left"><p>1.144</p></td>
+<td class="text-left"><p>7.848</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>5</p></td>
+<td class="text-left"><p>12.6</p></td>
+<td class="text-left"><p>0.21</p></td>
+<td class="text-left"><p>20</p></td>
+<td class="text-left"><p>2.674</p></td>
+<td class="text-left"><p>2.542</p></td>
+<td class="text-left"><p>0.534</p></td>
+<td class="text-left"><p>6.671</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="results-and-discussion">
+<h2>Results and Discussion<a class="headerlink" href="#results-and-discussion" title="Link to this heading">#</a></h2>
+<p>For each type of vane, the expected force can be estimated using the momentum equation. When we plot force versus momentum and fit a straight line, the slope of that line represents (<span class="math notranslate nohighlight">\(1-cos(\beta)\)</span>), where <span class="math notranslate nohighlight">\(\beta\)</span> iis the flow deflection angle, as shown in the sketch below:</p>
+<p><img alt="" src="../../_images/sketch.png" /></p>
+<p><strong>Flat Plate</strong></p>
+<p>The plot of Force vs. Momentum for the flat plate is shown below with a fitted line in red. The script used to create the graph and fit the line is included in the appendix.</p>
+<p><img alt="" src="../../_images/plate_plot.png" /></p>
+<p>The slope of the line is 0.98. This corresponds to a deflection angle of <span class="math notranslate nohighlight">\(\frac{\pi}{2.03}\)</span>, which is very close to the ideal value of <span class="math notranslate nohighlight">\(\frac{\pi}{2}\)</span>.</p>
+<p><strong>Hemispherical Cup</strong></p>
+<p>The Force vs. Momentum data for the hemispherical cup is shown in the next plot, again with a red fitted line. The code used to generate the figure is also in the appendix.</p>
+<p><img alt="" src="../../_images/cup_plot.png" /></p>
+<p>For this case, the slope is 1.94. That corresponds to a deflection angle of <span class="math notranslate nohighlight">\(\frac{\pi}{1.12}\)</span>, which is close to the theoretical value of <span class="math notranslate nohighlight">\(\frac{\pi}{1}\)</span>.</p>
+</section>
+<section id="sources-of-error">
+<h2>Sources of Error<a class="headerlink" href="#sources-of-error" title="Link to this heading">#</a></h2>
+<p>There were several sources of error during the experiment:</p>
+<ul class="simple">
+<li><p>Flow measurement issues: At low flow rates, the H1F flow meter sometimes showed zero even when flow was visible. The PRi mass flow meter was able to measure those flows. In most runs, the two meters agreed within about 2%, with the PRi reading slightly lower. A third method was not available to verify the actual flow rate.</p></li>
+<li><p>Reading the jockey weight: There could be small errors when reading the mass position or making sure the system returned to the same zero point each time. This probably didn’t matter much at higher flows.</p></li>
+<li><p>Flow instability: The flow was observed to fluctuate as the pump delivered pressure, which could add uncertainty to the force and flow readings.</p></li>
+</ul>
+</section>
+<section id="conclusion">
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h2>
+<p>Overall, the experimental values matched the theoretical predictions closely. The method used in this lab could also be applied to vane shapes where the theoretical force is harder to calculate. The results show that it is possible to determine an effective deflection angle from measurements and use that information for design.</p>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="http://54.243.252.9/ce-3105-webroot/7-user-manuals/H8-ImpactOfJet.pdf">H8-Impact of a Jet (user manual)</a></p></li>
+<li><p><a class="reference external" href="http://54.243.252.9/ce-3305-webroot/3-Readings/EFM-9.pdf">DF Elger, BC Williams, Crowe, CT and JA Roberson, Engineering Fluid Mechanics 10th edition, John Wiley &amp; Sons, Inc., 2013. <em>(Momentum Equation pp. 208-238)</em></a></p></li>
+<li><p><a class="reference external" href="http://54.243.252.9/engr-1330-webroot/engr1330notes/_build/html/examples/7graphing/example05.html">http://54.243.252.9/engr-1330-webroot/engr1330notes/_build/html/examples/7graphing/example05.html</a></p></li>
+<li><p><a class="reference external" href="http://54.243.252.9/engr-1330-webroot/engr1330notes/_build/html/examples/10datamodels/datamodels.html">http://54.243.252.9/engr-1330-webroot/engr1330notes/_build/html/examples/10datamodels/datamodels.html</a></p></li>
+<li><p><a class="reference external" href="https://mech.at.ua/HolmanICS.pdf">Holman, J.P., (2012) Experimental Methods for Engineers, 8th Ed. (Chapters 1-3)</a></p></li>
+<li><p><a class="reference external" href="https://mech.at.ua/HolmanICS.pdf">Holman, J.P., (2012) Experimental Methods for Engineers, 8th Ed. (Chapter 15 Report Writing)</a></p></li>
+</ol>
+</section>
+<section id="appendix-i-python-analysis-scripts">
+<h2>Appendix-I Python Analysis Scripts<a class="headerlink" href="#appendix-i-python-analysis-scripts" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">mass_flow</span><span class="p">(</span><span class="n">rho</span><span class="p">,</span><span class="n">Q</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;function to return mass flow in kg/s</span>
+<span class="sd">         rho == density kg/m^3</span>
+<span class="sd">         Q == flow rate m^3/s</span>
+<span class="sd">         user must make unit conversions in parameter list</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="n">mass_flow</span> <span class="o">=</span> <span class="n">rho</span><span class="o">*</span><span class="n">Q</span>  
+    <span class="k">return</span><span class="p">(</span><span class="n">mass_flow</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">appliedF</span><span class="p">(</span><span class="n">mass</span><span class="p">,</span><span class="n">g</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;function to return applied force in Newtons</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="n">appliedF</span><span class="o">=</span><span class="n">mass</span><span class="o">*</span><span class="n">g</span><span class="o">*</span><span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="n">y</span><span class="p">)</span><span class="o">/</span><span class="n">a</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">appliedF</span><span class="p">)</span>
+    
+<span class="kn">import</span> <span class="nn">math</span>
+<span class="c1"># Data from tables</span>
+<span class="n">y_plate</span><span class="o">=</span><span class="p">[</span><span class="mi">102</span><span class="p">,</span><span class="mi">86</span><span class="p">,</span><span class="mi">68</span><span class="p">,</span><span class="mi">42</span><span class="p">,</span><span class="mi">19</span><span class="p">]</span>
+<span class="n">q_plate</span><span class="o">=</span><span class="p">[</span><span class="mf">35.5</span><span class="p">,</span><span class="mf">28.4</span><span class="p">,</span><span class="mf">27.2</span><span class="p">,</span><span class="mf">22.6</span><span class="p">,</span><span class="mf">17.3</span><span class="p">]</span>
+<span class="n">y_cup</span>  <span class="o">=</span><span class="p">[</span><span class="mi">188</span><span class="p">,</span><span class="mi">140</span><span class="p">,</span><span class="mi">90</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">20</span><span class="p">]</span>
+<span class="n">q_cup</span>  <span class="o">=</span><span class="p">[</span><span class="mf">33.1</span><span class="p">,</span><span class="mf">29.8</span><span class="p">,</span><span class="mf">24.3</span><span class="p">,</span><span class="mf">18.2</span><span class="p">,</span><span class="mf">12.6</span><span class="p">]</span>
+
+<span class="c1"># Constants</span>
+<span class="n">rho</span>      <span class="o">=</span> <span class="mi">1000</span>     <span class="c1">#kg/m^3</span>
+<span class="n">g</span>        <span class="o">=</span> <span class="mf">9.81</span>     <span class="c1">#m/s^2</span>
+<span class="n">diameter</span> <span class="o">=</span> <span class="mf">0.010</span>    <span class="c1">#m  nozzle diameter</span>
+<span class="n">s</span>        <span class="o">=</span> <span class="mf">0.035</span>    <span class="c1">#m distance between nozzle-vane</span>
+<span class="n">Mass</span>     <span class="o">=</span> <span class="mi">600</span><span class="o">/</span><span class="mi">1000</span> <span class="c1">#kg the jockey mass</span>
+<span class="n">a</span>        <span class="o">=</span> <span class="mf">0.150</span>    <span class="c1"># m vane-pivot distance</span>
+
+<span class="c1"># Calculations</span>
+<span class="c1"># - allocate memory locations</span>
+<span class="n">mdot_plate</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># mass flow plate</span>
+<span class="n">mdot_cup</span> <span class="o">=</span> <span class="p">[]</span>   <span class="c1"># mass flow cup</span>
+<span class="n">vj_plate</span><span class="o">=</span><span class="p">[]</span>     <span class="c1"># jet velocity plate</span>
+<span class="n">vj_cup</span><span class="o">=</span><span class="p">[]</span>       <span class="c1"># jet velocity cup</span>
+<span class="n">vd_plate</span><span class="o">=</span><span class="p">[]</span>     <span class="c1"># deflection velocity plate</span>
+<span class="n">vd_cup</span><span class="o">=</span><span class="p">[]</span>       <span class="c1"># deflection velocity cup</span>
+<span class="n">mom_plate</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># momentum entering at plate</span>
+<span class="n">mom_cup</span> <span class="o">=</span> <span class="p">[]</span>    <span class="c1"># momentum entering at cup</span>
+<span class="n">f_plate</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">f_cup</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="c1"># - populate vectors </span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">y_plate</span><span class="p">)):</span>
+    <span class="n">mdot_plate</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">mass_flow</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span><span class="n">q_plate</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">/</span><span class="mi">1000</span><span class="o">/</span><span class="mi">60</span><span class="p">))</span>
+    <span class="n">mdot_cup</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">mass_flow</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span><span class="n">q_cup</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">/</span><span class="mi">1000</span><span class="o">/</span><span class="mi">60</span><span class="p">))</span>
+    <span class="n">vj_plate</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="p">(</span><span class="n">q_plate</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">/</span><span class="mi">1000</span><span class="o">/</span><span class="mi">60</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">diameter</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
+    <span class="n">vj_cup</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="p">(</span><span class="n">q_cup</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">/</span><span class="mi">1000</span><span class="o">/</span><span class="mi">60</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">diameter</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
+    <span class="n">vd_plate</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">vj_plate</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="n">g</span><span class="o">*</span><span class="n">s</span><span class="p">))</span>
+    <span class="n">vd_cup</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">vj_cup</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="n">g</span><span class="o">*</span><span class="n">s</span><span class="p">))</span>
+    <span class="n">mom_plate</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">mdot_plate</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">vd_plate</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="n">mom_cup</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">mdot_cup</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">vd_cup</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="n">f_plate</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">appliedF</span><span class="p">(</span><span class="n">Mass</span><span class="p">,</span><span class="n">g</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">y_plate</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">/</span><span class="mi">1000</span><span class="p">))</span>
+    <span class="n">f_cup</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">appliedF</span><span class="p">(</span><span class="n">Mass</span><span class="p">,</span><span class="n">g</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">y_cup</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">/</span><span class="mi">1000</span><span class="p">))</span>
+<span class="c1"># - print results for tabulation</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;plate&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">y_plate</span><span class="p">)):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;|&quot;</span><span class="p">,</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;|&quot;</span><span class="p">,</span><span class="n">q_plate</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="s2">&quot;|&quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">mdot_plate</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="mi">3</span><span class="p">),</span><span class="s2">&quot;|&quot;</span><span class="p">,</span><span class="n">y_plate</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="s2">&quot;|&quot;</span>\
+         <span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">vj_plate</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="mi">3</span><span class="p">),</span><span class="s2">&quot;|&quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">vd_plate</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="mi">3</span><span class="p">),</span><span class="s2">&quot;|&quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">mom_plate</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="mi">3</span><span class="p">),</span><span class="s2">&quot;|&quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">f_plate</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="mi">3</span><span class="p">),</span><span class="s2">&quot;|&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;cup&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">y_cup</span><span class="p">)):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;|&quot;</span><span class="p">,</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;|&quot;</span><span class="p">,</span><span class="n">q_cup</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="s2">&quot;|&quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">mdot_cup</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="mi">3</span><span class="p">),</span><span class="s2">&quot;|&quot;</span><span class="p">,</span><span class="n">y_cup</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="s2">&quot;|&quot;</span>\
+         <span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">vj_cup</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="mi">3</span><span class="p">),</span><span class="s2">&quot;|&quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">vd_cup</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="mi">3</span><span class="p">),</span><span class="s2">&quot;|&quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">mom_cup</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="mi">3</span><span class="p">),</span><span class="s2">&quot;|&quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">f_cup</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="mi">3</span><span class="p">),</span><span class="s2">&quot;|&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>plate
+| 1 | 35.5 | 0.592 | 102 | 7.533 | 7.488 | 4.43 | 9.888 |
+| 2 | 28.4 | 0.473 | 86 | 6.027 | 5.969 | 2.826 | 9.261 |
+| 3 | 27.2 | 0.453 | 68 | 5.772 | 5.712 | 2.59 | 8.554 |
+| 4 | 22.6 | 0.377 | 42 | 4.796 | 4.724 | 1.779 | 7.534 |
+| 5 | 17.3 | 0.288 | 19 | 3.671 | 3.576 | 1.031 | 6.632 |
+cup
+| 1 | 33.1 | 0.552 | 188 | 7.024 | 6.975 | 3.848 | 13.263 |
+| 2 | 29.8 | 0.497 | 140 | 6.324 | 6.269 | 3.114 | 11.38 |
+| 3 | 24.3 | 0.405 | 90 | 5.157 | 5.09 | 2.061 | 9.418 |
+| 4 | 18.2 | 0.303 | 50 | 3.862 | 3.772 | 1.144 | 7.848 |
+| 5 | 12.6 | 0.21 | 20 | 2.674 | 2.542 | 0.534 | 6.671 |
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Fit a linear model: F = m*x + b</span>
+<span class="n">m</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">mom_plate</span><span class="p">,</span> <span class="n">f_plate</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">fit_line</span> <span class="o">=</span> <span class="n">m</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">mom_plate</span><span class="p">)</span> <span class="o">+</span> <span class="n">b</span>
+
+<span class="c1"># Scatter plot of original data</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">mom_plate</span><span class="p">,</span> <span class="n">f_plate</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;$F(J)$ for the flat plate&quot;</span><span class="p">)</span>
+
+<span class="c1"># Plot fitted line</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">mom_plate</span><span class="p">,</span> <span class="n">fit_line</span><span class="p">,</span>
+         <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;Fit: $F(J) = </span><span class="si">{</span><span class="n">m</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">J + </span><span class="si">{</span><span class="n">b</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">$&quot;</span><span class="p">,</span>
+         <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">)</span>
+
+<span class="c1"># Labels, title, legend, and grid</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Momentum $J=</span><span class="se">\\</span><span class="s2">dot</span><span class="si">{m}</span><span class="se">\\</span><span class="s2">cdot u_0$ </span><span class="se">\n</span><span class="s2"> ${kg·m^2}/{s^2}$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Force $F=</span><span class="se">\\</span><span class="s2">frac{M</span><span class="se">\\</span><span class="s2">cdot g </span><span class="se">\\</span><span class="s2">cdot (a+y)}</span><span class="si">{a}</span><span class="s2">$</span><span class="se">\n</span><span class="s2"> $(kg~m/s^2)$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Flat Plate Vane&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;plate_plot.png&quot;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s2">&quot;tight&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/4a4464dae3842441b91dd9ec8356afdc5e689cae96f7cfdb90e668e47832d90f.png" src="../../_images/4a4464dae3842441b91dd9ec8356afdc5e689cae96f7cfdb90e668e47832d90f.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Fit a linear model: F = m*x + b</span>
+<span class="n">m</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">mom_cup</span><span class="p">,</span> <span class="n">f_cup</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">fit_line</span> <span class="o">=</span> <span class="n">m</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">mom_cup</span><span class="p">)</span> <span class="o">+</span> <span class="n">b</span>
+
+<span class="c1"># Scatter plot of original data</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">mom_cup</span><span class="p">,</span> <span class="n">f_cup</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;$F(J)$ for the hemispherical cup&quot;</span><span class="p">)</span>
+
+<span class="c1"># Plot fitted line</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">mom_cup</span><span class="p">,</span> <span class="n">fit_line</span><span class="p">,</span>
+         <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;Fit: $F(J) = </span><span class="si">{</span><span class="n">m</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">J + </span><span class="si">{</span><span class="n">b</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">$&quot;</span><span class="p">,</span>
+         <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">)</span>
+
+<span class="c1"># Labels, title, legend, and grid</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Momentum $J=</span><span class="se">\\</span><span class="s2">dot</span><span class="si">{m}</span><span class="se">\\</span><span class="s2">cdot u_0$ </span><span class="se">\n</span><span class="s2"> ${kg·m^2}/{s^2}$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Force $F=</span><span class="se">\\</span><span class="s2">frac{M</span><span class="se">\\</span><span class="s2">cdot g </span><span class="se">\\</span><span class="s2">cdot (a+y)}</span><span class="si">{a}</span><span class="s2">$</span><span class="se">\n</span><span class="s2"> $(kg~m/s^2)$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Hemispherical Cup Vane&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;cup_plot.png&quot;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s2">&quot;tight&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/5ff8b4affb963c56a16f31712a5bb7875c18f5db0b7b77c10f9b481e7e888bbf.png" src="../../_images/5ff8b4affb963c56a16f31712a5bb7875c18f5db0b7b77c10f9b481e7e888bbf.png" />
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./chapters/4-momentum-in-a-jet"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#momentum-transfer-in-a-jet">Momentum Transfer in a Jet</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives">Objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#safety-considerations">Safety considerations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experimental-setup-and-methods">Experimental Setup and Methods</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#flat-plate-vane">Flat Plate Vane</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hemispherical-vane">Hemispherical Vane</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-acquisition">Data Acquisition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-reduction">Data Reduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#results-and-discussion">Results and Discussion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sources-of-error">Sources of Error</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#appendix-i-python-analysis-scripts">Appendix-I Python Analysis Scripts</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Theodore G. Cleveland
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
