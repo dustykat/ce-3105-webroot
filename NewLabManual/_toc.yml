@@ -5,6 +5,7 @@ format: jb-book
 root: intro
 chapters:
 - file: chapters/0-syllabus/ce-3105-syllabus-2026-1.ipynb
+- file: chapters/0-safety/safety.ipynb
 - file: chapters/0-reporting/reporting.ipynb
 - file: chapters/1-flow-measurement-in-pipes/flow.measurements.in.conduits.ipynb
 - file: chapters/2-pipe-friction-factor/pipe.friction.factor.ipynb
