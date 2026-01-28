@@ -1,0 +1,72 @@
+Quiz: Safety Considerations in Mechanics of Fluids Laboratory
+Multiple Choice Questions
+
+    Why is safety a paramount concern in engineering design?
+    A. It increases project efficiency
+    B. It ensures public safety, minimizes risks, and aligns with professional responsibility
+    C. It reduces costs
+    D. It promotes creativity
+    Answer: B
+
+    Which of the following is NOT a source of uncertainty in engineering?
+    A. Inherent variability
+    B. Modeling limitations
+    C. Regular equipment maintenance
+    D. Human error
+    Answer: C
+
+    What is the primary goal of redundancy in engineering design?
+    A. To improve aesthetic appeal
+    B. To ensure that a system continues functioning if one part fails
+    C. To reduce project costs
+    D. To speed up the design process
+    Answer: B
+
+    Which safety strategy involves designing systems to remain safe during failures?
+    A. Conservative design
+    B. Fail-safe design
+    C. Robust design
+    D. Iterative testing
+    Answer: B
+
+    In the laboratory, why is it critical to avoid water near electrical equipment?
+    A. Water may damage the equipment
+    B. It poses a risk of electric shock
+    C. It violates environmental safety rules
+    D. Both A and B
+    Answer: D
+
+    What is the consequence of failing to meet safety standards in engineering design?
+    A. Lower project bids
+    B. Public appreciation
+    C. Legal liabilities, financial losses, and reputational damage
+    D. None of the above
+    Answer: C
+
+    What is a key principle when addressing uncertainty in engineering safety?
+    A. The greater the uncertainty, the lesser the effort required
+    B. The greater the uncertainty, the greater the effort required
+    C. Uncertainty should always be ignored in safety analysis
+    D. Uncertainty is only relevant to structural engineering
+    Answer: B
+
+TTU-Specific Questions
+
+    What is required before participating in CE 3105 experiments at TTU?
+    A. Completion of the Texas Tech Lab Safety training
+    B. A recommendation letter from the instructor
+    C. A signed lab agreement form
+    D. Attendance at an introductory seminar
+    Answer: A
+
+    What should students do if they experience a tingling sensation when touching a laboratory cord or fitting?
+    A. Continue using the equipment cautiously
+    B. Disconnect the equipment immediately
+    C. Let go and report the issue to the instructor or assistant
+    D. Ignore it as a minor issue
+    Answer: C
+
+True/False Question
+
+    Failing to adhere to safety procedures in CE 3105 may result in expulsion from the laboratory and academic penalties.
+    Answer: True
