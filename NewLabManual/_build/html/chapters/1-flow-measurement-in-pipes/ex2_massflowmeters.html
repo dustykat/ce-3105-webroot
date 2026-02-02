@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=5303cbea" />
@@ -183,8 +183,11 @@
         </ul>
         <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../0-syllabus/ce-3105-syllabus-2026-1.html">Syllabus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../0-safety/safety.html">Safety Considerations</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="../0-reporting/reporting.html">Laboratory Reports</a></li>
-<li class="toctree-l1"><a class="reference internal" href="flow.measurements.in.conduits.html">Closed Conduit Flow Measurements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flow.measurements.in.conduits.html">Flow Measurement in Pipes</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="../2-pipe-friction-factor/pipe.friction.factor.html">Friction Factor in Pipes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../4-momentum-in-a-jet/momentum.in.a.jet.html">Momentum Transfer from a Water Jet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../5-pump-performance-curve/pump.performance.curve.html">Pump Performance Curve</a></li>
@@ -541,108 +544,7 @@ This script establishes communication between the Raspberry Pi and the turbine f
 <p>The 2019 script was refactored and reviewed with guidance from OpenAI’s ChatGPT. Enhancements included modularization, input validation, time-setting functionality, and general improvements for maintainability and usability. Date of assistance: January 2025.</p>
 </div>
 <p>Once running, the script writes flow rate data to the console.</p>
-<!--```python
-#!/usr/bin/env python
-# Flow Meter Recorder
-# T.G. Cleveland 2019. Script refactored and reviewed with guidance from OpenAI's ChatGPT. Enhancements included modularization, input validation, time-setting functionality, and general improvements for maintainability and usability. Date of assistance: January 2025.
-import RPi.GPIO as GPIO
-import time, sys
-from datetime import datetime
-import subprocess
-
-# Initialize GPIO
-def setup_gpio(pin):
-    GPIO.setmode(GPIO.BCM)
-    GPIO.setup(pin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
-    return pin
-
-# Count pulses
-def count_pulse(channel):
-    global count
-    if start_counter == 1:
-        count += 1
-
-# Get validated user input
-def get_user_input(prompt, default, value_type, validation=None):
-    while True:
-        try:
-            user_input = input(f"{prompt} (default: {default}): ").strip()
-            if not user_input:
-                return default
-            value = value_type(user_input)
-            if validation and not validation(value):
-                raise ValueError(f"Input does not meet validation criteria.")
-            return value
-        except (ValueError, TypeError):
-            print(f"Invalid input. Using default value of {default}.")
-            return default
-
-# Set system time
-def set_system_time():
-    try:
-        new_time = input("Enter new system time (YYYY-MM-DD HH:MM:SS) or press Enter to skip: ").strip()
-        if new_time:
-            subprocess.run(["sudo", "date", "-s", new_time], check=True)
-            print(f"System time updated to: {new_time}")
-        else:
-            print("System time unchanged.")
-    except subprocess.CalledProcessError:
-        print("Failed to update system time. Ensure the script runs with sufficient privileges.")
-
-# Main Program
-print("FlowMeterRecord running")
-
-# User Inputs
-stationID = get_user_input("Enter Comment Line 1", "Line 001", str)
-sensorID = get_user_input("Enter Comment Line 2", "Line 002", str)
-howmany2wait = get_user_input("Enter dwell time", 1.0, float, lambda x: x > 0)
-howmany2read = get_user_input("How many intervals", 60, int, lambda x: x >= 2)
-meterconstant = get_user_input("Enter the meter constant", 1.0, float, lambda x: x > 0)
-
-# Optional: Set system time
-set_system_time()
-
-# GPIO Setup
-flow_sensor_one = setup_gpio(23)
-GPIO.add_event_detect(flow_sensor_one, GPIO.FALLING, callback=count_pulse)
-
-# Initialize counters
-count = accCount = howmanyRread = 0
-
-# Print headers
-print("# Flowmeter Recording System")
-print(f"# {stationID}")
-print(f"# {sensorID}")
-print(f"# Sampling Interval Duration (seconds): {howmany2wait}")
-print(f"# Sampling Interval Count: {howmany2read}")
-print("# DateTime, Events, Volume")
-
-# Main loop
-try:
-    while howmanyRread < howmany2read:
-        howmanyRread += 1
-        start_counter = 1
-        time.sleep(howmany2wait)
-        start_counter = 0
-
-        flow = count * meterconstant
-        now = datetime.now().strftime("%Y-%m-%d %H:%M:%S.%f") if howmany2wait < 1.0 else time.strftime("%c")
-
-        print(f"{now}, {count}, {flow}")
-        accCount += count
-        count = 0
-    print("\nNormal Loop Exit, exiting...")
-    print(f"Total Events: {accCount}")
-    print(f"Total Volume: {accCount * meterconstant}")
-
-except KeyboardInterrupt:
-    print("\nCaught keyboard interrupt, exiting...")
-    print(f"Total Events: {accCount}")
-    print(f"Total Volume: {accCount * meterconstant}")
-    GPIO.cleanup()
-    sys.exit()
-finally:
-    GPIO.cleanup()--><div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
 <span class="c1">#!/usr/bin/env python</span>
 <span class="c1"># Flow Meter Recorder</span>
 <span class="c1"># T.G. Cleveland 2019. </span>

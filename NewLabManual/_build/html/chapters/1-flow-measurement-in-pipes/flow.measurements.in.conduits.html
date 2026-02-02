@@ -189,6 +189,7 @@
 
 <li class="toctree-l1"><a class="reference internal" href="../0-reporting/reporting.html">Laboratory Reports</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Flow Measurement in Pipes</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="../2-pipe-friction-factor/pipe.friction.factor.html">Friction Factor in Pipes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../4-momentum-in-a-jet/momentum.in.a.jet.html">Momentum Transfer from a Water Jet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../5-pump-performance-curve/pump.performance.curve.html">Pump Performance Curve</a></li>
@@ -344,6 +345,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Flow Measurement in Pipes</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#readings">Readings</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#videos">Videos</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objective">Objective</a></li>
@@ -352,12 +354,41 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#orifice-plate-meter">Orifice Plate Meter</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#venturi-meter">Venturi Meter</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rotameter">Rotameter</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mass-flow-meters">Mass Flow Meters</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mass-flow-meters">Mass Flow Meters</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#external-mass-flow-meter-datalogger-scripts">External Mass Flow Meter &amp; Datalogger Scripts</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general-technology">General Technology</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-components-and-operation">Key Components and Operation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advantages">Advantages</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-engineering-applications">Common Engineering Applications</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#water-and-wastewater-treatment">1. <strong>Water and Wastewater Treatment</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oil-and-gas-industry">2. <strong>Oil and Gas Industry</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hvac-systems">3. <strong>HVAC Systems</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#food-and-beverage-industry">4. <strong>Food and Beverage Industry</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#automotive-and-aerospace-engineering">5. <strong>Automotive and Aerospace Engineering</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pharmaceutical-and-chemical-manufacturing">6. <strong>Pharmaceutical and Chemical Manufacturing</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lab-setup-raspberry-pi-zero-w-as-datalogger-and-controller">Lab Setup: Raspberry Pi Zero W as Datalogger and Controller</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#steps-to-access-the-datalogger">Steps to Access the Datalogger</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#input-validation">Input Validation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-scripts-for-flow-measurement-lab">Python Scripts for Flow Measurement Lab</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#script-1-datalogger-initialization">Script 1: Datalogger Initialization</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#laboratory-report">1. Laboratory Report</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#end-of-section">End of Section</a></li>
 </ul>
+</li>
+</ul>
+
             </nav>
         </div>
     </div>
@@ -493,7 +524,298 @@ document.write(`
 </ul>
 </div></blockquote>
 <p>If your instructor uses the older bench (<a class="reference external" href="http://54.243.252.9/ce-3105-webroot/1-LabManual/experiments/5ex2-pipeflow/H1D-VolumetricHydraulicBench.pdf">model H1D</a>) without the built-in flowmeter you will only report the external mass flow meter, time-to-fill and the various pressure drop devices.  Simply leave the <em>turbine meter</em> entries unfilled (or N/A).</p>
-<p>3</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="external-mass-flow-meter-datalogger-scripts">
+<h1>External Mass Flow Meter &amp; Datalogger Scripts<a class="headerlink" href="#external-mass-flow-meter-datalogger-scripts" title="Link to this heading">#</a></h1>
+<section id="general-technology">
+<h2>General Technology<a class="headerlink" href="#general-technology" title="Link to this heading">#</a></h2>
+<p>Mass flow meters are widely used instruments in fluid mechanics and engineering applications to measure the mass or volume flow rate of a fluid. The fundamental working principle involves a <strong>low-inertia turbine</strong> placed in the fluid flow path. As the fluid passes through the turbine, it rotates at a speed proportional to the flow rate.</p>
+<section id="key-components-and-operation">
+<h3>Key Components and Operation<a class="headerlink" href="#key-components-and-operation" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Turbine with Magnetic Ring</strong>: The turbine has a magnetic ring attached to it, with one or more interruptions (gaps) in the magnetic field.</p></li>
+<li><p><strong>Hall Effect Sensor</strong>: A sensor positioned near the turbine detects the changes in the magnetic field as the turbine rotates.</p></li>
+<li><p><strong>Pulse Counting</strong>: The sensor generates a series of electrical pulses, where the frequency of the pulses corresponds to the rotational speed of the turbine.</p></li>
+<li><p><strong>Meter Constant (K-Factor)</strong>: The turbine and sensor assembly has a meter constant (K-factor), defined as the number of pulses generated per unit of flow. This constant is used to convert the pulse frequency into a mass or volume flow rate.</p></li>
+</ol>
+<p>The output is then processed by a microcontroller or data acquisition system to display the flow rate in appropriate units.</p>
+</section>
+<section id="advantages">
+<h3>Advantages<a class="headerlink" href="#advantages" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Accuracy</strong>: Low-inertia turbines minimize lag, allowing precise measurement even at low flow rates.</p></li>
+<li><p><strong>Compact and Scalable</strong>: Mass flow meters are available in a wide range of sizes and capacities, suitable for different applications.</p></li>
+<li><p><strong>Digital Output</strong>: The pulse-based output is easy to integrate with modern control systems and data loggers.</p></li>
+</ul>
+</section>
+</section>
+<section id="common-engineering-applications">
+<h2>Common Engineering Applications<a class="headerlink" href="#common-engineering-applications" title="Link to this heading">#</a></h2>
+<p>Mass flow meters are versatile and widely used across industries. Some common applications include:</p>
+<section id="water-and-wastewater-treatment">
+<h3>1. <strong>Water and Wastewater Treatment</strong><a class="headerlink" href="#water-and-wastewater-treatment" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Monitoring the flow of water, effluent, and chemicals in treatment plants.</p></li>
+<li><p>Ensuring compliance with regulatory discharge limits.</p></li>
+</ul>
+</section>
+<section id="oil-and-gas-industry">
+<h3>2. <strong>Oil and Gas Industry</strong><a class="headerlink" href="#oil-and-gas-industry" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Measuring fuel flow rates in pipelines.</p></li>
+<li><p>Monitoring the consumption of lubricants and other fluids in mechanical systems.</p></li>
+</ul>
+</section>
+<section id="hvac-systems">
+<h3>3. <strong>HVAC Systems</strong><a class="headerlink" href="#hvac-systems" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Ensuring accurate flow rates of chilled water, refrigerants, and steam in heating and cooling systems.</p></li>
+<li><p>Optimizing energy efficiency by monitoring flow conditions.</p></li>
+</ul>
+</section>
+<section id="food-and-beverage-industry">
+<h3>4. <strong>Food and Beverage Industry</strong><a class="headerlink" href="#food-and-beverage-industry" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Measuring the flow of liquids like milk, juice, and syrup in processing plants.</p></li>
+<li><p>Monitoring the flow of cleaning agents during sterilization processes.</p></li>
+</ul>
+</section>
+<section id="automotive-and-aerospace-engineering">
+<h3>5. <strong>Automotive and Aerospace Engineering</strong><a class="headerlink" href="#automotive-and-aerospace-engineering" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Fuel consumption testing for engines and turbines.</p></li>
+<li><p>Flow monitoring in hydraulic and pneumatic systems.</p></li>
+</ul>
+</section>
+<section id="pharmaceutical-and-chemical-manufacturing">
+<h3>6. <strong>Pharmaceutical and Chemical Manufacturing</strong><a class="headerlink" href="#pharmaceutical-and-chemical-manufacturing" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Precise dosing of chemicals in production lines.</p></li>
+<li><p>Monitoring the flow of solvents and active ingredients in formulation processes.</p></li>
+</ul>
+</section>
+</section>
+<section id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h2>
+<p>Mass flow meters offer a reliable and precise solution for measuring fluid flow rates across a broad spectrum of engineering applications. Their ability to provide near real-time digital data and integrate seamlessly with automation systems makes them indispensable in modern industrial processes.</p>
+</section>
+<section id="lab-setup-raspberry-pi-zero-w-as-datalogger-and-controller">
+<h2>Lab Setup: Raspberry Pi Zero W as Datalogger and Controller<a class="headerlink" href="#lab-setup-raspberry-pi-zero-w-as-datalogger-and-controller" title="Link to this heading">#</a></h2>
+<p>In this lab, we will use a <strong>Raspberry Pi Zero W</strong> as the datalogger and controller, paired with an <strong>inexpensive turbine-type mass flow meter</strong>. The Raspberry Pi Zero W is preconfigured as a WiFi host to simplify connectivity and data acquisition.</p>
+<section id="steps-to-access-the-datalogger">
+<h3>Steps to Access the Datalogger<a class="headerlink" href="#steps-to-access-the-datalogger" title="Link to this heading">#</a></h3>
+<ol class="arabic">
+<li><p><strong>Connect to the Raspberry Pi’s WiFi</strong>:</p>
+<ul class="simple">
+<li><p>Locate the SSID provided in class and connect your device to it.</p></li>
+<li><p>No internet access is required, as this connection is solely for interfacing with the Raspberry Pi.</p></li>
+</ul>
+</li>
+<li><p><strong>Access the Raspberry Pi</strong>:</p>
+<ul>
+<li><p>Use an SSH client to connect to the Raspberry Pi’s IP address (provided in class).</p></li>
+<li><p>Once connected via SSH, start the VNC server using the command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>vncserver
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p><strong>Open the VNC Desktop</strong>:</p>
+<ul class="simple">
+<li><p>Use a VNC client to connect to the Raspberry Pi’s desktop environment.</p></li>
+<li><p>This provides full access to the Raspberry Pi’s graphical interface.</p></li>
+</ul>
+</li>
+<li><p><strong>Run the Mass Flow Meter Program</strong>:</p>
+<ul>
+<li><p>Locate the program file (<code class="docutils literal notranslate"><span class="pre">/path/filename</span></code>, as provided in class) on the Raspberry Pi.</p></li>
+<li><p>Start the program using a terminal command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>/path/filename
+</pre></div>
+</div>
+</li>
+<li><p>When prompted, supply:</p>
+<ul class="simple">
+<li><p><strong>Meter Constant (K-Factor)</strong>: Provided with the mass flow meter.</p></li>
+<li><p><strong>Desired Time Interval</strong>: The time in seconds for each reading.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="input-validation">
+<h3>Input Validation<a class="headerlink" href="#input-validation" title="Link to this heading">#</a></h3>
+<p>The program is designed with robust input validation using Python’s <code class="docutils literal notranslate"><span class="pre">try-except</span></code> blocks to handle invalid or pathological entries, ensuring smooth operation and accurate data logging.</p>
+<p>With this setup, the Raspberry Pi Zero W enables efficient and flexible data acquisition from the turbine-type mass flow meter, offering a hands-on experience with both modern <strong>IoT</strong> technology and traditional fluid mechanics instrumentation.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://youtu.be/dp-LujkiMRQ">CE-3105-FlowMeter-Datalogger Connection (Component of Laboratory 3)</a> Video showing how to connect to the datalogger.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <strong>Raspberry Pi Zero W</strong> hosts a short-range WiFi network:</p>
+<ul class="simple">
+<li><p>SSID (network name): <strong>ceceFluids</strong></p></li>
+<li><p>Passkey (PSK): <strong>OneNekoKat</strong></p></li>
+<li><p>WAP/Router: <strong>192.168.32.1</strong></p></li>
+</ul>
+<p>The <strong>Raspberry Pi Zero W</strong> also controls the sensor and records data:</p>
+<ul class="simple">
+<li><p>IP address: <strong>192.168.32.1</strong></p></li>
+<li><p>Hostname: <strong>pi-lab-1</strong> (connect using IP, DNS is inactive)</p></li>
+<li><p>UID (user): <strong>pi</strong></p></li>
+<li><p>PWD (passsword): <strong>fluidlab</strong></p></li>
+</ul>
+</div>
+</section>
+</section>
+<section id="python-scripts-for-flow-measurement-lab">
+<h2>Python Scripts for Flow Measurement Lab<a class="headerlink" href="#python-scripts-for-flow-measurement-lab" title="Link to this heading">#</a></h2>
+<section id="overview">
+<h3>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h3>
+<p>Below are Python scripts provided to document the workflow and enhance the understanding of the lab. These scripts are designed for data logging, processing, and visualization.</p>
+</section>
+<section id="script-1-datalogger-initialization">
+<h3>Script 1: Datalogger Initialization<a class="headerlink" href="#script-1-datalogger-initialization" title="Link to this heading">#</a></h3>
+<p><strong>Purpose</strong>:<br />
+This script establishes communication between the Raspberry Pi and the turbine flow meter. It allows users to input key parameters, such as:</p>
+<ul class="simple">
+<li><p><strong>Meter Constant (K-Factor)</strong>: Provided with the flow meter.</p></li>
+<li><p><strong>Sampling Interval</strong>: The time between successive measurements.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The 2019 script was refactored and reviewed with guidance from OpenAI’s ChatGPT. Enhancements included modularization, input validation, time-setting functionality, and general improvements for maintainability and usability. Date of assistance: January 2025.</p>
+</div>
+<p>Once running, the script writes flow rate data to the console.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<span class="c1">#!/usr/bin/env python</span>
+<span class="c1"># Flow Meter Recorder</span>
+<span class="c1"># T.G. Cleveland 2019. </span>
+<span class="c1"># Refactored and reviewed with guidance from OpenAI&#39;s ChatGPT. </span>
+<span class="c1"># Enhancements included modularization, input validation, time-setting functionality, output file handling, and general improvements for maintainability and usability. Date of assistance: January 2025.</span>
+
+<span class="kn">import</span> <span class="nn">RPi.GPIO</span> <span class="k">as</span> <span class="nn">GPIO</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+<span class="kn">import</span> <span class="nn">subprocess</span>
+
+<span class="c1"># Initialize GPIO</span>
+<span class="k">def</span> <span class="nf">setup_gpio</span><span class="p">(</span><span class="n">pin</span><span class="p">):</span>
+    <span class="n">GPIO</span><span class="o">.</span><span class="n">setmode</span><span class="p">(</span><span class="n">GPIO</span><span class="o">.</span><span class="n">BCM</span><span class="p">)</span>
+    <span class="n">GPIO</span><span class="o">.</span><span class="n">setup</span><span class="p">(</span><span class="n">pin</span><span class="p">,</span> <span class="n">GPIO</span><span class="o">.</span><span class="n">IN</span><span class="p">,</span> <span class="n">pull_up_down</span><span class="o">=</span><span class="n">GPIO</span><span class="o">.</span><span class="n">PUD_UP</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">pin</span>
+
+<span class="c1"># Count pulses</span>
+<span class="k">def</span> <span class="nf">count_pulse</span><span class="p">(</span><span class="n">channel</span><span class="p">):</span>
+    <span class="k">global</span> <span class="n">count</span>
+    <span class="k">if</span> <span class="n">start_counter</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="c1"># Get validated user input</span>
+<span class="k">def</span> <span class="nf">get_user_input</span><span class="p">(</span><span class="n">prompt</span><span class="p">,</span> <span class="n">default</span><span class="p">,</span> <span class="n">value_type</span><span class="p">,</span> <span class="n">validation</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">user_input</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">prompt</span><span class="si">}</span><span class="s2"> (default: </span><span class="si">{</span><span class="n">default</span><span class="si">}</span><span class="s2">): &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">user_input</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">default</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="n">value_type</span><span class="p">(</span><span class="n">user_input</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">validation</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">validation</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input does not meet validation criteria.&quot;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">value</span>
+        <span class="k">except</span> <span class="p">(</span><span class="ne">ValueError</span><span class="p">,</span> <span class="ne">TypeError</span><span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Invalid input. Using default value of </span><span class="si">{</span><span class="n">default</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">default</span>
+
+<span class="c1"># Set system time</span>
+<span class="k">def</span> <span class="nf">set_system_time</span><span class="p">():</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">new_time</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter new system time (YYYY-MM-DD HH:MM:SS) or press Enter to skip: &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">new_time</span><span class="p">:</span>
+            <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">([</span><span class="s2">&quot;sudo&quot;</span><span class="p">,</span> <span class="s2">&quot;date&quot;</span><span class="p">,</span> <span class="s2">&quot;-s&quot;</span><span class="p">,</span> <span class="n">new_time</span><span class="p">],</span> <span class="n">check</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;System time updated to: </span><span class="si">{</span><span class="n">new_time</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;System time unchanged.&quot;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">CalledProcessError</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Failed to update system time. Ensure the script runs with sufficient privileges.&quot;</span><span class="p">)</span>
+
+<span class="c1"># Write to console and file</span>
+<span class="k">def</span> <span class="nf">log</span><span class="p">(</span><span class="n">message</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+    <span class="n">output_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">message</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="c1"># Main Program</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;FlowMeterRecord running&quot;</span><span class="p">)</span>
+
+<span class="c1"># User Inputs</span>
+<span class="n">output_file_name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter output file name (default: flowmeter.junk.txt): &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="ow">or</span> <span class="s2">&quot;flowmeter.junk.txt&quot;</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">output_file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">output_file_name</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
+    <span class="n">log</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output will be saved to </span><span class="si">{</span><span class="n">output_file_name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error opening file: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">stationID</span> <span class="o">=</span> <span class="n">get_user_input</span><span class="p">(</span><span class="s2">&quot;Enter Comment Line 1&quot;</span><span class="p">,</span> <span class="s2">&quot;Line 001&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+<span class="n">sensorID</span> <span class="o">=</span> <span class="n">get_user_input</span><span class="p">(</span><span class="s2">&quot;Enter Comment Line 2&quot;</span><span class="p">,</span> <span class="s2">&quot;Line 002&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+<span class="n">howmany2wait</span> <span class="o">=</span> <span class="n">get_user_input</span><span class="p">(</span><span class="s2">&quot;Enter dwell time&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">howmany2read</span> <span class="o">=</span> <span class="n">get_user_input</span><span class="p">(</span><span class="s2">&quot;How many intervals&quot;</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">meterconstant</span> <span class="o">=</span> <span class="n">get_user_input</span><span class="p">(</span><span class="s2">&quot;Enter the meter constant&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># Optional: Set system time</span>
+<span class="n">set_system_time</span><span class="p">()</span>
+
+<span class="c1"># GPIO Setup</span>
+<span class="n">flow_sensor_one</span> <span class="o">=</span> <span class="n">setup_gpio</span><span class="p">(</span><span class="mi">23</span><span class="p">)</span>
+<span class="n">GPIO</span><span class="o">.</span><span class="n">add_event_detect</span><span class="p">(</span><span class="n">flow_sensor_one</span><span class="p">,</span> <span class="n">GPIO</span><span class="o">.</span><span class="n">FALLING</span><span class="p">,</span> <span class="n">callback</span><span class="o">=</span><span class="n">count_pulse</span><span class="p">)</span>
+
+<span class="c1"># Initialize counters</span>
+<span class="n">count</span> <span class="o">=</span> <span class="n">accCount</span> <span class="o">=</span> <span class="n">howmanyRread</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="c1"># Print headers</span>
+<span class="n">log</span><span class="p">(</span><span class="s2">&quot;# Flowmeter Recording System&quot;</span><span class="p">)</span>
+<span class="n">log</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;# </span><span class="si">{</span><span class="n">stationID</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">log</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;# </span><span class="si">{</span><span class="n">sensorID</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">log</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;# Sampling Interval Duration (seconds): </span><span class="si">{</span><span class="n">howmany2wait</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">log</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;# Sampling Interval Count: </span><span class="si">{</span><span class="n">howmany2read</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">log</span><span class="p">(</span><span class="s2">&quot;# DateTime, Events, Volume&quot;</span><span class="p">)</span>
+
+<span class="c1"># Main loop</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="k">while</span> <span class="n">howmanyRread</span> <span class="o">&lt;</span> <span class="n">howmany2read</span><span class="p">:</span>
+        <span class="n">howmanyRread</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">start_counter</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">howmany2wait</span><span class="p">)</span>
+        <span class="n">start_counter</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="n">flow</span> <span class="o">=</span> <span class="n">count</span> <span class="o">*</span> <span class="n">meterconstant</span>
+        <span class="n">now</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2"> %H:%M:%S.</span><span class="si">%f</span><span class="s2">&quot;</span><span class="p">)</span> <span class="k">if</span> <span class="n">howmany2wait</span> <span class="o">&lt;</span> <span class="mf">1.0</span> <span class="k">else</span> <span class="n">time</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%c</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="n">log</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">now</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">count</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">flow</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">accCount</span> <span class="o">+=</span> <span class="n">count</span>
+        <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="n">log</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Normal Loop Exit, exiting...&quot;</span><span class="p">)</span>
+    <span class="n">log</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Total Events: </span><span class="si">{</span><span class="n">accCount</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">log</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Total Volume: </span><span class="si">{</span><span class="n">accCount</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">meterconstant</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="k">except</span> <span class="ne">KeyboardInterrupt</span><span class="p">:</span>
+    <span class="n">log</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Caught keyboard interrupt, exiting...&quot;</span><span class="p">)</span>
+    <span class="n">log</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Total Events: </span><span class="si">{</span><span class="n">accCount</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">log</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Total Volume: </span><span class="si">{</span><span class="n">accCount</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">meterconstant</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">GPIO</span><span class="o">.</span><span class="n">cleanup</span><span class="p">()</span>
+    <span class="n">output_file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>
+<span class="k">finally</span><span class="p">:</span>
+    <span class="n">GPIO</span><span class="o">.</span><span class="n">cleanup</span><span class="p">()</span>
+    <span class="n">log</span><span class="p">(</span><span class="s2">&quot;Script execution completed. Closing file.&quot;</span><span class="p">)</span>
+    <span class="n">output_file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+</pre></div>
+</div>
 <div class="instructor-prep admonition">
 <p class="admonition-title">Instructor Preparation</p>
 <p>These are some notes for the instructor to review <em>before</em> lab.</p>
@@ -510,6 +832,7 @@ document.write(`
 <p class="admonition-title">Student Live</p>
 <p>Instructions or prompts visible to students during the session.</p>
 </div>
+</section>
 <section id="laboratory-report">
 <h3>1. Laboratory Report<a class="headerlink" href="#laboratory-report" title="Link to this heading">#</a></h3>
 <p>After completing the experiment, students must submit a detailed laboratory report. The report should include:</p>
@@ -636,6 +959,7 @@ Mass flow meters measure flow directly using near-zero-inertia turbines. These t
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Flow Measurement in Pipes</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#readings">Readings</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#videos">Videos</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objective">Objective</a></li>
@@ -644,12 +968,41 @@ Mass flow meters measure flow directly using near-zero-inertia turbines. These t
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#orifice-plate-meter">Orifice Plate Meter</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#venturi-meter">Venturi Meter</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rotameter">Rotameter</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mass-flow-meters">Mass Flow Meters</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mass-flow-meters">Mass Flow Meters</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#external-mass-flow-meter-datalogger-scripts">External Mass Flow Meter &amp; Datalogger Scripts</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general-technology">General Technology</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-components-and-operation">Key Components and Operation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advantages">Advantages</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-engineering-applications">Common Engineering Applications</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#water-and-wastewater-treatment">1. <strong>Water and Wastewater Treatment</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oil-and-gas-industry">2. <strong>Oil and Gas Industry</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hvac-systems">3. <strong>HVAC Systems</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#food-and-beverage-industry">4. <strong>Food and Beverage Industry</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#automotive-and-aerospace-engineering">5. <strong>Automotive and Aerospace Engineering</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pharmaceutical-and-chemical-manufacturing">6. <strong>Pharmaceutical and Chemical Manufacturing</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lab-setup-raspberry-pi-zero-w-as-datalogger-and-controller">Lab Setup: Raspberry Pi Zero W as Datalogger and Controller</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#steps-to-access-the-datalogger">Steps to Access the Datalogger</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#input-validation">Input Validation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-scripts-for-flow-measurement-lab">Python Scripts for Flow Measurement Lab</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#script-1-datalogger-initialization">Script 1: Datalogger Initialization</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#laboratory-report">1. Laboratory Report</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#end-of-section">End of Section</a></li>
 </ul>
+</li>
+</ul>
+
   </nav></div>
 
 </div></div>
