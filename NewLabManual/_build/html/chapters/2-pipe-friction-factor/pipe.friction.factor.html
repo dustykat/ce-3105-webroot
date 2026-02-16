@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=5303cbea" />
@@ -65,7 +65,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Momentum Transfer from a Water Jet" href="../4-momentum-in-a-jet/momentum.in.a.jet.html" />
-    <link rel="prev" title="Closed Conduit Flow Measurements" href="../1-flow-measurement-in-pipes/flow.measurements.in.conduits.html" />
+    <link rel="prev" title="Flow Measurement in Pipes" href="../1-flow-measurement-in-pipes/flow.measurements.in.conduits.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -185,8 +185,11 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../0-syllabus/ce-3105-syllabus-2026-1.html">Syllabus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../0-safety/safety.html">Safety Considerations</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="../0-reporting/reporting.html">Laboratory Reports</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../1-flow-measurement-in-pipes/flow.measurements.in.conduits.html">Closed Conduit Flow Measurements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1-flow-measurement-in-pipes/flow.measurements.in.conduits.html">Flow Measurement in Pipes</a></li>
+
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Friction Factor in Pipes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../4-momentum-in-a-jet/momentum.in.a.jet.html">Momentum Transfer from a Water Jet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../5-pump-performance-curve/pump.performance.curve.html">Pump Performance Curve</a></li>
@@ -350,19 +353,11 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flow-regimes">Flow Regimes</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#friction-factors-in-fluid-flow-pipeline-losses">Friction Factors in Fluid Flow (Pipeline Losses)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#laboratory-setup-pipeline-losses">Laboratory Setup (Pipeline Losses)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#friction-losses-in-fittings-minor-losses">Friction Losses in Fittings (Minor Losses)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#expansions-and-contractions">Expansions and Contractions</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bends">Bends</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#laboratory-objectives">Laboratory Objectives</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#procedure">Procedure</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-pipe-loss-results">Example Pipe Loss Results</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loss-model-structure">Loss Model Structure</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bend">Bend</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#expansion">Expansion</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contraction">Contraction</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#laboratory-setup-fitting-losses">Laboratory Setup (Fitting Losses)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#laboratory-objectives">Laboratory Objectives</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deliverables">Deliverables</a></li>
 </ul>
             </nav>
@@ -438,7 +433,7 @@ document.write(`
 \frac{p_1}{\rho g}+\alpha_1 \frac{V_1^2}{2g} + z_1 + h_p =
 \frac{p_2}{\rho g}+\alpha_2 \frac{V_2^2}{2g} + z_2 + h_t + h_l
 \]</div>
-<p>where <span class="math notranslate nohighlight">\(\frac{p}{\rho g}\)</span> is the pressure head at a location, <span class="math notranslate nohighlight">\(\alpha \frac{V^2}{2g}\)</span> is the velocity head at a location, <span class="math notranslate nohighlight">\(z\)</span> is the elevation, <span class="math notranslate nohighlight">\(h_p\)</span> is the added head from a pump, <span class="math notranslate nohighlight">\(h_t\)</span> is the added head extracted by a turbine, and <span class="math notranslate nohighlight">\(h_l\)</span> is the head loss between sections 1 and 2.   <code class="xref std std-numref docutils literal notranslate"><span class="pre">closed-conduit-energy</span></code> is a sketch that illustrates the various components in the energy equation.</p>
+<p>where <span class="math notranslate nohighlight">\(\frac{p}{\rho g}\)</span> is the pressure head at a location, <span class="math notranslate nohighlight">\(\alpha \frac{V^2}{2g}\)</span> is the velocity head at a location, <span class="math notranslate nohighlight">\(z\)</span> is the elevation, <span class="math notranslate nohighlight">\(h_p\)</span> is the added head from a pump, <span class="math notranslate nohighlight">\(h_t\)</span> is the added head extracted by a turbine, and <span class="math notranslate nohighlight">\(h_l\)</span> is the head loss between sections 1 and 2.   <a class="reference internal" href="#closed-conduit-energy"><span class="std std-numref">Fig. 1</span></a> is a sketch that illustrates the various components in the energy equation.</p>
 <figure class="align-default" id="closed-conduit-energy">
 <a class="reference internal image-reference" href="../../_images/closed-conduit-energy.png"><img alt="../../_images/closed-conduit-energy.png" src="../../_images/closed-conduit-energy.png" style="width: 400px;" /></a>
 <figcaption>
@@ -564,7 +559,7 @@ cross-sectional area of the pipe is known:</p>
 \[f = \frac{2 \Delta h~g D}{L v^2} \]</div>
 <p>The necessary physical water properties corresponding to water temperature
 should be used. They can be found in tables such as <a class="reference external" href="http://54.243.252.9/toolbox/fluidmechanics/WaterPropertiesUS/WaterPropertiesUS.html">http://54.243.252.9/toolbox/fluidmechanics/WaterPropertiesUS/WaterPropertiesUS.html</a>, or from any fluid mechanics textbook.</p>
-<p><code class="xref std std-numref docutils literal notranslate"><span class="pre">labsetup</span></code> is a photograph of the experimental setup</p>
+<p><a class="reference internal" href="#labsetup"><span class="std std-numref">Fig. 2</span></a> is a photograph of the experimental setup</p>
 <figure class="align-default" id="labsetup">
 <a class="reference internal image-reference" href="../../_images/labsetup.png"><img alt="../../_images/labsetup.png" src="../../_images/labsetup.png" style="width: 400px;" /></a>
 <figcaption>
@@ -577,7 +572,6 @@ should be used. They can be found in tables such as <a class="reference external
 <p>The experimental setup (pictured above) includes:</p>
 <ul class="simple">
 <li><p>Hydraulic bench connected to a header tank and test pipe.</p></li>
-<li><p>A hand-held pressure meter for measurements.</p></li>
 <li><p>Equipment for flow rate adjustments and air bleeding.</p></li>
 </ul>
 <div class="admonition note">
@@ -585,115 +579,173 @@ should be used. They can be found in tables such as <a class="reference external
 <p>The discharges are usually below the stall speed of the mass flow meter, so your flow measuring tool for the apparatus is “time-to-fill” technique.</p>
 </div>
 </section>
-<section id="friction-losses-in-fittings-minor-losses">
-<h2>Friction Losses in Fittings (Minor Losses)<a class="headerlink" href="#friction-losses-in-fittings-minor-losses" title="Link to this heading">#</a></h2>
-<p>Pipe networks have numerous fittings: mitre bends, elbow bends,
-large radius bends, sudden expansions and sudden contractions. There are losses due to these fittings which are known as fitting or minor losses which cause noticable pressure drops. Pressure loss across a fitting is the difference between the
-pressure at the upstream and downstream of that fitting.</p>
-<section id="expansions-and-contractions">
-<h3>Expansions and Contractions<a class="headerlink" href="#expansions-and-contractions" title="Link to this heading">#</a></h3>
-<p>In a sudden expansion, the flow splits when it is entering the bigger diameter pipe from the smaller diameter pipe. Head is lost due to the diffusion
-and eddies in the corners. In sudden contraction, flow area is contracted
-which is known as vena contracta because of the jet formation. Head loss is
-due to vortices and eddies. Figure 1 illustrates loss at a pipe fitting:</p>
-<p><img alt="" src="../../_images/fittingloss.png" /></p>
-<p>For the fitting above, the total head loss:</p>
-<div class="math notranslate nohighlight">
-\[ \Delta H = \Delta h + \frac{V_u^2}{2g} - \frac{V_d^2}{2g} \]</div>
-<p>The loss coefficient K is defined as</p>
-<div class="math notranslate nohighlight">
-\[ K = \frac{\Delta H~2g}{V_d^2} \]</div>
-<p>or</p>
-<div class="math notranslate nohighlight">
-\[ K = \frac{\Delta H~2g}{V_u^2} \]</div>
-<p>Usually the velocity associated with the smaller diameter part of the fitting is used.</p>
-<p>In this experiment, the mitre and elbow have constant pipe diameters. Therefore, <span class="math notranslate nohighlight">\(V_u\)</span> and <span class="math notranslate nohighlight">\(V_d\)</span> are the same.</p>
-<p>For the sudden enlargement, the upstream velocity is used to express the velocity head.
-For the sudden contraction, the downstream velocity characterizes the velocity head.</p>
-</section>
-<section id="bends">
-<h3>Bends<a class="headerlink" href="#bends" title="Link to this heading">#</a></h3>
-<p>When liquid is flowing through a <span class="math notranslate nohighlight">\(90^o\)</span> bend, depending on the ratio of radius of
-curvature to diameter of the pipe (<span class="math notranslate nohighlight">\(\frac{R}{D}\)</span>), amount of loss differs. Smaller loss is associated with easier flow path and lower the minor loss coefficient, K
-value is. Following table summarizes the typical K values for different bends</p>
-<p><img alt="" src="../../_images/SomeKvalues.png" /></p>
-</section>
-</section>
-<section id="loss-model-structure">
-<h2>Loss Model Structure<a class="headerlink" href="#loss-model-structure" title="Link to this heading">#</a></h2>
-<p>The loss model(s) are usually of the structure</p>
-<div class="math notranslate nohighlight">
-\[ \Delta H = K~\frac{V^2}{2g} \]</div>
-<p>where the velocity is taken as the larger value  in the case of a diameter change.</p>
-<p>The <span class="math notranslate nohighlight">\(K\)</span> values are determined from</p>
-<section id="bend">
-<h3>Bend<a class="headerlink" href="#bend" title="Link to this heading">#</a></h3>
-<div class="math notranslate nohighlight">
-\[ K = \frac{\Delta H}{\frac{V^2}{2g}} \]</div>
-</section>
-<section id="expansion">
-<h3>Expansion<a class="headerlink" href="#expansion" title="Link to this heading">#</a></h3>
-<div class="math notranslate nohighlight">
-\[ K = \frac{\Delta H}{\frac{V_u^2}{2g}} \]</div>
-<p>The <span class="math notranslate nohighlight">\(K\)</span> value can be approximated from</p>
-<div class="math notranslate nohighlight">
-\[K=[1- \frac{A_u}{A_d}]^2\]</div>
-</section>
-<section id="contraction">
-<h3>Contraction<a class="headerlink" href="#contraction" title="Link to this heading">#</a></h3>
-<div class="math notranslate nohighlight">
-\[ K = \frac{\Delta H}{\frac{V_d^2}{2g}} \]</div>
-<p>The <span class="math notranslate nohighlight">\(K\)</span> value can be approximated from</p>
-<div class="math notranslate nohighlight">
-\[K=[ \frac{A_d}{A_u}-1]^2\]</div>
-</section>
-</section>
-<section id="laboratory-setup-fitting-losses">
-<h2>Laboratory Setup (Fitting Losses)<a class="headerlink" href="#laboratory-setup-fitting-losses" title="Link to this heading">#</a></h2>
-<p><code class="xref std std-numref docutils literal notranslate"><span class="pre">apparatus</span></code> is a photograph of the experimental setup</p>
-<figure class="align-default" id="apparatus">
-<a class="reference internal image-reference" href="../../_images/apparatus.png"><img alt="../../_images/apparatus.png" src="../../_images/apparatus.png" style="width: 400px;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 3 </span><span class="caption-text">Photograph of Laboratory Set-Up (for Fitting Loss Experimentation)</span><a class="headerlink" href="#apparatus" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
-<!--![](apparatus.png)-->
-<p>The figure depicts the experimental apparatus used.  The operational procedure is:</p>
-<ol class="arabic simple">
-<li><p>Close the exit valve on the left side of the flow circuit, and then turn on the water source</p></li>
-<li><p>Slowly open the exit valve on the apparatus, and watch the water levels in the manometer tubes</p></li>
-<li><p>Determine the flow rate of the liquid by measuring the time it takes to fill a known volume, and using the homebrew flowmeter (Raspberry Pi)</p></li>
-<li><p>Record the differential pressure readings across each of the fittings</p></li>
-<li><p>Repeat step 3 and 4 to obtain data for at least five different flow rates by adjusting the exit valve</p></li>
-</ol>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Flow rate can be measured using the mass flow meter; each setting should be checked using time-to-fill method to validate the readings from the datalogger.</p>
-<p>If pressure transducers and datalogger are functional you will use that tool to determine the pressure differences across each fitting.  With only 8 input channels one fitting pair will be omitted - study the apparatus and determine and justify which pair can be omitted and still obtain adequate information.</p>
-</div>
-</section>
 <section id="laboratory-objectives">
 <h2>Laboratory Objectives<a class="headerlink" href="#laboratory-objectives" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>Observe how flow behavior changes with velocity and Reynolds number.</p></li>
 <li><p>Measure the variation in frictional loss with changing velocity.</p></li>
-<li><p>Develop continued experience with automated data aquisition, by using the flowmeter calibrated in a prior laboratory (<strong>you will need the correct meter constant you determined in the prior lab exercise</strong>)</p></li>
-<li><p>Employ electronic pressure transducers using a similar end-user programmed automated data logger (<strong>you will find the voltage to pressure conversion constant as part of this lab</strong>)</p></li>
-<li><p>Develop an experimental protocol (step-by-step instructions) to measure flow (two methods), pressure drop (two methods), and head loss (computed), and Reynolds’ number (computed).</p></li>
 <li><p>Conduct a set of experiments in triplicate to measure measure flow, and pressure drop.</p></li>
-<li><p>Document the experiment(s) into a laboratory report and address the following in the report:</p></li>
 </ol>
+<section id="procedure">
+<h3>Procedure<a class="headerlink" href="#procedure" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Verify (locate) manometer free surfaces</p></li>
+<li><p>Start pump and adjust flow valve until constant overflow in head tank. (TA will probably make these settings)</p></li>
+<li><p>Record manometer readings (zero flow values)</p></li>
+<li><p>Open needle valve completely (count number of turns to opan)</p></li>
+<li><p>Measure time-to-fill 3 times, record water temperature.</p></li>
+<li><p>Record head differences in manometers.</p></li>
+<li><p>Repeat with needle valve at about 4/5 of fully open</p></li>
+<li><p>Repeat with needle valve at about 3/5 of fully open</p></li>
+<li><p>Repeat with needle valve at about 2/5 of fully open</p></li>
+<li><p>Repeat with needle valve at about 1/5 of fully open</p></li>
+<li><p>Close needle valve completely</p></li>
+<li><p>Verify manometers returned to zero-flow values.</p></li>
+<li><p>Stop pump and close flow valve.</p></li>
+</ol>
+<p>Using your data, populate a table like the one below in your report</p>
+</section>
+<section id="example-pipe-loss-results">
+<h3>Example Pipe Loss Results<a class="headerlink" href="#example-pipe-loss-results" title="Link to this heading">#</a></h3>
+<p>Notes:</p>
 <ul class="simple">
-<li><p>Compare the flow rate using stopwatch and bucketto the flowmeter (Raspberry Pi); are the low flows even measurable with the flowmeter?</p></li>
-<li><p>Compare the pressure drop using the manometers and calculator, the handheld pressure instrument, and the automated datalogger system.  Using the manometer and hand-held as “ground-truth” determine the multiplier on the output voltages from the datalogger required to convert these readings into a pressure.  Do the transducers appear to be linear?</p></li>
-<li><p>Experiments are conducted in triplicate, so you can compute mean values and standard deviations; what does this information tell us about the accuracy of the measurements?, What does it tell us about the repeatability of the measurements?</p></li>
-<li><p>Do the automated methods (because of high sampling rate) provide a benefit in terms of mean and variance?</p></li>
-<li><p>What are some potential sources of errors in your lab experiments.</p></li>
+<li><p>Temperature of water was 17 degrees Celsius on the experiment date.  Fluid properties for 15 degrees were used (alternately 20C would work sufficiantly too)</p></li>
+<li><p>The kinematic viscosity used for Reynolds number calculation(s) is 1.14e-06 (<span class="math notranslate nohighlight">\(\frac{m^2}{s}\)</span>)</p></li>
+<li><p>1st row is reference (datum) conditions</p></li>
+<li><p>Mean time is time-to-fill an 80.0 mL beaker.</p></li>
+<li><p>1 <span class="math notranslate nohighlight">\(\frac{m^3}{s}\)</span> = 1000 <span class="math notranslate nohighlight">\(\frac{L}{s}\)</span> (Conversion implicit in data table below, used to calculate velocity)</p></li>
+<li><p>1 m == 1000 mm (Conversion implicit in data table below, used to calculate gradient)</p></li>
+<li><p><span class="math notranslate nohighlight">\(\Delta\)</span>p (kPa) is computed by subtracting 27.7 kPa (the reference reading on the digital pressure instrument) from the value reported on the meter.</p></li>
+<li><p>Second to last column is Modified Bernoulli rearranged to find friction factor; it is an experimental result</p></li>
+<li><p>Last column is theoretical friction factor for <strong>laminar</strong> flow in a pipe</p></li>
 </ul>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>The protocol is evaluated to ensure that the envisioned procedures can be safely conducted under appropriate supervision.  The experiments may produce incomplete results if steps are ommitted.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Trial</p></th>
+<th class="head"><p>Mean time (s)</p></th>
+<th class="head"><p>Q <span class="math notranslate nohighlight">\(\frac{L}{s}\)</span></p></th>
+<th class="head text-right"><p>D (m)</p></th>
+<th class="head text-right"><p>A (m<span class="math notranslate nohighlight">\(^2\)</span>)</p></th>
+<th class="head text-right"><p>U=<span class="math notranslate nohighlight">\(\frac{Q}{A}\)</span> <span class="math notranslate nohighlight">\(\frac{m}{s}\)</span></p></th>
+<th class="head text-right"><p>h<span class="math notranslate nohighlight">\(_1\)</span> (mm)</p></th>
+<th class="head text-right"><p>h<span class="math notranslate nohighlight">\(_2\)</span> (mm)</p></th>
+<th class="head text-right"><p><span class="math notranslate nohighlight">\(\Delta\)</span>h (m)</p></th>
+<th class="head text-right"><p><span class="math notranslate nohighlight">\(\Delta\)</span>p (kPa)</p></th>
+<th class="head text-right"><p>L (m)</p></th>
+<th class="head text-right"><p><span class="math notranslate nohighlight">\(\frac{\Delta h}{L}\)</span></p></th>
+<th class="head text-right"><p>log(<span class="math notranslate nohighlight">\(\frac{\Delta h}{L}\)</span>)</p></th>
+<th class="head text-right"><p>Re<span class="math notranslate nohighlight">\(_D\)</span></p></th>
+<th class="head text-right"><p><span class="math notranslate nohighlight">\(f=\Delta h \frac{D}{L} \frac{2g}{V^2}\)</span></p></th>
+<th class="head text-right"><p><span class="math notranslate nohighlight">\(f=\frac{64}{Re_D}\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>N/A</p></td>
+<td><p>0.00000</p></td>
+<td class="text-right"><p>0.003</p></td>
+<td class="text-right"><p>7.069e-06</p></td>
+<td class="text-right"><p>0.0</p></td>
+<td class="text-right"><p>276</p></td>
+<td class="text-right"><p>276</p></td>
+<td class="text-right"><p>0.000</p></td>
+<td class="text-right"><p>0.00</p></td>
+<td class="text-right"><p>0.524</p></td>
+<td class="text-right"><p>0.000</p></td>
+<td class="text-right"><p><span class="math notranslate nohighlight">\(-\infty\)</span></p></td>
+<td class="text-right"><p>0.0</p></td>
+<td class="text-right"><p><span class="math notranslate nohighlight">\(+\infty\)</span></p></td>
+<td class="text-right"><p><span class="math notranslate nohighlight">\(+\infty\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>51.94</p></td>
+<td><p>0.00154</p></td>
+<td class="text-right"><p>0.003</p></td>
+<td class="text-right"><p>7.069e-06</p></td>
+<td class="text-right"><p>0.218</p></td>
+<td class="text-right"><p>293</p></td>
+<td class="text-right"><p>258</p></td>
+<td class="text-right"><p>0.035</p></td>
+<td class="text-right"><p>0.34</p></td>
+<td class="text-right"><p>0.524</p></td>
+<td class="text-right"><p>0.067</p></td>
+<td class="text-right"><p>-1.175</p></td>
+<td class="text-right"><p>573.7</p></td>
+<td class="text-right"><p>0.083</p></td>
+<td class="text-right"><p>0.111</p></td>
+</tr>
+<tr class="row-even"><td><p>2</p></td>
+<td><p>35.24</p></td>
+<td><p>0.00227</p></td>
+<td class="text-right"><p>0.003</p></td>
+<td class="text-right"><p>7.069e-06</p></td>
+<td class="text-right"><p>0.321</p></td>
+<td class="text-right"><p>302</p></td>
+<td class="text-right"><p>245</p></td>
+<td class="text-right"><p>0.057</p></td>
+<td class="text-right"><p>0.55</p></td>
+<td class="text-right"><p>0.524</p></td>
+<td class="text-right"><p>0.109</p></td>
+<td class="text-right"><p>-0.964</p></td>
+<td class="text-right"><p>844.7</p></td>
+<td class="text-right"><p>0.062</p></td>
+<td class="text-right"><p>0.075</p></td>
+</tr>
+<tr class="row-odd"><td><p>3</p></td>
+<td><p>20.73</p></td>
+<td><p>0.00386</p></td>
+<td class="text-right"><p>0.003</p></td>
+<td class="text-right"><p>7.069e-06</p></td>
+<td class="text-right"><p>0.546</p></td>
+<td class="text-right"><p>322</p></td>
+<td class="text-right"><p>219</p></td>
+<td class="text-right"><p>0.103</p></td>
+<td class="text-right"><p>1.01</p></td>
+<td class="text-right"><p>0.524</p></td>
+<td class="text-right"><p>0.196</p></td>
+<td class="text-right"><p>-0.707</p></td>
+<td class="text-right"><p>1436.8</p></td>
+<td class="text-right"><p>0.039</p></td>
+<td class="text-right"><p>0.044</p></td>
+</tr>
+<tr class="row-even"><td><p>4</p></td>
+<td><p>15.26</p></td>
+<td><p>0.00524</p></td>
+<td class="text-right"><p>0.003</p></td>
+<td class="text-right"><p>7.069e-06</p></td>
+<td class="text-right"><p>0.742</p></td>
+<td class="text-right"><p>382</p></td>
+<td class="text-right"><p>181</p></td>
+<td class="text-right"><p>0.201</p></td>
+<td class="text-right"><p>1.97</p></td>
+<td class="text-right"><p>0.524</p></td>
+<td class="text-right"><p>0.383</p></td>
+<td class="text-right"><p>-0.416</p></td>
+<td class="text-right"><p>1952.6</p></td>
+<td class="text-right"><p>0.041</p></td>
+<td class="text-right"><p>0.033</p></td>
+</tr>
+<tr class="row-odd"><td><p>5</p></td>
+<td><p>14.46</p></td>
+<td><p>0.00553</p></td>
+<td class="text-right"><p>0.003</p></td>
+<td class="text-right"><p>7.069e-06</p></td>
+<td class="text-right"><p>0.784</p></td>
+<td class="text-right"><p>365</p></td>
+<td class="text-right"><p>166</p></td>
+<td class="text-right"><p>0.199</p></td>
+<td class="text-right"><p>1.95</p></td>
+<td class="text-right"><p>0.524</p></td>
+<td class="text-right"><p>0.380</p></td>
+<td class="text-right"><p>-0.421</p></td>
+<td class="text-right"><p>2063.2</p></td>
+<td class="text-right"><p>0.036</p></td>
+<td class="text-right"><p>0.031</p></td>
+</tr>
+</tbody>
+</table>
 </div>
+</section>
 </section>
 <section id="deliverables">
 <h2>Deliverables<a class="headerlink" href="#deliverables" title="Link to this heading">#</a></h2>
@@ -739,7 +791,7 @@ value is. Following table summarizes the typical K values for different bends</p
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Closed Conduit Flow Measurements</p>
+        <p class="prev-next-title">Flow Measurement in Pipes</p>
       </div>
     </a>
     <a class="right-next"
@@ -775,19 +827,11 @@ value is. Following table summarizes the typical K values for different bends</p
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flow-regimes">Flow Regimes</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#friction-factors-in-fluid-flow-pipeline-losses">Friction Factors in Fluid Flow (Pipeline Losses)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#laboratory-setup-pipeline-losses">Laboratory Setup (Pipeline Losses)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#friction-losses-in-fittings-minor-losses">Friction Losses in Fittings (Minor Losses)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#expansions-and-contractions">Expansions and Contractions</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bends">Bends</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#laboratory-objectives">Laboratory Objectives</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#procedure">Procedure</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-pipe-loss-results">Example Pipe Loss Results</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loss-model-structure">Loss Model Structure</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bend">Bend</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#expansion">Expansion</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contraction">Contraction</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#laboratory-setup-fitting-losses">Laboratory Setup (Fitting Losses)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#laboratory-objectives">Laboratory Objectives</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deliverables">Deliverables</a></li>
 </ul>
   </nav></div>
