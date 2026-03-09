@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=5303cbea" />
@@ -185,8 +185,11 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../0-syllabus/ce-3105-syllabus-2026-1.html">Syllabus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../0-safety/safety.html">Safety Considerations</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="../0-reporting/reporting.html">Laboratory Reports</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../1-flow-measurement-in-pipes/flow.measurements.in.conduits.html">Closed Conduit Flow Measurements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1-flow-measurement-in-pipes/flow.measurements.in.conduits.html">Flow Measurement in Pipes</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="../2-pipe-friction-factor/pipe.friction.factor.html">Friction Factor in Pipes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../4-momentum-in-a-jet/momentum.in.a.jet.html">Momentum Transfer from a Water Jet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../5-pump-performance-curve/pump.performance.curve.html">Pump Performance Curve</a></li>
@@ -398,7 +401,7 @@ document.write(`
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>This laboratory experiment is being re-written, to include multiple measurement technologies.  The current content is just a placeholder</p>
+<p>This laboratory experiment is being re-written, to include multiple measurement technologies.  The current content is just a placeholder.  Modified 3/9/26.  Left background for now.</p>
 </div>
 <section id="readings">
 <h2>Readings<a class="headerlink" href="#readings" title="Link to this heading">#</a></h2>
@@ -433,7 +436,7 @@ document.write(`
 <h2>Objective<a class="headerlink" href="#objective" title="Link to this heading">#</a></h2>
 <p>Measure the flow rate of water in an open channel using several devices:</p>
 <ul class="simple">
-<li><p>Micro ADV (Acoustic-Doppler Current Profiler)</p></li>
+<li><p>Flowtracker ADV (Acoustic-Doppler Current Profiler)</p></li>
 <li><p>Weir(s)</p></li>
 <li><p>Drift tracer</p></li>
 <li><p>Slope-Area (stage measurements)</p></li>
@@ -868,6 +871,16 @@ If the water surface is parallel to the channel bottom, flow is uniform and the 
 <p>The function itself is dependent on section geometry a few analytical examples are:</p>
 <p><img alt="" src="../../_images/momentumfunctions.png" /></p>
 <p>For other cross sections, numerical methods are employed.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Move all the background elsewhere</p>
+<p>Will use only:</p>
+<ul class="simple">
+<li><p>Drift tracer (Balls)</p></li>
+<li><p>Flowtracker</p></li>
+<li><p>Weirs</p></li>
+</ul>
+</div>
 </section>
 </section>
 <section id="laboratory-apparatus">
@@ -881,11 +894,12 @@ If the water surface is parallel to the channel bottom, flow is uniform and the 
 </ol>
 <section id="discharge-measurements">
 <h3>Discharge Measurements<a class="headerlink" href="#discharge-measurements" title="Link to this heading">#</a></h3>
-<p>The flowrate is determined using the calibration chart below.</p>
-<p><img alt="" src="../../_images/calibration.png" /></p>
-<p>The y-axis is the difference of the manometers readings(<span class="math notranslate nohighlight">\(\Delta H\)</span>) and the x-axis is the flowrate (Q). The following equation belongs to the “Large Orifice” line on the chart.</p>
-<div class="math notranslate nohighlight">
-\[ log_{10}(Q) = \frac{log_{10}(\Delta H)- 1.47}{2.096} \]</div>
+<p>The flowrate is determined by various field-portable methods:</p>
+<ul class="simple">
+<li><p>Drift tracers (floating objects, measure time-of-travel over measured distance)</p></li>
+<li><p>Weirs</p></li>
+<li><p>Flowtracker (ADCP)</p></li>
+</ul>
 </section>
 <section id="flow-depth-measurements">
 <h3>Flow Depth Measurements<a class="headerlink" href="#flow-depth-measurements" title="Link to this heading">#</a></h3>
@@ -900,9 +914,8 @@ If the water surface is parallel to the channel bottom, flow is uniform and the 
 </section>
 <section id="a-suggested-procedure">
 <h3>A Suggested Procedure<a class="headerlink" href="#a-suggested-procedure" title="Link to this heading">#</a></h3>
-<p><strong>Part 1</strong>
-This part is to validate the flow calibration chart and equation.
-0. Set the slope to 1-percent.</p>
+<p><strong>Drift Tracer</strong>
+Words.</p>
 <ol class="arabic simple">
 <li><p>Ensure flume tailgate is down.</p></li>
 <li><p>Close the red valves for both pumps.</p></li>
@@ -915,8 +928,8 @@ This part is to validate the flow calibration chart and equation.
 <li><p>Record the manometer readings for each pump.</p></li>
 <li><p>Repeat the procedure for 4 different flowrates keeping the slope constant.  Use the red valves to adjust flowrates.</p></li>
 </ol>
-<p><strong>Part2</strong>
-This can be conducted with the weir in place</p>
+<p><strong>Weir</strong>
+Words</p>
 <ol class="arabic simple">
 <li><p>Move the depth logger to top of one of the rocks and reset the value to zero.</p></li>
 <li><p>Make sure the manometer valves corresponding to the selected orifice is/are open</p></li>
@@ -926,8 +939,8 @@ This can be conducted with the weir in place</p>
 <li><p>Repeat the procedure for 2 other flowrates keep the slope constant</p></li>
 <li><p>Repeat the above steps for a total of 3 different <strong>slopes</strong></p></li>
 </ol>
-<p><strong>Part 3</strong>
-This part will create a stable hydraulic jump.  It is easiest to remove the weir.</p>
+<p><strong>Flowtracker</strong>
+Words</p>
 <ol class="arabic simple">
 <li><p>Shut down the pumps, close the red valves, and remove the weir - everything else can be left as-is.</p></li>
 <li><p>Set the slope to 4-percent (its going to look steep, but the machine can handle it!)</p></li>
@@ -942,76 +955,17 @@ This part will create a stable hydraulic jump.  It is easiest to remove the weir
 <li><p>Measure the flow depth befor the jump (halfway between the headgate and the jump should do). This is the alternate depth.</p></li>
 <li><p>Measure the flow depth after the jump where the surface waves have dissipated (probably at the rocks).  This is the sequent depth.</p></li>
 </ol>
+<p><strong>Stage-Area</strong>
+Words</p>
+<ol class="arabic simple">
+<li><p>words</p></li>
+</ol>
 </section>
 </section>
 <section id="deliverables">
 <h2>Deliverables<a class="headerlink" href="#deliverables" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
-<li><p><strong>Experimental Protocol</strong></p></li>
-</ol>
-<p>Each group must submit a detailed, step-by-step protocol to ensure the experimental procedures are clearly documented and reproducible. The protocol should include:</p>
-<ol class="arabic simple">
-<li><p>Preparation:</p></li>
-</ol>
-<ul class="simple">
-<li><p>Steps for setting up the flume, including adjusting slopes and ensuring proper calibration of measurement devices.</p></li>
-<li><p>Confirmation of clear manometer tubes and operational pumps.</p></li>
-</ul>
-<ol class="arabic simple" start="2">
-<li><p>Measurements:</p></li>
-</ol>
-<ul class="simple">
-<li><p>Instructions for measuring flow depths using the digital distance gauge.</p></li>
-<li><p>Procedure for recording flow rates from the manometer readings.</p></li>
-<li><p>Steps for stabilizing and measuring alternate and sequent depths during the hydraulic jump analysis.</p></li>
-</ul>
-<ol class="arabic simple" start="3">
-<li><p>Safety and Maintenance:</p></li>
-</ol>
-<ul class="simple">
-<li><p>Guidelines for handling equipment safely and ensuring proper water circulation.</p></li>
-</ul>
-<ol class="arabic simple" start="2">
 <li><p><strong>Laboratory Report</strong></p></li>
-</ol>
-<p>The laboratory report should include the following sections:</p>
-<ol class="arabic simple">
-<li><p>Title Page: Include the lab title, group members, date, and course information.</p></li>
-<li><p>Abstract: Provide a concise summary of the objectives, methods, results, and conclusions.</p></li>
-<li><p>Introduction: Outline the purpose of the lab, focusing on the significance of Manning’s equation and hydraulic jumps in open channel flow.</p></li>
-<li><p>Apparatus and Methods:</p></li>
-</ol>
-<ul class="simple">
-<li><p>Description of the recirculating flume and its components (e.g., pumps, digital gauge, manometer, tailgate).</p></li>
-<li><p>Detailed summary of procedures for each part of the experiment, emphasizing flow measurement and hydraulic jump stabilization.</p></li>
-</ul>
-<ol class="arabic simple" start="5">
-<li><p>Data and Results:</p></li>
-</ol>
-<ul class="simple">
-<li><p>Present depth and flow measurements in tabular form.</p></li>
-<li><p>Include plots for Manning’s roughness coefficient calculations and a comparison to literature values.</p></li>
-<li><p>Graphically represent alternate and sequent depths with the corresponding flow conditions.</p></li>
-</ul>
-<ol class="arabic simple" start="6">
-<li><p>Analysis:</p></li>
-</ol>
-<ul class="simple">
-<li><p>Discuss how measured Manning’s coefficients compare to reference values for the rock bed.</p></li>
-<li><p>Evaluate the observed alternate and sequent depths relative to theoretical predictions.</p></li>
-<li><p>Address any discrepancies and potential sources of error.</p></li>
-</ul>
-<ol class="arabic simple" start="7">
-<li><p>Discussion:</p></li>
-</ol>
-<ul class="simple">
-<li><p>Highlight the practical significance of the findings in hydraulic design applications.</p></li>
-<li><p>Interpret the relationship between flow dynamics and channel characteristics.</p></li>
-<li><p>Evaluate the precision of measurements, including comparisons of depth readings from manual and digital methods (if applicable).</p></li>
-</ul>
-<ol class="arabic simple" start="8">
-<li><p>Conclusion: Summarize the key results and their implications for open channel hydraulics.</p></li>
-<li><p>Appendices: Include raw data, calibration charts, and detailed calculations.</p></li>
 </ol>
 </section>
 <section id="end-of-section">
