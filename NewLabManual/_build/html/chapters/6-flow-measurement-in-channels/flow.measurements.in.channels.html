@@ -378,7 +378,12 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Objective</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#discharge-measurements">Discharge Measurements</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#flow-depth-measurements">Flow Depth Measurements</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#laboratory-procedure">Laboratory Procedure</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#laboratory-procedure">Laboratory Procedure</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#drift-tracer">Drift Tracer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#weir">Weir</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#flowtracker">Flowtracker</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deliverables">Deliverables</a></li>
@@ -903,60 +908,151 @@ If the water surface is parallel to the channel bottom, flow is uniform and the 
 </section>
 <section id="flow-depth-measurements">
 <h3>Flow Depth Measurements<a class="headerlink" href="#flow-depth-measurements" title="Link to this heading">#</a></h3>
-<p>Flow depth measurements are made using a digital distance gage (a ruler widda digital readout) if the battery is dead, you will still uset the device but make manual measurements using a ruler from different device settings.</p>
+<p>Flow depth measurements are made using a digital distance gage (a ruler widda digital readout) if the battery is dead, you will still use the device but make manual measurements using a ruler from different device settings.  Using a V-notch weir as an example, the relationship between weir crest height, water height above the weir, and the total depth are shown in the figure below.</p>
 <p><img alt="" src="../../_images/depthreadings.png" /></p>
-<p>The digital device reports distnace from the rail top to the pointer setting (<span class="math notranslate nohighlight">\(h_D\)</span>, in our case depth to water.  The total depth of the channel is <span class="math notranslate nohighlight">\(h_b\)</span> = 44 mm.  The flow depth is the difference in these readings.</p>
+<p>The digital device reports distance from the rail top to the pointer setting (<span class="math notranslate nohighlight">\(h_D\)</span>, in our case depth to water.  The total depth of the channel is <span class="math notranslate nohighlight">\(h_b\)</span> = 44 mm (students need to verify!).  The flow depth is the difference in these readings.</p>
 <div class="math notranslate nohighlight">
 \[ h_{flow} = h_b - h_D\]</div>
 <p>A second reading is made when the V-notch weir is in place.  It is used to check the pump flow calibration (it needs to be removed to create a stable hydraulic jump.</p>
 <div class="math notranslate nohighlight">
 \[ h_{flow&#64;weir} = h_{M}+h_{notch}\]</div>
 </section>
+</section>
 <section id="laboratory-procedure">
-<h3>Laboratory Procedure<a class="headerlink" href="#laboratory-procedure" title="Link to this heading">#</a></h3>
-<p><strong>Drift Tracer</strong>
-Words.</p>
+<h2>Laboratory Procedure<a class="headerlink" href="#laboratory-procedure" title="Link to this heading">#</a></h2>
+<section id="drift-tracer">
+<h3>Drift Tracer<a class="headerlink" href="#drift-tracer" title="Link to this heading">#</a></h3>
+<p>A floating tracer is used to estimate the mean flow velocity in the flume by measuring the time required for the tracer to travel a known distance between two marked stations. Repeated measurements are used to reduce random timing error and obtain a representative average velocity.</p>
+<div class="admonition-preparation-instructor-ta-class-instructor-prep admonition">
+<p class="admonition-title">Preparation (Instructor/TA) :class: instructor-prep</p>
 <ol class="arabic simple">
-<li><p>Ensure flume tailgate is down.</p></li>
-<li><p>Close the red valves for both pumps.</p></li>
-<li><p>Start the pumps.</p></li>
-<li><p>Move the depth logger to the same elevation as the height of V notch and reset the value to zero.</p></li>
-<li><p>Make sure the manometer valves corresponding to the selected orifice(s) is(are) open.</p></li>
-<li><p>Ensure the manometers are free of air bubbles.</p></li>
-<li><p>Open the red valve(s) to let flow into the flume.</p></li>
-<li><p>Move the depth logger till it touches the top of the water level. Measure the height. Record this measurement.</p></li>
-<li><p>Record the manometer readings for each pump.</p></li>
-<li><p>Repeat the procedure for 4 different flowrates keeping the slope constant.  Use the red valves to adjust flowrates.</p></li>
+<li><p>Flume tailgate down.</p></li>
+<li><p>Put tracer catch screen over tailwater hole.</p></li>
+<li><p>Set positive slope (1-5 % should be adequate)</p></li>
+<li><p>Set laser-level in place, adjust to intersect flume at known station downstream.</p></li>
+<li><p>Update stationing on flume (use black marker).</p></li>
+<li><p>Set depth gage, verify functional, change batteries if needed, provide instructions on zeroing the gage, suggest mid-depth datum (esp. if weir in-place).</p></li>
+<li><p>Open red valves (usually left full open, verify).</p></li>
+<li><p>Start pumps.</p></li>
+<li><p>Adjust head gate as needed, if a weir is in place some adjustment is likely needed.</p></li>
 </ol>
-<p><strong>Weir</strong>
-Words</p>
+</div>
+<div class="admonition-measurement-s-student-class-student-live admonition">
+<p class="admonition-title">Measurement(s) (Student) :class: student-live</p>
 <ol class="arabic simple">
-<li><p>Move the depth logger to top of one of the rocks and reset the value to zero.</p></li>
-<li><p>Make sure the manometer valves corresponding to the selected orifice is/are open</p></li>
-<li><p>Ensure the manometers are free of air bubbles.</p></li>
-<li><p>Open the Orifice to let flow into the flume</p></li>
-<li><p>Move the depth logger till it touches the top of the water level. Measure the height</p></li>
-<li><p>Repeat the procedure for 2 other flowrates keep the slope constant</p></li>
-<li><p>Repeat the above steps for a total of 3 different <strong>slopes</strong></p></li>
+<li><p>Be sure system is at equilibrium (observe several minutes to be sure waterlevels appear to be unchanging)</p></li>
+<li><p>Identify tracer start/stop positions; label using red dry-erase marker.</p></li>
+<li><p>Use tape measure and laser level to determine slope.  Verify with slope-level indicator as an independent check.</p></li>
+<li><p>Use depth logger to measure flow depth at start, stop, and midway between these positions, record these values.</p></li>
+<li><p>Using a stopwatch drop a tracer ball upstream of the start position.  Start timing when the tracer passes the start position, stop when it passes the stop position.  Repeat 10 times (10 time-of-flight values).</p></li>
+<li><p>Turn off Pump 2.</p></li>
+<li><p>Repeat steps 3 and 4 above.</p></li>
+<li><p>Restart Pump 2 (or turn off system as directed by Instructor/TA</p></li>
 </ol>
-<p><strong>Flowtracker</strong>
-Words</p>
+</div>
+<p>The mean surface velocity is estimated from the tracer travel time using</p>
+<p><span class="math notranslate nohighlight">\(𝑉=\frac{𝐿}{t}\)</span>,</p>
+<p>where</p>
+<p><span class="math notranslate nohighlight">\(L\)</span> is the distance between measurement stations and
+<span class="math notranslate nohighlight">\(t\)</span> is the recorded time-of-flight of the tracer.</p>
+<p>Because the tracer floats on the water surface, the measured velocity represents a surface velocity, which is generally greater than the depth-averaged velocity due to friction at the channel bed and walls. Students are encouraged to consult online references—such as guidance from the U.S. Geological Survey on float or drift velocity measurements—to understand how surface velocities are related to mean channel velocities.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.waterboards.ca.gov/water_issues/programs/swamp/docs/cwt/guidance/4113.pdf">Stream Flow Using Float to Measure Velocity</a></p></li>
+<li><p><a class="reference internal" href="#ce-3105-webroot/NewLabManual/chapters/6-flow-measurement-in-channels/Velocity_profile_and_depth-averaged_to_surface_vel.pdf"><span class="xref myst">Hauet, et. al., (2018). Velocity profile and depth-averaged to surface velocity in natural streams: A review over a
+large sample of rivers, River Flow 2018, https://doi.org/10.1051/e3sconf/20184006015
+</span></a></p></li>
+<li><p><a class="reference external" href="https://www.usgs.gov/software/surface-velocity-tools-surfveltools">Surface Velocity Tools (SurfVelTools)</a></p></li>
+</ul>
+</section>
+<section id="weir">
+<h3>Weir<a class="headerlink" href="#weir" title="Link to this heading">#</a></h3>
+<p>A weir is a flow-measuring structure that relates discharge to the upstream water level above a fixed crest. By measuring the head above the crest and applying a calibrated discharge equation, the flow rate in the flume can be estimated for several common weir geometries such as V-notch and sharp-crested weirs.</p>
+<p>For a sharp-crested weir the discharge is typically expressed in the form</p>
+<p><span class="math notranslate nohighlight">\(𝑄 = 𝐶𝐻^𝑛\)</span></p>
+<p>where
+<span class="math notranslate nohighlight">\(𝑄\)</span> is discharge,
+<span class="math notranslate nohighlight">\(H\)</span> is the head measured above the weir crest, and
+<span class="math notranslate nohighlight">\(C\)</span> and <span class="math notranslate nohighlight">\(n\)</span> are coefficients that depend on the weir geometry (for example, rectangular or V-notch).</p>
+<p>In this experiment the upstream depth relative to the crest is measured and used with the appropriate equation to estimate discharge.</p>
+<div class="admonition-preparation-instructor-ta-class-instructor-prep admonition">
+<p class="admonition-title">Preparation (Instructor/TA) :class: instructor-prep</p>
 <ol class="arabic simple">
-<li><p>Shut down the pumps, close the red valves, and remove the weir - everything else can be left as-is.</p></li>
-<li><p>Set the slope to 4-percent (its going to look steep, but the machine can handle it!)</p></li>
-<li><p>Start the pumps (you can try with just a single pump if you wish).</p></li>
-<li><p>Raise the tailgate a lot!</p></li>
-<li><p>Zero the depth gage to the channel bottom.</p></li>
-<li><p>Open the red valve(s) to start the flow.</p></li>
-<li><p>Raise the headgate to just above the water height.</p></li>
-<li><p>Lower the tailgate a little bit at a time - you will likely observe two jumps, one near the head gate and one after the rocks.  The stable one is the one at the head gate.</p></li>
-<li><p>Lower the headgate until it just touches the water surface - you are forcing supercritical depth at this location.  You should be able to create a stable jump about 0.5 to 1-foot from the head gate, and the water surface after the jump should be fairly established at the rocks.</p></li>
-<li><p>Record the manometer readings for the pump(s)</p></li>
-<li><p>Measure the flow depth befor the jump (halfway between the headgate and the jump should do). This is the alternate depth.</p></li>
-<li><p>Measure the flow depth after the jump where the surface waves have dissipated (probably at the rocks).  This is the sequent depth.</p></li>
+<li><p>Flume tailgate down.</p></li>
+<li><p>Install weir (V-notch, Sharp-crested (Tall), or Short Sharp-crested (Short))</p></li>
+<li><p>Put tracer catch screen over tailwater hole (optional if no tracers are to be used).</p></li>
+<li><p>Set positive slope (1-5 % should be adequate)</p></li>
+<li><p>Set laser-level in place, adjust to intersect flume at known station downstream.</p></li>
+<li><p>Update/verify stationing on flume (use black marker).</p></li>
+<li><p>Set depth gage, verify functional, change batteries if needed, provide instructions on zeroing the gage, suggest mid-depth datum (esp. if weir in-place).</p></li>
+<li><p>Open red valves (usually left full open, verify).</p></li>
+<li><p>Start pumps.</p></li>
+<li><p>Adjust head gate as needed, if a weir is in place some adjustment is likely needed.</p></li>
 </ol>
-<p><strong>Stage-Area</strong>
-Words</p>
+</div>
+<div class="admonition-measurement-s-student-class-student-live admonition">
+<p class="admonition-title">Measurement(s) (Student) :class: student-live</p>
+<ol class="arabic simple">
+<li><p>Be sure system is at equilibrium (observe several minutes to be sure waterlevels appear to be unchanging)</p></li>
+<li><p>Determine weir crest height, record this value</p></li>
+<li><p>Zero the depth gage at the weir crest.</p></li>
+<li><p>Use tape measure and laser level to determine slope.  Verify with slope-level indicator as an independent check.</p></li>
+<li><p>Use the depth gage to measure flow depth upstream of the weir.  Usually there is a smoothing of the water surface as it accelerates over the weir, you want to measure at the upstream edge of this transition.  If not obvious, measure a distance upstream 1-1.5 times the weir crest height. Record the values.</p></li>
+<li><p>Turn off Pump 2.</p></li>
+<li><p>Repeat step 5 above; measure at same location upstream of the weir.</p></li>
+<li><p>Restart Pump 2 (or turn off system as directed by Instructor/TA</p></li>
+</ol>
+</div>
+<p>The water surface upstream of a weir is not uniform because the flow accelerates as it approaches the crest. For this reason, the head measurement should be taken sufficiently upstream of the crest where the water surface is relatively smooth and unaffected by the drawdown toward the weir. Additional background on weir flow theory and measurement practice can be found in guidance documents from the U.S. Geological Survey, including the archived references provided below:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#ce-3105-webroot/NewLabManual/chapters/6-flow-measurement-in-channels/Weir_flow-USGS.pdf"><span class="xref myst">V-notch Weirs (USGS archived report)</span></a></p></li>
+<li><p><a class="reference external" href="https://pubs.usgs.gov/twri/twri3-a5/pdf/twri3-a5.pdf">USGS Measurement of Discharge at Dams</a></p></li>
+<li><p><a class="reference external" href="https://www.usbr.gov/tsc/techreferences/mands/wmm/chap07_17.html">USBR Water Measurement Manual</a></p></li>
+<li><p><a class="reference external" href="https://docs.bentley.com/LiveContent/web/OpenFlows%20FlowMaster-v2025/Help/en/topics/FlowMasterHelp-06-45.html">Bentley Flowmaster 2025 On-line Help “Weir Flow”</a></p></li>
+</ul>
+</section>
+<section id="flowtracker">
+<h3>Flowtracker<a class="headerlink" href="#flowtracker" title="Link to this heading">#</a></h3>
+<p>The SonTek FlowTracker is a portable acoustic Doppler velocity meter used to measure water velocity at a point within a flow. The instrument estimates velocity by transmitting acoustic pulses and measuring the Doppler shift of sound scattered by small particles suspended in the water. When combined with depth and channel geometry measurements, point velocities can be used in a velocity–area method to estimate discharge.</p>
+<p>Discharge is estimated using the velocity–area relationship</p>
+<p><span class="math notranslate nohighlight">\(Q=AV\)</span></p>
+<p>where</p>
+<p><span class="math notranslate nohighlight">\(Q\)</span> is discharge, <span class="math notranslate nohighlight">\(A\)</span> is the cross-sectional flow area, and <span class="math notranslate nohighlight">\(V\)</span> is the average flow velocity. In practice, velocities are measured at representative depths within the flow and used to approximate the mean velocity across the cross-section.</p>
+<p>Velocity in open-channel flow varies with depth due to friction at the channel bed and boundaries. For many field measurements, velocity observed at approximately 60 % of the flow depth below the water surface provides a reasonable estimate of the depth-averaged velocity at that vertical. Additional guidance on velocity–area discharge measurements and acoustic velocity meters can be found in publications from the U.S. Geological Survey describing standard streamflow measurement techniques.</p>
+<div class="admonition-preparation-instructor-ta-class-instructor-prep admonition">
+<p class="admonition-title">Preparation (Instructor/TA) :class: instructor-prep</p>
+<ol class="arabic simple">
+<li><p>Flume tailgate down.</p></li>
+<li><p>Install weir (V-notch, Sharp-crested (Tall), or Short Sharp-crested (Short))</p></li>
+<li><p>Put tracer catch screen over tailwater hole (optional if no tracers are to be used).</p></li>
+<li><p>Set positive slope (1-5 % should be adequate)</p></li>
+<li><p>Set laser-level in place, adjust to intersect flume at known station downstream.</p></li>
+<li><p>Update/verify stationing on flume (use black marker).</p></li>
+<li><p>Set depth gage, verify functional, change batteries if needed, provide instructions on zeroing the gage, suggest mid-depth datum (esp. if weir in-place).</p></li>
+<li><p>Open red valves (usually left full open, verify).</p></li>
+<li><p>Start pumps.</p></li>
+<li><p>Adjust head gate as needed, if a weir is in place some adjustment is likely needed.</p></li>
+</ol>
+</div>
+<div class="admonition-measurement-s-student-class-student-live admonition">
+<p class="admonition-title">Measurement(s) (Student) :class: student-live</p>
+<ol class="arabic simple">
+<li><p>Be sure system is at equilibrium (observe several minutes to be sure waterlevels appear to be unchanging)</p></li>
+<li><p>Determine weir crest height, record this value</p></li>
+<li><p>Zero the depth gage at the weir crest.</p></li>
+<li><p>Use tape measure and laser level to determine slope.  Verify with slope-level indicator as an independent check.</p></li>
+<li><p>Use the depth gage to measure flow depth upstream of the weir.  Usually there is a smoothing of the water surface as it accelerates over the weir, you want to measure at the upstream edge of this transition.  If not obvious, measure a distance upstream 1-1.5 times the weir crest height. Record the values.</p></li>
+<li><p>Locate two stations upstream of the weir, the water must be deep enough to submerge the Flowtracker sensor otherwise the instrument will report error codes.</p></li>
+<li><p>At each station determine the 60% depth (measured down from water surface), set the sensor to that depth and make a reading.  Be sure to locate the sensor centerline in plan view (middle of the flume).  Record the reported Vx value, be sure the reported Vy and Vz values are small (about 1/20-th to 1/100-th of the Vx value).  Record the values and depths at these two stations.</p></li>
+<li><p>Turn off Pump 2.</p></li>
+<li><p>Repeat step 7 above; measure at same location upstream of the weir.</p></li>
+<li><p>Restart Pump 2 (or turn off system as directed by Instructor/TA)</p></li>
+</ol>
+</div>
+<ul class="simple">
+<li><p><a class="reference external" href="https://pubs.usgs.gov/tm/tm3-a8/tm3a8.pdf">Discharge Measurements at Gaging Stations (USGS) </a>
+<strong>Stage-Area</strong>
+Words</p></li>
+</ul>
 <ol class="arabic simple">
 <li><p>words</p></li>
 </ol>
@@ -1070,7 +1166,12 @@ Words</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Objective</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#discharge-measurements">Discharge Measurements</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#flow-depth-measurements">Flow Depth Measurements</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#laboratory-procedure">Laboratory Procedure</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#laboratory-procedure">Laboratory Procedure</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#drift-tracer">Drift Tracer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#weir">Weir</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#flowtracker">Flowtracker</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deliverables">Deliverables</a></li>
