@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=5303cbea" />
@@ -349,7 +349,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#videos">Videos</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objective">Objective</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background-theory">Background/Theory</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background">Background</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acoustic-doppler-current-profiler-adcp">Acoustic Doppler Current Profiler (ADCP)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#weirs">Weirs</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flow-measurement">Flow Measurement</a><ul class="nav section-nav flex-column">
@@ -360,7 +360,6 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#broad-crested-weir">Broad-Crested Weir</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2-5-from-sturm">Example 2.5 (from Sturm)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#flumes">Flumes</a></li>
 </ul>
 </li>
@@ -374,6 +373,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#drift-tracer">Drift Tracer</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#weir">Weir</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#flowtracker">Flowtracker</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stage-area">Stage-Area</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deliverables">Deliverables</a></li>
@@ -438,26 +438,14 @@ document.write(`
 <li><p>Slope-Area (stage measurements)</p></li>
 </ul>
 </section>
-<section id="background-theory">
-<h2>Background/Theory<a class="headerlink" href="#background-theory" title="Link to this heading">#</a></h2>
-<p>Open channel flow - free surface, gravity driven.</p>
-<blockquote>
-<div><p>From pg. 1 of <a class="reference external" href="https://www.amazon.com/Channel-Hydraulics-Third-Terry-Sturm/dp/1260469700">Sturm, T. Open Channel Hydraulics, 1 st Ed.</a></p>
-<p><img alt="" src="../../_images/open-flow-narrative.png" /></p>
-</div></blockquote>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The gravity “drive” is mostly true - I would say such flows are dominated by momentum conditions, mostly with gravity influence.  Open flow can go uphill (adverse to gravitational drive) but not for much distance (os one will run out of momentum)</p>
-</div>
+<section id="background">
+<h2>Background<a class="headerlink" href="#background" title="Link to this heading">#</a></h2>
+<p>Open channel flow - conveyances with a free surface, generally gravity driven.</p>
 <p>Common examples of open channels:</p>
 <ul class="simple">
 <li><p>rivers, streams, brooks, creeks, cricks (Applacian meaning small stream), billabongs, bourns, wadis, and many more localized terms for small streams</p></li>
 <li><p>ditches, canals, aqueducts, storm sewers, sanitary sewers</p></li>
 </ul>
-<blockquote>
-<div><p>From pg. 1 of <a class="reference external" href="https://www.amazon.com/Channel-Hydraulics-Third-Terry-Sturm/dp/1260469700">Sturm, T. Open Channel Hydraulics, 1 st Ed.</a></p>
-<p><img alt="" src="../../_images/examples-ocf.png" /></p>
-</div></blockquote>
 <p>Applications of open channel flow principles</p>
 <ul class="simple">
 <li><p>Culvert design, bridge design, spillway design</p></li>
@@ -465,11 +453,8 @@ document.write(`
 <li><p>Fate and transport of yummy/yucky stuff (dissolved and/or suspended)</p></li>
 <li><p>Surge estimation and coastal flooding from cyclonic storms <a class="reference external" href="https://en.wikipedia.org/wiki/Tropical_cyclone">(hurricane,typhoon)</a></p></li>
 </ul>
-<blockquote>
-<div><p>From pg. 1 of <a class="reference external" href="https://www.amazon.com/Channel-Hydraulics-Third-Terry-Sturm/dp/1260469700">Sturm, T. Open Channel Hydraulics, 1 st Ed.</a></p>
-<p><img alt="" src="../../_images/applications-ocf.png" /></p>
-</div></blockquote>
-<p>Natural and man-made open channels are of interest to engineers. The Manning’s equation is a fundamental equation governing open channel flow and is given by</p>
+<p>Natural and man-made open channels are of interest to engineers.</p>
+<p>Manning’s equation is a useful equation governing open channel flow and is given by</p>
 <p><span class="math notranslate nohighlight">\( Q= \frac{K_n}{n}AR^{2/3}S^{1/2} \)</span></p>
 <p>Where <span class="math notranslate nohighlight">\(K_n\)</span> is the conversion factor (1 for SI and 1.49 for English units);
 <span class="math notranslate nohighlight">\(n\)</span> is the Manning’s roughness coefficient, <span class="math notranslate nohighlight">\(A\)</span> is the cross-sectional area and <span class="math notranslate nohighlight">\(R\)</span> is the hydraulic radius which is given as:</p>
@@ -646,52 +631,6 @@ Doppler flow meters</p>
 \[Q_s = Q_{free} * [1-(\frac{H_t}{H})^{10.0}]^{0.95}\]</div>
 <p>The equation above is essentially eqn 2.52 in Sturm with the constants for a broad-crested weir.</p>
 </section>
-<section id="example-2-5-from-sturm">
-<h3>Example 2.5 (from Sturm)<a class="headerlink" href="#example-2-5-from-sturm" title="Link to this heading">#</a></h3>
-<p>A rectangular broad-crested weir is used in a stormwasser detention pond as part of the outlet structure (most likely to control pool elevation - hence probably a wet bottom pond).  The crest length is 10 feets and the maximum allowable head on the crest is 1.0 ft.  What is the discharge capacity of the weir at free willy?  If the tailwater head is 0.8 ft, what will be the discharge?</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># BC weir - free willy flow</span>
-<span class="kn">import</span> <span class="nn">math</span>
-<span class="n">Cd</span> <span class="o">=</span> <span class="mf">0.848</span>
-<span class="n">g</span> <span class="o">=</span> <span class="mf">32.2</span> <span class="c1"># feet per second per second</span>
-<span class="n">H</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="c1"># feet </span>
-<span class="n">Va</span> <span class="o">=</span> <span class="mf">0.0</span> <span class="c1"># approach velocity, negligible in pond</span>
-<span class="n">He</span> <span class="o">=</span> <span class="n">H</span> <span class="o">+</span> <span class="p">(</span><span class="n">Va</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">g</span><span class="p">)</span>
-<span class="n">I</span> <span class="o">=</span> <span class="mf">10.0</span> <span class="c1"># actually unknown in this example, but are told it is a broad crest</span>
-<span class="n">L</span> <span class="o">=</span> <span class="mf">10.0</span> <span class="c1"># feet</span>
-
-<span class="n">Q</span> <span class="o">=</span> <span class="n">Cd</span><span class="o">*</span><span class="p">((</span><span class="n">He</span><span class="o">/</span><span class="n">H</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span><span class="o">*</span><span class="p">(</span><span class="mi">2</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="mi">2</span><span class="o">*</span><span class="n">g</span><span class="o">/</span><span class="mi">3</span><span class="p">))</span><span class="o">*</span><span class="n">L</span><span class="o">*</span><span class="n">H</span><span class="o">**</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Discharge: &quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="s2">&quot; cfs&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Discharge:  26.2  cfs
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># BC weir - submerged flow</span>
-<span class="c1"># compute submergence reduction factor</span>
-<span class="n">Ht</span> <span class="o">=</span> <span class="mf">0.8</span> <span class="c1"># feet</span>
-<span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="n">b</span> <span class="o">=</span> <span class="mf">0.95</span>
-<span class="n">S</span> <span class="o">=</span> <span class="p">(</span><span class="mf">1.0</span><span class="o">-</span><span class="p">(</span><span class="n">Ht</span><span class="o">/</span><span class="n">H</span><span class="p">)</span><span class="o">**</span><span class="n">a</span><span class="p">)</span><span class="o">**</span><span class="n">b</span>
-<span class="n">Qs</span> <span class="o">=</span> <span class="n">S</span><span class="o">*</span><span class="n">Q</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Discharge: &quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">Qs</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="s2">&quot; cfs&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Discharge:  23.5  cfs
-</pre></div>
-</div>
-</div>
-</div>
-</section>
 <section id="flumes">
 <h3>Flumes<a class="headerlink" href="#flumes" title="Link to this heading">#</a></h3>
 <p>A flume is another device to measure flow in open channels.  A flume employs contractions and/or a raised bottom section to force flow through critical depth within the measurement section of the flume. A rating curve is provided by manufacturers or if the geometry is known in the critical sectionthat fact can be leveraged to rate the flume.</p>
@@ -699,9 +638,7 @@ Doppler flow meters</p>
 <p><img alt="" src="../../_images/flume-small.png" /></p>
 <p>Moderate in size</p>
 <p><img alt="" src="../../_images/flume-medium.png" /></p>
-<p>And semi-portable installations can be fairly large</p>
-<p><img alt="" src="../../_images/flume-field.png" /></p>
-<p>Or even pretty large (notice the dude on the right side trying to figure out how to steal the abandoned bicycle!)</p>
+<p>or even pretty large.</p>
 <p><img alt="" src="../../_images/flume-large.png" /></p>
 </section>
 </section>
@@ -739,8 +676,8 @@ Doppler flow meters</p>
 <section id="drift-tracer">
 <h3>Drift Tracer<a class="headerlink" href="#drift-tracer" title="Link to this heading">#</a></h3>
 <p>A floating tracer is used to estimate the mean flow velocity in the flume by measuring the time required for the tracer to travel a known distance between two marked stations. Repeated measurements are used to reduce random timing error and obtain a representative average velocity.</p>
-<div class="admonition-preparation-instructor-ta-class-instructor-prep admonition">
-<p class="admonition-title">Preparation (Instructor/TA) :class: instructor-prep</p>
+<div class="instructor-prep admonition">
+<p class="admonition-title">Preparation (Instructor/TA)</p>
 <ol class="arabic simple">
 <li><p>Flume tailgate down.</p></li>
 <li><p>Put tracer catch screen over tailwater hole.</p></li>
@@ -753,8 +690,8 @@ Doppler flow meters</p>
 <li><p>Adjust head gate as needed, if a weir is in place some adjustment is likely needed.</p></li>
 </ol>
 </div>
-<div class="admonition-measurement-s-student-class-student-live admonition">
-<p class="admonition-title">Measurement(s) (Student) :class: student-live</p>
+<div class="student-live admonition">
+<p class="admonition-title">Measurement(s) (Student)</p>
 <ol class="arabic simple">
 <li><p>Be sure system is at equilibrium (observe several minutes to be sure waterlevels appear to be unchanging)</p></li>
 <li><p>Identify tracer start/stop positions; label using red dry-erase marker.</p></li>
@@ -790,8 +727,8 @@ large sample of rivers, River Flow 2018, https://doi.org/10.1051/e3sconf/2018400
 <span class="math notranslate nohighlight">\(H\)</span> is the head measured above the weir crest, and
 <span class="math notranslate nohighlight">\(C\)</span> and <span class="math notranslate nohighlight">\(n\)</span> are coefficients that depend on the weir geometry (for example, rectangular or V-notch).</p>
 <p>In this experiment the upstream depth relative to the crest is measured and used with the appropriate equation to estimate discharge.</p>
-<div class="admonition-instructor-ta-preparation-class-instructor-prep admonition">
-<p class="admonition-title">Instructor/TA Preparation :class: instructor-prep</p>
+<div class="instructor-prep admonition">
+<p class="admonition-title">Instructor/TA Preparation</p>
 <ol class="arabic simple">
 <li><p>Flume tailgate down.</p></li>
 <li><p>Install weir (V-notch, Sharp-crested (Tall), or Short Sharp-crested (Short))</p></li>
@@ -805,8 +742,8 @@ large sample of rivers, River Flow 2018, https://doi.org/10.1051/e3sconf/2018400
 <li><p>Adjust head gate as needed, if a weir is in place some adjustment is likely needed.</p></li>
 </ol>
 </div>
-<div class="admonition-measurement-s-student-class-student-live admonition">
-<p class="admonition-title">Measurement(s) (Student) :class: student-live</p>
+<div class="student-live admonition">
+<p class="admonition-title">Measurement(s) (Student)</p>
 <ol class="arabic simple">
 <li><p>Be sure system is at equilibrium (observe several minutes to be sure waterlevels appear to be unchanging)</p></li>
 <li><p>Determine weir crest height, record this value</p></li>
@@ -829,13 +766,14 @@ large sample of rivers, River Flow 2018, https://doi.org/10.1051/e3sconf/2018400
 <section id="flowtracker">
 <h3>Flowtracker<a class="headerlink" href="#flowtracker" title="Link to this heading">#</a></h3>
 <p>The SonTek FlowTracker is a portable acoustic Doppler velocity meter used to measure water velocity at a point within a flow. The instrument estimates velocity by transmitting acoustic pulses and measuring the Doppler shift of sound scattered by small particles suspended in the water. When combined with depth and channel geometry measurements, point velocities can be used in a velocity–area method to estimate discharge.</p>
+<p><img alt="" src="../../_images/flowtracker.png" /></p>
 <p>Discharge is estimated using the velocity–area relationship</p>
 <p><span class="math notranslate nohighlight">\(Q=AV\)</span></p>
 <p>where</p>
 <p><span class="math notranslate nohighlight">\(Q\)</span> is discharge, <span class="math notranslate nohighlight">\(A\)</span> is the cross-sectional flow area, and <span class="math notranslate nohighlight">\(V\)</span> is the average flow velocity. In practice, velocities are measured at representative depths within the flow and used to approximate the mean velocity across the cross-section.</p>
 <p>Velocity in open-channel flow varies with depth due to friction at the channel bed and boundaries. For many field measurements, velocity observed at approximately 60 % of the flow depth below the water surface provides a reasonable estimate of the depth-averaged velocity at that vertical. Additional guidance on velocity–area discharge measurements and acoustic velocity meters can be found in publications from the U.S. Geological Survey describing standard streamflow measurement techniques.</p>
-<div class="admonition-preparation-instructor-ta-class-instructor-prep admonition">
-<p class="admonition-title">Preparation (Instructor/TA) :class: instructor-prep</p>
+<div class="instructor-prep admonition">
+<p class="admonition-title">Preparation (Instructor/TA)</p>
 <ol class="arabic simple">
 <li><p>Flume tailgate down.</p></li>
 <li><p>Install weir (V-notch, Sharp-crested (Tall), or Short Sharp-crested (Short))</p></li>
@@ -849,29 +787,50 @@ large sample of rivers, River Flow 2018, https://doi.org/10.1051/e3sconf/2018400
 <li><p>Adjust head gate as needed, if a weir is in place some adjustment is likely needed.</p></li>
 </ol>
 </div>
-<div class="admonition-measurement-s-student-class-student-live admonition">
-<p class="admonition-title">Measurement(s) (Student) :class: student-live</p>
+<div class="student-live admonition">
+<p class="admonition-title">Measurement(s) (Student)</p>
 <ol class="arabic simple">
 <li><p>Be sure system is at equilibrium (observe several minutes to be sure waterlevels appear to be unchanging)</p></li>
-<li><p>Determine weir crest height, record this value</p></li>
-<li><p>Zero the depth gage at the weir crest.</p></li>
-<li><p>Use tape measure and laser level to determine slope.  Verify with slope-level indicator as an independent check.</p></li>
-<li><p>Use the depth gage to measure flow depth upstream of the weir.  Usually there is a smoothing of the water surface as it accelerates over the weir, you want to measure at the upstream edge of this transition.  If not obvious, measure a distance upstream 1-1.5 times the weir crest height. Record the values.</p></li>
 <li><p>Locate two stations upstream of the weir, the water must be deep enough to submerge the Flowtracker sensor otherwise the instrument will report error codes.</p></li>
-<li><p>At each station determine the 60% depth (measured down from water surface), set the sensor to that depth and make a reading.  Be sure to locate the sensor centerline in plan view (middle of the flume).  Record the reported Vx value, be sure the reported Vy and Vz values are small (about 1/20-th to 1/100-th of the Vx value).  Record the values and depths at these two stations.</p></li>
+<li><p>At each station determine the 60% depth (measured down from water surface), set the sensor to that depth and make a reading.  Be sure to locate the sensor centerline in plan view (middle of the flume).  Record the reported Vx value, be sure the reported Vy and Vz values are small (about 1/20-th to 1/100-th of the Vx value). The datalogger will report error codes if the velocity deviation is too large, and report “why”.  Repeat such measurements once; if still reporting errors the instructor will override the error so you can continue. Record the values and depths at these two stations.</p></li>
 <li><p>Turn off Pump 2.</p></li>
 <li><p>Repeat step 7 above; measure at same location upstream of the weir.</p></li>
 <li><p>Restart Pump 2 (or turn off system as directed by Instructor/TA)</p></li>
 </ol>
 </div>
 <ul class="simple">
-<li><p><a class="reference external" href="https://pubs.usgs.gov/tm/tm3-a8/tm3a8.pdf">Discharge Measurements at Gaging Stations (USGS) </a>
-<strong>Stage-Area</strong>
-Words</p></li>
+<li><p><a class="reference external" href="https://pubs.usgs.gov/tm/tm3-a8/tm3a8.pdf">Discharge Measurements at Gaging Stations (USGS) </a></p></li>
 </ul>
+</section>
+<section id="stage-area">
+<h3>Stage-Area<a class="headerlink" href="#stage-area" title="Link to this heading">#</a></h3>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This sub-section is under construction, and is left for future semesters</p>
+</div>
+<p>Words</p>
+<div class="instructor-prep admonition">
+<p class="admonition-title">Preparation (Instructor/TA)</p>
 <ol class="arabic simple">
-<li><p>words</p></li>
+<li><p>Flume tailgate down.</p></li>
+<li><p>Install weir (V-notch, Sharp-crested (Tall), or Short Sharp-crested (Short))</p></li>
+<li><p>Put tracer catch screen over tailwater hole (optional if no tracers are to be used).</p></li>
+<li><p>Set positive slope (1-5 % should be adequate)</p></li>
+<li><p>Set laser-level in place, adjust to intersect flume at known station downstream.</p></li>
+<li><p>Update/verify stationing on flume (use black marker).</p></li>
+<li><p>Set depth gage, verify functional, change batteries if needed, provide instructions on zeroing the gage, suggest mid-depth datum (esp. if weir in-place).</p></li>
+<li><p>Open red valves (usually left full open, verify).</p></li>
+<li><p>Start pumps.</p></li>
+<li><p>Adjust head gate as needed, if a weir is in place some adjustment is likely needed.</p></li>
 </ol>
+</div>
+<div class="student-live admonition">
+<p class="admonition-title">Measurement(s) (Student)</p>
+<ol class="arabic simple">
+<li><p>Be sure system is at equilibrium (observe several minutes to be sure waterlevels appear to be unchanging)</p></li>
+<li><p>Locate two stations upstream of the weir, the water must be deep enough to submerge the Flowtracker sensor otherwise the instrument will report error codes.</p></li>
+</ol>
+</div>
 </section>
 </section>
 <section id="deliverables">
@@ -953,7 +912,7 @@ Words</p></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#videos">Videos</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objective">Objective</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background-theory">Background/Theory</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background">Background</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acoustic-doppler-current-profiler-adcp">Acoustic Doppler Current Profiler (ADCP)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#weirs">Weirs</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flow-measurement">Flow Measurement</a><ul class="nav section-nav flex-column">
@@ -964,7 +923,6 @@ Words</p></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#broad-crested-weir">Broad-Crested Weir</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2-5-from-sturm">Example 2.5 (from Sturm)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#flumes">Flumes</a></li>
 </ul>
 </li>
@@ -978,6 +936,7 @@ Words</p></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#drift-tracer">Drift Tracer</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#weir">Weir</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#flowtracker">Flowtracker</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stage-area">Stage-Area</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deliverables">Deliverables</a></li>
