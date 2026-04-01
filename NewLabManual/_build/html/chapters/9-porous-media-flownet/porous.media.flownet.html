@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Porous Media Flow Nets &#8212; Mechanics of Fluids Laboratory</title>
+    <title>Porous Media: Head Distribution in an Unconfined Aquifer &#8212; Mechanics of Fluids Laboratory</title>
   
   
   
@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=5303cbea" />
@@ -59,10 +59,12 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/9-porous-media-flownet/porous.media.flownet';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="prev" title="Lab 9. - Water Surface Profiles: Hydraulic Jump" href="../8-rapid-varied-flow-hydraulic-jump/rapid.varied.flow.hydraulic.jump.html" />
+    <link rel="prev" title="Rapidly Varied Flow: Hydraulic Jump (Sample Report)" href="../8-rapid-varied-flow-hydraulic-jump/hydraulic_jump_sample_report.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -192,8 +194,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../5-pump-performance-curve/pump.performance.curve.html">Pump Performance Curve</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../6-flow-measurement-in-channels/flow.measurements.in.channels.html">Open Channel Flow Measurements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../7-gradually-varied-flow-backwater-curve/gradually.varied.flow.backwater.curve.html">Gradually Varied Flow - Backwater Curve</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../8-rapid-varied-flow-hydraulic-jump/rapid.varied.flow.hydraulic.jump.html">Lab 9. - Water Surface Profiles: Hydraulic Jump</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Porous Media Flow Nets</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../8-rapid-varied-flow-hydraulic-jump/rapid.varied.flow.hydraulic.jump.html">Rapidly Varied Flow: Hydraulic Jump</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../8-rapid-varied-flow-hydraulic-jump/hydraulic_jump_sample_report.html">Rapidly Varied Flow: Hydraulic Jump (Sample Report)</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Porous Media: Head Distribution in an Unconfined Aquifer</a></li>
 </ul>
 
     </div>
@@ -332,7 +337,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Porous Media Flow Nets</h1>
+    <h1>Porous Media: Head Distribution in an Unconfined Aquifer</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -344,9 +349,19 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#readings">Readings</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#videos">Videos</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background">Background</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#laboratory-description">Laboratory Description</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#theory">Theory</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#laboratory-apparatus">Laboratory Apparatus</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#laboratory-objectives">Laboratory Objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experimental-procedure">Experimental Procedure</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-acquisition">Data Acquisition</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-organization">Data Organization</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculations">Calculations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretation">Interpretation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#expected-student-deliverables">Expected Student Deliverables</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deliverables">Deliverables</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#end-of-section">End of Section</a></li>
 </ul>
@@ -360,8 +375,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="porous-media-flow-nets">
-<h1>Porous Media Flow Nets<a class="headerlink" href="#porous-media-flow-nets" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="porous-media-head-distribution-in-an-unconfined-aquifer">
+<h1>Porous Media: Head Distribution in an Unconfined Aquifer<a class="headerlink" href="#porous-media-head-distribution-in-an-unconfined-aquifer" title="Link to this heading">#</a></h1>
 <div class="admonition-course-website admonition">
 <p class="admonition-title">Course Website</p>
 <p><a class="reference external" href="http://54.243.252.9/ce-3105-webroot/">http://54.243.252.9/ce-3105-webroot/</a></p>
@@ -373,52 +388,480 @@ document.write(`
 <section id="readings">
 <h2>Readings<a class="headerlink" href="#readings" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
-<li><p><a class="reference external" href="http://54.243.252.9/ce-3105-webroot/ce3105notes/lessons/laboratory9/ElementsOfComputationalHydraulicsExcerpt.pdf">Koutitas, C. G. (1983) pp. 55-64 from <em>Elements of computational hydraulics</em>. Pentech Press</a></p></li>
-<li><p><a class="reference external" href="http://54.243.252.9/ce-3105-webroot/7-user-manuals/H405-WaterHammer.pdf">TecQuipment Ltd. (2024) H… – User Guide.</a></p></li>
+<li><p><a class="reference external" href="http://54.243.252.9/ce-3105-webroot/">Koutitas, C. G. (1983) pp. XX-XX from <em>Elements of computational hydraulics</em>. Pentech Press DUMMY LINK</a></p></li>
+<li><p><a class="reference external" href="http://54.243.252.9/ce-3105-webroot/7-user-manuals/H405-WaterHammer.pdf">TecQuipment Ltd. (2024) H… – User Guide. DUMMY LINK</a></p></li>
 </ol>
 <!--2. [Gupta, R.S., 2017. Hydrology and Hydraulic Systems, pp 668](https://www.waveland.com/browse.php?t=384) This is usually the CE 3354/3372 Textbook -->
 </section>
 <section id="videos">
 <h2>Videos<a class="headerlink" href="#videos" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
-<li><p><a class="reference external" href="https://www.youtube.com/watch?v=9NYs3Y-IjGw">none</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=9pY2TjTUBzw">Permeability, Flow Nets and Darcy’s Law Experiment H312</a></p></li>
 </ol>
 </section>
-<section id="background">
-<h2>Background<a class="headerlink" href="#background" title="Link to this heading">#</a></h2>
-<p>Items this subsection:</p>
+<section id="laboratory-description">
+<h2>Laboratory Description<a class="headerlink" href="#laboratory-description" title="Link to this heading">#</a></h2>
+<p>This laboratory exercise introduces groundwater flow through a porous medium under unconfined conditions. The apparatus is a sand-filled tank with constant-head boundaries at each end and observation ports distributed along the flow direction. By imposing different upstream and downstream water levels, students will observe the shape of the water table and compare measured conditions to an analytical or spreadsheet-based prediction.</p>
+<p>At the completion of this laboratory, students should be able to:</p>
 <ul class="simple">
-<li><p>Flow net (mathematics)</p></li>
-<li><p>Flow Net (Script Example)</p></li>
-<li><p>Importance/uses</p></li>
+<li><p>describe steady one-dimensional flow in an unconfined aquifer;</p></li>
+<li><p>explain the meaning of hydraulic head, piezometric surface, and hydraulic conductivity in porous media;</p></li>
+<li><p>measure head distribution along a laboratory sand tank using observation ports;</p></li>
+<li><p>compare observed head values to a computed unconfined flow profile;</p></li>
+<li><p>estimate the hydraulic conductivity, <span class="math notranslate nohighlight">\(K\)</span>, of the porous medium by adjusting model inputs until computed and observed results agree reasonably well; and</p></li>
+<li><p>relate measured discharge to the imposed head gradient and aquifer properties.</p></li>
 </ul>
+<p>The purpose of the laboratory exercise is to connect groundwater-flow theory to direct observation. Students will use a controlled laboratory sandbox to observe the water-table profile that develops between two constant-head boundaries, then use a spreadsheet or script to compute the expected shape of the piezometric surface. Because the hydraulic conductivity of the sand is not given directly, students must calibrate the model by adjusting <span class="math notranslate nohighlight">\(K\)</span> until the predicted profile provides a good match to the measured data.</p>
+</section>
+<section id="theory">
+<h2>Theory<a class="headerlink" href="#theory" title="Link to this heading">#</a></h2>
+<p>Groundwater flow in porous media is commonly described using Darcy’s Law, which relates discharge to the hydraulic gradient and the properties of the medium:</p>
+<div class="math notranslate nohighlight">
+\[ Q = K A \frac{dh}{dl} \]</div>
+<p>where <span class="math notranslate nohighlight">\(Q\)</span> is discharge, <span class="math notranslate nohighlight">\(K\)</span> is hydraulic conductivity, <span class="math notranslate nohighlight">\(A\)</span> is the cross-sectional area perpendicular to flow, and <span class="math notranslate nohighlight">\(\frac{dh}{dl}\)</span> is the hydraulic gradient.</p>
+<p><img alt="" src="../../_images/unconfined.aquifer.slice.png" /></p>
+<p>For an <strong>unconfined aquifer</strong> as depicted above, the saturated thickness varies along the flow direction, so the flow area is not constant. Under steady, one-dimensional conditions with horizontal flow and negligible vertical gradients (Dupuit assumptions), the governing relationship becomes:</p>
+<div class="math notranslate nohighlight">
+\[ Q = K \, h(x) \, \frac{dh}{dx} \]</div>
+<p>where <span class="math notranslate nohighlight">\(h(x)\)</span> is the saturated thickness, which is equal to the local head <span class="math notranslate nohighlight">\(h(x)\)</span> when measured from an impermeable base.  Note that the recharge term <span class="math notranslate nohighlight">\(N\)</span> in the figure above  is zero in our case (hence it will not appear in our solution).</p>
+<p>Combining these relationships and integrating between two constant-head boundaries, the result leads to the well-known result that the water table in an unconfined aquifer approximately follows a <strong>nonlinear (parabolic) profile</strong>:</p>
+<div class="math notranslate nohighlight">
+\[ h^2(x) = h_1^2 - \frac{(h_1^2 - h_2^2)}{L} \, x \]</div>
+<p>where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(h_1\)</span> and <span class="math notranslate nohighlight">\(h_2\)</span> are the heads at the upstream and downstream boundaries,</p></li>
+<li><p><span class="math notranslate nohighlight">\(L\)</span> is the length of the flow domain, and</p></li>
+<li><p><span class="math notranslate nohighlight">\(x\)</span> is the distance from the upstream boundary.</p></li>
+</ul>
+<p>This result implies that the square of the head varies linearly with distance, even though the head itself does not. In this laboratory, students will compare this theoretical profile to measured heads and adjust the hydraulic conductivity, <span class="math notranslate nohighlight">\(K\)</span>, in their computational tool to obtain agreement between observed and predicted behavior.</p>
 </section>
 <section id="laboratory-apparatus">
 <h2>Laboratory Apparatus<a class="headerlink" href="#laboratory-apparatus" title="Link to this heading">#</a></h2>
-<p>Items this sub-section:</p>
-<ul class="simple">
-<li><p><a class="reference internal" href="#"><span class="xref myst">Insert Photograph of Apparatus Here</span></a></p></li>
-<li><p>Description (from user manual here).</p></li>
-<li><p>Links to relevant documents .</p></li>
-</ul>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Under development - The hardware is present at time of writing. not completed.</p>
+<p>The apparatus (pictured below) is a transparent-sided tank mounted on a steel-framed bench with a worktop.</p>
+<p><img alt="Manufacturer Supplied Photograph of Aquifer Model (without media)" src="../../_images/permeability.apparatus.png" /></p>
+<p>The sides are constructed of plate glass to allow visualization of flow and to resist abrasion from the permeable medium. The rear of the tank contains pressure tappings connected to a bank of piezometer tubes located along the side of the apparatus, allowing measurement of the head distribution along the tank.</p>
+<p>Removable stainless-steel mesh baffles at each end of the tank retain the permeable medium (typically sand or glass beads for dye visualization). On either side of the baffles are end compartments with adjustable overflow pipes used to set and maintain water levels at each boundary of the model.</p>
+<p>A recirculating pump system maintains water levels in the upgradient reservoir. A dye-injector system is also available to assist in visualizing flow paths.</p>
+<div class="note admonition">
+<p class="admonition-title">Why this matters</p>
+<p>This apparatus provides a physical representation of groundwater flow through a porous medium, allowing abstract concepts such as hydraulic head, gradients, and boundary conditions to be directly observed and measured.</p>
+<p>By comparing measured head distributions and flow patterns to analytical or computational predictions, students can evaluate how well simplified models (e.g., Darcy-based solutions) represent real systems. This connection between theory, measurement, and model validation is central to engineering practice.</p>
 </div>
 </section>
-<section id="laboratory-objectives">
-<h2>Laboratory Objectives<a class="headerlink" href="#laboratory-objectives" title="Link to this heading">#</a></h2>
-<p>Items this sub-section</p>
+<section id="experimental-procedure">
+<h2>Experimental Procedure<a class="headerlink" href="#experimental-procedure" title="Link to this heading">#</a></h2>
+<p>The apparatus consists of an aquarium-like sandbox filled with washed 20–40 sand. The top surface is open to the atmosphere, so the system behaves as an unconfined aquifer. Constant-head conditions are maintained at the inlet and outlet ends of the tank. Fourteen sampling ports, equally spaced along the long axis of the sandbox, are used to observe the head distribution. Flow exiting the downstream end is measured independently by a time-to-fill method.</p>
+<p>A typical procedure is as follows:</p>
+<ol class="arabic simple">
+<li><p>Verify that the sandbox is level, the porous medium is saturated, and the recirculating flow system is operating properly.</p></li>
+<li><p>Set the upstream and downstream constant-head boundaries to the desired elevations.</p></li>
+<li><p>Allow the system to approach steady-state conditions before making measurements. (The system responds quite slowly to changes, so expect to wait quite awhile for new equilibrium conditions to be reached 15-20 minutes is not unusual)</p></li>
+<li><p>Record the imposed boundary heads at the two ends of the sandbox.</p></li>
+<li><p>Measure the hydraulic head at each of the 14 observation ports.</p></li>
+<li><p>Measure outlet discharge using the time-to-fill method.</p></li>
+<li><p>Enter the boundary heads, observation-port locations, and measured discharge into the provided spreadsheet or analysis script.</p></li>
+<li><p>Compute the theoretical shape of the piezometric surface for unconfined flow.</p></li>
+<li><p>Adjust the hydraulic conductivity, <span class="math notranslate nohighlight">\(K\)</span>, within the spreadsheet or script until the computed profile gives a reasonable match to the observed head distribution.</p></li>
+<li><p>Compare the calibrated profile to the measured data and comment on sources of mismatch, including measurement uncertainty, nonuniform packing, and departure from ideal assumptions.</p></li>
+</ol>
+</section>
+<section id="data-acquisition">
+<h2>Data Acquisition<a class="headerlink" href="#data-acquisition" title="Link to this heading">#</a></h2>
+<p>Students will collect the following measurements:</p>
 <ul class="simple">
-<li><p>Objectives/purpose</p></li>
-<li><p>Experimental protocol</p></li>
+<li><p>Upstream head, <span class="math notranslate nohighlight">\(h_1\)</span></p></li>
+<li><p>Downstream head, <span class="math notranslate nohighlight">\(h_2\)</span></p></li>
+<li><p>Distance between boundaries, <span class="math notranslate nohighlight">\(L\)</span></p></li>
+<li><p>Locations of observation ports along the sandbox</p></li>
+<li><p>Hydraulic head at each observation port.  <span class="math notranslate nohighlight">\(h_{port} = z_{port} + \frac{p}{\gamma}_{port}\)</span></p></li>
+<li><p>Discharge, <span class="math notranslate nohighlight">\(Q\)</span>, measured using the time-to-fill method</p></li>
 </ul>
+<p>All measurements should be recorded with consistent units (recommended: meters and seconds).</p>
+<section id="data-organization">
+<h3>Data Organization<a class="headerlink" href="#data-organization" title="Link to this heading">#</a></h3>
+<p>Prepare and populate a table containing:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-right"><p>Port ID</p></th>
+<th class="head text-right"><p>Distance, <span class="math notranslate nohighlight">\(x\)</span>, (m)</p></th>
+<th class="head text-right"><p><span class="math notranslate nohighlight">\(z_{port}\)</span>, (m)</p></th>
+<th class="head text-right"><p><span class="math notranslate nohighlight">\(\frac{p}{\gamma}_{port}\)</span>, (m)</p></th>
+<th class="head text-right"><p><span class="math notranslate nohighlight">\(h_{port}\)</span>, (m)</p></th>
+<th class="head text-right"><p>Remarks</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-right"><p>0</p></td>
+<td class="text-right"><p>0.00</p></td>
+<td class="text-right"><p>N/A</p></td>
+<td class="text-right"><p>N/A</p></td>
+<td class="text-right"><p>0.450</p></td>
+<td class="text-right"><p>Upstream Constant Head</p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>1</p></td>
+<td class="text-right"><p>0.10</p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p>2</p></td>
+<td class="text-right"><p>0.20</p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>3</p></td>
+<td class="text-right"><p>0.30</p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p>4</p></td>
+<td class="text-right"><p>0.40</p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>5</p></td>
+<td class="text-right"><p>0.50</p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p>6</p></td>
+<td class="text-right"><p>0.60</p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>7</p></td>
+<td class="text-right"><p>0.70</p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p>8</p></td>
+<td class="text-right"><p>0.80</p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>9</p></td>
+<td class="text-right"><p>0.90</p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p>10</p></td>
+<td class="text-right"><p>1.00</p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>11</p></td>
+<td class="text-right"><p>1.10</p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p>12</p></td>
+<td class="text-right"><p>1.20</p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>13</p></td>
+<td class="text-right"><p>1.30</p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p>14</p></td>
+<td class="text-right"><p>1.40</p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>15</p></td>
+<td class="text-right"><p>1.50</p></td>
+<td class="text-right"><p>N/A</p></td>
+<td class="text-right"><p>N/A</p></td>
+<td class="text-right"><p>0.380</p></td>
+<td class="text-right"><p>Downstream Constant Head</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul class="simple">
+<li><p>Computed head, <span class="math notranslate nohighlight">\(h_{calc}\)</span> (from spreadsheet or script</p></li>
+</ul>
+</section>
+</section>
+<section id="calculations">
+<h2>Calculations<a class="headerlink" href="#calculations" title="Link to this heading">#</a></h2>
+<p>Students will perform the following steps:</p>
+<ol class="arabic">
+<li><p><strong>Compute discharge</strong> from time-to-fill measurements at the outlet:</p>
+<div class="math notranslate nohighlight">
+\[ Q = \frac{V}{t} \]</div>
+<p>where <span class="math notranslate nohighlight">\(V\)</span> is the collected volume and <span class="math notranslate nohighlight">\(t\)</span> is the fill time.</p>
+</li>
+<li><p><strong>Estimate hydraulic gradient</strong> using boundary heads:</p>
+<div class="math notranslate nohighlight">
+\[ i = \frac{h_1 - h_2}{L} \]</div>
+</li>
+</ol>
+<ol class="arabic" start="3">
+<li><p><strong>Compute theoretical head distribution</strong> using the unconfined flow relationship (provided in the spreadsheet or script).</p>
+<div class="math notranslate nohighlight">
+\[ h(x) = \sqrt{h_1^2 - \frac{(h_1^2 - h_2^2)}{L} \, x }\]</div>
+<ul class="simple">
+<li><p>Spreadsheet Implementation (the image is the link): <br><br><a class="reference internal" href="#ce-3105-webroot/NewLabManual/chapters/9-porous-media-flownet/UN_DITCH.xlsx"><span class="xref myst"><img alt="" src="../../_images/unconfined.spreadsheet.png" /></span></a> <br><br></p></li>
+<li><p>Python Implementation (script below): <br><br></p></li>
+</ul>
+</li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Direct Python conversion of the Excel worksheet: UN_DITCH.xlsx</span>
+<span class="sd">Sheet: UN_DITCH</span>
+
+<span class="sd">This script reproduces the worksheet calculations in a transparent form.</span>
+<span class="sd">It keeps the same computational logic and cell relationships as the spreadsheet.</span>
+
+<span class="sd">Original workbook logic notes:</span>
+<span class="sd">- Flow equation is marked &quot;Flows valid when N = 0&quot;</span>
+<span class="sd">- Recharge / source term array w is included for future use</span>
+<span class="sd">- The profile is computed at nx+1 stations from x = 0 to x = L</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sqrt</span>
+
+
+<span class="k">def</span> <span class="nf">compute_unconfined_ditch</span><span class="p">(</span>
+    <span class="n">h1</span><span class="o">=</span><span class="mf">0.43</span><span class="p">,</span>          <span class="c1"># Excel B3</span>
+    <span class="n">h2</span><span class="o">=</span><span class="mf">0.38</span><span class="p">,</span>          <span class="c1"># Excel B4</span>
+    <span class="n">L</span><span class="o">=</span><span class="mf">1.50</span><span class="p">,</span>           <span class="c1"># Excel B5</span>
+    <span class="n">nx</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span>            <span class="c1"># Excel B6</span>
+    <span class="n">width</span><span class="o">=</span><span class="mf">100.0</span><span class="p">,</span>      <span class="c1"># Excel B7</span>
+    <span class="n">N</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span>            <span class="c1"># Excel B8 (not directly used in formulas on the sheet)</span>
+    <span class="n">K_cm_per_sec</span><span class="o">=</span><span class="mf">0.0017</span><span class="p">,</span>  <span class="c1"># Excel B9</span>
+    <span class="n">w_values</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>    <span class="c1"># Excel B17:Q17</span>
+    <span class="n">h_obs</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.430</span><span class="p">,</span>	<span class="mf">0.426</span><span class="p">,</span>	<span class="mf">0.413</span><span class="p">,</span>	<span class="mf">0.407</span><span class="p">,</span>	<span class="mf">0.402</span><span class="p">,</span>	<span class="mf">0.399</span><span class="p">,</span>	<span class="mf">0.397</span><span class="p">,</span>	<span class="mf">0.395</span><span class="p">,</span>	<span class="mf">0.393</span><span class="p">,</span>	<span class="mf">0.391</span><span class="p">,</span>	<span class="mf">0.390</span><span class="p">,</span>	<span class="mf">0.389</span><span class="p">,</span>	<span class="mf">0.388</span><span class="p">,</span>	<span class="mf">0.387</span><span class="p">,</span>	<span class="mf">0.386</span><span class="p">,</span>	<span class="mf">0.380</span>
+<span class="p">]</span>
+<span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Reproduce the spreadsheet calculations and return a dictionary of results.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># --- Unit conversions from row 9 ---</span>
+    <span class="n">K_m_per_sec</span> <span class="o">=</span> <span class="n">K_cm_per_sec</span> <span class="o">/</span> <span class="mf">100.0</span>            <span class="c1"># Excel D9 = B9/100</span>
+    <span class="n">K_ft_per_sec</span> <span class="o">=</span> <span class="p">(</span><span class="n">K_cm_per_sec</span> <span class="o">/</span> <span class="mf">2.54</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">12</span><span class="p">)</span> <span class="c1"># Excel F9 = (B9/2.54)*(1/12)</span>
+    <span class="n">K_ft_per_day</span> <span class="o">=</span> <span class="n">K_ft_per_sec</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">24</span>    <span class="c1"># Excel H9 = F9*60*60*24</span>
+
+    <span class="c1"># There are nx intervals and nx+1 stations</span>
+    <span class="n">nstations</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">nx</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+
+    <span class="c1"># Default source/sink values, matching row 17</span>
+    <span class="k">if</span> <span class="n">w_values</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">w_values</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">]</span> <span class="o">*</span> <span class="n">nstations</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">w_values</span><span class="p">)</span> <span class="o">!=</span> <span class="n">nstations</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;w_values must have length nx+1 = </span><span class="si">{</span><span class="n">nstations</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="c1"># --- Flow valid when N = 0 (Excel B13) ---</span>
+    <span class="c1"># Q(CMS)=((($F$9/(2*$B$5))*($B$3^2-$B$4^2)-B$17*(0.5*$B$5-B17))*$B$7</span>
+    <span class="n">Q_cms</span> <span class="o">=</span> <span class="p">(((</span><span class="n">K_m_per_sec</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">L</span><span class="p">))</span> <span class="o">*</span> <span class="p">(</span><span class="n">h1</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">h2</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="n">w_values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="mf">0.5</span> <span class="o">*</span> <span class="n">L</span> <span class="o">-</span> <span class="n">w_values</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span> <span class="o">*</span> <span class="n">width</span><span class="p">)</span>
+
+    <span class="c1"># --- Station coordinates (row 19) ---</span>
+    <span class="n">dx</span> <span class="o">=</span> <span class="n">L</span> <span class="o">/</span> <span class="n">nx</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="o">*</span> <span class="n">dx</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nstations</span><span class="p">)]</span>
+
+    <span class="c1"># --- h^2 row (row 22) ---</span>
+    <span class="n">h_squared</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">]</span> <span class="o">*</span> <span class="n">nstations</span>
+    <span class="n">h_squared</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">h1</span> <span class="o">**</span> <span class="mi">2</span>             <span class="c1"># Excel B22 = B20^2</span>
+    <span class="n">h_squared</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">h2</span> <span class="o">**</span> <span class="mi">2</span>            <span class="c1"># Excel Q22 = Q20^2</span>
+
+    <span class="c1"># For interior stations, Excel uses:</span>
+    <span class="c1"># = $B$22 - ($B$22-$Q$22)*x/L + w*(L-x)*x/$H$9</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">nstations</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="n">xi</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">wi</span> <span class="o">=</span> <span class="n">w_values</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">h_squared</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">h_squared</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="o">-</span> <span class="p">(</span><span class="n">h_squared</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">h_squared</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">*</span> <span class="n">xi</span> <span class="o">/</span> <span class="n">L</span>
+            <span class="o">+</span> <span class="n">wi</span> <span class="o">*</span> <span class="p">(</span><span class="n">L</span> <span class="o">-</span> <span class="n">xi</span><span class="p">)</span> <span class="o">*</span> <span class="n">xi</span> <span class="o">/</span> <span class="n">K_ft_per_day</span>
+        <span class="p">)</span>
+
+    <span class="c1"># --- h row (row 20) ---</span>
+    <span class="n">h</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">]</span> <span class="o">*</span> <span class="n">nstations</span>
+    <span class="n">h</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">h1</span>
+    <span class="n">h</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">h2</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">nstations</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="n">h</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">h_squared</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="s2">&quot;inputs&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;h1_m&quot;</span><span class="p">:</span> <span class="n">h1</span><span class="p">,</span>
+            <span class="s2">&quot;h2_m&quot;</span><span class="p">:</span> <span class="n">h2</span><span class="p">,</span>
+            <span class="s2">&quot;L_m&quot;</span><span class="p">:</span> <span class="n">L</span><span class="p">,</span>
+            <span class="s2">&quot;nx&quot;</span><span class="p">:</span> <span class="n">nx</span><span class="p">,</span>
+            <span class="s2">&quot;width&quot;</span><span class="p">:</span> <span class="n">width</span><span class="p">,</span>
+            <span class="s2">&quot;N&quot;</span><span class="p">:</span> <span class="n">N</span><span class="p">,</span>
+            <span class="s2">&quot;K_cm_per_sec&quot;</span><span class="p">:</span> <span class="n">K_cm_per_sec</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="s2">&quot;conversions&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;K_m_per_sec&quot;</span><span class="p">:</span> <span class="n">K_m_per_sec</span><span class="p">,</span>
+            <span class="s2">&quot;K_ft_per_sec&quot;</span><span class="p">:</span> <span class="n">K_ft_per_sec</span><span class="p">,</span>
+            <span class="s2">&quot;K_ft_per_day&quot;</span><span class="p">:</span> <span class="n">K_ft_per_day</span><span class="p">,</span>
+            <span class="s2">&quot;dx&quot;</span><span class="p">:</span> <span class="n">dx</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="s2">&quot;Q_cms&quot;</span><span class="p">:</span> <span class="n">Q_cms</span><span class="p">,</span>
+        <span class="s2">&quot;w&quot;</span><span class="p">:</span> <span class="n">w_values</span><span class="p">,</span>
+        <span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="n">x</span><span class="p">,</span>
+        <span class="s2">&quot;h&quot;</span><span class="p">:</span> <span class="n">h</span><span class="p">,</span>
+        <span class="s2">&quot;h_squared&quot;</span><span class="p">:</span> <span class="n">h_squared</span><span class="p">,</span>
+        <span class="s2">&quot;h_obs&quot;</span><span class="p">:</span> <span class="n">h_obs</span><span class="p">,</span>
+    <span class="p">}</span>
+
+
+<span class="k">def</span> <span class="nf">print_results</span><span class="p">(</span><span class="n">results</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Unconfined Ditch Results&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Q (cms)      = </span><span class="si">{</span><span class="n">results</span><span class="p">[</span><span class="s1">&#39;Q_cms&#39;</span><span class="p">]</span><span class="si">:</span><span class="s2">.12g</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;K (m/s)      = </span><span class="si">{</span><span class="n">results</span><span class="p">[</span><span class="s1">&#39;conversions&#39;</span><span class="p">][</span><span class="s1">&#39;K_m_per_sec&#39;</span><span class="p">]</span><span class="si">:</span><span class="s2">.12g</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;K (ft/s)     = </span><span class="si">{</span><span class="n">results</span><span class="p">[</span><span class="s1">&#39;conversions&#39;</span><span class="p">][</span><span class="s1">&#39;K_ft_per_sec&#39;</span><span class="p">]</span><span class="si">:</span><span class="s2">.12g</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;K (ft/day)   = </span><span class="si">{</span><span class="n">results</span><span class="p">[</span><span class="s1">&#39;conversions&#39;</span><span class="p">][</span><span class="s1">&#39;K_ft_per_day&#39;</span><span class="p">]</span><span class="si">:</span><span class="s2">.12g</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;dx           = </span><span class="si">{</span><span class="n">results</span><span class="p">[</span><span class="s1">&#39;conversions&#39;</span><span class="p">][</span><span class="s1">&#39;dx&#39;</span><span class="p">]</span><span class="si">:</span><span class="s2">.12g</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">()</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="s1">&#39;i&#39;</span><span class="si">:</span><span class="s2">&gt;3</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="s1">&#39;x&#39;</span><span class="si">:</span><span class="s2">&gt;12</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="s1">&#39;w&#39;</span><span class="si">:</span><span class="s2">&gt;12</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="s1">&#39;h&#39;</span><span class="si">:</span><span class="s2">&gt;12</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="s1">&#39;h^2&#39;</span><span class="si">:</span><span class="s2">&gt;12</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="s1">&#39;h_obs&#39;</span><span class="si">:</span><span class="s2">&gt;12</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">xi</span><span class="p">,</span> <span class="n">wi</span><span class="p">,</span> <span class="n">hi</span><span class="p">,</span> <span class="n">h2i</span><span class="p">,</span> <span class="n">hobsi</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">results</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">],</span> <span class="n">results</span><span class="p">[</span><span class="s2">&quot;w&quot;</span><span class="p">],</span> <span class="n">results</span><span class="p">[</span><span class="s2">&quot;h&quot;</span><span class="p">],</span> <span class="n">results</span><span class="p">[</span><span class="s2">&quot;h_squared&quot;</span><span class="p">],</span><span class="n">results</span><span class="p">[</span><span class="s2">&quot;h_obs&quot;</span><span class="p">])):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">i</span><span class="si">:</span><span class="s2">&gt;3d</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">xi</span><span class="si">:</span><span class="s2">&gt;12.6f</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">wi</span><span class="si">:</span><span class="s2">&gt;12.6f</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">hi</span><span class="si">:</span><span class="s2">&gt;12.6f</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">h2i</span><span class="si">:</span><span class="s2">&gt;12.6f</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">hobsi</span><span class="si">:</span><span class="s2">&gt;12.6f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">results</span> <span class="o">=</span> <span class="n">compute_unconfined_ditch</span><span class="p">()</span>
+    <span class="n">print_results</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+
+    <span class="c1"># Optional plotting example:</span>
+    <span class="c1">#</span>
+
+    <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+
+<span class="c1"># Model results</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">results</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">],</span> <span class="n">results</span><span class="p">[</span><span class="s2">&quot;h&quot;</span><span class="p">],</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Computed&quot;</span><span class="p">)</span>
+
+<span class="c1"># Observations</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">results</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">],</span> <span class="n">results</span><span class="p">[</span><span class="s2">&quot;h_obs&quot;</span><span class="p">],</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;o&quot;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;none&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Observed&quot;</span><span class="p">)</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;h&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Unconfined Ditch Water Surface / Head Profile&quot;</span><span class="p">)</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">max</span><span class="p">(</span><span class="n">results</span><span class="p">[</span><span class="s2">&quot;h&quot;</span><span class="p">])</span> <span class="o">*</span> <span class="mf">1.1</span><span class="p">)</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>   <span class="c1"># &lt;-- important for distinguishing lines</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Unconfined Ditch Results
+------------------------------------------------------------
+Q (cms)      = 2.295e-05
+K (m/s)      = 1.7e-05
+K (ft/s)     = 5.57742782152e-05
+K (ft/day)   = 4.8188976378
+dx           = 0.1
+
+  i            x            w            h          h^2        h_obs
+  0     0.000000     0.000000     0.430000     0.184900     0.430000
+  1     0.100000     0.000000     0.426849     0.182200     0.426000
+  2     0.200000     0.000000     0.423674     0.179500     0.413000
+  3     0.300000     0.000000     0.420476     0.176800     0.407000
+  4     0.400000     0.000000     0.417253     0.174100     0.402000
+  5     0.500000     0.000000     0.414005     0.171400     0.399000
+  6     0.600000     0.000000     0.410731     0.168700     0.397000
+  7     0.700000     0.000000     0.407431     0.166000     0.395000
+  8     0.800000     0.000000     0.404104     0.163300     0.393000
+  9     0.900000     0.000000     0.400749     0.160600     0.391000
+ 10     1.000000     0.000000     0.397366     0.157900     0.390000
+ 11     1.100000     0.000000     0.393954     0.155200     0.389000
+ 12     1.200000     0.000000     0.390512     0.152500     0.388000
+ 13     1.300000     0.000000     0.387040     0.149800     0.387000
+ 14     1.400000     0.000000     0.383536     0.147100     0.386000
+ 15     1.500000     0.000000     0.380000     0.144400     0.380000
+</pre></div>
+</div>
+<img alt="../../_images/14da6917a797a73f85afae686d388db52bb1b68d2a54e331d8978ea92fde4c5c.png" src="../../_images/14da6917a797a73f85afae686d388db52bb1b68d2a54e331d8978ea92fde4c5c.png" />
+</div>
+</div>
+<ol class="arabic simple" start="5">
+<li><p><strong>Calibrate hydraulic conductivity, <span class="math notranslate nohighlight">\(K\)</span></strong>:</p>
+<ul class="simple">
+<li><p>Adjust <span class="math notranslate nohighlight">\(K\)</span> iteratively until the computed head profile aligns reasonably with observed data.</p></li>
+<li><p>A visual match on a plot of <span class="math notranslate nohighlight">\(h\)</span> vs. <span class="math notranslate nohighlight">\(x\)</span> is typically sufficient for this exercise.</p></li>
+</ul>
+</li>
+</ol>
+<ol class="arabic" start="6">
+<li><p><strong>Plot results</strong>:</p>
+<ul class="simple">
+<li><p>Plot measured head (<span class="math notranslate nohighlight">\(h_{obs}\)</span>) vs. distance (<span class="math notranslate nohighlight">\(x\)</span>)</p></li>
+<li><p>Overlay computed head (<span class="math notranslate nohighlight">\(h_{calc}\)</span>) on the same axes</p></li>
+<li><p>Include labels, units, and a legend</p></li>
+</ul>
+<p>The plots are shown above in the two example implementations - iterate through steps 4-&gt;5-&gt;6 until good agreement, or determine match is hopeless.</p>
+</li>
+</ol>
+<section id="interpretation">
+<h3>Interpretation<a class="headerlink" href="#interpretation" title="Link to this heading">#</a></h3>
+<p>Evaluate:</p>
+<ul class="simple">
+<li><p>Agreement between observed and computed profiles</p></li>
+<li><p>Sensitivity of results to the chosen value of <span class="math notranslate nohighlight">\(K\)</span></p></li>
+<li><p>Possible sources of discrepancy, such as:</p>
+<ul>
+<li><p>nonuniform sand packing,</p></li>
+<li><p>boundary condition instability,</p></li>
+<li><p>measurement error in head or discharge,</p></li>
+<li><p>limitations of the Dupuit assumptions</p></li>
+</ul>
+</li>
+</ul>
+<p>A brief discussion should accompany the results, focusing on whether the unconfined flow model provides a reasonable representation of the physical system.</p>
+</section>
+<section id="expected-student-deliverables">
+<h3>Expected Student Deliverables<a class="headerlink" href="#expected-student-deliverables" title="Link to this heading">#</a></h3>
+<p>Students should prepare a table of measured heads, a plot showing observed and computed head distributions on the same axes, the calibrated value of hydraulic conductivity, and a brief discussion of how well the model represents the experiment.</p>
+</section>
 </section>
 <section id="deliverables">
 <h2>Deliverables<a class="headerlink" href="#deliverables" title="Link to this heading">#</a></h2>
-<p>Items this sub-section</p>
+<p>Laboratory Report documenting the actual experiments, and other required content including comparison to computer model(s). The report should contain a table of measured heads, a plot showing observed and computed head distributions on the same axes, the calibrated value of hydraulic conductivity, and a brief discussion of how well the model represents the experiment.</p>
 <ul class="simple">
-<li><p>Laboratory Report documenting the actual experiments, and other required content including comparison to computer model(s).</p></li>
+<li><p><a class="reference external" href="http://54.243.252.9/ce-3105-webroot/NewLabManual/chapters/9-porous-media-flownet/Report-Template-Porous-Medium.docx">Report Template</a></p></li>
+<li><p><a class="reference internal" href="#"><span class="xref myst">Sample Report (none)</span></a></p></li>
 </ul>
 </section>
 <section id="end-of-section">
@@ -457,12 +900,12 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../8-rapid-varied-flow-hydraulic-jump/rapid.varied.flow.hydraulic.jump.html"
+       href="../8-rapid-varied-flow-hydraulic-jump/hydraulic_jump_sample_report.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Lab 9. - Water Surface Profiles: Hydraulic Jump</p>
+        <p class="prev-next-title">Rapidly Varied Flow: Hydraulic Jump (Sample Report)</p>
       </div>
     </a>
 </div>
@@ -483,9 +926,19 @@ document.write(`
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#readings">Readings</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#videos">Videos</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background">Background</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#laboratory-description">Laboratory Description</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#theory">Theory</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#laboratory-apparatus">Laboratory Apparatus</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#laboratory-objectives">Laboratory Objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experimental-procedure">Experimental Procedure</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-acquisition">Data Acquisition</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-organization">Data Organization</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculations">Calculations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretation">Interpretation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#expected-student-deliverables">Expected Student Deliverables</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deliverables">Deliverables</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#end-of-section">End of Section</a></li>
 </ul>
