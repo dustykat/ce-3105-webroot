@@ -18,3 +18,4 @@ chapters:
   sections:
   - file: chapters/8-rapid-varied-flow-hydraulic-jump/hydraulic_jump_sample_report.ipynb
 - file: chapters/9-porous-media-flownet/porous.media.flownet.ipynb
+- file: chapters/3-friction-loss-in-fittings/Spring_2026_FinalLabExam.ipynb
